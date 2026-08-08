@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -67,54 +66,169 @@
       color: #8a6b2d;
     }
 
-    .hero {
-      max-width: 1000px;
+    /* =========================
+       FEATURE CAROUSEL
+    ========================= */
+
+    .feature-section {
+      background: #fbf7e9;
+      padding: 45px 20px 55px;
+    }
+
+    .feature-carousel {
+      position: relative;
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 50px 20px 65px;
-      text-align: center;
+      overflow: hidden;
     }
 
-    .hero-image {
+    .feature-track {
+      display: flex;
+      transition: transform 0.6s ease;
+    }
+
+    .feature-slide {
+      min-width: 100%;
+      padding: 4px 45px 10px;
+    }
+
+    .feature-card {
+      min-height: 390px;
+      background: #fffdf3;
+      border: 1px solid #e4d7b7;
+      box-shadow: 0 8px 22px rgba(77, 64, 41, 0.10);
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .feature-image-wrap {
+      min-height: 390px;
+      overflow: hidden;
+      background: #eee5ca;
+    }
+
+    .feature-image {
       width: 100%;
-      max-width: 650px;
-      height: auto;
+      height: 100%;
+      min-height: 390px;
+      object-fit: cover;
       display: block;
-      margin: 0 auto 38px;
     }
 
-    .hero h2 {
+    .feature-content {
+      padding: 48px 48px 42px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .feature-kicker {
+      font-family: "Caveat", cursive;
+      color: #80652d;
+      font-size: 1.25rem;
+      margin: 0 0 5px;
+    }
+
+    .feature-content h2 {
       font-family: "Gloock", Georgia, serif;
       font-weight: 400;
-      font-size: 2.4rem;
+      font-size: 2.05rem;
       line-height: 1.3;
-      margin: 0 auto 17px;
-      max-width: 780px;
       color: #403521;
+      margin: 0 0 14px;
     }
 
-    .hero p {
-      max-width: 670px;
-      margin: 0 auto 25px;
-      font-size: 1rem;
+    .feature-content p {
+      font-size: 0.91rem;
+      line-height: 1.7;
+      margin: 0 0 22px;
+      color: #66563c;
+      max-width: 470px;
     }
 
-    .button {
+    .feature-button {
       display: inline-block;
+      align-self: flex-start;
       background: #F3CF80;
       color: #403521;
-      padding: 10px 23px;
+      padding: 9px 21px;
       border-radius: 3px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       transition: 0.2s ease;
     }
 
-    .button:hover {
+    .feature-button:hover {
       background: #FFEBA1;
     }
 
-    /* BULLETIN */
+    .feature-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid #d6c69e;
+      background: #fffdf3;
+      color: #6f592c;
+      font-size: 1.25rem;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 3px 8px rgba(77, 64, 41, 0.12);
+      transition: 0.2s ease;
+    }
+
+    .feature-arrow:hover {
+      background: #F3CF80;
+    }
+
+    .feature-prev {
+      left: 3px;
+    }
+
+    .feature-next {
+      right: 3px;
+    }
+
+    .feature-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 19px;
+    }
+
+    .feature-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: none;
+      background: #d8c79f;
+      cursor: pointer;
+      padding: 0;
+      transition: 0.2s ease;
+    }
+
+    .feature-dot.active {
+      width: 23px;
+      border-radius: 10px;
+      background: #F3CF80;
+    }
+
+    .feature-note {
+      font-family: "Caveat", cursive;
+      text-align: center;
+      color: #80652d;
+      font-size: 1rem;
+      margin: 12px 0 0;
+    }
+
+    /* =========================
+       BULLETIN
+    ========================= */
 
     .bulletin-section {
       background: #FFEBA1;
@@ -425,7 +539,9 @@
       color: #80652d !important;
     }
 
-    /* ARTICLES */
+    /* =========================
+       ARTICLES
+    ========================= */
 
     .articles-section {
       background: #fbf7e9;
@@ -553,6 +669,10 @@
       text-decoration: underline;
     }
 
+    /* =========================
+       ABOUT
+    ========================= */
+
     .about {
       background: #FFEBA1;
       padding: 65px 20px;
@@ -575,6 +695,10 @@
       font-size: 0.98rem;
     }
 
+    /* =========================
+       FOOTER
+    ========================= */
+
     footer {
       background: #4d4029;
       color: #FFFDE7;
@@ -587,7 +711,25 @@
       font-size: 0.85rem;
     }
 
+    /* =========================
+       TABLET
+    ========================= */
+
     @media (max-width: 900px) {
+
+      .feature-card {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-image-wrap,
+      .feature-image {
+        min-height: 280px;
+        height: 280px;
+      }
+
+      .feature-content {
+        padding: 35px;
+      }
 
       .bulletin-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -615,6 +757,10 @@
 
     }
 
+    /* =========================
+       MOBILE
+    ========================= */
+
     @media (max-width: 600px) {
 
       header {
@@ -638,21 +784,44 @@
         font-size: 0.8rem;
       }
 
-      .hero {
-        padding: 38px 15px 50px;
+      .feature-section {
+        padding: 30px 8px 42px;
       }
 
-      .hero-image {
-        max-width: 90%;
-        margin-bottom: 30px;
+      .feature-slide {
+        padding: 4px 27px 8px;
       }
 
-      .hero h2 {
-        font-size: 1.9rem;
+      .feature-card {
+        min-height: auto;
       }
 
-      .hero p {
-        font-size: 0.9rem;
+      .feature-image-wrap,
+      .feature-image {
+        min-height: 210px;
+        height: 210px;
+      }
+
+      .feature-content {
+        padding: 29px 24px 30px;
+      }
+
+      .feature-kicker {
+        font-size: 1.1rem;
+      }
+
+      .feature-content h2 {
+        font-size: 1.65rem;
+      }
+
+      .feature-content p {
+        font-size: 0.84rem;
+      }
+
+      .feature-arrow {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
       }
 
       .bulletin-section {
@@ -757,637 +926,1010 @@
     }
 
   </style>
-
 </head>
 
 <body>
 
   <header>
 
+    <img
+      src="images/honey-and-hymns-logo.png"
+      alt="Honey & Hymns logo"
+    >
 
-<img
-  src="images/honey-and-hymns-logo.png"
-  alt="Honey & Hymns logo"
->
-
-<p>
-  Faith • Homeschool • Homemaking
-</p>
-
+    <p>
+      Faith • Homeschool • Homemaking
+    </p>
 
   </header>
 
   <nav>
 
-
-<a href="#home">Home</a>
-<a href="#articles">Articles</a>
-<a href="#about">About</a>
-
-<a
-  href="https://honeyandhymns.substack.com/"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Newsletter
-</a>
-
-
-  </nav>
-
-  <main>
-
-
-<section class="hero" id="home">
-
-  <img
-    src="images/honey-and-hymns-catholic-homemaker-hero%20(1).png"
-    alt="Catholic homemaker creating a peaceful and welcoming home"
-    class="hero-image"
-  >
-
-  <h2>
-    A little corner of the internet for the Catholic homemaker.
-  </h2>
-
-  <p>
-    Welcome to Honey & Hymns — a place for faith, homeschool,
-    homemaking, encouragement, and the beautiful ordinary moments
-    of family life.
-  </p>
-
-  <a class="button" href="#articles">
-    Read the Articles
-  </a>
-
-</section>
-
-<section class="bulletin-section">
-
-  <div class="bulletin-wrapper">
-
-    <div class="bulletin-heading">
-
-      <h2>
-        This Week at Honey & Hymns
-      </h2>
-
-      <p>
-        A little bulletin board for the week
-      </p>
-
-    </div>
-
-    <div class="bulletin-board">
-
-      <img
-        src="images/honey-and-hymns-cross-bees.png"
-        alt="Honey & Hymns cross with honey and bees"
-        class="bulletin-sticker"
-      >
-
-      <div class="board-inner">
-
-        <div class="bulletin-grid">
-
-          <div class="note">
-
-            <div class="pin"></div>
-
-            <span class="bulletin-pill">
-              Verse of the Week
-            </span>
-
-            <p>
-              “Commit to the Lord whatever you do,
-              and he will establish your plans.”
-            </p>
-
-            <p>
-              <strong>Proverbs 16:3</strong>
-            </p>
-
-          </div>
-
-          <div class="note new-upcoming-note">
-
-            <div class="pin"></div>
-
-            <span class="bulletin-pill">
-              New & Upcoming
-            </span>
-
-            <p class="new-upcoming-item">
-              Weekly Bulletin
-            </p>
-
-            <p class="new-upcoming-item">
-              Honey & Hymns Digital Magazine!
-            </p>
-
-            <p class="new-upcoming-item">
-              For Paid Subscribers
-            </p>
-
-            <p class="new-upcoming-item">
-              OCIA Series
-            </p>
-
-            <a
-              class="new-upcoming-link"
-              href="https://honeyandhymns.substack.com/p/the-honey-and-hymns-weekly-bulletin?r=7kwlqm&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Get Full Details →
-            </a>
-
-          </div>
-
-          <div class="note">
-
-            <div class="pin"></div>
-
-            <span class="bulletin-pill">
-              Last Week's Poll
-            </span>
-
-            <p class="poll-question">
-              Which homeschool style best describes your family?
-            </p>
-
-            <div class="poll-chart">
-
-              <div class="poll-row">
-                <div class="poll-label">
-                  <span>Charlotte Mason</span>
-                  <span class="poll-percent">33%</span>
-                </div>
-                <div class="poll-bar-track">
-                  <div class="poll-bar" data-width="33%"></div>
-                </div>
-              </div>
-
-              <div class="poll-row">
-                <div class="poll-label">
-                  <span>Traditional</span>
-                  <span class="poll-percent">0%</span>
-                </div>
-                <div class="poll-bar-track">
-                  <div class="poll-bar poll-zero"></div>
-                </div>
-              </div>
-
-              <div class="poll-row">
-                <div class="poll-label">
-                  <span>Eclectic</span>
-                  <span class="poll-percent">33%</span>
-                </div>
-                <div class="poll-bar-track">
-                  <div class="poll-bar" data-width="33%"></div>
-                </div>
-              </div>
-
-              <div class="poll-row">
-                <div class="poll-label">
-                  <span>Classical</span>
-                  <span class="poll-percent">0%</span>
-                </div>
-                <div class="poll-bar-track">
-                  <div class="poll-bar poll-zero"></div>
-                </div>
-              </div>
-
-              <div class="poll-row">
-                <div class="poll-label">
-                  <span>Still figuring it out</span>
-                  <span class="poll-percent">33%</span>
-                </div>
-                <div class="poll-bar-track">
-                  <div class="poll-bar" data-width="33%"></div>
-                </div>
-              </div>
-
-            </div>
-
-            <p class="poll-note">
-              Thank you for voting!
-            </p>
-
-            <a
-              href="https://honeyandhymns.substack.com/p/weekly-polls"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Take Me to This Week's Poll →
-            </a>
-
-          </div>
-
-          <div class="note featured-note">
-
-            <div class="pin"></div>
-
-            <span class="bulletin-pill">
-              The Latest from Honey & Hymns
-            </span>
-
-            <p>
-              <strong>
-                Why I Chose to Homeschool My Kids:
-                The Story Behind Our Homeschool Journey
-              </strong>
-            </p>
-
-            <p>
-              A mom’s honest reflection on school safety,
-              family values, and the moment I knew homeschooling
-              was the right choice for our family.
-            </p>
-
-            <a
-              href="https://honeyandhymns.substack.com/p/why-i-chose-to-homeschool-my-kids"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read the Latest Post →
-            </a>
-
-          </div>
-
-          <div class="note gospel-note">
-
-            <div class="pin"></div>
-
-            <span class="bulletin-pill">
-              Sunday Gospel for Kids
-            </span>
-
-            <img
-              src="images/sunday-gospel-kids-jesus-walks-on-water.png"
-              alt="19th Sunday in Ordinary Time: Jesus Walks on Water"
-              class="gospel-cover"
-            >
-
-            <p class="gospel-title">
-              19th Sunday in Ordinary Time:
-              Jesus Walks on Water
-            </p>
-
-            <a
-              class="gospel-link"
-              href="https://honeyandhymns.gumroad.com/l/chutcz"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Get the Current Issue →
-            </a>
-
-          </div>
-
-          <div class="note magazine-note">
-
-            <div class="pin"></div>
-
-            <span class="bulletin-pill">
-              This Month's Magazine
-            </span>
-
-            <p>
-              Honey & Hymns Digital Magazine
-            </p>
-
-            <p class="magazine-date">
-              Coming Soon — August 15th, 2026!
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="articles-section" id="articles">
-
-  <div class="articles-wrapper">
-
-    <div class="editorial-heading">
-
-      <p class="editorial-kicker">
-        Fresh from the Honey & Hymns kitchen table
-      </p>
-
-      <h2>
-        Recently From Honey & Hymns
-      </h2>
-
-      <div class="editorial-rule">
-        ✦
-      </div>
-
-      <p class="editorial-description">
-        Catch up on the latest reflections, encouragement,
-        homeschool ideas, and everyday stories from Honey & Hymns.
-      </p>
-
-    </div>
-
-    <div class="article-grid">
-
-      <article class="story">
-
-        <div class="story-image-wrap">
-
-          <img
-            src="images/why-i-chose-homeschooling-family-journey.png"
-            alt="Family and homeschooling journey"
-            class="story-image"
-          >
-
-        </div>
-
-        <div class="story-label">
-          Homeschool
-        </div>
-
-        <h3>
-          Why I Chose to Homeschool My Kids:
-          The Story Behind Our Homeschool Journey
-        </h3>
-
-        <p class="subtitle">
-          A mom’s honest reflection on school safety, family values,
-          and the moment I knew homeschooling was the right choice
-          for our family.
-        </p>
-
-        <a
-          class="story-link"
-          href="https://honeyandhymns.substack.com/p/why-i-chose-to-homeschool-my-kids"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Read the Story →
-        </a>
-
-      </article>
-
-      <article class="story">
-
-        <div class="story-image-wrap">
-
-          <img
-            src="images/girl-toddler-strong-willed-behavior.png"
-            alt="Toddler girl during everyday family life"
-            class="story-image"
-          >
-
-        </div>
-
-        <div class="story-label">
-          Motherhood
-        </div>
-
-        <h3>
-          Are Girl Toddlers More Strong-Willed Than Boys?
-          A Mom’s Honest Investigation
-        </h3>
-
-        <p class="subtitle">
-          I compared my own parenting experience with what the
-          research says about toddler boys and girls, and the
-          results surprised me.
-        </p>
-
-        <a
-          class="story-link"
-          href="https://honeyandhymns.substack.com/p/are-girl-toddlers-more-strong-willed?r=7kwlqm&utm_campaign=post&utm_medium=web"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Read the Story →
-        </a>
-
-      </article>
-
-      <article class="story">
-
-        <div class="story-image-wrap">
-
-          <img
-            src="images/living-books-homeschool-reading.png"
-            alt="Books and reading materials for homeschool"
-            class="story-image"
-          >
-
-        </div>
-
-        <div class="story-label">
-          Homeschool
-        </div>
-
-        <h3>
-          The 10 Living Books I'm Most Excited to Read
-          This Homeschool Year
-        </h3>
-
-        <p class="subtitle">
-          After moving from screen-heavy learning to a Charlotte
-          Mason approach, these are the books filling our homeschool
-          with stories, imagination, and faith.
-        </p>
-
-        <a
-          class="story-link"
-          href="https://honeyandhymns.substack.com/p/the-10-living-books-im-most-excited?r=7kwlqm&utm_campaign=post&utm_medium=web"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Read the Story →
-        </a>
-
-      </article>
-
-      <article class="story">
-
-        <div class="story-image-wrap">
-
-          <img
-            src="images/god-centered-marriage-faithful-marriage.png"
-            alt="Faith and marriage"
-            class="story-image"
-          >
-
-        </div>
-
-        <div class="story-label">
-          Marriage & Faith
-        </div>
-
-        <h3>
-          6 Simple Ways I'm Building a God-Centered Marriage
-        </h3>
-
-        <p class="subtitle">
-          Honest reflections from a wife still learning as she goes.
-        </p>
-
-        <a
-          class="story-link"
-          href="https://honeyandhymns.substack.com/p/6-simple-ways-im-building-a-god-centered?r=7kwlqm&utm_campaign=post&utm_medium=web"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Read the Story →
-        </a>
-
-      </article>
-
-      <article class="story">
-
-        <div class="story-image-wrap">
-
-          <img
-            src="images/homeschool-year-planning-routine.png"
-            alt="Planning and preparing for a new homeschool year"
-            class="story-image"
-          >
-
-        </div>
-
-        <div class="story-label">
-          Homeschool
-        </div>
-
-        <h3>
-          How I Prepare for a New Homeschool Year:
-          My End-of-Summer Planning Routine
-        </h3>
-
-        <p class="subtitle">
-          From organizing portfolios and choosing curriculum to
-          planning lessons and preparing our hearts for a
-          Christ-centered homeschool year, here's how our family
-          gets ready for a fresh start.
-        </p>
-
-        <a
-          class="story-link"
-          href="https://honeyandhymns.substack.com/p/how-i-prepare-for-a-new-homeschool?r=7kwlqm&utm_campaign=post&utm_medium=web"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Read the Story →
-        </a>
-
-      </article>
-
-      <article class="story">
-
-        <div class="story-image-wrap">
-
-          <img
-            src="images/personal-curriculum-homeschool-mom%20(1).png"
-            alt="Homeschool mom creating a personal curriculum"
-            class="story-image"
-          >
-
-        </div>
-
-        <div class="story-label">
-          Homeschool & Motherhood
-        </div>
-
-        <h3>
-          Why I Started My Own Personal Curriculum
-          (And Why My Kids Are Watching)
-        </h3>
-
-        <p class="subtitle">
-          How creating a personal curriculum as a homeschool mom
-          is helping me model lifelong learning, curiosity, and
-          biblical wisdom for my children.
-        </p>
-
-        <a
-          class="story-link"
-          href="https://honeyandhymns.substack.com/p/why-i-started-my-own-personal-curriculum?r=7kwlqm&utm_campaign=post&utm_medium=web"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Read the Story →
-        </a>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="about" id="about">
-
-  <div class="about-content">
-
-    <h2>
-      Welcome to Honey & Hymns
-    </h2>
-
-    <p>
-      I'm so glad you're here. Honey & Hymns was created as a place
-      for moms who want to grow in faith while embracing the
-      beautiful, sometimes messy work of raising a family.
-    </p>
-
-    <p>
-      Here you'll find homeschool encouragement, homemaking ideas,
-      Catholic faith resources, simple activities for children,
-      and honest reflections on motherhood.
-    </p>
+    <a href="#home">Home</a>
+    <a href="#articles">Articles</a>
+    <a href="#about">About</a>
 
     <a
-      class="button"
       href="https://honeyandhymns.substack.com/"
       target="_blank"
       rel="noopener noreferrer"
     >
-      Visit the Newsletter
+      Newsletter
     </a>
 
-  </div>
+  </nav>
 
-</section>
+  <!-- =========================
+       FEATURE CAROUSEL
+  ========================= -->
+
+  <section class="feature-section" id="home">
+
+    <div class="feature-carousel">
+
+      <div class="feature-track" id="featureTrack">
+
+        <!-- SLIDE 1: LATEST ARTICLE -->
+
+        <div class="feature-slide">
+
+          <div class="feature-card">
+
+            <div class="feature-image-wrap">
+
+              <img
+                src="images/why-i-chose-homeschooling-family-journey.png"
+                alt="Family and homeschooling journey"
+                class="feature-image"
+              >
+
+            </div>
+
+            <div class="feature-content">
+
+              <p class="feature-kicker">
+                Recently From Honey & Hymns
+              </p>
+
+              <h2>
+                Why I Chose to Homeschool My Kids:
+                The Story Behind Our Homeschool Journey
+              </h2>
+
+              <p>
+                A mom’s honest reflection on school safety,
+                family values, and the moment I knew homeschooling
+                was the right choice for our family.
+              </p>
+
+              <a
+                class="feature-button"
+                href="https://honeyandhymns.substack.com/p/why-i-chose-to-homeschool-my-kids"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Read the Story →
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
 
 
-  </main>
+        <!-- SLIDE 2: WEEKLY BULLETIN -->
+
+        <div class="feature-slide">
+
+          <div class="feature-card">
+
+            <div class="feature-image-wrap">
+
+              <img
+                src="images/honey-and-hymns-cross-bees.png"
+                alt="Honey & Hymns cross with bees"
+                class="feature-image"
+                style="object-fit: contain; padding: 45px; background: #FFEBA1;"
+              >
+
+            </div>
+
+            <div class="feature-content">
+
+              <p class="feature-kicker">
+                This Week at Honey & Hymns
+              </p>
+
+              <h2>
+                The Honey & Hymns Weekly Bulletin
+              </h2>
+
+              <p>
+                Verse of the week, poll results, the latest post,
+                what's new and upcoming, and the Sunday Gospel
+                for Kids — all in one cozy weekly update.
+              </p>
+
+              <a
+                class="feature-button"
+                href="https://honeyandhymns.substack.com/p/the-honey-and-hymns-weekly-bulletin?r=7kwlqm&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Read This Week's Bulletin →
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SLIDE 3: SUNDAY GOSPEL FOR KIDS -->
+
+        <div class="feature-slide">
+
+          <div class="feature-card">
+
+            <div class="feature-image-wrap">
+
+              <img
+                src="images/sunday-gospel-kids-jesus-walks-on-water.png"
+                alt="19th Sunday in Ordinary Time: Jesus Walks on Water"
+                class="feature-image"
+              >
+
+            </div>
+
+            <div class="feature-content">
+
+              <p class="feature-kicker">
+                For Little Hearts
+              </p>
+
+              <h2>
+                Sunday Gospel for Kids
+              </h2>
+
+              <p>
+                19th Sunday in Ordinary Time:
+                Jesus Walks on Water.
+                A simple, faith-filled resource created to help
+                families explore Sunday's Gospel together.
+              </p>
+
+              <a
+                class="feature-button"
+                href="https://honeyandhymns.gumroad.com/l/chutcz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get the Current Issue →
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SLIDE 4: RESOURCES -->
+
+        <div class="feature-slide">
+
+          <div class="feature-card">
+
+            <div class="feature-image-wrap">
+
+              <img
+                src="images/honey-and-hymns-logo.png"
+                alt="Honey & Hymns resources"
+                class="feature-image"
+                style="object-fit: contain; padding: 55px; background: #FFFDE7;"
+              >
+
+            </div>
+
+            <div class="feature-content">
+
+              <p class="feature-kicker">
+                Made for Your Home
+              </p>
+
+              <h2>
+                Honey & Hymns Resources
+              </h2>
+
+              <p>
+                Printable resources, homeschool tools, faith-filled
+                activities, homemaking resources, and more — created
+                with Catholic family life in mind.
+              </p>
+
+              <a
+                class="feature-button"
+                href="https://honeyandhymns.gumroad.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Browse Resources →
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- CAROUSEL ARROWS -->
+
+      <button
+        class="feature-arrow feature-prev"
+        id="featurePrev"
+        aria-label="Previous feature"
+      >
+        ←
+      </button>
+
+      <button
+        class="feature-arrow feature-next"
+        id="featureNext"
+        aria-label="Next feature"
+      >
+        →
+      </button>
+
+    </div>
+
+
+    <!-- CAROUSEL DOTS -->
+
+    <div class="feature-dots">
+
+      <button
+        class="feature-dot active"
+        data-slide="0"
+        aria-label="Go to latest article"
+      ></button>
+
+      <button
+        class="feature-dot"
+        data-slide="1"
+        aria-label="Go to weekly bulletin"
+      ></button>
+
+      <button
+        class="feature-dot"
+        data-slide="2"
+        aria-label="Go to Sunday Gospel for Kids"
+      ></button>
+
+      <button
+        class="feature-dot"
+        data-slide="3"
+        aria-label="Go to resources"
+      ></button>
+
+    </div>
+
+    <p class="feature-note">
+      A little something new to discover each time you visit.
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       BULLETIN BOARD
+  ========================= -->
+
+  <section class="bulletin-section">
+
+    <div class="bulletin-wrapper">
+
+      <div class="bulletin-heading">
+
+        <h2>
+          This Week at Honey & Hymns
+        </h2>
+
+        <p>
+          A little bulletin board for the week
+        </p>
+
+      </div>
+
+      <div class="bulletin-board">
+
+        <img
+          src="images/honey-and-hymns-cross-bees.png"
+          alt="Honey & Hymns cross with honey and bees"
+          class="bulletin-sticker"
+        >
+
+        <div class="board-inner">
+
+          <div class="bulletin-grid">
+
+
+            <!-- VERSE -->
+
+            <div class="note">
+
+              <div class="pin"></div>
+
+              <span class="bulletin-pill">
+                Verse of the Week
+              </span>
+
+              <p>
+                “Commit to the Lord whatever you do,
+                and he will establish your plans.”
+              </p>
+
+              <p>
+                <strong>Proverbs 16:3</strong>
+              </p>
+
+            </div>
+
+
+            <!-- NEW & UPCOMING -->
+
+            <div class="note new-upcoming-note">
+
+              <div class="pin"></div>
+
+              <span class="bulletin-pill">
+                New & Upcoming
+              </span>
+
+              <p class="new-upcoming-item">
+                Weekly Bulletin
+              </p>
+
+              <p class="new-upcoming-item">
+                Honey & Hymns Digital Magazine!
+              </p>
+
+              <p class="new-upcoming-item">
+                For Paid Subscribers
+              </p>
+
+              <p class="new-upcoming-item">
+                OCIA Series
+              </p>
+
+              <a
+                class="new-upcoming-link"
+                href="https://honeyandhymns.substack.com/p/the-honey-and-hymns-weekly-bulletin?r=7kwlqm&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Full Details →
+              </a>
+
+            </div>
+
+
+            <!-- POLL -->
+
+            <div class="note">
+
+              <div class="pin"></div>
+
+              <span class="bulletin-pill">
+                Last Week's Poll
+              </span>
+
+              <p class="poll-question">
+                Which homeschool style best describes your family?
+              </p>
+
+              <div class="poll-chart">
+
+                <div class="poll-row">
+                  <div class="poll-label">
+                    <span>Charlotte Mason</span>
+                    <span class="poll-percent">33%</span>
+                  </div>
+                  <div class="poll-bar-track">
+                    <div class="poll-bar" data-width="33%"></div>
+                  </div>
+                </div>
+
+                <div class="poll-row">
+                  <div class="poll-label">
+                    <span>Traditional</span>
+                    <span class="poll-percent">0%</span>
+                  </div>
+                  <div class="poll-bar-track">
+                    <div class="poll-bar poll-zero"></div>
+                  </div>
+                </div>
+
+                <div class="poll-row">
+                  <div class="poll-label">
+                    <span>Eclectic</span>
+                    <span class="poll-percent">33%</span>
+                  </div>
+                  <div class="poll-bar-track">
+                    <div class="poll-bar" data-width="33%"></div>
+                  </div>
+                </div>
+
+                <div class="poll-row">
+                  <div class="poll-label">
+                    <span>Classical</span>
+                    <span class="poll-percent">0%</span>
+                  </div>
+                  <div class="poll-bar-track">
+                    <div class="poll-bar poll-zero"></div>
+                  </div>
+                </div>
+
+                <div class="poll-row">
+                  <div class="poll-label">
+                    <span>Still figuring it out</span>
+                    <span class="poll-percent">33%</span>
+                  </div>
+                  <div class="poll-bar-track">
+                    <div class="poll-bar" data-width="33%"></div>
+                  </div>
+                </div>
+
+              </div>
+
+              <p class="poll-note">
+                Thank you for voting!
+              </p>
+
+              <a
+                href="https://honeyandhymns.substack.com/p/weekly-polls"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Take Me to This Week's Poll →
+              </a>
+
+            </div>
+
+
+            <!-- LATEST POST -->
+
+            <div class="note featured-note">
+
+              <div class="pin"></div>
+
+              <span class="bulletin-pill">
+                The Latest from Honey & Hymns
+              </span>
+
+              <p>
+                <strong>
+                  Why I Chose to Homeschool My Kids:
+                  The Story Behind Our Homeschool Journey
+                </strong>
+              </p>
+
+              <p>
+                A mom’s honest reflection on school safety,
+                family values, and the moment I knew homeschooling
+                was the right choice for our family.
+              </p>
+
+              <a
+                href="https://honeyandhymns.substack.com/p/why-i-chose-to-homeschool-my-kids"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Read the Latest Post →
+              </a>
+
+            </div>
+
+
+            <!-- SUNDAY GOSPEL -->
+
+            <div class="note gospel-note">
+
+              <div class="pin"></div>
+
+              <span class="bulletin-pill">
+                Sunday Gospel for Kids
+              </span>
+
+              <img
+                src="images/sunday-gospel-kids-jesus-walks-on-water.png"
+                alt="19th Sunday in Ordinary Time: Jesus Walks on Water"
+                class="gospel-cover"
+              >
+
+              <p class="gospel-title">
+                19th Sunday in Ordinary Time:
+                Jesus Walks on Water
+              </p>
+
+              <a
+                class="gospel-link"
+                href="https://honeyandhymns.gumroad.com/l/chutcz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get the Current Issue →
+              </a>
+
+            </div>
+
+
+            <!-- MAGAZINE -->
+
+            <div class="note magazine-note">
+
+              <div class="pin"></div>
+
+              <span class="bulletin-pill">
+                This Month's Magazine
+              </span>
+
+              <p>
+                Honey & Hymns Digital Magazine
+              </p>
+
+              <p class="magazine-date">
+                Coming Soon — August 15th, 2026!
+              </p>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ARTICLES
+  ========================= -->
+
+  <section class="articles-section" id="articles">
+
+    <div class="articles-wrapper">
+
+      <div class="editorial-heading">
+
+        <p class="editorial-kicker">
+          Fresh from the Honey & Hymns kitchen table
+        </p>
+
+        <h2>
+          Recently From Honey & Hymns
+        </h2>
+
+        <div class="editorial-rule">
+          ✦
+        </div>
+
+        <p class="editorial-description">
+          Catch up on the latest reflections, encouragement,
+          homeschool ideas, and everyday stories from Honey & Hymns.
+        </p>
+
+      </div>
+
+
+      <div class="article-grid">
+
+
+        <!-- ARTICLE 1 -->
+
+        <article class="story">
+
+          <div class="story-image-wrap">
+
+            <img
+              src="images/why-i-chose-homeschooling-family-journey.png"
+              alt="Family and homeschooling journey"
+              class="story-image"
+            >
+
+          </div>
+
+          <div class="story-label">
+            Homeschool
+          </div>
+
+          <h3>
+            Why I Chose to Homeschool My Kids:
+            The Story Behind Our Homeschool Journey
+          </h3>
+
+          <p class="subtitle">
+            A mom’s honest reflection on school safety, family values,
+            and the moment I knew homeschooling was the right choice
+            for our family.
+          </p>
+
+          <a
+            class="story-link"
+            href="https://honeyandhymns.substack.com/p/why-i-chose-to-homeschool-my-kids"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read the Story →
+          </a>
+
+        </article>
+
+
+        <!-- ARTICLE 2 -->
+
+        <article class="story">
+
+          <div class="story-image-wrap">
+
+            <img
+              src="images/girl-toddler-strong-willed-behavior.png"
+              alt="Toddler girl during everyday family life"
+              class="story-image"
+            >
+
+          </div>
+
+          <div class="story-label">
+            Motherhood
+          </div>
+
+          <h3>
+            Are Girl Toddlers More Strong-Willed Than Boys?
+            A Mom’s Honest Investigation
+          </h3>
+
+          <p class="subtitle">
+            I compared my own parenting experience with what the
+            research says about toddler boys and girls, and the
+            results surprised me.
+          </p>
+
+          <a
+            class="story-link"
+            href="https://honeyandhymns.substack.com/p/are-girl-toddlers-more-strong-willed?r=7kwlqm&utm_campaign=post&utm_medium=web"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read the Story →
+          </a>
+
+        </article>
+
+
+        <!-- ARTICLE 3 -->
+
+        <article class="story">
+
+          <div class="story-image-wrap">
+
+            <img
+              src="images/living-books-homeschool-reading.png"
+              alt="Books and reading materials for homeschool"
+              class="story-image"
+            >
+
+          </div>
+
+          <div class="story-label">
+            Homeschool
+          </div>
+
+          <h3>
+            The 10 Living Books I'm Most Excited to Read
+            This Homeschool Year
+          </h3>
+
+          <p class="subtitle">
+            After moving from screen-heavy learning to a Charlotte
+            Mason approach, these are the books filling our homeschool
+            with stories, imagination, and faith.
+          </p>
+
+          <a
+            class="story-link"
+            href="https://honeyandhymns.substack.com/p/the-10-living-books-im-most-excited?r=7kwlqm&utm_campaign=post&utm_medium=web"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read the Story →
+          </a>
+
+        </article>
+
+
+        <!-- ARTICLE 4 -->
+
+        <article class="story">
+
+          <div class="story-image-wrap">
+
+            <img
+              src="images/god-centered-marriage-faithful-marriage.png"
+              alt="Faith and marriage"
+              class="story-image"
+            >
+
+          </div>
+
+          <div class="story-label">
+            Marriage & Faith
+          </div>
+
+          <h3>
+            6 Simple Ways I'm Building a God-Centered Marriage
+          </h3>
+
+          <p class="subtitle">
+            Honest reflections from a wife still learning as she goes.
+          </p>
+
+          <a
+            class="story-link"
+            href="https://honeyandhymns.substack.com/p/6-simple-ways-im-building-a-god-centered?r=7kwlqm&utm_campaign=post&utm_medium=web"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read the Story →
+          </a>
+
+        </article>
+
+
+        <!-- ARTICLE 5 -->
+
+        <article class="story">
+
+          <div class="story-image-wrap">
+
+            <img
+              src="images/homeschool-year-planning-routine.png"
+              alt="Planning and preparing for a new homeschool year"
+              class="story-image"
+            >
+
+          </div>
+
+          <div class="story-label">
+            Homeschool
+          </div>
+
+          <h3>
+            How I Prepare for a New Homeschool Year:
+            My End-of-Summer Planning Routine
+          </h3>
+
+          <p class="subtitle">
+            From organizing portfolios and choosing curriculum to
+            planning lessons and preparing our hearts for a
+            Christ-centered homeschool year, here's how our family
+            gets ready for a fresh start.
+          </p>
+
+          <a
+            class="story-link"
+            href="https://honeyandhymns.substack.com/p/how-i-prepare-for-a-new-homeschool?r=7kwlqm&utm_campaign=post&utm_medium=web"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read the Story →
+          </a>
+
+        </article>
+
+
+        <!-- ARTICLE 6 -->
+
+        <article class="story">
+
+          <div class="story-image-wrap">
+
+            <img
+              src="images/personal-curriculum-homeschool-mom%20(1).png"
+              alt="Homeschool mom creating a personal curriculum"
+              class="story-image"
+            >
+
+          </div>
+
+          <div class="story-label">
+            Homeschool & Motherhood
+          </div>
+
+          <h3>
+            Why I Started My Own Personal Curriculum
+            (And Why My Kids Are Watching)
+          </h3>
+
+          <p class="subtitle">
+            How creating a personal curriculum as a homeschool mom
+            is helping me model lifelong learning, curiosity, and
+            biblical wisdom for my children.
+          </p>
+
+          <a
+            class="story-link"
+            href="https://honeyandhymns.substack.com/p/why-i-started-my-own-personal-curriculum?r=7kwlqm&utm_campaign=post&utm_medium=web"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read the Story →
+          </a>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ABOUT
+  ========================= -->
+
+  <section class="about" id="about">
+
+    <div class="about-content">
+
+      <h2>
+        Welcome to Honey & Hymns
+      </h2>
+
+      <p>
+        I'm so glad you're here. Honey & Hymns was created as a place
+        for moms who want to grow in faith while embracing the
+        beautiful, sometimes messy work of raising a family.
+      </p>
+
+      <p>
+        Here you'll find homeschool encouragement, homemaking ideas,
+        Catholic faith resources, simple activities for children,
+        and honest reflections on motherhood.
+      </p>
+
+      <a
+        class="button"
+        href="https://honeyandhymns.substack.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Visit the Newsletter
+      </a>
+
+    </div>
+
+  </section>
+
 
   <footer>
 
+    <p>
+      © 2026 Honey & Hymns
+    </p>
 
-<p>
-  © 2026 Honey & Hymns
-</p>
-
-<p>
-  Faith • Homeschool • Homemaking
-</p>
-
+    <p>
+      Faith • Homeschool • Homemaking
+    </p>
 
   </footer>
 
+
   <script>
+
+    /* =========================
+       FEATURE CAROUSEL
+    ========================= */
+
+    const featureTrack = document.getElementById("featureTrack");
+    const featureSlides = document.querySelectorAll(".feature-slide");
+    const featureDots = document.querySelectorAll(".feature-dot");
+    const featurePrev = document.getElementById("featurePrev");
+    const featureNext = document.getElementById("featureNext");
+
+    let currentFeature = 0;
+    let featureTimer;
+
+    function showFeature(index) {
+
+      if (index < 0) {
+        index = featureSlides.length - 1;
+      }
+
+      if (index >= featureSlides.length) {
+        index = 0;
+      }
+
+      currentFeature = index;
+
+      featureTrack.style.transform =
+        "translateX(-" + (currentFeature * 100) + "%)";
+
+      featureDots.forEach(function(dot, dotIndex) {
+
+        dot.classList.toggle(
+          "active",
+          dotIndex === currentFeature
+        );
+
+      });
+
+    }
+
+    function nextFeature() {
+      showFeature(currentFeature + 1);
+    }
+
+    function previousFeature() {
+      showFeature(currentFeature - 1);
+    }
+
+    function startFeatureTimer() {
+
+      clearInterval(featureTimer);
+
+      featureTimer = setInterval(function() {
+        nextFeature();
+      }, 7000);
+
+    }
+
+    featureNext.addEventListener("click", function() {
+      nextFeature();
+      startFeatureTimer();
+    });
+
+    featurePrev.addEventListener("click", function() {
+      previousFeature();
+      startFeatureTimer();
+    });
+
+    featureDots.forEach(function(dot) {
+
+      dot.addEventListener("click", function() {
+
+        const slideNumber =
+          parseInt(dot.getAttribute("data-slide"));
+
+        showFeature(slideNumber);
+        startFeatureTimer();
+
+      });
+
+    });
+
+    startFeatureTimer();
+
+
+    /* =========================
+       POLL BAR ANIMATION
+    ========================= */
 
     document.addEventListener("DOMContentLoaded", function () {
 
       const pollChart = document.querySelector(".poll-chart");
-      const pollBars = document.querySelectorAll(".poll-bar[data-width]");
+      const pollBars =
+        document.querySelectorAll(".poll-bar[data-width]");
 
       if (!pollChart || !pollBars.length) {
         return;
@@ -1402,10 +1944,13 @@
 
               pollBars.forEach(function (bar, index) {
 
-                const targetWidth = bar.getAttribute("data-width");
+                const targetWidth =
+                  bar.getAttribute("data-width");
 
                 setTimeout(function () {
+
                   bar.style.width = targetWidth;
+
                 }, index * 150);
 
               });
