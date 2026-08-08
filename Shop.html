@@ -1,1 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Shop | Honey & Hymns</title>
+
+  <meta
+    name="description"
+    content="Shop Honey & Hymns printable resources for Catholic homeschool families, homemakers, and women of faith."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Caveat:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #FFFDF0;
+      color: #4D4029;
+      font-family: "Playfair Display", Georgia, serif;
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .site-header {
+      background: #FFEBA1;
+      padding: 25px 20px 15px;
+      text-align: center;
+      border-bottom: 1px solid rgba(90, 70, 30, 0.12);
+    }
+
+    .header-brand {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .site-logo {
+      width: 365px;
+      max-width: 86%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .header-tagline {
+      margin: 4px 0 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 0.84rem;
+      letter-spacing: 2px;
+      color: #5D4B2D;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .site-nav {
+      background: #FFEBA1;
+      text-align: center;
+      padding: 9px 15px 13px;
+      border-bottom: 1px solid rgba(90, 70, 30, 0.12);
+    }
+
+    .site-nav a {
+      color: #514229;
+      text-decoration: none;
+      margin: 0 14px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .site-nav a:hover {
+      color: #967331;
+    }
+
+    .site-nav a.active {
+      color: #80652D;
+      font-weight: 600;
+    }
+
+
+    /* =========================
+       SHOP HERO
+    ========================= */
+
+    .shop-hero {
+      background: #FFEBA1;
+      padding: 65px 20px 70px;
+      text-align: center;
+      border-bottom: 1px solid #E2CC78;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shop-hero::before {
+      content: "✦";
+      position: absolute;
+      left: 12%;
+      top: 38%;
+      font-size: 1.2rem;
+      color: #D3AD50;
+      transform: rotate(-12deg);
+    }
+
+    .shop-hero::after {
+      content: "✦";
+      position: absolute;
+      right: 13%;
+      top: 30%;
+      font-size: 1rem;
+      color: #D3AD50;
+      transform: rotate(15deg);
+    }
+
+    .shop-kicker {
+      font-family: "Caveat", cursive;
+      font-size: 1.35rem;
+      color: #80652D;
+      margin: 0 0 5px;
+    }
+
+    .shop-hero h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 3.2rem;
+      line-height: 1.1;
+      font-weight: 500;
+      color: #403521;
+      margin: 0 0 14px;
+    }
+
+    .shop-hero p {
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 0.96rem;
+      color: #68583D;
+    }
+
+
+    /* =========================
+       SHOP SECTION
+    ========================= */
+
+    .shop-section {
+      padding: 65px 20px 90px;
+      background: #FBF8ED;
+    }
+
+    .shop-wrapper {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
+      font-size: 2.35rem;
+      line-height: 1.2;
+      color: #403521;
+      margin: 0 0 8px;
+    }
+
+    .section-heading p {
+      max-width: 620px;
+      margin: 0 auto;
+      font-size: 0.88rem;
+      color: #6B5A3E;
+    }
+
+    .section-rule {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 13px 0;
+      color: #B18A4D;
+    }
+
+    .section-rule::before,
+    .section-rule::after {
+      content: "";
+      width: 65px;
+      height: 1px;
+      background: #D8C79F;
+    }
+
+
+    /* =========================
+       PRODUCT GRID
+    ========================= */
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      align-items: stretch;
+    }
+
+
+    /* =========================
+       PRODUCT CARD
+    ========================= */
+
+    .product-card {
+      background: #FFFDF5;
+      border: 1px solid #E3D5B5;
+      border-radius: 17px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow:
+        0 6px 18px rgba(77, 64, 41, 0.07),
+        0 2px 4px rgba(77, 64, 41, 0.04);
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 10px 25px rgba(77, 64, 41, 0.11),
+        0 3px 7px rgba(77, 64, 41, 0.05);
+    }
+
+    .product-image-link {
+      display: block;
+      background: #F2E8C8;
+      overflow: hidden;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 310px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .product-card:hover .product-image {
+      transform: scale(1.025);
+    }
+
+    .product-info {
+      padding: 23px 22px 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-category {
+      font-family: "Caveat", cursive;
+      color: #80652D;
+      font-size: 1rem;
+      margin-bottom: 3px;
+    }
+
+    .product-title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      color: #403521;
+      font-size: 1.65rem;
+      font-weight: 500;
+      line-height: 1.2;
+      margin: 0 0 10px;
+    }
+
+    .product-description {
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: #66563C;
+      margin: 0 0 17px;
+      flex-grow: 1;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: auto;
+    }
+
+    .product-price {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      color: #403521;
+      font-size: 1.3rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .shop-button {
+      display: inline-block;
+      background: #E9C768;
+      border: 1px solid #D8B65F;
+      color: #4D4029;
+      text-decoration: none;
+      padding: 9px 17px;
+      border-radius: 30px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 0.74rem;
+      font-weight: bold;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .shop-button:hover {
+      background: #DDBB5E;
+      transform: translateY(-1px);
+    }
+
+
+    /* =========================
+       SHOP NOTE
+    ========================= */
+
+    .shop-note {
+      max-width: 700px;
+      margin: 58px auto 0;
+      padding: 24px 30px;
+      background: #FFEBA1;
+      border: 1px solid #E1CA77;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(77, 64, 41, 0.05);
+    }
+
+    .shop-note-title {
+      font-family: "Caveat", cursive;
+      color: #80652D;
+      font-size: 1.25rem;
+      margin: 0 0 4px;
+    }
+
+    .shop-note p {
+      margin: 0;
+      font-size: 0.82rem;
+      color: #5F5037;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #4D4029;
+      color: #FFFDE7;
+      text-align: center;
+      padding: 28px 20px;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 0.82rem;
+    }
+
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .product-grid {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+        margin: 0 auto;
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      .site-header {
+        padding: 20px 15px 14px;
+      }
+
+      .site-logo {
+        width: 290px;
+        max-width: 90%;
+      }
+
+      .header-tagline {
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+      }
+
+      .site-nav {
+        padding: 8px 8px 11px;
+      }
+
+      .site-nav a {
+        margin: 0 7px;
+        font-size: 0.84rem;
+      }
+
+      .shop-hero {
+        padding: 50px 20px 55px;
+      }
+
+      .shop-hero h1 {
+        font-size: 2.45rem;
+      }
+
+      .shop-hero p {
+        font-size: 0.87rem;
+      }
+
+      .shop-section {
+        padding: 52px 17px 70px;
+      }
+
+      .section-heading {
+        margin-bottom: 32px;
+      }
+
+      .section-heading h2 {
+        font-size: 2rem;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+        max-width: 430px;
+      }
+
+      .product-image {
+        height: 300px;
+      }
+
+      .shop-note {
+        margin-top: 45px;
+        padding: 21px 20px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <div class="header-brand">
+
+      <a href="index.html">
+
+        <img
+          src="images/honey-and-hymns-logo.png"
+          alt="Honey & Hymns"
+          class="site-logo"
+        >
+
+      </a>
+
+      <p class="header-tagline">
+        Faith • Homeschool • Homemaking
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <!-- NAVIGATION -->
+
+  <nav class="site-nav">
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="index.html#articles">
+      Articles
+    </a>
+
+    <a href="shop.html" class="active">
+      Shop
+    </a>
+
+    <a href="index.html#about">
+      About
+    </a>
+
+    <a
+      href="https://honeyandhymns.substack.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Newsletter
+    </a>
+
+  </nav>
+
+
+  <!-- SHOP HERO -->
+
+  <section class="shop-hero">
+
+    <p class="shop-kicker">
+      Practical resources for a peaceful home
+    </p>
+
+    <h1>
+      The Honey & Hymns Shop
+    </h1>
+
+    <p>
+      Thoughtfully created printables for Catholic homemakers,
+      homeschool families, and women of faith — made to bring
+      a little more peace, beauty, and purpose to everyday life.
+    </p>
+
+  </section>
+
+
+  <!-- SHOP CONTENT -->
+
+  <main class="shop-section">
+
+    <div class="shop-wrapper">
+
+
+      <div class="section-heading">
+
+        <h2>
+          Homemaking & Family Resources
+        </h2>
+
+        <div class="section-rule">
+          ✦
+        </div>
+
+        <p>
+          Simple tools to help you prepare your home,
+          care for your family, and create a more peaceful
+          rhythm for everyday life.
+        </p>
+
+      </div>
+
+
+      <div class="product-grid">
+
+
+        <!-- PEACEFUL HOME SAFETY BINDER -->
+
+        <article class="product-card">
+
+          <a
+            href="PASTE-YOUR-PEACEFUL-HOME-SAFETY-BINDER-GUMROAD-LINK-HERE"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="product-image-link"
+          >
+
+            <img
+              src="images/peaceful-home-safety-binder.png"
+              alt="The Peaceful Home Safety Binder"
+              class="product-image"
+            >
+
+          </a>
+
+
+          <div class="product-info">
+
+            <div class="product-category">
+              Homemaking
+            </div>
+
+            <h2 class="product-title">
+              The Peaceful Home Safety Binder
+            </h2>
+
+            <p class="product-description">
+              A comprehensive printable binder designed to help
+              families prepare for emergencies, organize important
+              information, create evacuation plans, keep essential
+              contacts together, and bring a greater sense of peace
+              and preparedness to the home.
+            </p>
+
+
+            <div class="product-bottom">
+
+              <div class="product-price">
+                $X.XX
+              </div>
+
+              <a
+                href="PASTE-YOUR-PEACEFUL-HOME-SAFETY-BINDER-GUMROAD-LINK-HERE"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="shop-button"
+              >
+                Shop Now →
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!--
+          FUTURE PRODUCTS CAN BE ADDED HERE.
+
+          Planned additions:
+
+          The Ultimate Homeschool Planner
+          Sunday Gospel for Kids
+          Other Honey & Hymns resources
+        -->
+
+
+      </div>
+
+
+      <!-- SHOP NOTE -->
+
+      <div class="shop-note">
+
+        <p class="shop-note-title">
+          Created for the beautiful ordinary
+        </p>
+
+        <p>
+          Honey & Hymns resources are made with the Catholic
+          homemaker and homeschool mom in mind — practical,
+          thoughtful tools with a little beauty woven in.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      Honey & Hymns
+    </p>
+
+    <p>
+      Faith • Homeschool • Homemaking
+    </p>
+
+  </footer>
+
+
+</body>
+</html>
