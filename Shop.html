@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,10 +7,11 @@
 
   <title>Shop | Honey & Hymns</title>
 
-  <meta
-    name="description"
-    content="Shop Honey & Hymns printable resources for Catholic homeschool families, homemakers, and women of faith."
-  >
+<meta
+name="description"
+content="Shop Honey & Hymns printable resources for Catholic homeschool families, homemakers, and women of faith."
+
+>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -168,7 +170,7 @@
     }
 
     .shop-wrapper {
-      max-width: 920px;
+      max-width: 1050px;
       margin: 0 auto;
     }
 
@@ -218,8 +220,8 @@
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
       align-items: stretch;
     }
 
@@ -258,7 +260,7 @@
 
     .product-image {
       width: 100%;
-      height: 220px;
+      height: 185px;
       object-fit: cover;
       display: block;
       transition: transform 0.35s ease;
@@ -269,7 +271,7 @@
     }
 
     .product-info {
-      padding: 17px 18px 18px;
+      padding: 16px 16px 17px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
@@ -278,22 +280,22 @@
     .product-category {
       font-family: "Caveat", cursive;
       color: #80652D;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       margin-bottom: 2px;
     }
 
     .product-title {
       font-family: "Cormorant Garamond", Georgia, serif;
       color: #403521;
-      font-size: 1.4rem;
+      font-size: 1.32rem;
       font-weight: 500;
       line-height: 1.18;
       margin: 0 0 7px;
     }
 
     .product-description {
-      font-size: 0.72rem;
-      line-height: 1.55;
+      font-size: 0.69rem;
+      line-height: 1.52;
       color: #66563C;
       margin: 0 0 13px;
       flex-grow: 1;
@@ -303,14 +305,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
+      gap: 8px;
       margin-top: auto;
     }
 
     .product-price {
       font-family: "Cormorant Garamond", Georgia, serif;
       color: #403521;
-      font-size: 1.12rem;
+      font-size: 1.08rem;
       font-weight: 600;
       white-space: nowrap;
     }
@@ -321,10 +323,10 @@
       border: 1px solid #D8B65F;
       color: #4D4029;
       text-decoration: none;
-      padding: 7px 13px;
+      padding: 7px 12px;
       border-radius: 30px;
       font-family: "Playfair Display", Georgia, serif;
-      font-size: 0.67rem;
+      font-size: 0.64rem;
       font-weight: bold;
       white-space: nowrap;
       transition: all 0.2s ease;
@@ -383,23 +385,25 @@
 
 
     /* =========================
-       MOBILE
+       TABLET
     ========================= */
 
-    @media (max-width: 700px) {
+    @media (max-width: 850px) {
 
       .product-grid {
-        grid-template-columns: 1fr;
-        max-width: 450px;
-        margin: 0 auto;
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .product-image {
-        height: 250px;
+        height: 210px;
       }
 
     }
 
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 600px) {
 
@@ -450,8 +454,26 @@
         font-size: 1.9rem;
       }
 
+      .product-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
       .product-image {
         height: 270px;
+      }
+
+      .product-info {
+        padding: 18px;
+      }
+
+      .product-title {
+        font-size: 1.45rem;
+      }
+
+      .product-description {
+        font-size: 0.73rem;
       }
 
       .shop-note {
@@ -462,394 +484,401 @@
     }
 
   </style>
+
 </head>
 
 <body>
-
 
   <!-- HEADER -->
 
   <header class="site-header">
 
-    <div class="header-brand">
 
-      <a href="index.html">
+<div class="header-brand">
 
-        <img
-          src="images/honey-and-hymns-logo.png"
-          alt="Honey & Hymns"
-          class="site-logo"
-        >
+  <a href="index.html">
 
-      </a>
+    <img
+      src="images/honey-and-hymns-logo.png"
+      alt="Honey & Hymns"
+      class="site-logo"
+    >
 
-      <p class="header-tagline">
-        Faith • Homeschool • Homemaking
-      </p>
+  </a>
 
-    </div>
+  <p class="header-tagline">
+    Faith • Homeschool • Homemaking
+  </p>
+
+</div>
+
 
   </header>
-
 
   <!-- NAVIGATION -->
 
   <nav class="site-nav">
 
-    <a href="index.html">
-      Home
-    </a>
 
-    <a href="index.html#articles">
-      Articles
-    </a>
+<a href="index.html">
+  Home
+</a>
 
-    <a href="Shop.html" class="active">
-      Shop
-    </a>
+<a href="index.html#articles">
+  Articles
+</a>
 
-    <a href="index.html#about">
-      About
-    </a>
+<a href="Shop.html" class="active">
+  Shop
+</a>
 
-    <a
-      href="https://honeyandhymns.substack.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Newsletter
-    </a>
+<a href="index.html#about">
+  About
+</a>
+
+<a
+  href="https://honeyandhymns.substack.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Newsletter
+</a>
+
 
   </nav>
-
 
   <!-- SHOP HERO -->
 
   <section class="shop-hero">
 
-    <p class="shop-kicker">
-      Practical resources for a peaceful home
-    </p>
 
-    <h1>
-      The Honey & Hymns Shop
-    </h1>
+<p class="shop-kicker">
+  Practical resources for a peaceful home
+</p>
 
-    <p>
-      Thoughtfully created printables for Catholic homemakers,
-      homeschool families, and women of faith — made to bring
-      a little more peace, beauty, and purpose to everyday life.
-    </p>
+<h1>
+  The Honey & Hymns Shop
+</h1>
+
+<p>
+  Thoughtfully created printables for Catholic homemakers,
+  homeschool families, and women of faith — made to bring
+  a little more peace, beauty, and purpose to everyday life.
+</p>
+
 
   </section>
-
 
   <!-- SHOP CONTENT -->
 
   <main class="shop-section">
 
-    <div class="shop-wrapper">
+
+<div class="shop-wrapper">
 
 
-      <div class="section-heading">
+  <div class="section-heading">
 
-        <h2>
-          Homemaking, Homeschool & Faith
-        </h2>
+    <h2>
+      Homemaking, Homeschool & Faith
+    </h2>
 
-        <div class="section-rule">
-          ✦
+    <div class="section-rule">
+      ✦
+    </div>
+
+    <p>
+      Simple resources created for the beautiful,
+      ordinary work of family life.
+    </p>
+
+  </div>
+
+
+  <div class="product-grid">
+
+
+    <!-- PEACEFUL HOME SAFETY BINDER -->
+
+    <article class="product-card">
+
+      <a
+        href="https://honeyandhymns.gumroad.com/l/xgkcjt?wanted=true"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="product-image-link"
+      >
+
+        <img
+          src="images/peaceful-home-safety-binder.png"
+          alt="The Peaceful Home Safety Binder"
+          class="product-image"
+        >
+
+      </a>
+
+
+      <div class="product-info">
+
+        <div class="product-category">
+          Homemaking
         </div>
 
-        <p>
-          Simple resources created for the beautiful,
-          ordinary work of family life.
+        <h2 class="product-title">
+          The Peaceful Home Safety Binder
+        </h2>
+
+        <p class="product-description">
+          A comprehensive printable binder to help families
+          organize important information, prepare for
+          emergencies, create evacuation plans, and bring
+          greater peace and preparedness to the home.
         </p>
+
+
+        <div class="product-bottom">
+
+          <div class="product-price">
+            $8.00
+          </div>
+
+          <a
+            href="https://honeyandhymns.gumroad.com/l/xgkcjt?wanted=true"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="shop-button"
+          >
+            Shop Now →
+          </a>
+
+        </div>
 
       </div>
 
-
-      <div class="product-grid">
-
-
-        <!-- PEACEFUL HOME SAFETY BINDER -->
-
-        <article class="product-card">
-
-          <a
-            href="PASTE-YOUR-PEACEFUL-HOME-SAFETY-BINDER-GUMROAD-LINK-HERE"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="product-image-link"
-          >
-
-            <img
-              src="images/peaceful-home-safety-binder.png"
-              alt="The Peaceful Home Safety Binder"
-              class="product-image"
-            >
-
-          </a>
+    </article>
 
 
-          <div class="product-info">
+    <!-- ULTIMATE HOMESCHOOL PLANNER -->
 
-            <div class="product-category">
-              Homemaking
-            </div>
+    <article class="product-card">
 
-            <h2 class="product-title">
-              The Peaceful Home Safety Binder
-            </h2>
+      <a
+        href="https://honeyandhymns.gumroad.com/l/vijzj?wanted=true"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="product-image-link"
+      >
 
-            <p class="product-description">
-              A comprehensive printable binder to help families
-              organize important information, prepare for
-              emergencies, create evacuation plans, and bring
-              greater peace and preparedness to the home.
-            </p>
+        <img
+          src="images/ultimate-homeschool-planner.png"
+          alt="The Ultimate Homeschool Planner for Moms"
+          class="product-image"
+        >
+
+      </a>
 
 
-            <div class="product-bottom">
+      <div class="product-info">
 
-              <div class="product-price">
-                $8.00
-              </div>
+        <div class="product-category">
+          Homeschool
+        </div>
 
-              <a
-                href="PASTE-YOUR-PEACEFUL-HOME-SAFETY-BINDER-GUMROAD-LINK-HERE"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="shop-button"
-              >
-                Shop Now →
-              </a>
+        <h2 class="product-title">
+          The Ultimate Homeschool Planner for Moms
+        </h2>
 
-            </div>
+        <p class="product-description">
+          A practical printable planner to help homeschool
+          moms organize lessons, books, assignments,
+          attendance, goals, and the little details of
+          homeschool life.
+        </p>
 
+
+        <div class="product-bottom">
+
+          <div class="product-price">
+            $3.00
           </div>
-
-        </article>
-
-
-        <!-- ULTIMATE HOMESCHOOL PLANNER -->
-
-        <article class="product-card">
 
           <a
             href="https://honeyandhymns.gumroad.com/l/vijzj?wanted=true"
             target="_blank"
             rel="noopener noreferrer"
-            class="product-image-link"
+            class="shop-button"
           >
-
-            <img
-              src="images/ultimate-homeschool-planner.png"
-              alt="The Ultimate Homeschool Planner for Moms"
-              class="product-image"
-            >
-
+            Shop Now →
           </a>
 
+        </div>
 
-          <div class="product-info">
+      </div>
 
-            <div class="product-category">
-              Homeschool
-            </div>
-
-            <h2 class="product-title">
-              The Ultimate Homeschool Planner for Moms
-            </h2>
-
-            <p class="product-description">
-              A practical printable planner to help homeschool
-              moms organize lessons, books, assignments,
-              attendance, goals, and the little details of
-              homeschool life.
-            </p>
+    </article>
 
 
-            <div class="product-bottom">
+    <!-- REST & REFLECT RETREAT JOURNAL -->
 
-              <div class="product-price">
-                $3.00
-              </div>
+    <article class="product-card">
 
-              <a
-                href="https://honeyandhymns.gumroad.com/l/vijzj?wanted=true"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="shop-button"
-              >
-                Shop Now →
-              </a>
+      <a
+        href="https://honeyandhymns.gumroad.com/l/pydfp?wanted=true"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="product-image-link"
+      >
 
-            </div>
+        <img
+          src="images/rest-and-reflect-retreat-journal.png"
+          alt="Rest & Reflect Retreat Journal"
+          class="product-image"
+        >
 
+      </a>
+
+
+      <div class="product-info">
+
+        <div class="product-category">
+          Faith & Reflection
+        </div>
+
+        <h2 class="product-title">
+          Rest & Reflect Retreat Journal
+        </h2>
+
+        <p class="product-description">
+          A gentle printable journal for quiet moments of
+          prayer, reflection, gratitude, and rest — an
+          invitation to slow down and make space for God.
+        </p>
+
+
+        <div class="product-bottom">
+
+          <div class="product-price">
+            $7.00
           </div>
-
-        </article>
-
-
-        <!-- REST & REFLECT RETREAT JOURNAL -->
-
-        <article class="product-card">
 
           <a
             href="https://honeyandhymns.gumroad.com/l/pydfp?wanted=true"
             target="_blank"
             rel="noopener noreferrer"
-            class="product-image-link"
+            class="shop-button"
           >
-
-            <img
-              src="images/rest-and-reflect-retreat-journal.png"
-              alt="Rest & Reflect Retreat Journal"
-              class="product-image"
-            >
-
+            Shop Now →
           </a>
 
+        </div>
 
-          <div class="product-info">
+      </div>
 
-            <div class="product-category">
-              Faith & Reflection
-            </div>
-
-            <h2 class="product-title">
-              Rest & Reflect Retreat Journal
-            </h2>
-
-            <p class="product-description">
-              A gentle printable journal for quiet moments of
-              prayer, reflection, gratitude, and rest — an
-              invitation to slow down and make space for God.
-            </p>
+    </article>
 
 
-            <div class="product-bottom">
+    <!-- SUNDAY GOSPEL FOR KIDS -->
 
-              <div class="product-price">
-                $7.00
-              </div>
+    <article class="product-card">
 
-              <a
-                href="https://honeyandhymns.gumroad.com/l/pydfp?wanted=true"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="shop-button"
-              >
-                Shop Now →
-              </a>
+      <a
+        href="PASTE-YOUR-SUNDAY-GOSPEL-FOR-KIDS-GUMROAD-LINK-HERE"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="product-image-link"
+      >
 
-            </div>
+        <img
+          src="images/sunday-gospel-kids-jesus-walks-on-water.png"
+          alt="Sunday Gospel for Kids - Jesus Walks on Water"
+          class="product-image"
+        >
 
+      </a>
+
+
+      <div class="product-info">
+
+        <div class="product-category">
+          Catholic Homeschool
+        </div>
+
+        <h2 class="product-title">
+          Sunday Gospel for Kids
+        </h2>
+
+        <p class="product-description">
+          A fun and faith-filled resource that helps children
+          engage with the Sunday Gospel through age-appropriate
+          activities, reflection, and learning families can
+          enjoy together.
+        </p>
+
+
+        <div class="product-bottom">
+
+          <div class="product-price">
+            $2.00
           </div>
-
-        </article>
-
-
-        <!-- SUNDAY GOSPEL FOR KIDS -->
-
-        <article class="product-card">
 
           <a
             href="PASTE-YOUR-SUNDAY-GOSPEL-FOR-KIDS-GUMROAD-LINK-HERE"
             target="_blank"
             rel="noopener noreferrer"
-            class="product-image-link"
+            class="shop-button"
           >
-
-            <img
-              src="images/sunday-gospel-kids-jesus-walks-on-water.png"
-              alt="Sunday Gospel for Kids - Jesus Walks on Water"
-              class="product-image"
-            >
-
+            Shop Now →
           </a>
 
-
-          <div class="product-info">
-
-            <div class="product-category">
-              Catholic Homeschool
-            </div>
-
-            <h2 class="product-title">
-              Sunday Gospel for Kids
-            </h2>
-
-            <p class="product-description">
-              A fun and faith-filled resource that helps children
-              engage with the Sunday Gospel through age-appropriate
-              activities, reflection, and learning families can
-              enjoy together.
-            </p>
-
-
-            <div class="product-bottom">
-
-              <div class="product-price">
-                $2.00
-              </div>
-
-              <a
-                href="PASTE-YOUR-SUNDAY-GOSPEL-FOR-KIDS-GUMROAD-LINK-HERE"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="shop-button"
-              >
-                Shop Now →
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
+        </div>
 
       </div>
 
-
-      <!-- SHOP NOTE -->
-
-      <div class="shop-note">
-
-        <p class="shop-note-title">
-          Created for the beautiful ordinary
-        </p>
-
-        <p>
-          Honey & Hymns resources are made with the Catholic
-          homemaker and homeschool mom in mind — practical,
-          thoughtful tools with a little beauty woven in.
-        </p>
-
-      </div>
+    </article>
 
 
-    </div>
+  </div>
+
+
+  <!-- SHOP NOTE -->
+
+  <div class="shop-note">
+
+    <p class="shop-note-title">
+      Created for the beautiful ordinary
+    </p>
+
+    <p>
+      Honey & Hymns resources are made with the Catholic
+      homemaker and homeschool mom in mind — practical,
+      thoughtful tools with a little beauty woven in.
+    </p>
+
+  </div>
+
+
+</div>
 
   </main>
-
 
   <!-- FOOTER -->
 
   <footer>
 
-    <p>
-      Honey & Hymns
-    </p>
 
-    <p>
-      Faith • Homeschool • Homemaking
-    </p>
+<p>
+  Honey & Hymns
+</p>
+
+<p>
+  Faith • Homeschool • Homemaking
+</p>
+
 
   </footer>
 
-
 </body>
 </html>
+
+
+The only remaining placeholder is the **Sunday Gospel for Kids Gumroad checkout link**. Once you give me that link, we can replace those two placeholder instances and the Shop page will be complete.
