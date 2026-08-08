@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Playfair+Display:ital,wght@0,400;1,400&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
 
@@ -18,223 +17,273 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: "Playfair Display", Georgia, serif;
-      background: #FFFDE7;
+      background: #FFFDF0;
       color: #4d4029;
       line-height: 1.7;
     }
 
     header {
-      background: #FFEBA1;
-      padding: 40px 20px 30px;
+      background: #FFF1B8;
+      padding: 32px 20px 24px;
       text-align: center;
-      border-bottom: 1px solid #F3CF80;
+      border-bottom: 1px solid #E7CE8B;
     }
 
     header img {
       width: 430px;
-      max-width: 90%;
+      max-width: 88%;
       height: auto;
       display: block;
       margin: 0 auto;
     }
 
     header p {
-      margin: 9px 0 0;
-      font-size: 0.82rem;
+      margin: 7px 0 0;
+      font-size: 0.78rem;
       letter-spacing: 2px;
       text-transform: uppercase;
+      color: #665333;
     }
 
     nav {
-      background: #FFFDE7;
+      background: #FFFDF0;
       text-align: center;
-      padding: 14px;
-      border-bottom: 1px solid #F3CF80;
+      padding: 13px;
+      border-bottom: 1px solid #E7D9B5;
     }
 
     nav a {
-      color: #4d4029;
+      color: #55452c;
       text-decoration: none;
       margin: 0 13px;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
+      transition: color 0.2s ease;
     }
 
     nav a:hover {
-      color: #8a6b2d;
+      color: #9A762E;
     }
 
-    /* =========================
-       FEATURE CAROUSEL
-    ========================= */
+    /* HERO CAROUSEL */
 
     .feature-section {
-      background: #fbf7e9;
-      padding: 45px 20px 55px;
+      background: #FFFDF0;
+      padding: 30px 18px 34px;
     }
 
     .feature-carousel {
       position: relative;
-      max-width: 1080px;
+      max-width: 1040px;
       margin: 0 auto;
       overflow: hidden;
+      border-radius: 22px;
     }
 
     .feature-track {
       display: flex;
-      transition: transform 0.6s ease;
+      transition: transform 0.65s ease;
     }
 
     .feature-slide {
       min-width: 100%;
-      padding: 4px 45px 10px;
+      padding: 0 46px;
     }
 
     .feature-card {
-      min-height: 390px;
-      background: #fffdf3;
-      border: 1px solid #e4d7b7;
-      box-shadow: 0 8px 22px rgba(77, 64, 41, 0.10);
-      display: grid;
-      grid-template-columns: 1.05fr 1fr;
+      height: 350px;
+      background: #FFFCF1;
+      border: 1px solid #E4D5AD;
+      border-radius: 20px;
       overflow: hidden;
-      position: relative;
+      display: grid;
+      grid-template-columns: 46% 54%;
+      box-shadow:
+        0 8px 24px rgba(88, 70, 36, 0.08),
+        0 2px 5px rgba(88, 70, 36, 0.04);
     }
 
     .feature-image-wrap {
-      min-height: 390px;
+      height: 350px;
       overflow: hidden;
-      background: #eee5ca;
+      background: #F6EFCF;
+      position: relative;
+    }
+
+    .feature-image-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      box-shadow: inset -18px 0 30px rgba(255, 252, 241, 0.08);
+      pointer-events: none;
     }
 
     .feature-image {
       width: 100%;
       height: 100%;
-      min-height: 390px;
       object-fit: cover;
       display: block;
     }
 
+    .feature-image.contain {
+      object-fit: contain;
+      padding: 34px;
+      background: #FFF1B8;
+    }
+
     .feature-content {
-      padding: 48px 48px 42px;
+      padding: 30px 40px;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      position: relative;
+    }
+
+    .feature-content::before {
+      content: "✦";
+      position: absolute;
+      top: 20px;
+      right: 27px;
+      color: #D9B866;
+      font-size: 1rem;
     }
 
     .feature-kicker {
       font-family: "Caveat", cursive;
-      color: #80652d;
-      font-size: 1.25rem;
+      color: #967331;
+      font-size: 1.18rem;
+      line-height: 1.2;
       margin: 0 0 5px;
     }
 
     .feature-content h2 {
-      font-family: "Gloock", Georgia, serif;
-      font-weight: 400;
-      font-size: 2.05rem;
-      line-height: 1.3;
-      color: #403521;
-      margin: 0 0 14px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 1.15;
+      color: #453824;
+      margin: 0 0 11px;
     }
 
     .feature-content p {
-      font-size: 0.91rem;
-      line-height: 1.7;
-      margin: 0 0 22px;
-      color: #66563c;
-      max-width: 470px;
+      font-size: 0.84rem;
+      line-height: 1.6;
+      margin: 0 0 16px;
+      color: #68583D;
+      max-width: 445px;
     }
 
     .feature-button {
       display: inline-block;
       align-self: flex-start;
-      background: #F3CF80;
-      color: #403521;
-      padding: 9px 21px;
-      border-radius: 3px;
+      background: #F0CF7B;
+      color: #4D4029;
+      padding: 8px 18px;
+      border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 0.82rem;
-      transition: 0.2s ease;
+      font-size: 0.76rem;
+      border: 1px solid #DFC16F;
+      box-shadow: 0 2px 5px rgba(77, 64, 41, 0.08);
+      transition: all 0.2s ease;
     }
 
     .feature-button:hover {
-      background: #FFEBA1;
+      background: #E7C267;
+      transform: translateY(-1px);
     }
+
+    /* CENTERED ARROWS */
 
     .feature-arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 38px;
-      height: 38px;
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
-      border: 1px solid #d6c69e;
-      background: #fffdf3;
-      color: #6f592c;
+      border: 1px solid #D7BE83;
+      background: #FFF9DF;
+      color: #80642F;
+      font-family: Georgia, serif;
       font-size: 1.25rem;
       cursor: pointer;
       z-index: 10;
-      box-shadow: 0 3px 8px rgba(77, 64, 41, 0.12);
-      transition: 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow:
+        0 4px 10px rgba(77, 64, 41, 0.12),
+        inset 0 0 0 3px rgba(255,255,255,0.45);
+      transition: all 0.25s ease;
     }
 
     .feature-arrow:hover {
-      background: #F3CF80;
+      background: #F3D582;
+      color: #584521;
+      transform: translateY(-50%) scale(1.06);
+    }
+
+    .feature-arrow:active {
+      transform: translateY(-50%) scale(0.97);
     }
 
     .feature-prev {
-      left: 3px;
+      left: 2px;
     }
 
     .feature-next {
-      right: 3px;
+      right: 2px;
     }
+
+    /* DOTS */
 
     .feature-dots {
       display: flex;
       justify-content: center;
-      gap: 8px;
-      margin-top: 19px;
+      align-items: center;
+      gap: 7px;
+      margin-top: 14px;
     }
 
     .feature-dot {
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       border: none;
-      background: #d8c79f;
+      background: #D8C79E;
       cursor: pointer;
       padding: 0;
-      transition: 0.2s ease;
+      transition: all 0.25s ease;
     }
 
     .feature-dot.active {
-      width: 23px;
-      border-radius: 10px;
-      background: #F3CF80;
+      width: 22px;
+      border-radius: 20px;
+      background: #D8B65F;
     }
 
     .feature-note {
       font-family: "Caveat", cursive;
       text-align: center;
-      color: #80652d;
-      font-size: 1rem;
-      margin: 12px 0 0;
+      color: #917333;
+      font-size: 0.98rem;
+      margin: 7px 0 0;
     }
 
-    /* =========================
-       BULLETIN
-    ========================= */
+    /* BULLETIN BOARD */
 
     .bulletin-section {
-      background: #FFEBA1;
-      padding: 42px 15px 48px;
-      border-top: 1px solid #F3CF80;
-      border-bottom: 1px solid #F3CF80;
+      background: #FFF1B8;
+      padding: 40px 15px 46px;
+      border-top: 1px solid #E7D194;
+      border-bottom: 1px solid #E7D194;
     }
 
     .bulletin-wrapper {
@@ -244,68 +293,69 @@
 
     .bulletin-heading {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 19px;
     }
 
     .bulletin-heading h2 {
-      font-family: "Gloock", Georgia, serif;
-      font-weight: 400;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
       font-size: 2rem;
-      color: #403521;
-      margin: 0 0 2px;
+      color: #453824;
+      margin: 0;
     }
 
     .bulletin-heading p {
       font-family: "Caveat", cursive;
-      font-size: 1.15rem;
+      font-size: 1.08rem;
       margin: 0;
-      color: #5c4b2c;
+      color: #68552F;
     }
 
     .bulletin-board {
       position: relative;
-      background: #c9b383;
-      padding: 12px;
-      border-radius: 5px;
-      box-shadow: 0 7px 18px rgba(77, 64, 41, 0.13);
+      background: #CFC099;
+      padding: 11px;
+      border-radius: 15px;
+      box-shadow: 0 7px 18px rgba(77, 64, 41, 0.12);
     }
 
     .board-inner {
-      background: #d4c098;
-      padding: 13px;
-      border-radius: 3px;
+      background: #D9C9A4;
+      padding: 12px;
+      border-radius: 10px;
     }
 
     .bulletin-sticker {
       position: absolute;
-      width: 135px;
+      width: 130px;
       height: auto;
-      top: -42px;
-      right: 8px;
+      top: -38px;
+      right: 7px;
       transform: rotate(5deg);
       z-index: 20;
-      filter: drop-shadow(0 5px 5px rgba(77, 64, 41, 0.18));
+      filter: drop-shadow(0 5px 5px rgba(77, 64, 41, 0.16));
     }
 
     .bulletin-grid {
       display: grid;
       grid-template-columns: 1.05fr 1.35fr 0.95fr 1.05fr 1.15fr;
       grid-template-rows: auto auto;
-      gap: 11px;
+      gap: 10px;
       align-items: stretch;
     }
 
     .note {
       position: relative;
-      padding: 15px 14px 13px;
-      background: #fffdf0;
-      box-shadow: 0 3px 7px rgba(77, 64, 41, 0.12);
+      padding: 14px 13px 12px;
+      background: #FFFDF0;
+      border-radius: 8px;
+      box-shadow: 0 3px 7px rgba(77, 64, 41, 0.10);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .note:hover {
       transform: translateY(-2px) rotate(0deg) !important;
-      box-shadow: 0 6px 12px rgba(77, 64, 41, 0.16);
+      box-shadow: 0 6px 12px rgba(77, 64, 41, 0.14);
     }
 
     .note:nth-child(1) {
@@ -347,28 +397,27 @@
 
     .bulletin-pill {
       display: inline-block;
-      background: #F3CF80;
-      color: #4d4029;
-      padding: 5px 11px 6px;
+      background: #E9C768;
+      color: #4D4029;
+      padding: 5px 11px;
       border-radius: 50px;
-      font-family: "Gloock", Georgia, serif;
-      font-size: 0.76rem;
-      line-height: 1.2;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 0.79rem;
+      line-height: 1.15;
       margin-bottom: 8px;
-      box-shadow: 0 1px 2px rgba(77, 64, 41, 0.08);
     }
 
     .note p {
       margin: 0 0 7px;
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       line-height: 1.5;
     }
 
     .note a {
-      color: #80652d;
+      color: #80652D;
       text-decoration: none;
       font-weight: bold;
-      font-size: 0.78rem;
+      font-size: 0.77rem;
     }
 
     .note a:hover {
@@ -379,7 +428,7 @@
       position: absolute;
       width: 8px;
       height: 8px;
-      background: #b79b6e;
+      background: #B79B6E;
       border-radius: 50%;
       top: 6px;
       left: 50%;
@@ -392,11 +441,11 @@
     }
 
     .new-upcoming-item {
-      font-family: "Gloock", Georgia, serif;
-      font-size: 0.78rem !important;
-      line-height: 1.45 !important;
-      color: #4d4029;
-      margin: 0 0 7px !important;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 0.8rem !important;
+      line-height: 1.4 !important;
+      color: #4D4029;
+      margin: 0 0 6px !important;
     }
 
     .new-upcoming-link {
@@ -405,9 +454,9 @@
     }
 
     .poll-question {
-      font-family: "Gloock", Georgia, serif;
-      font-size: 0.82rem !important;
-      line-height: 1.4 !important;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 0.84rem !important;
+      line-height: 1.35 !important;
       color: #403521;
       margin-bottom: 9px !important;
     }
@@ -428,18 +477,17 @@
       font-size: 0.65rem;
       line-height: 1.2;
       margin-bottom: 2px;
-      color: #59492f;
+      color: #59492F;
     }
 
     .poll-percent {
       font-weight: bold;
-      white-space: nowrap;
     }
 
     .poll-bar-track {
       width: 100%;
       height: 6px;
-      background: #e8dfc5;
+      background: #E7DEC5;
       border-radius: 20px;
       overflow: hidden;
     }
@@ -447,7 +495,7 @@
     .poll-bar {
       height: 100%;
       width: 0%;
-      background: #F3CF80;
+      background: #E9C768;
       border-radius: 20px;
       transition: width 1.1s ease-out;
     }
@@ -460,15 +508,15 @@
     .poll-note {
       font-family: "Caveat", cursive;
       font-size: 0.88rem !important;
-      color: #80652d;
+      color: #80652D;
       text-align: center;
       margin-top: 5px !important;
     }
 
     .featured-note {
       min-height: 155px;
-      background: #fffef5;
-      padding: 17px 20px;
+      background: #FFFEF5;
+      padding: 16px 19px;
       text-align: center;
     }
 
@@ -479,18 +527,18 @@
     }
 
     .featured-note p:first-of-type {
-      font-family: "Gloock", Georgia, serif;
-      font-size: 0.9rem;
-      line-height: 1.45;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 0.92rem;
+      line-height: 1.4;
     }
 
     .featured-note p:nth-of-type(2) {
-      font-size: 0.82rem;
+      font-size: 0.81rem;
       line-height: 1.5;
     }
 
     .gospel-note {
-      background: #fff8d5;
+      background: #FFF8D5;
       text-align: center;
       min-height: 155px;
     }
@@ -501,20 +549,16 @@
       height: auto;
       display: block;
       margin: 2px auto 6px;
+      border-radius: 4px;
       box-shadow: 0 3px 7px rgba(77, 64, 41, 0.12);
     }
 
     .gospel-title {
-      font-family: "Gloock", Georgia, serif;
-      font-size: 0.76rem !important;
-      line-height: 1.4 !important;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 0.79rem !important;
+      line-height: 1.35 !important;
       color: #403521;
       margin: 0 auto 8px !important;
-    }
-
-    .gospel-link {
-      display: inline-block;
-      margin-top: 2px;
     }
 
     .magazine-note {
@@ -527,8 +571,8 @@
     }
 
     .magazine-note p {
-      font-family: "Gloock", Georgia, serif;
-      font-size: 0.8rem !important;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 0.82rem !important;
       color: #403521;
       margin: 4px 0;
     }
@@ -536,17 +580,15 @@
     .magazine-date {
       font-family: "Caveat", cursive !important;
       font-size: 1rem !important;
-      color: #80652d !important;
+      color: #80652D !important;
     }
 
-    /* =========================
-       ARTICLES
-    ========================= */
+    /* ARTICLES */
 
     .articles-section {
-      background: #fbf7e9;
-      padding: 75px 20px 90px;
-      border-bottom: 1px solid #e5d8b8;
+      background: #FBF8ED;
+      padding: 68px 20px 82px;
+      border-bottom: 1px solid #E5D8B8;
     }
 
     .articles-wrapper {
@@ -556,23 +598,23 @@
 
     .editorial-heading {
       text-align: center;
-      margin-bottom: 48px;
+      margin-bottom: 44px;
     }
 
     .editorial-kicker {
       font-family: "Caveat", cursive;
-      font-size: 1.3rem;
-      color: #80652d;
-      margin: 0 0 4px;
+      font-size: 1.24rem;
+      color: #80652D;
+      margin: 0 0 3px;
     }
 
     .editorial-heading h2 {
-      font-family: "Gloock", Georgia, serif;
-      font-weight: 400;
-      font-size: 2.35rem;
-      line-height: 1.3;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
+      font-size: 2.4rem;
+      line-height: 1.2;
       color: #403521;
-      margin: 0 0 14px;
+      margin: 0 0 12px;
     }
 
     .editorial-rule {
@@ -580,7 +622,7 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      color: #b18a4d;
+      color: #B18A4D;
     }
 
     .editorial-rule::before,
@@ -588,37 +630,38 @@
       content: "";
       width: 70px;
       height: 1px;
-      background: #d8c79f;
+      background: #D8C79F;
     }
 
     .editorial-description {
       max-width: 600px;
-      margin: 15px auto 0;
-      font-size: 0.93rem;
-      color: #6b5a3e;
+      margin: 14px auto 0;
+      font-size: 0.91rem;
+      color: #6B5A3E;
     }
 
     .article-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 40px 25px;
+      gap: 38px 24px;
       max-width: 1000px;
       margin: 0 auto;
     }
 
     .story {
       background: transparent;
-      padding: 0 0 28px;
-      border-bottom: 1px solid #d8c79f;
+      padding: 0 0 26px;
+      border-bottom: 1px solid #D8C79F;
       display: flex;
       flex-direction: column;
       height: 100%;
     }
 
     .story-image-wrap {
-      margin-bottom: 17px;
+      margin-bottom: 16px;
       overflow: hidden;
-      background: #eee6cf;
+      background: #EEE6CF;
+      border-radius: 10px;
     }
 
     .story-image {
@@ -635,32 +678,32 @@
 
     .story-label {
       font-family: "Caveat", cursive;
-      font-size: 1.05rem;
-      color: #80652d;
+      font-size: 1.03rem;
+      color: #80652D;
       margin-bottom: 3px;
     }
 
     .story h3 {
-      font-family: "Gloock", Georgia, serif;
-      font-weight: 400;
-      font-size: 1.25rem;
-      line-height: 1.4;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
+      font-size: 1.3rem;
+      line-height: 1.3;
       color: #403521;
-      margin: 0 0 10px;
+      margin: 0 0 9px;
     }
 
     .story .subtitle {
-      font-size: 0.84rem;
-      line-height: 1.65;
-      color: #66563c;
-      margin: 0 0 14px;
+      font-size: 0.83rem;
+      line-height: 1.62;
+      color: #66563C;
+      margin: 0 0 13px;
       flex-grow: 1;
     }
 
     .story-link {
-      color: #80652d;
+      color: #80652D;
       text-decoration: none;
-      font-size: 0.78rem;
+      font-size: 0.77rem;
       font-weight: bold;
       margin-top: auto;
     }
@@ -669,13 +712,11 @@
       text-decoration: underline;
     }
 
-    /* =========================
-       ABOUT
-    ========================= */
+    /* ABOUT */
 
     .about {
-      background: #FFEBA1;
-      padding: 65px 20px;
+      background: #FFF1B8;
+      padding: 58px 20px;
       text-align: center;
     }
 
@@ -685,50 +726,49 @@
     }
 
     .about h2 {
-      font-family: "Gloock", Georgia, serif;
-      font-weight: 400;
-      font-size: 2.2rem;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
+      font-size: 2.25rem;
       color: #403521;
     }
 
     .about p {
-      font-size: 0.98rem;
+      font-size: 0.96rem;
     }
 
-    /* =========================
-       FOOTER
-    ========================= */
+    /* FOOTER */
 
     footer {
-      background: #4d4029;
+      background: #4D4029;
       color: #FFFDE7;
       text-align: center;
-      padding: 30px 20px;
+      padding: 28px 20px;
     }
 
     footer p {
       margin: 5px 0;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
     }
 
-    /* =========================
-       TABLET
-    ========================= */
+    /* TABLET */
 
     @media (max-width: 900px) {
 
       .feature-card {
-        grid-template-columns: 1fr;
+        height: 380px;
+        grid-template-columns: 45% 55%;
       }
 
-      .feature-image-wrap,
-      .feature-image {
-        min-height: 280px;
-        height: 280px;
+      .feature-image-wrap {
+        height: 380px;
       }
 
       .feature-content {
-        padding: 35px;
+        padding: 28px 30px;
+      }
+
+      .feature-content h2 {
+        font-size: 1.75rem;
       }
 
       .bulletin-grid {
@@ -754,25 +794,18 @@
       .article-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-
     }
 
-    /* =========================
-       MOBILE
-    ========================= */
+    /* MOBILE */
 
     @media (max-width: 600px) {
 
       header {
-        padding: 30px 15px 24px;
+        padding: 27px 15px 22px;
       }
 
       header img {
         width: 320px;
-      }
-
-      header p {
-        font-size: 0.72rem;
       }
 
       nav {
@@ -781,67 +814,86 @@
 
       nav a {
         margin: 4px 7px;
-        font-size: 0.8rem;
+        font-size: 0.79rem;
       }
 
       .feature-section {
-        padding: 30px 8px 42px;
+        padding: 25px 7px 32px;
       }
 
       .feature-slide {
-        padding: 4px 27px 8px;
+        padding: 0 28px;
       }
 
       .feature-card {
-        min-height: auto;
+        height: 515px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 18px;
       }
 
-      .feature-image-wrap,
-      .feature-image {
-        min-height: 210px;
-        height: 210px;
+      .feature-image-wrap {
+        height: 220px;
+        min-height: 220px;
       }
 
       .feature-content {
-        padding: 29px 24px 30px;
+        height: 295px;
+        min-height: 295px;
+        padding: 24px 23px 22px;
+        justify-content: center;
+      }
+
+      .feature-content::before {
+        top: 13px;
+        right: 18px;
       }
 
       .feature-kicker {
-        font-size: 1.1rem;
+        font-size: 1.08rem;
       }
 
       .feature-content h2 {
-        font-size: 1.65rem;
+        font-size: 1.7rem;
+        line-height: 1.18;
       }
 
       .feature-content p {
-        font-size: 0.84rem;
+        font-size: 0.81rem;
+        line-height: 1.55;
+        margin-bottom: 15px;
+      }
+
+      .feature-button {
+        font-size: 0.73rem;
+        padding: 8px 16px;
       }
 
       .feature-arrow {
-        width: 32px;
-        height: 32px;
-        font-size: 1rem;
+        width: 38px;
+        height: 38px;
+        font-size: 0.98rem;
+      }
+
+      .feature-prev {
+        left: 1px;
+      }
+
+      .feature-next {
+        right: 1px;
       }
 
       .bulletin-section {
-        padding: 38px 8px 42px;
-      }
-
-      .bulletin-heading {
-        margin-bottom: 18px;
+        padding: 36px 8px 42px;
       }
 
       .bulletin-heading h2 {
-        font-size: 1.75rem;
-      }
-
-      .bulletin-heading p {
-        font-size: 1.05rem;
+        font-size: 1.8rem;
       }
 
       .bulletin-board {
         padding: 8px;
+        border-radius: 13px;
       }
 
       .board-inner {
@@ -849,9 +901,8 @@
       }
 
       .bulletin-sticker {
-        width: 95px;
+        width: 92px;
         top: -27px;
-        right: 0;
       }
 
       .bulletin-grid {
@@ -873,28 +924,12 @@
         min-height: auto !important;
       }
 
-      .note p {
-        font-size: 0.9rem;
-      }
-
-      .bulletin-pill {
-        font-size: 0.74rem;
-      }
-
-      .featured-note {
-        min-height: 145px !important;
-      }
-
-      .gospel-cover {
-        max-width: 115px;
-      }
-
       .articles-section {
-        padding: 60px 18px 70px;
+        padding: 57px 18px 68px;
       }
 
       .editorial-heading {
-        margin-bottom: 40px;
+        margin-bottom: 37px;
       }
 
       .editorial-heading h2 {
@@ -903,7 +938,7 @@
 
       .article-grid {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 34px;
         max-width: 500px;
       }
 
@@ -916,654 +951,98 @@
       }
 
       .about {
-        padding: 55px 20px;
+        padding: 50px 20px;
       }
 
       .about h2 {
-        font-size: 1.9rem;
+        font-size: 1.95rem;
       }
-
     }
 
   </style>
+
 </head>
 
 <body>
 
   <header>
 
-    <img
-      src="images/honey-and-hymns-logo.png"
-      alt="Honey & Hymns logo"
-    >
 
-    <p>
-      Faith • Homeschool • Homemaking
-    </p>
+<img
+  src="images/honey-and-hymns-logo.png"
+  alt="Honey & Hymns logo"
+>
+
+<p>
+  Faith • Homeschool • Homemaking
+</p>
+
 
   </header>
 
   <nav>
 
-    <a href="#home">Home</a>
-    <a href="#articles">Articles</a>
-    <a href="#about">About</a>
 
-    <a
-      href="https://honeyandhymns.substack.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Newsletter
-    </a>
+<a href="#home">Home</a>
+<a href="#articles">Articles</a>
+<a href="#about">About</a>
+
+<a
+  href="https://honeyandhymns.substack.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Newsletter
+</a>
+
 
   </nav>
 
-  <!-- =========================
-       FEATURE CAROUSEL
-  ========================= -->
+  <!-- HERO CAROUSEL -->
 
   <section class="feature-section" id="home">
 
-    <div class="feature-carousel">
 
-      <div class="feature-track" id="featureTrack">
+<div class="feature-carousel">
 
-        <!-- SLIDE 1: LATEST ARTICLE -->
+  <div class="feature-track" id="featureTrack">
 
-        <div class="feature-slide">
 
-          <div class="feature-card">
+    <!-- SLIDE 1 -->
 
-            <div class="feature-image-wrap">
+    <div class="feature-slide">
 
-              <img
-                src="images/why-i-chose-homeschooling-family-journey.png"
-                alt="Family and homeschooling journey"
-                class="feature-image"
-              >
+      <div class="feature-card">
 
-            </div>
+        <div class="feature-image-wrap">
 
-            <div class="feature-content">
-
-              <p class="feature-kicker">
-                Recently From Honey & Hymns
-              </p>
-
-              <h2>
-                Why I Chose to Homeschool My Kids:
-                The Story Behind Our Homeschool Journey
-              </h2>
-
-              <p>
-                A mom’s honest reflection on school safety,
-                family values, and the moment I knew homeschooling
-                was the right choice for our family.
-              </p>
-
-              <a
-                class="feature-button"
-                href="https://honeyandhymns.substack.com/p/why-i-chose-to-homeschool-my-kids"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Read the Story →
-              </a>
-
-            </div>
-
-          </div>
+          <img
+            src="images/why-i-chose-homeschooling-family-journey.png"
+            alt="Family and homeschooling journey"
+            class="feature-image"
+          >
 
         </div>
 
+        <div class="feature-content">
 
-        <!-- SLIDE 2: WEEKLY BULLETIN -->
+          <p class="feature-kicker">
+            Recently From Honey & Hymns
+          </p>
 
-        <div class="feature-slide">
-
-          <div class="feature-card">
-
-            <div class="feature-image-wrap">
-
-              <img
-                src="images/honey-and-hymns-cross-bees.png"
-                alt="Honey & Hymns cross with bees"
-                class="feature-image"
-                style="object-fit: contain; padding: 45px; background: #FFEBA1;"
-              >
-
-            </div>
-
-            <div class="feature-content">
-
-              <p class="feature-kicker">
-                This Week at Honey & Hymns
-              </p>
-
-              <h2>
-                The Honey & Hymns Weekly Bulletin
-              </h2>
-
-              <p>
-                Verse of the week, poll results, the latest post,
-                what's new and upcoming, and the Sunday Gospel
-                for Kids — all in one cozy weekly update.
-              </p>
-
-              <a
-                class="feature-button"
-                href="https://honeyandhymns.substack.com/p/the-honey-and-hymns-weekly-bulletin?r=7kwlqm&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Read This Week's Bulletin →
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <!-- SLIDE 3: SUNDAY GOSPEL FOR KIDS -->
-
-        <div class="feature-slide">
-
-          <div class="feature-card">
-
-            <div class="feature-image-wrap">
-
-              <img
-                src="images/sunday-gospel-kids-jesus-walks-on-water.png"
-                alt="19th Sunday in Ordinary Time: Jesus Walks on Water"
-                class="feature-image"
-              >
-
-            </div>
-
-            <div class="feature-content">
-
-              <p class="feature-kicker">
-                For Little Hearts
-              </p>
-
-              <h2>
-                Sunday Gospel for Kids
-              </h2>
-
-              <p>
-                19th Sunday in Ordinary Time:
-                Jesus Walks on Water.
-                A simple, faith-filled resource created to help
-                families explore Sunday's Gospel together.
-              </p>
-
-              <a
-                class="feature-button"
-                href="https://honeyandhymns.gumroad.com/l/chutcz"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Get the Current Issue →
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <!-- SLIDE 4: RESOURCES -->
-
-        <div class="feature-slide">
-
-          <div class="feature-card">
-
-            <div class="feature-image-wrap">
-
-              <img
-                src="images/honey-and-hymns-logo.png"
-                alt="Honey & Hymns resources"
-                class="feature-image"
-                style="object-fit: contain; padding: 55px; background: #FFFDE7;"
-              >
-
-            </div>
-
-            <div class="feature-content">
-
-              <p class="feature-kicker">
-                Made for Your Home
-              </p>
-
-              <h2>
-                Honey & Hymns Resources
-              </h2>
-
-              <p>
-                Printable resources, homeschool tools, faith-filled
-                activities, homemaking resources, and more — created
-                with Catholic family life in mind.
-              </p>
-
-              <a
-                class="feature-button"
-                href="https://honeyandhymns.gumroad.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Browse Resources →
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- CAROUSEL ARROWS -->
-
-      <button
-        class="feature-arrow feature-prev"
-        id="featurePrev"
-        aria-label="Previous feature"
-      >
-        ←
-      </button>
-
-      <button
-        class="feature-arrow feature-next"
-        id="featureNext"
-        aria-label="Next feature"
-      >
-        →
-      </button>
-
-    </div>
-
-
-    <!-- CAROUSEL DOTS -->
-
-    <div class="feature-dots">
-
-      <button
-        class="feature-dot active"
-        data-slide="0"
-        aria-label="Go to latest article"
-      ></button>
-
-      <button
-        class="feature-dot"
-        data-slide="1"
-        aria-label="Go to weekly bulletin"
-      ></button>
-
-      <button
-        class="feature-dot"
-        data-slide="2"
-        aria-label="Go to Sunday Gospel for Kids"
-      ></button>
-
-      <button
-        class="feature-dot"
-        data-slide="3"
-        aria-label="Go to resources"
-      ></button>
-
-    </div>
-
-    <p class="feature-note">
-      A little something new to discover each time you visit.
-    </p>
-
-  </section>
-
-
-  <!-- =========================
-       BULLETIN BOARD
-  ========================= -->
-
-  <section class="bulletin-section">
-
-    <div class="bulletin-wrapper">
-
-      <div class="bulletin-heading">
-
-        <h2>
-          This Week at Honey & Hymns
-        </h2>
-
-        <p>
-          A little bulletin board for the week
-        </p>
-
-      </div>
-
-      <div class="bulletin-board">
-
-        <img
-          src="images/honey-and-hymns-cross-bees.png"
-          alt="Honey & Hymns cross with honey and bees"
-          class="bulletin-sticker"
-        >
-
-        <div class="board-inner">
-
-          <div class="bulletin-grid">
-
-
-            <!-- VERSE -->
-
-            <div class="note">
-
-              <div class="pin"></div>
-
-              <span class="bulletin-pill">
-                Verse of the Week
-              </span>
-
-              <p>
-                “Commit to the Lord whatever you do,
-                and he will establish your plans.”
-              </p>
-
-              <p>
-                <strong>Proverbs 16:3</strong>
-              </p>
-
-            </div>
-
-
-            <!-- NEW & UPCOMING -->
-
-            <div class="note new-upcoming-note">
-
-              <div class="pin"></div>
-
-              <span class="bulletin-pill">
-                New & Upcoming
-              </span>
-
-              <p class="new-upcoming-item">
-                Weekly Bulletin
-              </p>
-
-              <p class="new-upcoming-item">
-                Honey & Hymns Digital Magazine!
-              </p>
-
-              <p class="new-upcoming-item">
-                For Paid Subscribers
-              </p>
-
-              <p class="new-upcoming-item">
-                OCIA Series
-              </p>
-
-              <a
-                class="new-upcoming-link"
-                href="https://honeyandhymns.substack.com/p/the-honey-and-hymns-weekly-bulletin?r=7kwlqm&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Get Full Details →
-              </a>
-
-            </div>
-
-
-            <!-- POLL -->
-
-            <div class="note">
-
-              <div class="pin"></div>
-
-              <span class="bulletin-pill">
-                Last Week's Poll
-              </span>
-
-              <p class="poll-question">
-                Which homeschool style best describes your family?
-              </p>
-
-              <div class="poll-chart">
-
-                <div class="poll-row">
-                  <div class="poll-label">
-                    <span>Charlotte Mason</span>
-                    <span class="poll-percent">33%</span>
-                  </div>
-                  <div class="poll-bar-track">
-                    <div class="poll-bar" data-width="33%"></div>
-                  </div>
-                </div>
-
-                <div class="poll-row">
-                  <div class="poll-label">
-                    <span>Traditional</span>
-                    <span class="poll-percent">0%</span>
-                  </div>
-                  <div class="poll-bar-track">
-                    <div class="poll-bar poll-zero"></div>
-                  </div>
-                </div>
-
-                <div class="poll-row">
-                  <div class="poll-label">
-                    <span>Eclectic</span>
-                    <span class="poll-percent">33%</span>
-                  </div>
-                  <div class="poll-bar-track">
-                    <div class="poll-bar" data-width="33%"></div>
-                  </div>
-                </div>
-
-                <div class="poll-row">
-                  <div class="poll-label">
-                    <span>Classical</span>
-                    <span class="poll-percent">0%</span>
-                  </div>
-                  <div class="poll-bar-track">
-                    <div class="poll-bar poll-zero"></div>
-                  </div>
-                </div>
-
-                <div class="poll-row">
-                  <div class="poll-label">
-                    <span>Still figuring it out</span>
-                    <span class="poll-percent">33%</span>
-                  </div>
-                  <div class="poll-bar-track">
-                    <div class="poll-bar" data-width="33%"></div>
-                  </div>
-                </div>
-
-              </div>
-
-              <p class="poll-note">
-                Thank you for voting!
-              </p>
-
-              <a
-                href="https://honeyandhymns.substack.com/p/weekly-polls"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Take Me to This Week's Poll →
-              </a>
-
-            </div>
-
-
-            <!-- LATEST POST -->
-
-            <div class="note featured-note">
-
-              <div class="pin"></div>
-
-              <span class="bulletin-pill">
-                The Latest from Honey & Hymns
-              </span>
-
-              <p>
-                <strong>
-                  Why I Chose to Homeschool My Kids:
-                  The Story Behind Our Homeschool Journey
-                </strong>
-              </p>
-
-              <p>
-                A mom’s honest reflection on school safety,
-                family values, and the moment I knew homeschooling
-                was the right choice for our family.
-              </p>
-
-              <a
-                href="https://honeyandhymns.substack.com/p/why-i-chose-to-homeschool-my-kids"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Read the Latest Post →
-              </a>
-
-            </div>
-
-
-            <!-- SUNDAY GOSPEL -->
-
-            <div class="note gospel-note">
-
-              <div class="pin"></div>
-
-              <span class="bulletin-pill">
-                Sunday Gospel for Kids
-              </span>
-
-              <img
-                src="images/sunday-gospel-kids-jesus-walks-on-water.png"
-                alt="19th Sunday in Ordinary Time: Jesus Walks on Water"
-                class="gospel-cover"
-              >
-
-              <p class="gospel-title">
-                19th Sunday in Ordinary Time:
-                Jesus Walks on Water
-              </p>
-
-              <a
-                class="gospel-link"
-                href="https://honeyandhymns.gumroad.com/l/chutcz"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Get the Current Issue →
-              </a>
-
-            </div>
-
-
-            <!-- MAGAZINE -->
-
-            <div class="note magazine-note">
-
-              <div class="pin"></div>
-
-              <span class="bulletin-pill">
-                This Month's Magazine
-              </span>
-
-              <p>
-                Honey & Hymns Digital Magazine
-              </p>
-
-              <p class="magazine-date">
-                Coming Soon — August 15th, 2026!
-              </p>
-
-            </div>
-
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       ARTICLES
-  ========================= -->
-
-  <section class="articles-section" id="articles">
-
-    <div class="articles-wrapper">
-
-      <div class="editorial-heading">
-
-        <p class="editorial-kicker">
-          Fresh from the Honey & Hymns kitchen table
-        </p>
-
-        <h2>
-          Recently From Honey & Hymns
-        </h2>
-
-        <div class="editorial-rule">
-          ✦
-        </div>
-
-        <p class="editorial-description">
-          Catch up on the latest reflections, encouragement,
-          homeschool ideas, and everyday stories from Honey & Hymns.
-        </p>
-
-      </div>
-
-
-      <div class="article-grid">
-
-
-        <!-- ARTICLE 1 -->
-
-        <article class="story">
-
-          <div class="story-image-wrap">
-
-            <img
-              src="images/why-i-chose-homeschooling-family-journey.png"
-              alt="Family and homeschooling journey"
-              class="story-image"
-            >
-
-          </div>
-
-          <div class="story-label">
-            Homeschool
-          </div>
-
-          <h3>
+          <h2>
             Why I Chose to Homeschool My Kids:
             The Story Behind Our Homeschool Journey
-          </h3>
+          </h2>
 
-          <p class="subtitle">
-            A mom’s honest reflection on school safety, family values,
-            and the moment I knew homeschooling was the right choice
-            for our family.
+          <p>
+            A mom’s honest reflection on school safety,
+            family values, and the moment I knew homeschooling
+            was the right choice for our family.
           </p>
 
           <a
-            class="story-link"
+            class="feature-button"
             href="https://honeyandhymns.substack.com/p/why-i-chose-to-homeschool-my-kids"
             target="_blank"
             rel="noopener noreferrer"
@@ -1571,403 +1050,939 @@
             Read the Story →
           </a>
 
-        </article>
-
-
-        <!-- ARTICLE 2 -->
-
-        <article class="story">
-
-          <div class="story-image-wrap">
-
-            <img
-              src="images/girl-toddler-strong-willed-behavior.png"
-              alt="Toddler girl during everyday family life"
-              class="story-image"
-            >
-
-          </div>
-
-          <div class="story-label">
-            Motherhood
-          </div>
-
-          <h3>
-            Are Girl Toddlers More Strong-Willed Than Boys?
-            A Mom’s Honest Investigation
-          </h3>
-
-          <p class="subtitle">
-            I compared my own parenting experience with what the
-            research says about toddler boys and girls, and the
-            results surprised me.
-          </p>
-
-          <a
-            class="story-link"
-            href="https://honeyandhymns.substack.com/p/are-girl-toddlers-more-strong-willed?r=7kwlqm&utm_campaign=post&utm_medium=web"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read the Story →
-          </a>
-
-        </article>
-
-
-        <!-- ARTICLE 3 -->
-
-        <article class="story">
-
-          <div class="story-image-wrap">
-
-            <img
-              src="images/living-books-homeschool-reading.png"
-              alt="Books and reading materials for homeschool"
-              class="story-image"
-            >
-
-          </div>
-
-          <div class="story-label">
-            Homeschool
-          </div>
-
-          <h3>
-            The 10 Living Books I'm Most Excited to Read
-            This Homeschool Year
-          </h3>
-
-          <p class="subtitle">
-            After moving from screen-heavy learning to a Charlotte
-            Mason approach, these are the books filling our homeschool
-            with stories, imagination, and faith.
-          </p>
-
-          <a
-            class="story-link"
-            href="https://honeyandhymns.substack.com/p/the-10-living-books-im-most-excited?r=7kwlqm&utm_campaign=post&utm_medium=web"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read the Story →
-          </a>
-
-        </article>
-
-
-        <!-- ARTICLE 4 -->
-
-        <article class="story">
-
-          <div class="story-image-wrap">
-
-            <img
-              src="images/god-centered-marriage-faithful-marriage.png"
-              alt="Faith and marriage"
-              class="story-image"
-            >
-
-          </div>
-
-          <div class="story-label">
-            Marriage & Faith
-          </div>
-
-          <h3>
-            6 Simple Ways I'm Building a God-Centered Marriage
-          </h3>
-
-          <p class="subtitle">
-            Honest reflections from a wife still learning as she goes.
-          </p>
-
-          <a
-            class="story-link"
-            href="https://honeyandhymns.substack.com/p/6-simple-ways-im-building-a-god-centered?r=7kwlqm&utm_campaign=post&utm_medium=web"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read the Story →
-          </a>
-
-        </article>
-
-
-        <!-- ARTICLE 5 -->
-
-        <article class="story">
-
-          <div class="story-image-wrap">
-
-            <img
-              src="images/homeschool-year-planning-routine.png"
-              alt="Planning and preparing for a new homeschool year"
-              class="story-image"
-            >
-
-          </div>
-
-          <div class="story-label">
-            Homeschool
-          </div>
-
-          <h3>
-            How I Prepare for a New Homeschool Year:
-            My End-of-Summer Planning Routine
-          </h3>
-
-          <p class="subtitle">
-            From organizing portfolios and choosing curriculum to
-            planning lessons and preparing our hearts for a
-            Christ-centered homeschool year, here's how our family
-            gets ready for a fresh start.
-          </p>
-
-          <a
-            class="story-link"
-            href="https://honeyandhymns.substack.com/p/how-i-prepare-for-a-new-homeschool?r=7kwlqm&utm_campaign=post&utm_medium=web"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read the Story →
-          </a>
-
-        </article>
-
-
-        <!-- ARTICLE 6 -->
-
-        <article class="story">
-
-          <div class="story-image-wrap">
-
-            <img
-              src="images/personal-curriculum-homeschool-mom%20(1).png"
-              alt="Homeschool mom creating a personal curriculum"
-              class="story-image"
-            >
-
-          </div>
-
-          <div class="story-label">
-            Homeschool & Motherhood
-          </div>
-
-          <h3>
-            Why I Started My Own Personal Curriculum
-            (And Why My Kids Are Watching)
-          </h3>
-
-          <p class="subtitle">
-            How creating a personal curriculum as a homeschool mom
-            is helping me model lifelong learning, curiosity, and
-            biblical wisdom for my children.
-          </p>
-
-          <a
-            class="story-link"
-            href="https://honeyandhymns.substack.com/p/why-i-started-my-own-personal-curriculum?r=7kwlqm&utm_campaign=post&utm_medium=web"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read the Story →
-          </a>
-
-        </article>
-
+        </div>
 
       </div>
 
     </div>
 
-  </section>
 
+    <!-- SLIDE 2 -->
 
-  <!-- =========================
-       ABOUT
-  ========================= -->
+    <div class="feature-slide">
 
-  <section class="about" id="about">
+      <div class="feature-card">
 
-    <div class="about-content">
+        <div class="feature-image-wrap">
 
-      <h2>
-        Welcome to Honey & Hymns
-      </h2>
+          <img
+            src="images/honey-and-hymns-cross-bees.png"
+            alt="Honey & Hymns cross with honey and bees"
+            class="feature-image contain"
+          >
 
-      <p>
-        I'm so glad you're here. Honey & Hymns was created as a place
-        for moms who want to grow in faith while embracing the
-        beautiful, sometimes messy work of raising a family.
-      </p>
+        </div>
 
-      <p>
-        Here you'll find homeschool encouragement, homemaking ideas,
-        Catholic faith resources, simple activities for children,
-        and honest reflections on motherhood.
-      </p>
+        <div class="feature-content">
 
-      <a
-        class="button"
-        href="https://honeyandhymns.substack.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Visit the Newsletter
-      </a>
+          <p class="feature-kicker">
+            This Week at Honey & Hymns
+          </p>
+
+          <h2>
+            The Honey & Hymns Weekly Bulletin
+          </h2>
+
+          <p>
+            Verse of the week, poll results, the latest post,
+            what's new and upcoming, and the Sunday Gospel
+            for Kids — all in one cozy weekly update.
+          </p>
+
+          <a
+            class="feature-button"
+            href="https://honeyandhymns.substack.com/p/the-honey-and-hymns-weekly-bulletin?r=7kwlqm&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read This Week's Bulletin →
+          </a>
+
+        </div>
+
+      </div>
 
     </div>
 
+
+    <!-- SLIDE 3 -->
+
+    <div class="feature-slide">
+
+      <div class="feature-card">
+
+        <div class="feature-image-wrap">
+
+          <img
+            src="images/sunday-gospel-kids-jesus-walks-on-water.png"
+            alt="19th Sunday in Ordinary Time: Jesus Walks on Water"
+            class="feature-image"
+          >
+
+        </div>
+
+        <div class="feature-content">
+
+          <p class="feature-kicker">
+            For Little Hearts
+          </p>
+
+          <h2>
+            Sunday Gospel for Kids
+          </h2>
+
+          <p>
+            19th Sunday in Ordinary Time:
+            Jesus Walks on Water.
+            A simple, faith-filled resource created to help
+            families explore Sunday's Gospel together.
+          </p>
+
+          <a
+            class="feature-button"
+            href="https://honeyandhymns.gumroad.com/l/chutcz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get the Current Issue →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- SLIDE 4 -->
+
+    <div class="feature-slide">
+
+      <div class="feature-card">
+
+        <div class="feature-image-wrap">
+
+          <img
+            src="images/honey-and-hymns-logo.png"
+            alt="Honey & Hymns resources"
+            class="feature-image contain"
+            style="background:#FFFDF0;"
+          >
+
+        </div>
+
+        <div class="feature-content">
+
+          <p class="feature-kicker">
+            Made for Your Home
+          </p>
+
+          <h2>
+            Honey & Hymns Resources
+          </h2>
+
+          <p>
+            Printable resources, homeschool tools, faith-filled
+            activities, homemaking resources, and more — created
+            with Catholic family life in mind.
+          </p>
+
+          <a
+            class="feature-button"
+            href="https://honeyandhymns.gumroad.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Browse Resources →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <button
+    class="feature-arrow feature-prev"
+    id="featurePrev"
+    aria-label="Previous feature"
+  >
+    ‹
+  </button>
+
+  <button
+    class="feature-arrow feature-next"
+    id="featureNext"
+    aria-label="Next feature"
+  >
+    ›
+  </button>
+
+</div>
+
+
+<div class="feature-dots">
+
+  <button
+    class="feature-dot active"
+    data-slide="0"
+    aria-label="Go to latest article"
+  ></button>
+
+  <button
+    class="feature-dot"
+    data-slide="1"
+    aria-label="Go to weekly bulletin"
+  ></button>
+
+  <button
+    class="feature-dot"
+    data-slide="2"
+    aria-label="Go to Sunday Gospel for Kids"
+  ></button>
+
+  <button
+    class="feature-dot"
+    data-slide="3"
+    aria-label="Go to resources"
+  ></button>
+
+</div>
+
+<p class="feature-note">
+  A little something new to discover each time you visit.
+</p>
+
+
   </section>
 
+  <!-- BULLETIN BOARD -->
+
+  <section class="bulletin-section">
+
+
+<div class="bulletin-wrapper">
+
+  <div class="bulletin-heading">
+
+    <h2>
+      This Week at Honey & Hymns
+    </h2>
+
+    <p>
+      A little bulletin board for the week
+    </p>
+
+  </div>
+
+  <div class="bulletin-board">
+
+    <img
+      src="images/honey-and-hymns-cross-bees.png"
+      alt="Honey & Hymns cross with honey and bees"
+      class="bulletin-sticker"
+    >
+
+    <div class="board-inner">
+
+      <div class="bulletin-grid">
+
+        <div class="note">
+
+          <div class="pin"></div>
+
+          <span class="bulletin-pill">
+            Verse of the Week
+          </span>
+
+          <p>
+            “Commit to the Lord whatever you do,
+            and he will establish your plans.”
+          </p>
+
+          <p>
+            <strong>Proverbs 16:3</strong>
+          </p>
+
+        </div>
+
+
+        <div class="note new-upcoming-note">
+
+          <div class="pin"></div>
+
+          <span class="bulletin-pill">
+            New & Upcoming
+          </span>
+
+          <p class="new-upcoming-item">
+            Weekly Bulletin
+          </p>
+
+          <p class="new-upcoming-item">
+            Honey & Hymns Digital Magazine!
+          </p>
+
+          <p class="new-upcoming-item">
+            For Paid Subscribers
+          </p>
+
+          <p class="new-upcoming-item">
+            OCIA Series
+          </p>
+
+          <a
+            class="new-upcoming-link"
+            href="https://honeyandhymns.substack.com/p/the-honey-and-hymns-weekly-bulletin?r=7kwlqm&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get Full Details →
+          </a>
+
+        </div>
+
+
+        <div class="note">
+
+          <div class="pin"></div>
+
+          <span class="bulletin-pill">
+            Last Week's Poll
+          </span>
+
+          <p class="poll-question">
+            Which homeschool style best describes your family?
+          </p>
+
+          <div class="poll-chart">
+
+            <div class="poll-row">
+              <div class="poll-label">
+                <span>Charlotte Mason</span>
+                <span class="poll-percent">33%</span>
+              </div>
+              <div class="poll-bar-track">
+                <div class="poll-bar" data-width="33%"></div>
+              </div>
+            </div>
+
+            <div class="poll-row">
+              <div class="poll-label">
+                <span>Traditional</span>
+                <span class="poll-percent">0%</span>
+              </div>
+              <div class="poll-bar-track">
+                <div class="poll-bar poll-zero"></div>
+              </div>
+            </div>
+
+            <div class="poll-row">
+              <div class="poll-label">
+                <span>Eclectic</span>
+                <span class="poll-percent">33%</span>
+              </div>
+              <div class="poll-bar-track">
+                <div class="poll-bar" data-width="33%"></div>
+              </div>
+            </div>
+
+            <div class="poll-row">
+              <div class="poll-label">
+                <span>Classical</span>
+                <span class="poll-percent">0%</span>
+              </div>
+              <div class="poll-bar-track">
+                <div class="poll-bar poll-zero"></div>
+              </div>
+            </div>
+
+            <div class="poll-row">
+              <div class="poll-label">
+                <span>Still figuring it out</span>
+                <span class="poll-percent">33%</span>
+              </div>
+              <div class="poll-bar-track">
+                <div class="poll-bar" data-width="33%"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <p class="poll-note">
+            Thank you for voting!
+          </p>
+
+          <a
+            href="https://honeyandhymns.substack.com/p/weekly-polls"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Take Me to This Week's Poll →
+          </a>
+
+        </div>
+
+
+        <div class="note featured-note">
+
+          <div class="pin"></div>
+
+          <span class="bulletin-pill">
+            The Latest from Honey & Hymns
+          </span>
+
+          <p>
+            <strong>
+              Why I Chose to Homeschool My Kids:
+              The Story Behind Our Homeschool Journey
+            </strong>
+          </p>
+
+          <p>
+            A mom’s honest reflection on school safety,
+            family values, and the moment I knew homeschooling
+            was the right choice for our family.
+          </p>
+
+          <a
+            href="https://honeyandhymns.substack.com/p/why-i-chose-to-homeschool-my-kids"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read the Latest Post →
+          </a>
+
+        </div>
+
+
+        <div class="note gospel-note">
+
+          <div class="pin"></div>
+
+          <span class="bulletin-pill">
+            Sunday Gospel for Kids
+          </span>
+
+          <img
+            src="images/sunday-gospel-kids-jesus-walks-on-water.png"
+            alt="19th Sunday in Ordinary Time: Jesus Walks on Water"
+            class="gospel-cover"
+          >
+
+          <p class="gospel-title">
+            19th Sunday in Ordinary Time:
+            Jesus Walks on Water
+          </p>
+
+          <a
+            href="https://honeyandhymns.gumroad.com/l/chutcz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get the Current Issue →
+          </a>
+
+        </div>
+
+
+        <div class="note magazine-note">
+
+          <div class="pin"></div>
+
+          <span class="bulletin-pill">
+            This Month's Magazine
+          </span>
+
+          <p>
+            Honey & Hymns Digital Magazine
+          </p>
+
+          <p class="magazine-date">
+            Coming Soon — August 15th, 2026!
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+  </section>
+
+  <!-- ARTICLES -->
+
+  <section class="articles-section" id="articles">
+
+
+<div class="articles-wrapper">
+
+  <div class="editorial-heading">
+
+    <p class="editorial-kicker">
+      Fresh from the Honey & Hymns kitchen table
+    </p>
+
+    <h2>
+      Recently From Honey & Hymns
+    </h2>
+
+    <div class="editorial-rule">
+      ✦
+    </div>
+
+    <p class="editorial-description">
+      Catch up on the latest reflections, encouragement,
+      homeschool ideas, and everyday stories from Honey & Hymns.
+    </p>
+
+  </div>
+
+
+  <div class="article-grid">
+
+
+    <article class="story">
+
+      <div class="story-image-wrap">
+
+        <img
+          src="images/why-i-chose-homeschooling-family-journey.png"
+          alt="Family and homeschooling journey"
+          class="story-image"
+        >
+
+      </div>
+
+      <div class="story-label">
+        Homeschool
+      </div>
+
+      <h3>
+        Why I Chose to Homeschool My Kids:
+        The Story Behind Our Homeschool Journey
+      </h3>
+
+      <p class="subtitle">
+        A mom’s honest reflection on school safety, family values,
+        and the moment I knew homeschooling was the right choice
+        for our family.
+      </p>
+
+      <a
+        class="story-link"
+        href="https://honeyandhymns.substack.com/p/why-i-chose-to-homeschool-my-kids"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Read the Story →
+      </a>
+
+    </article>
+
+
+    <article class="story">
+
+      <div class="story-image-wrap">
+
+        <img
+          src="images/girl-toddler-strong-willed-behavior.png"
+          alt="Toddler girl during everyday family life"
+          class="story-image"
+        >
+
+      </div>
+
+      <div class="story-label">
+        Motherhood
+      </div>
+
+      <h3>
+        Are Girl Toddlers More Strong-Willed Than Boys?
+        A Mom’s Honest Investigation
+      </h3>
+
+      <p class="subtitle">
+        I compared my own parenting experience with what the
+        research says about toddler boys and girls, and the
+        results surprised me.
+      </p>
+
+      <a
+        class="story-link"
+        href="https://honeyandhymns.substack.com/p/are-girl-toddlers-more-strong-willed?r=7kwlqm&utm_campaign=post&utm_medium=web"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Read the Story →
+      </a>
+
+    </article>
+
+
+    <article class="story">
+
+      <div class="story-image-wrap">
+
+        <img
+          src="images/living-books-homeschool-reading.png"
+          alt="Books and reading materials for homeschool"
+          class="story-image"
+        >
+
+      </div>
+
+      <div class="story-label">
+        Homeschool
+      </div>
+
+      <h3>
+        The 10 Living Books I'm Most Excited to Read
+        This Homeschool Year
+      </h3>
+
+      <p class="subtitle">
+        After moving from screen-heavy learning to a Charlotte
+        Mason approach, these are the books filling our homeschool
+        with stories, imagination, and faith.
+      </p>
+
+      <a
+        class="story-link"
+        href="https://honeyandhymns.substack.com/p/the-10-living-books-im-most-excited?r=7kwlqm&utm_campaign=post&utm_medium=web"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Read the Story →
+      </a>
+
+    </article>
+
+
+    <article class="story">
+
+      <div class="story-image-wrap">
+
+        <img
+          src="images/god-centered-marriage-faithful-marriage.png"
+          alt="Faith and marriage"
+          class="story-image"
+        >
+
+      </div>
+
+      <div class="story-label">
+        Marriage & Faith
+      </div>
+
+      <h3>
+        6 Simple Ways I'm Building a God-Centered Marriage
+      </h3>
+
+      <p class="subtitle">
+        Honest reflections from a wife still learning as she goes.
+      </p>
+
+      <a
+        class="story-link"
+        href="https://honeyandhymns.substack.com/p/6-simple-ways-im-building-a-god-centered?r=7kwlqm&utm_campaign=post&utm_medium=web"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Read the Story →
+      </a>
+
+    </article>
+
+
+    <article class="story">
+
+      <div class="story-image-wrap">
+
+        <img
+          src="images/homeschool-year-planning-routine.png"
+          alt="Homeschool planning routine"
+          class="story-image"
+        >
+
+      </div>
+
+      <div class="story-label">
+        Homeschool Planning
+      </div>
+
+      <h3>
+        How I Prepare for a New Homeschool Year:
+        My End-of-Summer Planning Routine
+      </h3>
+
+      <p class="subtitle">
+        From organizing portfolios and choosing curriculum to
+        planning lessons and preparing our hearts for a
+        Christ-centered homeschool year.
+      </p>
+
+      <a
+        class="story-link"
+        href="https://honeyandhymns.substack.com/p/how-i-prepare-for-a-new-homeschool?r=7kwlqm&utm_campaign=post&utm_medium=web"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Read the Story →
+      </a>
+
+    </article>
+
+
+    <article class="story">
+
+      <div class="story-image-wrap">
+
+        <img
+          src="images/personal-curriculum-homeschool-mom (1).png"
+          alt="Homeschool mom creating her own curriculum"
+          class="story-image"
+        >
+
+      </div>
+
+      <div class="story-label">
+        Homeschool Motherhood
+      </div>
+
+      <h3>
+        Why I Started My Own Personal Curriculum
+        (And Why My Kids Are Watching)
+      </h3>
+
+      <p class="subtitle">
+        How creating a personal curriculum as a homeschool mom
+        is helping me model lifelong learning, curiosity,
+        and biblical wisdom for my children.
+      </p>
+
+      <a
+        class="story-link"
+        href="https://honeyandhymns.substack.com/p/why-i-started-my-own-personal-curriculum?r=7kwlqm&utm_campaign=post&utm_medium=web"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Read the Story →
+      </a>
+
+    </article>
+
+
+  </div>
+
+</div>
+
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+
+<div class="about-content">
+
+  <h2>
+    A Little Corner of the Internet
+    for the Catholic Homemaker
+  </h2>
+
+  <p>
+    Welcome to Honey & Hymns — a place for faith,
+    homeschool, homemaking, encouragement, and the
+    beautiful ordinary moments of family life.
+  </p>
+
+</div>
+
+
+  </section>
 
   <footer>
 
-    <p>
-      © 2026 Honey & Hymns
-    </p>
 
-    <p>
-      Faith • Homeschool • Homemaking
-    </p>
+<p>
+  Honey & Hymns
+</p>
+
+<p>
+  Faith • Homeschool • Homemaking
+</p>
+
 
   </footer>
 
-
   <script>
 
-    /* =========================
-       FEATURE CAROUSEL
-    ========================= */
+    /* HERO CAROUSEL */
 
-    const featureTrack = document.getElementById("featureTrack");
-    const featureSlides = document.querySelectorAll(".feature-slide");
-    const featureDots = document.querySelectorAll(".feature-dot");
-    const featurePrev = document.getElementById("featurePrev");
-    const featureNext = document.getElementById("featureNext");
+    const track = document.getElementById("featureTrack");
+    const prevButton = document.getElementById("featurePrev");
+    const nextButton = document.getElementById("featureNext");
+    const dots = document.querySelectorAll(".feature-dot");
 
-    let currentFeature = 0;
-    let featureTimer;
+    let currentSlide = 0;
+    const totalSlides = dots.length;
 
-    function showFeature(index) {
+    function showSlide(index) {
 
       if (index < 0) {
-        index = featureSlides.length - 1;
+        currentSlide = totalSlides - 1;
+      } else if (index >= totalSlides) {
+        currentSlide = 0;
+      } else {
+        currentSlide = index;
       }
 
-      if (index >= featureSlides.length) {
-        index = 0;
-      }
+      track.style.transform =
+        "translateX(-" + (currentSlide * 100) + "%)";
 
-      currentFeature = index;
-
-      featureTrack.style.transform =
-        "translateX(-" + (currentFeature * 100) + "%)";
-
-      featureDots.forEach(function(dot, dotIndex) {
+      dots.forEach(function(dot, i) {
 
         dot.classList.toggle(
           "active",
-          dotIndex === currentFeature
+          i === currentSlide
         );
 
       });
 
     }
 
-    function nextFeature() {
-      showFeature(currentFeature + 1);
-    }
-
-    function previousFeature() {
-      showFeature(currentFeature - 1);
-    }
-
-    function startFeatureTimer() {
-
-      clearInterval(featureTimer);
-
-      featureTimer = setInterval(function() {
-        nextFeature();
-      }, 7000);
-
-    }
-
-    featureNext.addEventListener("click", function() {
-      nextFeature();
-      startFeatureTimer();
+    prevButton.addEventListener("click", function() {
+      showSlide(currentSlide - 1);
     });
 
-    featurePrev.addEventListener("click", function() {
-      previousFeature();
-      startFeatureTimer();
+    nextButton.addEventListener("click", function() {
+      showSlide(currentSlide + 1);
     });
 
-    featureDots.forEach(function(dot) {
+    dots.forEach(function(dot) {
 
       dot.addEventListener("click", function() {
 
-        const slideNumber =
-          parseInt(dot.getAttribute("data-slide"));
-
-        showFeature(slideNumber);
-        startFeatureTimer();
+        showSlide(
+          Number(dot.dataset.slide)
+        );
 
       });
 
     });
 
-    startFeatureTimer();
+
+    /* AUTOMATIC CAROUSEL */
+
+    let autoSlide = setInterval(function() {
+
+      showSlide(currentSlide + 1);
+
+    }, 7000);
 
 
-    /* =========================
-       POLL BAR ANIMATION
-    ========================= */
+    function resetAutoSlide() {
 
-    document.addEventListener("DOMContentLoaded", function () {
+      clearInterval(autoSlide);
 
-      const pollChart = document.querySelector(".poll-chart");
-      const pollBars =
-        document.querySelectorAll(".poll-bar[data-width]");
+      autoSlide = setInterval(function() {
 
-      if (!pollChart || !pollBars.length) {
-        return;
+        showSlide(currentSlide + 1);
+
+      }, 7000);
+
+    }
+
+    prevButton.addEventListener("click", resetAutoSlide);
+    nextButton.addEventListener("click", resetAutoSlide);
+
+    dots.forEach(function(dot) {
+
+      dot.addEventListener("click", resetAutoSlide);
+
+    });
+
+
+    /* TOUCH SWIPE */
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    const carousel = document.querySelector(".feature-carousel");
+
+    carousel.addEventListener("touchstart", function(event) {
+
+      touchStartX = event.changedTouches[0].screenX;
+
+    }, { passive: true });
+
+
+    carousel.addEventListener("touchend", function(event) {
+
+      touchEndX = event.changedTouches[0].screenX;
+
+      const swipeDistance = touchEndX - touchStartX;
+
+      if (Math.abs(swipeDistance) > 50) {
+
+        if (swipeDistance < 0) {
+          showSlide(currentSlide + 1);
+        } else {
+          showSlide(currentSlide - 1);
+        }
+
+        resetAutoSlide();
+
       }
 
-      const pollObserver = new IntersectionObserver(
-        function (entries, observer) {
+    }, { passive: true });
 
-          entries.forEach(function (entry) {
 
-            if (entry.isIntersecting) {
+    /* POLL BAR ANIMATION */
 
-              pollBars.forEach(function (bar, index) {
+    const pollBars = document.querySelectorAll(".poll-bar");
 
-                const targetWidth =
-                  bar.getAttribute("data-width");
+    const pollObserver = new IntersectionObserver(
+      function(entries, observer) {
 
-                setTimeout(function () {
+        entries.forEach(function(entry) {
 
-                  bar.style.width = targetWidth;
+          if (entry.isIntersecting) {
 
-                }, index * 150);
+            const bar = entry.target;
+            const width = bar.dataset.width;
 
-              });
-
-              observer.disconnect();
-
+            if (width) {
+              bar.style.width = width;
             }
 
-          });
+            observer.unobserve(bar);
 
-        },
-        {
-          threshold: 0.3
-        }
-      );
+          }
 
-      pollObserver.observe(pollChart);
+        });
+
+      },
+      {
+        threshold: 0.4
+      }
+    );
+
+
+    pollBars.forEach(function(bar) {
+
+      pollObserver.observe(bar);
 
     });
 
