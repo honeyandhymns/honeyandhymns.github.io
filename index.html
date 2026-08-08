@@ -11,6 +11,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
@@ -30,6 +31,7 @@
       color: #4d4029;
       line-height: 1.7;
     }
+
 
     /* =========================
        HEADER
@@ -1035,7 +1037,7 @@
   <div class="feature-track" id="featureTrack">
 
 
-    <!-- HERO SLIDE 1 -->
+    <!-- HERO SLIDE 1: LATEST ARTICLE -->
 
     <div class="feature-slide">
 
@@ -1084,7 +1086,7 @@
     </div>
 
 
-    <!-- HERO SLIDE 2 -->
+    <!-- HERO SLIDE 2: WEEKLY BULLETIN -->
 
     <div class="feature-slide">
 
@@ -1093,9 +1095,9 @@
         <div class="feature-image-wrap">
 
           <img
-            src="images/honey-and-hymns-cross-bees.png"
-            alt="Honey & Hymns cross with honey and bees"
-            class="feature-image contain"
+            src="images/honey-and-hymns-honey-and-hymns-weekly-bulletin.png"
+            alt="The Honey & Hymns Weekly Bulletin"
+            class="feature-image"
           >
 
         </div>
@@ -1111,9 +1113,9 @@
           </h2>
 
           <p>
-            Verse of the week, poll results, the latest post,
-            what's new and upcoming, and the Sunday Gospel
-            for Kids — all in one cozy weekly update.
+            Your cozy weekly roundup of faith, family,
+            homeschool, encouragement, and the beautiful
+            ordinary moments of life at Honey & Hymns.
           </p>
 
           <a
@@ -1132,7 +1134,7 @@
     </div>
 
 
-    <!-- HERO SLIDE 3 -->
+    <!-- HERO SLIDE 3: SUNDAY GOSPEL -->
 
     <div class="feature-slide">
 
@@ -1181,7 +1183,7 @@
     </div>
 
 
-    <!-- HERO SLIDE 4 -->
+    <!-- HERO SLIDE 4: MINI AT-HOME RETREAT -->
 
     <div class="feature-slide">
 
@@ -1190,9 +1192,9 @@
         <div class="feature-image-wrap">
 
           <img
-            src="images/honey-and-hymns-logo.png"
-            alt="Honey & Hymns resources"
-            class="feature-image contain"
+            src="images/honey-and-hymns-mini-home-retreat.png"
+            alt="Honey & Hymns Mini At-Home Retreat"
+            class="feature-image"
           >
 
         </div>
@@ -1200,26 +1202,28 @@
         <div class="feature-content">
 
           <p class="feature-kicker">
-            Made for Your Home
+            A Little Gift for You
           </p>
 
           <h2>
-            Honey & Hymns Resources
+            A Mini At-Home Retreat,
+            Delivered to Your Inbox
           </h2>
 
           <p>
-            Printable resources, homeschool tools, faith-filled
-            activities, homemaking resources, and more — created
-            with Catholic family life in mind.
+            Subscribe to Honey & Hymns and receive a peaceful
+            Mini At-Home Retreat delivered right to your inbox —
+            a little space to pause, pray, rest, and reconnect
+            with what matters most.
           </p>
 
           <a
             class="feature-button"
-            href="https://honeyandhymns.gumroad.com/"
+            href="https://honeyandhymns.com/welcome"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Browse Resources →
+            Subscribe →
           </a>
 
         </div>
@@ -1274,7 +1278,7 @@
   <button
     class="feature-dot"
     data-slide="3"
-    aria-label="Go to resources"
+    aria-label="Go to Mini At-Home Retreat"
   ></button>
 
 </div>
@@ -1320,7 +1324,7 @@
       <div class="bulletin-grid">
 
 
-        <!-- VERSE -->
+        <!-- VERSE OF THE WEEK -->
 
         <div class="note">
 
@@ -1380,7 +1384,7 @@
         </div>
 
 
-        <!-- POLL -->
+        <!-- LAST WEEK'S POLL -->
 
         <div class="note">
 
@@ -1405,10 +1409,12 @@
               </div>
 
               <div class="poll-bar-track">
+
                 <div
                   class="poll-bar"
                   data-width="33%"
                 ></div>
+
               </div>
 
             </div>
@@ -1422,7 +1428,9 @@
               </div>
 
               <div class="poll-bar-track">
+
                 <div class="poll-bar poll-zero"></div>
+
               </div>
 
             </div>
@@ -1436,10 +1444,12 @@
               </div>
 
               <div class="poll-bar-track">
+
                 <div
                   class="poll-bar"
                   data-width="33%"
                 ></div>
+
               </div>
 
             </div>
@@ -1453,7 +1463,9 @@
               </div>
 
               <div class="poll-bar-track">
+
                 <div class="poll-bar poll-zero"></div>
+
               </div>
 
             </div>
@@ -1467,10 +1479,12 @@
               </div>
 
               <div class="poll-bar-track">
+
                 <div
                   class="poll-bar"
                   data-width="33%"
                 ></div>
+
               </div>
 
             </div>
@@ -1591,7 +1605,7 @@
 
   </section>
 
-  <!-- RECENT ARTICLES -->
+  <!-- RECENTLY FROM HONEY & HYMNS -->
 
   <section class="articles-section" id="articles">
 
@@ -1953,14 +1967,20 @@
 
 
     prevButton.addEventListener("click", function() {
+
       showSlide(currentSlide - 1);
+
       resetAutoSlide();
+
     });
 
 
     nextButton.addEventListener("click", function() {
+
       showSlide(currentSlide + 1);
+
       resetAutoSlide();
+
     });
 
 
