@@ -1270,98 +1270,85 @@
 
   <nav class="site-nav">
 
-    <a href="index.html">
-      Home
-    </a>
+  <a href="index.html">
+    Home
+  </a>
 
-    <a href="index.html#articles">
-      Articles
-    </a>
+  <a href="index.html#articles">
+    Articles
+  </a>
 
+  <div class="shop-dropdown">
 
-    <div class="shop-dropdown">
+    <button
+      class="shop-toggle"
+      type="button"
+      aria-expanded="false"
+    >
+      Shop
+    </button>
 
-      <button
-        class="shop-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-haspopup="true"
-      >
-        Shop
-      </button>
+    <div class="shop-menu">
 
+      <a href="Shop.html">
+        Resources
+      </a>
 
-      <div class="shop-menu">
+      <a href="Free-Downloads.html">
+        Free Downloads
+      </a>
 
-        <a href="Shop.html">
-          Resources
-        </a>
-
-        <a
-          href="Free-Downloads.html"
-          class="active"
-        >
-          Free Downloads
-        </a>
-
-        <a href="sunday-gospel.html">
-          Weekly Sunday Gospel
-        </a>
-
-        <div class="shop-coming-soon">
-
-          Monthly Honey & Hymns Magazine
-
-          <small>
-            Coming soon
-          </small>
-
-        </div>
-
+      <div class="shop-coming-soon">
+        Monthly Honey & Hymns Magazine
+        <small>
+          Coming soon
+        </small>
       </div>
 
     </div>
 
+  </div>
 
-    <a href="index.html#about">
-      About
-    </a>
+  <!-- Sunday Gospel is now its own navigation item -->
+  <a href="Sunday-Gospel.html">
+    Sunday Gospel for Kids
+  </a>
 
+  <a href="index.html#about">
+    About
+  </a>
 
-    <a
-      href="https://honeyandhymns.substack.com/"
-      target="_blank"
-      rel="noopener noreferrer"
+  <a
+    href="https://honeyandhymns.substack.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Newsletter
+  </a>
+
+  <!-- Wishlist -->
+  <button
+    class="wishlist-header-button"
+    type="button"
+    onclick="openWishlist()"
+  >
+
+    <span class="wishlist-heart">
+      ♡
+    </span>
+
+    Wishlist
+
+    <span
+      class="wishlist-count"
+      id="wishlistCount"
     >
-      Newsletter
-    </a>
+      0
+    </span>
 
+  </button>
 
-    <button
-      class="wishlist-header-button"
-      id="wishlistHeaderButton"
-      type="button"
-      aria-label="Open wishlist"
-    >
-
-      <span class="wishlist-heart">
-        ♡
-      </span>
-
-      Wishlist
-
-      <span
-        class="wishlist-count"
-        id="wishlistCount"
-      >
-        0
-      </span>
-
-    </button>
-
-  </nav>
-
-
+</nav>
   <!-- =========================
        FREE DOWNLOAD HERO
   ========================= -->
