@@ -1,6 +1,5 @@
 
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -42,27 +41,20 @@
       box-sizing: border-box;
     }
 
-
     html {
       scroll-behavior: smooth;
     }
 
-
     body {
       margin: 0;
-
       background: #FFFDF0;
-
       color: #4D4029;
-
       font-family:
         "Playfair Display",
         Georgia,
         serif;
-
       line-height: 1.6;
     }
-
 
     body.cart-open {
       overflow: hidden;
@@ -74,53 +66,34 @@
     ========================= */
 
     .site-header {
-
       background: #FFEBA1;
-
-      padding: 25px 20px 15px;
-
+      padding: 25px 20px 14px;
       text-align: center;
-
       border-bottom:
         1px solid rgba(90, 70, 30, 0.12);
     }
 
-
     .header-brand {
-
       max-width: 700px;
-
       margin: 0 auto;
     }
-
 
     .site-logo {
-
       width: 365px;
-
       max-width: 86%;
-
       height: auto;
-
       display: block;
-
       margin: 0 auto;
     }
 
-
     .header-tagline {
-
       margin: 4px 0 0;
-
       font-family:
         "Cormorant Garamond",
         Georgia,
         serif;
-
       font-size: 0.84rem;
-
       letter-spacing: 2px;
-
       color: #5D4B2D;
     }
 
@@ -130,42 +103,34 @@
     ========================= */
 
     .site-nav {
-
       background: #FFEBA1;
-
       text-align: center;
-
       padding: 9px 15px 13px;
-
       border-bottom:
         1px solid rgba(90, 70, 30, 0.12);
-    }
 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 3px;
+    }
 
     .site-nav > a,
     .shop-toggle {
-
       color: #514229;
-
       text-decoration: none;
-
-      margin: 0 14px;
-
+      margin: 0 10px;
       font-family:
         "Cormorant Garamond",
         Georgia,
         serif;
-
       font-size: 0.95rem;
-
-      transition:
-        color 0.2s ease;
+      transition: color 0.2s ease;
     }
-
 
     .site-nav > a:hover,
     .shop-toggle:hover {
-
       color: #967331;
     }
 
@@ -175,33 +140,21 @@
     ========================= */
 
     .shop-dropdown {
-
       position: relative;
-
       display: inline-block;
     }
 
-
     .shop-toggle {
-
       background: none;
-
       border: none;
-
       padding: 0;
-
       cursor: pointer;
     }
 
-
     .shop-menu {
-
       position: absolute;
-
       top: calc(100% + 10px);
-
       left: 50%;
-
       transform:
         translateX(-50%)
         translateY(-6px);
@@ -224,9 +177,7 @@
       text-align: left;
 
       opacity: 0;
-
       visibility: hidden;
-
       pointer-events: none;
 
       transition:
@@ -236,15 +187,11 @@
       z-index: 1000;
     }
 
-
     .shop-dropdown:hover .shop-menu,
     .shop-dropdown:focus-within .shop-menu,
     .shop-dropdown.open .shop-menu {
-
       opacity: 1;
-
       visibility: visible;
-
       pointer-events: auto;
 
       transform:
@@ -252,14 +199,10 @@
         translateY(0);
     }
 
-
     .shop-menu a,
     .shop-coming-soon {
-
       display: block;
-
       margin: 0;
-
       padding: 10px 18px;
 
       color: #514229;
@@ -276,25 +219,17 @@
       text-decoration: none;
     }
 
-
     .shop-menu a:hover {
-
       background: #FFF3C8;
-
       color: #80652D;
     }
 
-
     .shop-coming-soon {
-
       cursor: default;
     }
 
-
     .shop-coming-soon small {
-
       display: block;
-
       margin-top: 2px;
 
       font-family:
@@ -308,11 +243,81 @@
 
 
     /* =========================
+       HEADER CART BUTTON
+    ========================= */
+
+    .header-cart-button {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 5px;
+
+      border: none;
+
+      background: none;
+
+      color: #514229;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 0.95rem;
+
+      cursor: pointer;
+
+      padding: 0;
+
+      margin: 0 10px;
+
+      transition:
+        color 0.2s ease;
+    }
+
+    .header-cart-button:hover {
+      color: #967331;
+    }
+
+    .header-cart-icon {
+      font-size: 0.95rem;
+    }
+
+    .header-cart-count {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-width: 18px;
+      height: 18px;
+
+      padding: 0 5px;
+
+      border-radius: 50%;
+
+      background: #D8B65F;
+
+      color: #4D4029;
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size: 0.6rem;
+
+      font-weight: bold;
+    }
+
+
+    /* =========================
        SHOP HERO
     ========================= */
 
     .shop-hero {
-
       background: #FFEBA1;
 
       padding: 55px 20px 60px;
@@ -327,15 +332,12 @@
       overflow: hidden;
     }
 
-
     .shop-hero::before {
-
       content: "✦";
 
       position: absolute;
 
       left: 12%;
-
       top: 38%;
 
       font-size: 1rem;
@@ -345,15 +347,12 @@
       transform: rotate(-12deg);
     }
 
-
     .shop-hero::after {
-
       content: "✦";
 
       position: absolute;
 
       right: 13%;
-
       top: 30%;
 
       font-size: 0.9rem;
@@ -363,9 +362,7 @@
       transform: rotate(15deg);
     }
 
-
     .shop-kicker {
-
       font-family:
         "Caveat",
         cursive;
@@ -377,9 +374,7 @@
       margin: 0 0 4px;
     }
 
-
     .shop-hero h1 {
-
       font-family:
         "Cormorant Garamond",
         Georgia,
@@ -396,9 +391,7 @@
       margin: 0 0 11px;
     }
 
-
     .shop-hero p {
-
       max-width: 600px;
 
       margin: 0 auto;
@@ -414,31 +407,24 @@
     ========================= */
 
     .shop-section {
-
       padding: 50px 20px 70px;
 
       background: #FBF8ED;
     }
 
-
     .shop-wrapper {
-
       max-width: 1050px;
 
       margin: 0 auto;
     }
 
-
     .section-heading {
-
       text-align: center;
 
       margin-bottom: 32px;
     }
 
-
     .section-heading h2 {
-
       font-family:
         "Cormorant Garamond",
         Georgia,
@@ -455,9 +441,7 @@
       margin: 0 0 6px;
     }
 
-
     .section-rule {
-
       display: flex;
 
       align-items: center;
@@ -471,10 +455,8 @@
       margin: 8px 0 10px;
     }
 
-
     .section-rule::before,
     .section-rule::after {
-
       content: "";
 
       width: 70px;
@@ -484,9 +466,7 @@
       background: #D8C79F;
     }
 
-
     .section-heading p {
-
       max-width: 570px;
 
       margin: 0 auto;
@@ -502,7 +482,6 @@
     ========================= */
 
     .product-grid {
-
       display: grid;
 
       grid-template-columns:
@@ -513,9 +492,7 @@
       align-items: stretch;
     }
 
-
     .product-card {
-
       background: #FFFDF6;
 
       border:
@@ -540,9 +517,7 @@
         box-shadow 0.2s ease;
     }
 
-
     .product-card:hover {
-
       transform:
         translateY(-3px);
 
@@ -551,9 +526,7 @@
         rgba(77, 64, 41, 0.09);
     }
 
-
     .product-image {
-
       width: 100%;
 
       height: 210px;
@@ -571,7 +544,6 @@
     ========================= */
 
     .product-info {
-
       padding: 18px 17px 18px;
 
       display: flex;
@@ -581,9 +553,7 @@
       flex-grow: 1;
     }
 
-
     .product-category {
-
       font-family:
         "Caveat",
         cursive;
@@ -595,9 +565,7 @@
       margin-bottom: 2px;
     }
 
-
     .product-title {
-
       font-family:
         "Cormorant Garamond",
         Georgia,
@@ -614,9 +582,7 @@
       margin: 0 0 8px;
     }
 
-
     .product-description {
-
       font-size: 0.7rem;
 
       line-height: 1.55;
@@ -628,13 +594,7 @@
       flex-grow: 1;
     }
 
-
-    /* =========================
-       PRODUCT BOTTOM
-    ========================= */
-
     .product-bottom {
-
       display: flex;
 
       align-items: center;
@@ -646,9 +606,7 @@
       margin-top: auto;
     }
 
-
     .product-price {
-
       font-family:
         "Cormorant Garamond",
         Georgia,
@@ -665,11 +623,10 @@
 
 
     /* =========================
-       ORIGINAL BUTTON STYLE
+       ORIGINAL-STYLE BUTTON
     ========================= */
 
     .cart-button {
-
       display: inline-flex;
 
       align-items: center;
@@ -687,8 +644,6 @@
 
       border-radius: 30px;
 
-      text-decoration: none;
-
       font-family:
         "Playfair Display",
         Georgia,
@@ -704,22 +659,17 @@
 
       transition:
         background 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+        transform 0.2s ease;
     }
 
-
     .cart-button:hover {
-
       background: #DDBB5E;
 
       transform:
         translateY(-1px);
     }
 
-
     .cart-icon {
-
       font-size: 0.78rem;
 
       margin-right: 4px;
@@ -729,11 +679,10 @@
 
 
     /* =========================
-       CART OVERLAY BACKDROP
+       CART BACKDROP
     ========================= */
 
     .cart-backdrop {
-
       position: fixed;
 
       inset: 0;
@@ -754,9 +703,7 @@
       z-index: 9000;
     }
 
-
     .cart-backdrop.open {
-
       opacity: 1;
 
       visibility: visible;
@@ -770,7 +717,6 @@
     ========================= */
 
     .cart-drawer {
-
       position: fixed;
 
       top: 0;
@@ -809,9 +755,7 @@
         1px solid #E4D7B7;
     }
 
-
     .cart-drawer.open {
-
       transform:
         translateX(0);
     }
@@ -822,14 +766,13 @@
     ========================= */
 
     .cart-header {
-
       display: flex;
 
       align-items: center;
 
       justify-content: space-between;
 
-      padding: 20px 20px 16px;
+      padding: 20px;
 
       background: #FFEBA1;
 
@@ -837,9 +780,7 @@
         1px solid #E1CA77;
     }
 
-
     .cart-title {
-
       margin: 0;
 
       font-family:
@@ -854,9 +795,7 @@
       color: #403521;
     }
 
-
     .cart-close {
-
       width: 34px;
 
       height: 34px;
@@ -865,7 +804,8 @@
 
       border-radius: 50%;
 
-      background: rgba(255,255,255,0.45);
+      background:
+        rgba(255,255,255,0.45);
 
       color: #514229;
 
@@ -877,20 +817,17 @@
         background 0.2s ease;
     }
 
-
     .cart-close:hover {
-
       background:
         rgba(255,255,255,0.75);
     }
 
 
     /* =========================
-       CART CONTENT
+       CART ITEMS
     ========================= */
 
     .cart-items {
-
       flex: 1;
 
       overflow-y: auto;
@@ -898,9 +835,7 @@
       padding: 18px;
     }
 
-
     .empty-cart {
-
       text-align: center;
 
       padding: 60px 20px;
@@ -908,29 +843,19 @@
       color: #6B5A3E;
     }
 
-
     .empty-cart-icon {
-
       font-size: 2rem;
 
       margin-bottom: 10px;
     }
 
-
     .empty-cart p {
-
       margin: 4px 0;
 
       font-size: 0.82rem;
     }
 
-
-    /* =========================
-       CART ITEM
-    ========================= */
-
     .cart-item {
-
       display: grid;
 
       grid-template-columns:
@@ -946,9 +871,7 @@
         1px solid #E7DDC5;
     }
 
-
     .cart-item-image {
-
       width: 64px;
 
       height: 64px;
@@ -960,9 +883,7 @@
       background: #F2E8C8;
     }
 
-
     .cart-item-name {
-
       margin: 0 0 4px;
 
       font-family:
@@ -977,9 +898,7 @@
       color: #403521;
     }
 
-
     .cart-item-price {
-
       margin: 0;
 
       font-size: 0.72rem;
@@ -987,9 +906,7 @@
       color: #80652D;
     }
 
-
     .cart-item-controls {
-
       display: flex;
 
       align-items: center;
@@ -999,9 +916,7 @@
       margin-top: 7px;
     }
 
-
     .quantity-button {
-
       width: 25px;
 
       height: 25px;
@@ -1020,9 +935,7 @@
       font-size: 0.85rem;
     }
 
-
     .quantity-number {
-
       min-width: 22px;
 
       text-align: center;
@@ -1030,9 +943,7 @@
       font-size: 0.72rem;
     }
 
-
     .remove-item {
-
       border: none;
 
       background: none;
@@ -1046,9 +957,7 @@
       padding: 3px 0;
     }
 
-
     .remove-item:hover {
-
       color: #6D4E29;
 
       text-decoration: underline;
@@ -1060,7 +969,6 @@
     ========================= */
 
     .cart-footer {
-
       padding: 18px;
 
       background: #FFF8DF;
@@ -1069,9 +977,7 @@
         1px solid #E1CA77;
     }
 
-
     .cart-total-row {
-
       display: flex;
 
       align-items: center;
@@ -1081,9 +987,7 @@
       margin-bottom: 13px;
     }
 
-
     .cart-total-label {
-
       font-family:
         "Cormorant Garamond",
         Georgia,
@@ -1094,9 +998,7 @@
       color: #514229;
     }
 
-
     .cart-total {
-
       font-family:
         "Cormorant Garamond",
         Georgia,
@@ -1109,9 +1011,7 @@
       color: #403521;
     }
 
-
     .checkout-button {
-
       width: 100%;
 
       border: none;
@@ -1143,18 +1043,22 @@
         transform 0.2s ease;
     }
 
-
     .checkout-button:hover {
-
       background: #DDBB5E;
 
       transform:
         translateY(-1px);
     }
 
+    .checkout-button:disabled {
+      opacity: 0.5;
+
+      cursor: not-allowed;
+
+      transform: none;
+    }
 
     .checkout-note {
-
       text-align: center;
 
       margin: 9px 0 0;
@@ -1172,7 +1076,6 @@
     ========================= */
 
     .shop-note {
-
       max-width: 620px;
 
       margin: 45px auto 0;
@@ -1193,9 +1096,7 @@
         rgba(77, 64, 41, 0.04);
     }
 
-
     .shop-note-title {
-
       font-family:
         "Caveat",
         cursive;
@@ -1207,9 +1108,7 @@
       margin: 0 0 3px;
     }
 
-
     .shop-note p {
-
       margin: 0;
 
       font-size: 0.72rem;
@@ -1223,7 +1122,6 @@
     ========================= */
 
     footer {
-
       background: #4D4029;
 
       color: #FFFDE7;
@@ -1233,9 +1131,7 @@
       padding: 24px 20px;
     }
 
-
     footer p {
-
       margin: 4px 0;
 
       font-size: 0.75rem;
@@ -1249,7 +1145,6 @@
     @media (max-width: 950px) {
 
       .product-grid {
-
         grid-template-columns:
           repeat(2, 1fr);
 
@@ -1268,47 +1163,35 @@
     @media (max-width: 600px) {
 
       .site-header {
-
         padding:
           20px 15px 14px;
       }
 
-
       .site-logo {
-
         width: 290px;
-
         max-width: 90%;
       }
 
-
       .header-tagline {
-
         font-size: 0.75rem;
-
         letter-spacing: 1.5px;
       }
 
-
       .site-nav {
-
         padding:
           8px 8px 11px;
       }
 
-
       .site-nav > a,
-      .shop-toggle {
-
+      .shop-toggle,
+      .header-cart-button {
         margin:
-          0 7px;
+          0 6px;
 
         font-size: 0.84rem;
       }
 
-
       .shop-menu {
-
         position: fixed;
 
         top: 105px;
@@ -1322,47 +1205,33 @@
           );
       }
 
-
       .shop-hero {
-
         padding:
           45px 20px 50px;
       }
 
-
       .shop-hero h1 {
-
         font-size: 2.35rem;
       }
 
-
       .shop-hero p {
-
         font-size: 0.82rem;
       }
 
-
       .shop-section {
-
         padding:
           45px 17px 60px;
       }
 
-
       .section-heading {
-
         margin-bottom: 28px;
       }
 
-
       .section-heading h2 {
-
         font-size: 1.9rem;
       }
 
-
       .product-grid {
-
         grid-template-columns: 1fr;
 
         max-width: 400px;
@@ -1370,42 +1239,30 @@
         margin: 0 auto;
       }
 
-
       .product-image {
-
         height: 270px;
       }
 
-
       .product-info {
-
         padding: 18px;
       }
 
-
       .product-title {
-
         font-size: 1.45rem;
       }
 
-
       .product-description {
-
         font-size: 0.73rem;
       }
 
-
       .cart-button {
-
         font-size: 0.63rem;
 
         padding:
           8px 10px;
       }
 
-
       .shop-note {
-
         margin-top: 38px;
 
         padding:
@@ -1440,7 +1297,6 @@
 
       </a>
 
-
       <p class="header-tagline">
         Faith • Homeschool • Homemaking
       </p>
@@ -1459,7 +1315,6 @@
     <a href="index.html">
       Home
     </a>
-
 
     <a href="index.html#articles">
       Articles
@@ -1483,16 +1338,13 @@
           Resources
         </a>
 
-
         <a href="index.html#free-downloads">
           Free Downloads
         </a>
 
-
         <a href="sunday-gospel.html">
           Weekly Sunday Gospel
         </a>
-
 
         <div class="shop-coming-soon">
 
@@ -1522,6 +1374,31 @@
       Newsletter
     </a>
 
+
+    <!-- PERSISTENT CART BUTTON -->
+
+    <button
+      class="header-cart-button"
+      id="headerCartButton"
+      type="button"
+      aria-label="Open shopping cart"
+    >
+
+      <span class="header-cart-icon">
+        🛒
+      </span>
+
+      Cart
+
+      <span
+        class="header-cart-count"
+        id="headerCartCount"
+      >
+        0
+      </span>
+
+    </button>
+
   </nav>
 
 
@@ -1535,11 +1412,9 @@
       Practical resources for a peaceful home
     </p>
 
-
     <h1>
       The Honey & Hymns Shop
     </h1>
-
 
     <p>
       Thoughtfully created printables for Catholic homemakers,
@@ -1565,11 +1440,9 @@
           Homemaking, Homeschool & Faith
         </h2>
 
-
         <div class="section-rule">
           ✦
         </div>
-
 
         <p>
           Simple resources created for the beautiful,
@@ -1588,10 +1461,7 @@
 
         <!-- PEACEFUL HOME SAFETY BINDER -->
 
-        <article
-          class="product-card"
-          data-product-id="peaceful-home-safety-binder"
-        >
+        <article class="product-card">
 
           <img
             src="images/peaceful-home-safety-binder.png"
@@ -1599,18 +1469,15 @@
             class="product-image"
           >
 
-
           <div class="product-info">
 
             <div class="product-category">
               Homemaking
             </div>
 
-
             <h2 class="product-title">
               The Peaceful Home Safety Binder
             </h2>
-
 
             <p class="product-description">
               A comprehensive printable binder to help families
@@ -1619,13 +1486,11 @@
               greater peace and preparedness to the home.
             </p>
 
-
             <div class="product-bottom">
 
               <div class="product-price">
                 $8.00
               </div>
-
 
               <button
                 class="cart-button"
@@ -1634,6 +1499,7 @@
                 data-name="The Peaceful Home Safety Binder"
                 data-price="8"
                 data-image="images/peaceful-home-safety-binder.png"
+
                 data-gumroad="https://honeyandhymns.gumroad.com/l/xgkcjt"
               >
 
@@ -1654,10 +1520,7 @@
 
         <!-- ULTIMATE HOMESCHOOL PLANNER -->
 
-        <article
-          class="product-card"
-          data-product-id="ultimate-homeschool-planner"
-        >
+        <article class="product-card">
 
           <img
             src="images/ultimate-homeschool-planner.png"
@@ -1665,18 +1528,15 @@
             class="product-image"
           >
 
-
           <div class="product-info">
 
             <div class="product-category">
               Homeschool
             </div>
 
-
             <h2 class="product-title">
               The Ultimate Homeschool Planner for Moms
             </h2>
-
 
             <p class="product-description">
               A practical printable planner to help homeschool
@@ -1685,13 +1545,11 @@
               homeschool life.
             </p>
 
-
             <div class="product-bottom">
 
               <div class="product-price">
                 $3.00
               </div>
-
 
               <button
                 class="cart-button"
@@ -1700,6 +1558,7 @@
                 data-name="The Ultimate Homeschool Planner for Moms"
                 data-price="3"
                 data-image="images/ultimate-homeschool-planner.png"
+
                 data-gumroad="https://honeyandhymns.gumroad.com/l/vijzj"
               >
 
@@ -1720,10 +1579,7 @@
 
         <!-- REST & REFLECT RETREAT JOURNAL -->
 
-        <article
-          class="product-card"
-          data-product-id="rest-and-reflect-retreat-journal"
-        >
+        <article class="product-card">
 
           <img
             src="images/rest-and-reflect-retreat-journal.png"
@@ -1731,18 +1587,15 @@
             class="product-image"
           >
 
-
           <div class="product-info">
 
             <div class="product-category">
               Faith & Reflection
             </div>
 
-
             <h2 class="product-title">
               Rest & Reflect Retreat Journal
             </h2>
-
 
             <p class="product-description">
               A gentle printable journal for quiet moments of
@@ -1750,13 +1603,11 @@
               invitation to slow down and make space for God.
             </p>
 
-
             <div class="product-bottom">
 
               <div class="product-price">
                 $7.00
               </div>
-
 
               <button
                 class="cart-button"
@@ -1765,6 +1616,7 @@
                 data-name="Rest & Reflect Retreat Journal"
                 data-price="7"
                 data-image="images/rest-and-reflect-retreat-journal.png"
+
                 data-gumroad="https://honeyandhymns.gumroad.com/l/pydfp"
               >
 
@@ -1786,16 +1638,11 @@
       </div>
 
 
-      <!-- =========================
-           SHOP NOTE
-      ========================= -->
-
       <div class="shop-note">
 
         <p class="shop-note-title">
           Created for the beautiful ordinary
         </p>
-
 
         <p>
           Honey & Hymns resources are made with the Catholic
@@ -1832,13 +1679,11 @@
     aria-hidden="true"
   >
 
-
     <div class="cart-header">
 
       <h2 class="cart-title">
         Your Cart
       </h2>
-
 
       <button
         class="cart-close"
@@ -1855,27 +1700,7 @@
     <div
       class="cart-items"
       id="cartItems"
-    >
-
-      <div class="empty-cart">
-
-        <div class="empty-cart-icon">
-          🛒
-        </div>
-
-
-        <p>
-          Your cart is empty.
-        </p>
-
-
-        <p>
-          Add something lovely to get started.
-        </p>
-
-      </div>
-
-    </div>
+    ></div>
 
 
     <div class="cart-footer">
@@ -1885,7 +1710,6 @@
         <span class="cart-total-label">
           Total
         </span>
-
 
         <span
           class="cart-total"
@@ -1901,8 +1725,9 @@
         class="checkout-button"
         id="checkoutButton"
         type="button"
+        disabled
       >
-        Continue to Checkout
+        Checkout
       </button>
 
 
@@ -1911,7 +1736,6 @@
       </p>
 
     </div>
-
 
   </aside>
 
@@ -1926,7 +1750,6 @@
       Honey & Hymns
     </p>
 
-
     <p>
       Faith • Homeschool • Homemaking
     </p>
@@ -1935,6 +1758,627 @@
 
 
   <script>
+
+    /* ==================================================
+       HONEY & HYMNS CART
+
+       The cart is saved in localStorage so it remains
+       available as the customer moves around the site.
+
+       IMPORTANT:
+       The Gumroad checkout handoff below is kept in
+       one function so we can replace it with Gumroad's
+       verified multi-product checkout mechanism without
+       rebuilding the cart itself.
+    ================================================== */
+
+
+    const CART_STORAGE_KEY =
+      "honeyAndHymnsCart";
+
+
+    let cart = [];
+
+
+    /* =========================
+       ELEMENTS
+    ========================= */
+
+    const cartDrawer =
+      document.getElementById(
+        "cartDrawer"
+      );
+
+
+    const cartBackdrop =
+      document.getElementById(
+        "cartBackdrop"
+      );
+
+
+    const cartItems =
+      document.getElementById(
+        "cartItems"
+      );
+
+
+    const cartTotal =
+      document.getElementById(
+        "cartTotal"
+      );
+
+
+    const cartClose =
+      document.getElementById(
+        "cartClose"
+      );
+
+
+    const headerCartButton =
+      document.getElementById(
+        "headerCartButton"
+      );
+
+
+    const headerCartCount =
+      document.getElementById(
+        "headerCartCount"
+      );
+
+
+    const checkoutButton =
+      document.getElementById(
+        "checkoutButton"
+      );
+
+
+    /* =========================
+       LOAD CART
+    ========================= */
+
+    function loadCart() {
+
+      try {
+
+        const savedCart =
+          localStorage.getItem(
+            CART_STORAGE_KEY
+          );
+
+
+        if (savedCart) {
+
+          cart =
+            JSON.parse(
+              savedCart
+            );
+
+        }
+
+      } catch (error) {
+
+        console.error(
+          "Unable to load cart:",
+          error
+        );
+
+        cart = [];
+
+      }
+
+
+      renderCart();
+
+    }
+
+
+    /* =========================
+       SAVE CART
+    ========================= */
+
+    function saveCart() {
+
+      try {
+
+        localStorage.setItem(
+          CART_STORAGE_KEY,
+          JSON.stringify(cart)
+        );
+
+      } catch (error) {
+
+        console.error(
+          "Unable to save cart:",
+          error
+        );
+
+      }
+
+    }
+
+
+    /* =========================
+       OPEN CART
+    ========================= */
+
+    function openCart() {
+
+      cartDrawer.classList.add(
+        "open"
+      );
+
+      cartBackdrop.classList.add(
+        "open"
+      );
+
+      cartDrawer.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.classList.add(
+        "cart-open"
+      );
+
+    }
+
+
+    /* =========================
+       CLOSE CART
+    ========================= */
+
+    function closeCart() {
+
+      cartDrawer.classList.remove(
+        "open"
+      );
+
+      cartBackdrop.classList.remove(
+        "open"
+      );
+
+      cartDrawer.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body.classList.remove(
+        "cart-open"
+      );
+
+    }
+
+
+    headerCartButton.addEventListener(
+      "click",
+      openCart
+    );
+
+
+    cartClose.addEventListener(
+      "click",
+      closeCart
+    );
+
+
+    cartBackdrop.addEventListener(
+      "click",
+      closeCart
+    );
+
+
+    /* =========================
+       ADD TO CART
+    ========================= */
+
+    document
+      .querySelectorAll(
+        ".cart-button"
+      )
+      .forEach(
+        function(button) {
+
+          button.addEventListener(
+            "click",
+            function() {
+
+              const product = {
+
+                name:
+                  button.dataset.name,
+
+                price:
+                  Number(
+                    button.dataset.price
+                  ),
+
+                image:
+                  button.dataset.image,
+
+                gumroad:
+                  button.dataset.gumroad,
+
+                quantity:
+                  1
+
+              };
+
+
+              const existing =
+                cart.find(
+                  function(item) {
+
+                    return (
+                      item.gumroad ===
+                      product.gumroad
+                    );
+
+                  }
+                );
+
+
+              if (existing) {
+
+                existing.quantity += 1;
+
+              } else {
+
+                cart.push(
+                  product
+                );
+
+              }
+
+
+              saveCart();
+
+              renderCart();
+
+              openCart();
+
+            }
+          );
+
+        }
+      );
+
+
+    /* =========================
+       RENDER CART
+    ========================= */
+
+    function renderCart() {
+
+      updateHeaderCount();
+
+
+      if (
+        cart.length === 0
+      ) {
+
+        cartItems.innerHTML = `
+
+          <div class="empty-cart">
+
+            <div class="empty-cart-icon">
+              🛒
+            </div>
+
+            <p>
+              Your cart is empty.
+            </p>
+
+            <p>
+              Add something lovely to get started.
+            </p>
+
+          </div>
+
+        `;
+
+
+        cartTotal.textContent =
+          "$0.00";
+
+
+        checkoutButton.disabled =
+          true;
+
+
+        return;
+
+      }
+
+
+      checkoutButton.disabled =
+        false;
+
+
+      cartItems.innerHTML =
+        cart.map(
+          function(item, index) {
+
+            return `
+
+              <div class="cart-item">
+
+                <img
+                  src="${item.image}"
+                  alt=""
+                  class="cart-item-image"
+                >
+
+
+                <div>
+
+                  <h3
+                    class="cart-item-name"
+                  >
+                    ${escapeHTML(
+                      item.name
+                    )}
+                  </h3>
+
+
+                  <p
+                    class="cart-item-price"
+                  >
+                    $${item.price.toFixed(2)}
+                  </p>
+
+
+                  <div
+                    class="cart-item-controls"
+                  >
+
+                    <button
+                      class="quantity-button"
+                      type="button"
+                      onclick="changeQuantity(${index}, -1)"
+                    >
+                      −
+                    </button>
+
+
+                    <span
+                      class="quantity-number"
+                    >
+                      ${item.quantity}
+                    </span>
+
+
+                    <button
+                      class="quantity-button"
+                      type="button"
+                      onclick="changeQuantity(${index}, 1)"
+                    >
+                      +
+                    </button>
+
+
+                    <button
+                      class="remove-item"
+                      type="button"
+                      onclick="removeItem(${index})"
+                    >
+                      Remove
+                    </button>
+
+                  </div>
+
+                </div>
+
+
+                <strong>
+                  $${(
+                    item.price *
+                    item.quantity
+                  ).toFixed(2)}
+                </strong>
+
+              </div>
+
+            `;
+
+          }
+        ).join("");
+
+
+      const total =
+        cart.reduce(
+          function(sum, item) {
+
+            return (
+              sum +
+              (
+                item.price *
+                item.quantity
+              )
+            );
+
+          },
+          0
+        );
+
+
+      cartTotal.textContent =
+        `$${total.toFixed(2)}`;
+
+    }
+
+
+    /* =========================
+       HEADER COUNT
+    ========================= */
+
+    function updateHeaderCount() {
+
+      const count =
+        cart.reduce(
+          function(total, item) {
+
+            return (
+              total +
+              item.quantity
+            );
+
+          },
+          0
+        );
+
+
+      headerCartCount.textContent =
+        count;
+
+    }
+
+
+    /* =========================
+       QUANTITY
+    ========================= */
+
+    window.changeQuantity =
+      function(
+        index,
+        amount
+      ) {
+
+        cart[index].quantity +=
+          amount;
+
+
+        if (
+          cart[index].quantity <= 0
+        ) {
+
+          cart.splice(
+            index,
+            1
+          );
+
+        }
+
+
+        saveCart();
+
+        renderCart();
+
+      };
+
+
+    /* =========================
+       REMOVE ITEM
+    ========================= */
+
+    window.removeItem =
+      function(index) {
+
+        cart.splice(
+          index,
+          1
+        );
+
+
+        saveCart();
+
+        renderCart();
+
+      };
+
+
+    /* =========================
+       ESCAPE HTML
+    ========================= */
+
+    function escapeHTML(
+      value
+    ) {
+
+      const div =
+        document.createElement(
+          "div"
+        );
+
+
+      div.textContent =
+        value;
+
+
+      return div.innerHTML;
+
+    }
+
+
+    /* ==================================================
+       GUMROAD CHECKOUT
+
+       This is intentionally isolated.
+
+       Gumroad's standard product URL is a single-product
+       checkout. We do NOT pretend that adding multiple
+       product URLs together creates a valid Gumroad cart.
+
+       Once the exact Gumroad multi-product handoff is
+       confirmed for the account/store, this function is
+       the only section that needs to change.
+    ================================================== */
+
+    checkoutButton.addEventListener(
+      "click",
+      function() {
+
+        if (
+          cart.length === 0
+        ) {
+
+          return;
+
+        }
+
+
+        /*
+          Temporary safe fallback:
+
+          The first product's Gumroad
+          page is opened.
+
+          DO NOT consider this the final
+          multi-product checkout implementation.
+        */
+
+        const firstProduct =
+          cart[0];
+
+
+        window.open(
+          firstProduct.gumroad,
+          "_blank",
+          "noopener"
+        );
+
+      }
+    );
+
+
+    /* =========================
+       ESC KEY
+    ========================= */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Escape"
+        ) {
+
+          closeCart();
+
+        }
+
+      }
+    );
+
 
     /* =========================
        SHOP DROPDOWN
@@ -2000,466 +2444,10 @@
 
 
     /* =========================
-       CART
+       INITIALIZE
     ========================= */
 
-    let cart = [];
-
-
-    const cartDrawer =
-      document.getElementById(
-        "cartDrawer"
-      );
-
-
-    const cartBackdrop =
-      document.getElementById(
-        "cartBackdrop"
-      );
-
-
-    const cartItems =
-      document.getElementById(
-        "cartItems"
-      );
-
-
-    const cartTotal =
-      document.getElementById(
-        "cartTotal"
-      );
-
-
-    const cartClose =
-      document.getElementById(
-        "cartClose"
-      );
-
-
-    const checkoutButton =
-      document.getElementById(
-        "checkoutButton"
-      );
-
-
-    /* =========================
-       OPEN CART
-    ========================= */
-
-    function openCart() {
-
-      cartDrawer.classList.add(
-        "open"
-      );
-
-
-      cartBackdrop.classList.add(
-        "open"
-      );
-
-
-      cartDrawer.setAttribute(
-        "aria-hidden",
-        "false"
-      );
-
-
-      document.body.classList.add(
-        "cart-open"
-      );
-
-    }
-
-
-    /* =========================
-       CLOSE CART
-    ========================= */
-
-    function closeCart() {
-
-      cartDrawer.classList.remove(
-        "open"
-      );
-
-
-      cartBackdrop.classList.remove(
-        "open"
-      );
-
-
-      cartDrawer.setAttribute(
-        "aria-hidden",
-        "true"
-      );
-
-
-      document.body.classList.remove(
-        "cart-open"
-      );
-
-    }
-
-
-    cartClose.addEventListener(
-      "click",
-      closeCart
-    );
-
-
-    cartBackdrop.addEventListener(
-      "click",
-      closeCart
-    );
-
-
-    /* =========================
-       ADD TO CART
-    ========================= */
-
-    document
-      .querySelectorAll(
-        ".cart-button"
-      )
-      .forEach(
-        function(button) {
-
-          button.addEventListener(
-            "click",
-            function() {
-
-              const name =
-                button.dataset.name;
-
-
-              const price =
-                Number(
-                  button.dataset.price
-                );
-
-
-              const image =
-                button.dataset.image;
-
-
-              const gumroad =
-                button.dataset.gumroad;
-
-
-              const existing =
-                cart.find(
-                  function(item) {
-
-                    return (
-                      item.name === name
-                    );
-
-                  }
-                );
-
-
-              if (existing) {
-
-                existing.quantity += 1;
-
-              } else {
-
-                cart.push({
-
-                  name:
-                    name,
-
-                  price:
-                    price,
-
-                  image:
-                    image,
-
-                  gumroad:
-                    gumroad,
-
-                  quantity:
-                    1
-
-                });
-
-              }
-
-
-              renderCart();
-
-
-              openCart();
-
-            }
-          );
-
-        }
-      );
-
-
-    /* =========================
-       RENDER CART
-    ========================= */
-
-    function renderCart() {
-
-      if (
-        cart.length === 0
-      ) {
-
-        cartItems.innerHTML = `
-
-          <div class="empty-cart">
-
-            <div class="empty-cart-icon">
-              🛒
-            </div>
-
-            <p>
-              Your cart is empty.
-            </p>
-
-            <p>
-              Add something lovely to get started.
-            </p>
-
-          </div>
-
-        `;
-
-
-        cartTotal.textContent =
-          "$0.00";
-
-
-        return;
-
-      }
-
-
-      cartItems.innerHTML =
-        cart.map(
-          function(item, index) {
-
-            return `
-
-              <div
-                class="cart-item"
-              >
-
-                <img
-                  src="${item.image}"
-                  alt=""
-                  class="cart-item-image"
-                >
-
-
-                <div>
-
-                  <h3
-                    class="cart-item-name"
-                  >
-                    ${item.name}
-                  </h3>
-
-
-                  <p
-                    class="cart-item-price"
-                  >
-                    $${item.price.toFixed(2)}
-                  </p>
-
-
-                  <div
-                    class="cart-item-controls"
-                  >
-
-                    <button
-                      class="quantity-button"
-                      type="button"
-                      onclick="changeQuantity(${index}, -1)"
-                      aria-label="Decrease quantity"
-                    >
-                      −
-                    </button>
-
-
-                    <span
-                      class="quantity-number"
-                    >
-                      ${item.quantity}
-                    </span>
-
-
-                    <button
-                      class="quantity-button"
-                      type="button"
-                      onclick="changeQuantity(${index}, 1)"
-                      aria-label="Increase quantity"
-                    >
-                      +
-                    </button>
-
-
-                    <button
-                      class="remove-item"
-                      type="button"
-                      onclick="removeItem(${index})"
-                    >
-                      Remove
-                    </button>
-
-                  </div>
-
-                </div>
-
-
-                <strong>
-                  $${(
-                    item.price *
-                    item.quantity
-                  ).toFixed(2)}
-                </strong>
-
-              </div>
-
-            `;
-
-          }
-        ).join("");
-
-
-      const total =
-        cart.reduce(
-          function(sum, item) {
-
-            return (
-              sum +
-              (
-                item.price *
-                item.quantity
-              )
-            );
-
-          },
-          0
-        );
-
-
-      cartTotal.textContent =
-        `$${total.toFixed(2)}`;
-
-    }
-
-
-    /* =========================
-       CHANGE QUANTITY
-    ========================= */
-
-    function changeQuantity(
-      index,
-      amount
-    ) {
-
-      cart[index].quantity +=
-        amount;
-
-
-      if (
-        cart[index].quantity <= 0
-      ) {
-
-        cart.splice(
-          index,
-          1
-        );
-
-      }
-
-
-      renderCart();
-
-    }
-
-
-    /* =========================
-       REMOVE ITEM
-    ========================= */
-
-    function removeItem(index) {
-
-      cart.splice(
-        index,
-        1
-      );
-
-
-      renderCart();
-
-    }
-
-
-    /* =========================
-       CHECKOUT
-    ========================= */
-
-    checkoutButton.addEventListener(
-      "click",
-      function() {
-
-        if (
-          cart.length === 0
-        ) {
-
-          return;
-
-        }
-
-
-        /*
-          Gumroad checkout links are
-          product-specific.
-
-          For now, the checkout button
-          sends the customer to the
-          first product's Gumroad page.
-
-          Once the Gumroad multi-product
-          checkout method is confirmed,
-          this section can be replaced
-          with the proper combined checkout.
-        */
-
-        const firstProduct =
-          cart[0];
-
-
-        window.location.href =
-          firstProduct.gumroad;
-
-      }
-    );
-
-
-    /* =========================
-       ESCAPE KEY
-    ========================= */
-
-    document.addEventListener(
-      "keydown",
-      function(event) {
-
-        if (
-          event.key === "Escape"
-        ) {
-
-          closeCart();
-
-        }
-
-      }
-    );
-
+    loadCart();
 
   </script>
 
@@ -2467,3 +2455,4 @@
 </body>
 
 </html>
+
