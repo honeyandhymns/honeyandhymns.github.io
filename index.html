@@ -2111,15 +2111,22 @@
 
 <script>
 
+<script>
+
 /* ========================================
    SHOP DROPDOWN
 ======================================== */
 
 const shopDropdown =
-  document.querySelector(".shop-dropdown");
+  document.querySelector(
+    ".shop-dropdown"
+  );
 
 const shopToggle =
-  document.querySelector(".shop-toggle");
+  document.querySelector(
+    ".shop-toggle"
+  );
+
 
 if (shopDropdown && shopToggle) {
 
@@ -2128,11 +2135,15 @@ if (shopDropdown && shopToggle) {
     function() {
 
       const isOpen =
-        shopDropdown.classList.toggle("open");
+        shopDropdown.classList.toggle(
+          "open"
+        );
 
       shopToggle.setAttribute(
         "aria-expanded",
-        isOpen ? "true" : "false"
+        isOpen
+          ? "true"
+          : "false"
       );
 
     }
@@ -2144,10 +2155,14 @@ if (shopDropdown && shopToggle) {
     function(event) {
 
       if (
-        !shopDropdown.contains(event.target)
+        !shopDropdown.contains(
+          event.target
+        )
       ) {
 
-        shopDropdown.classList.remove("open");
+        shopDropdown.classList.remove(
+          "open"
+        );
 
         shopToggle.setAttribute(
           "aria-expanded",
@@ -2167,25 +2182,35 @@ if (shopDropdown && shopToggle) {
 ======================================== */
 
 const track =
-  document.getElementById("featureTrack");
+  document.getElementById(
+    "featureTrack"
+  );
 
 const prevButton =
-  document.getElementById("featurePrev");
+  document.getElementById(
+    "featurePrev"
+  );
 
 const nextButton =
-  document.getElementById("featureNext");
+  document.getElementById(
+    "featureNext"
+  );
 
 const dots =
-  document.querySelectorAll(".feature-dot");
+  document.querySelectorAll(
+    ".feature-dot"
+  );
+
 
 let currentSlide = 0;
 
-const totalSlides = dots.length;
+const totalSlides =
+  dots.length;
 
 
 function showSlide(index) {
 
-  if (!track || !totalSlides) {
+  if (!track || totalSlides === 0) {
     return;
   }
 
@@ -2197,7 +2222,9 @@ function showSlide(index) {
 
   }
 
-  else if (index >= totalSlides) {
+  else if (
+    index >= totalSlides
+  ) {
 
     currentSlide = 0;
 
@@ -2230,7 +2257,10 @@ function showSlide(index) {
 }
 
 
-if (prevButton) {
+if (
+  prevButton &&
+  nextButton
+) {
 
   prevButton.addEventListener(
     "click",
@@ -2245,10 +2275,6 @@ if (prevButton) {
     }
   );
 
-}
-
-
-if (nextButton) {
 
   nextButton.addEventListener(
     "click",
@@ -2303,7 +2329,10 @@ let autoSlide =
 
 function resetAutoSlide() {
 
-  clearInterval(autoSlide);
+  clearInterval(
+    autoSlide
+  );
+
 
   autoSlide =
     setInterval(
@@ -2325,7 +2354,9 @@ function resetAutoSlide() {
 ======================================== */
 
 let touchStartX = 0;
+
 let touchEndX = 0;
+
 
 const carousel =
   document.querySelector(
@@ -2343,7 +2374,9 @@ if (carousel) {
         event.changedTouches[0].screenX;
 
     },
-    { passive: true }
+    {
+      passive: true
+    }
   );
 
 
@@ -2356,14 +2389,19 @@ if (carousel) {
 
 
       const swipeDistance =
-        touchEndX - touchStartX;
+        touchEndX -
+        touchStartX;
 
 
       if (
-        Math.abs(swipeDistance) > 50
+        Math.abs(
+          swipeDistance
+        ) > 50
       ) {
 
-        if (swipeDistance < 0) {
+        if (
+          swipeDistance < 0
+        ) {
 
           showSlide(
             currentSlide + 1
@@ -2385,7 +2423,9 @@ if (carousel) {
       }
 
     },
-    { passive: true }
+    {
+      passive: true
+    }
   );
 
 }
@@ -2402,12 +2442,16 @@ const pollBars =
 
 
 if (
-  "IntersectionObserver" in window
+  "IntersectionObserver"
+  in window
 ) {
 
   const pollObserver =
     new IntersectionObserver(
-      function(entries, observer) {
+      function(
+        entries,
+        observer
+      ) {
 
         entries.forEach(
           function(entry) {
@@ -2432,7 +2476,9 @@ if (
               }
 
 
-              observer.unobserve(bar);
+              observer.unobserve(
+                bar
+              );
 
             }
 
@@ -2446,24 +2492,9 @@ if (
   pollBars.forEach(
     function(bar) {
 
-      pollObserver.observe(bar);
-
-    }
-  );
-
-}
-
-else {
-
-  pollBars.forEach(
-    function(bar) {
-
-      if (bar.dataset.width) {
-
-        bar.style.width =
-          bar.dataset.width;
-
-      }
+      pollObserver.observe(
+        bar
+      );
 
     }
   );
@@ -2488,14 +2519,23 @@ function getWishlist() {
         WISHLIST_STORAGE_KEY
       );
 
+
     if (!stored) {
+
       return [];
+
     }
 
-    const parsed =
-      JSON.parse(stored);
 
-    return Array.isArray(parsed)
+    const parsed =
+      JSON.parse(
+        stored
+      );
+
+
+    return Array.isArray(
+      parsed
+    )
       ? parsed
       : [];
 
@@ -2510,11 +2550,15 @@ function getWishlist() {
 }
 
 
-function saveWishlist(items) {
+function saveWishlist(
+  items
+) {
 
   localStorage.setItem(
     WISHLIST_STORAGE_KEY,
-    JSON.stringify(items)
+    JSON.stringify(
+      items
+    )
   );
 
 }
@@ -2527,9 +2571,13 @@ function updateWishlistCount() {
       "wishlistCount"
     );
 
+
   if (!countElement) {
+
     return;
+
   }
+
 
   countElement.textContent =
     getWishlist().length;
@@ -2537,7 +2585,9 @@ function updateWishlistCount() {
 }
 
 
-function isInWishlist(id) {
+function isInWishlist(
+  id
+) {
 
   return getWishlist().some(
     function(item) {
@@ -2569,6 +2619,7 @@ function updateWishlistButtons() {
             "saved"
           );
 
+
           button.textContent =
             "♥ Saved to Wishlist";
 
@@ -2579,6 +2630,7 @@ function updateWishlistButtons() {
           button.classList.remove(
             "saved"
           );
+
 
           button.textContent =
             "♡ Add to Wishlist";
@@ -2591,7 +2643,9 @@ function updateWishlistButtons() {
 }
 
 
-function toggleWishlist(button) {
+function toggleWishlist(
+  button
+) {
 
   const id =
     button.dataset.wishlistId;
@@ -2688,9 +2742,13 @@ document
    ESCAPE HTML
 ======================================== */
 
-function escapeHtml(value) {
+function escapeHtml(
+  value
+) {
 
-  return String(value)
+  return String(
+    value
+  )
 
     .replace(
       /&/g,
@@ -2733,7 +2791,9 @@ function renderWishlist() {
 
 
   if (!body) {
+
     return;
+
   }
 
 
@@ -2783,33 +2843,53 @@ function renderWishlist() {
               data-item-id="${escapeHtml(item.id)}"
             >
 
-              <img
-                class="wishlist-item-image"
-                src="${escapeHtml(item.image)}"
-                alt="${escapeHtml(item.title)}"
-              >
+              ${
+                item.image
+                  ? `
+                    <img
+                      class="wishlist-item-image"
+                      src="${escapeHtml(item.image)}"
+                      alt="${escapeHtml(item.title)}"
+                    >
+                  `
+                  : ""
+              }
 
 
               <div>
 
-                <h3 class="wishlist-item-title">
-                  ${escapeHtml(item.title)}
+                <h3
+                  class="wishlist-item-title"
+                >
+                  ${escapeHtml(
+                    item.title
+                  )}
                 </h3>
 
 
-                <p class="wishlist-item-price">
-                  ${escapeHtml(item.price)}
+                <p
+                  class="wishlist-item-price"
+                >
+                  ${escapeHtml(
+                    item.price || ""
+                  )}
                 </p>
 
 
-                <a
-                  class="wishlist-item-view"
-                  href="${escapeHtml(item.url)}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Product →
-                </a>
+                ${
+                  item.url
+                    ? `
+                      <a
+                        class="wishlist-item-view"
+                        href="${escapeHtml(item.url)}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Product →
+                      </a>
+                    `
+                    : ""
+                }
 
               </div>
 
@@ -2837,7 +2917,9 @@ function renderWishlist() {
    REMOVE WISHLIST ITEM
 ======================================== */
 
-function removeFromWishlist(id) {
+function removeFromWishlist(
+  id
+) {
 
   const wishlist =
     getWishlist().filter(
@@ -2867,28 +2949,39 @@ function removeFromWishlist(id) {
    OPEN WISHLIST
 ======================================== */
 
-function openWishlist() {
+function openWishlist(
+  event
+) {
+
+  if (event) {
+
+    event.preventDefault();
+
+  }
+
 
   renderWishlist();
 
 
-  const modal =
+  const overlay =
     document.getElementById(
-      "wishlistModal"
+      "wishlistOverlay"
     );
 
 
-  if (!modal) {
+  if (!overlay) {
+
     return;
+
   }
 
 
-  modal.classList.add(
+  overlay.classList.add(
     "open"
   );
 
 
-  modal.setAttribute(
+  overlay.setAttribute(
     "aria-hidden",
     "false"
   );
@@ -2906,23 +2999,25 @@ function openWishlist() {
 
 function closeWishlist() {
 
-  const modal =
+  const overlay =
     document.getElementById(
-      "wishlistModal"
+      "wishlistOverlay"
     );
 
 
-  if (!modal) {
+  if (!overlay) {
+
     return;
+
   }
 
 
-  modal.classList.remove(
+  overlay.classList.remove(
     "open"
   );
 
 
-  modal.setAttribute(
+  overlay.setAttribute(
     "aria-hidden",
     "true"
   );
@@ -2959,9 +3054,7 @@ function clearWishlist() {
     );
 
 
-  if (
-    !confirmed
-  ) {
+  if (!confirmed) {
 
     return;
 
@@ -2986,15 +3079,15 @@ function clearWishlist() {
    WISHLIST OUTSIDE CLICK
 ======================================== */
 
-const wishlistModal =
+const wishlistOverlay =
   document.getElementById(
-    "wishlistModal"
+    "wishlistOverlay"
   );
 
 
-if (wishlistModal) {
+if (wishlistOverlay) {
 
-  wishlistModal.addEventListener(
+  wishlistOverlay.addEventListener(
     "click",
     function(event) {
 
@@ -3030,6 +3123,8 @@ document.addEventListener(
 
   }
 );
+
+
 /* ========================================
    INITIALIZE
 ======================================== */
