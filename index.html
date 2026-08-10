@@ -1683,7 +1683,7 @@
                 Jesus Walks on Water
               </p>
 
-             <a class="feature-button" href="Sunday-Gospel.html" >
+             <a href="Sunday-Gospel.html">
                 Get the Current Issue →
               </a>
 
@@ -2075,449 +2075,469 @@
   </div>
 
 
-  <script>
 
-    /* =========================
-       SHOP DROPDOWN
-    ========================= */
+<script>
 
-    const shopDropdown =
-      document.querySelector(".shop-dropdown");
+  /* =========================
+     SHOP DROPDOWN
+  ========================= */
 
-    const shopToggle =
-      document.querySelector(".shop-toggle");
+  const shopDropdown =
+    document.querySelector(".shop-dropdown");
 
-    shopToggle.addEventListener("click", function() {
+  const shopToggle =
+    document.querySelector(".shop-toggle");
 
-      const isOpen =
-        shopDropdown.classList.toggle("open");
+  shopToggle.addEventListener("click", function() {
+
+    const isOpen =
+      shopDropdown.classList.toggle("open");
+
+    shopToggle.setAttribute(
+      "aria-expanded",
+      isOpen ? "true" : "false"
+    );
+
+  });
+
+
+  document.addEventListener("click", function(event) {
+
+    if (!shopDropdown.contains(event.target)) {
+
+      shopDropdown.classList.remove("open");
 
       shopToggle.setAttribute(
         "aria-expanded",
-        isOpen ? "true" : "false"
+        "false"
       );
 
-    });
+    }
 
-    document.addEventListener("click", function(event) {
-
-      if (!shopDropdown.contains(event.target)) {
-
-        shopDropdown.classList.remove("open");
-
-        shopToggle.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-      }
-
-    });
+  });
 
 
-    /* =========================
-       HERO CAROUSEL
-    ========================= */
+  /* =========================
+     HERO CAROUSEL
+  ========================= */
 
-    const track =
-      document.getElementById("featureTrack");
+  const track =
+    document.getElementById("featureTrack");
 
-    const prevButton =
-      document.getElementById("featurePrev");
+  const prevButton =
+    document.getElementById("featurePrev");
 
-    const nextButton =
-      document.getElementById("featureNext");
+  const nextButton =
+    document.getElementById("featureNext");
 
-    const dots =
-      document.querySelectorAll(".feature-dot");
+  const dots =
+    document.querySelectorAll(".feature-dot");
 
-    let currentSlide = 0;
+  let currentSlide = 0;
 
-    const totalSlides = dots.length;
+  const totalSlides = dots.length;
 
-    function showSlide(index) {
 
-      if (index < 0) {
-        currentSlide = totalSlides - 1;
-      } else if (index >= totalSlides) {
-        currentSlide = 0;
-      } else {
-        currentSlide = index;
-      }
+  function showSlide(index) {
 
-      track.style.transform =
-        "translateX(-" +
-        (currentSlide * 100) +
-        "%)";
+    if (index < 0) {
 
-      dots.forEach(function(dot, i) {
+      currentSlide =
+        totalSlides - 1;
 
-        dot.classList.toggle(
-          "active",
-          i === currentSlide
-        );
+    } else if (index >= totalSlides) {
 
-      });
+      currentSlide = 0;
+
+    } else {
+
+      currentSlide = index;
 
     }
 
 
-    prevButton.addEventListener(
-      "click",
-      function() {
-
-        showSlide(currentSlide - 1);
-
-        resetAutoSlide();
-
-      }
-    );
+    track.style.transform =
+      "translateX(-" +
+      (currentSlide * 100) +
+      "%)";
 
 
-    nextButton.addEventListener(
-      "click",
-      function() {
+    dots.forEach(function(dot, i) {
 
-        showSlide(currentSlide + 1);
-
-        resetAutoSlide();
-
-      }
-    );
-
-
-    dots.forEach(function(dot) {
-
-      dot.addEventListener(
-        "click",
-        function() {
-
-          showSlide(
-            Number(dot.dataset.slide)
-          );
-
-          resetAutoSlide();
-
-        }
+      dot.classList.toggle(
+        "active",
+        i === currentSlide
       );
 
     });
 
+  }
 
-    let autoSlide =
+
+  prevButton.addEventListener(
+    "click",
+    function() {
+
+      showSlide(currentSlide - 1);
+
+      resetAutoSlide();
+
+    }
+  );
+
+
+  nextButton.addEventListener(
+    "click",
+    function() {
+
+      showSlide(currentSlide + 1);
+
+      resetAutoSlide();
+
+    }
+  );
+
+
+  dots.forEach(function(dot) {
+
+    dot.addEventListener(
+      "click",
+      function() {
+
+        showSlide(
+          Number(dot.dataset.slide)
+        );
+
+        resetAutoSlide();
+
+      }
+    );
+
+  });
+
+
+  let autoSlide =
+    setInterval(function() {
+
+      showSlide(currentSlide + 1);
+
+    }, 7000);
+
+
+  function resetAutoSlide() {
+
+    clearInterval(autoSlide);
+
+    autoSlide =
       setInterval(function() {
 
         showSlide(currentSlide + 1);
 
       }, 7000);
 
+  }
 
-    function resetAutoSlide() {
 
-      clearInterval(autoSlide);
+  /* =========================
+     TOUCH SWIPE
+  ========================= */
 
-      autoSlide =
-        setInterval(function() {
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  const carousel =
+    document.querySelector(".feature-carousel");
+
+
+  carousel.addEventListener(
+    "touchstart",
+    function(event) {
+
+      touchStartX =
+        event.changedTouches[0].screenX;
+
+    },
+    { passive: true }
+  );
+
+
+  carousel.addEventListener(
+    "touchend",
+    function(event) {
+
+      touchEndX =
+        event.changedTouches[0].screenX;
+
+      const swipeDistance =
+        touchEndX - touchStartX;
+
+
+      if (Math.abs(swipeDistance) > 50) {
+
+        if (swipeDistance < 0) {
 
           showSlide(currentSlide + 1);
 
-        }, 7000);
+        } else {
 
-    }
+          showSlide(currentSlide - 1);
 
+        }
 
-    /* =========================
-       TOUCH SWIPE
-    ========================= */
+        resetAutoSlide();
 
-    let touchStartX = 0;
-    let touchEndX = 0;
+      }
 
-    const carousel =
-      document.querySelector(".feature-carousel");
-
-
-    carousel.addEventListener(
-      "touchstart",
-      function(event) {
-
-        touchStartX =
-          event.changedTouches[0].screenX;
-
-      },
-      { passive: true }
-    );
+    },
+    { passive: true }
+  );
 
 
-    carousel.addEventListener(
-      "touchend",
-      function(event) {
+  /* =========================
+     POLL BAR ANIMATION
+  ========================= */
 
-        touchEndX =
-          event.changedTouches[0].screenX;
+  const pollBars =
+    document.querySelectorAll(".poll-bar");
 
-        const swipeDistance =
-          touchEndX - touchStartX;
 
-        if (Math.abs(swipeDistance) > 50) {
+  const pollObserver =
+    new IntersectionObserver(
+      function(entries, observer) {
 
-          if (swipeDistance < 0) {
+        entries.forEach(function(entry) {
 
-            showSlide(currentSlide + 1);
+          if (entry.isIntersecting) {
 
-          } else {
+            const bar = entry.target;
 
-            showSlide(currentSlide - 1);
+            const width =
+              bar.dataset.width;
+
+            if (width) {
+
+              bar.style.width = width;
+
+            }
+
+            observer.unobserve(bar);
 
           }
 
-          resetAutoSlide();
-
-        }
-
-      },
-      { passive: true }
-    );
-
-
-    /* =========================
-       POLL BAR ANIMATION
-    ========================= */
-
-    const pollBars =
-      document.querySelectorAll(".poll-bar");
-
-
-    const pollObserver =
-      new IntersectionObserver(
-        function(entries, observer) {
-
-          entries.forEach(function(entry) {
-
-            if (entry.isIntersecting) {
-
-              const bar = entry.target;
-
-              const width =
-                bar.dataset.width;
-
-              if (width) {
-                bar.style.width = width;
-              }
-
-              observer.unobserve(bar);
-
-            }
-
-          });
-
-        }
-      );
-
-
-    pollBars.forEach(function(bar) {
-
-      pollObserver.observe(bar);
-
-    });
-
-
-    /* =========================
-       WISHLIST
-    ========================= */
-
-    const wishlistModal =
-      document.getElementById("wishlistModal");
-
-    const wishlistNavButton =
-      document.getElementById("wishlistNavButton");
-
-    const wishlistClose =
-      document.getElementById("wishlistClose");
-
-    const wishlistItems =
-      document.getElementById("wishlistItems");
-
-
-    function getWishlist() {
-
-      try {
-
-        return JSON.parse(
-          localStorage.getItem("honeyHymnsWishlist")
-        ) || [];
-
-      } catch (error) {
-
-        return [];
-
-      }
-
-    }
-
-
-    function saveWishlist(items) {
-
-      localStorage.setItem(
-        "honeyHymnsWishlist",
-        JSON.stringify(items)
-      );
-
-    }
-
-
-    function renderWishlist() {
-
-      const items = getWishlist();
-
-      if (!items.length) {
-
-        wishlistItems.innerHTML = `
-          <p class="wishlist-empty">
-            Your wishlist is waiting for a few little favorites.
-          </p>
-        `;
-
-        return;
-
-      }
-
-
-      wishlistItems.innerHTML =
-        items.map(function(item, index) {
-
-          return `
-            <div class="wishlist-item">
-
-              ${
-                item.image
-                  ? `<img src="${item.image}" alt="">`
-                  : ""
-              }
-
-              <div class="wishlist-item-info">
-                <div class="wishlist-item-title">
-                  ${item.title}
-                </div>
-              </div>
-
-              <button
-                class="wishlist-remove"
-                type="button"
-                data-index="${index}"
-              >
-                Remove
-              </button>
-
-            </div>
-          `;
-
-        }).join("");
-
-
-      document
-        .querySelectorAll(".wishlist-remove")
-        .forEach(function(button) {
-
-          button.addEventListener(
-            "click",
-            function() {
-
-              const items =
-                getWishlist();
-
-              items.splice(
-                Number(button.dataset.index),
-                1
-              );
-
-              saveWishlist(items);
-
-              renderWishlist();
-
-            }
-          );
-
         });
 
-    }
-
-
-    function openWishlist(event) {
-
-      if (event) {
-        event.preventDefault();
-      }
-
-      renderWishlist();
-
-      wishlistModal.classList.add("open");
-
-      wishlistModal.setAttribute(
-        "aria-hidden",
-        "false"
-      );
-
-    }
-
-
-    function closeWishlist() {
-
-      wishlistModal.classList.remove("open");
-
-      wishlistModal.setAttribute(
-        "aria-hidden",
-        "true"
-      );
-
-    }
-
-
-    wishlistNavButton.addEventListener(
-      "click",
-      openWishlist
-    );
-
-
-    wishlistClose.addEventListener(
-      "click",
-      closeWishlist
-    );
-
-
-    wishlistModal.addEventListener(
-      "click",
-      function(event) {
-
-        if (
-          event.target === wishlistModal
-        ) {
-
-          closeWishlist();
-
-        }
-
       }
     );
 
 
-    document.addEventListener(
-      "keydown",
-      function(event) {
+  pollBars.forEach(function(bar) {
 
-        if (
-          event.key === "Escape" &&
-          wishlistModal.classList.contains("open")
-        ) {
+    pollObserver.observe(bar);
 
-          closeWishlist();
+  });
 
-        }
 
-      }
+  /* =========================
+     WISHLIST
+  ========================= */
+
+  const wishlistModal =
+    document.getElementById("wishlistModal");
+
+  const wishlistNavButton =
+    document.getElementById("wishlistNavButton");
+
+  const wishlistClose =
+    document.getElementById("wishlistClose");
+
+  const wishlistItems =
+    document.getElementById("wishlistItems");
+
+
+  function getWishlist() {
+
+    try {
+
+      return JSON.parse(
+        localStorage.getItem("honeyHymnsWishlist")
+      ) || [];
+
+    } catch (error) {
+
+      return [];
+
+    }
+
+  }
+
+
+  function saveWishlist(items) {
+
+    localStorage.setItem(
+      "honeyHymnsWishlist",
+      JSON.stringify(items)
     );
 
-  </script>
+  }
+
+
+  function renderWishlist() {
+
+    const items = getWishlist();
+
+
+    if (!items.length) {
+
+      wishlistItems.innerHTML = `
+        <p class="wishlist-empty">
+          Your wishlist is waiting for a few little favorites.
+        </p>
+      `;
+
+      return;
+
+    }
+
+
+    wishlistItems.innerHTML =
+      items.map(function(item, index) {
+
+        return `
+          <div class="wishlist-item">
+
+            ${
+              item.image
+                ? `<img src="${item.image}" alt="">`
+                : ""
+            }
+
+            <div class="wishlist-item-info">
+
+              <div class="wishlist-item-title">
+                ${item.title}
+              </div>
+
+            </div>
+
+            <button
+              class="wishlist-remove"
+              type="button"
+              data-index="${index}"
+            >
+              Remove
+            </button>
+
+          </div>
+        `;
+
+      }).join("");
+
+
+    document
+      .querySelectorAll(".wishlist-remove")
+      .forEach(function(button) {
+
+        button.addEventListener(
+          "click",
+          function() {
+
+            const items =
+              getWishlist();
+
+            items.splice(
+              Number(button.dataset.index),
+              1
+            );
+
+            saveWishlist(items);
+
+            renderWishlist();
+
+          }
+        );
+
+      });
+
+  }
+
+
+  function openWishlist(event) {
+
+    if (event) {
+
+      event.preventDefault();
+
+    }
+
+    renderWishlist();
+
+    wishlistModal.classList.add("open");
+
+    wishlistModal.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+  }
+
+
+  function closeWishlist() {
+
+    wishlistModal.classList.remove("open");
+
+    wishlistModal.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+  }
+
+
+  wishlistNavButton.addEventListener(
+    "click",
+    openWishlist
+  );
+
+
+  wishlistClose.addEventListener(
+    "click",
+    closeWishlist
+  );
+
+
+  wishlistModal.addEventListener(
+    "click",
+    function(event) {
+
+      if (
+        event.target === wishlistModal
+      ) {
+
+        closeWishlist();
+
+      }
+
+    }
+  );
+
+
+  document.addEventListener(
+    "keydown",
+    function(event) {
+
+      if (
+        event.key === "Escape" &&
+        wishlistModal.classList.contains("open")
+      ) {
+
+        closeWishlist();
+
+      }
+
+    }
+  );
+
+</script>
 
 </body>
 </html>
