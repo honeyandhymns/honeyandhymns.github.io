@@ -20,7 +20,10 @@
     content="Honey & Hymns is a cozy corner for Catholic homeschool moms and homemakers seeking encouragement, faith, simple homemaking ideas, and homeschool inspiration."
   >
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
 
   <link
     rel="preconnect"
@@ -46,16 +49,9 @@
 
     body {
       margin: 0;
-
-      font-family:
-        "Playfair Display",
-        Georgia,
-        serif;
-
+      font-family: "Playfair Display", Georgia, serif;
       background: #FFFDF0;
-
       color: #4D4029;
-
       line-height: 1.7;
     }
 
@@ -65,52 +61,30 @@
     ========================= */
 
     .site-header {
-
       background: #FFEBA1;
-
-      padding:
-        25px 20px 15px;
-
+      padding: 25px 20px 15px;
       text-align: center;
-
-      border-bottom:
-        1px solid
-        rgba(90, 70, 30, 0.12);
+      border-bottom: 1px solid rgba(90,70,30,0.12);
     }
 
     .header-brand {
-
       max-width: 700px;
-
       margin: 0 auto;
     }
 
     .site-logo {
-
       width: 365px;
-
       max-width: 86%;
-
       height: auto;
-
       display: block;
-
       margin: 0 auto;
     }
 
     .header-tagline {
-
       margin: 4px 0 0;
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
+      font-family: "Cormorant Garamond", Georgia, serif;
       font-size: 0.84rem;
-
       letter-spacing: 2px;
-
       color: #5D4B2D;
     }
 
@@ -120,63 +94,33 @@
     ========================= */
 
     .site-nav {
-
       background: #FFEBA1;
-
       text-align: center;
-
-      padding:
-        9px 15px 13px;
-
-      border-bottom:
-        1px solid
-        rgba(90, 70, 30, 0.12);
+      padding: 9px 15px 13px;
+      border-bottom: 1px solid rgba(90,70,30,0.12);
 
       display: flex;
-
       justify-content: center;
-
       align-items: center;
-
       flex-wrap: wrap;
-
-      gap: 0;
+      gap: 2px;
     }
 
     .site-nav a,
     .shop-toggle,
     .wishlist-header-button {
-
       color: #514229;
-
       text-decoration: none;
-
-      margin:
-        0 11px;
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
+      margin: 0 9px;
+      font-family: "Cormorant Garamond", Georgia, serif;
       font-size: 0.95rem;
-
-      transition:
-        color 0.2s ease;
+      transition: color 0.2s ease;
     }
 
     .site-nav a:hover,
     .shop-toggle:hover,
     .wishlist-header-button:hover {
-
       color: #967331;
-    }
-
-    .site-nav a.active {
-
-      color: #80652D;
-
-      font-weight: 600;
     }
 
 
@@ -185,63 +129,45 @@
     ========================= */
 
     .shop-dropdown {
-
       position: relative;
-
       display: inline-block;
-
-      margin: 0;
     }
 
     .shop-toggle {
-
       background: none;
-
       border: none;
-
       padding: 0;
-
       cursor: pointer;
-
       line-height: inherit;
     }
 
     .shop-menu {
-
       position: absolute;
 
-      top:
-        calc(100% + 10px);
-
+      top: calc(100% + 10px);
       left: 50%;
+
+      min-width: 250px;
 
       transform:
         translateX(-50%)
         translateY(-6px);
 
-      min-width: 270px;
-
       background: #FFFDF0;
 
-      border:
-        1px solid
-        #D8C79F;
+      border: 1px solid #D8C79F;
 
       border-radius: 12px;
 
       box-shadow:
-        0 8px 20px
-        rgba(77, 64, 41, 0.14);
+        0 8px 22px rgba(77,64,41,0.16);
 
-      padding:
-        8px 0;
+      padding: 8px 0;
 
       text-align: left;
 
       opacity: 0;
-
       visibility: hidden;
-
       pointer-events: none;
 
       transition:
@@ -255,11 +181,8 @@
     .shop-dropdown:hover .shop-menu,
     .shop-dropdown:focus-within .shop-menu,
     .shop-dropdown.open .shop-menu {
-
       opacity: 1;
-
       visibility: visible;
-
       pointer-events: auto;
 
       transform:
@@ -268,14 +191,12 @@
     }
 
     .shop-menu a,
-    .shop-menu .shop-coming-soon {
-
+    .shop-coming-soon {
       display: block;
 
       margin: 0;
 
-      padding:
-        10px 18px;
+      padding: 10px 18px;
 
       color: #514229;
 
@@ -290,19 +211,11 @@
     }
 
     .shop-menu a:hover {
-
       background: #FFF3C8;
-
       color: #80652D;
     }
 
-    .shop-coming-soon {
-
-      cursor: default;
-    }
-
     .shop-coming-soon small {
-
       display: block;
 
       margin-top: 2px;
@@ -318,47 +231,35 @@
 
 
     /* =========================
-       WISHLIST
+       WISHLIST HEADER BUTTON
     ========================= */
 
     .wishlist-header-button {
-
-      background: none;
-
       border: none;
-
+      background: none;
       padding: 0;
 
       cursor: pointer;
 
       display: inline-flex;
-
       align-items: center;
-
       gap: 5px;
     }
 
     .wishlist-heart {
-
-      font-size: 1rem;
-
+      font-size: 1.08rem;
       line-height: 1;
     }
 
     .wishlist-count {
+      min-width: 19px;
+      height: 19px;
+
+      padding: 0 5px;
 
       display: inline-flex;
-
       align-items: center;
-
       justify-content: center;
-
-      min-width: 18px;
-
-      height: 18px;
-
-      padding:
-        0 5px;
 
       border-radius: 50%;
 
@@ -366,8 +267,7 @@
 
       color: #4D4029;
 
-      font-size: 0.6rem;
-
+      font-size: 0.63rem;
       font-weight: bold;
     }
 
@@ -377,339 +277,193 @@
     ========================= */
 
     .feature-section {
-
       background: #FFFDF0;
-
-      padding:
-        30px 18px 34px;
+      padding: 30px 18px 34px;
     }
 
     .feature-carousel {
-
       position: relative;
-
       max-width: 1040px;
-
       margin: 0 auto;
-
       overflow: hidden;
-
       border-radius: 22px;
     }
 
     .feature-track {
-
       display: flex;
-
-      transition:
-        transform 0.65s ease;
+      transition: transform 0.65s ease;
     }
 
     .feature-slide {
-
       min-width: 100%;
-
-      padding:
-        0 46px;
+      padding: 0 46px;
     }
 
     .feature-card {
+      height: 410px;
 
-      height: 350px;
+      display: grid;
+      grid-template-columns: 48% 52%;
 
-      background: #FFFCF1;
-
-      border:
-        1px solid
-        #E4D5AD;
+      background: #F7E8B4;
 
       border-radius: 20px;
 
       overflow: hidden;
 
-      display: grid;
-
-      grid-template-columns:
-        46% 54%;
-
       box-shadow:
-        0 8px 24px
-        rgba(88, 70, 36, 0.08),
-
-        0 2px 5px
-        rgba(88, 70, 36, 0.04);
+        0 9px 22px rgba(77,64,41,0.13);
     }
 
     .feature-image-wrap {
-
-      height: 350px;
-
+      height: 410px;
       overflow: hidden;
-
-      background: #F6EFCF;
-
-      position: relative;
-    }
-
-    .feature-image-wrap::after {
-
-      content: "";
-
-      position: absolute;
-
-      inset: 0;
-
-      box-shadow:
-        inset -18px 0 30px
-        rgba(255, 252, 241, 0.08);
-
-      pointer-events: none;
+      background: #EBD99C;
     }
 
     .feature-image {
-
       width: 100%;
-
       height: 100%;
 
-      object-fit: cover;
-
       display: block;
+
+      object-fit: cover;
     }
 
     .feature-content {
-
-      padding:
-        30px 40px;
+      padding: 40px 42px;
 
       display: flex;
-
       flex-direction: column;
-
       justify-content: center;
-
-      position: relative;
-    }
-
-    .feature-content::before {
-
-      content: "✦";
-
-      position: absolute;
-
-      top: 20px;
-
-      right: 27px;
-
-      color: #D9B866;
-
-      font-size: 1rem;
     }
 
     .feature-kicker {
-
-      font-family:
-        "Caveat",
-        cursive;
-
-      color: #967331;
-
-      font-size: 1.18rem;
-
-      line-height: 1.2;
-
-      margin:
-        0 0 5px;
+      font-family: "Caveat", cursive;
+      color: #80652D;
+      font-size: 1.22rem;
+      margin: 0 0 6px;
     }
 
     .feature-content h2 {
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
+      font-family: "Cormorant Garamond", Georgia, serif;
       font-weight: 500;
-
       font-size: 2rem;
-
       line-height: 1.15;
-
       color: #403521;
-
-      margin:
-        0 0 10px;
+      margin: 0 0 14px;
     }
 
     .feature-content p {
-
-      font-size: 0.86rem;
-
-      line-height: 1.6;
-
+      font-size: 0.84rem;
+      line-height: 1.65;
       color: #66563C;
-
-      margin:
-        0 0 18px;
+      margin: 0 0 20px;
     }
 
     .feature-button {
-
       align-self: flex-start;
 
       display: inline-block;
 
-      background: #E9C768;
-
-      color: #4D4029;
-
-      text-decoration: none;
-
-      padding:
-        9px 17px;
+      padding: 10px 21px;
 
       border-radius: 30px;
 
-      font-size: 0.7rem;
+      background: #FFFDF0;
+
+      border: 1px solid #D8C79F;
+
+      color: #665020;
+
+      text-decoration: none;
+
+      font-size: 0.74rem;
 
       font-weight: bold;
 
       transition:
-        background 0.2s ease,
-        transform 0.2s ease;
+        transform 0.2s ease,
+        background 0.2s ease;
     }
 
     .feature-button:hover {
-
-      background: #DDBB5E;
-
-      transform:
-        translateY(-1px);
+      background: #FFF7D8;
+      transform: translateY(-1px);
     }
 
     .feature-arrow {
-
       position: absolute;
 
       top: 50%;
+      transform: translateY(-50%);
 
-      transform:
-        translateY(-50%);
-
-      width: 45px;
-
-      height: 45px;
+      width: 43px;
+      height: 43px;
 
       border-radius: 50%;
 
-      border:
-        1px solid
-        #D7BE83;
+      border: 1px solid #D6C48C;
 
-      background: #FFF9DF;
+      background: #FFFDF0;
 
-      color: #80642F;
+      color: #665020;
 
-      font-family: Georgia, serif;
-
-      font-size: 1.25rem;
+      font-size: 1.15rem;
 
       cursor: pointer;
 
-      z-index: 10;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
+      z-index: 5;
 
       box-shadow:
-        0 4px 10px
-        rgba(77, 64, 41, 0.12),
-
-        inset 0 0 0 3px
-        rgba(255,255,255,0.45);
-
-      transition:
-        all 0.25s ease;
+        0 3px 8px rgba(77,64,41,0.10);
     }
 
     .feature-arrow:hover {
-
-      background: #F3D582;
-
-      color: #584521;
-
-      transform:
-        translateY(-50%)
-        scale(1.06);
+      background: #FFF3C8;
     }
 
     .feature-prev {
-      left: 2px;
+      left: 4px;
     }
 
     .feature-next {
-      right: 2px;
+      right: 4px;
     }
 
     .feature-dots {
-
       display: flex;
-
       justify-content: center;
-
-      align-items: center;
-
       gap: 7px;
-
       margin-top: 14px;
     }
 
     .feature-dot {
-
-      width: 7px;
-
-      height: 7px;
+      width: 8px;
+      height: 8px;
 
       border-radius: 50%;
 
       border: none;
 
-      background: #D8C79E;
-
-      cursor: pointer;
-
       padding: 0;
 
-      transition:
-        all 0.25s ease;
+      background: #D8C79F;
+
+      cursor: pointer;
     }
 
     .feature-dot.active {
-
-      width: 22px;
-
-      border-radius: 20px;
-
-      background: #D8B65F;
+      background: #B18A4D;
+      transform: scale(1.15);
     }
 
     .feature-note {
-
-      font-family:
-        "Caveat",
-        cursive;
-
+      font-family: "Caveat", cursive;
       text-align: center;
-
       color: #917333;
-
       font-size: 0.98rem;
-
-      margin:
-        7px 0 0;
+      margin: 7px 0 0;
     }
 
 
@@ -718,66 +472,39 @@
     ========================= */
 
     .bulletin-section {
-
       background: #FFEBA1;
+      padding: 40px 15px 46px;
 
-      padding:
-        40px 15px 46px;
-
-      border-top:
-        1px solid
-        #E2CC78;
-
-      border-bottom:
-        1px solid
-        #E2CC78;
+      border-top: 1px solid #E2CC78;
+      border-bottom: 1px solid #E2CC78;
     }
 
     .bulletin-wrapper {
-
       max-width: 1240px;
-
       margin: 0 auto;
     }
 
     .bulletin-heading {
-
       text-align: center;
-
       margin-bottom: 19px;
     }
 
     .bulletin-heading h2 {
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
+      font-family: "Cormorant Garamond", Georgia, serif;
       font-weight: 500;
-
       font-size: 2rem;
-
       color: #453824;
-
       margin: 0;
     }
 
     .bulletin-heading p {
-
-      font-family:
-        "Caveat",
-        cursive;
-
+      font-family: "Caveat", cursive;
       font-size: 1.08rem;
-
       margin: 0;
-
       color: #68552F;
     }
 
     .bulletin-board {
-
       position: relative;
 
       background: #CFC099;
@@ -787,21 +514,16 @@
       border-radius: 15px;
 
       box-shadow:
-        0 7px 18px
-        rgba(77, 64, 41, 0.12);
+        0 7px 18px rgba(77,64,41,0.12);
     }
 
     .board-inner {
-
       background: #D9C9A4;
-
       padding: 12px;
-
       border-radius: 10px;
     }
 
     .bulletin-sticker {
-
       position: absolute;
 
       width: 130px;
@@ -809,7 +531,6 @@
       height: auto;
 
       top: -38px;
-
       right: 7px;
 
       transform: rotate(5deg);
@@ -818,13 +539,11 @@
 
       filter:
         drop-shadow(
-          0 5px 5px
-          rgba(77, 64, 41, 0.16)
+          0 5px 5px rgba(77,64,41,0.16)
         );
     }
 
     .bulletin-grid {
-
       display: grid;
 
       grid-template-columns:
@@ -843,19 +562,16 @@
     }
 
     .note {
-
       position: relative;
 
-      padding:
-        14px 13px 12px;
+      padding: 14px 13px 12px;
 
       background: #FFFDF0;
 
       border-radius: 8px;
 
       box-shadow:
-        0 3px 7px
-        rgba(77, 64, 41, 0.10);
+        0 3px 7px rgba(77,64,41,0.10);
 
       transition:
         transform 0.2s ease,
@@ -863,92 +579,63 @@
     }
 
     .note:hover {
-
       transform:
         translateY(-2px)
         rotate(0deg) !important;
 
       box-shadow:
-        0 6px 12px
-        rgba(77, 64, 41, 0.14);
+        0 6px 12px rgba(77,64,41,0.14);
     }
 
     .note:nth-child(1) {
-
       transform: rotate(-1deg);
-
       grid-column: 1;
-
       grid-row: 1;
-
       min-height: 150px;
     }
 
     .note:nth-child(2) {
-
       transform: rotate(0.5deg);
-
-      grid-column:
-        2 / span 2;
-
+      grid-column: 2 / span 2;
       grid-row: 1;
     }
 
     .note:nth-child(3) {
-
       transform: rotate(-0.6deg);
-
-      grid-column:
-        4 / span 2;
-
+      grid-column: 4 / span 2;
       grid-row: 1;
     }
 
     .note:nth-child(4) {
-
-      transform: rotate(0.6deg);
-
-      grid-column:
-        1 / span 3;
-
+      transform: rotate(0.8deg);
+      grid-column: 1 / span 3;
       grid-row: 2;
     }
 
     .note:nth-child(5) {
-
       transform: rotate(-0.7deg);
-
       grid-column: 4;
-
       grid-row: 2;
     }
 
     .note:nth-child(6) {
-
       transform: rotate(0.7deg);
-
       grid-column: 5;
-
       grid-row: 2;
     }
 
     .bulletin-pill {
-
       display: inline-block;
 
       background: #E9C768;
 
       color: #4D4029;
 
-      padding:
-        5px 11px;
+      padding: 5px 11px;
 
       border-radius: 50px;
 
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
+      font-family: "Cormorant Garamond", Georgia, serif;
 
       font-size: 0.79rem;
 
@@ -958,9 +645,7 @@
     }
 
     .note p {
-
-      margin:
-        0 0 7px;
+      margin: 0 0 7px;
 
       font-size: 0.82rem;
 
@@ -968,27 +653,20 @@
     }
 
     .note a {
-
       color: #80652D;
-
       text-decoration: none;
-
       font-weight: bold;
-
       font-size: 0.77rem;
     }
 
     .note a:hover {
-
       text-decoration: underline;
     }
 
     .pin {
-
       position: absolute;
 
       width: 8px;
-
       height: 8px;
 
       background: #B79B6E;
@@ -996,81 +674,51 @@
       border-radius: 50%;
 
       top: 6px;
-
       left: 50%;
 
-      transform:
-        translateX(-50%);
+      transform: translateX(-50%);
 
       box-shadow:
-        0 1px 2px
-        rgba(0,0,0,0.12);
+        0 1px 2px rgba(0,0,0,0.12);
     }
 
     .new-upcoming-note {
-
       min-height: 150px;
     }
 
     .new-upcoming-item {
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
+      font-family: "Cormorant Garamond", Georgia, serif;
       font-size: 0.8rem !important;
-
       line-height: 1.4 !important;
-
       color: #4D4029;
-
-      margin:
-        0 0 6px !important;
+      margin: 0 0 6px !important;
     }
 
     .new-upcoming-link {
-
       display: inline-block;
-
       margin-top: 3px;
     }
 
     .poll-question {
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
+      font-family: "Cormorant Garamond", Georgia, serif;
       font-size: 0.84rem !important;
-
       line-height: 1.35 !important;
-
       color: #403521;
-
       margin-bottom: 9px !important;
     }
 
     .poll-chart {
-
-      margin:
-        5px 0 8px;
+      margin: 5px 0 8px;
     }
 
     .poll-row {
-
       margin-bottom: 5px;
     }
 
     .poll-label {
-
       display: flex;
-
       justify-content: space-between;
-
       align-items: center;
-
       gap: 6px;
 
       font-size: 0.65rem;
@@ -1083,14 +731,11 @@
     }
 
     .poll-percent {
-
       font-weight: bold;
     }
 
     .poll-bar-track {
-
       width: 100%;
-
       height: 6px;
 
       background: #E7DEC5;
@@ -1101,9 +746,7 @@
     }
 
     .poll-bar {
-
       height: 100%;
-
       width: 0%;
 
       background: #E9C768;
@@ -1115,151 +758,95 @@
     }
 
     .poll-zero {
-
       background: transparent;
-
       width: 0 !important;
     }
 
     .poll-note {
-
-      font-family:
-        "Caveat",
-        cursive;
-
+      font-family: "Caveat", cursive;
       font-size: 0.88rem !important;
-
       color: #80652D;
-
       text-align: center;
-
       margin-top: 5px !important;
     }
 
     .featured-note {
-
       min-height: 155px;
 
       background: #FFFEF5;
 
-      padding:
-        16px 19px;
+      padding: 16px 19px;
 
       text-align: center;
     }
 
     .featured-note p {
-
       max-width: 650px;
-
       margin-left: auto;
-
       margin-right: auto;
     }
 
     .featured-note p:first-of-type {
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
+      font-family: "Cormorant Garamond", Georgia, serif;
       font-size: 0.92rem;
-
       line-height: 1.4;
     }
 
     .featured-note p:nth-of-type(2) {
-
       font-size: 0.81rem;
-
       line-height: 1.5;
     }
 
     .gospel-note {
-
       background: #FFF8D5;
-
       text-align: center;
-
       min-height: 155px;
     }
 
     .gospel-cover {
-
       width: 100%;
-
       max-width: 92px;
-
       height: auto;
 
       display: block;
 
-      margin:
-        2px auto 6px;
+      margin: 2px auto 6px;
 
       border-radius: 4px;
 
       box-shadow:
-        0 3px 7px
-        rgba(77, 64, 41, 0.12);
+        0 3px 7px rgba(77,64,41,0.12);
     }
 
     .gospel-title {
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
+      font-family: "Cormorant Garamond", Georgia, serif;
       font-size: 0.79rem !important;
-
       line-height: 1.35 !important;
-
       color: #403521;
-
-      margin:
-        0 auto 8px !important;
+      margin: 0 auto 8px !important;
     }
 
     .magazine-note {
-
       text-align: center;
-
       min-height: 155px;
 
       display: flex;
-
       flex-direction: column;
 
       justify-content: center;
-
       align-items: center;
     }
 
     .magazine-note p {
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
+      font-family: "Cormorant Garamond", Georgia, serif;
       font-size: 0.82rem !important;
-
       color: #403521;
-
-      margin:
-        4px 0;
+      margin: 4px 0;
     }
 
     .magazine-date {
-
-      font-family:
-        "Caveat",
-        cursive !important;
-
+      font-family: "Caveat", cursive !important;
       font-size: 1rem !important;
-
       color: #80652D !important;
     }
 
@@ -1269,226 +856,124 @@
     ========================= */
 
     .articles-section {
-
       background: #FBF8ED;
 
-      padding:
-        68px 20px 82px;
+      padding: 68px 20px 82px;
 
-      border-bottom:
-        1px solid
-        #E5D8B8;
+      border-bottom: 1px solid #E5D8B8;
     }
 
     .articles-wrapper {
-
       max-width: 1120px;
-
       margin: 0 auto;
     }
 
     .editorial-heading {
-
       text-align: center;
-
       margin-bottom: 44px;
     }
 
     .editorial-kicker {
-
-      font-family:
-        "Caveat",
-        cursive;
-
+      font-family: "Caveat", cursive;
       font-size: 1.24rem;
-
       color: #80652D;
-
-      margin:
-        0 0 3px;
+      margin: 0 0 3px;
     }
 
     .editorial-heading h2 {
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
+      font-family: "Cormorant Garamond", Georgia, serif;
       font-weight: 500;
-
       font-size: 2.4rem;
-
       line-height: 1.2;
-
       color: #403521;
-
-      margin:
-        0 0 12px;
+      margin: 0 0 12px;
     }
 
     .editorial-rule {
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      gap: 12px;
-
       color: #B18A4D;
-    }
-
-    .editorial-rule::before,
-    .editorial-rule::after {
-
-      content: "";
-
-      width: 70px;
-
-      height: 1px;
-
-      background: #D8C79F;
+      margin-bottom: 10px;
     }
 
     .editorial-description {
-
-      max-width: 600px;
-
-      margin:
-        14px auto 0;
-
-      font-size: 0.91rem;
-
-      color: #6B5A3E;
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 0.84rem;
+      color: #68583D;
     }
 
     .article-grid {
-
       display: grid;
 
       grid-template-columns:
         repeat(3, 1fr);
 
-      gap:
-        38px 24px;
-
-      max-width: 1000px;
-
-      margin: 0 auto;
+      gap: 32px;
     }
 
     .story {
-
-      background: transparent;
-
-      padding:
-        0 0 26px;
-
-      border-bottom:
-        1px solid
-        #D8C79F;
-
       display: flex;
-
       flex-direction: column;
-
-      height: 100%;
     }
 
     .story-image-wrap {
-
-      margin-bottom: 16px;
-
       overflow: hidden;
 
-      background: #EEE6CF;
+      border-radius: 11px;
 
-      border-radius: 10px;
+      margin-bottom: 14px;
+
+      background: #E7D9AE;
     }
 
     .story-image {
-
       width: 100%;
-
-      height: 165px;
-
-      object-fit: cover;
+      height: 220px;
 
       display: block;
 
+      object-fit: cover;
+
       transition:
-        transform 0.35s ease;
+        transform 0.3s ease;
     }
 
     .story:hover .story-image {
-
-      transform:
-        scale(1.02);
+      transform: scale(1.025);
     }
 
     .story-label {
-
-      font-family:
-        "Caveat",
-        cursive;
-
-      font-size: 1.03rem;
-
+      font-family: "Caveat", cursive;
       color: #80652D;
-
+      font-size: 1rem;
       margin-bottom: 3px;
     }
 
     .story h3 {
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
+      font-family: "Cormorant Garamond", Georgia, serif;
       font-weight: 500;
-
-      font-size: 1.45rem;
-
-      line-height: 1.25;
-
+      font-size: 1.55rem;
+      line-height: 1.2;
       color: #403521;
-
-      margin:
-        0 0 9px;
+      margin: 0 0 8px;
     }
 
     .story .subtitle {
-
       font-size: 0.83rem;
-
       line-height: 1.62;
-
       color: #66563C;
-
-      margin:
-        0 0 13px;
-
+      margin: 0 0 13px;
       flex-grow: 1;
     }
 
     .story-link {
-
       color: #80652D;
-
       text-decoration: none;
-
       font-size: 0.77rem;
-
       font-weight: bold;
-
       margin-top: auto;
     }
 
     .story-link:hover {
-
       text-decoration: underline;
     }
 
@@ -1498,39 +983,432 @@
     ========================= */
 
     .about {
-
       background: #FFEBA1;
-
-      padding:
-        58px 20px;
-
+      padding: 58px 20px;
       text-align: center;
     }
 
     .about-content {
-
       max-width: 720px;
-
       margin: 0 auto;
     }
 
     .about h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
+      font-size: 2.25rem;
+      color: #403521;
+    }
 
+    .about p {
+      font-size: 0.96rem;
+    }
+
+
+    /* =========================
+       WISHLIST POPUP
+    ========================= */
+
+    .wishlist-overlay {
+      position: fixed;
+
+      inset: 0;
+
+      background:
+        rgba(57,45,25,0.60);
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      pointer-events: none;
+
+      z-index: 5000;
+
+      transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+    }
+
+    .wishlist-overlay.open {
+      opacity: 1;
+
+      visibility: visible;
+
+      pointer-events: auto;
+    }
+
+    .wishlist-modal {
+      width:
+        min(620px,94vw);
+
+      max-height:
+        min(700px,88vh);
+
+      background:
+        #FFFDF4;
+
+      border:
+        1px solid #D8C79F;
+
+      border-radius:
+        20px;
+
+      box-shadow:
+        0 22px 55px rgba(0,0,0,0.28);
+
+      overflow:
+        hidden;
+
+      transform:
+        scale(0.88)
+        translateY(12px);
+
+      opacity:
+        0;
+
+      transition:
+        transform 0.35s cubic-bezier(0.16,1,0.3,1),
+        opacity 0.25s ease;
+    }
+
+    .wishlist-overlay.open .wishlist-modal {
+      transform:
+        scale(1)
+        translateY(0);
+
+      opacity:
+        1;
+    }
+
+    .wishlist-modal-header {
+      background:
+        #FFEBA1;
+
+      padding:
+        16px 18px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
+
+      border-bottom:
+        1px solid #E0CC83;
+    }
+
+    .wishlist-modal-title {
       font-family:
         "Cormorant Garamond",
         Georgia,
         serif;
 
-      font-weight: 500;
+      font-size:
+        1.65rem;
 
-      font-size: 2.25rem;
+      font-weight:
+        500;
 
-      color: #403521;
+      color:
+        #403521;
+
+      margin:
+        0;
     }
 
-    .about p {
+    .wishlist-close {
+      width:
+        32px;
 
-      font-size: 0.96rem;
+      height:
+        32px;
+
+      border-radius:
+        50%;
+
+      border:
+        1px solid #D3BE80;
+
+      background:
+        #FFF9DF;
+
+      color:
+        #665020;
+
+      cursor:
+        pointer;
+
+      font-size:
+        1.15rem;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+    }
+
+    .wishlist-close:hover {
+      background:
+        #F3D582;
+    }
+
+    .wishlist-body {
+      padding:
+        20px;
+
+      max-height:
+        calc(88vh - 145px);
+
+      overflow-y:
+        auto;
+    }
+
+    .wishlist-empty {
+      text-align:
+        center;
+
+      padding:
+        35px 15px;
+    }
+
+    .wishlist-empty-icon {
+      font-size:
+        2.3rem;
+
+      color:
+        #D8B65F;
+
+      margin-bottom:
+        8px;
+    }
+
+    .wishlist-empty h3 {
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size:
+        1.6rem;
+
+      font-weight:
+        500;
+
+      color:
+        #403521;
+
+      margin:
+        0 0 5px;
+    }
+
+    .wishlist-empty p {
+      margin:
+        0;
+
+      font-size:
+        0.8rem;
+
+      color:
+        #68583D;
+    }
+
+    .wishlist-item {
+      display:
+        grid;
+
+      grid-template-columns:
+        82px 1fr auto;
+
+      align-items:
+        center;
+
+      gap:
+        14px;
+
+      padding:
+        11px;
+
+      margin-bottom:
+        10px;
+
+      background:
+        #FFF8D9;
+
+      border:
+        1px solid #E5D6AD;
+
+      border-radius:
+        11px;
+    }
+
+    .wishlist-item-image {
+      width:
+        82px;
+
+      height:
+        82px;
+
+      object-fit:
+        cover;
+
+      border-radius:
+        7px;
+
+      display:
+        block;
+    }
+
+    .wishlist-item-title {
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size:
+        1.15rem;
+
+      line-height:
+        1.15;
+
+      color:
+        #403521;
+
+      margin:
+        0 0 3px;
+    }
+
+    .wishlist-item-price {
+      font-size:
+        0.72rem;
+
+      color:
+        #80652D;
+
+      margin:
+        0;
+    }
+
+    .wishlist-item-view {
+      display:
+        inline-block;
+
+      margin-top:
+        6px;
+
+      color:
+        #80652D;
+
+      font-size:
+        0.68rem;
+
+      text-decoration:
+        none;
+
+      font-weight:
+        bold;
+    }
+
+    .wishlist-item-view:hover {
+      text-decoration:
+        underline;
+    }
+
+    .wishlist-remove {
+      border:
+        none;
+
+      background:
+        none;
+
+      color:
+        #967331;
+
+      cursor:
+        pointer;
+
+      font-size:
+        0.68rem;
+
+      padding:
+        5px;
+    }
+
+    .wishlist-remove:hover {
+      color:
+        #6F5421;
+
+      text-decoration:
+        underline;
+    }
+
+    .wishlist-modal-footer {
+      background:
+        #FBF3D0;
+
+      border-top:
+        1px solid #E0D2B0;
+
+      padding:
+        12px 18px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
+
+      gap:
+        10px;
+    }
+
+    .wishlist-footer-note {
+      font-family:
+        "Caveat",
+        cursive;
+
+      color:
+        #80652D;
+
+      font-size:
+        1rem;
+    }
+
+    .wishlist-clear {
+      border:
+        none;
+
+      background:
+        transparent;
+
+      color:
+        #80652D;
+
+      font-size:
+        0.68rem;
+
+      cursor:
+        pointer;
+
+      text-decoration:
+        underline;
     }
 
 
@@ -1539,22 +1417,14 @@
     ========================= */
 
     footer {
-
       background: #4D4029;
-
       color: #FFFDE7;
-
       text-align: center;
-
-      padding:
-        28px 20px;
+      padding: 28px 20px;
     }
 
     footer p {
-
-      margin:
-        5px 0;
-
+      margin: 5px 0;
       font-size: 0.82rem;
     }
 
@@ -1566,7 +1436,6 @@
     @media (max-width: 900px) {
 
       .feature-card {
-
         height: 380px;
 
         grid-template-columns:
@@ -1574,25 +1443,22 @@
       }
 
       .feature-image-wrap {
-
         height: 380px;
       }
 
       .feature-content {
-
         padding:
           28px 30px;
       }
 
       .feature-content h2 {
-
-        font-size: 1.75rem;
+        font-size:
+          1.75rem;
       }
 
       .bulletin-grid {
-
         grid-template-columns:
-          repeat(2, 1fr);
+          repeat(2,1fr);
 
         grid-template-rows:
           auto;
@@ -1605,22 +1471,22 @@
       .note:nth-child(5),
       .note:nth-child(6) {
 
-        grid-column: auto;
+        grid-column:
+          auto;
 
-        grid-row: auto;
+        grid-row:
+          auto;
       }
 
       .note:nth-child(2),
       .note:nth-child(4) {
-
         grid-column:
           span 2;
       }
 
       .article-grid {
-
         grid-template-columns:
-          repeat(2, 1fr);
+          repeat(2,1fr);
       }
 
     }
@@ -1630,30 +1496,30 @@
        MOBILE
     ========================= */
 
-    @media (max-width: 600px) {
+    @media (max-width:600px) {
 
       .site-header {
-
         padding:
           20px 15px 14px;
       }
 
       .site-logo {
+        width:
+          290px;
 
-        width: 290px;
-
-        max-width: 90%;
+        max-width:
+          90%;
       }
 
       .header-tagline {
+        font-size:
+          0.75rem;
 
-        font-size: 0.75rem;
-
-        letter-spacing: 1.5px;
+        letter-spacing:
+          1.5px;
       }
 
       .site-nav {
-
         padding:
           8px 8px 11px;
       }
@@ -1661,20 +1527,22 @@
       .site-nav a,
       .shop-toggle,
       .wishlist-header-button {
-
         margin:
           0 6px;
 
-        font-size: 0.84rem;
+        font-size:
+          0.84rem;
       }
 
       .shop-menu {
+        position:
+          fixed;
 
-        position: fixed;
+        top:
+          100px;
 
-        top: auto;
-
-        left: 50%;
+        left:
+          50%;
 
         min-width:
           min(
@@ -1685,123 +1553,133 @@
 
       .shop-menu a,
       .shop-menu .shop-coming-soon {
-
-        font-size: 0.88rem;
+        font-size:
+          0.88rem;
 
         padding:
           10px 16px;
       }
 
       .feature-section {
-
         padding:
           25px 7px 32px;
       }
 
       .feature-slide {
-
         padding:
           0 28px;
       }
 
       .feature-card {
+        height:
+          515px;
 
-        height: 515px;
+        display:
+          flex;
 
-        display: flex;
+        flex-direction:
+          column;
 
-        flex-direction: column;
-
-        border-radius: 18px;
+        border-radius:
+          18px;
       }
 
       .feature-image-wrap {
+        height:
+          220px;
 
-        height: 220px;
-
-        min-height: 220px;
+        min-height:
+          220px;
       }
 
       .feature-content {
+        height:
+          295px;
 
-        height: 295px;
-
-        min-height: 295px;
+        min-height:
+          295px;
 
         padding:
           24px 23px 22px;
 
-        justify-content: center;
+        justify-content:
+          center;
       }
 
       .feature-content h2 {
+        font-size:
+          1.7rem;
 
-        font-size: 1.7rem;
-
-        line-height: 1.18;
+        line-height:
+          1.18;
       }
 
       .feature-content p {
+        font-size:
+          0.81rem;
 
-        font-size: 0.81rem;
-
-        line-height: 1.55;
+        line-height:
+          1.55;
       }
 
       .feature-arrow {
+        width:
+          38px;
 
-        width: 38px;
+        height:
+          38px;
 
-        height: 38px;
-
-        font-size: 0.98rem;
+        font-size:
+          0.98rem;
       }
 
       .feature-prev {
-
-        left: 1px;
+        left:
+          1px;
       }
 
       .feature-next {
-
-        right: 1px;
+        right:
+          1px;
       }
 
       .bulletin-section {
-
         padding:
           36px 8px 42px;
       }
 
       .bulletin-heading h2 {
-
-        font-size: 1.8rem;
+        font-size:
+          1.8rem;
       }
 
       .bulletin-board {
+        padding:
+          8px;
 
-        padding: 8px;
-
-        border-radius: 13px;
+        border-radius:
+          13px;
       }
 
       .board-inner {
-
-        padding: 8px;
+        padding:
+          8px;
       }
 
       .bulletin-sticker {
+        width:
+          92px;
 
-        width: 92px;
-
-        top: -27px;
+        top:
+          -27px;
       }
 
       .bulletin-grid {
+        grid-template-columns:
+          1fr;
 
-        grid-template-columns: 1fr;
-
-        gap: 9px;
+        gap:
+          9px;
       }
 
       .note:nth-child(1),
@@ -1811,60 +1689,91 @@
       .note:nth-child(5),
       .note:nth-child(6) {
 
-        grid-column: auto;
+        grid-column:
+          auto;
 
-        grid-row: auto;
+        grid-row:
+          auto;
       }
 
       .note {
-
-        min-height: auto !important;
+        min-height:
+          auto !important;
       }
 
       .articles-section {
-
         padding:
           57px 18px 68px;
       }
 
       .editorial-heading {
-
-        margin-bottom: 37px;
+        margin-bottom:
+          37px;
       }
 
       .editorial-heading h2 {
-
-        font-size: 2rem;
+        font-size:
+          2rem;
       }
 
       .article-grid {
+        grid-template-columns:
+          1fr;
 
-        grid-template-columns: 1fr;
+        gap:
+          34px;
 
-        gap: 34px;
-
-        max-width: 500px;
+        max-width:
+          500px;
       }
 
       .story-image {
-
-        height: 200px;
+        height:
+          200px;
       }
 
       .story h3 {
-
-        font-size: 1.35rem;
+        font-size:
+          1.35rem;
       }
 
       .about {
-
         padding:
           50px 20px;
       }
 
       .about h2 {
+        font-size:
+          1.95rem;
+      }
 
-        font-size: 1.95rem;
+      .wishlist-item {
+        grid-template-columns:
+          62px 1fr;
+      }
+
+      .wishlist-item-image {
+        width:
+          62px;
+
+        height:
+          62px;
+      }
+
+      .wishlist-remove {
+        grid-column:
+          2;
+
+        justify-self:
+          start;
+      }
+
+      .wishlist-modal-footer {
+        flex-direction:
+          column;
+
+        align-items:
+          flex-start;
       }
 
     }
@@ -1906,18 +1815,14 @@
 
   <nav class="site-nav">
 
-
     <a href="#home">
       Home
     </a>
-
 
     <a href="#articles">
       Articles
     </a>
 
-
-    <!-- SHOP DROPDOWN -->
 
     <div class="shop-dropdown">
 
@@ -1956,8 +1861,6 @@
     </div>
 
 
-    <!-- SUNDAY GOSPEL — NOW ITS OWN NAV ITEM -->
-
     <a href="Sunday-Gospel.html">
       Sunday Gospel for Kids
     </a>
@@ -1976,8 +1879,6 @@
       Newsletter
     </a>
 
-
-    <!-- WISHLIST -->
 
     <button
       class="wishlist-header-button"
@@ -2000,7 +1901,6 @@
       </span>
 
     </button>
-
 
   </nav>
 
@@ -2037,6 +1937,7 @@
               >
 
             </div>
+
 
             <div class="feature-content">
 
@@ -2087,6 +1988,7 @@
 
             </div>
 
+
             <div class="feature-content">
 
               <p class="feature-kicker">
@@ -2135,6 +2037,7 @@
 
             </div>
 
+
             <div class="feature-content">
 
               <p class="feature-kicker">
@@ -2156,7 +2059,7 @@
                 class="feature-button"
                 href="Sunday-Gospel.html"
               >
-                Explore This Week's Gospel →
+                Visit Sunday Gospel →
               </a>
 
             </div>
@@ -2181,6 +2084,7 @@
               >
 
             </div>
+
 
             <div class="feature-content">
 
@@ -2244,25 +2148,25 @@
       <button
         class="feature-dot active"
         data-slide="0"
-        aria-label="Go to slide 1"
+        aria-label="Show slide 1"
       ></button>
 
       <button
         class="feature-dot"
         data-slide="1"
-        aria-label="Go to slide 2"
+        aria-label="Show slide 2"
       ></button>
 
       <button
         class="feature-dot"
         data-slide="2"
-        aria-label="Go to slide 3"
+        aria-label="Show slide 3"
       ></button>
 
       <button
         class="feature-dot"
         data-slide="3"
-        aria-label="Go to slide 4"
+        aria-label="Show slide 4"
       ></button>
 
     </div>
@@ -2303,6 +2207,7 @@
           alt="Honey & Hymns cross with honey and bees"
           class="bulletin-sticker"
         >
+
 
         <div class="board-inner">
 
@@ -2388,11 +2293,9 @@
 
               <div class="poll-chart">
 
-
                 <div class="poll-row">
 
                   <div class="poll-label">
-
                     <span>
                       Charlotte Mason
                     </span>
@@ -2400,7 +2303,6 @@
                     <span class="poll-percent">
                       33%
                     </span>
-
                   </div>
 
                   <div class="poll-bar-track">
@@ -2418,7 +2320,6 @@
                 <div class="poll-row">
 
                   <div class="poll-label">
-
                     <span>
                       Traditional
                     </span>
@@ -2426,7 +2327,6 @@
                     <span class="poll-percent">
                       0%
                     </span>
-
                   </div>
 
                   <div class="poll-bar-track">
@@ -2443,7 +2343,6 @@
                 <div class="poll-row">
 
                   <div class="poll-label">
-
                     <span>
                       Eclectic
                     </span>
@@ -2451,7 +2350,6 @@
                     <span class="poll-percent">
                       33%
                     </span>
-
                   </div>
 
                   <div class="poll-bar-track">
@@ -2469,7 +2367,6 @@
                 <div class="poll-row">
 
                   <div class="poll-label">
-
                     <span>
                       Classical
                     </span>
@@ -2477,7 +2374,6 @@
                     <span class="poll-percent">
                       0%
                     </span>
-
                   </div>
 
                   <div class="poll-bar-track">
@@ -2494,7 +2390,6 @@
                 <div class="poll-row">
 
                   <div class="poll-label">
-
                     <span>
                       Still figuring it out
                     </span>
@@ -2502,7 +2397,6 @@
                     <span class="poll-percent">
                       33%
                     </span>
-
                   </div>
 
                   <div class="poll-bar-track">
@@ -2515,7 +2409,6 @@
                   </div>
 
                 </div>
-
 
               </div>
 
@@ -2535,7 +2428,7 @@
             </div>
 
 
-            <!-- LATEST -->
+            <!-- FEATURED -->
 
             <div class="note featured-note">
 
@@ -2546,20 +2439,16 @@
               </span>
 
               <p>
-
                 <strong>
                   Why I Chose to Homeschool My Kids:
                   The Story Behind Our Homeschool Journey
                 </strong>
-
               </p>
 
               <p>
-
                 A mom’s honest reflection on school safety,
                 family values, and the moment I knew homeschooling
                 was the right choice for our family.
-
               </p>
 
               <a
@@ -2573,7 +2462,7 @@
             </div>
 
 
-            <!-- SUNDAY GOSPEL -->
+            <!-- GOSPEL -->
 
             <div class="note gospel-note">
 
@@ -2590,16 +2479,12 @@
               >
 
               <p class="gospel-title">
-
                 19th Sunday in Ordinary Time:
                 Jesus Walks on Water
-
               </p>
 
-              <a
-                href="Sunday-Gospel.html"
-              >
-                Explore This Week's Gospel →
+              <a href="Sunday-Gospel.html">
+                Visit This Week's Gospel →
               </a>
 
             </div>
@@ -2663,10 +2548,8 @@
         </div>
 
         <p class="editorial-description">
-
           Catch up on the latest reflections, encouragement,
           homeschool ideas, and everyday stories from Honey & Hymns.
-
         </p>
 
       </div>
@@ -2694,18 +2577,14 @@
           </div>
 
           <h3>
-
             Why I Chose to Homeschool My Kids:
             The Story Behind Our Homeschool Journey
-
           </h3>
 
           <p class="subtitle">
-
             A mom’s honest reflection on school safety,
             family values, and the moment I knew homeschooling
             was the right choice for our family.
-
           </p>
 
           <a
@@ -2739,23 +2618,19 @@
           </div>
 
           <h3>
-
             Are Girl Toddlers More Strong-Willed Than Boys?
-            A Mom’s Honest Investigation
-
+            A Mom's Honest Investigation
           </h3>
 
           <p class="subtitle">
-
-            I compared my own parenting experience with what the
-            research says about toddler boys and girls, and the
-            results surprised me.
-
+            A mom's honest look at toddler personalities,
+            expectations, and the everyday moments that make
+            raising little ones so interesting.
           </p>
 
           <a
             class="story-link"
-            href="https://honeyandhymns.substack.com/p/are-girl-toddlers-more-strong-willed?r=7kwlqm&utm_campaign=post&utm_medium=web"
+            href="https://honeyandhymns.substack.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -2766,51 +2641,6 @@
 
 
         <!-- ARTICLE 3 -->
-
-        <article class="story">
-
-          <div class="story-image-wrap">
-
-            <img
-              src="images/living-books-homeschool-reading.png"
-              alt="Books and reading materials for homeschool"
-              class="story-image"
-            >
-
-          </div>
-
-          <div class="story-label">
-            Homeschool
-          </div>
-
-          <h3>
-
-            The 10 Living Books I'm Most Excited to Read
-            This Homeschool Year
-
-          </h3>
-
-          <p class="subtitle">
-
-            After moving from screen-heavy learning to a Charlotte
-            Mason approach, these are the books filling our homeschool
-            with stories, imagination, and faith.
-
-          </p>
-
-          <a
-            class="story-link"
-            href="https://honeyandhymns.substack.com/p/the-10-living-books-im-most-excited?r=7kwlqm&utm_campaign=post&utm_medium=web"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read the Story →
-          </a>
-
-        </article>
-
-
-        <!-- ARTICLE 4 -->
 
         <article class="story">
 
@@ -2833,9 +2663,8 @@
           </h3>
 
           <p class="subtitle">
-
-            Honest reflections from a wife still learning as she goes.
-
+            Honest reflections from a wife still learning
+            as she goes.
           </p>
 
           <a
@@ -2850,7 +2679,7 @@
         </article>
 
 
-        <!-- ARTICLE 5 -->
+        <!-- ARTICLE 4 -->
 
         <article class="story">
 
@@ -2869,18 +2698,14 @@
           </div>
 
           <h3>
-
             How I Prepare for a New Homeschool Year:
             My End-of-Summer Planning Routine
-
           </h3>
 
           <p class="subtitle">
-
-            From organizing portfolios and choosing curriculum to
-            planning lessons and preparing our hearts for a
+            From organizing portfolios and choosing curriculum
+            to planning lessons and preparing our hearts for a
             Christ-centered homeschool year.
-
           </p>
 
           <a
@@ -2895,7 +2720,7 @@
         </article>
 
 
-        <!-- ARTICLE 6 -->
+        <!-- ARTICLE 5 -->
 
         <article class="story">
 
@@ -2914,18 +2739,14 @@
           </div>
 
           <h3>
-
             Why I Started My Own Personal Curriculum
             (And Why My Kids Are Watching)
-
           </h3>
 
           <p class="subtitle">
-
-            How creating a personal curriculum as a homeschool mom
-            is helping me model lifelong learning, curiosity,
+            How creating a personal curriculum as a homeschool
+            mom is helping me model lifelong learning, curiosity,
             and biblical wisdom for my children.
-
           </p>
 
           <a
@@ -2938,7 +2759,6 @@
           </a>
 
         </article>
-
 
       </div>
 
@@ -2959,23 +2779,85 @@
     <div class="about-content">
 
       <h2>
-
         A Little Corner of the Internet
         for the Catholic Homemaker
-
       </h2>
 
       <p>
-
         Welcome to Honey & Hymns — a place for faith,
         homeschool, homemaking, encouragement, and the
         beautiful ordinary moments of family life.
-
       </p>
 
     </div>
 
   </section>
+
+
+  <!-- =========================
+       WISHLIST POPUP
+  ========================= -->
+
+  <div
+    class="wishlist-overlay"
+    id="wishlistOverlay"
+    aria-hidden="true"
+  >
+
+    <div
+      class="wishlist-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="wishlistTitle"
+    >
+
+      <div class="wishlist-modal-header">
+
+        <h2
+          class="wishlist-modal-title"
+          id="wishlistTitle"
+        >
+          My Honey & Hymns Wishlist
+        </h2>
+
+        <button
+          class="wishlist-close"
+          type="button"
+          onclick="closeWishlist()"
+          aria-label="Close wishlist"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div
+        class="wishlist-body"
+        id="wishlistBody"
+      >
+      </div>
+
+
+      <div class="wishlist-modal-footer">
+
+        <span class="wishlist-footer-note">
+          Your little collection of favorites
+        </span>
+
+        <button
+          class="wishlist-clear"
+          type="button"
+          onclick="clearWishlist()"
+        >
+          Clear Wishlist
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
 
 
   <!-- =========================
@@ -2995,104 +2877,7 @@
   </footer>
 
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
   <script>
-
-
-    /* =========================
-       WISHLIST
-    ========================= */
-
-    const WISHLIST_KEY =
-      "honeyAndHymnsWishlist";
-
-
-    function updateWishlistCount() {
-
-      try {
-
-        const saved =
-          localStorage.getItem(
-            WISHLIST_KEY
-          );
-
-        const wishlist =
-          saved
-            ? JSON.parse(saved)
-            : [];
-
-        const count =
-          document.getElementById(
-            "wishlistCount"
-          );
-
-        if (count) {
-
-          count.textContent =
-            wishlist.length;
-
-        }
-
-      } catch (error) {
-
-        console.log(
-          "Wishlist unavailable."
-        );
-
-      }
-
-    }
-
-
-    function openWishlist() {
-
-      /*
-        This button is connected to the same
-        Honey & Hymns wishlist storage used
-        by the other pages.
-
-        When the full wishlist drawer is
-        connected site-wide, this function
-        can open that shared drawer.
-      */
-
-      const saved =
-        localStorage.getItem(
-          WISHLIST_KEY
-        );
-
-      const wishlist =
-        saved
-          ? JSON.parse(saved)
-          : [];
-
-
-      if (wishlist.length === 0) {
-
-        alert(
-          "Your wishlist is empty."
-        );
-
-        return;
-
-      }
-
-
-      alert(
-        "You have " +
-        wishlist.length +
-        " item" +
-        (wishlist.length === 1 ? "" : "s") +
-        " on your wishlist."
-      );
-
-    }
-
-
-    updateWishlistCount();
 
 
     /* =========================
@@ -3118,7 +2903,6 @@
           shopDropdown.classList.toggle(
             "open"
           );
-
 
         shopToggle.setAttribute(
           "aria-expanded",
@@ -3189,27 +2973,37 @@
 
     function showSlide(index) {
 
-      if (index < 0) {
+      if (
+        index < 0
+      ) {
 
         currentSlide =
           totalSlides - 1;
 
-      } else if (
+      }
+
+      else if (
         index >= totalSlides
       ) {
 
-        currentSlide = 0;
+        currentSlide =
+          0;
 
-      } else {
+      }
 
-        currentSlide = index;
+      else {
+
+        currentSlide =
+          index;
 
       }
 
 
       track.style.transform =
         "translateX(-" +
-        (currentSlide * 100) +
+        (
+          currentSlide * 100
+        ) +
         "%)";
 
 
@@ -3296,7 +3090,6 @@
         autoSlide
       );
 
-
       autoSlide =
         setInterval(
           function() {
@@ -3317,7 +3110,6 @@
     ========================= */
 
     let touchStartX = 0;
-
     let touchEndX = 0;
 
 
@@ -3370,7 +3162,9 @@
               currentSlide + 1
             );
 
-          } else {
+          }
+
+          else {
 
             showSlide(
               currentSlide - 1
@@ -3399,61 +3193,473 @@
       );
 
 
-    const pollObserver =
-      new IntersectionObserver(
-        function(
-          entries,
-          observer
-        ) {
+    if (
+      "IntersectionObserver"
+      in window
+    ) {
 
-          entries.forEach(
-            function(entry) {
+      const pollObserver =
+        new IntersectionObserver(
+          function(
+            entries,
+            observer
+          ) {
 
-              if (
-                entry.isIntersecting
-              ) {
+            entries.forEach(
+              function(entry) {
 
-                const bar =
-                  entry.target;
+                if (
+                  entry.isIntersecting
+                ) {
 
-                const width =
-                  bar.dataset.width;
+                  const bar =
+                    entry.target;
+
+                  const width =
+                    bar.dataset.width;
 
 
-                if (width) {
+                  if (
+                    width
+                  ) {
 
-                  bar.style.width =
-                    width;
+                    bar.style.width =
+                      width;
+
+                  }
+
+
+                  observer.unobserve(
+                    bar
+                  );
 
                 }
 
-
-                observer.unobserve(
-                  bar
-                );
-
               }
+            );
 
-            }
+          },
+          {
+            threshold: 0.4
+          }
+        );
+
+
+      pollBars.forEach(
+        function(bar) {
+
+          pollObserver.observe(
+            bar
           );
 
-        },
-        {
-          threshold: 0.4
+        }
+      );
+
+    }
+
+
+    /* =========================
+       SHARED WISHLIST
+       
+       IMPORTANT:
+       This uses the exact same
+       localStorage key as the
+       Shop / Free Downloads /
+       Sunday Gospel pages.
+    ========================= */
+
+    const WISHLIST_STORAGE_KEY =
+      "honeyAndHymnsWishlist";
+
+
+    function getWishlist() {
+
+      try {
+
+        const stored =
+          localStorage.getItem(
+            WISHLIST_STORAGE_KEY
+          );
+
+
+        if (
+          !stored
+        ) {
+
+          return [];
+
+        }
+
+
+        const parsed =
+          JSON.parse(
+            stored
+          );
+
+
+        return Array.isArray(
+          parsed
+        )
+          ? parsed
+          : [];
+
+      }
+
+      catch(error) {
+
+        return [];
+
+      }
+
+    }
+
+
+    function saveWishlist(
+      items
+    ) {
+
+      localStorage.setItem(
+        WISHLIST_STORAGE_KEY,
+        JSON.stringify(
+          items
+        )
+      );
+
+    }
+
+
+    function updateWishlistCount() {
+
+      const countElement =
+        document.getElementById(
+          "wishlistCount"
+        );
+
+
+      if (
+        !countElement
+      ) {
+
+        return;
+
+      }
+
+
+      countElement.textContent =
+        getWishlist().length;
+
+    }
+
+
+    function escapeHtml(
+      value
+    ) {
+
+      return String(
+        value
+      )
+
+      .replace(
+        /&/g,
+        "&amp;"
+      )
+
+      .replace(
+        /</g,
+        "&lt;"
+      )
+
+      .replace(
+        />/g,
+        "&gt;"
+      )
+
+      .replace(
+        /"/g,
+        "&quot;"
+      )
+
+      .replace(
+        /'/g,
+        "&#039;"
+      );
+
+    }
+
+
+    function renderWishlist() {
+
+      const body =
+        document.getElementById(
+          "wishlistBody"
+        );
+
+
+      const wishlist =
+        getWishlist();
+
+
+      if (
+        wishlist.length === 0
+      ) {
+
+        body.innerHTML = `
+
+          <div class="wishlist-empty">
+
+            <div class="wishlist-empty-icon">
+              ♡
+            </div>
+
+            <h3>
+              Your wishlist is empty
+            </h3>
+
+            <p>
+              Save a few Honey & Hymns favorites
+              and they'll wait here for you.
+            </p>
+
+          </div>
+
+        `;
+
+        return;
+
+      }
+
+
+      body.innerHTML =
+        wishlist
+          .map(
+            function(item) {
+
+              return `
+
+                <div
+                  class="wishlist-item"
+                  data-item-id="${escapeHtml(item.id)}"
+                >
+
+                  <img
+                    class="wishlist-item-image"
+                    src="${escapeHtml(item.image)}"
+                    alt="${escapeHtml(item.title)}"
+                  >
+
+
+                  <div>
+
+                    <h3 class="wishlist-item-title">
+                      ${escapeHtml(item.title)}
+                    </h3>
+
+                    <p class="wishlist-item-price">
+                      ${escapeHtml(item.price || "")}
+                    </p>
+
+                    <a
+                      class="wishlist-item-view"
+                      href="${escapeHtml(item.url)}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Product →
+                    </a>
+
+                  </div>
+
+
+                  <button
+                    class="wishlist-remove"
+                    type="button"
+                    onclick="removeFromWishlist('${escapeHtml(item.id)}')"
+                  >
+                    Remove
+                  </button>
+
+                </div>
+
+              `;
+
+            }
+          )
+          .join("");
+
+    }
+
+
+    function removeFromWishlist(
+      id
+    ) {
+
+      const wishlist =
+        getWishlist().filter(
+          function(item) {
+
+            return item.id !== id;
+
+          }
+        );
+
+
+      saveWishlist(
+        wishlist
+      );
+
+
+      updateWishlistCount();
+
+      renderWishlist();
+
+    }
+
+
+    function openWishlist() {
+
+      renderWishlist();
+
+
+      const overlay =
+        document.getElementById(
+          "wishlistOverlay"
+        );
+
+
+      overlay.classList.add(
+        "open"
+      );
+
+
+      overlay.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+
+      document.body.style.overflow =
+        "hidden";
+
+    }
+
+
+    function closeWishlist() {
+
+      const overlay =
+        document.getElementById(
+          "wishlistOverlay"
+        );
+
+
+      overlay.classList.remove(
+        "open"
+      );
+
+
+      overlay.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+    function clearWishlist() {
+
+      const wishlist =
+        getWishlist();
+
+
+      if (
+        wishlist.length === 0
+      ) {
+
+        return;
+
+      }
+
+
+      const confirmed =
+        window.confirm(
+          "Are you sure you want to clear your wishlist?"
+        );
+
+
+      if (
+        !confirmed
+      ) {
+
+        return;
+
+      }
+
+
+      saveWishlist(
+        []
+      );
+
+
+      updateWishlistCount();
+
+      renderWishlist();
+
+    }
+
+
+    /* =========================
+       CLOSE WISHLIST BY CLICKING
+       OUTSIDE THE MODAL
+    ========================= */
+
+    document
+      .getElementById(
+        "wishlistOverlay"
+      )
+      .addEventListener(
+        "click",
+        function(event) {
+
+          if (
+            event.target === this
+          ) {
+
+            closeWishlist();
+
+          }
+
         }
       );
 
 
-    pollBars.forEach(
-      function(bar) {
+    /* =========================
+       ESCAPE KEY
+    ========================= */
 
-        pollObserver.observe(
-          bar
-        );
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Escape"
+        ) {
+
+          closeWishlist();
+
+        }
 
       }
     );
 
+
+    /* =========================
+       INITIALIZE WISHLIST COUNT
+    ========================= */
+
+    updateWishlistCount();
 
   </script>
 
@@ -3461,3 +3667,4 @@
 </body>
 
 </html>
+
