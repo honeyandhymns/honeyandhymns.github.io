@@ -4,7 +4,6 @@
 
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Sunday Gospel for Kids | Honey & Hymns</title>
@@ -13,8 +12,6 @@
     name="description"
     content="Sunday Gospel for Kids from Honey & Hymns — simple, beautiful Gospel resources to help Catholic families explore Sunday's Gospel together."
   >
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -41,9 +38,10 @@
       line-height: 1.7;
     }
 
-    /* ================================
+
+    /* =========================================
        HEADER
-    ================================= */
+    ========================================= */
 
     .site-header {
       background: #FFEBA1;
@@ -73,9 +71,10 @@
       color: #5D4B2D;
     }
 
-    /* ================================
+
+    /* =========================================
        NAVIGATION
-    ================================= */
+    ========================================= */
 
     .site-nav {
       background: #FFEBA1;
@@ -110,9 +109,10 @@
       font-weight: 600;
     }
 
-    /* ================================
+
+    /* =========================================
        SHOP DROPDOWN
-    ================================= */
+    ========================================= */
 
     .shop-dropdown {
       position: relative;
@@ -180,9 +180,10 @@
       font-size: 0.85rem;
     }
 
-    /* ================================
+
+    /* =========================================
        WISHLIST
-    ================================= */
+    ========================================= */
 
     .wishlist-header-button {
       background: none;
@@ -212,9 +213,10 @@
       font-weight: bold;
     }
 
-    /* ================================
+
+    /* =========================================
        HERO
-    ================================= */
+    ========================================= */
 
     .page-hero {
       background: #FFF8D9;
@@ -263,9 +265,10 @@
       background: #D8C79F;
     }
 
-    /* ================================
+
+    /* =========================================
        CURRENT ISSUE
-    ================================= */
+    ========================================= */
 
     .current-section {
       padding: 50px 20px 58px;
@@ -304,8 +307,6 @@
       font-size: 0.85rem;
       color: #66563C;
     }
-
-    /* Smaller current card */
 
     .current-card {
       max-width: 820px;
@@ -383,9 +384,10 @@
       font-size: 0.75rem;
     }
 
-    /* ================================
+
+    /* =========================================
        BUTTONS
-    ================================= */
+    ========================================= */
 
     .button-row {
       display: flex;
@@ -434,9 +436,10 @@
       color: #665020;
     }
 
-    /* ================================
+
+    /* =========================================
        SAMPLE SECTION
-    ================================= */
+    ========================================= */
 
     .sample-section {
       padding: 68px 20px 75px;
@@ -523,9 +526,10 @@
       transform: translateY(-1px);
     }
 
-    /* ================================
+
+    /* =========================================
        PAST ISSUES
-    ================================= */
+    ========================================= */
 
     .past-section {
       padding: 70px 20px 80px;
@@ -572,9 +576,10 @@
       margin: 0;
     }
 
-    /* ================================
+
+    /* =========================================
        FLIPBOOK OVERLAY
-    ================================= */
+    ========================================= */
 
     .flipbook-overlay {
       position: fixed;
@@ -583,7 +588,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 18px;
+      padding: 15px;
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
@@ -599,13 +604,18 @@
       pointer-events: auto;
     }
 
+
+    /*
+      SMALLER BOOK WINDOW
+    */
+
     .flipbook-window {
-      width: min(1080px, 96vw);
-      height: min(790px, 94vh);
-      background: #F4E8C8;
-      border: 1px solid #D7C696;
-      border-radius: 24px;
-      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+      width: min(850px, 91vw);
+      height: min(650px, 88vh);
+      background: #EADDBB;
+      border: 1px solid #D2BE87;
+      border-radius: 20px;
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.32);
       position: relative;
       display: flex;
       flex-direction: column;
@@ -622,32 +632,37 @@
       opacity: 1;
     }
 
+
+    /* =========================================
+       FLIPBOOK HEADER
+    ========================================= */
+
     .flipbook-header {
-      min-height: 56px;
+      min-height: 48px;
       background: #FFEBA1;
       border-bottom: 1px solid #DCC887;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 8px 14px 8px 20px;
+      padding: 7px 12px 7px 17px;
       z-index: 10;
     }
 
     .flipbook-header-title {
       font-family: "Caveat", cursive;
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       color: #5E4A27;
     }
 
     .flipbook-close {
-      width: 34px;
-      height: 34px;
+      width: 31px;
+      height: 31px;
       border-radius: 50%;
       border: 1px solid #D3BE80;
       background: #FFF9DF;
       color: #665020;
       cursor: pointer;
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       line-height: 1;
       display: flex;
       align-items: center;
@@ -658,9 +673,10 @@
       background: #F3D582;
     }
 
-    /* ================================
+
+    /* =========================================
        BOOK AREA
-    ================================= */
+    ========================================= */
 
     .book-area {
       flex: 1;
@@ -668,79 +684,100 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 25px 75px;
+      padding: 18px 55px;
       background:
         radial-gradient(
           circle at center,
           #FFFDF1 0%,
-          #EBDDB8 100%
+          #E6D7AE 100%
         );
+      position: relative;
     }
 
     .book {
       position: relative;
-      width: min(850px, 78vw);
-      height: min(610px, 76vh);
+      width: min(690px, 76vw);
+      height: min(510px, 72vh);
       display: flex;
       align-items: center;
       justify-content: center;
       perspective: 1800px;
     }
 
-    /* Single cover */
+
+    /*
+      COVER
+
+      No object-fit: contain here.
+      This keeps the actual cover image's
+      natural proportions without creating
+      artificial white edges.
+    */
 
     .book-cover {
-      max-width: 48%;
+      display: block;
+      max-width: 100%;
       max-height: 100%;
       width: auto;
       height: auto;
       object-fit: contain;
-      display: block;
-      border-radius: 3px 8px 8px 3px;
+      border-radius: 3px 7px 7px 3px;
       box-shadow:
-        10px 8px 22px rgba(60, 45, 22, 0.25),
-        inset -5px 0 8px rgba(60, 45, 22, 0.1);
-      background: white;
-      transform-origin: left center;
+        8px 7px 18px rgba(60, 45, 22, 0.25);
+      background: transparent;
     }
 
-    /* Two-page spread */
+
+    /* =========================================
+       TWO-PAGE SPREAD
+    ========================================= */
 
     .book-spread {
       width: 100%;
       height: 100%;
       display: none;
-      align-items: stretch;
+      align-items: center;
       justify-content: center;
       position: relative;
-      filter: drop-shadow(
-        0 9px 20px rgba(60, 45, 22, 0.2)
-      );
+      filter:
+        drop-shadow(
+          0 8px 17px rgba(60, 45, 22, 0.22)
+        );
     }
 
     .book-spread.active {
       display: flex;
     }
 
+
+    /*
+      IMPORTANT:
+      The images now use cover instead of
+      contain so the white canvas around
+      the artwork is not created by CSS.
+    */
+
     .book-page-half {
       width: 50%;
       height: 100%;
-      object-fit: contain;
-      background: white;
+      object-fit: cover;
+      object-position: center;
+      background: transparent;
       display: block;
     }
 
     .book-page-left {
-      border-radius: 7px 0 0 7px;
+      border-radius: 6px 0 0 6px;
       box-shadow:
-        inset -7px 0 10px rgba(60, 45, 22, 0.09);
+        inset -7px 0 10px rgba(60, 45, 22, 0.10);
     }
 
     .book-page-right {
-      border-radius: 0 7px 7px 0;
+      border-radius: 0 6px 6px 0;
       box-shadow:
-        inset 7px 0 10px rgba(60, 45, 22, 0.07);
+        inset 7px 0 10px rgba(60, 45, 22, 0.08);
     }
+
 
     /* Center binding */
 
@@ -755,30 +792,36 @@
       background:
         linear-gradient(
           to right,
-          rgba(80, 60, 30, 0.16),
-          rgba(255,255,255,0.65),
+          rgba(80, 60, 30, 0.17),
+          rgba(255,255,255,0.55),
           rgba(80,60,30,0.10)
         );
       pointer-events: none;
     }
 
-    /* Page turn animation */
+
+    /* =========================================
+       PAGE TURN ANIMATION
+    ========================================= */
 
     .book-spread.turn-next {
-      animation: spreadNext 0.45s ease;
+      animation:
+        spreadNext 0.45s ease;
     }
 
     .book-spread.turn-prev {
-      animation: spreadPrev 0.45s ease;
+      animation:
+        spreadPrev 0.45s ease;
     }
 
     @keyframes spreadNext {
+
       0% {
         opacity: 0.25;
         transform:
           perspective(1600px)
           rotateY(-7deg)
-          translateX(25px);
+          translateX(20px);
       }
 
       100% {
@@ -788,15 +831,17 @@
           rotateY(0)
           translateX(0);
       }
+
     }
 
     @keyframes spreadPrev {
+
       0% {
         opacity: 0.25;
         transform:
           perspective(1600px)
           rotateY(7deg)
-          translateX(-25px);
+          translateX(-20px);
       }
 
       100% {
@@ -806,25 +851,27 @@
           rotateY(0)
           translateX(0);
       }
+
     }
 
-    /* ================================
-       BOOK ARROWS
-    ================================= */
+
+    /* =========================================
+       FLIPBOOK ARROWS
+    ========================================= */
 
     .flip-arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 48px;
-      height: 48px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       border: 1px solid #D3BE80;
       background: #FFF9DF;
       color: #665020;
       cursor: pointer;
       font-family: Georgia, serif;
-      font-size: 1.6rem;
+      font-size: 1.45rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -843,25 +890,27 @@
     }
 
     .flip-prev {
-      left: 12px;
+      left: 7px;
     }
 
     .flip-next {
-      right: 12px;
+      right: 7px;
     }
 
     .flip-arrow:disabled {
       opacity: 0.3;
       cursor: default;
-      transform: translateY(-50%);
+      transform:
+        translateY(-50%);
     }
 
-    /* ================================
+
+    /* =========================================
        FLIPBOOK FOOTER
-    ================================= */
+    ========================================= */
 
     .flipbook-footer {
-      min-height: 52px;
+      min-height: 43px;
       background: #FFF8D9;
       border-top: 1px solid #DCC887;
       display: flex;
@@ -870,17 +919,18 @@
       gap: 8px;
       font-family: "Cormorant Garamond", Georgia, serif;
       color: #665020;
-      font-size: 0.88rem;
+      font-size: 0.84rem;
     }
 
     .page-number {
-      min-width: 115px;
+      min-width: 105px;
       text-align: center;
     }
 
-    /* ================================
+
+    /* =========================================
        FOOTER
-    ================================= */
+    ========================================= */
 
     footer {
       background: #4D4029;
@@ -894,9 +944,10 @@
       font-size: 0.8rem;
     }
 
-    /* ================================
-       MOBILE
-    ================================= */
+
+    /* =========================================
+       TABLET
+    ========================================= */
 
     @media (max-width: 700px) {
 
@@ -939,46 +990,48 @@
         padding: 25px 18px;
       }
 
+
+      /* Smaller mobile popup */
+
       .flipbook-window {
-        width: 96vw;
-        height: 91vh;
-        border-radius: 18px;
+        width: 94vw;
+        height: 84vh;
+        border-radius: 17px;
       }
 
       .book-area {
-        padding: 15px 45px;
+        padding: 12px 42px;
       }
 
       .book {
         width: 82vw;
-        height: 65vh;
-      }
-
-      .book-cover {
-        max-width: 55%;
+        height: 61vh;
       }
 
       .book-spread {
-        width: 100%;
-        height: 82%;
-        align-self: center;
+        height: 78%;
       }
 
       .flip-arrow {
-        width: 38px;
-        height: 38px;
+        width: 36px;
+        height: 36px;
         font-size: 1.2rem;
       }
 
       .flip-prev {
-        left: 4px;
+        left: 3px;
       }
 
       .flip-next {
-        right: 4px;
+        right: 3px;
       }
 
     }
+
+
+    /* =========================================
+       SMALL PHONES
+    ========================================= */
 
     @media (max-width: 480px) {
 
@@ -1010,39 +1063,37 @@
         width: 100%;
       }
 
+      .flipbook-window {
+        width: 95vw;
+        height: 82vh;
+      }
+
       .book-area {
-        padding: 10px 34px;
+        padding: 8px 32px;
       }
 
       .book {
-        width: 84vw;
-        height: 65vh;
-      }
-
-      .book-cover {
-        max-width: 65%;
+        width: 86vw;
+        height: 60vh;
       }
 
       .book-spread {
-        height: 72%;
-      }
-
-      .flipbook-header-title {
-        font-size: 1.05rem;
+        height: 68%;
       }
 
     }
 
   </style>
+
 </head>
 
 
 <body>
 
 
-  <!-- ================================
+  <!-- =========================================
        HEADER
-  ================================= -->
+  ========================================= -->
 
   <header class="site-header">
 
@@ -1067,9 +1118,9 @@
   </header>
 
 
-  <!-- ================================
+  <!-- =========================================
        NAVIGATION
-  ================================= -->
+  ========================================= -->
 
   <nav class="site-nav">
 
@@ -1163,9 +1214,9 @@
   </nav>
 
 
-  <!-- ================================
-       PAGE HERO
-  ================================= -->
+  <!-- =========================================
+       HERO
+  ========================================= -->
 
   <section class="page-hero">
 
@@ -1190,14 +1241,13 @@
   </section>
 
 
-  <!-- ================================
+  <!-- =========================================
        CURRENT ISSUE
-  ================================= -->
+  ========================================= -->
 
   <section class="current-section">
 
     <div class="section-wrapper">
-
 
       <div class="section-heading">
 
@@ -1218,7 +1268,6 @@
 
 
       <div class="current-card">
-
 
         <div class="current-cover">
 
@@ -1294,14 +1343,13 @@
   </section>
 
 
-  <!-- ================================
+  <!-- =========================================
        SAMPLE ISSUE
-  ================================= -->
+  ========================================= -->
 
   <section class="sample-section">
 
     <div class="section-wrapper">
-
 
       <div class="sample-intro">
 
@@ -1325,7 +1373,6 @@
 
 
       <div class="sample-card">
-
 
         <div class="sample-card-cover">
 
@@ -1364,7 +1411,6 @@
           Take a Little Peek Inside
         </button>
 
-
       </div>
 
     </div>
@@ -1372,14 +1418,13 @@
   </section>
 
 
-  <!-- ================================
+  <!-- =========================================
        PAST ISSUES
-  ================================= -->
+  ========================================= -->
 
   <section class="past-section">
 
     <div class="section-wrapper">
-
 
       <div class="section-heading">
 
@@ -1400,7 +1445,6 @@
 
 
       <div class="past-grid">
-
 
         <article class="past-card">
 
@@ -1450,7 +1494,6 @@
 
         </article>
 
-
       </div>
 
     </div>
@@ -1458,9 +1501,9 @@
   </section>
 
 
-  <!-- ================================
-       FLIPBOOK
-  ================================= -->
+  <!-- =========================================
+       FLIPBOOK POPUP
+  ========================================= -->
 
   <div
     class="flipbook-overlay"
@@ -1511,8 +1554,6 @@
 
         <div class="book" id="book">
 
-          <!-- COVER -->
-
           <img
             id="bookCover"
             class="book-cover"
@@ -1520,8 +1561,6 @@
             alt="Sunday Gospel for Kids sample cover"
           >
 
-
-          <!-- FIRST SPREAD: PAGES 2 & 3 -->
 
           <div
             class="book-spread"
@@ -1576,15 +1615,14 @@
 
       </div>
 
-
     </div>
 
   </div>
 
 
-  <!-- ================================
+  <!-- =========================================
        FOOTER
-  ================================= -->
+  ========================================= -->
 
   <footer>
 
@@ -1599,15 +1637,16 @@
   </footer>
 
 
-  <!-- ================================
+  <!-- =========================================
        JAVASCRIPT
-  ================================= -->
+  ========================================= -->
 
   <script>
 
-    /* ================================
+
+    /* =========================================
        SHOP DROPDOWN
-    ================================= */
+    ========================================= */
 
     const shopDropdown =
       document.querySelector(".shop-dropdown");
@@ -1653,9 +1692,9 @@
     );
 
 
-    /* ================================
+    /* =========================================
        WISHLIST
-    ================================= */
+    ========================================= */
 
     const WISHLIST_KEY =
       "honeyAndHymnsWishlist";
@@ -1714,7 +1753,9 @@
         getWishlist();
 
       const count =
-        document.getElementById("wishlistCount");
+        document.getElementById(
+          "wishlistCount"
+        );
 
       if (count) {
 
@@ -1736,7 +1777,8 @@
       return wishlist.some(
         function (item) {
 
-          return item.id === CURRENT_PRODUCT.id;
+          return item.id ===
+            CURRENT_PRODUCT.id;
 
         }
       );
@@ -1784,7 +1826,8 @@
         wishlist.findIndex(
           function (item) {
 
-            return item.id === CURRENT_PRODUCT.id;
+            return item.id ===
+              CURRENT_PRODUCT.id;
 
           }
         );
@@ -1792,11 +1835,16 @@
 
       if (existingIndex !== -1) {
 
-        wishlist.splice(existingIndex, 1);
+        wishlist.splice(
+          existingIndex,
+          1
+        );
 
       } else {
 
-        wishlist.push(CURRENT_PRODUCT);
+        wishlist.push(
+          CURRENT_PRODUCT
+        );
 
       }
 
@@ -1829,7 +1877,11 @@
         "You have " +
         wishlist.length +
         " item" +
-        (wishlist.length === 1 ? "" : "s") +
+        (
+          wishlist.length === 1
+            ? ""
+            : "s"
+        ) +
         " on your Honey & Hymns wishlist."
       );
 
@@ -1839,53 +1891,63 @@
     updateWishlistCount();
 
 
-    /* ================================
+    /* =========================================
        FLIPBOOK
-    ================================= */
+    ========================================= */
 
     const TOTAL_PAGES = 20;
 
     let currentSpread = 0;
 
-    /*
-      Spread 0 = Cover
-      Spread 1 = Pages 2–3
-      Spread 2 = Pages 4–5
-      Spread 3 = Pages 6–7
-      ...
-      Spread 9 = Pages 18–19
-      Spread 10 = Page 20
-    */
 
     const flipbookOverlay =
-      document.getElementById("flipbookOverlay");
+      document.getElementById(
+        "flipbookOverlay"
+      );
 
     const bookCover =
-      document.getElementById("bookCover");
+      document.getElementById(
+        "bookCover"
+      );
 
     const bookSpread =
-      document.getElementById("bookSpread");
+      document.getElementById(
+        "bookSpread"
+      );
 
     const leftPage =
-      document.getElementById("leftPage");
+      document.getElementById(
+        "leftPage"
+      );
 
     const rightPage =
-      document.getElementById("rightPage");
+      document.getElementById(
+        "rightPage"
+      );
 
     const pageNumber =
-      document.getElementById("pageNumber");
+      document.getElementById(
+        "pageNumber"
+      );
 
     const flipPrev =
-      document.getElementById("flipPrev");
+      document.getElementById(
+        "flipPrev"
+      );
 
     const flipNext =
-      document.getElementById("flipNext");
+      document.getElementById(
+        "flipNext"
+      );
 
 
     function getPageImage(page) {
 
       const paddedPage =
-        String(page).padStart(2, "0");
+        String(page).padStart(
+          2,
+          "0"
+        );
 
       return (
         "images/sunday-gospel-18-page-" +
@@ -1898,24 +1960,23 @@
 
     function updateFlipbook(direction) {
 
-      const previousSpread =
-        currentSpread;
-
-
       bookSpread.classList.remove(
         "turn-next",
         "turn-prev"
       );
 
-
       void bookSpread.offsetWidth;
 
 
-      /*
-        COVER
-      */
+      /* COVER */
 
       if (currentSpread === 0) {
+
+        bookCover.src =
+          getPageImage(1);
+
+        bookCover.alt =
+          "Sunday Gospel for Kids sample cover";
 
         bookCover.style.display =
           "block";
@@ -1930,27 +1991,13 @@
       }
 
 
-      /*
-        LAST SINGLE PAGE
-      */
+      /* FINAL PAGE */
 
       else if (currentSpread === 10) {
-
-        bookCover.style.display =
-          "none";
 
         bookSpread.classList.remove(
           "active"
         );
-
-        bookSpread.style.display =
-          "none";
-
-
-        /*
-          Re-use the left page as
-          a single final page.
-        */
 
         bookCover.src =
           getPageImage(20);
@@ -1961,26 +2008,18 @@
         bookCover.style.display =
           "block";
 
-        bookCover.style.maxWidth =
-          "48%";
-
         pageNumber.textContent =
           "Page 20";
 
       }
 
 
-      /*
-        TWO-PAGE SPREAD
-      */
+      /* INTERIOR SPREAD */
 
       else {
 
         bookCover.style.display =
           "none";
-
-        bookCover.src =
-          getPageImage(1);
 
         bookSpread.style.display =
           "flex";
@@ -1993,9 +2032,7 @@
         const left =
           currentSpread === 1
             ? 2
-            : (
-              currentSpread * 2
-            );
+            : currentSpread * 2;
 
         const right =
           left + 1;
@@ -2032,7 +2069,6 @@
 
         }
 
-
         if (direction === "prev") {
 
           bookSpread.classList.add(
@@ -2043,10 +2079,6 @@
 
       }
 
-
-      /*
-        BUTTON STATES
-      */
 
       flipPrev.disabled =
         currentSpread === 0;
@@ -2061,19 +2093,15 @@
 
       currentSpread = 0;
 
-      /*
-        Reset cover to the real cover.
-      */
-
       bookCover.src =
         getPageImage(1);
 
-      bookCover.alt =
-        "Sunday Gospel for Kids sample cover";
+      bookCover.style.display =
+        "block";
 
-      bookCover.style.maxWidth =
-        "48%";
-
+      bookSpread.classList.remove(
+        "active"
+      );
 
       updateFlipbook();
 
@@ -2116,7 +2144,6 @@
         return;
       }
 
-
       currentSpread++;
 
       updateFlipbook("next");
@@ -2130,33 +2157,16 @@
         return;
       }
 
-
       currentSpread--;
-
-      /*
-        When returning from the final
-        single page, restore the spread.
-      */
-
-      if (currentSpread === 9) {
-
-        bookCover.style.display =
-          "none";
-
-        bookCover.src =
-          getPageImage(1);
-
-      }
-
 
       updateFlipbook("prev");
 
     }
 
 
-    /* ================================
+    /* =========================================
        CLICK OUTSIDE TO CLOSE
-    ================================= */
+    ========================================= */
 
     flipbookOverlay.addEventListener(
       "click",
@@ -2175,9 +2185,9 @@
     );
 
 
-    /* ================================
-       KEYBOARD CONTROLS
-    ================================= */
+    /* =========================================
+       KEYBOARD
+    ========================================= */
 
     document.addEventListener(
       "keydown",
