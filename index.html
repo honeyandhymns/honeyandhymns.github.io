@@ -1185,13 +1185,27 @@
 
     <!-- WISHLIST — KEPT AT THE END -->
 
-    <a
-      href="#"
-      id="wishlistNavButton"
-      aria-label="Open Wishlist"
-    >
-      Wishlist
-    </a>
+  <button
+  class="wishlist-header-button"
+  type="button"
+  onclick="openWishlist()"
+  aria-label="Open wishlist"
+>
+
+  <span class="wishlist-heart">
+    ♡
+  </span>
+
+  Wishlist
+
+  <span
+    class="wishlist-count"
+    id="wishlistCount"
+  >
+    0
+  </span>
+
+</button>
 
   </nav>
 
@@ -2048,32 +2062,59 @@
     aria-hidden="true"
   >
 
-    <div
-      class="wishlist-box"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="wishlistTitle"
+   <div
+  class="wishlist-modal"
+  id="wishlistModal"
+  aria-hidden="true"
+>
+
+  <div class="wishlist-modal-header">
+
+    <h2
+      class="wishlist-modal-title"
+      id="wishlistTitle"
     >
+      My Honey & Hymns Wishlist
+    </h2>
 
-      <button
-        class="wishlist-close"
-        id="wishlistClose"
-        type="button"
-        aria-label="Close Wishlist"
-      >
-        ×
-      </button>
 
-      <h2 id="wishlistTitle">
-        My Honey & Hymns Wishlist
-      </h2>
-
-      <div id="wishlistItems"></div>
-
-    </div>
+    <button
+      class="wishlist-close"
+      type="button"
+      onclick="closeWishlist()"
+      aria-label="Close wishlist"
+    >
+      ×
+    </button>
 
   </div>
 
+
+  <div
+    class="wishlist-body"
+    id="wishlistBody"
+  >
+  </div>
+
+
+  <div class="wishlist-modal-footer">
+
+    <span class="wishlist-footer-note">
+      Your little collection of favorites
+    </span>
+
+
+    <button
+      class="wishlist-clear"
+      type="button"
+      onclick="clearWishlist()"
+    >
+      Clear Wishlist
+    </button>
+
+  </div>
+
+</div>
 
 
 <script>
@@ -2442,15 +2483,6 @@ else {
    SHARED WISHLIST
 ======================================== */
 
-/*
-   IMPORTANT:
-
-   This is the SAME storage key used
-   by the working Shop page.
-
-   Do not change this.
-*/
-
 const WISHLIST_STORAGE_KEY =
   "honeyAndHymnsWishlist";
 
@@ -2464,17 +2496,12 @@ function getWishlist() {
         WISHLIST_STORAGE_KEY
       );
 
-
     if (!stored) {
-
       return [];
-
     }
-
 
     const parsed =
       JSON.parse(stored);
-
 
     return Array.isArray(parsed)
       ? parsed
@@ -2501,10 +2528,6 @@ function saveWishlist(items) {
 }
 
 
-/* ========================================
-   WISHLIST COUNT
-======================================== */
-
 function updateWishlistCount() {
 
   const countElement =
@@ -2512,23 +2535,15 @@ function updateWishlistCount() {
       "wishlistCount"
     );
 
-
   if (!countElement) {
-
     return;
-
   }
-
 
   countElement.textContent =
     getWishlist().length;
 
 }
 
-
-/* ========================================
-   CHECK WISHLIST
-======================================== */
 
 function isInWishlist(id) {
 
@@ -2542,10 +2557,6 @@ function isInWishlist(id) {
 
 }
 
-
-/* ========================================
-   WISHLIST BUTTONS
-======================================== */
 
 function updateWishlistButtons() {
 
@@ -2566,7 +2577,6 @@ function updateWishlistButtons() {
             "saved"
           );
 
-
           button.textContent =
             "♥ Saved to Wishlist";
 
@@ -2578,7 +2588,6 @@ function updateWishlistButtons() {
             "saved"
           );
 
-
           button.textContent =
             "♡ Add to Wishlist";
 
@@ -2589,10 +2598,6 @@ function updateWishlistButtons() {
 
 }
 
-
-/* ========================================
-   TOGGLE WISHLIST
-======================================== */
 
 function toggleWishlist(button) {
 
@@ -2665,10 +2670,6 @@ function toggleWishlist(button) {
 }
 
 
-/* ========================================
-   CONNECT WISHLIST BUTTONS
-======================================== */
-
 document
   .querySelectorAll(
     ".wishlist-button"
@@ -2728,29 +2729,19 @@ function escapeHtml(value) {
 
 
 /* ========================================
-   RENDER HOMEPAGE WISHLIST
+   RENDER WISHLIST
 ======================================== */
 
 function renderWishlist() {
 
-  /*
-     Your current homepage uses:
-
-     #wishlistItems
-
-     So we use that here.
-  */
-
   const body =
     document.getElementById(
-      "wishlistItems"
+      "wishlistBody"
     );
 
 
   if (!body) {
-
     return;
-
   }
 
 
@@ -2766,9 +2757,17 @@ function renderWishlist() {
 
       <div class="wishlist-empty">
 
+        <div class="wishlist-empty-icon">
+          ♡
+        </div>
+
+        <h3>
+          Your wishlist is empty
+        </h3>
+
         <p>
-          Your wishlist is waiting
-          for a few little favorites.
+          Save a few Honey & Hymns favorites
+          and they'll wait here for you.
         </p>
 
       </div>
@@ -2783,7 +2782,7 @@ function renderWishlist() {
   body.innerHTML =
     wishlist
       .map(
-        function(item, index) {
+        function(item) {
 
           return `
 
@@ -2792,55 +2791,33 @@ function renderWishlist() {
               data-item-id="${escapeHtml(item.id)}"
             >
 
-              ${
-                item.image
-                  ? `
-                    <img
-                      class="wishlist-item-image"
-                      src="${escapeHtml(item.image)}"
-                      alt="${escapeHtml(item.title)}"
-                    >
-                  `
-                  : ""
-              }
+              <img
+                class="wishlist-item-image"
+                src="${escapeHtml(item.image)}"
+                alt="${escapeHtml(item.title)}"
+              >
 
 
-              <div class="wishlist-item-info">
+              <div>
 
-                <div
-                  class="wishlist-item-title"
-                >
+                <h3 class="wishlist-item-title">
                   ${escapeHtml(item.title)}
-                </div>
+                </h3>
 
 
-                ${
-                  item.price
-                    ? `
-                      <div
-                        class="wishlist-item-price"
-                      >
-                        ${escapeHtml(item.price)}
-                      </div>
-                    `
-                    : ""
-                }
+                <p class="wishlist-item-price">
+                  ${escapeHtml(item.price)}
+                </p>
 
 
-                ${
-                  item.url
-                    ? `
-                      <a
-                        class="wishlist-item-view"
-                        href="${escapeHtml(item.url)}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        View Product →
-                      </a>
-                    `
-                    : ""
-                }
+                <a
+                  class="wishlist-item-view"
+                  href="${escapeHtml(item.url)}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Product →
+                </a>
 
               </div>
 
@@ -2848,7 +2825,7 @@ function renderWishlist() {
               <button
                 class="wishlist-remove"
                 type="button"
-                data-index="${index}"
+                onclick="removeFromWishlist('${escapeHtml(item.id)}')"
               >
                 Remove
               </button>
@@ -2861,46 +2838,35 @@ function renderWishlist() {
       )
       .join("");
 
-
-  body
-    .querySelectorAll(
-      ".wishlist-remove"
-    )
-    .forEach(
-      function(button) {
-
-        button.addEventListener(
-          "click",
-          function() {
-
-            const wishlist =
-              getWishlist();
+}
 
 
-            wishlist.splice(
-              Number(
-                button.dataset.index
-              ),
-              1
-            );
+/* ========================================
+   REMOVE WISHLIST ITEM
+======================================== */
 
+function removeFromWishlist(id) {
 
-            saveWishlist(
-              wishlist
-            );
+  const wishlist =
+    getWishlist().filter(
+      function(item) {
 
-
-            updateWishlistCount();
-
-            updateWishlistButtons();
-
-            renderWishlist();
-
-          }
-        );
+        return item.id !== id;
 
       }
     );
+
+
+  saveWishlist(
+    wishlist
+  );
+
+
+  updateWishlistCount();
+
+  updateWishlistButtons();
+
+  renderWishlist();
 
 }
 
@@ -2909,14 +2875,7 @@ function renderWishlist() {
    OPEN WISHLIST
 ======================================== */
 
-function openWishlist(event) {
-
-  if (event) {
-
-    event.preventDefault();
-
-  }
-
+function openWishlist() {
 
   renderWishlist();
 
@@ -2928,9 +2887,7 @@ function openWishlist(event) {
 
 
   if (!modal) {
-
     return;
-
   }
 
 
@@ -2943,6 +2900,10 @@ function openWishlist(event) {
     "aria-hidden",
     "false"
   );
+
+
+  document.body.style.overflow =
+    "hidden";
 
 }
 
@@ -2960,9 +2921,7 @@ function closeWishlist() {
 
 
   if (!modal) {
-
     return;
-
   }
 
 
@@ -2976,49 +2935,69 @@ function closeWishlist() {
     "true"
   );
 
+
+  document.body.style.overflow =
+    "";
+
 }
 
 
 /* ========================================
-   WISHLIST NAVIGATION
+   CLEAR WISHLIST
 ======================================== */
 
-const wishlistNavButton =
-  document.getElementById(
-    "wishlistNavButton"
+function clearWishlist() {
+
+  const wishlist =
+    getWishlist();
+
+
+  if (
+    wishlist.length === 0
+  ) {
+
+    return;
+
+  }
+
+
+  const confirmed =
+    window.confirm(
+      "Are you sure you want to clear your wishlist?"
+    );
+
+
+  if (
+    !confirmed
+  ) {
+
+    return;
+
+  }
+
+
+  saveWishlist(
+    []
   );
 
 
-const wishlistClose =
-  document.getElementById(
-    "wishlistClose"
-  );
+  updateWishlistCount();
 
+  updateWishlistButtons();
+
+  renderWishlist();
+
+}
+
+
+/* ========================================
+   WISHLIST OUTSIDE CLICK
+======================================== */
 
 const wishlistModal =
   document.getElementById(
     "wishlistModal"
   );
-
-
-if (wishlistNavButton) {
-
-  wishlistNavButton.addEventListener(
-    "click",
-    openWishlist
-  );
-
-}
-
-
-if (wishlistClose) {
-
-  wishlistClose.addEventListener(
-    "click",
-    closeWishlist
-  );
-
-}
 
 
 if (wishlistModal) {
@@ -3028,7 +3007,7 @@ if (wishlistModal) {
     function(event) {
 
       if (
-        event.target === wishlistModal
+        event.target === this
       ) {
 
         closeWishlist();
@@ -3059,8 +3038,6 @@ document.addEventListener(
 
   }
 );
-
-
 /* ========================================
    INITIALIZE
 ======================================== */
