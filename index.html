@@ -1221,19 +1221,25 @@
 
     <!-- WISHLIST — KEPT AT THE END -->
 
-<a
-  href="#"
-  class="wishlist-header-button"
-  onclick="openWishlist(); return false;"
-  aria-label="Open wishlist"
->
-  <span class="wishlist-heart">♡</span>
-  Wishlist
-  <span
-    class="wishlist-count"
-    id="wishlistCount"
-  >0</span>
-</a>
+ <button
+    class="wishlist-header-button"
+    type="button"
+    onclick="openWishlist()"
+    aria-label="Open wishlist"
+  >
+
+    <span class="wishlist-heart">
+      ♡
+    </span>
+
+    Wishlist
+
+    <span
+      class="wishlist-count"
+      id="wishlistCount"
+    >
+      0
+    </span>
 
   </nav>
 
@@ -2555,23 +2561,14 @@ function getWishlist() {
         WISHLIST_STORAGE_KEY
       );
 
-
     if (!stored) {
-
       return [];
-
     }
 
-
     const parsed =
-      JSON.parse(
-        stored
-      );
+      JSON.parse(stored);
 
-
-    return Array.isArray(
-      parsed
-    )
+    return Array.isArray(parsed)
       ? parsed
       : [];
 
@@ -2586,15 +2583,11 @@ function getWishlist() {
 }
 
 
-function saveWishlist(
-  items
-) {
+function saveWishlist(items) {
 
   localStorage.setItem(
     WISHLIST_STORAGE_KEY,
-    JSON.stringify(
-      items
-    )
+    JSON.stringify(items)
   );
 
 }
@@ -2607,13 +2600,9 @@ function updateWishlistCount() {
       "wishlistCount"
     );
 
-
   if (!countElement) {
-
     return;
-
   }
-
 
   countElement.textContent =
     getWishlist().length;
@@ -2621,9 +2610,7 @@ function updateWishlistCount() {
 }
 
 
-function isInWishlist(
-  id
-) {
+function isInWishlist(id) {
 
   return getWishlist().some(
     function(item) {
@@ -2655,7 +2642,6 @@ function updateWishlistButtons() {
             "saved"
           );
 
-
           button.textContent =
             "♥ Saved to Wishlist";
 
@@ -2666,7 +2652,6 @@ function updateWishlistButtons() {
           button.classList.remove(
             "saved"
           );
-
 
           button.textContent =
             "♡ Add to Wishlist";
@@ -2679,9 +2664,7 @@ function updateWishlistButtons() {
 }
 
 
-function toggleWishlist(
-  button
-) {
+function toggleWishlist(button) {
 
   const id =
     button.dataset.wishlistId;
@@ -2778,13 +2761,9 @@ document
    ESCAPE HTML
 ======================================== */
 
-function escapeHtml(
-  value
-) {
+function escapeHtml(value) {
 
-  return String(
-    value
-  )
+  return String(value)
 
     .replace(
       /&/g,
@@ -2824,13 +2803,6 @@ function renderWishlist() {
     document.getElementById(
       "wishlistBody"
     );
-
-
-  if (!body) {
-
-    return;
-
-  }
 
 
   const wishlist =
@@ -2879,53 +2851,33 @@ function renderWishlist() {
               data-item-id="${escapeHtml(item.id)}"
             >
 
-              ${
-                item.image
-                  ? `
-                    <img
-                      class="wishlist-item-image"
-                      src="${escapeHtml(item.image)}"
-                      alt="${escapeHtml(item.title)}"
-                    >
-                  `
-                  : ""
-              }
+              <img
+                class="wishlist-item-image"
+                src="${escapeHtml(item.image)}"
+                alt="${escapeHtml(item.title)}"
+              >
 
 
               <div>
 
-                <h3
-                  class="wishlist-item-title"
-                >
-                  ${escapeHtml(
-                    item.title
-                  )}
+                <h3 class="wishlist-item-title">
+                  ${escapeHtml(item.title)}
                 </h3>
 
 
-                <p
-                  class="wishlist-item-price"
-                >
-                  ${escapeHtml(
-                    item.price || ""
-                  )}
+                <p class="wishlist-item-price">
+                  ${escapeHtml(item.price)}
                 </p>
 
 
-                ${
-                  item.url
-                    ? `
-                      <a
-                        class="wishlist-item-view"
-                        href="${escapeHtml(item.url)}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        View Product →
-                      </a>
-                    `
-                    : ""
-                }
+                <a
+                  class="wishlist-item-view"
+                  href="${escapeHtml(item.url)}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Product →
+                </a>
 
               </div>
 
@@ -2953,9 +2905,7 @@ function renderWishlist() {
    REMOVE WISHLIST ITEM
 ======================================== */
 
-function removeFromWishlist(
-  id
-) {
+function removeFromWishlist(id) {
 
   const wishlist =
     getWishlist().filter(
@@ -2985,16 +2935,7 @@ function removeFromWishlist(
    OPEN WISHLIST
 ======================================== */
 
-function openWishlist(
-  event
-) {
-
-  if (event) {
-
-    event.preventDefault();
-
-  }
-
+function openWishlist() {
 
   renderWishlist();
 
@@ -3003,13 +2944,6 @@ function openWishlist(
     document.getElementById(
       "wishlistOverlay"
     );
-
-
-  if (!overlay) {
-
-    return;
-
-  }
 
 
   overlay.classList.add(
@@ -3039,13 +2973,6 @@ function closeWishlist() {
     document.getElementById(
       "wishlistOverlay"
     );
-
-
-  if (!overlay) {
-
-    return;
-
-  }
 
 
   overlay.classList.remove(
@@ -3090,7 +3017,9 @@ function clearWishlist() {
     );
 
 
-  if (!confirmed) {
+  if (
+    !confirmed
+  ) {
 
     return;
 
@@ -3115,15 +3044,11 @@ function clearWishlist() {
    WISHLIST OUTSIDE CLICK
 ======================================== */
 
-const wishlistOverlay =
-  document.getElementById(
+document
+  .getElementById(
     "wishlistOverlay"
-  );
-
-
-if (wishlistOverlay) {
-
-  wishlistOverlay.addEventListener(
+  )
+  .addEventListener(
     "click",
     function(event) {
 
@@ -3137,10 +3062,6 @@ if (wishlistOverlay) {
 
     }
   );
-
-}
-
-
 /* ========================================
    ESCAPE KEY
 ======================================== */
