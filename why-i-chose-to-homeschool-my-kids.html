@@ -1,1 +1,1707 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Why I Chose to Homeschool My Kids | Honey & Hymns
+  </title>
+
+  <meta
+    name="description"
+    content="A mom’s honest reflection on school safety, family values, and the moment I knew homeschooling was the right choice for our family."
+  >
+
+  <style>
+
+    /* =========================================================
+       HONEY & HYMNS
+       ARTICLE PAGE
+       ========================================================= */
+
+
+    /* ========================================
+       BASE
+    ======================================== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      margin: 0;
+
+      background:
+        #fbf7ec;
+
+      color:
+        #40372d;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      line-height: 1.7;
+    }
+
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+
+    a {
+      color: inherit;
+    }
+
+
+    button {
+      font: inherit;
+    }
+
+
+    /* ========================================
+       HEADER
+    ======================================== */
+
+    .site-header {
+      width: 100%;
+
+      background:
+        #fffaf0;
+
+      border-bottom:
+        1px solid rgba(90, 70, 40, 0.18);
+
+      padding:
+        22px 30px 18px;
+    }
+
+
+    .header-inner {
+      max-width:
+        1250px;
+
+      margin:
+        0 auto;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
+
+      gap:
+        30px;
+    }
+
+
+    .header-brand {
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      align-items:
+        flex-start;
+    }
+
+
+    .header-brand a {
+      text-decoration:
+        none;
+    }
+
+
+    .site-logo {
+      width:
+        190px;
+
+      height:
+        auto;
+    }
+
+
+    .header-tagline {
+      margin:
+        4px 0 0;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        12px;
+
+      letter-spacing:
+        1.5px;
+
+      color:
+        #796b59;
+    }
+
+
+    /* ========================================
+       NAVIGATION
+    ======================================== */
+
+    .site-nav {
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        flex-end;
+
+      flex-wrap:
+        wrap;
+
+      gap:
+        20px;
+
+      font-size:
+        14px;
+    }
+
+
+    .site-nav > a,
+    .shop-toggle {
+      color:
+        #51473c;
+
+      text-decoration:
+        none;
+
+      font-weight:
+        500;
+
+      background:
+        none;
+
+      border:
+        none;
+
+      padding:
+        6px 0;
+
+      cursor:
+        pointer;
+
+      transition:
+        color 0.2s ease;
+    }
+
+
+    .site-nav > a:hover,
+    .shop-toggle:hover,
+    .site-nav > a.active {
+      color:
+        #9a7934;
+    }
+
+
+    /* ========================================
+       SHOP DROPDOWN
+    ======================================== */
+
+    .shop-dropdown {
+      position:
+        relative;
+    }
+
+
+    .shop-menu {
+      position:
+        absolute;
+
+      top:
+        calc(100% + 10px);
+
+      right:
+        0;
+
+      min-width:
+        220px;
+
+      background:
+        #fffaf0;
+
+      border:
+        1px solid rgba(90, 70, 40, 0.18);
+
+      box-shadow:
+        0 12px 30px rgba(70, 55, 35, 0.12);
+
+      padding:
+        10px;
+
+      display:
+        none;
+
+      z-index:
+        1000;
+    }
+
+
+    .shop-dropdown.open .shop-menu {
+      display:
+        block;
+    }
+
+
+    .shop-menu a,
+    .shop-coming-soon {
+      display:
+        block;
+
+      padding:
+        10px 12px;
+
+      color:
+        #51473c;
+
+      text-decoration:
+        none;
+
+      font-size:
+        14px;
+    }
+
+
+    .shop-menu a:hover {
+      background:
+        #f7efd8;
+
+      color:
+        #8a6f32;
+    }
+
+
+    .shop-coming-soon {
+      border-top:
+        1px solid rgba(90, 70, 40, 0.12);
+
+      margin-top:
+        5px;
+
+      color:
+        #746958;
+    }
+
+
+    .shop-coming-soon small {
+      display:
+        block;
+
+      margin-top:
+        2px;
+
+      font-size:
+        11px;
+
+      color:
+        #9a8c78;
+    }
+
+
+    /* ========================================
+       WISHLIST
+    ======================================== */
+
+    .wishlist-header-button {
+      border:
+        1px solid rgba(90, 70, 40, 0.2);
+
+      background:
+        transparent;
+
+      color:
+        #51473c;
+
+      padding:
+        7px 11px;
+
+      border-radius:
+        3px;
+
+      cursor:
+        pointer;
+
+      transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+
+    .wishlist-header-button:hover {
+      background:
+        #f7efd8;
+
+      border-color:
+        #b79b58;
+    }
+
+
+    .wishlist-heart {
+      font-size:
+        17px;
+
+      margin-right:
+        3px;
+    }
+
+
+    .wishlist-count {
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      min-width:
+        20px;
+
+      height:
+        20px;
+
+      margin-left:
+        4px;
+
+      border-radius:
+        50%;
+
+      background:
+        #ffeBA1;
+
+      color:
+        #5d4b2f;
+
+      font-size:
+        11px;
+
+      font-weight:
+        700;
+    }
+
+
+    /* ========================================
+       ARTICLE HEADER
+    ======================================== */
+
+    .article-page {
+      max-width:
+        1180px;
+
+      margin:
+        0 auto;
+
+      padding:
+        75px 30px 100px;
+    }
+
+
+    .article-header {
+      max-width:
+        850px;
+
+      margin:
+        0 auto 45px;
+
+      text-align:
+        center;
+    }
+
+
+    .article-category {
+      margin:
+        0 0 10px;
+
+      color:
+        #8a6f32;
+
+      font-size:
+        12px;
+
+      font-weight:
+        700;
+
+      letter-spacing:
+        2px;
+
+      text-transform:
+        uppercase;
+    }
+
+
+    .article-date {
+      margin:
+        0 0 25px;
+
+      color:
+        #837868;
+
+      font-size:
+        13px;
+    }
+
+
+    .article-header h1 {
+      margin:
+        0 auto 20px;
+
+      max-width:
+        850px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(38px, 5vw, 64px);
+
+      line-height:
+        1.08;
+
+      font-weight:
+        500;
+
+      color:
+        #40372d;
+    }
+
+
+    .article-subtitle {
+      max-width:
+        700px;
+
+      margin:
+        0 auto;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        19px;
+
+      line-height:
+        1.65;
+
+      color:
+        #6b6053;
+    }
+
+
+    /* ========================================
+       DECORATIVE RULE
+    ======================================== */
+
+    .article-rule {
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      gap:
+        14px;
+
+      margin:
+        28px 0 0;
+
+      color:
+        #a48a50;
+    }
+
+
+    .article-rule::before,
+    .article-rule::after {
+      content:
+        "";
+
+      width:
+        75px;
+
+      height:
+        1px;
+
+      background:
+        rgba(90, 70, 40, 0.25);
+    }
+
+
+    /* ========================================
+       HERO IMAGE
+    ======================================== */
+
+    .article-hero {
+      max-width:
+        1000px;
+
+      margin:
+        0 auto 55px;
+    }
+
+
+    .article-hero img {
+      width:
+        100%;
+
+      height:
+        auto;
+
+      border:
+        1px solid rgba(90, 70, 40, 0.16);
+
+      box-shadow:
+        0 10px 30px rgba(80, 60, 35, 0.08);
+    }
+
+
+    .article-image-caption {
+      margin:
+        10px 0 0;
+
+      text-align:
+        center;
+
+      font-size:
+        12px;
+
+      color:
+        #918473;
+
+      font-style:
+        italic;
+    }
+
+
+    /* ========================================
+       ARTICLE CONTENT
+    ======================================== */
+
+    .article-layout {
+      display:
+        grid;
+
+      grid-template-columns:
+        minmax(0, 760px);
+
+      justify-content:
+        center;
+    }
+
+
+    .article-content {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        18px;
+
+      line-height:
+        1.9;
+
+      color:
+        #4d453c;
+    }
+
+
+    .article-content p {
+      margin:
+        0 0 25px;
+    }
+
+
+    .article-content h2 {
+      margin:
+        45px 0 18px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        29px;
+
+      line-height:
+        1.3;
+
+      font-weight:
+        500;
+
+      color:
+        #40372d;
+    }
+
+
+    .article-content blockquote {
+      margin:
+        35px 0;
+
+      padding:
+        22px 28px;
+
+      background:
+        #fff8df;
+
+      border-left:
+        4px solid #ffeBA1;
+
+      font-style:
+        italic;
+
+      color:
+        #5d5245;
+    }
+
+
+    .article-content a {
+      color:
+        #82662d;
+
+      text-decoration:
+        underline;
+
+      text-decoration-color:
+        #c8ac68;
+
+      text-underline-offset:
+        3px;
+    }
+
+
+    .article-content a:hover {
+      color:
+        #a07b32;
+    }
+
+
+    /* ========================================
+       ARTICLE END
+    ======================================== */
+
+    .article-end {
+      margin:
+        55px 0 0;
+
+      padding-top:
+        35px;
+
+      border-top:
+        1px solid rgba(90, 70, 40, 0.2);
+
+      text-align:
+        center;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color:
+        #756958;
+    }
+
+
+    .article-end-symbol {
+      margin-bottom:
+        12px;
+
+      color:
+        #a48a50;
+
+      font-size:
+        20px;
+    }
+
+
+    /* ========================================
+       RECOMMENDED ARTICLES
+    ======================================== */
+
+    .recommended {
+      margin:
+        90px auto 0;
+
+      padding-top:
+        55px;
+
+      border-top:
+        1px solid rgba(90, 70, 40, 0.22);
+    }
+
+
+    .recommended-heading {
+      text-align:
+        center;
+
+      margin-bottom:
+        35px;
+    }
+
+
+    .recommended-heading h2 {
+      margin:
+        0 0 10px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        34px;
+
+      font-weight:
+        500;
+
+      color:
+        #40372d;
+    }
+
+
+    .recommended-heading p {
+      margin:
+        0;
+
+      color:
+        #766c5e;
+
+      font-size:
+        14px;
+    }
+
+
+    .recommended-grid {
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap:
+        25px;
+    }
+
+
+    .recommended-card {
+      background:
+        #fffaf0;
+
+      border:
+        1px solid rgba(90, 70, 40, 0.15);
+
+      padding:
+        22px;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+
+    .recommended-card:hover {
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 10px 25px rgba(80, 60, 35, 0.08);
+    }
+
+
+    .recommended-card .article-category {
+      margin-bottom:
+        8px;
+
+      font-size:
+        11px;
+    }
+
+
+    .recommended-card .article-date {
+      margin-bottom:
+        12px;
+
+      font-size:
+        12px;
+    }
+
+
+    .recommended-card h3 {
+      margin:
+        0 0 15px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        22px;
+
+      line-height:
+        1.3;
+
+      font-weight:
+        500;
+
+      color:
+        #40372d;
+    }
+
+
+    .recommended-card p {
+      margin:
+        0 0 18px;
+
+      font-size:
+        14px;
+
+      line-height:
+        1.65;
+
+      color:
+        #6b6257;
+    }
+
+
+    .recommended-card a {
+      color:
+        #765d2c;
+
+      text-decoration:
+        none;
+
+      font-size:
+        13px;
+
+      font-weight:
+        700;
+
+      border-bottom:
+        1px solid #b79b58;
+
+      padding-bottom:
+        3px;
+    }
+
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    .site-footer {
+      padding:
+        30px;
+
+      text-align:
+        center;
+
+      border-top:
+        1px solid rgba(90, 70, 40, 0.15);
+
+      background:
+        #fffaf0;
+
+      color:
+        #7b7061;
+
+      font-size:
+        13px;
+    }
+
+
+    /* ========================================
+       MOBILE
+    ======================================== */
+
+    @media (max-width: 900px) {
+
+      .header-inner {
+        flex-direction:
+          column;
+
+        align-items:
+          center;
+      }
+
+
+      .header-brand {
+        align-items:
+          center;
+
+        text-align:
+          center;
+      }
+
+
+      .site-nav {
+        justify-content:
+          center;
+      }
+
+
+      .recommended-grid {
+        grid-template-columns:
+          1fr;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .site-header {
+        padding:
+          18px 18px;
+      }
+
+
+      .site-logo {
+        width:
+          165px;
+      }
+
+
+      .site-nav {
+        gap:
+          12px 16px;
+
+        font-size:
+          13px;
+      }
+
+
+      .article-page {
+        padding:
+          50px 18px 70px;
+      }
+
+
+      .article-header h1 {
+        font-size:
+          36px;
+      }
+
+
+      .article-subtitle {
+        font-size:
+          17px;
+      }
+
+
+      .article-content {
+        font-size:
+          17px;
+
+        line-height:
+          1.8;
+      }
+
+
+      .article-content h2 {
+        font-size:
+          26px;
+      }
+
+
+      .article-hero {
+        margin-bottom:
+          40px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ========================================
+       HEADER
+  ======================================== -->
+
+  <header class="site-header">
+
+    <div class="header-inner">
+
+
+      <div class="header-brand">
+
+        <a href="index.html">
+
+          <img
+            src="images/honey-and-hymns-logo.png"
+            alt="Honey & Hymns"
+            class="site-logo"
+          >
+
+        </a>
+
+        <p class="header-tagline">
+          Faith • Homeschool • Homemaking
+        </p>
+
+      </div>
+
+
+      <nav class="site-nav">
+
+        <a href="index.html">
+          Home
+        </a>
+
+
+        <a
+          href="Articles.html"
+          class="active"
+        >
+          Articles
+        </a>
+
+
+        <div class="shop-dropdown">
+
+          <button
+            class="shop-toggle"
+            type="button"
+            aria-expanded="false"
+          >
+            Shop
+          </button>
+
+
+          <div class="shop-menu">
+
+            <a href="Shop.html">
+              Resources
+            </a>
+
+
+            <a href="Free-Downloads.html">
+              Free Downloads
+            </a>
+
+
+            <div class="shop-coming-soon">
+
+              Monthly Honey & Hymns Magazine
+
+              <small>
+                Coming soon
+              </small>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <a href="Sunday-Gospel.html">
+          Sunday Gospel for Kids
+        </a>
+
+
+        <a href="index.html#about">
+          About
+        </a>
+
+
+        <a
+          href="https://honeyandhymns.substack.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Newsletter
+        </a>
+
+
+        <button
+          class="wishlist-header-button"
+          type="button"
+          onclick="openWishlist()"
+          aria-label="Open wishlist"
+        >
+
+          <span class="wishlist-heart">
+            ♡
+          </span>
+
+          Wishlist
+
+          <span
+            class="wishlist-count"
+            id="wishlistCount"
+          >
+            0
+          </span>
+
+        </button>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ========================================
+       ARTICLE
+  ======================================== -->
+
+  <main class="article-page">
+
+
+    <header class="article-header">
+
+      <p class="article-category">
+        HOMESCHOOL • FAMILY
+      </p>
+
+
+      <p class="article-date">
+        August 8, 2026
+      </p>
+
+
+      <h1>
+        Why I Chose to Homeschool My Kids:
+        The Story Behind Our Homeschool Journey
+      </h1>
+
+
+      <p class="article-subtitle">
+        A mom’s honest reflection on school safety,
+        family values, and the moment I knew homeschooling
+        was the right choice for our family.
+      </p>
+
+
+      <div class="article-rule">
+        ✦
+      </div>
+
+    </header>
+
+
+
+    <!-- ========================================
+         ARTICLE HERO IMAGE
+    ======================================== -->
+
+    <div class="article-hero">
+
+      <img
+        src="images/why-i-chose-homeschooling-family-journey.png"
+        alt="Why I Chose to Homeschool My Kids: The Story Behind Our Homeschool Journey"
+      >
+
+    </div>
+
+
+
+    <!-- ========================================
+         ARTICLE CONTENT
+    ======================================== -->
+
+    <div class="article-layout">
+
+      <article class="article-content">
+
+
+        <p>
+          Earlier this week, I mentioned a piece of the reason
+          why I decided to homeschool my kids in my community chat.
+          As I sat down to plan out their school year, it really
+          got me reflecting on the <em>why</em> behind all of this.
+          Why do I homeschool?
+        </p>
+
+
+        <p>
+          I know it’s about more than just a guy showing up at my
+          son’s elementary school with a machete. No, really —
+          we’re about to get to that, I promise.
+        </p>
+
+
+        <p>
+          But let’s start there, because a guy really did show up
+          to my kids’ school with a machete. That was, without a
+          doubt, one of the top ten worst days of my life.
+        </p>
+
+
+        <p>
+          I was home, it was my day off, and my phone dinged with
+          a notification:
+          <em>“(Name of school) is under lockdown.”</em>
+        </p>
+
+
+        <p>
+          I sat straight up, anxiety filling my chest.
+          What do you mean, lockdown?!
+        </p>
+
+
+        <p>
+          I screenshotted the text, switched out of Messages,
+          and opened Facebook.
+        </p>
+
+
+        <p>
+          I went straight to our local Facebook group.
+          “Does anyone know anything about this lockdown?”
+          I posted, attaching a screenshot of the alert.
+        </p>
+
+
+        <p>
+          Within minutes, comment after comment started rolling in.
+          One of them had a picture of a man in handcuffs, with
+          squad cars lined up all across the front lawn of my
+          baby’s school.
+        </p>
+
+
+        <p>
+          That was the first time I truly felt afraid to send my
+          kids to school. The thought of leaving them in the hands
+          of strangers already made my stomach turn — and now I had
+          proof that my fear wasn’t unfounded.
+        </p>
+
+
+        <p>
+          The rest of that school year came and went, and summer
+          finally arrived.
+        </p>
+
+
+        <p>
+          Halfway through the summer, my husband and I started
+          talking about holding our middle child back from preschool,
+          partly because of everything that had happened the year
+          before.
+        </p>
+
+
+        <p>
+          So I decided to homeschool him, at least for that year.
+          Our oldest wasn’t even part of the plan yet — not until
+          we went to fill out his paperwork at his new school after
+          we moved.
+        </p>
+
+
+        <p>
+          The front office had bulletproof windows.
+        </p>
+
+
+        <p>
+          That was it for me. I couldn’t sign that paperwork with
+          any confidence.
+        </p>
+
+
+        <p>
+          Between that, the incident the year before, and everything
+          coming out in the news about what was being allowed —
+          and not stopped — in schools, I had reached my limit.
+        </p>
+
+
+        <p>
+          I finished the homeschool paperwork and kept him home too.
+        </p>
+
+
+        <p>
+          I don’t regret this decision for a single second.
+          Homeschooling has been such a blessing for our family.
+        </p>
+
+
+        <p>
+          I’ve gotten back so many hours with my kids — hours that
+          would have quietly slipped away, swallowed up by the
+          public school system.
+        </p>
+
+
+        <p>
+          There have been real sacrifices to make this work on one
+          income. But I would rather be broke than get that phone call.
+          The one every mom prays she never gets, telling her
+          something happened to one of her littles.
+        </p>
+
+
+        <p>
+          I’d love to hear the story behind your own homeschooling
+          journey! Leave it in the comments below.
+        </p>
+
+
+        <div class="article-end">
+
+          <div class="article-end-symbol">
+            ✦
+          </div>
+
+          <div>
+            Thank you for reading Honey & Hymns.
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+
+    <!-- ========================================
+         RECOMMENDED ARTICLES
+    ======================================== -->
+
+    <section class="recommended">
+
+      <div class="recommended-heading">
+
+        <h2>
+          You May Also Enjoy
+        </h2>
+
+        <p>
+          A few more stories from Honey & Hymns
+        </p>
+
+      </div>
+
+
+      <div class="recommended-grid">
+
+
+        <!-- RECOMMENDED ARTICLE 1 -->
+
+        <article class="recommended-card">
+
+          <p class="article-category">
+            HOMESCHOOL
+          </p>
+
+          <p class="article-date">
+            July 25, 2026
+          </p>
+
+          <h3>
+            The 10 Living Books I’m Most Excited
+            to Read This Homeschool Year
+          </h3>
+
+          <p>
+            Books, stories, imagination, and faith
+            for our Charlotte Mason homeschool.
+          </p>
+
+          <a href="">
+            Read Article →
+          </a>
+
+        </article>
+
+
+
+        <!-- RECOMMENDED ARTICLE 2 -->
+
+        <article class="recommended-card">
+
+          <p class="article-category">
+            HOMESCHOOL
+          </p>
+
+          <p class="article-date">
+            July 11, 2026
+          </p>
+
+          <h3>
+            How I Prepare for a New Homeschool Year:
+            My End-of-Summer Planning Routine
+          </h3>
+
+          <p>
+            How I organize, choose curriculum,
+            plan lessons, and prepare for a new year.
+          </p>
+
+          <a href="">
+            Read Article →
+          </a>
+
+        </article>
+
+
+
+        <!-- RECOMMENDED ARTICLE 3 -->
+
+        <article class="recommended-card">
+
+          <p class="article-category">
+            HOMESCHOOL • FAITH
+          </p>
+
+          <p class="article-date">
+            July 4, 2026
+          </p>
+
+          <h3>
+            Why I Started My Own Personal Curriculum
+            (And Why My Kids Are Watching)
+          </h3>
+
+          <p>
+            Modeling lifelong learning, curiosity,
+            and biblical wisdom for my children.
+          </p>
+
+          <a href="">
+            Read Article →
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+
+  <footer class="site-footer">
+
+    <p>
+      © Honey & Hymns
+    </p>
+
+  </footer>
+
+
+
+  <!-- ========================================
+       JAVASCRIPT
+  ======================================== -->
+
+  <script>
+
+
+    /* ========================================
+       SHOP DROPDOWN
+    ======================================== */
+
+    const shopDropdown =
+      document.querySelector(
+        ".shop-dropdown"
+      );
+
+
+    const shopToggle =
+      document.querySelector(
+        ".shop-toggle"
+      );
+
+
+    if (
+      shopToggle &&
+      shopDropdown
+    ) {
+
+      shopToggle.addEventListener(
+        "click",
+        function() {
+
+          const isOpen =
+            shopDropdown.classList.toggle(
+              "open"
+            );
+
+
+          shopToggle.setAttribute(
+            "aria-expanded",
+            isOpen
+              ? "true"
+              : "false"
+          );
+
+        }
+      );
+
+
+      document.addEventListener(
+        "click",
+        function(event) {
+
+          if (
+            !shopDropdown.contains(
+              event.target
+            )
+          ) {
+
+            shopDropdown.classList.remove(
+              "open"
+            );
+
+
+            shopToggle.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
+
+        }
+      );
+
+    }
+
+
+    /* ========================================
+       WISHLIST
+    ======================================== */
+
+    const WISHLIST_STORAGE_KEY =
+      "honeyAndHymnsWishlist";
+
+
+    function getWishlist() {
+
+      try {
+
+        const stored =
+          localStorage.getItem(
+            WISHLIST_STORAGE_KEY
+          );
+
+
+        if (!stored) {
+
+          return [];
+
+        }
+
+
+        const parsed =
+          JSON.parse(
+            stored
+          );
+
+
+        return Array.isArray(parsed)
+          ? parsed
+          : [];
+
+      } catch (error) {
+
+        return [];
+
+      }
+
+    }
+
+
+    function updateWishlistCount() {
+
+      const countElement =
+        document.getElementById(
+          "wishlistCount"
+        );
+
+
+      if (!countElement) {
+
+        return;
+
+      }
+
+
+      countElement.textContent =
+        getWishlist().length;
+
+    }
+
+
+    function openWishlist() {
+
+      /*
+         This sends the visitor to the
+         wishlist page once we build it.
+
+         Leaving this here means the
+         header button is already wired
+         for the future wishlist page.
+      */
+
+      window.location.href =
+        "Wishlist.html";
+
+    }
+
+
+    updateWishlistCount();
+
+
+  </script>
+
+
+</body>
+
+</html>
