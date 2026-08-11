@@ -1,1 +1,1119 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Articles | Honey & Hymns
+  </title>
+
+  <meta
+    name="description"
+    content="Explore Honey & Hymns articles about Catholic faith, homeschooling, homemaking, motherhood, marriage, and family life."
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+<style>
+
+/* =========================================================
+   ARTICLES PAGE
+   Honey & Hymns Newspaper / Editorial Layout
+========================================================= */
+
+
+/* ========================================
+   ARTICLES PAGE INTRO
+======================================== */
+
+.articles-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 30px 100px;
+}
+
+
+.articles-intro {
+  margin-bottom: 55px;
+}
+
+
+.articles-intro .section-heading {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.articles-intro h1 {
+  margin-bottom: 12px;
+}
+
+
+/* ========================================
+   ARTICLE ARCHIVE
+======================================== */
+
+.articles-archive {
+  width: 100%;
+}
+
+
+/* ========================================
+   FEATURED ARTICLE
+======================================== */
+
+.article-featured {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 50px;
+  padding-bottom: 60px;
+  margin-bottom: 60px;
+  border-bottom: 1px solid rgba(90, 70, 40, 0.25);
+}
+
+
+.article-image-wrap {
+  width: 100%;
+}
+
+
+.article-image-placeholder {
+  width: 100%;
+  min-height: 320px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f7f0dc;
+
+  border: 1px solid rgba(90, 70, 40, 0.18);
+
+  color: #8a7758;
+
+  font-family: Georgia, serif;
+
+  font-size: 15px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+.article-featured-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.article-category {
+  margin: 0 0 8px;
+
+  font-size: 12px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  font-weight: 600;
+
+  color: #8a6f32;
+}
+
+
+.article-date {
+  margin: 0 0 18px;
+
+  font-size: 13px;
+
+  color: #7c7467;
+}
+
+
+.article-featured h2 {
+  margin: 0 0 20px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(30px, 4vw, 48px);
+
+  line-height: 1.12;
+
+  font-weight: 500;
+
+  color: #40372d;
+}
+
+
+.article-subtitle {
+  margin: 0 0 25px;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+
+  color: #62594e;
+
+  max-width: 600px;
+}
+
+
+/* ========================================
+   READ ARTICLE LINK
+======================================== */
+
+.article-read-more {
+  display: inline-block;
+
+  width: fit-content;
+
+  color: #5e4b2f;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid #b79b58;
+
+  padding-bottom: 4px;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.article-read-more:hover {
+  color: #8a6f32;
+
+  border-color: #8a6f32;
+}
+
+
+/* ========================================
+   ARTICLE GRID
+======================================== */
+
+.articles-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  column-gap: 45px;
+
+  row-gap: 55px;
+}
+
+
+/* ========================================
+   ARTICLE CARD
+======================================== */
+
+.article-card {
+  display: grid;
+
+  grid-template-columns: 180px 1fr;
+
+  gap: 25px;
+
+  padding-bottom: 45px;
+
+  border-bottom:
+    1px solid rgba(90, 70, 40, 0.18);
+}
+
+
+.article-card-image {
+  width: 180px;
+}
+
+
+.article-card-image .article-image-placeholder {
+  min-height: 240px;
+
+  height: 100%;
+}
+
+
+.article-card-content {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+.article-card h2 {
+  margin: 0 0 12px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 24px;
+
+  line-height: 1.25;
+
+  font-weight: 500;
+
+  color: #40372d;
+}
+
+
+.article-card p:not(.article-category):not(.article-date) {
+  margin: 0 0 20px;
+
+  font-size: 14px;
+
+  line-height: 1.65;
+
+  color: #6b6257;
+}
+
+
+/* ========================================
+   NEWSPAPER DIVIDER
+======================================== */
+
+.articles-grid::before {
+  content: "";
+
+  grid-column: 1 / -1;
+
+  height: 1px;
+
+  background:
+    rgba(90, 70, 40, 0.25);
+
+  margin-bottom: -30px;
+}
+
+
+/* ========================================
+   RESPONSIVE TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+  .articles-page {
+    padding:
+      55px 25px 80px;
+  }
+
+
+  .article-featured {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+
+  .article-image-placeholder {
+    min-height: 350px;
+  }
+
+
+  .article-featured-content {
+    display: block;
+  }
+
+
+  .article-featured h2 {
+    font-size: 38px;
+  }
+
+
+  .articles-grid {
+    grid-template-columns: 1fr;
+
+    row-gap: 45px;
+  }
+
+
+  .articles-grid::before {
+    display: none;
+  }
+
+}
+
+
+/* ========================================
+   RESPONSIVE MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .articles-page {
+    padding:
+      45px 18px 70px;
+  }
+
+
+  .articles-intro {
+    margin-bottom: 40px;
+  }
+
+
+  .article-featured {
+    padding-bottom: 45px;
+
+    margin-bottom: 45px;
+  }
+
+
+  .article-image-placeholder {
+    min-height: 260px;
+  }
+
+
+  .article-featured h2 {
+    font-size: 30px;
+  }
+
+
+  .article-subtitle {
+    font-size: 16px;
+  }
+
+
+  .article-card {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+
+  .article-card-image {
+    width: 100%;
+  }
+
+
+  .article-card-image .article-image-placeholder {
+    min-height: 220px;
+  }
+
+
+  .article-card h2 {
+    font-size: 23px;
+  }
+
+}
+
+</style>
+  
+</head>
+
+
+<body>
+
+
+  <!-- ========================================
+       HEADER
+  ======================================== -->
+
+  <header class="site-header">
+
+    <div class="header-brand">
+
+      <a href="index.html">
+
+        <img
+          src="images/honey-and-hymns-logo.png"
+          alt="Honey & Hymns"
+          class="site-logo"
+        >
+
+      </a>
+
+      <p class="header-tagline">
+        Faith • Homeschool • Homemaking
+      </p>
+
+    </div>
+
+
+    <nav class="site-nav">
+
+      <a href="index.html">
+        Home
+      </a>
+
+
+      <a
+        href="Articles.html"
+        class="active"
+      >
+        Articles
+      </a>
+
+
+      <div class="shop-dropdown">
+
+        <button
+          class="shop-toggle"
+          type="button"
+          aria-expanded="false"
+        >
+          Shop
+        </button>
+
+
+        <div class="shop-menu">
+
+          <a href="Shop.html">
+            Resources
+          </a>
+
+
+          <a href="Free-Downloads.html">
+            Free Downloads
+          </a>
+
+
+          <div class="shop-coming-soon">
+
+            Monthly Honey & Hymns Magazine
+
+            <small>
+              Coming soon
+            </small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <a href="Sunday-Gospel.html">
+        Sunday Gospel for Kids
+      </a>
+
+
+      <a href="index.html#about">
+        About
+      </a>
+
+
+      <a
+        href="https://honeyandhymns.substack.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Newsletter
+      </a>
+
+
+      <!-- WISHLIST -->
+
+      <button
+        class="wishlist-header-button"
+        type="button"
+        onclick="openWishlist()"
+        aria-label="Open wishlist"
+      >
+
+        <span class="wishlist-heart">
+          ♡
+        </span>
+
+        Wishlist
+
+        <span
+          class="wishlist-count"
+          id="wishlistCount"
+        >
+          0
+        </span>
+
+      </button>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- ========================================
+       ARTICLES PAGE
+  ======================================== -->
+
+  <main class="articles-page">
+
+
+    <!-- PAGE INTRO -->
+
+    <section class="articles-intro">
+
+      <div class="section-heading">
+
+        <h1>
+          Articles
+        </h1>
+
+        <div class="section-rule">
+          ✦
+        </div>
+
+        <p>
+          Stories, encouragement, and practical
+          wisdom from our little corner of faith,
+          family, homeschooling, and homemaking.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         NEWSPAPER ARTICLE ARCHIVE
+    ======================================== -->
+
+    <section
+      class="articles-archive"
+      aria-label="Honey & Hymns Articles"
+    >
+
+
+      <!-- ======================================
+           FEATURED / MOST RECENT ARTICLE
+      ====================================== -->
+
+      <article class="article-featured">
+
+        <div class="article-image-wrap">
+
+          <!-- IMAGE WILL BE ADDED LATER -->
+
+          <div class="article-image-placeholder">
+            Latest Article
+          </div>
+
+        </div>
+
+
+        <div class="article-featured-content">
+
+          <p class="article-category">
+            HOMESCHOOL • FAMILY
+          </p>
+
+
+          <p class="article-date">
+            August 8, 2026
+          </p>
+
+
+          <h2>
+            Why I Chose to Homeschool My Kids:
+            The Story Behind Our Homeschool Journey
+          </h2>
+
+
+          <p class="article-subtitle">
+            A mom’s honest reflection on school safety,
+            family values, and the moment I knew
+            homeschooling was the right choice for our family.
+          </p>
+
+
+          <a
+            href=""
+            class="article-read-more"
+          >
+            Read Article →
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ======================================
+           ARTICLE GRID
+      ====================================== -->
+
+      <div class="articles-grid">
+
+
+        <!-- ARTICLE 7 -->
+
+        <article class="article-card">
+
+          <div class="article-card-image">
+
+            <div class="article-image-placeholder">
+              Article
+            </div>
+
+          </div>
+
+
+          <div class="article-card-content">
+
+            <p class="article-category">
+              MOTHERHOOD
+            </p>
+
+
+            <p class="article-date">
+              August 1, 2026
+            </p>
+
+
+            <h2>
+              Are Girl Toddlers More Strong-Willed
+              Than Boys? A Mom’s Honest Investigation
+            </h2>
+
+
+            <p>
+              I compared my own parenting experience
+              with what the research says about toddler
+              boys and girls, and the results surprised me.
+            </p>
+
+
+            <a
+              href=""
+              class="article-read-more"
+            >
+              Read Article →
+            </a>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ARTICLE 6 -->
+
+        <article class="article-card">
+
+          <div class="article-card-image">
+
+            <div class="article-image-placeholder">
+              Article
+            </div>
+
+          </div>
+
+
+          <div class="article-card-content">
+
+            <p class="article-category">
+              HOMESCHOOL
+            </p>
+
+
+            <p class="article-date">
+              July 25, 2026
+            </p>
+
+
+            <h2>
+              The 10 Living Books I’m Most Excited
+              to Read This Homeschool Year
+            </h2>
+
+
+            <p>
+              After moving from screen-heavy learning
+              to a Charlotte Mason approach, these are
+              the books filling our homeschool with
+              stories, imagination, and faith.
+            </p>
+
+
+            <a
+              href=""
+              class="article-read-more"
+            >
+              Read Article →
+            </a>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ARTICLE 5 -->
+
+        <article class="article-card">
+
+          <div class="article-card-image">
+
+            <div class="article-image-placeholder">
+              Article
+            </div>
+
+          </div>
+
+
+          <div class="article-card-content">
+
+            <p class="article-category">
+              FAITH • MARRIAGE
+            </p>
+
+
+            <p class="article-date">
+              July 18, 2026
+            </p>
+
+
+            <h2>
+              6 Simple Ways I’m Building
+              a God-Centered Marriage
+            </h2>
+
+
+            <p>
+              Honest reflections from a wife
+              still learning as she goes.
+            </p>
+
+
+            <a
+              href=""
+              class="article-read-more"
+            >
+              Read Article →
+            </a>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ARTICLE 4 -->
+
+        <article class="article-card">
+
+          <div class="article-card-image">
+
+            <div class="article-image-placeholder">
+              Article
+            </div>
+
+          </div>
+
+
+          <div class="article-card-content">
+
+            <p class="article-category">
+              HOMESCHOOL
+            </p>
+
+
+            <p class="article-date">
+              July 11, 2026
+            </p>
+
+
+            <h2>
+              How I Prepare for a New Homeschool Year:
+              My End-of-Summer Planning Routine
+            </h2>
+
+
+            <p>
+              From organizing portfolios and choosing
+              curriculum to planning lessons and preparing
+              our hearts for a Christ-centered homeschool year.
+            </p>
+
+
+            <a
+              href=""
+              class="article-read-more"
+            >
+              Read Article →
+            </a>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ARTICLE 3 -->
+
+        <article class="article-card">
+
+          <div class="article-card-image">
+
+            <div class="article-image-placeholder">
+              Article
+            </div>
+
+          </div>
+
+
+          <div class="article-card-content">
+
+            <p class="article-category">
+              HOMESCHOOL • FAITH
+            </p>
+
+
+            <p class="article-date">
+              July 4, 2026
+            </p>
+
+
+            <h2>
+              Why I Started My Own Personal Curriculum
+              (And Why My Kids Are Watching)
+            </h2>
+
+
+            <p>
+              How creating a personal curriculum as a
+              homeschool mom is helping me model lifelong
+              learning, curiosity, and biblical wisdom.
+            </p>
+
+
+            <a
+              href=""
+              class="article-read-more"
+            >
+              Read Article →
+            </a>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ARTICLE 2 -->
+
+        <article class="article-card">
+
+          <div class="article-card-image">
+
+            <div class="article-image-placeholder">
+              Article
+            </div>
+
+          </div>
+
+
+          <div class="article-card-content">
+
+            <p class="article-category">
+              HOMEMAKING • FAITH
+            </p>
+
+
+            <p class="article-date">
+              June 27, 2026
+            </p>
+
+
+            <h2>
+              What I Do When Homemaking Feels Hard:
+              4 Simple Ways I Get Through the Week
+            </h2>
+
+
+            <p>
+              Four simple things that help me care for
+              my home, my family, and my faith when
+              I’m running on empty.
+            </p>
+
+
+            <a
+              href=""
+              class="article-read-more"
+            >
+              Read Article →
+            </a>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ARTICLE 1 -->
+
+        <article class="article-card">
+
+          <div class="article-card-image">
+
+            <div class="article-image-placeholder">
+              Article
+            </div>
+
+          </div>
+
+
+          <div class="article-card-content">
+
+            <p class="article-category">
+              FAITH
+            </p>
+
+
+            <p class="article-date">
+              June 20, 2026
+            </p>
+
+
+            <h2>
+              How Jesus Healed My Mental Health
+              and Restored My Marriage and Motherhood
+            </h2>
+
+
+            <p>
+              A Christian testimony about mental health
+              recovery, rebuilding family life, and
+              finding a renewed relationship with Jesus.
+            </p>
+
+
+            <a
+              href=""
+              class="article-read-more"
+            >
+              Read Article →
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+
+  <footer class="site-footer">
+
+    <p>
+      © Honey & Hymns
+    </p>
+
+  </footer>
+
+
+
+  <!-- ========================================
+       SHOP DROPDOWN SCRIPT
+  ======================================== -->
+
+  <script>
+
+    const shopDropdown =
+      document.querySelector(
+        ".shop-dropdown"
+      );
+
+
+    const shopToggle =
+      document.querySelector(
+        ".shop-toggle"
+      );
+
+
+    if (
+      shopToggle &&
+      shopDropdown
+    ) {
+
+      shopToggle.addEventListener(
+        "click",
+        function() {
+
+          const isOpen =
+            shopDropdown.classList.toggle(
+              "open"
+            );
+
+
+          shopToggle.setAttribute(
+            "aria-expanded",
+            isOpen
+              ? "true"
+              : "false"
+          );
+
+        }
+      );
+
+
+      document.addEventListener(
+        "click",
+        function(event) {
+
+          if (
+            !shopDropdown.contains(
+              event.target
+            )
+          ) {
+
+            shopDropdown.classList.remove(
+              "open"
+            );
+
+
+            shopToggle.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
+
+        }
+      );
+
+    }
+
+  </script>
+
+
+</body>
+
+</html>
+
