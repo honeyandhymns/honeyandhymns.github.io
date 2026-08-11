@@ -2732,7 +2732,212 @@
 
       }
     );
+/* ========================================
+   HERO CAROUSEL
+======================================== */
 
+const featureTrack =
+  document.getElementById("featureTrack");
+
+const featureSlides =
+  document.querySelectorAll(".feature-slide");
+
+const featurePrev =
+  document.getElementById("featurePrev");
+
+const featureNext =
+  document.getElementById("featureNext");
+
+const featureDots =
+  document.querySelectorAll(".feature-dot");
+
+let currentFeatureSlide = 0;
+
+let featureAutoPlay;
+
+
+/* ========================================
+   SHOW SLIDE
+======================================== */
+
+function showFeatureSlide(index) {
+
+  if (!featureTrack || featureSlides.length === 0) {
+    return;
+  }
+
+
+  if (index < 0) {
+
+    index =
+      featureSlides.length - 1;
+
+  }
+
+
+  if (
+    index >=
+    featureSlides.length
+  ) {
+
+    index = 0;
+
+  }
+
+
+  currentFeatureSlide = index;
+
+
+  featureTrack.style.transform =
+    "translateX(-" +
+    (currentFeatureSlide * 100) +
+    "%)";
+
+
+  featureDots.forEach(
+    function(dot, dotIndex) {
+
+      dot.classList.toggle(
+        "active",
+        dotIndex === currentFeatureSlide
+      );
+
+    }
+  );
+
+}
+
+
+/* ========================================
+   NEXT SLIDE
+======================================== */
+
+function nextFeatureSlide() {
+
+  showFeatureSlide(
+    currentFeatureSlide + 1
+  );
+
+}
+
+
+/* ========================================
+   PREVIOUS SLIDE
+======================================== */
+
+function previousFeatureSlide() {
+
+  showFeatureSlide(
+    currentFeatureSlide - 1
+  );
+
+}
+
+
+/* ========================================
+   ARROW BUTTONS
+======================================== */
+
+if (featureNext) {
+
+  featureNext.addEventListener(
+    "click",
+    function() {
+
+      nextFeatureSlide();
+
+      resetFeatureAutoPlay();
+
+    }
+  );
+
+}
+
+
+if (featurePrev) {
+
+  featurePrev.addEventListener(
+    "click",
+    function() {
+
+      previousFeatureSlide();
+
+      resetFeatureAutoPlay();
+
+    }
+  );
+
+}
+
+
+/* ========================================
+   DOT BUTTONS
+======================================== */
+
+featureDots.forEach(
+  function(dot) {
+
+    dot.addEventListener(
+      "click",
+      function() {
+
+        const slideIndex =
+          Number(
+            dot.dataset.slide
+          );
+
+
+        showFeatureSlide(
+          slideIndex
+        );
+
+
+        resetFeatureAutoPlay();
+
+      }
+    );
+
+  }
+);
+
+
+/* ========================================
+   AUTOMATIC SLIDESHOW
+======================================== */
+
+function startFeatureAutoPlay() {
+
+  featureAutoPlay =
+    setInterval(
+      function() {
+
+        nextFeatureSlide();
+
+      },
+      6000
+    );
+
+}
+
+
+function resetFeatureAutoPlay() {
+
+  clearInterval(
+    featureAutoPlay
+  );
+
+  startFeatureAutoPlay();
+
+}
+
+
+/* ========================================
+   INITIALIZE CAROUSEL
+======================================== */
+
+showFeatureSlide(0);
+
+startFeatureAutoPlay();
 
     /* ========================================
        WISHLIST STORAGE
