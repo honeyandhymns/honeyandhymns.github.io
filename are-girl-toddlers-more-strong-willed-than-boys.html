@@ -1425,6 +1425,135 @@
 </head>
 <body>
 
+   <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header class="site-header">
+
+    <div class="header-brand">
+
+      <a href="index.html">
+
+        <img
+          src="images/honey-and-hymns-logo.png"
+          alt="Honey & Hymns"
+          class="site-logo"
+        >
+
+      </a>
+
+      <p class="header-tagline">
+        Faith • Homeschool • Homemaking
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <nav class="site-nav">
+
+    <a href="index.html">
+      Home
+    </a>
+
+
+    <a href="index.html#articles">
+      Articles
+    </a>
+
+
+    <div class="shop-dropdown">
+
+      <button
+        class="shop-toggle"
+        type="button"
+        aria-expanded="false"
+      >
+        Shop
+      </button>
+
+
+      <div class="shop-menu">
+
+        <a href="Shop.html">
+          Resources
+        </a>
+
+
+        <a href="Free-Downloads.html">
+          Free Downloads
+        </a>
+
+
+        <div class="shop-coming-soon">
+
+          Monthly Honey & Hymns Magazine
+
+          <small>
+            Coming soon
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- SUNDAY GOSPEL IS ITS OWN NAVIGATION ITEM -->
+
+    <a href="Sunday-Gospel.html">
+      Sunday Gospel for Kids
+    </a>
+
+
+    <a href="index.html#about">
+      About
+    </a>
+
+
+    <a
+      href="https://honeyandhymns.substack.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Newsletter
+    </a>
+
+
+    <!-- WISHLIST -->
+
+    <button
+      class="wishlist-header-button"
+      type="button"
+      onclick="openWishlist()"
+      aria-label="Open wishlist"
+    >
+
+      <span class="wishlist-heart">
+        ♡
+      </span>
+
+      Wishlist
+
+      <span
+        class="wishlist-count"
+        id="wishlistCount"
+      >
+        0
+      </span>
+
+    </button>
+
+  </nav>
+
+
 <!-- ========================================
      ARTICLE HEADER
 ======================================== -->
@@ -1806,6 +1935,77 @@
 
 </section>
  <!-- =========================
+       WISHLIST POPUP
+  ========================= -->
+
+  <div
+    class="wishlist-overlay"
+    id="wishlistOverlay"
+    aria-hidden="true"
+  >
+
+    <div
+      class="wishlist-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="wishlistTitle"
+    >
+
+
+      <div class="wishlist-modal-header">
+
+        <h2
+          class="wishlist-modal-title"
+          id="wishlistTitle"
+        >
+          My Honey & Hymns Wishlist
+        </h2>
+
+
+        <button
+          class="wishlist-close"
+          type="button"
+          onclick="closeWishlist()"
+          aria-label="Close wishlist"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div
+        class="wishlist-body"
+        id="wishlistBody"
+      >
+
+      </div>
+
+
+      <div class="wishlist-modal-footer">
+
+        <span
+          class="wishlist-footer-note"
+          id="wishlistFooterNote"
+        >
+          Your little collection of favorites
+        </span>
+
+
+        <button
+          class="wishlist-clear"
+          type="button"
+          onclick="clearWishlist()"
+        >
+          Clear Wishlist
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+    <!-- =========================
        WISHLIST POPUP
   ========================= -->
 
