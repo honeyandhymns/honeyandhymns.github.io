@@ -763,7 +763,20 @@
       color: #403521;
       margin: 4px 0;
     }
+.magazine-cover {
+  width: 100%;
+  max-width: 95px;
+  height: auto;
+  display: block;
+  margin: 4px auto 6px;
+  border-radius: 4px;
+  box-shadow: 0 3px 7px rgba(77, 64, 41, 0.12);
+  transition: transform 0.2s ease;
+}
 
+.magazine-cover:hover {
+  transform: translateY(-2px);
+}
     .magazine-date {
       font-family: "Caveat", cursive !important;
       font-size: 1rem !important;
@@ -2237,34 +2250,37 @@
             </div>
 
 
-            <!-- MAGAZINE -->
+          <!-- MAGAZINE -->
 
-            <div class="note magazine-note">
+<div class="note magazine-note">
 
-              <div class="pin"></div>
+  <div class="pin"></div>
 
-              <span class="bulletin-pill">
-                This Month's Magazine
-              </span>
+  <span class="bulletin-pill">
+    This Month's Magazine
+  </span>
 
-              <p>
-                Honey & Hymns Digital Magazine
-              </p>
+  <a
+    href="https://honeyandhymns.gumroad.com/l/ulhwac?wanted=true"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="images/honey-and-hymns-digital-magazine-1-1.png"
+      alt="Honey & Hymns Digital Magazine — August 2026"
+      class="magazine-cover"
+    >
+  </a>
 
-              <p class="magazine-date">
-                Coming Soon — August 15th, 2026!
-              </p>
+  <p>
+    Honey & Hymns Digital Magazine
+  </p>
 
-            </div>
+  <p class="magazine-date">
+    August 2026
+  </p>
 
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
+</div>
 
   </section>
 
