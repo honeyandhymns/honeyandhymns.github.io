@@ -20,804 +20,492 @@
   >
 
 
-  <style>
+<style>
+
+/* =======================================================
+   GLOBAL
+======================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #FFFDF4;
+  color: #514229;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+/* =======================================================
+   HEADER
+======================================================= */
+
+.site-header {
+  background: #FFEBA1;
+  padding: 25px 20px 15px;
+  text-align: center;
+  border-bottom: 1px solid rgba(90, 70, 30, 0.12);
+}
+
+.header-brand {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.site-logo {
+  width: 365px;
+  max-width: 86%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.header-tagline {
+  margin: 4px 0 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 0.84rem;
+  letter-spacing: 2px;
+  color: #5D4B2D;
+}
 
-    /* =======================================================
-       GLOBAL
-    ======================================================== */
+
+
+/* =======================================================
+   NAVIGATION
+======================================================= */
+
+.site-nav {
+  background: #FFEBA1;
+  text-align: center;
+  padding: 9px 15px 13px;
+  border-bottom: 1px solid rgba(90, 70, 30, 0.12);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.site-nav a,
+.shop-toggle,
+.wishlist-header-button {
+  color: #514229;
+  text-decoration: none;
+  margin: 0 9px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 0.95rem;
+
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover,
+.shop-toggle:hover,
+.wishlist-header-button:hover {
+  color: #967331;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+.site-nav a.active {
+  color: #80652D;
+  font-weight: 600;
+}
 
 
-    html {
-      scroll-behavior: smooth;
-    }
 
+/* =======================================================
+   SHOP DROPDOWN
+======================================================= */
 
-    body {
+.shop-dropdown {
+  position: relative;
+  display: inline-block;
+}
 
-      margin: 0;
+.shop-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  line-height: inherit;
+}
 
-      background: #FFFDF4;
+.shop-menu {
+  position: absolute;
 
-      color: #514229;
+  top: calc(100% + 10px);
+  left: 50%;
 
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
+  transform:
+    translateX(-50%)
+    translateY(-6px);
 
-      line-height: 1.7;
+  min-width: 250px;
 
-    }
+  background: #FFFDF0;
 
+  border:
+    1px solid
+    #D8C79F;
 
-    a {
-      color: inherit;
-    }
+  border-radius: 12px;
 
+  box-shadow:
+    0 8px 22px
+    rgba(77, 64, 41, 0.16);
 
-    img {
-      max-width: 100%;
-    }
+  padding: 8px 0;
 
+  text-align: left;
 
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 
-    /* =======================================================
-       HEADER
-    ======================================================== */
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
 
-    .site-header {
+  z-index: 1000;
+}
 
-      background: #FFEBA1;
+.shop-dropdown.open .shop-menu,
+.shop-dropdown:hover .shop-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 
-      padding:
-        25px 20px 15px;
+  transform:
+    translateX(-50%)
+    translateY(0);
+}
 
-      text-align: center;
+.shop-menu a {
+  display: block;
+  margin: 0;
+  padding: 10px 18px;
+  font-size: 0.92rem;
+}
 
-      border-bottom:
-        1px solid
-        rgba(90, 70, 30, 0.12);
+.shop-menu a:hover {
+  background: #FFF3C8;
+}
 
-    }
+.shop-coming-soon {
+  padding: 10px 18px;
 
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-    .header-brand {
+  font-size: 0.92rem;
+}
 
-      max-width: 700px;
+.shop-coming-soon small {
+  display: block;
 
-      margin: 0 auto;
+  font-family:
+    "Caveat",
+    cursive;
 
-    }
+  color: #80652D;
+  font-size: 0.85rem;
+}
 
 
-    .site-logo {
 
-      width: 365px;
+/* =======================================================
+   WISHLIST HEADER BUTTON
+======================================================= */
 
-      max-width: 86%;
+.wishlist-header-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 
-      height: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
 
-      display: block;
+.wishlist-heart {
+  font-size: 1.05rem;
+  line-height: 1;
+}
 
-      margin: 0 auto;
+.wishlist-count {
+  min-width: 19px;
+  height: 19px;
 
-    }
+  padding: 0 5px;
 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-    .header-tagline {
+  border-radius: 50%;
 
-      margin: 4px 0 0;
+  background: #D8B65F;
+  color: #4D4029;
 
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
 
-      font-size: 0.84rem;
+  font-size: 0.63rem;
+  font-weight: bold;
+}
 
-      letter-spacing: 2px;
 
-      color: #5D4B2D;
 
-    }
+/* =======================================================
+   ABOUT HERO
+======================================================= */
 
+.about-hero {
+  background:
+    linear-gradient(
+      180deg,
+      #FFFDF4 0%,
+      #FFF9DF 100%
+    );
 
+  padding: 90px 20px 85px;
+  text-align: center;
+}
 
-    /* =======================================================
-       NAVIGATION
-    ======================================================== */
+.about-hero-inner {
+  max-width: 850px;
+  margin: 0 auto;
+}
 
-    .site-nav {
+.about-kicker,
+.about-section-kicker {
+  margin: 0 0 12px;
 
-      background: #FFEBA1;
+  font-family:
+    "Caveat",
+    cursive;
 
-      text-align: center;
+  font-size: 1.35rem;
+  color: #80652D;
+}
 
-      padding:
-        9px 15px 13px;
+.about-hero h1 {
+  max-width: 800px;
 
-      border-bottom:
-        1px solid
-        rgba(90, 70, 30, 0.12);
+  margin:
+    0 auto 20px;
 
-      display: flex;
+  color: #403521;
 
-      justify-content: center;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-      align-items: center;
+  font-size:
+    clamp(2.6rem, 6vw, 4.4rem);
 
-      flex-wrap: wrap;
+  line-height: 1.05;
+  font-weight: 500;
+}
 
-      gap: 3px;
+.about-rule {
+  color: #D8B65F;
+  font-size: 1.4rem;
+  margin: 15px 0 20px;
+}
 
-    }
+.about-intro {
+  max-width: 700px;
 
+  margin: 0 auto;
 
-    .site-nav a,
-    .shop-toggle,
-    .wishlist-header-button {
+  color: #68583D;
+  font-size: 1.15rem;
+}
 
-      color: #514229;
 
-      text-decoration: none;
 
-      margin: 0 9px;
+/* =======================================================
+   MY STORY
+======================================================= */
 
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-      font-size: 0.95rem;
-
-      transition:
-        color 0.2s ease;
-
-    }
-
-
-    .site-nav a:hover,
-    .shop-toggle:hover,
-    .wishlist-header-button:hover {
-
-      color: #967331;
-
-    }
-
-
-    .site-nav a.active {
-
-      color: #80652D;
-
-      font-weight: 600;
-
-    }
-
-
-
-    /* =======================================================
-       SHOP DROPDOWN
-    ======================================================== */
-
-    .shop-dropdown {
-
-      position: relative;
-
-      display: inline-block;
-
-    }
-
-
-    .shop-toggle {
-
-      background: none;
-
-      border: none;
-
-      padding: 0;
-
-      cursor: pointer;
-
-      line-height: inherit;
-
-    }
-
-
-    .shop-menu {
-
-      position: absolute;
-
-      top:
-        calc(100% + 10px);
-
-      left: 50%;
-
-      transform:
-        translateX(-50%)
-        translateY(-6px);
-
-      min-width: 250px;
-
-      background: #FFFDF0;
-
-      border:
-        1px solid
-        #D8C79F;
-
-      border-radius: 12px;
-
-      box-shadow:
-        0 8px 22px
-        rgba(77, 64, 41, 0.16);
-
-      padding: 8px 0;
-
-      text-align: left;
-
-      opacity: 0;
-
-      visibility: hidden;
-
-      pointer-events: none;
-
-      transition:
-        opacity 0.2s ease,
-        transform 0.2s ease,
-        visibility 0.2s ease;
-
-      z-index: 1000;
-
-    }
-
-
-    .shop-dropdown.open .shop-menu,
-    .shop-dropdown:hover .shop-menu {
-
-      opacity: 1;
-
-      visibility: visible;
-
-      pointer-events: auto;
-
-      transform:
-        translateX(-50%)
-        translateY(0);
-
-    }
-
-
-    .shop-menu a {
-
-      display: block;
-
-      margin: 0;
-
-      padding:
-        10px 18px;
-
-      font-size: 0.92rem;
-
-    }
-
-
-    .shop-menu a:hover {
-
-      background: #FFF3C8;
-
-    }
-
-
-    .shop-coming-soon {
-
-      padding:
-        10px 18px;
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-      font-size: 0.92rem;
-
-    }
-
-
-    .shop-coming-soon small {
-
-      display: block;
-
-      font-family:
-        "Caveat",
-        cursive;
-
-      color: #80652D;
-
-      font-size: 0.85rem;
-
-    }
-
-
-
-    /* =======================================================
-       WISHLIST HEADER BUTTON
-    ======================================================== */
-
-    .wishlist-header-button {
-
-      background: none;
-
-      border: none;
-
-      padding: 0;
-
-      cursor: pointer;
-
-      display: inline-flex;
-
-      align-items: center;
-
-      gap: 5px;
-
-    }
-
-
-    .wishlist-heart {
-
-      font-size: 1.05rem;
-
-      line-height: 1;
-
-    }
-
-
-    .wishlist-count {
-
-      min-width: 19px;
-
-      height: 19px;
-
-      padding: 0 5px;
-
-      display: inline-flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      border-radius: 50%;
-
-      background: #D8B65F;
-
-      color: #4D4029;
-
-      font-family:
-        "Playfair Display",
-        Georgia,
-        serif;
-
-      font-size: 0.63rem;
-
-      font-weight: bold;
-
-    }
-
-
-
-    /* =======================================================
-       ABOUT HERO
-    ======================================================== */
-
-    .about-hero {
-
-      background:
-        linear-gradient(
-          180deg,
-          #FFFDF4 0%,
-          #FFF9DF 100%
-        );
-
-      padding:
-        90px 20px 85px;
-
-      text-align: center;
-
-    }
-
-
-    .about-hero-inner {
-
-      max-width: 850px;
-
-      margin: 0 auto;
-
-    }
-
-
-    .about-kicker,
-    .about-section-kicker {
-
-      margin: 0 0 12px;
-
-      font-family:
-        "Caveat",
-        cursive;
-
-      font-size: 1.35rem;
-
-      color: #80652D;
-
-    }
-
-
-    .about-hero h1 {
-
-      max-width: 800px;
-
-      margin:
-        0 auto 20px;
-
-      color: #403521;
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-      font-size:
-        clamp(2.6rem, 6vw, 4.4rem);
-
-      line-height: 1.05;
-
-      font-weight: 500;
-
-    }
-
-
-    .about-rule {
-
-      color: #D8B65F;
-
-      font-size: 1.4rem;
-
-      margin: 15px 0 20px;
-
-    }
-
-
-    .about-intro {
-
-      max-width: 700px;
-
-      margin: 0 auto;
-
-      color: #68583D;
-
-      font-size: 1.15rem;
-
-    }
-
-
-
-    /* =======================================================
-       STORY SECTION
-    ======================================================== */
-
-    .about-story {
-
-      padding:
-        85px 20px;
-
-      background: #FFFDF4;
-
-    }
-
-
-    .about-story-inner {
-
-      max-width: 1050px;
-
-      margin: 0 auto;
-
-      display: grid;
-
-      grid-template-columns:
-        minmax(0, 1.5fr)
-        minmax(280px, 0.8fr);
-
-      gap: 70px;
-
-      align-items: center;
-
-    }
-
-
-    .about-story-content h2 {
-
-      margin:
-        0 0 25px;
-
-      color: #403521;
-
-      font-size:
-        clamp(2.1rem, 4vw, 3.2rem);
-
-      font-weight: 500;
-
-      line-height: 1.1;
-
-    }
-
-
-    .about-story-content p {
-
-      margin:
-        0 0 18px;
-
-      font-size: 1.03rem;
-
-      color: #5D4B2D;
-
-    }
-
-
-    .about-story-card {
-
-      background: #FFEBA1;
-
-      border:
-        1px solid
-        #E0CC83;
-
-      border-radius: 25px;
-
-      padding: 12px;
-
-      transform: rotate(1.2deg);
-
-      box-shadow:
-        0 15px 35px
-        rgba(77, 64, 41, 0.10);
-
-    }
-
-
-    .about-story-card-inner {
-
-      border:
-        1px dashed
-        rgba(128, 101, 45, 0.45);
-
-      border-radius: 18px;
-
-      padding:
-        35px 28px;
-
-      text-align: center;
-
-    }
-
-
-    .about-card-symbol {
-
-      display: block;
-
-      font-size: 2.4rem;
-
-      margin-bottom: 12px;
-
-    }
-
-
-    .about-story-card h3 {
-
-      margin:
-        0 0 12px;
-
-      color: #403521;
-
-      font-size: 1.7rem;
-
-      font-weight: 500;
-
-    }
-
-
-    .about-story-card p {
-
-      margin: 0;
-
-      color: #5D4B2D;
-
-      font-size: 0.98rem;
-
-    }
-
-
-
-    /* =======================================================
-       VALUES
-    ======================================================== */
-
-    .about-values {
-
-      background: #FBF3D0;
-
-      padding:
-        85px 20px;
-
-      text-align: center;
-
-      border-top:
-        1px solid
-        #E8D8A9;
-
-      border-bottom:
-        1px solid
-        #E8D8A9;
-
-    }
-
-
-    .about-values-inner {
-
-      max-width: 1100px;
-
-      margin: 0 auto;
-
-    }
-
-
-    .about-values h2 {
-
-      margin:
-        0 0 18px;
-
-      color: #403521;
-
-      font-size:
-        clamp(2rem, 4vw, 3rem);
-
-      font-weight: 500;
-
-      line-height: 1.1;
-
-    }
-
-
-    .about-values-intro {
-
-      max-width: 700px;
-
-      margin:
-        0 auto 50px;
-
-      color: #68583D;
-
-      font-size: 1.05rem;
-
-    }
-
-
-    .about-values-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
-      gap: 25px;
-
-    }
-
-
-    .about-value {
-
-      background: #FFFDF4;
-
-      border:
-        1px solid
-        #E2D4AD;
-
-      border-radius: 16px;
-
-      padding:
-        30px 22px;
-
-      box-shadow:
-        0 7px 20px
-        rgba(77, 64, 41, 0.05);
-
-    }
-
-
-    .about-value-icon {
-
-      display: block;
-
-      font-size: 1.8rem;
-
-      margin-bottom: 10px;
-
-    }
-
-
-    .about-value h3 {
-
-      margin:
-        0 0 8px;
-
-      color: #403521;
-
-      font-size: 1.55rem;
-
-      font-weight: 500;
-
-    }
-
-
-    .about-value p {
-
-      margin: 0;
-
-      color: #68583D;
-
-      font-size: 0.92rem;
-
-      line-height: 1.6;
-
-    }
-
-/* =========================
-   THE HEART BEHIND HONEY & HYMNS
-========================= */
-
-.about-heart {
-  padding: 75px 20px;
+.about-story {
+  padding: 85px 20px;
   background: #FFFDF4;
 }
 
-.about-heart-inner {
-  max-width: 1000px;
+.about-story-inner {
+  max-width: 1050px;
+
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 320px 1fr;
+
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    minmax(280px, 0.8fr);
+
+  gap: 70px;
 
   align-items: center;
-  gap: 55px;
+}
+
+.about-story-content h2 {
+  margin: 0 0 25px;
+
+  color: #403521;
+
+  font-size:
+    clamp(2.1rem, 4vw, 3.2rem);
+
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.about-story-content p {
+  margin: 0 0 18px;
+
+  font-size: 1.03rem;
+  color: #5D4B2D;
+}
+
+.about-story-card {
+  background: #FFEBA1;
+
+  border:
+    1px solid
+    #E0CC83;
+
+  border-radius: 25px;
+
+  padding: 12px;
+
+  transform: rotate(1.2deg);
+
+  box-shadow:
+    0 15px 35px
+    rgba(77, 64, 41, 0.10);
+}
+
+.about-story-card-inner {
+  border:
+    1px dashed
+    rgba(128, 101, 45, 0.45);
+
+  border-radius: 18px;
+
+  padding: 35px 28px;
+
+  text-align: center;
+}
+
+.about-card-symbol {
+  display: block;
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.about-story-card h3 {
+  margin: 0 0 12px;
+
+  color: #403521;
+
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.about-story-card p {
+  margin: 0;
+
+  color: #5D4B2D;
+
+  font-size: 0.98rem;
+}
+
+
+
+/* =======================================================
+   THE HEART BEHIND HONEY & HYMNS
+======================================================= */
+
+.about-heart {
+  padding: 90px 20px;
+  background: #FFFDF4;
+  border-top: 1px solid #F0E5C5;
+}
+
+.about-heart-inner {
+  max-width: 1050px;
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 0.9fr)
+    minmax(0, 1.2fr);
+
+  align-items: center;
+
+  gap: 70px;
 }
 
 .about-heart-image {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .about-heart-image img {
-  width: 270px;
-  height: 270px;
+  width: 100%;
+  max-width: 390px;
+
+  aspect-ratio: 4 / 5;
 
   object-fit: cover;
 
-  border-radius: 50%;
+  border-radius: 22px;
 
   border:
-    7px solid
+    8px solid
     #FFEBA1;
 
   box-shadow:
-    0 8px 25px
-    rgba(77, 64, 41, 0.12);
+    0 15px 35px
+    rgba(77, 64, 41, 0.14);
 
   display: block;
 }
 
 .about-heart-content {
-  max-width: 600px;
+  max-width: 620px;
 }
 
 .about-heart-content .about-kicker {
@@ -833,14 +521,15 @@
 }
 
 .about-heart-content h2 {
-  margin: 0 0 18px;
+  margin: 0 0 20px;
 
   font-family:
     "Cormorant Garamond",
     Georgia,
     serif;
 
-  font-size: 2.4rem;
+  font-size:
+    clamp(2.3rem, 4vw, 3.3rem);
 
   line-height: 1.1;
 
@@ -855,1338 +544,1180 @@
     Georgia,
     serif;
 
-  font-size: 1.08rem;
+  font-size: 1.1rem;
 
-  line-height: 1.7;
+  line-height: 1.75;
 
   color: #5D4B2D;
 
-  margin:
-    0 0 16px;
+  margin: 0 0 16px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
 
-@media (max-width: 700px) {
+/* =======================================================
+   VALUES
+======================================================= */
 
-  .about-heart {
-    padding: 55px 20px;
+.about-values {
+  background: #FBF3D0;
+
+  padding: 85px 20px;
+
+  text-align: center;
+
+  border-top:
+    1px solid
+    #E8D8A9;
+
+  border-bottom:
+    1px solid
+    #E8D8A9;
+}
+
+.about-values-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-values h2 {
+  margin: 0 0 18px;
+
+  color: #403521;
+
+  font-size:
+    clamp(2rem, 4vw, 3rem);
+
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.about-values-intro {
+  max-width: 700px;
+
+  margin:
+    0 auto 50px;
+
+  color: #68583D;
+
+  font-size: 1.05rem;
+}
+
+.about-values-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 25px;
+}
+
+.about-value {
+  background: #FFFDF4;
+
+  border:
+    1px solid
+    #E2D4AD;
+
+  border-radius: 16px;
+
+  padding: 30px 22px;
+
+  box-shadow:
+    0 7px 20px
+    rgba(77, 64, 41, 0.05);
+}
+
+.about-value-icon {
+  display: block;
+
+  font-size: 1.8rem;
+
+  margin-bottom: 10px;
+}
+
+.about-value h3 {
+  margin: 0 0 8px;
+
+  color: #403521;
+
+  font-size: 1.55rem;
+  font-weight: 500;
+}
+
+.about-value p {
+  margin: 0;
+
+  color: #68583D;
+
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+
+
+/* =======================================================
+   HONEY HIVE MEMBERSHIP
+======================================================= */
+
+.honey-hive-section {
+  padding: 95px 20px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #FFFDF4 0%,
+      #FFF8D9 100%
+    );
+
+  text-align: center;
+}
+
+.honey-hive-inner {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.honey-hive-section h2 {
+  margin: 0 0 5px;
+
+  color: #403521;
+
+  font-size:
+    clamp(2.3rem, 5vw, 3.5rem);
+
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.honey-hive-intro {
+  max-width: 720px;
+
+  margin:
+    0 auto 50px;
+
+  color: #68583D;
+
+  font-size: 1.08rem;
+}
+
+.membership-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 25px;
+
+  align-items: stretch;
+
+  text-align: left;
+}
+
+.membership-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #FFFDF4;
+
+  border:
+    1px solid
+    #DCCB9D;
+
+  border-radius: 20px;
+
+  padding: 32px 28px;
+
+  box-shadow:
+    0 10px 28px
+    rgba(77, 64, 41, 0.08);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.membership-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 15px 35px
+    rgba(77, 64, 41, 0.13);
+}
+
+.membership-card.membership-featured {
+  background: #FFEBA1;
+  border-color: #D8B65F;
+}
+
+.beekeepers-card {
+  background:
+    linear-gradient(
+      145deg,
+      #FFFDF4,
+      #FFF5C8
+    );
+
+  border-color: #C9A94F;
+}
+
+.membership-label {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: #80652D;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 0.68rem;
+
+  font-weight: bold;
+
+  letter-spacing: 1.5px;
+}
+
+.membership-card h3 {
+  margin: 0 0 5px;
+
+  color: #403521;
+
+  font-size: 2rem;
+
+  font-weight: 500;
+
+  line-height: 1.1;
+}
+
+.membership-price {
+  margin: 0 0 18px;
+
+  color: #80652D;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 1.55rem;
+  font-weight: bold;
+}
+
+.membership-price span {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+.membership-description {
+  min-height: 75px;
+
+  margin: 0 0 20px;
+
+  color: #5D4B2D;
+
+  font-size: 0.95rem;
+
+  line-height: 1.55;
+}
+
+.membership-card ul {
+  margin: 0 0 28px;
+  padding-left: 20px;
+
+  color: #5D4B2D;
+
+  font-size: 0.9rem;
+
+  line-height: 1.65;
+}
+
+.membership-card li {
+  margin-bottom: 7px;
+}
+
+.membership-button {
+  display: block;
+
+  margin-top: auto;
+
+  padding: 12px 16px;
+
+  background: #D8B65F;
+
+  color: #403521;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  border-radius: 30px;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 0.78rem;
+
+  font-weight: bold;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.membership-button:hover {
+  background: #C9A94F;
+  transform: translateY(-1px);
+}
+
+.membership-button-special {
+  background: #80652D;
+  color: #FFFDF4;
+}
+
+.membership-button-special:hover {
+  background: #665020;
+}
+
+.membership-badge {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  background: #FFFDF4;
+
+  color: #80652D;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 0.58rem;
+
+  font-weight: bold;
+
+  letter-spacing: 0.8px;
+}
+
+.membership-note {
+  max-width: 700px;
+
+  margin: 35px auto 0;
+
+  color: #80652D;
+
+  font-size: 0.9rem;
+
+  font-style: italic;
+}
+
+
+
+/* =======================================================
+   FINAL ABOUT CTA
+======================================================= */
+
+.about-final {
+  padding: 90px 20px;
+
+  background: #FFEBA1;
+
+  text-align: center;
+
+  border-top:
+    1px solid
+    #E0CC83;
+}
+
+.about-final-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-final h2 {
+  margin: 0 0 18px;
+
+  color: #403521;
+
+  font-size:
+    clamp(2.4rem, 5vw, 3.5rem);
+
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.about-final p {
+  color: #5D4B2D;
+
+  font-size: 1.08rem;
+
+  margin: 0 0 15px;
+}
+
+.about-final-button {
+  display: inline-block;
+
+  margin-top: 20px;
+
+  padding: 13px 25px;
+
+  border-radius: 30px;
+
+  background: #80652D;
+
+  color: #FFFDF4;
+
+  text-decoration: none;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 0.82rem;
+
+  font-weight: bold;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.about-final-button:hover {
+  background: #665020;
+  transform: translateY(-2px);
+}
+
+
+
+/* =======================================================
+   FOOTER
+======================================================= */
+
+.site-footer {
+  padding: 30px 20px;
+
+  background: #FFFDF4;
+
+  text-align: center;
+
+  border-top:
+    1px solid
+    #E3D7B9;
+
+  color: #80652D;
+}
+
+.site-footer p {
+  margin: 3px 0;
+  font-size: 0.85rem;
+}
+
+
+
+/* =======================================================
+   WISHLIST MODAL
+======================================================= */
+
+.wishlist-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    rgba(57, 45, 25, 0.60);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  z-index: 5000;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.wishlist-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wishlist-modal {
+  width: min(620px, 94vw);
+
+  max-height:
+    min(700px, 88vh);
+
+  background: #FFFDF4;
+
+  border:
+    1px solid
+    #D8C79F;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 22px 55px
+    rgba(0,0,0,0.28);
+
+  overflow: hidden;
+
+  transform:
+    scale(0.88)
+    translateY(12px);
+
+  opacity: 0;
+
+  transition:
+    transform 0.35s
+      cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.25s ease;
+}
+
+.wishlist-overlay.open .wishlist-modal {
+  transform:
+    scale(1)
+    translateY(0);
+
+  opacity: 1;
+}
+
+.wishlist-modal-header {
+  background: #FFEBA1;
+
+  padding: 16px 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom:
+    1px solid
+    #E0CC83;
+}
+
+.wishlist-modal-title {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 1.65rem;
+
+  font-weight: 500;
+
+  color: #403521;
+
+  margin: 0;
+}
+
+.wishlist-close {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    #D3BE80;
+
+  background: #FFF9DF;
+
+  color: #665020;
+
+  cursor: pointer;
+
+  font-size: 1.15rem;
+
+  line-height: 1;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.wishlist-close:hover {
+  background: #F3D582;
+}
+
+.wishlist-body {
+  padding: 20px;
+
+  max-height:
+    calc(88vh - 145px);
+
+  overflow-y: auto;
+}
+
+.wishlist-empty {
+  text-align: center;
+  padding: 35px 15px;
+}
+
+.wishlist-empty-icon {
+  font-size: 2.3rem;
+
+  color: #D8B65F;
+
+  margin-bottom: 8px;
+}
+
+.wishlist-empty h3 {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 1.6rem;
+
+  font-weight: 500;
+
+  color: #403521;
+
+  margin: 0 0 5px;
+}
+
+.wishlist-empty p {
+  margin: 0;
+
+  font-size: 0.8rem;
+
+  color: #68583D;
+}
+
+.wishlist-item {
+  display: grid;
+
+  grid-template-columns:
+    82px 1fr auto;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 11px;
+
+  margin-bottom: 10px;
+
+  background: #FFF8D9;
+
+  border:
+    1px solid
+    #E5D6AD;
+
+  border-radius: 11px;
+}
+
+.wishlist-item-image {
+  width: 82px;
+  height: 82px;
+
+  object-fit: cover;
+
+  border-radius: 7px;
+
+  display: block;
+}
+
+.wishlist-item-title {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 1.15rem;
+
+  line-height: 1.15;
+
+  color: #403521;
+
+  margin: 0 0 3px;
+}
+
+.wishlist-item-price {
+  font-size: 0.72rem;
+
+  color: #80652D;
+
+  margin: 0;
+}
+
+.wishlist-item-view {
+  display: inline-block;
+
+  margin-top: 6px;
+
+  color: #80652D;
+
+  font-size: 0.68rem;
+
+  text-decoration: none;
+
+  font-weight: bold;
+}
+
+.wishlist-item-view:hover {
+  text-decoration: underline;
+}
+
+.wishlist-remove {
+  border: none;
+
+  background: none;
+
+  color: #967331;
+
+  cursor: pointer;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 0.68rem;
+
+  padding: 5px;
+}
+
+.wishlist-remove:hover {
+  color: #6F5421;
+  text-decoration: underline;
+}
+
+.wishlist-modal-footer {
+  background: #FBF3D0;
+
+  border-top:
+    1px solid
+    #E0D2B0;
+
+  padding: 12px 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.wishlist-footer-note {
+  font-family:
+    "Caveat",
+    cursive;
+
+  color: #80652D;
+
+  font-size: 1rem;
+}
+
+.wishlist-clear {
+  border: none;
+
+  background: transparent;
+
+  color: #80652D;
+
+  font-size: 0.68rem;
+
+  cursor: pointer;
+
+  text-decoration: underline;
+}
+
+
+
+/* =======================================================
+   RESPONSIVE
+======================================================= */
+
+@media (max-width: 850px) {
+
+  .about-story-inner {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .about-story-card {
+    max-width: 500px;
+    margin: 0 auto;
   }
 
   .about-heart-inner {
     grid-template-columns: 1fr;
-    gap: 30px;
-    text-align: center;
+    gap: 45px;
   }
 
   .about-heart-image img {
-    width: 220px;
-    height: 220px;
+    max-width: 420px;
   }
 
   .about-heart-content {
+    max-width: 700px;
     margin: 0 auto;
+    text-align: center;
   }
 
-  .about-heart-content h2 {
-    font-size: 2rem;
+  .about-values-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .membership-grid {
+    grid-template-columns: 1fr;
+
+    max-width: 560px;
+
+    margin: 0 auto;
   }
 
 }
 
-    /* =======================================================
-       HONEY HIVE
-    ======================================================== */
 
-    .honey-hive-section {
 
-      padding:
-        95px 20px;
+@media (max-width: 600px) {
+
+  .site-nav {
+    padding: 10px 8px 14px;
+  }
+
+  .site-nav a,
+  .shop-toggle,
+  .wishlist-header-button {
+    margin: 3px 5px;
+    font-size: 0.88rem;
+  }
+
+  .about-hero {
+    padding: 65px 20px;
+  }
+
+  .about-story,
+  .about-values,
+  .about-heart,
+  .honey-hive-section,
+  .about-final {
+    padding: 65px 18px;
+  }
+
+  .about-heart-image img {
+    max-width: 100%;
+    width: 340px;
+    aspect-ratio: 4 / 5;
+  }
+
+  .about-heart-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wishlist-item {
+    grid-template-columns:
+      65px 1fr;
+  }
+
+  .wishlist-item-image {
+    width: 65px;
+    height: 65px;
+  }
+
+  .wishlist-remove {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .wishlist-modal-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
+</style>
 
-      background:
-        linear-gradient(
-          180deg,
-          #FFFDF4 0%,
-          #FFF8D9 100%
-        );
-
-      text-align: center;
-
-    }
-
-
-    .honey-hive-inner {
-
-      max-width: 1150px;
-
-      margin: 0 auto;
-
-    }
-
-
-    .honey-hive-section h2 {
-
-      margin:
-        0 0 5px;
-
-      color: #403521;
-
-      font-size:
-        clamp(2.3rem, 5vw, 3.5rem);
-
-      font-weight: 500;
-
-      line-height: 1.1;
-
-    }
-
-
-    .honey-hive-intro {
-
-      max-width: 720px;
-
-      margin:
-        0 auto 50px;
-
-      color: #68583D;
-
-      font-size: 1.08rem;
-
-    }
-
-
-    .membership-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 25px;
-
-      align-items: stretch;
-
-      text-align: left;
-
-    }
-
-
-    .membership-card {
-
-      position: relative;
-
-      display: flex;
-
-      flex-direction: column;
-
-      background: #FFFDF4;
-
-      border:
-        1px solid
-        #DCCB9D;
-
-      border-radius: 20px;
-
-      padding:
-        32px 28px;
-
-      box-shadow:
-        0 10px 28px
-        rgba(77, 64, 41, 0.08);
-
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-
-    }
-
-
-    .membership-card:hover {
-
-      transform:
-        translateY(-4px);
-
-      box-shadow:
-        0 15px 35px
-        rgba(77, 64, 41, 0.13);
-
-    }
-
-
-    .membership-card.membership-featured {
-
-      background: #FFEBA1;
-
-      border-color: #D8B65F;
-
-    }
-
-
-    .beekeepers-card {
-
-      background:
-        linear-gradient(
-          145deg,
-          #FFFDF4,
-          #FFF5C8
-        );
-
-      border-color:
-        #C9A94F;
-
-    }
-
-
-    .membership-label {
-
-      display: inline-block;
-
-      margin-bottom: 8px;
-
-      color: #80652D;
-
-      font-family:
-        "Playfair Display",
-        Georgia,
-        serif;
-
-      font-size: 0.68rem;
-
-      font-weight: bold;
-
-      letter-spacing: 1.5px;
-
-    }
-
-
-    .membership-card h3 {
-
-      margin:
-        0 0 5px;
-
-      color: #403521;
-
-      font-size: 2rem;
-
-      font-weight: 500;
-
-      line-height: 1.1;
-
-    }
-
-
-    .membership-price {
-
-      margin:
-        0 0 18px;
-
-      color: #80652D;
-
-      font-family:
-        "Playfair Display",
-        Georgia,
-        serif;
-
-      font-size: 1.55rem;
-
-      font-weight: bold;
-
-    }
-
-
-    .membership-price span {
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-      font-size: 0.9rem;
-
-      font-weight: normal;
-
-    }
-
-
-    .membership-description {
-
-      min-height: 75px;
-
-      margin:
-        0 0 20px;
-
-      color: #5D4B2D;
-
-      font-size: 0.95rem;
-
-      line-height: 1.55;
-
-    }
-
-
-    .membership-card ul {
-
-      margin:
-        0 0 28px;
-
-      padding-left: 20px;
-
-      color: #5D4B2D;
-
-      font-size: 0.9rem;
-
-      line-height: 1.65;
-
-    }
-
-
-    .membership-card li {
-
-      margin-bottom: 7px;
-
-    }
-
-
-    .membership-button {
-
-      display: block;
-
-      margin-top: auto;
-
-      padding:
-        12px 16px;
-
-      background: #D8B65F;
-
-      color: #403521;
-
-      text-align: center;
-
-      text-decoration: none;
-
-      border-radius: 30px;
-
-      font-family:
-        "Playfair Display",
-        Georgia,
-        serif;
-
-      font-size: 0.78rem;
-
-      font-weight: bold;
-
-      transition:
-        background 0.2s ease,
-        transform 0.2s ease;
-
-    }
-
-
-    .membership-button:hover {
-
-      background: #C9A94F;
-
-      transform:
-        translateY(-1px);
-
-    }
-
-
-    .membership-button-special {
-
-      background: #80652D;
-
-      color: #FFFDF4;
-
-    }
-
-
-    .membership-button-special:hover {
-
-      background: #665020;
-
-    }
-
-
-    .membership-badge {
-
-      position: absolute;
-
-      top: 18px;
-
-      right: 18px;
-
-      padding:
-        5px 9px;
-
-      border-radius: 20px;
-
-      background: #FFFDF4;
-
-      color: #80652D;
-
-      font-family:
-        "Playfair Display",
-        Georgia,
-        serif;
-
-      font-size: 0.58rem;
-
-      font-weight: bold;
-
-      letter-spacing: 0.8px;
-
-    }
-
-
-    .membership-note {
-
-      max-width: 700px;
-
-      margin:
-        35px auto 0;
-
-      color: #80652D;
-
-      font-size: 0.9rem;
-
-      font-style: italic;
-
-    }
-
-
-
-    /* =======================================================
-       FINAL ABOUT CTA
-    ======================================================== */
-
-    .about-final {
-
-      padding:
-        90px 20px;
-
-      background: #FFEBA1;
-
-      text-align: center;
-
-      border-top:
-        1px solid
-        #E0CC83;
-
-    }
-
-
-    .about-final-inner {
-
-      max-width: 700px;
-
-      margin: 0 auto;
-
-    }
-
-
-    .about-final h2 {
-
-      margin:
-        0 0 18px;
-
-      color: #403521;
-
-      font-size:
-        clamp(2.4rem, 5vw, 3.5rem);
-
-      font-weight: 500;
-
-      line-height: 1.1;
-
-    }
-
-
-    .about-final p {
-
-      color: #5D4B2D;
-
-      font-size: 1.08rem;
-
-      margin:
-        0 0 15px;
-
-    }
-
-
-    .about-final-button {
-
-      display: inline-block;
-
-      margin-top: 20px;
-
-      padding:
-        13px 25px;
-
-      border-radius: 30px;
-
-      background: #80652D;
-
-      color: #FFFDF4;
-
-      text-decoration: none;
-
-      font-family:
-        "Playfair Display",
-        Georgia,
-        serif;
-
-      font-size: 0.82rem;
-
-      font-weight: bold;
-
-      transition:
-        background 0.2s ease,
-        transform 0.2s ease;
-
-    }
-
-
-    .about-final-button:hover {
-
-      background: #665020;
-
-      transform:
-        translateY(-2px);
-
-    }
-
-
-
-    /* =======================================================
-       FOOTER
-    ======================================================== */
-
-    .site-footer {
-
-      padding:
-        30px 20px;
-
-      background: #FFFDF4;
-
-      text-align: center;
-
-      border-top:
-        1px solid
-        #E3D7B9;
-
-      color: #80652D;
-
-    }
-
-
-    .site-footer p {
-
-      margin:
-        3px 0;
-
-      font-size: 0.85rem;
-
-    }
-
-
-
-    /* =======================================================
-       WISHLIST MODAL
-    ======================================================== */
-
-    .wishlist-overlay {
-
-      position: fixed;
-
-      inset: 0;
-
-      background:
-        rgba(57, 45, 25, 0.60);
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      padding: 20px;
-
-      opacity: 0;
-
-      visibility: hidden;
-
-      pointer-events: none;
-
-      z-index: 5000;
-
-      transition:
-        opacity 0.25s ease,
-        visibility 0.25s ease;
-
-    }
-
-
-    .wishlist-overlay.open {
-
-      opacity: 1;
-
-      visibility: visible;
-
-      pointer-events: auto;
-
-    }
-
-
-    .wishlist-modal {
-
-      width:
-        min(620px, 94vw);
-
-      max-height:
-        min(700px, 88vh);
-
-      background: #FFFDF4;
-
-      border:
-        1px solid
-        #D8C79F;
-
-      border-radius: 20px;
-
-      box-shadow:
-        0 22px 55px
-        rgba(0,0,0,0.28);
-
-      overflow: hidden;
-
-      transform:
-        scale(0.88)
-        translateY(12px);
-
-      opacity: 0;
-
-      transition:
-        transform 0.35s
-          cubic-bezier(0.16, 1, 0.3, 1),
-        opacity 0.25s ease;
-
-    }
-
-
-    .wishlist-overlay.open
-    .wishlist-modal {
-
-      transform:
-        scale(1)
-        translateY(0);
-
-      opacity: 1;
-
-    }
-
-
-    .wishlist-modal-header {
-
-      background: #FFEBA1;
-
-      padding:
-        16px 18px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      border-bottom:
-        1px solid
-        #E0CC83;
-
-    }
-
-
-    .wishlist-modal-title {
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-      font-size: 1.65rem;
-
-      font-weight: 500;
-
-      color: #403521;
-
-      margin: 0;
-
-    }
-
-
-    .wishlist-close {
-
-      width: 32px;
-
-      height: 32px;
-
-      border-radius: 50%;
-
-      border:
-        1px solid
-        #D3BE80;
-
-      background: #FFF9DF;
-
-      color: #665020;
-
-      cursor: pointer;
-
-      font-size: 1.15rem;
-
-      line-height: 1;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-    }
-
-
-    .wishlist-close:hover {
-
-      background: #F3D582;
-
-    }
-
-
-    .wishlist-body {
-
-      padding: 20px;
-
-      max-height:
-        calc(88vh - 145px);
-
-      overflow-y: auto;
-
-    }
-
-
-    .wishlist-empty {
-
-      text-align: center;
-
-      padding:
-        35px 15px;
-
-    }
-
-
-    .wishlist-empty-icon {
-
-      font-size: 2.3rem;
-
-      color: #D8B65F;
-
-      margin-bottom: 8px;
-
-    }
-
-
-    .wishlist-empty h3 {
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-      font-size: 1.6rem;
-
-      font-weight: 500;
-
-      color: #403521;
-
-      margin:
-        0 0 5px;
-
-    }
-
-
-    .wishlist-empty p {
-
-      margin: 0;
-
-      font-size: 0.8rem;
-
-      color: #68583D;
-
-    }
-
-
-    .wishlist-item {
-
-      display: grid;
-
-      grid-template-columns:
-        82px 1fr auto;
-
-      align-items: center;
-
-      gap: 14px;
-
-      padding:
-        11px;
-
-      margin-bottom: 10px;
-
-      background: #FFF8D9;
-
-      border:
-        1px solid
-        #E5D6AD;
-
-      border-radius: 11px;
-
-    }
-
-
-    .wishlist-item-image {
-
-      width: 82px;
-
-      height: 82px;
-
-      object-fit: cover;
-
-      border-radius: 7px;
-
-      display: block;
-
-    }
-
-
-    .wishlist-item-title {
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-      font-size: 1.15rem;
-
-      line-height: 1.15;
-
-      color: #403521;
-
-      margin:
-        0 0 3px;
-
-    }
-
-
-    .wishlist-item-price {
-
-      font-size: 0.72rem;
-
-      color: #80652D;
-
-      margin: 0;
-
-    }
-
-
-    .wishlist-item-view {
-
-      display: inline-block;
-
-      margin-top: 6px;
-
-      color: #80652D;
-
-      font-size: 0.68rem;
-
-      text-decoration: none;
-
-      font-weight: bold;
-
-    }
-
-
-    .wishlist-item-view:hover {
-
-      text-decoration: underline;
-
-    }
-
-
-    .wishlist-remove {
-
-      border: none;
-
-      background: none;
-
-      color: #967331;
-
-      cursor: pointer;
-
-      font-family:
-        "Playfair Display",
-        Georgia,
-        serif;
-
-      font-size: 0.68rem;
-
-      padding: 5px;
-
-    }
-
-
-    .wishlist-remove:hover {
-
-      color: #6F5421;
-
-      text-decoration: underline;
-
-    }
-
-
-    .wishlist-modal-footer {
-
-      background: #FBF3D0;
-
-      border-top:
-        1px solid
-        #E0D2B0;
-
-      padding:
-        12px 18px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 10px;
-
-    }
-
-
-    .wishlist-footer-note {
-
-      font-family:
-        "Caveat",
-        cursive;
-
-      color: #80652D;
-
-      font-size: 1rem;
-
-    }
-
-
-    .wishlist-clear {
-
-      border: none;
-
-      background: transparent;
-
-      color: #80652D;
-
-      font-size: 0.68rem;
-
-      cursor: pointer;
-
-      text-decoration: underline;
-
-    }
-
-
-
-    /* =======================================================
-       MOBILE
-    ======================================================== */
-
-    @media (max-width: 850px) {
-
-      .about-story-inner {
-
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-
-      }
-
-
-      .about-story-card {
-
-        max-width: 500px;
-
-        margin: 0 auto;
-
-      }
-
-
-      .about-values-grid {
-
-        grid-template-columns:
-          repeat(2, 1fr);
-
-      }
-
-
-      .membership-grid {
-
-        grid-template-columns: 1fr;
-
-        max-width: 560px;
-
-        margin: 0 auto;
-
-      }
-
-    }
-
-
-
-    @media (max-width: 600px) {
-
-      .site-nav {
-
-        padding:
-          10px 8px 14px;
-
-      }
-
-
-      .site-nav a,
-      .shop-toggle,
-      .wishlist-header-button {
-
-        margin:
-          3px 5px;
-
-        font-size: 0.88rem;
-
-      }
-
-
-      .about-hero {
-
-        padding:
-          65px 20px;
-
-      }
-
-
-      .about-story,
-      .about-values,
-      .honey-hive-section,
-      .about-final {
-
-        padding:
-          65px 18px;
-
-      }
-
-
-      .about-values-grid {
-
-        grid-template-columns: 1fr;
-
-      }
-
-
-      .wishlist-item {
-
-        grid-template-columns:
-          65px 1fr;
-
-      }
-
-
-      .wishlist-item-image {
-
-        width: 65px;
-
-        height: 65px;
-
-      }
-
-
-      .wishlist-remove {
-
-        grid-column:
-          2;
-
-        justify-self: start;
-
-      }
-
-
-      .wishlist-modal-footer {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-      }
-
-    }
-
-  </style>
-
-</head>
 
 
 <body>
 
 
-  <!-- =======================================================
-       HEADER
-  ======================================================== -->
+<!-- =======================================================
+     HEADER
+======================================================= -->
 
-  <header class="site-header">
+<header class="site-header">
 
-    <div class="header-brand">
+  <div class="header-brand">
 
-      <a href="../">
+    <a href="../">
 
-        <img
-          src="../images/honey-and-hymns-logo.png"
-          alt="Honey & Hymns"
-          class="site-logo"
-        >
+      <img
+        src="../images/honey-and-hymns-logo.png"
+        alt="Honey & Hymns"
+        class="site-logo"
+      >
 
+    </a>
+
+    <p class="header-tagline">
+      Faith • Homeschool • Homemaking
+    </p>
+
+  </div>
+
+</header>
+
+
+
+<!-- =======================================================
+     NAVIGATION
+======================================================= -->
+
+<nav class="site-nav">
+
+  <a href="../">
+    Home
+  </a>
+
+  <a href="../Articles/">
+    Articles
+  </a>
+
+  <div class="shop-dropdown">
+
+    <button
+      class="shop-toggle"
+      type="button"
+      aria-expanded="false"
+    >
+      Shop
+    </button>
+
+    <div class="shop-menu">
+
+      <a href="../Resources/">
+        Resources
       </a>
 
-      <p class="header-tagline">
-        Faith • Homeschool • Homemaking
+      <a href="../Free-Downloads/">
+        Free Downloads
+      </a>
+
+      <div class="shop-coming-soon">
+
+        Monthly Honey & Hymns Magazine
+
+        <small>
+          Coming soon
+        </small>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <a href="../Sunday-Gospel/">
+    Sunday Gospel for Kids
+  </a>
+
+  <a
+    href="./"
+    class="active"
+  >
+    About
+  </a>
+
+  <a
+    href="https://honeyandhymns.substack.com/subscribe"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Join the Honey Hive
+  </a>
+
+  <button
+    class="wishlist-header-button"
+    type="button"
+    onclick="openWishlist()"
+    aria-label="Open wishlist"
+  >
+
+    <span class="wishlist-heart">
+      ♡
+    </span>
+
+    Wishlist
+
+    <span
+      class="wishlist-count"
+      id="wishlistCount"
+    >
+      0
+    </span>
+
+  </button>
+
+</nav>
+
+
+
+<!-- =======================================================
+     ABOUT PAGE
+======================================================= -->
+
+<main class="about-page">
+
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section class="about-hero">
+
+  <div class="about-hero-inner">
+
+    <p class="about-kicker">
+      Welcome to Honey & Hymns
+    </p>
+
+    <h1>
+      A Little Corner of the Internet
+      for the Catholic Homemaker
+    </h1>
+
+    <div class="about-rule">
+      ✦
+    </div>
+
+    <p class="about-intro">
+
+      Honey & Hymns is a cozy little corner of the internet
+      for homemakers, homeschool moms, and women
+      growing in faith — one ordinary day at a time.
+
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     MY STORY
+======================================================= -->
+
+<section class="about-story">
+
+  <div class="about-story-inner">
+
+    <div class="about-story-content">
+
+      <p class="about-section-kicker">
+        A Little About Me
+      </p>
+
+      <h2>
+        I'm Just a Mom
+        Figuring It Out Too
+      </h2>
+
+      <p>
+        Hi, I'm Annie.
+      </p>
+
+      <p>
+        I'm a Catholic wife, mom, homemaker, and homeschooler
+        trying to build a beautiful family life in the middle
+        of all the ordinary, messy, wonderful things that come
+        with it.
+      </p>
+
+      <p>
+        Honey & Hymns grew out of that ordinary life.
+        It began with a desire to create a place where women
+        could find encouragement without feeling like they
+        had to have everything figured out first.
+      </p>
+
+      <p>
+        Here you'll find stories about homeschooling,
+        homemaking, motherhood, faith, marriage, books,
+        routines, and the little things that make up family life.
+      </p>
+
+      <p>
+        Some days are peaceful.
+        Some days are absolutely not.
+        But I believe there is something beautiful about
+        learning to find God in both.
       </p>
 
     </div>
 
-  </header>
 
+    <div class="about-story-card">
 
+      <div class="about-story-card-inner">
 
-  <!-- =======================================================
-       NAVIGATION
-  ======================================================== -->
+        <span class="about-card-symbol">
+          🐝
+        </span>
 
-  <nav class="site-nav">
+        <h3>
+          Come As You Are
+        </h3>
 
-    <a href="../">
-      Home
-    </a>
-
-
-    <a href="../Articles/">
-      Articles
-    </a>
-
-
-    <div class="shop-dropdown">
-
-      <button
-        class="shop-toggle"
-        type="button"
-        aria-expanded="false"
-      >
-        Shop
-      </button>
-
-
-      <div class="shop-menu">
-
-        <a href="../Resources/">
-          Resources
-        </a>
-
-
-        <a href="../Free-Downloads/">
-          Free Downloads
-        </a>
-
-
-        <div class="shop-coming-soon">
-
-          Monthly Honey & Hymns Magazine
-
-          <small>
-            Coming soon
-          </small>
-
-        </div>
+        <p>
+          You don't have to have the perfect home,
+          the perfect homeschool, or the perfect prayer life
+          to belong here.
+        </p>
 
       </div>
 
     </div>
 
+  </div>
 
-    <a href="../Sunday-Gospel/">
-      Sunday Gospel for Kids
-    </a>
-
-
-    <a
-      href="./"
-      class="active"
-    >
-      About
-    </a>
-
-
-    <a
-      href="https://honeyandhymns.substack.com/subscribe"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Join the Honey Hive
-    </a>
-
-
-    <button
-      class="wishlist-header-button"
-      type="button"
-      onclick="openWishlist()"
-      aria-label="Open wishlist"
-    >
-
-      <span class="wishlist-heart">
-        ♡
-      </span>
-
-      Wishlist
-
-      <span
-        class="wishlist-count"
-        id="wishlistCount"
-      >
-        0
-      </span>
-
-    </button>
-
-  </nav>
+</section>
 
 
 
-  <!-- =======================================================
-       ABOUT PAGE
-  ======================================================== -->
-
-  <main class="about-page">
-
-
-    <!-- =========================
-         HERO
-    ========================= -->
-
-    <section class="about-hero">
-
-      <div class="about-hero-inner">
-
-        <p class="about-kicker">
-          Welcome to Honey & Hymns
-        </p>
-
-        <h1>
-          A Little Corner of the Internet
-          for the Catholic Homemaker
-        </h1>
-
-        <div class="about-rule">
-          ✦
-        </div>
-
-        <p class="about-intro">
-
-          Honey & Hymns is a cozy little corner of the internet
-          for homemakers, homeschool moms, and women
-          growing in faith — one ordinary day at a time.
-
-        </p>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         MY STORY
-    ========================= -->
-
-    <section class="about-story">
-
-      <div class="about-story-inner">
-
-
-        <div class="about-story-content">
-
-          <p class="about-section-kicker">
-            A Little About Me
-          </p>
-
-          <h2>
-            I'm Just a Mom
-            Figuring It Out Too
-          </h2>
-
-          <p>
-            Hi, I'm Annie.
-          </p>
-
-          <p>
-
-            I'm a Catholic wife, mom, homemaker, and homeschooler
-            trying to build a beautiful family life in the middle
-            of all the ordinary, messy, wonderful things that come
-            with it.
-
-          </p>
-
-          <p>
-
-            Honey & Hymns grew out of that ordinary life.
-
-            It began with a desire to create a place where women
-            could find encouragement without feeling like they
-            had to have everything figured out first.
-
-          </p>
-
-          <p>
-
-            Here you'll find stories about homeschooling,
-            homemaking, motherhood, faith, marriage, books,
-            routines, and the little things that make up family life.
-
-          </p>
-
-          <p>
-
-            Some days are peaceful.
-
-            Some days are absolutely not.
-
-            But I believe there is something beautiful about
-            learning to find God in both.
-
-          </p>
-
-        </div>
-
-
-       <!-- =========================
+<!-- =======================================================
      THE HEART BEHIND HONEY & HYMNS
-========================= -->
+======================================================= -->
 
 <section class="about-heart">
 
@@ -2218,525 +1749,496 @@
         the prayers, the hard days, and the little moments of joy.
       </p>
 
+      <p>
+        Honey & Hymns is about finding God in those ordinary
+        moments and learning to see the beauty that is already
+        present in the life we've been given.
+      </p>
+
     </div>
 
   </div>
 
 </section>
 
-    <!-- =========================
-         WHAT YOU'LL FIND
-    ========================= -->
 
-    <section class="about-values">
 
-      <div class="about-values-inner">
+<!-- =======================================================
+     WHAT YOU'LL FIND
+======================================================= -->
 
-        <p class="about-section-kicker">
-          Around Here
-        </p>
+<section class="about-values">
 
-        <h2>
-          What You'll Find at Honey & Hymns
-        </h2>
+  <div class="about-values-inner">
 
-        <p class="about-values-intro">
+    <p class="about-section-kicker">
+      Around Here
+    </p>
 
-          Think of Honey & Hymns as a little gathering place
-          for women who want to grow in faith while caring
-          for the people and homes God has entrusted to them.
+    <h2>
+      What You'll Find at Honey & Hymns
+    </h2>
 
-        </p>
+    <p class="about-values-intro">
+      Think of Honey & Hymns as a little gathering place
+      for women who want to grow in faith while caring
+      for the people and homes God has entrusted to them.
+    </p>
 
 
-        <div class="about-values-grid">
+    <div class="about-values-grid">
 
 
-          <div class="about-value">
+      <div class="about-value">
 
-            <span class="about-value-icon">
-              ✝
-            </span>
-
-            <h3>
-              Faith
-            </h3>
-
-            <p>
-
-              Encouragement for growing closer to God
-              and living your faith in the middle
-              of everyday family life.
-
-            </p>
-
-          </div>
-
-
-          <div class="about-value">
-
-            <span class="about-value-icon">
-              📚
-            </span>
-
-            <h3>
-              Homeschool
-            </h3>
-
-            <p>
-
-              Charlotte Mason-inspired ideas,
-              homeschool encouragement, books,
-              curriculum, and resources for learning
-              together at home.
-
-            </p>
-
-          </div>
-
-
-          <div class="about-value">
-
-            <span class="about-value-icon">
-              🏡
-            </span>
-
-            <h3>
-              Homemaking
-            </h3>
-
-            <p>
-
-              Simple encouragement for creating
-              a peaceful, welcoming home without
-              chasing perfection.
-
-            </p>
-
-          </div>
-
-
-          <div class="about-value">
-
-            <span class="about-value-icon">
-              🤍
-            </span>
-
-            <h3>
-              Motherhood
-            </h3>
-
-            <p>
-
-              Honest stories about raising children,
-              marriage, family rhythms, and becoming
-              the woman God is calling us to be.
-
-            </p>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =======================================================
-         HONEY HIVE MEMBERSHIP
-    ======================================================== -->
-
-    <section class="honey-hive-section">
-
-      <div class="honey-hive-inner">
-
-        <p class="about-section-kicker">
-          Come a Little Deeper
-        </p>
-
-        <h2>
-          Come Join the Honey Hive 🐝
-        </h2>
-
-        <div class="about-rule">
-          ✦
-        </div>
-
-        <p class="honey-hive-intro">
-
-          Honey & Hymns is more than a collection of articles.
-
-          The Honey Hive is our little community for women
-          who want a little more encouragement, more resources,
-          and a closer look at what's growing behind the scenes.
-
-        </p>
-
-
-        <div class="membership-grid">
-
-
-          <!-- =================================================
-               HONEY HIVE MONTHLY
-          ================================================== -->
-
-          <div class="membership-card">
-
-            <span class="membership-label">
-              HONEY HIVE
-            </span>
-
-            <h3>
-              Monthly
-            </h3>
-
-            <p class="membership-price">
-              $5 <span>/ month</span>
-            </p>
-
-            <p class="membership-description">
-
-              A simple way to support Honey & Hymns
-              while receiving a little more from the Hive.
-
-            </p>
-
-
-            <ul>
-
-              <li>
-                Free Honey & Hymns resources
-              </li>
-
-              <li>
-                Free weekly Sunday Gospel for Kids
-              </li>
-
-              <li>
-                Bi-weekly exclusive articles
-              </li>
-
-              <li>
-                Early access to posts
-              </li>
-
-            </ul>
-
-
-            <a
-              class="membership-button"
-              href="https://honeyandhymns.substack.com/subscribe"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              🐝 Come Join the Honey Hive
-            </a>
-
-          </div>
-
-
-
-          <!-- =================================================
-               HONEY HIVE YEARLY
-          ================================================== -->
-
-          <div class="membership-card membership-featured">
-
-            <span class="membership-label">
-              HONEY HIVE
-            </span>
-
-            <span class="membership-badge">
-              BEST VALUE
-            </span>
-
-            <h3>
-              Yearly
-            </h3>
-
-            <p class="membership-price">
-              $50 <span>/ year</span>
-            </p>
-
-            <p class="membership-description">
-
-              Everything in the monthly Honey Hive,
-              with a little extra savings for staying
-              with us for the year.
-
-            </p>
-
-
-            <ul>
-
-              <li>
-                Everything included in the monthly plan
-              </li>
-
-              <li>
-                Free Honey & Hymns resources
-              </li>
-
-              <li>
-                Weekly Sunday Gospel for Kids
-              </li>
-
-              <li>
-                Bi-weekly exclusive articles
-              </li>
-
-              <li>
-                Early access to posts
-              </li>
-
-              <li>
-                <strong>
-                  17% cheaper than paying monthly
-                </strong>
-              </li>
-
-            </ul>
-
-
-            <a
-              class="membership-button"
-              href="https://honeyandhymns.substack.com/subscribe"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              🍯 Make It a Year in the Hive
-            </a>
-
-          </div>
-
-
-
-          <!-- =================================================
-               BEEKEEPER'S CIRCLE
-          ================================================== -->
-
-          <div class="membership-card beekeepers-card">
-
-            <span class="membership-label">
-              FOUNDING MEMBERS
-            </span>
-
-            <h3>
-              The Beekeeper's Circle
-            </h3>
-
-            <p class="membership-price">
-              $200
-            </p>
-
-            <p class="membership-description">
-
-              For the women who want to help Honey & Hymns
-              grow from the very beginning.
-
-            </p>
-
-
-            <ul>
-
-              <li>
-                Everything in the Honey Hive
-              </li>
-
-              <li>
-                Your name on a special Thank You page
-                on Substack
-              </li>
-
-              <li>
-                Your name on the Honey & Hymns website
-              </li>
-
-              <li>
-                Your name included at the back of
-                the Honey & Hymns magazine
-              </li>
-
-              <li>
-                First look at major Honey & Hymns projects
-              </li>
-
-            </ul>
-
-
-            <a
-              class="membership-button membership-button-special"
-              href="https://honeyandhymns.substack.com/subscribe"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              👑 Become a Founding Beekeeper
-            </a>
-
-          </div>
-
-
-        </div>
-
-
-        <p class="membership-note">
-
-          Not ready to join?
-
-          That's completely okay.
-
-          You can always stay with us for free and receive
-          the weekly Honey & Hymns article and bulletin
-          right in your inbox.
-
-        </p>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =======================================================
-         FINAL INVITATION
-    ======================================================== -->
-
-    <section class="about-final">
-
-      <div class="about-final-inner">
-
-        <p class="about-section-kicker">
-          You're Welcome Here
-        </p>
-
-        <h2>
-          Pull Up a Chair
-        </h2>
-
-        <p>
-
-          Whether you're brand new to your faith,
-          knee-deep in homeschooling,
-          trying to get dinner on the table,
-          or simply looking for a little encouragement,
-
-          I'm glad you're here.
-
-        </p>
-
-        <p>
-          There's always room at the kitchen table.
-        </p>
-
-
-        <a
-          href="../Articles/"
-          class="about-final-button"
-        >
-          Explore Honey & Hymns →
-        </a>
-
-      </div>
-
-    </section>
-
-
-  </main>
-
-
-
-  <!-- =======================================================
-       WISHLIST POPUP
-  ======================================================== -->
-
-  <div
-    class="wishlist-overlay"
-    id="wishlistOverlay"
-    aria-hidden="true"
-  >
-
-    <div
-      class="wishlist-modal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="wishlistTitle"
-    >
-
-
-      <div class="wishlist-modal-header">
-
-        <h2
-          class="wishlist-modal-title"
-          id="wishlistTitle"
-        >
-          My Honey & Hymns Wishlist
-        </h2>
-
-
-        <button
-          class="wishlist-close"
-          type="button"
-          onclick="closeWishlist()"
-          aria-label="Close wishlist"
-        >
-          ×
-        </button>
-
-      </div>
-
-
-      <div
-        class="wishlist-body"
-        id="wishlistBody"
-      >
-      </div>
-
-
-      <div class="wishlist-modal-footer">
-
-        <span
-          class="wishlist-footer-note"
-          id="wishlistFooterNote"
-        >
-          Your little collection of favorites
+        <span class="about-value-icon">
+          ✝
         </span>
 
+        <h3>
+          Faith
+        </h3>
 
-        <button
-          class="wishlist-clear"
-          type="button"
-          onclick="clearWishlist()"
-        >
-          Clear Wishlist
-        </button>
+        <p>
+          Encouragement for growing closer to God
+          and living your faith in the middle
+          of everyday family life.
+        </p>
 
       </div>
+
+
+      <div class="about-value">
+
+        <span class="about-value-icon">
+          📚
+        </span>
+
+        <h3>
+          Homeschool
+        </h3>
+
+        <p>
+          Charlotte Mason-inspired ideas,
+          homeschool encouragement, books,
+          curriculum, and resources for learning
+          together at home.
+        </p>
+
+      </div>
+
+
+      <div class="about-value">
+
+        <span class="about-value-icon">
+          🏡
+        </span>
+
+        <h3>
+          Homemaking
+        </h3>
+
+        <p>
+          Simple encouragement for creating
+          a peaceful, welcoming home without
+          chasing perfection.
+        </p>
+
+      </div>
+
+
+      <div class="about-value">
+
+        <span class="about-value-icon">
+          🤍
+        </span>
+
+        <h3>
+          Motherhood
+        </h3>
+
+        <p>
+          Honest stories about raising children,
+          marriage, family rhythms, and becoming
+          the woman God is calling us to be.
+        </p>
+
+      </div>
+
 
     </div>
 
   </div>
 
+</section>
 
 
-  <!-- =======================================================
-       FOOTER
-  ======================================================== -->
 
-  <footer class="site-footer">
+<!-- =======================================================
+     HONEY HIVE MEMBERSHIP
+======================================================= -->
+
+<section class="honey-hive-section">
+
+  <div class="honey-hive-inner">
+
+    <p class="about-section-kicker">
+      Come a Little Deeper
+    </p>
+
+    <h2>
+      Come Join the Honey Hive 🐝
+    </h2>
+
+    <div class="about-rule">
+      ✦
+    </div>
+
+    <p class="honey-hive-intro">
+      Honey & Hymns is more than a collection of articles.
+      The Honey Hive is our little community for women
+      who want a little more encouragement, more resources,
+      and a closer look at what's growing behind the scenes.
+    </p>
+
+
+    <div class="membership-grid">
+
+
+      <!-- =================================================
+           HONEY HIVE MONTHLY
+      ================================================== -->
+
+      <div class="membership-card">
+
+        <span class="membership-label">
+          HONEY HIVE
+        </span>
+
+        <h3>
+          Monthly
+        </h3>
+
+        <p class="membership-price">
+          $5 <span>/ month</span>
+        </p>
+
+        <p class="membership-description">
+          A simple way to support Honey & Hymns
+          while receiving a little more from the Hive.
+        </p>
+
+        <ul>
+
+          <li>
+            Free Honey & Hymns resources
+          </li>
+
+          <li>
+            Free weekly Sunday Gospel for Kids
+          </li>
+
+          <li>
+            Bi-weekly exclusive articles
+          </li>
+
+          <li>
+            Early access to posts
+          </li>
+
+        </ul>
+
+        <a
+          class="membership-button"
+          href="https://honeyandhymns.substack.com/subscribe"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🐝 Enter the Honey Hive
+        </a>
+
+      </div>
+
+
+
+      <!-- =================================================
+           HONEY HIVE YEARLY
+      ================================================== -->
+
+      <div class="membership-card membership-featured">
+
+        <span class="membership-label">
+          HONEY HIVE
+        </span>
+
+        <span class="membership-badge">
+          BEST VALUE
+        </span>
+
+        <h3>
+          Yearly
+        </h3>
+
+        <p class="membership-price">
+          $50 <span>/ year</span>
+        </p>
+
+        <p class="membership-description">
+          Everything in the monthly Honey Hive,
+          with a little extra savings for staying
+          with us for the year.
+        </p>
+
+        <ul>
+
+          <li>
+            Everything included in the monthly plan
+          </li>
+
+          <li>
+            Free Honey & Hymns resources
+          </li>
+
+          <li>
+            Weekly Sunday Gospel for Kids
+          </li>
+
+          <li>
+            Bi-weekly exclusive articles
+          </li>
+
+          <li>
+            Early access to posts
+          </li>
+
+          <li>
+            <strong>
+              17% cheaper than paying monthly
+            </strong>
+          </li>
+
+        </ul>
+
+        <a
+          class="membership-button"
+          href="https://honeyandhymns.substack.com/subscribe"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🍯 Make It a Year in the Hive
+        </a>
+
+      </div>
+
+
+
+      <!-- =================================================
+           BEEKEEPER'S CIRCLE
+      ================================================== -->
+
+      <div class="membership-card beekeepers-card">
+
+        <span class="membership-label">
+          FOUNDING MEMBERS
+        </span>
+
+        <h3>
+          The Beekeeper's Circle
+        </h3>
+
+        <p class="membership-price">
+          $200
+        </p>
+
+        <p class="membership-description">
+          For the women who want to help Honey & Hymns
+          grow from the very beginning.
+        </p>
+
+        <ul>
+
+          <li>
+            Everything in the Honey Hive
+          </li>
+
+          <li>
+            Your name on a special Thank You page
+            on Substack
+          </li>
+
+          <li>
+            Your name on the Honey & Hymns website
+          </li>
+
+          <li>
+            Your name included at the back of
+            the Honey & Hymns magazine
+          </li>
+
+          <li>
+            First look at major Honey & Hymns projects
+          </li>
+
+        </ul>
+
+        <a
+          class="membership-button membership-button-special"
+          href="https://honeyandhymns.substack.com/subscribe"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          👑 Join the Founding Circle
+        </a>
+
+      </div>
+
+
+    </div>
+
+
+    <p class="membership-note">
+      Not ready to join?
+      That's completely okay.
+      You can always stay with us for free and receive
+      the weekly Honey & Hymns article and bulletin
+      right in your inbox.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     FINAL INVITATION
+======================================================= -->
+
+<section class="about-final">
+
+  <div class="about-final-inner">
+
+    <p class="about-section-kicker">
+      You're Welcome Here
+    </p>
+
+    <h2>
+      Pull Up a Chair
+    </h2>
 
     <p>
-      © Honey & Hymns
+      Whether you're brand new to your faith,
+      knee-deep in homeschooling,
+      trying to get dinner on the table,
+      or simply looking for a little encouragement,
+      I'm glad you're here.
     </p>
 
     <p>
-      Faith • Homeschool • Homemaking
+      There's always room at the kitchen table.
     </p>
 
-  </footer>
+    <a
+      href="../Articles/"
+      class="about-final-button"
+    >
+      Explore Honey & Hymns →
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =======================================================
+     WISHLIST POPUP
+======================================================= -->
+
+<div
+  class="wishlist-overlay"
+  id="wishlistOverlay"
+  aria-hidden="true"
+>
+
+  <div
+    class="wishlist-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="wishlistTitle"
+  >
+
+    <div class="wishlist-modal-header">
+
+      <h2
+        class="wishlist-modal-title"
+        id="wishlistTitle"
+      >
+        My Honey & Hymns Wishlist
+      </h2>
+
+      <button
+        class="wishlist-close"
+        type="button"
+        onclick="closeWishlist()"
+        aria-label="Close wishlist"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div
+      class="wishlist-body"
+      id="wishlistBody"
+    >
+    </div>
+
+
+    <div class="wishlist-modal-footer">
+
+      <span
+        class="wishlist-footer-note"
+        id="wishlistFooterNote"
+      >
+        Your little collection of favorites
+      </span>
+
+      <button
+        class="wishlist-clear"
+        type="button"
+        onclick="clearWishlist()"
+      >
+        Clear Wishlist
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer class="site-footer">
+
+  <p>
+    © Honey & Hymns
+  </p>
+
+  <p>
+    Faith • Homeschool • Homemaking
+  </p>
+
+</footer>
 
 
 
