@@ -1,1 +1,2806 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    About Honey & Hymns | Faith, Homeschool & Homemaking
+  </title>
+
+  <meta
+    name="description"
+    content="Meet the woman behind Honey & Hymns, a cozy corner of the internet for Catholic homemakers and homeschool moms growing in faith and embracing the beautiful ordinary moments of family life."
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Caveat:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    /* =====================================================
+       GENERAL
+    ====================================================== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      margin: 0;
+
+      background: #FFFDF4;
+
+      color: #4D4029;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      line-height: 1.7;
+
+    }
+
+
+    img {
+      max-width: 100%;
+    }
+
+
+    a {
+      color: inherit;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ====================================================== */
+
+    .site-header {
+
+      background: #FFEBA1;
+
+      padding:
+        25px 20px 15px;
+
+      text-align: center;
+
+      border-bottom:
+        1px solid
+        rgba(90, 70, 30, 0.12);
+
+    }
+
+
+    .header-brand {
+
+      max-width: 700px;
+
+      margin: 0 auto;
+
+    }
+
+
+    .site-logo {
+
+      width: 365px;
+
+      max-width: 86%;
+
+      height: auto;
+
+      display: block;
+
+      margin: 0 auto;
+
+    }
+
+
+    .header-tagline {
+
+      margin: 4px 0 0;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 0.84rem;
+
+      letter-spacing: 2px;
+
+      color: #5D4B2D;
+
+    }
+
+
+    /* =====================================================
+       NAVIGATION
+    ====================================================== */
+
+    .site-nav {
+
+      background: #FFEBA1;
+
+      text-align: center;
+
+      padding:
+        9px 15px 13px;
+
+      border-bottom:
+        1px solid
+        rgba(90, 70, 30, 0.12);
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 3px;
+
+    }
+
+
+    .site-nav a,
+    .shop-toggle,
+    .wishlist-header-button {
+
+      color: #514229;
+
+      text-decoration: none;
+
+      margin: 0 9px;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 0.95rem;
+
+      transition:
+        color 0.2s ease;
+
+    }
+
+
+    .site-nav a:hover,
+    .shop-toggle:hover,
+    .wishlist-header-button:hover {
+
+      color: #967331;
+
+    }
+
+
+    .site-nav a.active {
+
+      color: #80652D;
+
+      font-weight: 600;
+
+    }
+
+
+    /* =====================================================
+       SHOP DROPDOWN
+    ====================================================== */
+
+    .shop-dropdown {
+
+      position: relative;
+
+      display: inline-block;
+
+    }
+
+
+    .shop-toggle {
+
+      background: none;
+
+      border: none;
+
+      padding: 0;
+
+      cursor: pointer;
+
+      line-height: inherit;
+
+    }
+
+
+    .shop-menu {
+
+      position: absolute;
+
+      top:
+        calc(100% + 10px);
+
+      left: 50%;
+
+      transform:
+        translateX(-50%)
+        translateY(-6px);
+
+      min-width: 250px;
+
+      background: #FFFDF0;
+
+      border:
+        1px solid
+        #D8C79F;
+
+      border-radius: 12px;
+
+      box-shadow:
+        0 8px 22px
+        rgba(77, 64, 41, 0.16);
+
+      padding: 8px 0;
+
+      text-align: left;
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      pointer-events: none;
+
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+
+      z-index: 1000;
+
+    }
+
+
+    .shop-dropdown.open .shop-menu,
+    .shop-dropdown:hover .shop-menu {
+
+      opacity: 1;
+
+      visibility: visible;
+
+      pointer-events: auto;
+
+      transform:
+        translateX(-50%)
+        translateY(0);
+
+    }
+
+
+    .shop-menu a {
+
+      display: block;
+
+      margin: 0;
+
+      padding:
+        10px 18px;
+
+      font-size: 0.92rem;
+
+    }
+
+
+    .shop-menu a:hover {
+
+      background: #FFF3C8;
+
+    }
+
+
+    .shop-coming-soon {
+
+      padding:
+        10px 18px;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 0.92rem;
+
+    }
+
+
+    .shop-coming-soon small {
+
+      display: block;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      color: #80652D;
+
+      font-size: 0.85rem;
+
+    }
+
+
+    /* =====================================================
+       WISHLIST HEADER BUTTON
+    ====================================================== */
+
+    .wishlist-header-button {
+
+      background: none;
+
+      border: none;
+
+      padding: 0;
+
+      cursor: pointer;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 5px;
+
+    }
+
+
+    .wishlist-heart {
+
+      font-size: 1.05rem;
+
+      line-height: 1;
+
+    }
+
+
+    .wishlist-count {
+
+      min-width: 19px;
+
+      height: 19px;
+
+      padding: 0 5px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: #D8B65F;
+
+      color: #4D4029;
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size: 0.63rem;
+
+      font-weight: bold;
+
+    }
+
+
+    /* =====================================================
+       ABOUT HERO
+    ====================================================== */
+
+    .about-hero {
+
+      padding:
+        75px 20px 70px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          180deg,
+          #FFFDF4 0%,
+          #FFF9DF 100%
+        );
+
+    }
+
+
+    .about-hero-inner {
+
+      max-width: 850px;
+
+      margin: 0 auto;
+
+    }
+
+
+    .about-kicker {
+
+      margin: 0 0 10px;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      font-size: 1.45rem;
+
+      color: #80652D;
+
+    }
+
+
+    .about-hero h1 {
+
+      margin:
+        0 auto 18px;
+
+      color: #403521;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(2.7rem, 7vw, 4.8rem);
+
+      font-weight: 500;
+
+      line-height: 1.05;
+
+    }
+
+
+    .about-rule {
+
+      color: #D8B65F;
+
+      font-size: 1.2rem;
+
+      margin: 15px 0 20px;
+
+    }
+
+
+    .about-hero p {
+
+      max-width: 700px;
+
+      margin: 0 auto;
+
+      font-size: 1.2rem;
+
+      color: #68583D;
+
+    }
+
+
+    /* =====================================================
+       INTRODUCTION
+    ====================================================== */
+
+    .about-introduction {
+
+      padding:
+        70px 20px;
+
+      background: #FFFDF4;
+
+    }
+
+
+    .about-introduction-inner {
+
+      max-width: 950px;
+
+      margin: 0 auto;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(250px, 0.85fr)
+        minmax(300px, 1.4fr);
+
+      gap: 60px;
+
+      align-items: center;
+
+    }
+
+
+    .about-photo {
+
+      min-height: 390px;
+
+      background:
+        #FFEBA1;
+
+      border:
+        1px solid
+        #E0CC83;
+
+      border-radius: 12px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 25px;
+
+      position: relative;
+
+    }
+
+
+    .about-photo::before {
+
+      content: "♡";
+
+      position: absolute;
+
+      top: 15px;
+
+      right: 20px;
+
+      color: #D8B65F;
+
+      font-size: 1.6rem;
+
+    }
+
+
+    .about-photo-inner {
+
+      border:
+        1px dashed
+        #C7A955;
+
+      width: 100%;
+
+      height: 100%;
+
+      min-height: 335px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 30px;
+
+    }
+
+
+    .about-photo-inner p {
+
+      margin: 0;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      font-size: 1.45rem;
+
+      color: #80652D;
+
+      line-height: 1.4;
+
+    }
+
+
+    .about-copy h2 {
+
+      margin:
+        0 0 15px;
+
+      font-size: 2.5rem;
+
+      font-weight: 500;
+
+      line-height: 1.15;
+
+      color: #403521;
+
+    }
+
+
+    .about-copy p {
+
+      margin:
+        0 0 17px;
+
+      color: #5E503A;
+
+      font-size: 1.08rem;
+
+    }
+
+
+    /* =====================================================
+       WHY HONEY & HYMNS
+    ====================================================== */
+
+    .why-section {
+
+      padding:
+        75px 20px;
+
+      background: #FBF3D0;
+
+      text-align: center;
+
+    }
+
+
+    .why-inner {
+
+      max-width: 850px;
+
+      margin: 0 auto;
+
+    }
+
+
+    .section-kicker {
+
+      margin: 0 0 7px;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      color: #80652D;
+
+      font-size: 1.3rem;
+
+    }
+
+
+    .why-section h2 {
+
+      margin:
+        0 0 18px;
+
+      color: #403521;
+
+      font-size: 2.7rem;
+
+      font-weight: 500;
+
+    }
+
+
+    .why-section p {
+
+      font-size: 1.08rem;
+
+      color: #5E503A;
+
+      margin:
+        0 auto 17px;
+
+    }
+
+
+    /* =====================================================
+       WHAT YOU'LL FIND
+    ====================================================== */
+
+    .find-section {
+
+      padding:
+        75px 20px;
+
+      background: #FFFDF4;
+
+    }
+
+
+    .find-heading {
+
+      text-align: center;
+
+      max-width: 750px;
+
+      margin:
+        0 auto 40px;
+
+    }
+
+
+    .find-heading h2 {
+
+      margin: 0;
+
+      color: #403521;
+
+      font-size: 2.7rem;
+
+      font-weight: 500;
+
+    }
+
+
+    .find-grid {
+
+      max-width: 1000px;
+
+      margin: 0 auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 22px;
+
+    }
+
+
+    .find-card {
+
+      background: #FFF8D9;
+
+      border:
+        1px solid
+        #E5D6AD;
+
+      border-radius: 12px;
+
+      padding:
+        28px 22px;
+
+      text-align: center;
+
+    }
+
+
+    .find-icon {
+
+      font-size: 2rem;
+
+      margin-bottom: 8px;
+
+    }
+
+
+    .find-card h3 {
+
+      margin:
+        0 0 8px;
+
+      color: #403521;
+
+      font-size: 1.55rem;
+
+      font-weight: 500;
+
+    }
+
+
+    .find-card p {
+
+      margin: 0;
+
+      color: #68583D;
+
+      font-size: 0.98rem;
+
+    }
+
+
+    /* =====================================================
+       PHILOSOPHY
+    ====================================================== */
+
+    .philosophy-section {
+
+      padding:
+        75px 20px;
+
+      background: #FFF9DF;
+
+    }
+
+
+    .philosophy-inner {
+
+      max-width: 850px;
+
+      margin: 0 auto;
+
+      text-align: center;
+
+    }
+
+
+    .philosophy-inner h2 {
+
+      margin:
+        0 0 20px;
+
+      font-size: 2.7rem;
+
+      font-weight: 500;
+
+      color: #403521;
+
+    }
+
+
+    .philosophy-inner p {
+
+      font-size: 1.08rem;
+
+      color: #5E503A;
+
+      margin:
+        0 0 18px;
+
+    }
+
+
+    .philosophy-quote {
+
+      margin:
+        35px auto 0;
+
+      padding:
+        25px 30px;
+
+      border-top:
+        1px solid
+        #D8C79F;
+
+      border-bottom:
+        1px solid
+        #D8C79F;
+
+      color: #80652D;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      font-size: 1.6rem;
+
+      line-height: 1.4;
+
+    }
+
+
+    /* =====================================================
+       CLOSING / CTA
+    ====================================================== */
+
+    .about-closing {
+
+      padding:
+        80px 20px;
+
+      text-align: center;
+
+      background: #FFEBA1;
+
+    }
+
+
+    .about-closing-inner {
+
+      max-width: 750px;
+
+      margin: 0 auto;
+
+    }
+
+
+    .about-closing h2 {
+
+      margin:
+        0 0 15px;
+
+      color: #403521;
+
+      font-size: 2.8rem;
+
+      font-weight: 500;
+
+      line-height: 1.1;
+
+    }
+
+
+    .about-closing p {
+
+      margin:
+        0 auto 25px;
+
+      color: #5D4B2D;
+
+      font-size: 1.08rem;
+
+    }
+
+
+    .about-button {
+
+      display: inline-block;
+
+      background: #80652D;
+
+      color: #FFFDF4;
+
+      text-decoration: none;
+
+      padding:
+        11px 25px;
+
+      border-radius: 30px;
+
+      font-size: 0.95rem;
+
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+
+    }
+
+
+    .about-button:hover {
+
+      background: #665020;
+
+      transform: translateY(-2px);
+
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ====================================================== */
+
+    .site-footer {
+
+      background: #FFFDF4;
+
+      border-top:
+        1px solid
+        #E0D2B0;
+
+      padding:
+        25px 20px;
+
+      text-align: center;
+
+      color: #80652D;
+
+      font-size: 0.85rem;
+
+    }
+
+
+    .site-footer p {
+
+      margin: 3px 0;
+
+    }
+
+
+    /* =====================================================
+       WISHLIST MODAL
+    ====================================================== */
+
+    .wishlist-overlay {
+
+      position: fixed;
+
+      inset: 0;
+
+      background:
+        rgba(57, 45, 25, 0.60);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 20px;
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      pointer-events: none;
+
+      z-index: 5000;
+
+      transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+
+    }
+
+
+    .wishlist-overlay.open {
+
+      opacity: 1;
+
+      visibility: visible;
+
+      pointer-events: auto;
+
+    }
+
+
+    .wishlist-modal {
+
+      width:
+        min(620px, 94vw);
+
+      max-height:
+        min(700px, 88vh);
+
+      background: #FFFDF4;
+
+      border:
+        1px solid
+        #D8C79F;
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 22px 55px
+        rgba(0,0,0,0.28);
+
+      overflow: hidden;
+
+      transform:
+        scale(0.88)
+        translateY(12px);
+
+      opacity: 0;
+
+      transition:
+        transform 0.35s
+          cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.25s ease;
+
+    }
+
+
+    .wishlist-overlay.open
+    .wishlist-modal {
+
+      transform:
+        scale(1)
+        translateY(0);
+
+      opacity: 1;
+
+    }
+
+
+    .wishlist-modal-header {
+
+      background: #FFEBA1;
+
+      padding:
+        16px 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      border-bottom:
+        1px solid
+        #E0CC83;
+
+    }
+
+
+    .wishlist-modal-title {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.65rem;
+
+      font-weight: 500;
+
+      color: #403521;
+
+      margin: 0;
+
+    }
+
+
+    .wishlist-close {
+
+      width: 32px;
+
+      height: 32px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid
+        #D3BE80;
+
+      background: #FFF9DF;
+
+      color: #665020;
+
+      cursor: pointer;
+
+      font-size: 1.15rem;
+
+      line-height: 1;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+    }
+
+
+    .wishlist-close:hover {
+
+      background: #F3D582;
+
+    }
+
+
+    .wishlist-body {
+
+      padding: 20px;
+
+      max-height:
+        calc(88vh - 145px);
+
+      overflow-y: auto;
+
+    }
+
+
+    .wishlist-empty {
+
+      text-align: center;
+
+      padding:
+        35px 15px;
+
+    }
+
+
+    .wishlist-empty-icon {
+
+      font-size: 2.3rem;
+
+      color: #D8B65F;
+
+      margin-bottom: 8px;
+
+    }
+
+
+    .wishlist-empty h3 {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.6rem;
+
+      font-weight: 500;
+
+      color: #403521;
+
+      margin:
+        0 0 5px;
+
+    }
+
+
+    .wishlist-empty p {
+
+      margin: 0;
+
+      font-size: 0.8rem;
+
+      color: #68583D;
+
+    }
+
+
+    .wishlist-item {
+
+      display: grid;
+
+      grid-template-columns:
+        82px 1fr auto;
+
+      align-items: center;
+
+      gap: 14px;
+
+      padding:
+        11px;
+
+      margin-bottom: 10px;
+
+      background: #FFF8D9;
+
+      border:
+        1px solid
+        #E5D6AD;
+
+      border-radius: 11px;
+
+    }
+
+
+    .wishlist-item-image {
+
+      width: 82px;
+
+      height: 82px;
+
+      object-fit: cover;
+
+      border-radius: 7px;
+
+      display: block;
+
+    }
+
+
+    .wishlist-item-title {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.15rem;
+
+      line-height: 1.15;
+
+      color: #403521;
+
+      margin:
+        0 0 3px;
+
+    }
+
+
+    .wishlist-item-price {
+
+      font-size: 0.72rem;
+
+      color: #80652D;
+
+      margin: 0;
+
+    }
+
+
+    .wishlist-item-view {
+
+      display: inline-block;
+
+      margin-top: 6px;
+
+      color: #80652D;
+
+      font-size: 0.68rem;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+    }
+
+
+    .wishlist-item-view:hover {
+
+      text-decoration: underline;
+
+    }
+
+
+    .wishlist-remove {
+
+      border: none;
+
+      background: none;
+
+      color: #967331;
+
+      cursor: pointer;
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size: 0.68rem;
+
+      padding: 5px;
+
+    }
+
+
+    .wishlist-remove:hover {
+
+      color: #6F5421;
+
+      text-decoration: underline;
+
+    }
+
+
+    .wishlist-modal-footer {
+
+      background: #FBF3D0;
+
+      border-top:
+        1px solid
+        #E0D2B0;
+
+      padding:
+        12px 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 10px;
+
+    }
+
+
+    .wishlist-footer-note {
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      color: #80652D;
+
+      font-size: 1rem;
+
+    }
+
+
+    .wishlist-clear {
+
+      border: none;
+
+      background: transparent;
+
+      color: #80652D;
+
+      font-size: 0.68rem;
+
+      cursor: pointer;
+
+      text-decoration: underline;
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 760px) {
+
+      .site-logo {
+        width: 300px;
+      }
+
+
+      .site-nav {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+
+      .site-nav a,
+      .shop-toggle,
+      .wishlist-header-button {
+        margin: 3px 6px;
+        font-size: 0.9rem;
+      }
+
+
+      .about-hero {
+        padding:
+          55px 20px;
+      }
+
+
+      .about-introduction-inner {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+      }
+
+
+      .about-photo {
+
+        min-height: 280px;
+
+      }
+
+
+      .about-photo-inner {
+
+        min-height: 225px;
+
+      }
+
+
+      .find-grid {
+
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
+
+      }
+
+
+      .about-copy h2,
+      .why-section h2,
+      .find-heading h2,
+      .philosophy-inner h2 {
+
+        font-size: 2.25rem;
+
+      }
+
+
+      .about-closing h2 {
+
+        font-size: 2.35rem;
+
+      }
+
+
+      .wishlist-item {
+
+        grid-template-columns:
+          65px 1fr;
+
+      }
+
+
+      .wishlist-item-image {
+
+        width: 65px;
+
+        height: 65px;
+
+      }
+
+
+      .wishlist-remove {
+
+        grid-column: 2;
+
+        justify-self: start;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header class="site-header">
+
+    <div class="header-brand">
+
+      <a href="../">
+
+        <img
+          src="../images/honey-and-hymns-logo.png"
+          alt="Honey & Hymns"
+          class="site-logo"
+        >
+
+      </a>
+
+      <p class="header-tagline">
+        Faith • Homeschool • Homemaking
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <nav class="site-nav">
+
+    <a href="../">
+      Home
+    </a>
+
+
+    <a href="../Articles/">
+      Articles
+    </a>
+
+
+    <div class="shop-dropdown">
+
+      <button
+        class="shop-toggle"
+        type="button"
+        aria-expanded="false"
+      >
+        Shop
+      </button>
+
+
+      <div class="shop-menu">
+
+        <a href="../Resources/">
+          Resources
+        </a>
+
+
+        <a href="../Free-Downloads/">
+          Free Downloads
+        </a>
+
+
+        <div class="shop-coming-soon">
+
+          Monthly Honey & Hymns Magazine
+
+          <small>
+            Coming soon
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <a href="../Sunday-Gospel/">
+      Sunday Gospel for Kids
+    </a>
+
+
+    <a
+      href="./"
+      class="active"
+      aria-current="page"
+    >
+      About
+    </a>
+
+
+    <a
+      href="https://honeyandhymns.substack.com/subscribe"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Join the Honey Hive
+    </a>
+
+
+    <!-- WISHLIST -->
+
+    <button
+      class="wishlist-header-button"
+      type="button"
+      onclick="openWishlist()"
+      aria-label="Open wishlist"
+    >
+
+      <span class="wishlist-heart">
+        ♡
+      </span>
+
+      Wishlist
+
+      <span
+        class="wishlist-count"
+        id="wishlistCount"
+      >
+        0
+      </span>
+
+    </button>
+
+  </nav>
+
+
+  <!-- =====================================================
+       ABOUT HERO
+  ====================================================== -->
+
+  <main>
+
+
+    <section class="about-hero">
+
+      <div class="about-hero-inner">
+
+        <p class="about-kicker">
+          Welcome to my little corner of the internet
+        </p>
+
+        <h1>
+          About Honey & Hymns
+        </h1>
+
+        <div class="about-rule">
+          ✦
+        </div>
+
+        <p>
+          A cozy place for faith, family, homeschooling,
+          homemaking, encouragement, and the beautiful
+          ordinary moments in between.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         INTRODUCTION
+    ================================================== -->
+
+    <section class="about-introduction">
+
+      <div class="about-introduction-inner">
+
+
+        <div class="about-photo">
+
+          <div class="about-photo-inner">
+
+            <p>
+              A homeschool mom,<br>
+              homemaker,<br>
+              and woman growing<br>
+              in faith.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="about-copy">
+
+          <p class="section-kicker">
+            Hi, I'm the woman behind Honey & Hymns.
+          </p>
+
+          <h2>
+            I'm glad you're here.
+          </h2>
+
+          <p>
+            I'm a mom, homemaker, and homeschool mom who
+            created Honey & Hymns as a place to share the
+            things I'm learning along the way.
+          </p>
+
+          <p>
+            Like many mothers, I'm figuring things out as I
+            go. I'm learning how to educate my children,
+            care for our home, grow in my faith, and make
+            room for the little things that make family life
+            beautiful.
+          </p>
+
+          <p>
+            Honey & Hymns grew out of that ordinary life.
+            It isn't meant to be a picture of perfection.
+            It's meant to be a welcoming place for women who
+            are also trying to build a good, faithful, and
+            meaningful home one day at a time.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         WHY HONEY & HYMNS
+    ================================================== -->
+
+    <section class="why-section">
+
+      <div class="why-inner">
+
+        <p class="section-kicker">
+          Why Honey & Hymns?
+        </p>
+
+        <h2>
+          Because the ordinary matters.
+        </h2>
+
+        <p>
+          I believe some of the most important work we do
+          happens quietly at home.
+        </p>
+
+        <p>
+          Teaching a child to read. Making dinner. Opening
+          Scripture at the kitchen table. Folding laundry.
+          Answering another question. Trying again after a
+          hard day. Finding a few minutes to pray.
+        </p>
+
+        <p>
+          None of those moments may look particularly
+          impressive from the outside, but together they
+          become a life.
+        </p>
+
+        <p>
+          Honey & Hymns is a place to encourage that kind
+          of life — not a perfectly curated one, but a
+          faithful one.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         WHAT YOU'LL FIND
+    ================================================== -->
+
+    <section class="find-section">
+
+      <div class="find-heading">
+
+        <p class="section-kicker">
+          What's inside the Hive
+        </p>
+
+        <h2>
+          What You'll Find Here
+        </h2>
+
+      </div>
+
+
+      <div class="find-grid">
+
+
+        <article class="find-card">
+
+          <div class="find-icon">
+            ✝
+          </div>
+
+          <h3>
+            Faith
+          </h3>
+
+          <p>
+            Reflections on growing closer to God,
+            living out the Catholic faith, Scripture,
+            prayer, and finding God in ordinary family life.
+          </p>
+
+        </article>
+
+
+        <article class="find-card">
+
+          <div class="find-icon">
+            📚
+          </div>
+
+          <h3>
+            Homeschool
+          </h3>
+
+          <p>
+            Charlotte Mason-inspired ideas, living books,
+            homeschool encouragement, planning, curriculum,
+            and the everyday realities of educating at home.
+          </p>
+
+        </article>
+
+
+        <article class="find-card">
+
+          <div class="find-icon">
+            🏡
+          </div>
+
+          <h3>
+            Homemaking
+          </h3>
+
+          <p>
+            Practical encouragement for creating a peaceful,
+            welcoming home while remembering that homemaking
+            is about much more than keeping things tidy.
+          </p>
+
+        </article>
+
+
+        <article class="find-card">
+
+          <div class="find-icon">
+            🐝
+          </div>
+
+          <h3>
+            Encouragement
+          </h3>
+
+          <p>
+            Honest reminders for moms who sometimes need
+            permission to slow down, begin again, and remember
+            that they are doing meaningful work.
+          </p>
+
+        </article>
+
+
+        <article class="find-card">
+
+          <div class="find-icon">
+            ☕
+          </div>
+
+          <h3>
+            Family Life
+          </h3>
+
+          <p>
+            Stories, lessons, questions, and reflections
+            from the beautiful, messy, funny, ordinary
+            life of a family.
+          </p>
+
+        </article>
+
+
+        <article class="find-card">
+
+          <div class="find-icon">
+            ♥
+          </div>
+
+          <h3>
+            Resources
+          </h3>
+
+          <p>
+            Helpful printables, homeschool resources,
+            faith-centered tools, and little things designed
+            to make home life a bit easier.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         PHILOSOPHY
+    ================================================== -->
+
+    <section class="philosophy-section">
+
+      <div class="philosophy-inner">
+
+        <p class="section-kicker">
+          What I hope Honey & Hymns can be
+        </p>
+
+        <h2>
+          A place to breathe.
+        </h2>
+
+        <p>
+          The internet can sometimes make motherhood feel
+          like a competition. Who has the cleanest home?
+          The prettiest homeschool room? The most organized
+          schedule? The best curriculum?
+        </p>
+
+        <p>
+          I don't want Honey & Hymns to add to that noise.
+        </p>
+
+        <p>
+          I want it to feel more like sitting at the kitchen
+          table with another mom who understands that some
+          days go beautifully and other days absolutely do not.
+        </p>
+
+        <p>
+          A place where we can learn, laugh, encourage one
+          another, and remember that our homes don't have to
+          be perfect to be full of love.
+        </p>
+
+
+        <div class="philosophy-quote">
+
+          "Faithfulness in the little things is still
+          faithfulness."
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         CLOSING
+    ================================================== -->
+
+    <section class="about-closing">
+
+      <div class="about-closing-inner">
+
+        <h2>
+          Come stay awhile.
+        </h2>
+
+        <p>
+          Whether you're here for a homeschool idea, a
+          little encouragement, a Sunday Gospel resource,
+          or simply a quiet place to read for a few minutes,
+          I'm glad you found your way to Honey & Hymns.
+        </p>
+
+        <a
+          href="../Articles/"
+          class="about-button"
+        >
+          Explore the Articles →
+        </a>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+    <p>
+      Honey & Hymns
+    </p>
+
+    <p>
+      Faith • Homeschool • Homemaking
+    </p>
+
+    <p>
+      © Honey & Hymns
+    </p>
+
+  </footer>
+
+
+  <!-- =====================================================
+       WISHLIST POPUP
+  ====================================================== -->
+
+  <div
+    class="wishlist-overlay"
+    id="wishlistOverlay"
+    aria-hidden="true"
+  >
+
+    <div
+      class="wishlist-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="wishlistTitle"
+    >
+
+      <div class="wishlist-modal-header">
+
+        <h2
+          class="wishlist-modal-title"
+          id="wishlistTitle"
+        >
+          My Honey & Hymns Wishlist
+        </h2>
+
+
+        <button
+          class="wishlist-close"
+          type="button"
+          onclick="closeWishlist()"
+          aria-label="Close wishlist"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div
+        class="wishlist-body"
+        id="wishlistBody"
+      >
+
+      </div>
+
+
+      <div class="wishlist-modal-footer">
+
+        <span
+          class="wishlist-footer-note"
+          id="wishlistFooterNote"
+        >
+          Your little collection of favorites
+        </span>
+
+
+        <button
+          class="wishlist-clear"
+          type="button"
+          onclick="clearWishlist()"
+        >
+          Clear Wishlist
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script>
+
+
+    /* ========================================
+       SHOP DROPDOWN
+    ======================================== */
+
+    const shopDropdown =
+      document.querySelector(
+        ".shop-dropdown"
+      );
+
+
+    const shopToggle =
+      document.querySelector(
+        ".shop-toggle"
+      );
+
+
+    shopToggle.addEventListener(
+      "click",
+      function() {
+
+        const isOpen =
+          shopDropdown.classList.toggle(
+            "open"
+          );
+
+
+        shopToggle.setAttribute(
+          "aria-expanded",
+          isOpen
+            ? "true"
+            : "false"
+        );
+
+      }
+    );
+
+
+    document.addEventListener(
+      "click",
+      function(event) {
+
+        if (
+          !shopDropdown.contains(
+            event.target
+          )
+        ) {
+
+          shopDropdown.classList.remove(
+            "open"
+          );
+
+
+          shopToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        }
+
+      }
+    );
+
+
+    /* ========================================
+       WISHLIST STORAGE
+    ======================================== */
+
+    const WISHLIST_STORAGE_KEY =
+      "honeyAndHymnsWishlist";
+
+
+    function getWishlist() {
+
+      try {
+
+        const stored =
+          localStorage.getItem(
+            WISHLIST_STORAGE_KEY
+          );
+
+
+        if (!stored) {
+
+          return [];
+
+        }
+
+
+        const parsed =
+          JSON.parse(stored);
+
+
+        return Array.isArray(parsed)
+          ? parsed
+          : [];
+
+      } catch (error) {
+
+        return [];
+
+      }
+
+    }
+
+
+    function saveWishlist(items) {
+
+      localStorage.setItem(
+        WISHLIST_STORAGE_KEY,
+        JSON.stringify(items)
+      );
+
+    }
+
+
+    /* ========================================
+       WISHLIST COUNT
+    ======================================== */
+
+    function updateWishlistCount() {
+
+      const countElement =
+        document.getElementById(
+          "wishlistCount"
+        );
+
+
+      if (!countElement) {
+
+        return;
+
+      }
+
+
+      countElement.textContent =
+        getWishlist().length;
+
+    }
+
+
+    /* ========================================
+       CHECK IF PRODUCT IS SAVED
+    ======================================== */
+
+    function isInWishlist(id) {
+
+      return getWishlist().some(
+        function(item) {
+
+          return item.id === id;
+
+        }
+      );
+
+    }
+
+
+    /* ========================================
+       UPDATE PRODUCT BUTTONS
+    ======================================== */
+
+    function updateWishlistButtons() {
+
+      const buttons =
+        document.querySelectorAll(
+          ".wishlist-button"
+        );
+
+
+      buttons.forEach(
+        function(button) {
+
+          const id =
+            button.dataset.wishlistId;
+
+
+          if (
+            isInWishlist(id)
+          ) {
+
+            button.classList.add(
+              "saved"
+            );
+
+
+            button.textContent =
+              "♥ Saved to Wishlist";
+
+          } else {
+
+            button.classList.remove(
+              "saved"
+            );
+
+
+            button.textContent =
+              "♡ Add to Wishlist";
+
+          }
+
+        }
+      );
+
+    }
+
+
+    /* ========================================
+       ADD / REMOVE PRODUCT
+    ======================================== */
+
+    function toggleWishlist(button) {
+
+      const id =
+        button.dataset.wishlistId;
+
+
+      const product = {
+
+        id:
+          id,
+
+        title:
+          button.dataset.title,
+
+        price:
+          button.dataset.price,
+
+        image:
+          button.dataset.image,
+
+        url:
+          button.dataset.url
+
+      };
+
+
+      let wishlist =
+        getWishlist();
+
+
+      const existingIndex =
+        wishlist.findIndex(
+          function(item) {
+
+            return item.id === id;
+
+          }
+        );
+
+
+      if (
+        existingIndex !== -1
+      ) {
+
+        wishlist.splice(
+          existingIndex,
+          1
+        );
+
+      } else {
+
+        wishlist.push(
+          product
+        );
+
+      }
+
+
+      saveWishlist(
+        wishlist
+      );
+
+
+      updateWishlistCount();
+
+      updateWishlistButtons();
+
+    }
+
+
+    /* ========================================
+       PRODUCT BUTTON EVENTS
+    ======================================== */
+
+    document
+      .querySelectorAll(
+        ".wishlist-button"
+      )
+      .forEach(
+        function(button) {
+
+          button.addEventListener(
+            "click",
+            function() {
+
+              toggleWishlist(
+                button
+              );
+
+            }
+          );
+
+        }
+      );
+
+
+    /* ========================================
+       RENDER WISHLIST
+    ======================================== */
+
+    function renderWishlist() {
+
+      const body =
+        document.getElementById(
+          "wishlistBody"
+        );
+
+
+      const wishlist =
+        getWishlist();
+
+
+      if (
+        wishlist.length === 0
+      ) {
+
+        body.innerHTML = `
+
+          <div class="wishlist-empty">
+
+            <div class="wishlist-empty-icon">
+              ♡
+            </div>
+
+            <h3>
+              Your wishlist is empty
+            </h3>
+
+            <p>
+              Save a few Honey & Hymns favorites
+              and they'll wait here for you.
+            </p>
+
+          </div>
+
+        `;
+
+
+        return;
+
+      }
+
+
+      body.innerHTML =
+        wishlist
+          .map(
+            function(item) {
+
+              return `
+
+                <div
+                  class="wishlist-item"
+                  data-item-id="${escapeHtml(item.id)}"
+                >
+
+                  <img
+                    class="wishlist-item-image"
+                    src="${escapeHtml(item.image)}"
+                    alt="${escapeHtml(item.title)}"
+                  >
+
+
+                  <div>
+
+                    <h3
+                      class="wishlist-item-title"
+                    >
+                      ${escapeHtml(item.title)}
+                    </h3>
+
+
+                    <p
+                      class="wishlist-item-price"
+                    >
+                      ${escapeHtml(item.price)}
+                    </p>
+
+
+                    <a
+                      class="wishlist-item-view"
+                      href="${escapeHtml(item.url)}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Product →
+                    </a>
+
+                  </div>
+
+
+                  <button
+                    class="wishlist-remove"
+                    type="button"
+                    onclick="removeFromWishlist('${escapeHtml(item.id)}')"
+                  >
+                    Remove
+                  </button>
+
+                </div>
+
+              `;
+
+            }
+          )
+          .join("");
+
+    }
+
+
+    /* ========================================
+       BASIC HTML ESCAPING
+    ======================================== */
+
+    function escapeHtml(value) {
+
+      return String(value)
+        .replace(
+          /&/g,
+          "&amp;"
+        )
+        .replace(
+          /</g,
+          "&lt;"
+        )
+        .replace(
+          />/g,
+          "&gt;"
+        )
+        .replace(
+          /"/g,
+          "&quot;"
+        )
+        .replace(
+          /'/g,
+          "&#039;"
+        );
+
+    }
+
+
+    /* ========================================
+       REMOVE FROM WISHLIST
+    ======================================== */
+
+    function removeFromWishlist(id) {
+
+      const wishlist =
+        getWishlist()
+          .filter(
+            function(item) {
+
+              return item.id !== id;
+
+            }
+          );
+
+
+      saveWishlist(
+        wishlist
+      );
+
+
+      updateWishlistCount();
+
+      updateWishlistButtons();
+
+      renderWishlist();
+
+    }
+
+
+    /* ========================================
+       OPEN WISHLIST
+    ======================================== */
+
+    function openWishlist() {
+
+      renderWishlist();
+
+
+      const overlay =
+        document.getElementById(
+          "wishlistOverlay"
+        );
+
+
+      overlay.classList.add(
+        "open"
+      );
+
+
+      overlay.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+
+      document.body.style.overflow =
+        "hidden";
+
+    }
+
+
+    /* ========================================
+       CLOSE WISHLIST
+    ======================================== */
+
+    function closeWishlist() {
+
+      const overlay =
+        document.getElementById(
+          "wishlistOverlay"
+        );
+
+
+      overlay.classList.remove(
+        "open"
+      );
+
+
+      overlay.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+    /* ========================================
+       CLEAR WISHLIST
+    ======================================== */
+
+    function clearWishlist() {
+
+      const wishlist =
+        getWishlist();
+
+
+      if (
+        wishlist.length === 0
+      ) {
+
+        return;
+
+      }
+
+
+      const confirmed =
+        window.confirm(
+          "Are you sure you want to clear your wishlist?"
+        );
+
+
+      if (!confirmed) {
+
+        return;
+
+      }
+
+
+      saveWishlist(
+        []
+      );
+
+
+      updateWishlistCount();
+
+      updateWishlistButtons();
+
+      renderWishlist();
+
+    }
+
+
+    /* ========================================
+       CLOSE WHEN CLICKING OUTSIDE
+    ======================================== */
+
+    document
+      .getElementById(
+        "wishlistOverlay"
+      )
+      .addEventListener(
+        "click",
+        function(event) {
+
+          if (
+            event.target ===
+            this
+          ) {
+
+            closeWishlist();
+
+          }
+
+        }
+      );
+
+
+    /* ========================================
+       ESCAPE KEY
+    ======================================== */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key ===
+          "Escape"
+        ) {
+
+          closeWishlist();
+
+        }
+
+      }
+    );
+
+
+    /* ========================================
+       INITIALIZE
+    ======================================== */
+
+    updateWishlistCount();
+
+    updateWishlistButtons();
+
+
+  </script>
+
+
+</body>
+
+</html>
