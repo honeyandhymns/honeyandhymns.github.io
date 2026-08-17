@@ -772,7 +772,130 @@
 
     }
 
+/* =========================
+   THE HEART BEHIND HONEY & HYMNS
+========================= */
 
+.about-heart {
+  padding: 75px 20px;
+  background: #FFFDF4;
+}
+
+.about-heart-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 320px 1fr;
+
+  align-items: center;
+  gap: 55px;
+}
+
+.about-heart-image {
+  display: flex;
+  justify-content: center;
+}
+
+.about-heart-image img {
+  width: 270px;
+  height: 270px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border:
+    7px solid
+    #FFEBA1;
+
+  box-shadow:
+    0 8px 25px
+    rgba(77, 64, 41, 0.12);
+
+  display: block;
+}
+
+.about-heart-content {
+  max-width: 600px;
+}
+
+.about-heart-content .about-kicker {
+  margin: 0 0 8px;
+
+  font-family:
+    "Caveat",
+    cursive;
+
+  font-size: 1.25rem;
+
+  color: #80652D;
+}
+
+.about-heart-content h2 {
+  margin: 0 0 18px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 2.4rem;
+
+  line-height: 1.1;
+
+  font-weight: 500;
+
+  color: #403521;
+}
+
+.about-heart-content p {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 1.08rem;
+
+  line-height: 1.7;
+
+  color: #5D4B2D;
+
+  margin:
+    0 0 16px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .about-heart {
+    padding: 55px 20px;
+  }
+
+  .about-heart-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .about-heart-image img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .about-heart-content {
+    margin: 0 auto;
+  }
+
+  .about-heart-content h2 {
+    font-size: 2rem;
+  }
+
+}
 
     /* =======================================================
        HONEY HIVE
@@ -1985,7 +2108,7 @@
         <p class="about-intro">
 
           Honey & Hymns is a cozy little corner of the internet
-          for Catholic homemakers, homeschool moms, and women
+          for homemakers, homeschool moms, and women
           growing in faith — one ordinary day at a time.
 
         </p>
@@ -2061,40 +2184,45 @@
         </div>
 
 
-        <div class="about-story-card">
+       <!-- =========================
+     THE HEART BEHIND HONEY & HYMNS
+========================= -->
 
-          <div class="about-story-card-inner">
+<section class="about-heart">
 
-            <span class="about-card-symbol">
-              🐝
-            </span>
+  <div class="about-heart-inner">
 
-            <h3>
-              The Heart Behind Honey & Hymns
-            </h3>
+    <div class="about-heart-image">
 
-            <p>
+      <img
+        src="../images/annie-honey-and-hymns.png"
+        alt="Annie, the woman behind Honey & Hymns"
+      >
 
-              Faith isn't something we only practice
-              when life is tidy.
+    </div>
 
-              It's woven into the meals,
-              the lessons, the laundry,
-              the prayers, the hard days,
-              and the little moments of joy.
+    <div class="about-heart-content">
 
-            </p>
+      <p class="about-kicker">
+        The Heart Behind Honey & Hymns
+      </p>
 
-          </div>
+      <h2>
+        Faith for the Beautiful
+        Ordinary Life
+      </h2>
 
-        </div>
+      <p>
+        Faith isn't something we only practice when life is tidy.
+        It's woven into the meals, the lessons, the laundry,
+        the prayers, the hard days, and the little moments of joy.
+      </p>
 
+    </div>
 
-      </div>
+  </div>
 
-    </section>
-
-
+</section>
 
     <!-- =========================
          WHAT YOU'LL FIND
