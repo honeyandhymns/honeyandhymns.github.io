@@ -724,7 +724,515 @@
 
     }
 
+    /* =======================================================
+   FAQ BUTTON
+======================================================= */
 
+.contact-faq-button-wrap {
+
+  text-align: center;
+
+  margin:
+    30px auto 35px;
+
+}
+
+
+.contact-faq-button {
+
+  display: inline-block;
+
+  padding:
+    12px 24px;
+
+  border:
+    1px solid
+    #D8B65F;
+
+  border-radius:
+    30px;
+
+  background:
+    #FFFDF4;
+
+  color:
+    #80652D;
+
+  cursor: pointer;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:
+    0.78rem;
+
+  font-weight:
+    bold;
+
+  letter-spacing:
+    0.2px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+}
+
+
+.contact-faq-button:hover {
+
+  background:
+    #FFEBA1;
+
+  color:
+    #403521;
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 6px 16px
+    rgba(77, 64, 41, 0.10);
+
+}
+
+
+
+/* =======================================================
+   FAQ MODAL
+======================================================= */
+
+.faq-overlay {
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    rgba(57, 45, 25, 0.60);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding:
+    20px;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  z-index: 6000;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+
+}
+
+
+.faq-overlay.open {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+}
+
+
+.faq-modal {
+
+  width:
+    min(720px, 94vw);
+
+  max-height:
+    min(760px, 88vh);
+
+  background:
+    #FFFDF4;
+
+  border:
+    1px solid
+    #D8C79F;
+
+  border-radius:
+    20px;
+
+  box-shadow:
+    0 22px 55px
+    rgba(0, 0, 0, 0.28);
+
+  overflow:
+    hidden;
+
+  transform:
+    scale(0.88)
+    translateY(12px);
+
+  opacity: 0;
+
+  transition:
+    transform 0.35s
+      cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.25s ease;
+
+}
+
+
+.faq-overlay.open
+.faq-modal {
+
+  transform:
+    scale(1)
+    translateY(0);
+
+  opacity: 1;
+
+}
+
+
+
+/* =======================================================
+   FAQ HEADER
+======================================================= */
+
+.faq-modal-header {
+
+  background:
+    #FFEBA1;
+
+  padding:
+    20px 22px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    20px;
+
+  border-bottom:
+    1px solid
+    #E0CC83;
+
+}
+
+
+.faq-kicker {
+
+  margin:
+    0 0 2px;
+
+  font-family:
+    "Caveat",
+    cursive;
+
+  font-size:
+    1.15rem;
+
+  color:
+    #80652D;
+
+}
+
+
+.faq-modal-title {
+
+  margin:
+    0;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    2rem;
+
+  font-weight:
+    500;
+
+  line-height:
+    1.1;
+
+  color:
+    #403521;
+
+}
+
+
+.faq-close {
+
+  flex:
+    0 0 auto;
+
+  width:
+    34px;
+
+  height:
+    34px;
+
+  border-radius:
+    50%;
+
+  border:
+    1px solid
+    #D3BE80;
+
+  background:
+    #FFF9DF;
+
+  color:
+    #665020;
+
+  cursor:
+    pointer;
+
+  font-size:
+    1.2rem;
+
+  line-height:
+    1;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+
+}
+
+
+.faq-close:hover {
+
+  background:
+    #F3D582;
+
+  transform:
+    rotate(5deg);
+
+}
+
+
+
+/* =======================================================
+   FAQ BODY
+======================================================= */
+
+.faq-body {
+
+  padding:
+    25px;
+
+  max-height:
+    calc(88vh - 105px);
+
+  overflow-y:
+    auto;
+
+}
+
+
+.faq-item {
+
+  padding:
+    0 0 22px;
+
+  margin:
+    0 0 22px;
+
+  border-bottom:
+    1px solid
+    #E8DDBF;
+
+}
+
+
+.faq-item:last-child {
+
+  margin-bottom:
+    0;
+
+  padding-bottom:
+    0;
+
+  border-bottom:
+    none;
+
+}
+
+
+.faq-item h3 {
+
+  margin:
+    0 0 7px;
+
+  color:
+    #403521;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    1.35rem;
+
+  font-weight:
+    600;
+
+  line-height:
+    1.2;
+
+}
+
+
+.faq-item p {
+
+  margin:
+    0;
+
+  color:
+    #5D4B2D;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    1rem;
+
+  line-height:
+    1.65;
+
+}
+
+
+.faq-support-email {
+
+  margin-top:
+    8px !important;
+
+}
+
+
+.faq-support-email a {
+
+  color:
+    #80652D;
+
+  font-weight:
+    600;
+
+  text-decoration:
+    none;
+
+}
+
+
+.faq-support-email a:hover {
+
+  text-decoration:
+    underline;
+
+}
+
+
+
+/* =======================================================
+   FAQ MOBILE
+======================================================= */
+
+@media (max-width: 600px) {
+
+  .contact-faq-button {
+
+    width:
+      100%;
+
+    max-width:
+      330px;
+
+  }
+
+
+  .faq-modal {
+
+    max-height:
+      90vh;
+
+    border-radius:
+      16px;
+
+  }
+
+
+  .faq-modal-header {
+
+    padding:
+      17px;
+
+  }
+
+
+  .faq-modal-title {
+
+    font-size:
+      1.7rem;
+
+  }
+
+
+  .faq-body {
+
+    padding:
+      20px;
+
+    max-height:
+      calc(90vh - 100px);
+
+  }
+
+
+  .faq-item h3 {
+
+    font-size:
+      1.25rem;
+
+  }
+
+
+  .faq-item p {
+
+    font-size:
+      0.95rem;
+
+  }
+
+}
 
     /* =======================================================
        FOOTER
@@ -1508,7 +2016,242 @@
 
         </div>
 
+        <!-- =========================
+     FAQ BUTTON
+========================= -->
 
+<div class="contact-faq-button-wrap">
+
+  <button
+    type="button"
+    class="contact-faq-button"
+    onclick="openFaqModal()"
+  >
+    ✦ Frequently Asked Questions
+  </button>
+
+</div>
+
+
+<!-- =========================
+     FAQ MODAL
+========================= -->
+
+<div
+  class="faq-overlay"
+  id="faqOverlay"
+  aria-hidden="true"
+>
+
+  <div
+    class="faq-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="faqTitle"
+  >
+
+    <div class="faq-modal-header">
+
+      <div>
+
+        <p class="faq-kicker">
+          A Little Help
+        </p>
+
+        <h2
+          id="faqTitle"
+          class="faq-modal-title"
+        >
+          Frequently Asked Questions
+        </h2>
+
+      </div>
+
+      <button
+        type="button"
+        class="faq-close"
+        onclick="closeFaqModal()"
+        aria-label="Close frequently asked questions"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div class="faq-body">
+
+
+      <div class="faq-item">
+
+        <h3>
+          What is Honey & Hymns?
+        </h3>
+
+        <p>
+          Honey & Hymns is a faith-centered space for Catholic
+          homemakers, homeschool moms, and women growing in their
+          faith. You'll find encouragement, practical resources,
+          homeschooling ideas, homemaking inspiration, and reflections
+          on the beautiful ordinary moments of family life.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Is Honey & Hymns Catholic?
+        </h3>
+
+        <p>
+          Yes. Honey & Hymns is rooted in the Catholic faith and
+          created especially for women who want to bring their faith
+          into everyday family life.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          What is the Honey Hive?
+        </h3>
+
+        <p>
+          The Honey Hive is the Honey & Hymns membership community.
+          Members receive additional resources, weekly Sunday Gospel
+          materials for kids, exclusive articles, and early access
+          to new posts and projects.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          What's the difference between the monthly and yearly
+          Honey Hive memberships?
+        </h3>
+
+        <p>
+          Both memberships include the same Honey Hive benefits.
+          The yearly membership is $50 per year, which is 17% less
+          than paying $5 each month for a full year.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          What is the Beekeeper's Circle?
+        </h3>
+
+        <p>
+          The Beekeeper's Circle is for Honey & Hymns founding members
+          who want to help support the brand as it grows. Beekeepers
+          receive all Honey Hive benefits, special recognition on the
+          Honey & Hymns website, Substack, and magazine, plus a first
+          look at major Honey & Hymns projects.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Do I have to be a member to read Honey & Hymns?
+        </h3>
+
+        <p>
+          Not at all. Many Honey & Hymns articles and resources are
+          available for free. You can also subscribe for free to
+          receive the weekly article and bulletin in your inbox.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Where can I find the free resources?
+        </h3>
+
+        <p>
+          You can find available free downloads through the
+          Honey & Hymns website under the Free Downloads section.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          I purchased a product and I'm having trouble with it.
+          What should I do?
+        </h3>
+
+        <p>
+          I'm happy to help. For any product issues, download
+          problems, or questions about something you've purchased,
+          please email:
+        </p>
+
+        <p class="faq-support-email">
+
+          <a href="mailto:honeyandhymns.support@gmail.com">
+            honeyandhymns.support@gmail.com
+          </a>
+
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Can I suggest an article or topic?
+        </h3>
+
+        <p>
+          Absolutely. If there's something you'd love to see
+          Honey & Hymns write about, send it my way through the
+          contact form. I love hearing what other moms are thinking
+          about, struggling with, and learning.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          How can I contact Honey & Hymns?
+        </h3>
+
+        <p>
+          If you don't find the answer you're looking for here,
+          simply fill out the contact form on this page and I'll
+          get back to you as soon as I can.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
 
         <!-- =================================================
              GOOGLE FORM
@@ -1676,6 +2419,115 @@
   ======================================================== -->
 
   <script>
+
+    /* =======================================================
+   FAQ MODAL
+======================================================= */
+
+function openFaqModal() {
+
+  const overlay =
+    document.getElementById(
+      "faqOverlay"
+    );
+
+
+  if (!overlay) {
+
+    return;
+
+  }
+
+
+  overlay.classList.add(
+    "open"
+  );
+
+
+  overlay.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+
+function closeFaqModal() {
+
+  const overlay =
+    document.getElementById(
+      "faqOverlay"
+    );
+
+
+  if (!overlay) {
+
+    return;
+
+  }
+
+
+  overlay.classList.remove(
+    "open"
+  );
+
+
+  overlay.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+
+  document.body.style.overflow =
+    "";
+
+}
+
+
+/* =======================================================
+   CLOSE FAQ WHEN CLICKING OUTSIDE
+======================================================= */
+
+document
+  .getElementById("faqOverlay")
+  ?.addEventListener(
+    "click",
+    function(event) {
+
+      if (
+        event.target === this
+      ) {
+
+        closeFaqModal();
+
+      }
+
+    }
+  );
+
+
+/* =======================================================
+   ESCAPE KEY
+======================================================= */
+
+document.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (
+      event.key === "Escape"
+    ) {
+
+      closeFaqModal();
+
+    }
+
+  }
+);
 
 
     /* =======================================================
