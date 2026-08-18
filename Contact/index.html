@@ -1,1 +1,2267 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Contact | Honey & Hymns</title>
+
+  <meta
+    name="description"
+    content="Get in touch with Honey & Hymns. Send Annie a question, suggestion, collaboration idea, or just a little hello."
+  >
+
+  <!-- =======================================================
+       FONTS
+  ======================================================== -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    /* =======================================================
+       GLOBAL
+    ======================================================== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      margin: 0;
+
+      background: #FFFDF4;
+
+      color: #514229;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      line-height: 1.7;
+
+    }
+
+
+    a {
+      color: inherit;
+    }
+
+
+    img {
+      max-width: 100%;
+    }
+
+
+
+    /* =======================================================
+       HEADER
+    ======================================================== */
+
+    .site-header {
+
+      background: #FFEBA1;
+
+      padding:
+        25px 20px 15px;
+
+      text-align: center;
+
+      border-bottom:
+        1px solid
+        rgba(90, 70, 30, 0.12);
+
+    }
+
+
+    .header-brand {
+
+      max-width: 700px;
+
+      margin: 0 auto;
+
+    }
+
+
+    .site-logo {
+
+      width: 365px;
+
+      max-width: 86%;
+
+      height: auto;
+
+      display: block;
+
+      margin: 0 auto;
+
+    }
+
+
+    .header-tagline {
+
+      margin: 4px 0 0;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 0.84rem;
+
+      letter-spacing: 2px;
+
+      color: #5D4B2D;
+
+    }
+
+
+
+    /* =======================================================
+       NAVIGATION
+    ======================================================== */
+
+    .site-nav {
+
+      background: #FFEBA1;
+
+      text-align: center;
+
+      padding:
+        9px 15px 13px;
+
+      border-bottom:
+        1px solid
+        rgba(90, 70, 30, 0.12);
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 3px;
+
+    }
+
+
+    .site-nav a,
+    .shop-toggle,
+    .wishlist-header-button {
+
+      color: #514229;
+
+      text-decoration: none;
+
+      margin: 0 9px;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 0.95rem;
+
+      transition:
+        color 0.2s ease;
+
+    }
+
+
+    .site-nav a:hover,
+    .shop-toggle:hover,
+    .wishlist-header-button:hover {
+
+      color: #967331;
+
+    }
+
+
+    .site-nav a.active {
+
+      color: #80652D;
+
+      font-weight: 600;
+
+    }
+
+
+
+    /* =======================================================
+       SHOP DROPDOWN
+    ======================================================== */
+
+    .shop-dropdown {
+
+      position: relative;
+
+      display: inline-block;
+
+    }
+
+
+    .shop-toggle {
+
+      background: none;
+
+      border: none;
+
+      padding: 0;
+
+      cursor: pointer;
+
+      line-height: inherit;
+
+    }
+
+
+    .shop-menu {
+
+      position: absolute;
+
+      top:
+        calc(100% + 10px);
+
+      left: 50%;
+
+      transform:
+        translateX(-50%)
+        translateY(-6px);
+
+      min-width: 250px;
+
+      background: #FFFDF0;
+
+      border:
+        1px solid
+        #D8C79F;
+
+      border-radius: 12px;
+
+      box-shadow:
+        0 8px 22px
+        rgba(77, 64, 41, 0.16);
+
+      padding: 8px 0;
+
+      text-align: left;
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      pointer-events: none;
+
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+
+      z-index: 1000;
+
+    }
+
+
+    .shop-dropdown.open .shop-menu,
+    .shop-dropdown:hover .shop-menu {
+
+      opacity: 1;
+
+      visibility: visible;
+
+      pointer-events: auto;
+
+      transform:
+        translateX(-50%)
+        translateY(0);
+
+    }
+
+
+    .shop-menu a {
+
+      display: block;
+
+      margin: 0;
+
+      padding:
+        10px 18px;
+
+      font-size: 0.92rem;
+
+    }
+
+
+    .shop-menu a:hover {
+
+      background: #FFF3C8;
+
+    }
+
+
+    .shop-coming-soon {
+
+      padding:
+        10px 18px;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 0.92rem;
+
+    }
+
+
+    .shop-coming-soon small {
+
+      display: block;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      color: #80652D;
+
+      font-size: 0.85rem;
+
+    }
+
+
+
+    /* =======================================================
+       WISHLIST HEADER BUTTON
+    ======================================================== */
+
+    .wishlist-header-button {
+
+      background: none;
+
+      border: none;
+
+      padding: 0;
+
+      cursor: pointer;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 5px;
+
+    }
+
+
+    .wishlist-heart {
+
+      font-size: 1.05rem;
+
+      line-height: 1;
+
+    }
+
+
+    .wishlist-count {
+
+      min-width: 19px;
+
+      height: 19px;
+
+      padding: 0 5px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: #D8B65F;
+
+      color: #4D4029;
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size: 0.63rem;
+
+      font-weight: bold;
+
+    }
+
+
+
+    /* =======================================================
+       CONTACT HERO
+    ======================================================== */
+
+    .contact-hero {
+
+      background:
+        linear-gradient(
+          180deg,
+          #FFFDF4 0%,
+          #FFF9DF 100%
+        );
+
+      padding:
+        90px 20px 80px;
+
+      text-align: center;
+
+    }
+
+
+    .contact-hero-inner {
+
+      max-width: 850px;
+
+      margin: 0 auto;
+
+    }
+
+
+    .contact-kicker {
+
+      margin:
+        0 0 12px;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      font-size: 1.4rem;
+
+      color: #80652D;
+
+    }
+
+
+    .contact-hero h1 {
+
+      max-width: 800px;
+
+      margin:
+        0 auto 20px;
+
+      color: #403521;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(2.8rem, 6vw, 4.5rem);
+
+      line-height: 1.05;
+
+      font-weight: 500;
+
+    }
+
+
+    .contact-rule {
+
+      color: #D8B65F;
+
+      font-size: 1.4rem;
+
+      margin:
+        15px 0 20px;
+
+    }
+
+
+    .contact-intro {
+
+      max-width: 700px;
+
+      margin: 0 auto;
+
+      color: #68583D;
+
+      font-size: 1.15rem;
+
+    }
+
+
+
+    /* =======================================================
+       CONTACT FORM SECTION
+    ======================================================== */
+
+    .contact-section {
+
+      padding:
+        85px 20px 95px;
+
+      background: #FFFDF4;
+
+    }
+
+
+    .contact-section-inner {
+
+      max-width: 850px;
+
+      margin: 0 auto;
+
+    }
+
+
+    .contact-heading {
+
+      text-align: center;
+
+      margin-bottom: 40px;
+
+    }
+
+
+    .contact-heading h2 {
+
+      margin:
+        0 0 12px;
+
+      color: #403521;
+
+      font-size:
+        clamp(2.2rem, 4vw, 3rem);
+
+      font-weight: 500;
+
+      line-height: 1.1;
+
+    }
+
+
+    .contact-heading p {
+
+      max-width: 650px;
+
+      margin: 0 auto;
+
+      color: #68583D;
+
+      font-size: 1.05rem;
+
+    }
+
+
+
+    /* =======================================================
+       GOOGLE FORM CARD
+    ======================================================== */
+
+    .contact-form-card {
+
+      background: #FFFDF4;
+
+      border:
+        1px solid
+        #DCCB9D;
+
+      border-radius: 22px;
+
+      padding: 12px;
+
+      box-shadow:
+        0 12px 35px
+        rgba(77, 64, 41, 0.09);
+
+    }
+
+
+    .contact-form-inner {
+
+      border:
+        1px dashed
+        rgba(128, 101, 45, 0.40);
+
+      border-radius: 16px;
+
+      padding:
+        12px;
+
+      background: #FFFDF8;
+
+      overflow: hidden;
+
+    }
+
+
+    .contact-form-inner iframe {
+
+      display: block;
+
+      width: 100%;
+
+      min-height: 900px;
+
+      border: none;
+
+      background: transparent;
+
+    }
+
+
+
+    /* =======================================================
+       CONTACT NOTE
+    ======================================================== */
+
+    .contact-note {
+
+      max-width: 650px;
+
+      margin:
+        35px auto 0;
+
+      text-align: center;
+
+      color: #80652D;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      font-size: 1.15rem;
+
+    }
+
+
+
+    /* =======================================================
+       FINAL CONTACT INVITATION
+    ======================================================== */
+
+    .contact-final {
+
+      padding:
+        75px 20px;
+
+      background: #FBF3D0;
+
+      text-align: center;
+
+      border-top:
+        1px solid
+        #E8D8A9;
+
+    }
+
+
+    .contact-final-inner {
+
+      max-width: 700px;
+
+      margin: 0 auto;
+
+    }
+
+
+    .contact-final h2 {
+
+      margin:
+        0 0 15px;
+
+      color: #403521;
+
+      font-size:
+        clamp(2.2rem, 5vw, 3.2rem);
+
+      font-weight: 500;
+
+      line-height: 1.1;
+
+    }
+
+
+    .contact-final p {
+
+      margin:
+        0;
+
+      color: #5D4B2D;
+
+      font-size: 1.05rem;
+
+    }
+
+
+
+    /* =======================================================
+       FOOTER
+    ======================================================== */
+
+    .site-footer {
+
+      padding:
+        30px 20px;
+
+      background: #FFFDF4;
+
+      text-align: center;
+
+      border-top:
+        1px solid
+        #E3D7B9;
+
+      color: #80652D;
+
+    }
+
+
+    .site-footer p {
+
+      margin:
+        3px 0;
+
+      font-size: 0.85rem;
+
+    }
+
+
+
+    /* =======================================================
+       WISHLIST MODAL
+    ======================================================== */
+
+    .wishlist-overlay {
+
+      position: fixed;
+
+      inset: 0;
+
+      background:
+        rgba(57, 45, 25, 0.60);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 20px;
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      pointer-events: none;
+
+      z-index: 5000;
+
+      transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+
+    }
+
+
+    .wishlist-overlay.open {
+
+      opacity: 1;
+
+      visibility: visible;
+
+      pointer-events: auto;
+
+    }
+
+
+    .wishlist-modal {
+
+      width:
+        min(620px, 94vw);
+
+      max-height:
+        min(700px, 88vh);
+
+      background: #FFFDF4;
+
+      border:
+        1px solid
+        #D8C79F;
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 22px 55px
+        rgba(0,0,0,0.28);
+
+      overflow: hidden;
+
+      transform:
+        scale(0.88)
+        translateY(12px);
+
+      opacity: 0;
+
+      transition:
+        transform 0.35s
+          cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.25s ease;
+
+    }
+
+
+    .wishlist-overlay.open
+    .wishlist-modal {
+
+      transform:
+        scale(1)
+        translateY(0);
+
+      opacity: 1;
+
+    }
+
+
+    .wishlist-modal-header {
+
+      background: #FFEBA1;
+
+      padding:
+        16px 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      border-bottom:
+        1px solid
+        #E0CC83;
+
+    }
+
+
+    .wishlist-modal-title {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.65rem;
+
+      font-weight: 500;
+
+      color: #403521;
+
+      margin: 0;
+
+    }
+
+
+    .wishlist-close {
+
+      width: 32px;
+
+      height: 32px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid
+        #D3BE80;
+
+      background: #FFF9DF;
+
+      color: #665020;
+
+      cursor: pointer;
+
+      font-size: 1.15rem;
+
+      line-height: 1;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+    }
+
+
+    .wishlist-close:hover {
+
+      background: #F3D582;
+
+    }
+
+
+    .wishlist-body {
+
+      padding: 20px;
+
+      max-height:
+        calc(88vh - 145px);
+
+      overflow-y: auto;
+
+    }
+
+
+    .wishlist-empty {
+
+      text-align: center;
+
+      padding:
+        35px 15px;
+
+    }
+
+
+    .wishlist-empty-icon {
+
+      font-size: 2.3rem;
+
+      color: #D8B65F;
+
+      margin-bottom: 8px;
+
+    }
+
+
+    .wishlist-empty h3 {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.6rem;
+
+      font-weight: 500;
+
+      color: #403521;
+
+      margin:
+        0 0 5px;
+
+    }
+
+
+    .wishlist-empty p {
+
+      margin: 0;
+
+      font-size: 0.8rem;
+
+      color: #68583D;
+
+    }
+
+
+    .wishlist-item {
+
+      display: grid;
+
+      grid-template-columns:
+        82px 1fr auto;
+
+      align-items: center;
+
+      gap: 14px;
+
+      padding:
+        11px;
+
+      margin-bottom: 10px;
+
+      background: #FFF8D9;
+
+      border:
+        1px solid
+        #E5D6AD;
+
+      border-radius: 11px;
+
+    }
+
+
+    .wishlist-item-image {
+
+      width: 82px;
+
+      height: 82px;
+
+      object-fit: cover;
+
+      border-radius: 7px;
+
+      display: block;
+
+    }
+
+
+    .wishlist-item-title {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.15rem;
+
+      line-height: 1.15;
+
+      color: #403521;
+
+      margin:
+        0 0 3px;
+
+    }
+
+
+    .wishlist-item-price {
+
+      font-size: 0.72rem;
+
+      color: #80652D;
+
+      margin: 0;
+
+    }
+
+
+    .wishlist-item-view {
+
+      display: inline-block;
+
+      margin-top: 6px;
+
+      color: #80652D;
+
+      font-size: 0.68rem;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+    }
+
+
+    .wishlist-item-view:hover {
+
+      text-decoration: underline;
+
+    }
+
+
+    .wishlist-remove {
+
+      border: none;
+
+      background: none;
+
+      color: #967331;
+
+      cursor: pointer;
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size: 0.68rem;
+
+      padding: 5px;
+
+    }
+
+
+    .wishlist-remove:hover {
+
+      color: #6F5421;
+
+      text-decoration: underline;
+
+    }
+
+
+    .wishlist-modal-footer {
+
+      background: #FBF3D0;
+
+      border-top:
+        1px solid
+        #E0D2B0;
+
+      padding:
+        12px 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 10px;
+
+    }
+
+
+    .wishlist-footer-note {
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      color: #80652D;
+
+      font-size: 1rem;
+
+    }
+
+
+    .wishlist-clear {
+
+      border: none;
+
+      background: transparent;
+
+      color: #80652D;
+
+      font-size: 0.68rem;
+
+      cursor: pointer;
+
+      text-decoration: underline;
+
+    }
+
+
+
+    /* =======================================================
+       MOBILE
+    ======================================================== */
+
+    @media (max-width: 600px) {
+
+      .site-nav {
+
+        padding:
+          10px 8px 14px;
+
+      }
+
+
+      .site-nav a,
+      .shop-toggle,
+      .wishlist-header-button {
+
+        margin:
+          3px 5px;
+
+        font-size: 0.88rem;
+
+      }
+
+
+      .contact-hero {
+
+        padding:
+          65px 20px;
+
+      }
+
+
+      .contact-section {
+
+        padding:
+          60px 18px 70px;
+
+      }
+
+
+      .contact-form-card {
+
+        padding: 7px;
+
+        border-radius: 17px;
+
+      }
+
+
+      .contact-form-inner {
+
+        padding: 5px;
+
+        border-radius: 12px;
+
+      }
+
+
+      .contact-form-inner iframe {
+
+        min-height: 1050px;
+
+      }
+
+
+      .contact-final {
+
+        padding:
+          60px 18px;
+
+      }
+
+
+      .wishlist-item {
+
+        grid-template-columns:
+          65px 1fr;
+
+      }
+
+
+      .wishlist-item-image {
+
+        width: 65px;
+
+        height: 65px;
+
+      }
+
+
+      .wishlist-remove {
+
+        grid-column:
+          2;
+
+        justify-self: start;
+
+      }
+
+
+      .wishlist-modal-footer {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
+
+  <header class="site-header">
+
+    <div class="header-brand">
+
+      <a href="../">
+
+        <img
+          src="../images/honey-and-hymns-logo.png"
+          alt="Honey & Hymns"
+          class="site-logo"
+        >
+
+      </a>
+
+      <p class="header-tagline">
+        Faith • Homeschool • Homemaking
+      </p>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =======================================================
+       NAVIGATION
+  ======================================================== -->
+
+  <nav class="site-nav">
+
+    <a href="../">
+      Home
+    </a>
+
+
+    <a href="../Articles/">
+      Articles
+    </a>
+
+
+    <div class="shop-dropdown">
+
+      <button
+        class="shop-toggle"
+        type="button"
+        aria-expanded="false"
+      >
+        Shop
+      </button>
+
+
+      <div class="shop-menu">
+
+        <a href="../Resources/">
+          Resources
+        </a>
+
+
+        <a href="../Free-Downloads/">
+          Free Downloads
+        </a>
+
+
+        <div class="shop-coming-soon">
+
+          Monthly Honey & Hymns Magazine
+
+          <small>
+            Coming soon
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <a href="../Sunday-Gospel/">
+      Sunday Gospel for Kids
+    </a>
+
+
+    <a href="../About/">
+      About
+    </a>
+
+
+    <a
+      href="./"
+      class="active"
+    >
+      Contact
+    </a>
+
+
+    <a
+      href="https://honeyandhymns.substack.com/subscribe"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Join the Honey Hive
+    </a>
+
+
+    <button
+      class="wishlist-header-button"
+      type="button"
+      onclick="openWishlist()"
+      aria-label="Open wishlist"
+    >
+
+      <span class="wishlist-heart">
+        ♡
+      </span>
+
+      Wishlist
+
+      <span
+        class="wishlist-count"
+        id="wishlistCount"
+      >
+        0
+      </span>
+
+    </button>
+
+  </nav>
+
+
+
+  <!-- =======================================================
+       CONTACT PAGE
+  ======================================================== -->
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="contact-hero">
+
+      <div class="contact-hero-inner">
+
+        <p class="contact-kicker">
+          I'd Love to Hear From You
+        </p>
+
+
+        <h1>
+          Let's Keep in Touch
+        </h1>
+
+
+        <div class="contact-rule">
+          ✦
+        </div>
+
+
+        <p class="contact-intro">
+
+          Have a question, an idea, a suggestion, or
+          simply want to say hello?
+
+          I'd love to hear from you.
+
+          Send me a little note through the form below
+          and I'll get back to you as soon as I can.
+
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTACT FORM
+    ====================================================== -->
+
+    <section class="contact-section">
+
+      <div class="contact-section-inner">
+
+
+        <div class="contact-heading">
+
+          <p class="contact-kicker">
+            Send a Little Note
+          </p>
+
+
+          <h2>
+            Pull Up a Chair & Say Hello
+          </h2>
+
+
+          <p>
+
+            Whether you're reaching out about Honey & Hymns,
+            have a question about something you've read,
+            have a collaboration idea, or simply want to
+            introduce yourself, you're welcome here.
+
+          </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             GOOGLE FORM
+        ================================================== -->
+
+        <div class="contact-form-card">
+
+          <div class="contact-form-inner">
+
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSetOMWDTUWmqdDvZAn0ON-g0Np2QuaORjqEFRGjdZeubVuvAg/viewform?embedded=true"
+              width="100%"
+              height="900"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              title="Honey & Hymns Contact Form"
+            >
+              Loading…
+            </iframe>
+
+          </div>
+
+        </div>
+
+
+
+        <p class="contact-note">
+
+          Thank you for taking the time to stop by.
+          Every message is a little gift. 🐝
+
+        </p>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FINAL INVITATION
+    ====================================================== -->
+
+    <section class="contact-final">
+
+      <div class="contact-final-inner">
+
+        <h2>
+          I'm Glad You're Here
+        </h2>
+
+
+        <p>
+
+          Honey & Hymns was created as a little place
+          to gather, encourage one another, and find
+          God in the beautiful ordinary parts of life.
+
+        </p>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =======================================================
+       WISHLIST POPUP
+  ======================================================== -->
+
+  <div
+    class="wishlist-overlay"
+    id="wishlistOverlay"
+    aria-hidden="true"
+  >
+
+    <div
+      class="wishlist-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="wishlistTitle"
+    >
+
+
+      <div class="wishlist-modal-header">
+
+        <h2
+          class="wishlist-modal-title"
+          id="wishlistTitle"
+        >
+          My Honey & Hymns Wishlist
+        </h2>
+
+
+        <button
+          class="wishlist-close"
+          type="button"
+          onclick="closeWishlist()"
+          aria-label="Close wishlist"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div
+        class="wishlist-body"
+        id="wishlistBody"
+      >
+      </div>
+
+
+      <div class="wishlist-modal-footer">
+
+        <span
+          class="wishlist-footer-note"
+          id="wishlistFooterNote"
+        >
+          Your little collection of favorites
+        </span>
+
+
+        <button
+          class="wishlist-clear"
+          type="button"
+          onclick="clearWishlist()"
+        >
+          Clear Wishlist
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer class="site-footer">
+
+    <p>
+      © Honey & Hymns
+    </p>
+
+    <p>
+      Faith • Homeschool • Homemaking
+    </p>
+
+  </footer>
+
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
+  <script>
+
+
+    /* =======================================================
+       SHOP DROPDOWN
+    ======================================================== */
+
+    const shopDropdown =
+      document.querySelector(
+        ".shop-dropdown"
+      );
+
+
+    const shopToggle =
+      document.querySelector(
+        ".shop-toggle"
+      );
+
+
+    shopToggle.addEventListener(
+      "click",
+      function() {
+
+        const isOpen =
+          shopDropdown.classList.toggle(
+            "open"
+          );
+
+
+        shopToggle.setAttribute(
+          "aria-expanded",
+          isOpen
+            ? "true"
+            : "false"
+        );
+
+      }
+    );
+
+
+    document.addEventListener(
+      "click",
+      function(event) {
+
+        if (
+          !shopDropdown.contains(
+            event.target
+          )
+        ) {
+
+          shopDropdown.classList.remove(
+            "open"
+          );
+
+
+          shopToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        }
+
+      }
+    );
+
+
+
+    /* =======================================================
+       WISHLIST STORAGE
+    ======================================================== */
+
+    const WISHLIST_STORAGE_KEY =
+      "honeyAndHymnsWishlist";
+
+
+    function getWishlist() {
+
+      try {
+
+        const stored =
+          localStorage.getItem(
+            WISHLIST_STORAGE_KEY
+          );
+
+
+        if (!stored) {
+
+          return [];
+
+        }
+
+
+        const parsed =
+          JSON.parse(stored);
+
+
+        return Array.isArray(parsed)
+          ? parsed
+          : [];
+
+      } catch (error) {
+
+        return [];
+
+      }
+
+    }
+
+
+    function saveWishlist(items) {
+
+      localStorage.setItem(
+        WISHLIST_STORAGE_KEY,
+        JSON.stringify(items)
+      );
+
+    }
+
+
+
+    /* =======================================================
+       WISHLIST COUNT
+    ======================================================== */
+
+    function updateWishlistCount() {
+
+      const countElement =
+        document.getElementById(
+          "wishlistCount"
+        );
+
+
+      if (!countElement) {
+
+        return;
+
+      }
+
+
+      countElement.textContent =
+        getWishlist().length;
+
+    }
+
+
+
+    /* =======================================================
+       CHECK IF PRODUCT IS SAVED
+    ======================================================== */
+
+    function isInWishlist(id) {
+
+      return getWishlist().some(
+        function(item) {
+
+          return item.id === id;
+
+        }
+      );
+
+    }
+
+
+
+    /* =======================================================
+       UPDATE PRODUCT BUTTONS
+    ======================================================== */
+
+    function updateWishlistButtons() {
+
+      const buttons =
+        document.querySelectorAll(
+          ".wishlist-button"
+        );
+
+
+      buttons.forEach(
+        function(button) {
+
+          const id =
+            button.dataset.wishlistId;
+
+
+          if (
+            isInWishlist(id)
+          ) {
+
+            button.classList.add(
+              "saved"
+            );
+
+
+            button.textContent =
+              "♥ Saved to Wishlist";
+
+          } else {
+
+            button.classList.remove(
+              "saved"
+            );
+
+
+            button.textContent =
+              "♡ Add to Wishlist";
+
+          }
+
+        }
+      );
+
+    }
+
+
+
+    /* =======================================================
+       REMOVE FROM WISHLIST
+    ======================================================== */
+
+    function removeFromWishlist(id) {
+
+      const wishlist =
+        getWishlist()
+          .filter(
+            function(item) {
+
+              return item.id !== id;
+
+            }
+          );
+
+
+      saveWishlist(
+        wishlist
+      );
+
+
+      updateWishlistCount();
+
+      updateWishlistButtons();
+
+      renderWishlist();
+
+    }
+
+
+
+    /* =======================================================
+       RENDER WISHLIST
+    ======================================================== */
+
+    function renderWishlist() {
+
+      const body =
+        document.getElementById(
+          "wishlistBody"
+        );
+
+
+      if (!body) {
+
+        return;
+
+      }
+
+
+      const wishlist =
+        getWishlist();
+
+
+      if (
+        wishlist.length === 0
+      ) {
+
+        body.innerHTML = `
+
+          <div class="wishlist-empty">
+
+            <div class="wishlist-empty-icon">
+              ♡
+            </div>
+
+            <h3>
+              Your wishlist is empty
+            </h3>
+
+            <p>
+              Save a few Honey & Hymns favorites
+              and they'll wait here for you.
+            </p>
+
+          </div>
+
+        `;
+
+
+        return;
+
+      }
+
+
+      body.innerHTML =
+        wishlist
+          .map(
+            function(item) {
+
+              return `
+
+                <div
+                  class="wishlist-item"
+                  data-item-id="${escapeHtml(item.id)}"
+                >
+
+                  <img
+                    class="wishlist-item-image"
+                    src="${escapeHtml(item.image)}"
+                    alt="${escapeHtml(item.title)}"
+                  >
+
+
+                  <div>
+
+                    <h3
+                      class="wishlist-item-title"
+                    >
+                      ${escapeHtml(item.title)}
+                    </h3>
+
+
+                    <p
+                      class="wishlist-item-price"
+                    >
+                      ${escapeHtml(item.price)}
+                    </p>
+
+
+                    <a
+                      class="wishlist-item-view"
+                      href="${escapeHtml(item.url)}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Product →
+                    </a>
+
+                  </div>
+
+
+                  <button
+                    class="wishlist-remove"
+                    type="button"
+                    onclick="removeFromWishlist('${escapeHtml(item.id)}')"
+                  >
+                    Remove
+                  </button>
+
+                </div>
+
+              `;
+
+            }
+          )
+          .join("");
+
+    }
+
+
+
+    /* =======================================================
+       BASIC HTML ESCAPING
+    ======================================================== */
+
+    function escapeHtml(value) {
+
+      return String(value)
+        .replace(
+          /&/g,
+          "&amp;"
+        )
+        .replace(
+          /</g,
+          "&lt;"
+        )
+        .replace(
+          />/g,
+          "&gt;"
+        )
+        .replace(
+          /"/g,
+          "&quot;"
+        )
+        .replace(
+          /'/g,
+          "&#039;"
+        );
+
+    }
+
+
+
+    /* =======================================================
+       OPEN WISHLIST
+    ======================================================== */
+
+    function openWishlist() {
+
+      renderWishlist();
+
+
+      const overlay =
+        document.getElementById(
+          "wishlistOverlay"
+        );
+
+
+      if (!overlay) {
+
+        return;
+
+      }
+
+
+      overlay.classList.add(
+        "open"
+      );
+
+
+      overlay.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+
+      document.body.style.overflow =
+        "hidden";
+
+    }
+
+
+
+    /* =======================================================
+       CLOSE WISHLIST
+    ======================================================== */
+
+    function closeWishlist() {
+
+      const overlay =
+        document.getElementById(
+          "wishlistOverlay"
+        );
+
+
+      if (!overlay) {
+
+        return;
+
+      }
+
+
+      overlay.classList.remove(
+        "open"
+      );
+
+
+      overlay.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+
+    /* =======================================================
+       CLEAR WISHLIST
+    ======================================================== */
+
+    function clearWishlist() {
+
+      const wishlist =
+        getWishlist();
+
+
+      if (
+        wishlist.length === 0
+      ) {
+
+        return;
+
+      }
+
+
+      const confirmed =
+        window.confirm(
+          "Are you sure you want to clear your wishlist?"
+        );
+
+
+      if (!confirmed) {
+
+        return;
+
+      }
+
+
+      saveWishlist(
+        []
+      );
+
+
+      updateWishlistCount();
+
+      updateWishlistButtons();
+
+      renderWishlist();
+
+    }
+
+
+
+    /* =======================================================
+       CLOSE WISHLIST WHEN CLICKING OUTSIDE
+    ======================================================== */
+
+    const wishlistOverlay =
+      document.getElementById(
+        "wishlistOverlay"
+      );
+
+
+    if (wishlistOverlay) {
+
+      wishlistOverlay.addEventListener(
+        "click",
+        function(event) {
+
+          if (
+            event.target === this
+          ) {
+
+            closeWishlist();
+
+          }
+
+        }
+      );
+
+    }
+
+
+
+    /* =======================================================
+       ESCAPE KEY
+    ======================================================== */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key ===
+          "Escape"
+        ) {
+
+          closeWishlist();
+
+        }
+
+      }
+    );
+
+
+
+    /* =======================================================
+       INITIALIZE
+    ======================================================== */
+
+    updateWishlistCount();
+
+    updateWishlistButtons();
+
+
+  </script>
+
+</body>
+
+</html>
