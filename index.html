@@ -1892,7 +1892,7 @@
 .welcome-gift {
   margin: 0 auto 23px;
 
-  padding: 17px 20px;
+  padding: 17px 20px 19px;
 
   background:
     linear-gradient(
@@ -1932,7 +1932,7 @@
 }
 
 .welcome-gift-title {
-  margin: 0 0 4px;
+  margin: 0 0 12px;
 
   color: #403521;
 
@@ -1946,6 +1946,30 @@
   font-weight: 600;
 }
 
+
+/* RETREAT IMAGE */
+
+.welcome-gift-image {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+
+  display: block;
+
+  margin: 0 auto 10px;
+
+  border:
+    1px solid
+    rgba(128, 101, 45, 0.22);
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 5px 14px
+    rgba(77, 64, 41, 0.12);
+}
+
+
 .welcome-gift-description {
   margin: 0;
 
@@ -1957,7 +1981,6 @@
 
   font-size: 1.08rem;
 }
-
 
 /* =========================================================
    FORM
@@ -2224,19 +2247,25 @@
 
     <div class="welcome-gift">
 
-      <p class="welcome-gift-label">
-        A Free Gift for You
-      </p>
+  <p class="welcome-gift-label">
+    A Free Gift for You
+  </p>
 
-      <h3 class="welcome-gift-title">
-        Mini At-Home Retreat
-      </h3>
+  <h3 class="welcome-gift-title">
+    Mini At-Home Retreat
+  </h3>
 
-      <p class="welcome-gift-description">
-        Pause • Pray • Reflect • Begin Again
-      </p>
+  <img
+    class="welcome-gift-image"
+    src="images/honey-and-hymns-mini-home-retreat.png"
+    alt="Honey & Hymns Mini At-Home Retreat"
+  >
 
-    </div>
+  <p class="welcome-gift-description">
+    Pause • Pray • Reflect • Begin Again
+  </p>
+
+</div>
 
 
     <p class="welcome-letter-copy">
@@ -2253,20 +2282,10 @@
 
     <form
       class="welcome-letter-form"
-      action="https://honeyandhymns.substack.com/subscribe"
+      action="https://honeyandhymns.substack.com/welcome"
       method="get"
       target="_blank"
     >
-
-      <input
-        class="welcome-letter-input"
-        type="email"
-        name="email"
-        placeholder="Your email address"
-        autocomplete="email"
-        aria-label="Your email address"
-        required
-      >
 
       <button
         class="welcome-letter-button"
