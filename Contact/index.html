@@ -1799,7 +1799,128 @@
 
 
 <body>
+  <!-- =========================================================
+     HONEY & HYMNS — WELCOME LETTER POPUP
+========================================================= -->
 
+<div
+  class="welcome-popup-overlay"
+  id="welcomePopup"
+  aria-hidden="true"
+>
+
+  <div
+    class="welcome-letter"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="welcomePopupTitle"
+  >
+
+    <button
+      class="welcome-letter-close"
+      type="button"
+      onclick="closeWelcomePopup()"
+      aria-label="Close welcome message"
+    >
+      ×
+    </button>
+
+
+    <p class="welcome-letter-kicker">
+      A little something for your home
+    </p>
+
+
+    <h2
+      class="welcome-letter-title"
+      id="welcomePopupTitle"
+    >
+      Welcome to<br>
+      Honey & Hymns 🐝
+    </h2>
+
+
+    <div class="welcome-letter-rule">
+      <span>✦</span>
+    </div>
+
+
+    <p class="welcome-letter-copy">
+      A peaceful little corner for Catholic
+      homemakers, homeschool moms, and women
+      trying to make a beautiful home in the midst
+      of ordinary family life.
+    </p>
+
+
+    <div class="welcome-gift">
+
+  <p class="welcome-gift-label">
+    A Free Gift for You
+  </p>
+
+  <h3 class="welcome-gift-title">
+    Mini At-Home Retreat
+  </h3>
+
+  <img
+    class="welcome-gift-image"
+    src="images/honey-and-hymns-mini-home-retreat.png"
+    alt="Honey & Hymns Mini At-Home Retreat"
+  >
+
+  <p class="welcome-gift-description">
+    Pause • Pray • Reflect • Begin Again
+  </p>
+
+</div>
+
+
+    <p class="welcome-letter-copy">
+      Join the Honey Hive and I'll send this
+      peaceful little retreat straight to your inbox.
+    </p>
+
+
+    <!--
+      IMPORTANT:
+      Replace the form action with your actual
+      email signup system when we're ready.
+    -->
+
+    <form
+      class="welcome-letter-form"
+      action="https://honeyandhymns.substack.com/welcome"
+      method="get"
+      target="_blank"
+    >
+
+      <button
+        class="welcome-letter-button"
+        type="submit"
+      >
+        Join the Honey Hive →
+      </button>
+
+    </form>
+
+
+    <p class="welcome-letter-note">
+      Free to join • Unsubscribe anytime
+    </p>
+
+
+    <button
+      class="welcome-letter-dismiss"
+      type="button"
+      onclick="closeWelcomePopup(true)"
+    >
+      Not today, thank you
+    </button>
+
+  </div>
+
+</div>
 
   <!-- =======================================================
        HEADER
@@ -3134,7 +3255,283 @@ document.addEventListener(
     updateWishlistCount();
 
     updateWishlistButtons();
+/* =========================================================
+   HONEY & HYMNS — FIRST VISIT WELCOME POPUP
+========================================================= */
 
+const WELCOME_POPUP_DISMISSED_KEY =
+  "honeyAndHymnsWelcomePopupDismissed";
+
+const WELCOME_POPUP_SUBSCRIBED_KEY =
+  "honeyAndHymnsWelcomePopupSubscribed";
+
+const WELCOME_POPUP_DELAY =
+  8000;
+
+
+/* =========================================================
+   OPEN POPUP
+========================================================= */
+
+function openWelcomePopup() {
+
+  const popup =
+    document.getElementById(
+      "welcomePopup"
+    );
+
+  if (!popup) {
+    return;
+  }
+
+  popup.classList.add("open");
+
+  popup.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+
+/* =========================================================
+   CLOSE POPUP
+========================================================= */
+
+function closeWelcomePopup(
+  rememberDismissal = false
+) {
+
+  const popup =
+    document.getElementById(
+      "welcomePopup"
+    );
+
+  if (!popup) {
+    return;
+  }
+
+  popup.classList.remove("open");
+
+  popup.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow =
+    "";
+
+  if (rememberDismissal) {
+
+    localStorage.setItem(
+      WELCOME_POPUP_DISMISSED_KEY,
+      Date.now().toString()
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   CHECK WHETHER POPUP SHOULD APPEAR
+========================================================= */
+
+function shouldShowWelcomePopup() {
+
+  const dismissed =
+    localStorage.getItem(
+      WELCOME_POPUP_DISMISSED_KEY
+    );
+
+  const subscribed =
+    localStorage.getItem(
+      WELCOME_POPUP_SUBSCRIBED_KEY
+    );
+
+
+  /*
+    If we've marked the visitor as subscribed,
+    never show the popup again.
+  */
+
+  if (subscribed) {
+    return false;
+  }
+
+
+  /*
+    If the visitor dismissed the popup,
+    wait 30 days before showing it again.
+  */
+
+  if (dismissed) {
+
+    const dismissedTime =
+      Number(dismissed);
+
+    const thirtyDays =
+      30 *
+      24 *
+      60 *
+      60 *
+      1000;
+
+    const timeSinceDismissal =
+      Date.now() -
+      dismissedTime;
+
+    if (
+      timeSinceDismissal <
+      thirtyDays
+    ) {
+
+      return false;
+
+    }
+
+  }
+
+
+  return true;
+
+}
+
+
+/* =========================================================
+   MARK SUBSCRIBED
+========================================================= */
+
+function markWelcomePopupSubscribed() {
+
+  localStorage.setItem(
+    WELCOME_POPUP_SUBSCRIBED_KEY,
+    "true"
+  );
+
+}
+
+
+/* =========================================================
+   POPUP EVENTS
+========================================================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function() {
+
+    const popup =
+      document.getElementById(
+        "welcomePopup"
+      );
+
+    if (!popup) {
+      return;
+    }
+
+
+    /*
+      Wait 8 seconds before showing.
+    */
+
+    if (
+      shouldShowWelcomePopup()
+    ) {
+
+      window.setTimeout(
+        function() {
+
+          /*
+            Check one more time in case
+            something changed while waiting.
+          */
+
+          if (
+            shouldShowWelcomePopup()
+          ) {
+
+            openWelcomePopup();
+
+          }
+
+        },
+        WELCOME_POPUP_DELAY
+      );
+
+    }
+
+
+    /*
+      Clicking the dark overlay closes it.
+    */
+
+    popup.addEventListener(
+      "click",
+      function(event) {
+
+        if (
+          event.target === popup
+        ) {
+
+          closeWelcomePopup(true);
+
+        }
+
+      }
+    );
+
+
+    /*
+      Escape closes it.
+    */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Escape" &&
+          popup.classList.contains("open")
+        ) {
+
+          closeWelcomePopup(true);
+
+        }
+
+      }
+    );
+
+
+    /*
+      If the visitor submits the form,
+      remember that they subscribed.
+    */
+
+    const form =
+      popup.querySelector(
+        ".welcome-letter-form"
+      );
+
+    if (form) {
+
+      form.addEventListener(
+        "submit",
+        function() {
+
+          markWelcomePopupSubscribed();
+
+          closeWelcomePopup();
+
+        }
+      );
+
+    }
+
+  }
+);
 
   </script>
 
