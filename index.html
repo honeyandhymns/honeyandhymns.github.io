@@ -2391,14 +2391,12 @@
     </div>
 
 
-  <!-- ========================================
-     CURRENT ISSUES DROPDOWN
-======================================== -->
+<!-- CURRENT ISSUES -->
 
-<div class="current-issues-dropdown">
+<div class="shop-dropdown">
 
   <button
-    class="current-issues-toggle"
+    class="shop-toggle"
     type="button"
     aria-expanded="false"
   >
@@ -2406,7 +2404,7 @@
   </button>
 
 
-  <div class="current-issues-menu">
+  <div class="shop-menu">
 
     <a href="Sunday-Gospel/">
       Sunday Gospel for Kids
@@ -3479,34 +3477,72 @@
 
   <script>
 
+/* ========================================
+   NAVIGATION DROPDOWNS
+======================================== */
 
-    /* ========================================
-       SHOP DROPDOWN
-    ======================================== */
-
-    const shopDropdown =
-      document.querySelector(
-        ".shop-dropdown"
-      );
+const dropdowns =
+  document.querySelectorAll(
+    ".shop-dropdown"
+  );
 
 
-    const shopToggle =
-      document.querySelector(
+dropdowns.forEach(
+  function(dropdown) {
+
+    const toggle =
+      dropdown.querySelector(
         ".shop-toggle"
       );
 
 
-    shopToggle.addEventListener(
+    toggle.addEventListener(
       "click",
-      function() {
+      function(event) {
+
+        event.stopPropagation();
+
+
+        /* Close other dropdowns */
+
+        dropdowns.forEach(
+          function(otherDropdown) {
+
+            if (
+              otherDropdown !== dropdown
+            ) {
+
+              otherDropdown.classList.remove(
+                "open"
+              );
+
+
+              const otherToggle =
+                otherDropdown.querySelector(
+                  ".shop-toggle"
+                );
+
+
+              otherToggle.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+            }
+
+          }
+        );
+
+
+        /* Toggle this dropdown */
 
         const isOpen =
-          shopDropdown.classList.toggle(
+          dropdown.classList.toggle(
             "open"
           );
 
 
-        shopToggle.setAttribute(
+        toggle.setAttribute(
           "aria-expanded",
           isOpen
             ? "true"
@@ -3516,23 +3552,39 @@
       }
     );
 
+  }
+);
 
-    document.addEventListener(
-      "click",
-      function(event) {
+
+/* ========================================
+   CLOSE DROPDOWNS OUTSIDE CLICK
+======================================== */
+
+document.addEventListener(
+  "click",
+  function(event) {
+
+    dropdowns.forEach(
+      function(dropdown) {
 
         if (
-          !shopDropdown.contains(
+          !dropdown.contains(
             event.target
           )
         ) {
 
-          shopDropdown.classList.remove(
+          dropdown.classList.remove(
             "open"
           );
 
 
-          shopToggle.setAttribute(
+          const toggle =
+            dropdown.querySelector(
+              ".shop-toggle"
+            );
+
+
+          toggle.setAttribute(
             "aria-expanded",
             "false"
           );
@@ -3541,65 +3593,6 @@
 
       }
     );
-
-    /* ========================================
-   CURRENT ISSUES DROPDOWN
-======================================== */
-
-const currentIssuesDropdown =
-  document.querySelector(
-    ".current-issues-dropdown"
-  );
-
-
-const currentIssuesToggle =
-  document.querySelector(
-    ".current-issues-toggle"
-  );
-
-
-currentIssuesToggle.addEventListener(
-  "click",
-  function() {
-
-    const isOpen =
-      currentIssuesDropdown.classList.toggle(
-        "open"
-      );
-
-
-    currentIssuesToggle.setAttribute(
-      "aria-expanded",
-      isOpen
-        ? "true"
-        : "false"
-    );
-
-  }
-);
-
-
-document.addEventListener(
-  "click",
-  function(event) {
-
-    if (
-      !currentIssuesDropdown.contains(
-        event.target
-      )
-    ) {
-
-      currentIssuesDropdown.classList.remove(
-        "open"
-      );
-
-
-      currentIssuesToggle.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-    }
 
   }
 );
