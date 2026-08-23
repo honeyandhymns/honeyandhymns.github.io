@@ -58,6 +58,303 @@
       color: inherit;
     }
 
+     /* =========================
+       HEADER
+    ========================= */
+
+    .site-header {
+      background: #FFEBA1;
+      padding: 25px 20px 15px;
+      text-align: center;
+      border-bottom: 1px solid rgba(90, 70, 30, 0.12);
+    }
+
+
+    .header-brand {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+
+    .site-logo {
+      width: 365px;
+      max-width: 86%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+
+    .header-tagline {
+      margin: 4px 0 0;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 0.84rem;
+      letter-spacing: 2px;
+      color: #5D4B2D;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .site-nav {
+      background: #FFEBA1;
+      text-align: center;
+      padding: 9px 15px 13px;
+
+      border-bottom:
+        1px solid
+        rgba(90, 70, 30, 0.12);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3px;
+    }
+
+
+    .site-nav a,
+    .shop-toggle,
+    .wishlist-header-button {
+
+      color: #514229;
+
+      text-decoration: none;
+
+      margin: 0 9px;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 0.95rem;
+
+      transition:
+        color 0.2s ease;
+
+    }
+
+
+    .site-nav a:hover,
+    .shop-toggle:hover,
+    .wishlist-header-button:hover {
+
+      color: #967331;
+
+    }
+
+
+    .site-nav a.active {
+
+      color: #80652D;
+      font-weight: 600;
+
+    }
+
+
+    /* =========================
+       SHOP DROPDOWN
+    ========================= */
+
+    .shop-dropdown {
+
+      position: relative;
+      display: inline-block;
+
+    }
+
+
+    .shop-toggle {
+
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      line-height: inherit;
+
+    }
+
+
+    .shop-menu {
+
+      position: absolute;
+
+      top:
+        calc(100% + 10px);
+
+      left: 50%;
+
+      transform:
+        translateX(-50%)
+        translateY(-6px);
+
+      min-width: 250px;
+
+      background: #FFFDF0;
+
+      border:
+        1px solid
+        #D8C79F;
+
+      border-radius: 12px;
+
+      box-shadow:
+        0 8px 22px
+        rgba(77, 64, 41, 0.16);
+
+      padding: 8px 0;
+
+      text-align: left;
+
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+
+      z-index: 1000;
+
+    }
+
+
+    .shop-dropdown.open .shop-menu,
+    .shop-dropdown:hover .shop-menu {
+
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+
+      transform:
+        translateX(-50%)
+        translateY(0);
+
+    }
+
+
+    .shop-menu a {
+
+      display: block;
+
+      margin: 0;
+
+      padding:
+        10px 18px;
+
+      font-size: 0.92rem;
+
+    }
+
+
+    .shop-menu a:hover {
+
+      background: #FFF3C8;
+
+    }
+
+
+    .shop-coming-soon {
+
+      padding:
+        10px 18px;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 0.92rem;
+
+    }
+
+
+    .shop-coming-soon small {
+
+      display: block;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      color: #80652D;
+
+      font-size: 0.85rem;
+
+    }
+
+
+    /* =========================
+       WISHLIST HEADER BUTTON
+    ========================= */
+
+    .wishlist-header-button {
+
+      background: none;
+
+      border: none;
+
+      padding: 0;
+
+      cursor: pointer;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 5px;
+
+    }
+
+
+    .wishlist-heart {
+
+      font-size: 1.05rem;
+
+      line-height: 1;
+
+    }
+
+
+    .wishlist-count {
+
+      min-width: 19px;
+      height: 19px;
+
+      padding: 0 5px;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: #D8B65F;
+
+      color: #4D4029;
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size: 0.63rem;
+
+      font-weight: bold;
+
+    }
+
+
 
     /* =========================================================
        PAGE HEADER
@@ -475,6 +772,419 @@
 
     }
 
+        /* =========================
+       WISHLIST MODAL
+    ========================= */
+
+    .wishlist-overlay {
+
+      position: fixed;
+
+      inset: 0;
+
+      background:
+        rgba(57, 45, 25, 0.60);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 20px;
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      pointer-events: none;
+
+      z-index: 5000;
+
+      transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+
+    }
+
+
+    .wishlist-overlay.open {
+
+      opacity: 1;
+
+      visibility: visible;
+
+      pointer-events: auto;
+
+    }
+
+
+    .wishlist-modal {
+
+      width:
+        min(620px, 94vw);
+
+      max-height:
+        min(700px, 88vh);
+
+      background: #FFFDF4;
+
+      border:
+        1px solid
+        #D8C79F;
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 22px 55px
+        rgba(0,0,0,0.28);
+
+      overflow: hidden;
+
+      transform:
+        scale(0.88)
+        translateY(12px);
+
+      opacity: 0;
+
+      transition:
+        transform 0.35s
+          cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.25s ease;
+
+    }
+
+
+    .wishlist-overlay.open
+    .wishlist-modal {
+
+      transform:
+        scale(1)
+        translateY(0);
+
+      opacity: 1;
+
+    }
+
+
+    .wishlist-modal-header {
+
+      background: #FFEBA1;
+
+      padding:
+        16px 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      border-bottom:
+        1px solid
+        #E0CC83;
+
+    }
+
+
+    .wishlist-modal-title {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.65rem;
+
+      font-weight: 500;
+
+      color: #403521;
+
+      margin: 0;
+
+    }
+
+
+    .wishlist-close {
+
+      width: 32px;
+
+      height: 32px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid
+        #D3BE80;
+
+      background: #FFF9DF;
+
+      color: #665020;
+
+      cursor: pointer;
+
+      font-size: 1.15rem;
+
+      line-height: 1;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+    }
+
+
+    .wishlist-close:hover {
+
+      background: #F3D582;
+
+    }
+
+
+    .wishlist-body {
+
+      padding: 20px;
+
+      max-height:
+        calc(88vh - 145px);
+
+      overflow-y: auto;
+
+    }
+
+
+    .wishlist-empty {
+
+      text-align: center;
+
+      padding:
+        35px 15px;
+
+    }
+
+
+    .wishlist-empty-icon {
+
+      font-size: 2.3rem;
+
+      color: #D8B65F;
+
+      margin-bottom: 8px;
+
+    }
+
+
+    .wishlist-empty h3 {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.6rem;
+
+      font-weight: 500;
+
+      color: #403521;
+
+      margin:
+        0 0 5px;
+
+    }
+
+
+    .wishlist-empty p {
+
+      margin: 0;
+
+      font-size: 0.8rem;
+
+      color: #68583D;
+
+    }
+
+
+    .wishlist-item {
+
+      display: grid;
+
+      grid-template-columns:
+        82px 1fr auto;
+
+      align-items: center;
+
+      gap: 14px;
+
+      padding:
+        11px;
+
+      margin-bottom: 10px;
+
+      background: #FFF8D9;
+
+      border:
+        1px solid
+        #E5D6AD;
+
+      border-radius: 11px;
+
+    }
+
+
+    .wishlist-item-image {
+
+      width: 82px;
+
+      height: 82px;
+
+      object-fit: cover;
+
+      border-radius: 7px;
+
+      display: block;
+
+    }
+
+
+    .wishlist-item-title {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.15rem;
+
+      line-height: 1.15;
+
+      color: #403521;
+
+      margin:
+        0 0 3px;
+
+    }
+
+
+    .wishlist-item-price {
+
+      font-size: 0.72rem;
+
+      color: #80652D;
+
+      margin: 0;
+
+    }
+
+
+    .wishlist-item-view {
+
+      display: inline-block;
+
+      margin-top: 6px;
+
+      color: #80652D;
+
+      font-size: 0.68rem;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+    }
+
+
+    .wishlist-item-view:hover {
+
+      text-decoration: underline;
+
+    }
+
+
+    .wishlist-remove {
+
+      border: none;
+
+      background: none;
+
+      color: #967331;
+
+      cursor: pointer;
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size: 0.68rem;
+
+      padding: 5px;
+
+    }
+
+
+    .wishlist-remove:hover {
+
+      color: #6F5421;
+
+      text-decoration: underline;
+
+    }
+
+
+    .wishlist-modal-footer {
+
+      background: #FBF3D0;
+
+      border-top:
+        1px solid
+        #E0D2B0;
+
+      padding:
+        12px 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 10px;
+
+    }
+
+
+    .wishlist-footer-note {
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      color: #80652D;
+
+      font-size: 1rem;
+
+    }
+
+
+    .wishlist-clear {
+
+      border: none;
+
+      background: transparent;
+
+      color: #80652D;
+
+      font-size: 0.68rem;
+
+      cursor: pointer;
+
+      text-decoration: underline;
+
+    }
+
+
   </style>
 
 </head>
@@ -484,6 +1194,135 @@
 
 
 <main class="amazon-finds-page">
+
+    <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header class="site-header">
+
+    <div class="header-brand">
+
+      <a href="/">
+
+        <img
+          src="images/honey-and-hymns-logo.png"
+          alt="Honey & Hymns"
+          class="site-logo"
+        >
+
+      </a>
+
+      <p class="header-tagline">
+        Faith • Homeschool • Homemaking
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <nav class="site-nav">
+
+    <a href="/">
+      Home
+    </a>
+
+
+    <a href="Articles/">
+      Articles
+    </a>
+
+
+    <div class="shop-dropdown">
+
+      <button
+        class="shop-toggle"
+        type="button"
+        aria-expanded="false"
+      >
+        Shop
+      </button>
+
+
+      <div class="shop-menu">
+
+        <a href="Resources/">
+          Resources
+        </a>
+
+
+        <a href="Free-Downloads/">
+          Free Downloads
+        </a>
+
+
+         <a href="Amazon-Finds/">
+          Amazon Finds
+        </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- SUNDAY GOSPEL IS ITS OWN NAVIGATION ITEM -->
+
+    <a href="Sunday-Gospel/">
+      Sunday Gospel for Kids
+    </a>
+
+
+    <a href="About/">
+      About
+    </a>
+
+     <a href="Contact/">
+          Contact
+        </a>
+
+
+    <a
+      href="https://honeyandhymns.substack.com/subscribe"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Join the Honey Hive
+    </a>
+
+
+    <!-- WISHLIST -->
+
+    <button
+      class="wishlist-header-button"
+      type="button"
+      onclick="openWishlist()"
+      aria-label="Open wishlist"
+    >
+
+      <span class="wishlist-heart">
+        ♡
+      </span>
+
+      Wishlist
+
+      <span
+        class="wishlist-count"
+        id="wishlistCount"
+      >
+        0
+      </span>
+
+    </button>
+
+  </nav>
+
 
 
   <!-- =======================================================
@@ -647,7 +1486,7 @@
       >
 
         <img
-          src="images/sliner-wooden-catholic-mass-kit-kids.png"
+          src="../images/sliner-wooden-catholic-mass-kit-kids.png"
           alt="Sliner Wooden Catholic Mass Kit for Kids"
           class="find-card-image"
         >
@@ -694,7 +1533,7 @@
       >
 
         <img
-          src="images/catholic-mass-quiet-book-toddlers-preschoolers.png"
+          src="../images/catholic-mass-quiet-book-toddlers-preschoolers.png"
           alt="Catholic Mass Quiet Book for Toddlers and Preschoolers"
           class="find-card-image"
         >
@@ -741,7 +1580,7 @@
       >
 
         <img
-          src="images/wooden-rosary-board-kids.png"
+          src="../images/wooden-rosary-board-kids.png"
           alt="Wooden Rosary Board for Catholic Kids"
           class="find-card-image"
         >
@@ -788,7 +1627,7 @@
       >
 
         <img
-          src="images/365-devotions-catholic-women.png"
+          src="../images/365-devotions-catholic-women.png"
           alt="365 Devotions for Catholic Women"
           class="find-card-image"
         >
@@ -835,7 +1674,7 @@
       >
 
         <img
-          src="images/a-catholic-guide-to-anxiety.png"
+          src="../images/a-catholic-guide-to-anxiety.png"
           alt="A Catholic Guide to Anxiety"
           class="find-card-image"
         >
@@ -882,7 +1721,7 @@
       >
 
         <img
-          src="images/catholic-bible-verses-prayers-women.png"
+          src="../images/catholic-bible-verses-prayers-women.png"
           alt="Catholic Bible Verses and Prayers for Women"
           class="find-card-image"
         >
@@ -929,7 +1768,7 @@
       >
 
         <img
-          src="images/my-first-catholic-mass-book-kids.png"
+          src="../images/my-first-catholic-mass-book-kids.png"
           alt="My First Catholic Mass Book for Kids"
           class="find-card-image"
         >
@@ -976,7 +1815,7 @@
       >
 
         <img
-          src="images/sitting-like-a-saint.png"
+          src="../images/sitting-like-a-saint.png"
           alt="Sitting Like a Saint Catholic Mindfulness for Kids"
           class="find-card-image"
         >
@@ -1023,7 +1862,7 @@
       >
 
         <img
-          src="images/catholic-prayer-ring-cards.png"
+          src="../images/catholic-prayer-ring-cards.png"
           alt="My Catholic Prayer Ring Cards"
           class="find-card-image"
         >
@@ -1070,7 +1909,7 @@
       >
 
         <img
-          src="images/bible-sticker-activity-kids.png"
+          src="../images/bible-sticker-activity-kids.png"
           alt="Bible Sticker Activity for Kids"
           class="find-card-image"
         >
@@ -1117,7 +1956,7 @@
       >
 
         <img
-          src="images/catholic-prayers-wooden-cube.png"
+          src="../images/catholic-prayers-wooden-cube.png"
           alt="My Favorite Catholic Prayers Wooden Cube"
           class="find-card-image"
         >
@@ -1164,7 +2003,7 @@
       >
 
         <img
-          src="images/bible-study-workbook-kids.png"
+          src="../images/bible-study-workbook-kids.png"
           alt="Bible Study Workbook for Kids"
           class="find-card-image"
         >
@@ -1211,7 +2050,7 @@
       >
 
         <img
-          src="images/present-grace-devotional.png"
+          src="../images/present-grace-devotional.png"
           alt="Present Grace devotional for moms"
           class="find-card-image"
         >
@@ -1258,7 +2097,7 @@
       >
 
         <img
-          src="images/you-are-made-for-this-devotional.png"
+          src="../images/you-are-made-for-this-devotional.png"
           alt="You Are Made for This devotional"
           class="find-card-image"
         >
@@ -1305,7 +2144,7 @@
       >
 
         <img
-          src="images/daily-devotions-new-moms.png"
+          src="../images/daily-devotions-new-moms.png"
           alt="Daily Devotions for New Moms"
           class="find-card-image"
         >
@@ -1352,7 +2191,7 @@
       >
 
         <img
-          src="images/bible-promises-for-moms.png"
+          src="../images/bible-promises-for-moms.png"
           alt="Bible Promises for Moms"
           class="find-card-image"
         >
@@ -1399,7 +2238,7 @@
       >
 
         <img
-          src="images/daily-devotional-busy-moms.png"
+          src="../images/daily-devotional-busy-moms.png"
           alt="Daily Devotional for Busy Moms"
           class="find-card-image"
         >
@@ -1451,7 +2290,7 @@
       >
 
         <img
-          src="images/lacama-multiplication-chart.png"
+          src="../images/lacama-multiplication-chart.png"
           alt="Lacama Multiplication Chart"
           class="find-card-image"
         >
@@ -1498,7 +2337,7 @@
       >
 
         <img
-          src="images/kids-microscope-kit.png"
+          src="../images/kids-microscope-kit.png"
           alt="Kids Microscope Kit"
           class="find-card-image"
         >
@@ -1545,7 +2384,7 @@
       >
 
         <img
-          src="images/cool-kids-read-books-neon-sign.png"
+          src="../images/cool-kids-read-books-neon-sign.png"
           alt="Cool Kids Read Books neon sign"
           class="find-card-image"
         >
@@ -1592,7 +2431,7 @@
       >
 
         <img
-          src="images/charlottes-web.png"
+          src="../images/charlottes-web.png"
           alt="Charlotte's Web"
           class="find-card-image"
         >
@@ -1639,7 +2478,7 @@
       >
 
         <img
-          src="images/dry-erase-lap-boards-2-pack.png"
+          src="../images/dry-erase-lap-boards-2-pack.png"
           alt="Dry Erase Lap Boards"
           class="find-card-image"
         >
@@ -1686,7 +2525,7 @@
       >
 
         <img
-          src="images/magnetic-us-map-puzzle.png"
+          src="../images/magnetic-us-map-puzzle.png"
           alt="Magnetic U.S. Map Puzzle"
           class="find-card-image"
         >
@@ -1733,7 +2572,7 @@
       >
 
         <img
-          src="images/insect-lore-butterfly-garden-kit.png"
+          src="../images/insect-lore-butterfly-garden-kit.png"
           alt="Insect Lore Butterfly Garden Kit"
           class="find-card-image"
         >
@@ -1780,7 +2619,7 @@
       >
 
         <img
-          src="images/trumpet-of-the-swan.png"
+          src="../images/trumpet-of-the-swan.png"
           alt="Trumpet of the Swan"
           class="find-card-image"
         >
@@ -1827,7 +2666,7 @@
       >
 
         <img
-          src="images/velveteen-rabbit.png"
+          src="../images/velveteen-rabbit.png"
           alt="The Velveteen Rabbit"
           class="find-card-image"
         >
@@ -1874,7 +2713,7 @@
       >
 
         <img
-          src="images/mouse-and-the-motorcycle.png"
+          src="../images/mouse-and-the-motorcycle.png"
           alt="The Mouse and the Motorcycle"
           class="find-card-image"
         >
@@ -1921,7 +2760,7 @@
       >
 
         <img
-          src="images/boxcar-children.png"
+          src="../images/boxcar-children.png"
           alt="The Boxcar Children"
           class="find-card-image"
         >
@@ -1968,7 +2807,7 @@
       >
 
         <img
-          src="images/sarah-plain-and-tall.png"
+          src="../images/sarah-plain-and-tall.png"
           alt="Sarah Plain and Tall"
           class="find-card-image"
         >
@@ -2015,7 +2854,7 @@
       >
 
         <img
-          src="images/tale-of-peter-rabbit.png"
+          src="../images/tale-of-peter-rabbit.png"
           alt="The Tale of Peter Rabbit"
           class="find-card-image"
         >
@@ -2061,7 +2900,7 @@
       >
 
         <img
-          src="images/lion-witch-and-wardrobe.png"
+          src="../images/lion-witch-and-wardrobe.png"
           alt="The Lion the Witch and the Wardrobe"
           class="find-card-image"
         >
@@ -2108,7 +2947,7 @@
       >
 
         <img
-          src="images/verse-abc-flash-cards.png"
+          src="../images/verse-abc-flash-cards.png"
           alt="Verse ABC Flash Cards"
           class="find-card-image"
         >
@@ -2155,7 +2994,7 @@
       >
 
         <img
-          src="images/bible-verse-handwriting-practice.png"
+          src="../images/bible-verse-handwriting-practice.png"
           alt="Bible Verse Handwriting Practice for Kids"
           class="find-card-image"
         >
@@ -2201,7 +3040,7 @@
       >
 
         <img
-          src="images/chrysanthemum.png"
+          src="../images/chrysanthemum.png"
           alt="Chrysanthemum children's book"
           class="find-card-image"
         >
@@ -2248,7 +3087,7 @@
       >
 
         <img
-          src="images/tale-of-despereaux.png"
+          src="../images/tale-of-despereaux.png"
           alt="The Tale of Despereaux"
           class="find-card-image"
         >
@@ -2295,7 +3134,7 @@
       >
 
         <img
-          src="images/magic-of-childhood-homeschool.png"
+          src="../images/magic-of-childhood-homeschool.png"
           alt="The Magic of Childhood homeschool curriculum"
           class="find-card-image"
         >
@@ -2342,7 +3181,7 @@
       >
 
         <img
-          src="images/wind-in-the-willows.png"
+          src="../images/wind-in-the-willows.png"
           alt="The Wind in the Willows"
           class="find-card-image"
         >
@@ -2389,7 +3228,7 @@
       >
 
         <img
-          src="images/the-dot.png"
+          src="../images/the-dot.png"
           alt="The Dot children's book"
           class="find-card-image"
         >
@@ -2436,7 +3275,7 @@
       >
 
         <img
-          src="images/stellaluna.png"
+          src="../images/stellaluna.png"
           alt="Stellaluna"
           class="find-card-image"
         >
@@ -2488,7 +3327,7 @@
       >
 
         <img
-          src="images/yoto-player-3rd-generation.png"
+          src="../images/yoto-player-3rd-generation.png"
           alt="YOTO Player 3rd Generation"
           class="find-card-image"
         >
@@ -2535,7 +3374,7 @@
       >
 
         <img
-          src="images/kids-real-cooking-knife-set.png"
+          src="../images/kids-real-cooking-knife-set.png"
           alt="Kids real cooking knife set"
           class="find-card-image"
         >
@@ -2587,7 +3426,7 @@
       >
 
         <img
-          src="images/around-the-catholic-table.png"
+          src="../images/around-the-catholic-table.png"
           alt="Around the Catholic Table cookbook"
           class="find-card-image"
         >
@@ -2635,7 +3474,7 @@
       >
 
         <img
-          src="images/weekly-menu-dry-erase-calendar-board.png"
+          src="../images/weekly-menu-dry-erase-calendar-board.png"
           alt="Weekly menu dry erase calendar board"
           class="find-card-image"
         >
@@ -2682,7 +3521,7 @@
       >
 
         <img
-          src="images/countertop-cereal-dispenser.png"
+          src="../images/countertop-cereal-dispenser.png"
           alt="Countertop cereal dispenser"
           class="find-card-image"
         >
@@ -2729,7 +3568,7 @@
       >
 
         <img
-          src="images/under-sink-organizer-2-pack.png"
+          src="../images/under-sink-organizer-2-pack.png"
           alt="Under sink organizer"
           class="find-card-image"
         >
@@ -2776,7 +3615,7 @@
       >
 
         <img
-          src="images/refrigerator-drink-milk-dispenser.png"
+          src="../images/refrigerator-drink-milk-dispenser.png"
           alt="Refrigerator drink and milk dispenser"
           class="find-card-image"
         >
@@ -2823,7 +3662,7 @@
       >
 
         <img
-          src="images/spaceaid-bag-storage-organizer.png"
+          src="../images/spaceaid-bag-storage-organizer.png"
           alt="SpaceAid bag storage organizer"
           class="find-card-image"
         >
@@ -2870,7 +3709,7 @@
       >
 
         <img
-          src="images/spring-loaded-drink-can-organizer.png"
+          src="../images/spring-loaded-drink-can-organizer.png"
           alt="Spring loaded drink can organizer"
           class="find-card-image"
         >
@@ -2916,7 +3755,7 @@
       >
 
         <img
-          src="images/spaceaid-wrap-dispenser.png"
+          src="../images/spaceaid-wrap-dispenser.png"
           alt="SpaceAid wrap dispenser"
           class="find-card-image"
         >
@@ -2962,7 +3801,7 @@
       >
 
         <img
-          src="images/cleaning-caddy-with-handle.png"
+          src="../images/cleaning-caddy-with-handle.png"
           alt="Cleaning caddy with handle"
           class="find-card-image"
         >
@@ -3009,7 +3848,7 @@
       >
 
         <img
-          src="images/bissell-crosswave-hydrosteam.png"
+          src="../images/bissell-crosswave-hydrosteam.png"
           alt="BISSELL CrossWave HydroSteam"
           class="find-card-image"
         >
@@ -3056,7 +3895,7 @@
       >
 
         <img
-          src="images/long-handle-broom-dustpan-set.png"
+          src="../images/long-handle-broom-dustpan-set.png"
           alt="Long handle broom and dustpan set"
           class="find-card-image"
         >
@@ -3103,7 +3942,7 @@
       >
 
         <img
-          src="images/clorox-toiletwand-cleaning-system.png"
+          src="../images/clorox-toiletwand-cleaning-system.png"
           alt="Clorox ToiletWand cleaning system"
           class="find-card-image"
         >
@@ -3150,7 +3989,7 @@
       >
 
         <img
-          src="images/broom-cleaning-supplies-organizer.png"
+          src="../images/broom-cleaning-supplies-organizer.png"
           alt="Broom and cleaning supplies organizer"
           class="find-card-image"
         >
@@ -3202,7 +4041,7 @@
       >
 
         <img
-          src="images/christian-birthday-gift-women.png"
+          src="../images/christian-birthday-gift-women.png"
           alt="Christian birthday gift for women"
           class="find-card-image"
         >
@@ -3317,11 +4156,160 @@
 
   </section>
 
+    <!-- =========================
+       WISHLIST POPUP
+  ========================= -->
+
+  <div
+    class="wishlist-overlay"
+    id="wishlistOverlay"
+    aria-hidden="true"
+  >
+
+    <div
+      class="wishlist-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="wishlistTitle"
+    >
+
+
+      <div class="wishlist-modal-header">
+
+        <h2
+          class="wishlist-modal-title"
+          id="wishlistTitle"
+        >
+          My Honey & Hymns Wishlist
+        </h2>
+
+
+        <button
+          class="wishlist-close"
+          type="button"
+          onclick="closeWishlist()"
+          aria-label="Close wishlist"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div
+        class="wishlist-body"
+        id="wishlistBody"
+      >
+
+      </div>
+
+
+      <div class="wishlist-modal-footer">
+
+        <span
+          class="wishlist-footer-note"
+          id="wishlistFooterNote"
+        >
+          Your little collection of favorites
+        </span>
+
+
+        <button
+          class="wishlist-clear"
+          type="button"
+          onclick="clearWishlist()"
+        >
+          Clear Wishlist
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      Honey & Hymns
+    </p>
+
+    <p>
+      Faith • Homeschool • Homemaking
+    </p>
+
+
 
 </main>
 
 
 <script>
+
+  
+    /* ========================================
+       SHOP DROPDOWN
+    ======================================== */
+
+    const shopDropdown =
+      document.querySelector(
+        ".shop-dropdown"
+      );
+
+
+    const shopToggle =
+      document.querySelector(
+        ".shop-toggle"
+      );
+
+
+    shopToggle.addEventListener(
+      "click",
+      function() {
+
+        const isOpen =
+          shopDropdown.classList.toggle(
+            "open"
+          );
+
+
+        shopToggle.setAttribute(
+          "aria-expanded",
+          isOpen
+            ? "true"
+            : "false"
+        );
+
+      }
+    );
+
+
+    document.addEventListener(
+      "click",
+      function(event) {
+
+        if (
+          !shopDropdown.contains(
+            event.target
+          )
+        ) {
+
+          shopDropdown.classList.remove(
+            "open"
+          );
+
+
+          shopToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        }
+
+      }
+    );
 
   /* =========================================================
      AMAZON FINDS SEARCH + FILTER
@@ -3440,6 +4428,651 @@
     "input",
     updateFinds
   );
+
+  * ========================================
+       WISHLIST STORAGE
+    ======================================== */
+
+    const WISHLIST_STORAGE_KEY =
+      "honeyAndHymnsWishlist";
+
+
+    function getWishlist() {
+
+      try {
+
+        const stored =
+          localStorage.getItem(
+            WISHLIST_STORAGE_KEY
+          );
+
+
+        if (!stored) {
+
+          return [];
+
+        }
+
+
+        const parsed =
+          JSON.parse(stored);
+
+
+        return Array.isArray(parsed)
+          ? parsed
+          : [];
+
+      } catch (error) {
+
+        return [];
+
+      }
+
+    }
+
+
+    function saveWishlist(items) {
+
+      localStorage.setItem(
+        WISHLIST_STORAGE_KEY,
+        JSON.stringify(items)
+      );
+
+    }
+
+
+    /* ========================================
+       WISHLIST COUNT
+    ======================================== */
+
+    function updateWishlistCount() {
+
+      const countElement =
+        document.getElementById(
+          "wishlistCount"
+        );
+
+
+      if (!countElement) {
+
+        return;
+
+      }
+
+
+      countElement.textContent =
+        getWishlist().length;
+
+    }
+
+
+    /* ========================================
+       CHECK IF PRODUCT IS SAVED
+    ======================================== */
+
+    function isInWishlist(id) {
+
+      return getWishlist().some(
+        function(item) {
+
+          return item.id === id;
+
+        }
+      );
+
+    }
+
+
+    /* ========================================
+       UPDATE PRODUCT BUTTONS
+    ======================================== */
+
+    function updateWishlistButtons() {
+
+      const buttons =
+        document.querySelectorAll(
+          ".wishlist-button"
+        );
+
+
+      buttons.forEach(
+        function(button) {
+
+          const id =
+            button.dataset.wishlistId;
+
+
+          if (
+            isInWishlist(id)
+          ) {
+
+            button.classList.add(
+              "saved"
+            );
+
+
+            button.textContent =
+              "♥ Saved to Wishlist";
+
+          } else {
+
+            button.classList.remove(
+              "saved"
+            );
+
+
+            button.textContent =
+              "♡ Add to Wishlist";
+
+          }
+
+        }
+      );
+
+    }
+
+
+    /* ========================================
+       ADD / REMOVE PRODUCT
+    ======================================== */
+
+    function toggleWishlist(button) {
+
+      const id =
+        button.dataset.wishlistId;
+
+
+      const product = {
+
+        id:
+          id,
+
+        title:
+          button.dataset.title,
+
+        price:
+          button.dataset.price,
+
+        image:
+          button.dataset.image,
+
+        url:
+          button.dataset.url
+
+      };
+
+
+      let wishlist =
+        getWishlist();
+
+
+      const existingIndex =
+        wishlist.findIndex(
+          function(item) {
+
+            return item.id === id;
+
+          }
+        );
+
+
+      if (
+        existingIndex !== -1
+      ) {
+
+        wishlist.splice(
+          existingIndex,
+          1
+        );
+
+      } else {
+
+        wishlist.push(
+          product
+        );
+
+      }
+
+
+      saveWishlist(
+        wishlist
+      );
+
+
+      updateWishlistCount();
+
+      updateWishlistButtons();
+
+    }
+
+
+    /* ========================================
+       PRODUCT BUTTON EVENTS
+    ======================================== */
+
+    document
+      .querySelectorAll(
+        ".wishlist-button"
+      )
+      .forEach(
+        function(button) {
+
+          button.addEventListener(
+            "click",
+            function() {
+
+              toggleWishlist(
+                button
+              );
+
+            }
+          );
+
+        }
+      );
+
+
+    /* ========================================
+       RENDER WISHLIST
+    ======================================== */
+
+    function renderWishlist() {
+
+      const body =
+        document.getElementById(
+          "wishlistBody"
+        );
+
+
+      const wishlist =
+        getWishlist();
+
+
+      if (
+        wishlist.length === 0
+      ) {
+
+        body.innerHTML = `
+
+          <div class="wishlist-empty">
+
+            <div class="wishlist-empty-icon">
+              ♡
+            </div>
+
+            <h3>
+              Your wishlist is empty
+            </h3>
+
+            <p>
+              Save a few Honey & Hymns favorites
+              and they'll wait here for you.
+            </p>
+
+          </div>
+
+        `;
+
+
+        return;
+
+      }
+
+
+      body.innerHTML =
+        wishlist
+          .map(
+            function(item) {
+
+              return `
+
+                <div
+                  class="wishlist-item"
+                  data-item-id="${escapeHtml(item.id)}"
+                >
+
+                  <img
+                    class="wishlist-item-image"
+                    src="${escapeHtml(item.image)}"
+                    alt="${escapeHtml(item.title)}"
+                  >
+
+
+                  <div>
+
+                    <h3
+                      class="wishlist-item-title"
+                    >
+                      ${escapeHtml(item.title)}
+                    </h3>
+
+
+                    <p
+                      class="wishlist-item-price"
+                    >
+                      ${escapeHtml(item.price)}
+                    </p>
+
+
+                    <a
+                      class="wishlist-item-view"
+                      href="${escapeHtml(item.url)}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Product →
+                    </a>
+
+                  </div>
+
+
+                  <button
+                    class="wishlist-remove"
+                    type="button"
+                    onclick="removeFromWishlist('${escapeHtml(item.id)}')"
+                  >
+                    Remove
+                  </button>
+
+                </div>
+
+              `;
+
+            }
+          )
+          .join("");
+
+    }
+
+
+    /* ========================================
+       BASIC HTML ESCAPING
+    ======================================== */
+
+    function escapeHtml(value) {
+
+      return String(value)
+        .replace(
+          /&/g,
+          "&amp;"
+        )
+        .replace(
+          /</g,
+          "&lt;"
+        )
+        .replace(
+          />/g,
+          "&gt;"
+        )
+        .replace(
+          /"/g,
+          "&quot;"
+        )
+        .replace(
+          /'/g,
+          "&#039;"
+        );
+
+    }
+
+
+    /* ========================================
+       REMOVE FROM WISHLIST
+    ======================================== */
+
+    function removeFromWishlist(id) {
+
+      const wishlist =
+        getWishlist()
+          .filter(
+            function(item) {
+
+              return item.id !== id;
+
+            }
+          );
+
+
+      saveWishlist(
+        wishlist
+      );
+
+
+      updateWishlistCount();
+
+      updateWishlistButtons();
+
+      renderWishlist();
+
+    }
+
+
+    /* ========================================
+       OPEN WISHLIST
+    ======================================== */
+
+    function openWishlist() {
+
+      renderWishlist();
+
+
+      const overlay =
+        document.getElementById(
+          "wishlistOverlay"
+        );
+
+
+      overlay.classList.add(
+        "open"
+      );
+
+
+      overlay.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+
+      document.body.style.overflow =
+        "hidden";
+
+    }
+
+
+    /* ========================================
+       CLOSE WISHLIST
+    ======================================== */
+
+    function closeWishlist() {
+
+      const overlay =
+        document.getElementById(
+          "wishlistOverlay"
+        );
+
+
+      overlay.classList.remove(
+        "open"
+      );
+
+
+      overlay.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+    /* ========================================
+       CLEAR WISHLIST
+    ======================================== */
+
+    function clearWishlist() {
+
+      const wishlist =
+        getWishlist();
+
+
+      if (
+        wishlist.length === 0
+      ) {
+
+        return;
+
+      }
+
+
+      const confirmed =
+        window.confirm(
+          "Are you sure you want to clear your wishlist?"
+        );
+
+
+      if (!confirmed) {
+
+        return;
+
+      }
+
+
+      saveWishlist(
+        []
+      );
+
+
+      updateWishlistCount();
+
+      updateWishlistButtons();
+
+      renderWishlist();
+
+    }
+
+
+    /* ========================================
+       CLOSE WHEN CLICKING OUTSIDE
+    ======================================== */
+
+    document
+      .getElementById(
+        "wishlistOverlay"
+      )
+      .addEventListener(
+        "click",
+        function(event) {
+
+          if (
+            event.target ===
+            this
+          ) {
+
+            closeWishlist();
+
+          }
+
+        }
+      );
+
+
+    /* ========================================
+       ESCAPE KEY
+    ======================================== */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key ===
+          "Escape"
+        ) {
+
+          closeWishlist();
+
+        }
+
+      }
+    );
+
+  
+/* ========================================
+   POLL BAR ANIMATION
+======================================== */
+
+const pollBars =
+  document.querySelectorAll(
+    ".poll-bar"
+  );
+
+
+if (pollBars.length > 0) {
+
+  const pollObserver =
+    new IntersectionObserver(
+      function(entries, observer) {
+
+        entries.forEach(
+          function(entry) {
+
+            if (
+              entry.isIntersecting
+            ) {
+
+              const bar =
+                entry.target;
+
+
+              const width =
+                bar.dataset.width;
+
+
+              if (width) {
+
+                bar.style.width =
+                  width;
+
+              }
+
+
+              observer.unobserve(
+                bar
+              );
+
+            }
+
+          }
+        );
+
+      }
+    );
+
+
+  pollBars.forEach(
+    function(bar) {
+
+      pollObserver.observe(
+        bar
+      );
+
+    }
+  );
+
+}
+
+
+/* ========================================
+   INITIALIZE
+======================================== */
+
+updateWishlistCount();
+
+updateWishlistButtons();
+
 
 
 </script>
