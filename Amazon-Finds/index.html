@@ -537,6 +537,49 @@
       color: var(--soft-brown);
     }
 
+    /* =====================================================
+   AMAZON FINDS SUBCATEGORY NAVIGATION
+===================================================== */
+
+.finds-subcategory-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+  margin-bottom: 24px;
+}
+
+
+.finds-subcategory {
+  appearance: none;
+  border: 1px solid #d8c99a;
+  background: #fffdf6;
+  color: #5f5138;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.finds-subcategory:hover {
+  background: #fff4c7;
+  border-color: #cbb56e;
+}
+
+
+.finds-subcategory.active {
+  background: #FFEBA1;
+  border-color: #d7bd67;
+  color: #4f432d;
+  font-weight: 600;
+}
+
 
     /* =========================================================
        PRODUCT GRID
@@ -4288,7 +4331,7 @@ if (shopDropdown && shopToggle) {
 
 
 /* =========================================================
-   AMAZON FINDS SEARCH + FILTER
+   AMAZON FINDS SEARCH + CATEGORY + SUBCATEGORY FILTER
 ========================================================= */
 
 const searchInput =
@@ -4303,21 +4346,156 @@ const cards =
 const noResults =
   document.getElementById("findsNoResults");
 
+const subcategoryContainer =
+  document.getElementById("findsSubcategoryButtons");
+
 
 let currentFilter = "all";
 
+let currentSubcategory = "all";
+
+
+/* =========================================================
+   BUILD SUBCATEGORY BUTTONS
+========================================================= */
+
+function buildSubcategoryButtons(category) {
+
+  if (!subcategoryContainer) {
+    return;
+  }
+
+
+  /* Clear previous buttons */
+
+  subcategoryContainer.innerHTML = "";
+
+
+  /* "All" does not have subcategories */
+
+  if (category === "all") {
+
+    return;
+
+  }
+
+
+  const subcategories = [];
+
+
+  /* Find all unique subcategories
+     belonging to this category */
+
+  cards.forEach(function(card) {
+
+    const cardCategory =
+      card.dataset.category || "";
+
+    const subcategory =
+      card.dataset.subcategory || "";
+
+
+    if (
+      cardCategory === category &&
+      subcategory &&
+      !subcategories.includes(subcategory)
+    ) {
+
+      subcategories.push(subcategory);
+
+    }
+
+  });
+
+
+  /* Sort alphabetically */
+
+  subcategories.sort();
+
+
+  /* Create buttons */
+
+  subcategories.forEach(function(subcategory) {
+
+    const button =
+      document.createElement("button");
+
+
+    button.type = "button";
+
+    button.className =
+      "finds-subcategory";
+
+    button.dataset.subcategory =
+      subcategory;
+
+
+    button.textContent =
+      subcategory;
+
+
+    button.addEventListener(
+      "click",
+      function() {
+
+        /* Remove active state */
+
+        subcategoryContainer
+          .querySelectorAll(
+            ".finds-subcategory"
+          )
+          .forEach(function(btn) {
+
+            btn.classList.remove(
+              "active"
+            );
+
+          });
+
+
+        /* Make clicked button active */
+
+        button.classList.add(
+          "active"
+        );
+
+
+        currentSubcategory =
+          subcategory;
+
+
+        updateFinds();
+
+      }
+    );
+
+
+    subcategoryContainer.appendChild(
+      button
+    );
+
+  });
+
+}
+
+
+/* =========================================================
+   FILTER PRODUCTS
+========================================================= */
 
 function updateFinds() {
 
-  if (!searchInput || !cards.length) {
+  if (!cards.length) {
     return;
   }
 
 
   const searchTerm =
-    searchInput.value
-      .toLowerCase()
-      .trim();
+    searchInput
+      ? searchInput.value
+          .toLowerCase()
+          .trim()
+      : "";
 
 
   let visibleCount = 0;
@@ -4326,70 +4504,106 @@ function updateFinds() {
   cards.forEach(function(card) {
 
     const category =
-      (card.dataset.category || "").toLowerCase();
+      (
+        card.dataset.category || ""
+      ).toLowerCase();
 
 
     const subcategory =
-      (card.dataset.subcategory || "").toLowerCase();
+      (
+        card.dataset.subcategory || ""
+      ).toLowerCase();
 
 
     const searchData =
-      (card.dataset.search || "").toLowerCase();
+      (
+        card.dataset.search || ""
+      ).toLowerCase();
 
 
     const cardTitle =
       card.querySelector("h3")
-        ? card.querySelector("h3").textContent.toLowerCase()
+        ? card
+            .querySelector("h3")
+            .textContent
+            .toLowerCase()
         : "";
 
 
     const cardReview =
-      card.querySelector(".find-card-review")
-        ? card.querySelector(".find-card-review").textContent.toLowerCase()
+      card.querySelector(
+        ".find-card-review"
+      )
+        ? card
+            .querySelector(
+              ".find-card-review"
+            )
+            .textContent
+            .toLowerCase()
         : "";
 
 
     const searchableText =
-      (
-        searchData +
-        " " +
-        subcategory +
-        " " +
-        category +
-        " " +
-        cardTitle +
-        " " +
-        cardReview
-      );
+      searchData +
+      " " +
+      subcategory +
+      " " +
+      category +
+      " " +
+      cardTitle +
+      " " +
+      cardReview;
 
+
+    /* CATEGORY */
 
     const matchesCategory =
       currentFilter === "all" ||
-      category === currentFilter.toLowerCase();
+      category ===
+        currentFilter.toLowerCase();
 
+
+    /* SUBCATEGORY */
+
+    const matchesSubcategory =
+      currentSubcategory === "all" ||
+      subcategory ===
+        currentSubcategory.toLowerCase();
+
+
+    /* SEARCH */
 
     const matchesSearch =
       searchTerm === "" ||
-      searchableText.includes(searchTerm);
+      searchableText.includes(
+        searchTerm
+      );
 
+
+    /* FINAL RESULT */
 
     if (
       matchesCategory &&
+      matchesSubcategory &&
       matchesSearch
     ) {
 
-      card.style.display = "flex";
+      card.style.display =
+        "flex";
 
       visibleCount++;
 
     } else {
 
-      card.style.display = "none";
+      card.style.display =
+        "none";
 
     }
 
   });
 
+
+  /* NO RESULTS */
 
   if (noResults) {
 
@@ -4403,9 +4617,9 @@ function updateFinds() {
 }
 
 
-/* ========================================
-   FILTER BUTTON EVENTS
-======================================== */
+/* =========================================================
+   CATEGORY BUTTON EVENTS
+========================================================= */
 
 filterButtons.forEach(function(button) {
 
@@ -4413,19 +4627,45 @@ filterButtons.forEach(function(button) {
     "click",
     function() {
 
-      filterButtons.forEach(function(btn) {
+      /* Remove active from categories */
 
-        btn.classList.remove("active");
+      filterButtons.forEach(
+        function(btn) {
 
-      });
+          btn.classList.remove(
+            "active"
+          );
+
+        }
+      );
 
 
-      button.classList.add("active");
+      /* Activate selected category */
+
+      button.classList.add(
+        "active"
+      );
 
 
       currentFilter =
-        button.dataset.filter || "all";
+        button.dataset.filter ||
+        "all";
 
+
+      /* Reset subcategory */
+
+      currentSubcategory =
+        "all";
+
+
+      /* Build new subcategory buttons */
+
+      buildSubcategoryButtons(
+        currentFilter
+      );
+
+
+      /* Update products */
 
       updateFinds();
 
@@ -4435,9 +4675,9 @@ filterButtons.forEach(function(button) {
 });
 
 
-/* ========================================
+/* =========================================================
    SEARCH EVENT
-======================================== */
+========================================================= */
 
 if (searchInput) {
 
@@ -4448,6 +4688,16 @@ if (searchInput) {
 
 }
 
+
+/* =========================================================
+   INITIALIZE AMAZON FINDS
+========================================================= */
+
+buildSubcategoryButtons(
+  "all"
+);
+
+updateFinds();
 
 /* ========================================
    WISHLIST STORAGE
