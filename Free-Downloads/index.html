@@ -191,6 +191,7 @@
     }
 
 
+   
     /* =========================
        SHOP DROPDOWN
     ========================= */
@@ -198,7 +199,6 @@
     .shop-dropdown {
 
       position: relative;
-
       display: inline-block;
 
     }
@@ -207,12 +207,10 @@
     .shop-toggle {
 
       background: none;
-
       border: none;
-
       padding: 0;
-
       cursor: pointer;
+      line-height: inherit;
 
     }
 
@@ -242,17 +240,14 @@
 
       box-shadow:
         0 8px 22px
-        rgba(77,64,41,0.16);
+        rgba(77, 64, 41, 0.16);
 
-      padding:
-        8px 0;
+      padding: 8px 0;
 
       text-align: left;
 
       opacity: 0;
-
       visibility: hidden;
-
       pointer-events: none;
 
       transition:
@@ -269,9 +264,7 @@
     .shop-dropdown:hover .shop-menu {
 
       opacity: 1;
-
       visibility: visible;
-
       pointer-events: auto;
 
       transform:
@@ -330,7 +323,6 @@
       font-size: 0.85rem;
 
     }
-
 
     /* =========================
        WISHLIST HEADER
@@ -2187,10 +2179,33 @@
 
     </div>
 
+<!-- CURRENT ISSUES -->
+
+<div class="shop-dropdown">
+
+  <button
+    class="shop-toggle"
+    type="button"
+    aria-expanded="false"
+  >
+    Current Issues
+  </button>
+
+
+  <div class="shop-menu">
 
     <a href="../Sunday-Gospel/">
       Sunday Gospel for Kids
     </a>
+
+
+    <a href="../Honey-and-Hymns-Digital-Magazine/">
+      Honey & Hymns Digital Magazine
+    </a>
+
+  </div>
+
+</div>
 
 
     <a href="../About/">
@@ -2630,34 +2645,72 @@
 
   <script>
 
+ /* ========================================
+   NAVIGATION DROPDOWNS
+======================================== */
 
-    /* ========================================
-       SHOP DROPDOWN
-    ======================================== */
-
-    const shopDropdown =
-      document.querySelector(
-        ".shop-dropdown"
-      );
+const dropdowns =
+  document.querySelectorAll(
+    ".shop-dropdown"
+  );
 
 
-    const shopToggle =
-      document.querySelector(
+dropdowns.forEach(
+  function(dropdown) {
+
+    const toggle =
+      dropdown.querySelector(
         ".shop-toggle"
       );
 
 
-    shopToggle.addEventListener(
+    toggle.addEventListener(
       "click",
-      function() {
+      function(event) {
+
+        event.stopPropagation();
+
+
+        /* Close other dropdowns */
+
+        dropdowns.forEach(
+          function(otherDropdown) {
+
+            if (
+              otherDropdown !== dropdown
+            ) {
+
+              otherDropdown.classList.remove(
+                "open"
+              );
+
+
+              const otherToggle =
+                otherDropdown.querySelector(
+                  ".shop-toggle"
+                );
+
+
+              otherToggle.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+            }
+
+          }
+        );
+
+
+        /* Toggle this dropdown */
 
         const isOpen =
-          shopDropdown.classList.toggle(
+          dropdown.classList.toggle(
             "open"
           );
 
 
-        shopToggle.setAttribute(
+        toggle.setAttribute(
           "aria-expanded",
           isOpen
             ? "true"
@@ -2667,23 +2720,39 @@
       }
     );
 
+  }
+);
 
-    document.addEventListener(
-      "click",
-      function(event) {
+
+/* ========================================
+   CLOSE DROPDOWNS OUTSIDE CLICK
+======================================== */
+
+document.addEventListener(
+  "click",
+  function(event) {
+
+    dropdowns.forEach(
+      function(dropdown) {
 
         if (
-          !shopDropdown.contains(
+          !dropdown.contains(
             event.target
           )
         ) {
 
-          shopDropdown.classList.remove(
+          dropdown.classList.remove(
             "open"
           );
 
 
-          shopToggle.setAttribute(
+          const toggle =
+            dropdown.querySelector(
+              ".shop-toggle"
+            );
+
+
+          toggle.setAttribute(
             "aria-expanded",
             "false"
           );
@@ -2692,6 +2761,10 @@
 
       }
     );
+
+  }
+);
+   
 
 
     /* ========================================
