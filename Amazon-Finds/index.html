@@ -1433,7 +1433,7 @@
     </div>
 
 
-    <!-- FILTERS -->
+       <!-- FILTERS -->
 
     <div class="finds-filters">
 
@@ -1486,6 +1486,11 @@
       </button>
 
     </div>
+
+
+    <!-- SUBCATEGORY FILTERS -->
+
+    <div id="findsSubcategoryButtons"></div>
 
 
     <!-- SECTION INTRO -->
@@ -4352,6 +4357,10 @@ const subcategoryContainer =
 let currentFilter = "all";
 
 let currentSubcategory = "all";
+
+let currentPage = 1;
+
+const productsPerPage = 9;
 
 
 /* =========================================================
