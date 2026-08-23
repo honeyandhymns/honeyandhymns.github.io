@@ -2408,12 +2408,12 @@
 
   <div class="current-issues-menu">
 
-    <a href="../Sunday-Gospel/">
+    <a href="Sunday-Gospel/">
       Sunday Gospel for Kids
     </a>
 
 
-    <a href="../Digital-Magazine/">
+    <a href="Digital-Magazine/">
       Honey & Hymns Digital Magazine
     </a>
 
@@ -3541,6 +3541,68 @@
 
       }
     );
+
+    /* ========================================
+   CURRENT ISSUES DROPDOWN
+======================================== */
+
+const currentIssuesDropdown =
+  document.querySelector(
+    ".current-issues-dropdown"
+  );
+
+
+const currentIssuesToggle =
+  document.querySelector(
+    ".current-issues-toggle"
+  );
+
+
+currentIssuesToggle.addEventListener(
+  "click",
+  function() {
+
+    const isOpen =
+      currentIssuesDropdown.classList.toggle(
+        "open"
+      );
+
+
+    currentIssuesToggle.setAttribute(
+      "aria-expanded",
+      isOpen
+        ? "true"
+        : "false"
+    );
+
+  }
+);
+
+
+document.addEventListener(
+  "click",
+  function(event) {
+
+    if (
+      !currentIssuesDropdown.contains(
+        event.target
+      )
+    ) {
+
+      currentIssuesDropdown.classList.remove(
+        "open"
+      );
+
+
+      currentIssuesToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+    }
+
+  }
+);
 /* ========================================
    HERO CAROUSEL
 ======================================== */
