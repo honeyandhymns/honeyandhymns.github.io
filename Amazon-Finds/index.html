@@ -4248,758 +4248,799 @@
 
 <script>
 
-  
-    /* ========================================
-       SHOP DROPDOWN
-    ======================================== */
+/* ========================================
+   SHOP DROPDOWN
+======================================== */
 
-    const shopDropdown =
-      document.querySelector(
-        ".shop-dropdown"
-      );
+const shopDropdown = document.querySelector(".shop-dropdown");
+const shopToggle = document.querySelector(".shop-toggle");
 
+if (shopDropdown && shopToggle) {
 
-    const shopToggle =
-      document.querySelector(
-        ".shop-toggle"
-      );
+  shopToggle.addEventListener("click", function() {
 
+    const isOpen = shopDropdown.classList.toggle("open");
 
-    shopToggle.addEventListener(
-      "click",
-      function() {
-
-        const isOpen =
-          shopDropdown.classList.toggle(
-            "open"
-          );
-
-
-        shopToggle.setAttribute(
-          "aria-expanded",
-          isOpen
-            ? "true"
-            : "false"
-        );
-
-      }
-    );
-
-
-    document.addEventListener(
-      "click",
-      function(event) {
-
-        if (
-          !shopDropdown.contains(
-            event.target
-          )
-        ) {
-
-          shopDropdown.classList.remove(
-            "open"
-          );
-
-
-          shopToggle.setAttribute(
-            "aria-expanded",
-            "false"
-          );
-
-        }
-
-      }
-    );
-
-  /* =========================================================
-     AMAZON FINDS SEARCH + FILTER
-     ========================================================= */
-
-  const searchInput =
-    document.getElementById("findsSearch");
-
-  const filterButtons =
-    document.querySelectorAll(".finds-filter");
-
-  const cards =
-    document.querySelectorAll(".find-card");
-
-  const noResults =
-    document.getElementById("findsNoResults");
-
-
-  let currentFilter = "all";
-
-
-  function updateFinds() {
-
-    const searchTerm =
-      searchInput.value
-        .toLowerCase()
-        .trim();
-
-    let visibleCount = 0;
-
-
-    cards.forEach(function(card) {
-
-      const category =
-        card.dataset.category;
-
-      const searchableText =
-        (
-          card.dataset.search +
-          " " +
-          card.dataset.subcategory +
-          " " +
-          card.dataset.category
-        ).toLowerCase();
-
-
-      const matchesCategory =
-        currentFilter === "all" ||
-        category === currentFilter;
-
-
-      const matchesSearch =
-        searchableText.includes(searchTerm);
-
-
-      if (
-        matchesCategory &&
-        matchesSearch
-      ) {
-
-        card.style.display = "flex";
-
-        visibleCount++;
-
-      } else {
-
-        card.style.display = "none";
-
-      }
-
-    });
-
-
-    if (visibleCount === 0) {
-
-      noResults.style.display = "block";
-
-    } else {
-
-      noResults.style.display = "none";
-
-    }
-
-  }
-
-
-  filterButtons.forEach(function(button) {
-
-    button.addEventListener(
-      "click",
-      function() {
-
-        filterButtons.forEach(function(btn) {
-
-          btn.classList.remove("active");
-
-        });
-
-
-        button.classList.add("active");
-
-
-        currentFilter =
-          button.dataset.filter;
-
-
-        updateFinds();
-
-      }
+    shopToggle.setAttribute(
+      "aria-expanded",
+      isOpen ? "true" : "false"
     );
 
   });
 
+
+  document.addEventListener("click", function(event) {
+
+    if (!shopDropdown.contains(event.target)) {
+
+      shopDropdown.classList.remove("open");
+
+      shopToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+    }
+
+  });
+
+}
+
+
+/* =========================================================
+   AMAZON FINDS SEARCH + FILTER
+========================================================= */
+
+const searchInput =
+  document.getElementById("findsSearch");
+
+const filterButtons =
+  document.querySelectorAll(".finds-filter");
+
+const cards =
+  document.querySelectorAll(".find-card");
+
+const noResults =
+  document.getElementById("findsNoResults");
+
+
+let currentFilter = "all";
+
+
+function updateFinds() {
+
+  if (!searchInput || !cards.length) {
+    return;
+  }
+
+
+  const searchTerm =
+    searchInput.value
+      .toLowerCase()
+      .trim();
+
+
+  let visibleCount = 0;
+
+
+  cards.forEach(function(card) {
+
+    const category =
+      (card.dataset.category || "").toLowerCase();
+
+
+    const subcategory =
+      (card.dataset.subcategory || "").toLowerCase();
+
+
+    const searchData =
+      (card.dataset.search || "").toLowerCase();
+
+
+    const cardTitle =
+      card.querySelector("h3")
+        ? card.querySelector("h3").textContent.toLowerCase()
+        : "";
+
+
+    const cardReview =
+      card.querySelector(".find-card-review")
+        ? card.querySelector(".find-card-review").textContent.toLowerCase()
+        : "";
+
+
+    const searchableText =
+      (
+        searchData +
+        " " +
+        subcategory +
+        " " +
+        category +
+        " " +
+        cardTitle +
+        " " +
+        cardReview
+      );
+
+
+    const matchesCategory =
+      currentFilter === "all" ||
+      category === currentFilter.toLowerCase();
+
+
+    const matchesSearch =
+      searchTerm === "" ||
+      searchableText.includes(searchTerm);
+
+
+    if (
+      matchesCategory &&
+      matchesSearch
+    ) {
+
+      card.style.display = "flex";
+
+      visibleCount++;
+
+    } else {
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+
+  if (noResults) {
+
+    noResults.style.display =
+      visibleCount === 0
+        ? "block"
+        : "none";
+
+  }
+
+}
+
+
+/* ========================================
+   FILTER BUTTON EVENTS
+======================================== */
+
+filterButtons.forEach(function(button) {
+
+  button.addEventListener(
+    "click",
+    function() {
+
+      filterButtons.forEach(function(btn) {
+
+        btn.classList.remove("active");
+
+      });
+
+
+      button.classList.add("active");
+
+
+      currentFilter =
+        button.dataset.filter || "all";
+
+
+      updateFinds();
+
+    }
+  );
+
+});
+
+
+/* ========================================
+   SEARCH EVENT
+======================================== */
+
+if (searchInput) {
 
   searchInput.addEventListener(
     "input",
     updateFinds
   );
 
-  * ========================================
-       WISHLIST STORAGE
-    ======================================== */
-
-    const WISHLIST_STORAGE_KEY =
-      "honeyAndHymnsWishlist";
+}
 
 
-    function getWishlist() {
+/* ========================================
+   WISHLIST STORAGE
+======================================== */
 
-      try {
-
-        const stored =
-          localStorage.getItem(
-            WISHLIST_STORAGE_KEY
-          );
+const WISHLIST_STORAGE_KEY =
+  "honeyAndHymnsWishlist";
 
 
-        if (!stored) {
+function getWishlist() {
 
-          return [];
+  try {
 
-        }
-
-
-        const parsed =
-          JSON.parse(stored);
-
-
-        return Array.isArray(parsed)
-          ? parsed
-          : [];
-
-      } catch (error) {
-
-        return [];
-
-      }
-
-    }
-
-
-    function saveWishlist(items) {
-
-      localStorage.setItem(
-        WISHLIST_STORAGE_KEY,
-        JSON.stringify(items)
+    const stored =
+      localStorage.getItem(
+        WISHLIST_STORAGE_KEY
       );
 
-    }
 
+    if (!stored) {
 
-    /* ========================================
-       WISHLIST COUNT
-    ======================================== */
-
-    function updateWishlistCount() {
-
-      const countElement =
-        document.getElementById(
-          "wishlistCount"
-        );
-
-
-      if (!countElement) {
-
-        return;
-
-      }
-
-
-      countElement.textContent =
-        getWishlist().length;
+      return [];
 
     }
 
 
-    /* ========================================
-       CHECK IF PRODUCT IS SAVED
-    ======================================== */
+    const parsed =
+      JSON.parse(stored);
 
-    function isInWishlist(id) {
 
-      return getWishlist().some(
-        function(item) {
+    return Array.isArray(parsed)
+      ? parsed
+      : [];
 
-          return item.id === id;
+  } catch (error) {
 
-        }
-      );
+    return [];
+
+  }
+
+}
+
+
+function saveWishlist(items) {
+
+  localStorage.setItem(
+    WISHLIST_STORAGE_KEY,
+    JSON.stringify(items)
+  );
+
+}
+
+
+/* ========================================
+   WISHLIST COUNT
+======================================== */
+
+function updateWishlistCount() {
+
+  const countElement =
+    document.getElementById(
+      "wishlistCount"
+    );
+
+
+  if (!countElement) {
+
+    return;
+
+  }
+
+
+  countElement.textContent =
+    getWishlist().length;
+
+}
+
+
+/* ========================================
+   CHECK IF PRODUCT IS SAVED
+======================================== */
+
+function isInWishlist(id) {
+
+  return getWishlist().some(
+    function(item) {
+
+      return item.id === id;
 
     }
+  );
+
+}
 
 
-    /* ========================================
-       UPDATE PRODUCT BUTTONS
-    ======================================== */
+/* ========================================
+   UPDATE PRODUCT BUTTONS
+======================================== */
 
-    function updateWishlistButtons() {
+function updateWishlistButtons() {
 
-      const buttons =
-        document.querySelectorAll(
-          ".wishlist-button"
-        );
-
-
-      buttons.forEach(
-        function(button) {
-
-          const id =
-            button.dataset.wishlistId;
+  const buttons =
+    document.querySelectorAll(
+      ".wishlist-button"
+    );
 
 
-          if (
-            isInWishlist(id)
-          ) {
-
-            button.classList.add(
-              "saved"
-            );
-
-
-            button.textContent =
-              "♥ Saved to Wishlist";
-
-          } else {
-
-            button.classList.remove(
-              "saved"
-            );
-
-
-            button.textContent =
-              "♡ Add to Wishlist";
-
-          }
-
-        }
-      );
-
-    }
-
-
-    /* ========================================
-       ADD / REMOVE PRODUCT
-    ======================================== */
-
-    function toggleWishlist(button) {
+  buttons.forEach(
+    function(button) {
 
       const id =
         button.dataset.wishlistId;
 
 
-      const product = {
-
-        id:
-          id,
-
-        title:
-          button.dataset.title,
-
-        price:
-          button.dataset.price,
-
-        image:
-          button.dataset.image,
-
-        url:
-          button.dataset.url
-
-      };
-
-
-      let wishlist =
-        getWishlist();
-
-
-      const existingIndex =
-        wishlist.findIndex(
-          function(item) {
-
-            return item.id === id;
-
-          }
-        );
-
-
       if (
-        existingIndex !== -1
+        isInWishlist(id)
       ) {
 
-        wishlist.splice(
-          existingIndex,
-          1
+        button.classList.add(
+          "saved"
         );
+
+
+        button.textContent =
+          "♥ Saved to Wishlist";
 
       } else {
 
-        wishlist.push(
-          product
+        button.classList.remove(
+          "saved"
         );
+
+
+        button.textContent =
+          "♡ Add to Wishlist";
 
       }
 
-
-      saveWishlist(
-        wishlist
-      );
-
-
-      updateWishlistCount();
-
-      updateWishlistButtons();
-
     }
+  );
 
+}
 
-    /* ========================================
-       PRODUCT BUTTON EVENTS
-    ======================================== */
 
-    document
-      .querySelectorAll(
-        ".wishlist-button"
-      )
-      .forEach(
-        function(button) {
+/* ========================================
+   ADD / REMOVE PRODUCT
+======================================== */
 
-          button.addEventListener(
-            "click",
-            function() {
+function toggleWishlist(button) {
 
-              toggleWishlist(
-                button
-              );
+  const id =
+    button.dataset.wishlistId;
 
-            }
-          );
 
-        }
-      );
+  const product = {
 
+    id:
+      id,
 
-    /* ========================================
-       RENDER WISHLIST
-    ======================================== */
+    title:
+      button.dataset.title || "",
 
-    function renderWishlist() {
+    price:
+      button.dataset.price || "",
 
-      const body =
-        document.getElementById(
-          "wishlistBody"
-        );
+    image:
+      button.dataset.image || "",
 
+    url:
+      button.dataset.url || ""
 
-      const wishlist =
-        getWishlist();
+  };
 
 
-      if (
-        wishlist.length === 0
-      ) {
+  let wishlist =
+    getWishlist();
 
-        body.innerHTML = `
 
-          <div class="wishlist-empty">
+  const existingIndex =
+    wishlist.findIndex(
+      function(item) {
 
-            <div class="wishlist-empty-icon">
-              ♡
-            </div>
-
-            <h3>
-              Your wishlist is empty
-            </h3>
-
-            <p>
-              Save a few Honey & Hymns favorites
-              and they'll wait here for you.
-            </p>
-
-          </div>
-
-        `;
-
-
-        return;
-
-      }
-
-
-      body.innerHTML =
-        wishlist
-          .map(
-            function(item) {
-
-              return `
-
-                <div
-                  class="wishlist-item"
-                  data-item-id="${escapeHtml(item.id)}"
-                >
-
-                  <img
-                    class="wishlist-item-image"
-                    src="${escapeHtml(item.image)}"
-                    alt="${escapeHtml(item.title)}"
-                  >
-
-
-                  <div>
-
-                    <h3
-                      class="wishlist-item-title"
-                    >
-                      ${escapeHtml(item.title)}
-                    </h3>
-
-
-                    <p
-                      class="wishlist-item-price"
-                    >
-                      ${escapeHtml(item.price)}
-                    </p>
-
-
-                    <a
-                      class="wishlist-item-view"
-                      href="${escapeHtml(item.url)}"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      View Product →
-                    </a>
-
-                  </div>
-
-
-                  <button
-                    class="wishlist-remove"
-                    type="button"
-                    onclick="removeFromWishlist('${escapeHtml(item.id)}')"
-                  >
-                    Remove
-                  </button>
-
-                </div>
-
-              `;
-
-            }
-          )
-          .join("");
-
-    }
-
-
-    /* ========================================
-       BASIC HTML ESCAPING
-    ======================================== */
-
-    function escapeHtml(value) {
-
-      return String(value)
-        .replace(
-          /&/g,
-          "&amp;"
-        )
-        .replace(
-          /</g,
-          "&lt;"
-        )
-        .replace(
-          />/g,
-          "&gt;"
-        )
-        .replace(
-          /"/g,
-          "&quot;"
-        )
-        .replace(
-          /'/g,
-          "&#039;"
-        );
-
-    }
-
-
-    /* ========================================
-       REMOVE FROM WISHLIST
-    ======================================== */
-
-    function removeFromWishlist(id) {
-
-      const wishlist =
-        getWishlist()
-          .filter(
-            function(item) {
-
-              return item.id !== id;
-
-            }
-          );
-
-
-      saveWishlist(
-        wishlist
-      );
-
-
-      updateWishlistCount();
-
-      updateWishlistButtons();
-
-      renderWishlist();
-
-    }
-
-
-    /* ========================================
-       OPEN WISHLIST
-    ======================================== */
-
-    function openWishlist() {
-
-      renderWishlist();
-
-
-      const overlay =
-        document.getElementById(
-          "wishlistOverlay"
-        );
-
-
-      overlay.classList.add(
-        "open"
-      );
-
-
-      overlay.setAttribute(
-        "aria-hidden",
-        "false"
-      );
-
-
-      document.body.style.overflow =
-        "hidden";
-
-    }
-
-
-    /* ========================================
-       CLOSE WISHLIST
-    ======================================== */
-
-    function closeWishlist() {
-
-      const overlay =
-        document.getElementById(
-          "wishlistOverlay"
-        );
-
-
-      overlay.classList.remove(
-        "open"
-      );
-
-
-      overlay.setAttribute(
-        "aria-hidden",
-        "true"
-      );
-
-
-      document.body.style.overflow =
-        "";
-
-    }
-
-
-    /* ========================================
-       CLEAR WISHLIST
-    ======================================== */
-
-    function clearWishlist() {
-
-      const wishlist =
-        getWishlist();
-
-
-      if (
-        wishlist.length === 0
-      ) {
-
-        return;
-
-      }
-
-
-      const confirmed =
-        window.confirm(
-          "Are you sure you want to clear your wishlist?"
-        );
-
-
-      if (!confirmed) {
-
-        return;
-
-      }
-
-
-      saveWishlist(
-        []
-      );
-
-
-      updateWishlistCount();
-
-      updateWishlistButtons();
-
-      renderWishlist();
-
-    }
-
-
-    /* ========================================
-       CLOSE WHEN CLICKING OUTSIDE
-    ======================================== */
-
-    document
-      .getElementById(
-        "wishlistOverlay"
-      )
-      .addEventListener(
-        "click",
-        function(event) {
-
-          if (
-            event.target ===
-            this
-          ) {
-
-            closeWishlist();
-
-          }
-
-        }
-      );
-
-
-    /* ========================================
-       ESCAPE KEY
-    ======================================== */
-
-    document.addEventListener(
-      "keydown",
-      function(event) {
-
-        if (
-          event.key ===
-          "Escape"
-        ) {
-
-          closeWishlist();
-
-        }
+        return item.id === id;
 
       }
     );
 
-  
+
+  if (
+    existingIndex !== -1
+  ) {
+
+    wishlist.splice(
+      existingIndex,
+      1
+    );
+
+  } else {
+
+    wishlist.push(
+      product
+    );
+
+  }
+
+
+  saveWishlist(
+    wishlist
+  );
+
+
+  updateWishlistCount();
+
+  updateWishlistButtons();
+
+}
+
+
+/* ========================================
+   PRODUCT BUTTON EVENTS
+======================================== */
+
+document
+  .querySelectorAll(
+    ".wishlist-button"
+  )
+  .forEach(
+    function(button) {
+
+      button.addEventListener(
+        "click",
+        function() {
+
+          toggleWishlist(
+            button
+          );
+
+        }
+      );
+
+    }
+  );
+
+
+/* ========================================
+   RENDER WISHLIST
+======================================== */
+
+function renderWishlist() {
+
+  const body =
+    document.getElementById(
+      "wishlistBody"
+    );
+
+
+  if (!body) {
+    return;
+  }
+
+
+  const wishlist =
+    getWishlist();
+
+
+  if (
+    wishlist.length === 0
+  ) {
+
+    body.innerHTML = `
+
+      <div class="wishlist-empty">
+
+        <div class="wishlist-empty-icon">
+          ♡
+        </div>
+
+        <h3>
+          Your wishlist is empty
+        </h3>
+
+        <p>
+          Save a few Honey & Hymns favorites
+          and they'll wait here for you.
+        </p>
+
+      </div>
+
+    `;
+
+
+    return;
+
+  }
+
+
+  body.innerHTML =
+    wishlist
+      .map(
+        function(item) {
+
+          return `
+
+            <div
+              class="wishlist-item"
+              data-item-id="${escapeHtml(item.id)}"
+            >
+
+              <img
+                class="wishlist-item-image"
+                src="${escapeHtml(item.image)}"
+                alt="${escapeHtml(item.title)}"
+              >
+
+
+              <div>
+
+                <h3
+                  class="wishlist-item-title"
+                >
+                  ${escapeHtml(item.title)}
+                </h3>
+
+
+                <p
+                  class="wishlist-item-price"
+                >
+                  ${escapeHtml(item.price)}
+                </p>
+
+
+                <a
+                  class="wishlist-item-view"
+                  href="${escapeHtml(item.url)}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Product →
+                </a>
+
+              </div>
+
+
+              <button
+                class="wishlist-remove"
+                type="button"
+                onclick="removeFromWishlist('${escapeHtml(item.id)}')"
+              >
+                Remove
+              </button>
+
+            </div>
+
+          `;
+
+        }
+      )
+      .join("");
+
+}
+
+
+/* ========================================
+   BASIC HTML ESCAPING
+======================================== */
+
+function escapeHtml(value) {
+
+  return String(value)
+    .replace(
+      /&/g,
+      "&amp;"
+    )
+    .replace(
+      /</g,
+      "&lt;"
+    )
+    .replace(
+      />/g,
+      "&gt;"
+    )
+    .replace(
+      /"/g,
+      "&quot;"
+    )
+    .replace(
+      /'/g,
+      "&#039;"
+    );
+
+}
+
+
+/* ========================================
+   REMOVE FROM WISHLIST
+======================================== */
+
+function removeFromWishlist(id) {
+
+  const wishlist =
+    getWishlist()
+      .filter(
+        function(item) {
+
+          return item.id !== id;
+
+        }
+      );
+
+
+  saveWishlist(
+    wishlist
+  );
+
+
+  updateWishlistCount();
+
+  updateWishlistButtons();
+
+  renderWishlist();
+
+}
+
+
+/* ========================================
+   OPEN WISHLIST
+======================================== */
+
+function openWishlist() {
+
+  renderWishlist();
+
+
+  const overlay =
+    document.getElementById(
+      "wishlistOverlay"
+    );
+
+
+  if (!overlay) {
+    return;
+  }
+
+
+  overlay.classList.add(
+    "open"
+  );
+
+
+  overlay.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+
+/* ========================================
+   CLOSE WISHLIST
+======================================== */
+
+function closeWishlist() {
+
+  const overlay =
+    document.getElementById(
+      "wishlistOverlay"
+    );
+
+
+  if (!overlay) {
+    return;
+  }
+
+
+  overlay.classList.remove(
+    "open"
+  );
+
+
+  overlay.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+
+  document.body.style.overflow =
+    "";
+
+}
+
+
+/* ========================================
+   CLEAR WISHLIST
+======================================== */
+
+function clearWishlist() {
+
+  const wishlist =
+    getWishlist();
+
+
+  if (
+    wishlist.length === 0
+  ) {
+
+    return;
+
+  }
+
+
+  const confirmed =
+    window.confirm(
+      "Are you sure you want to clear your wishlist?"
+    );
+
+
+  if (!confirmed) {
+
+    return;
+
+  }
+
+
+  saveWishlist(
+    []
+  );
+
+
+  updateWishlistCount();
+
+  updateWishlistButtons();
+
+  renderWishlist();
+
+}
+
+
+/* ========================================
+   CLOSE WHEN CLICKING OUTSIDE
+======================================== */
+
+const wishlistOverlay =
+  document.getElementById(
+    "wishlistOverlay"
+  );
+
+
+if (wishlistOverlay) {
+
+  wishlistOverlay.addEventListener(
+    "click",
+    function(event) {
+
+      if (
+        event.target ===
+        this
+      ) {
+
+        closeWishlist();
+
+      }
+
+    }
+  );
+
+}
+
+
+/* ========================================
+   ESCAPE KEY
+======================================== */
+
+document.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (
+      event.key ===
+      "Escape"
+    ) {
+
+      closeWishlist();
+
+    }
+
+  }
+);
+
+
 /* ========================================
    POLL BAR ANIMATION
 ======================================== */
@@ -5069,14 +5110,13 @@ if (pollBars.length > 0) {
    INITIALIZE
 ======================================== */
 
+updateFinds();
+
 updateWishlistCount();
 
 updateWishlistButtons();
 
-
-
 </script>
-
 
 </body>
 
