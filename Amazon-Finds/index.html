@@ -1,1 +1,3450 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Amazon Finds for Catholic Homemakers & Homeschool Moms | Honey & Hymns
+  </title>
+
+  <meta
+    name="description"
+    content="A collection of things I've found helpful, beautiful, useful, or simply lovely for faith, homeschooling, homemaking, motherhood, and family life."
+  >
+
+  <style>
+
+    /* =========================================================
+       HONEY & HYMNS AMAZON FINDS
+       ========================================================= */
+
+    :root {
+      --honey-yellow: #FFEBA1;
+      --soft-honey: #F8DFA0;
+      --cream: #FFFDF5;
+      --warm-white: #FFF9EA;
+      --paper: #F8F2DF;
+      --brown: #5B4636;
+      --dark-brown: #3F3026;
+      --soft-brown: #806B59;
+      --gold: #C89B3C;
+      --border: #E7D8B8;
+      --shadow: rgba(91, 70, 54, 0.12);
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--brown);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+
+    a {
+      color: inherit;
+    }
+
+
+    /* =========================================================
+       PAGE HEADER
+       ========================================================= */
+
+    .amazon-finds-page {
+      width: 100%;
+    }
+
+
+    .amazon-finds-hero {
+      padding: 80px 20px 70px;
+      text-align: center;
+      background:
+        linear-gradient(
+          rgba(255, 235, 161, 0.55),
+          rgba(255, 253, 245, 0.9)
+        );
+    }
+
+
+    .amazon-finds-hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+
+    .amazon-finds-kicker {
+      margin: 0 0 12px;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: var(--soft-brown);
+    }
+
+
+    .amazon-finds-hero h1 {
+      margin: 0 auto 20px;
+      max-width: 850px;
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      line-height: 1.1;
+      color: var(--dark-brown);
+    }
+
+
+    .amazon-finds-rule {
+      margin: 20px 0;
+      color: var(--gold);
+      font-size: 1.4rem;
+    }
+
+
+    .amazon-finds-intro {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 1.08rem;
+    }
+
+
+    /* =========================================================
+       AFFILIATE DISCLOSURE
+       ========================================================= */
+
+    .affiliate-disclosure {
+      max-width: 900px;
+      margin: 30px auto 0;
+      padding: 16px 20px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.65);
+      font-size: 0.88rem;
+      font-style: italic;
+    }
+
+
+    /* =========================================================
+       MAIN CONTENT
+       ========================================================= */
+
+    .amazon-finds-content {
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 50px 20px 90px;
+    }
+
+
+    /* =========================================================
+       SEARCH
+       ========================================================= */
+
+    .finds-search-wrapper {
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+
+    .finds-search-label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+
+    .finds-search {
+      width: 100%;
+      padding: 15px 18px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: white;
+      color: var(--brown);
+      font-family: inherit;
+      font-size: 1rem;
+      outline: none;
+    }
+
+
+    .finds-search:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(200, 155, 60, 0.12);
+    }
+
+
+    /* =========================================================
+       CATEGORY FILTERS
+       ========================================================= */
+
+    .finds-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 45px;
+    }
+
+
+    .finds-filter {
+      border: 1px solid var(--border);
+      background: var(--warm-white);
+      color: var(--brown);
+      padding: 10px 17px;
+      border-radius: 30px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+
+    .finds-filter:hover,
+    .finds-filter.active {
+      background: var(--honey-yellow);
+      border-color: var(--soft-honey);
+      transform: translateY(-1px);
+    }
+
+
+    /* =========================================================
+       SECTION HEADING
+       ========================================================= */
+
+    .finds-section-heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+
+    .finds-section-heading h2 {
+      margin: 0 0 10px;
+      font-size: 2rem;
+      color: var(--dark-brown);
+    }
+
+
+    .finds-section-heading p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--soft-brown);
+    }
+
+
+    /* =========================================================
+       PRODUCT GRID
+       ========================================================= */
+
+    .finds-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+
+    /* =========================================================
+       PRODUCT CARD
+       ========================================================= */
+
+    .find-card {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border: 1px solid var(--border);
+      box-shadow: 0 7px 20px var(--shadow);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+      overflow: hidden;
+    }
+
+
+    .find-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(91, 70, 54, 0.16);
+    }
+
+
+    .find-card-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      display: block;
+      background: var(--paper);
+      padding: 18px;
+    }
+
+
+    .find-card-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 22px;
+    }
+
+
+    .find-card-category {
+      margin-bottom: 8px;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: var(--gold);
+    }
+
+
+    .find-card h3 {
+      margin: 0 0 13px;
+      color: var(--dark-brown);
+      font-size: 1.18rem;
+      line-height: 1.35;
+    }
+
+
+    .find-card-review {
+      margin: 0 0 20px;
+      font-size: 0.94rem;
+      color: var(--soft-brown);
+      line-height: 1.65;
+    }
+
+
+    .find-card-subcategory {
+      margin-bottom: 18px;
+      font-size: 0.78rem;
+      color: var(--soft-brown);
+      font-style: italic;
+    }
+
+
+    .find-card-button {
+      display: block;
+      margin-top: auto;
+      padding: 12px 16px;
+      text-align: center;
+      text-decoration: none;
+      background: var(--honey-yellow);
+      color: var(--dark-brown);
+      border: 1px solid var(--soft-honey);
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+
+    .find-card-button:hover {
+      background: var(--soft-honey);
+    }
+
+
+    /* =========================================================
+       NO RESULTS
+       ========================================================= */
+
+    .finds-no-results {
+      display: none;
+      text-align: center;
+      padding: 50px 20px;
+      color: var(--soft-brown);
+    }
+
+
+    .finds-no-results h3 {
+      color: var(--dark-brown);
+    }
+
+
+    /* =========================================================
+       LIVING BOOKSHELF FEATURE
+       ========================================================= */
+
+    .living-bookshelf-section {
+      margin-top: 85px;
+      padding: 55px 30px;
+      background: var(--paper);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+
+
+    .living-bookshelf-section h2 {
+      margin: 0 0 12px;
+      color: var(--dark-brown);
+      font-size: 2rem;
+    }
+
+
+    .living-bookshelf-section p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--soft-brown);
+    }
+
+
+    /* =========================================================
+       BOTTOM CTA
+       ========================================================= */
+
+    .finds-bottom-cta {
+      max-width: 800px;
+      margin: 70px auto 0;
+      padding: 45px 30px;
+      text-align: center;
+      background: var(--honey-yellow);
+      border: 1px solid var(--soft-honey);
+    }
+
+
+    .finds-bottom-cta h2 {
+      margin: 0 0 12px;
+      color: var(--dark-brown);
+    }
+
+
+    .finds-bottom-cta p {
+      margin: 0 auto 20px;
+      max-width: 600px;
+    }
+
+
+    .finds-bottom-button {
+      display: inline-block;
+      padding: 12px 22px;
+      background: var(--dark-brown);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 950px) {
+
+      .finds-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+    }
+
+
+    @media (max-width: 650px) {
+
+      .amazon-finds-hero {
+        padding: 60px 18px 50px;
+      }
+
+
+      .amazon-finds-content {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+
+      .finds-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .finds-filters {
+        gap: 7px;
+      }
+
+
+      .finds-filter {
+        padding: 8px 13px;
+        font-size: 0.82rem;
+      }
+
+
+      .living-bookshelf-section {
+        padding: 40px 20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<main class="amazon-finds-page">
+
+
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
+
+  <section class="amazon-finds-hero">
+
+    <div class="amazon-finds-hero-inner">
+
+      <p class="amazon-finds-kicker">
+        The Honey & Hymns Finds
+      </p>
+
+      <h1>
+        Things I’ve Found & Loved
+      </h1>
+
+      <div class="amazon-finds-rule">
+        ✦
+      </div>
+
+      <p class="amazon-finds-intro">
+        A growing collection of things I've found helpful,
+        beautiful, useful, or simply lovely for faith,
+        homeschooling, homemaking, motherhood, and family life.
+      </p>
+
+      <div class="affiliate-disclosure">
+        Some of the links on this page are affiliate links.
+        If you purchase something through one of my links,
+        I may receive a small commission at no additional cost
+        to you. Thank you for supporting Honey & Hymns!
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       CONTENT
+  ======================================================== -->
+
+  <section class="amazon-finds-content">
+
+
+    <!-- SEARCH -->
+
+    <div class="finds-search-wrapper">
+
+      <label
+        class="finds-search-label"
+        for="findsSearch"
+      >
+        Search the Honey & Hymns Finds
+      </label>
+
+      <input
+        type="search"
+        id="findsSearch"
+        class="finds-search"
+        placeholder="Search books, homeschool, faith, homemaking..."
+      >
+
+    </div>
+
+
+    <!-- FILTERS -->
+
+    <div class="finds-filters">
+
+      <button
+        class="finds-filter active"
+        data-filter="all"
+        type="button"
+      >
+        Everything
+      </button>
+
+      <button
+        class="finds-filter"
+        data-filter="Homemaking"
+        type="button"
+      >
+        🏡 Homemaking
+      </button>
+
+      <button
+        class="finds-filter"
+        data-filter="Homeschool"
+        type="button"
+      >
+        📚 Homeschool
+      </button>
+
+      <button
+        class="finds-filter"
+        data-filter="Faith"
+        type="button"
+      >
+        ✝️ Faith
+      </button>
+
+      <button
+        class="finds-filter"
+        data-filter="Kids & Family"
+        type="button"
+      >
+        👧 Kids & Family
+      </button>
+
+      <button
+        class="finds-filter"
+        data-filter="Gifts"
+        type="button"
+      >
+        🎁 Gifts
+      </button>
+
+    </div>
+
+
+    <!-- SECTION INTRO -->
+
+    <div class="finds-section-heading">
+
+      <h2>
+        A Few of My Favorite Finds
+      </h2>
+
+      <p>
+        These are things I've personally come across that
+        fit naturally into the rhythms of family life,
+        homeschooling, faith, and homemaking.
+      </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         PRODUCT GRID
+    ====================================================== -->
+
+    <div
+      class="finds-grid"
+      id="findsGrid"
+    >
+
+
+      <!-- ===================================================
+           FAITH — CATHOLIC KIDS
+      ==================================================== -->
+
+
+      <article
+        class="find-card"
+        data-category="Faith"
+        data-subcategory="Catholic Kids"
+        data-search="Sliner Wooden Catholic Mass Kit for Kids Catholic Mass Mass kit children"
+      >
+
+        <img
+          src="images/sliner-wooden-catholic-mass-kit-kids.png"
+          alt="Sliner Wooden Catholic Mass Kit for Kids"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Faith
+          </div>
+
+          <h3>
+            Sliner Wooden Catholic Mass Kit for Kids
+          </h3>
+
+          <p class="find-card-review">
+            A sweet hands-on way for little ones to become
+            familiar with the parts of Mass through imaginative
+            play. A lovely addition to a Catholic home or homeschool.
+          </p>
+
+          <div class="find-card-subcategory">
+            Catholic Kids
+          </div>
+
+          <a
+            href="https://amzn.to/3Rq40xK"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Faith"
+        data-subcategory="Catholic Kids"
+        data-search="Catholic Mass Quiet Book Toddlers Preschoolers Mass"
+      >
+
+        <img
+          src="images/catholic-mass-quiet-book-toddlers-preschoolers.png"
+          alt="Catholic Mass Quiet Book for Toddlers and Preschoolers"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Faith
+          </div>
+
+          <h3>
+            Catholic Mass Quiet Book for Toddlers and Preschoolers
+          </h3>
+
+          <p class="find-card-review">
+            A hands-on quiet activity designed to help little
+            ones learn about Mass while keeping their hands busy.
+            Especially nice for toddlers and preschoolers.
+          </p>
+
+          <div class="find-card-subcategory">
+            Catholic Kids
+          </div>
+
+          <a
+            href="https://amzn.to/4z2sFcD"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Faith"
+        data-subcategory="Catholic Kids"
+        data-search="Wooden Rosary Board Catholic Gifts Kids Catholic Toys Rosary"
+      >
+
+        <img
+          src="images/wooden-rosary-board-kids.png"
+          alt="Wooden Rosary Board for Catholic Kids"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Faith
+          </div>
+
+          <h3>
+            Wooden Rosary Board Catholic Gifts for Kids
+          </h3>
+
+          <p class="find-card-review">
+            A beautiful hands-on way to introduce young children
+            to the Rosary. The wooden design makes it especially
+            appealing for little hands.
+          </p>
+
+          <div class="find-card-subcategory">
+            Catholic Kids
+          </div>
+
+          <a
+            href="https://amzn.to/4xD8eBB"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Faith"
+        data-subcategory="Women's Devotionals"
+        data-search="365 Devotions Catholic Women Daily Moments God Living Faith devotional"
+      >
+
+        <img
+          src="images/365-devotions-catholic-women.png"
+          alt="365 Devotions for Catholic Women"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Faith
+          </div>
+
+          <h3>
+            365 Devotions for Catholic Women
+          </h3>
+
+          <p class="find-card-review">
+            A simple daily devotional for Catholic women who
+            want a little time with God each day. A nice option
+            for building a consistent prayer habit.
+          </p>
+
+          <div class="find-card-subcategory">
+            Women's Devotionals
+          </div>
+
+          <a
+            href="https://amzn.to/4pYti2u"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Faith"
+        data-subcategory="Women's Faith"
+        data-search="A Catholic Guide to Anxiety Catholic women faith"
+      >
+
+        <img
+          src="images/a-catholic-guide-to-anxiety.png"
+          alt="A Catholic Guide to Anxiety"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Faith
+          </div>
+
+          <h3>
+            A Catholic Guide to Anxiety
+          </h3>
+
+          <p class="find-card-review">
+            A Catholic perspective on navigating anxiety that
+            combines faith with practical reflection. A thoughtful
+            resource for women looking for encouragement.
+          </p>
+
+          <div class="find-card-subcategory">
+            Women's Faith
+          </div>
+
+          <a
+            href="https://amzn.to/3UdzGY7"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Faith"
+        data-subcategory="Women's Devotionals"
+        data-search="Catholic Bible Verses Prayers Women Scripture devotional"
+      >
+
+        <img
+          src="images/catholic-bible-verses-prayers-women.png"
+          alt="Catholic Bible Verses and Prayers for Women"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Faith
+          </div>
+
+          <h3>
+            Catholic Bible Verses & Prayers for Women
+          </h3>
+
+          <p class="find-card-review">
+            A beautiful collection of Scripture and prayers
+            that can provide a little encouragement and reflection
+            throughout the day.
+          </p>
+
+          <div class="find-card-subcategory">
+            Women's Devotionals
+          </div>
+
+          <a
+            href="https://amzn.to/3UxWPV7"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Faith"
+        data-subcategory="Catholic Kids"
+        data-search="My First Catholic Mass Book Kids Eucharist Church"
+      >
+
+        <img
+          src="images/my-first-catholic-mass-book-kids.png"
+          alt="My First Catholic Mass Book for Kids"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Faith
+          </div>
+
+          <h3>
+            My First Catholic Mass Book for Kids
+          </h3>
+
+          <p class="find-card-review">
+            A gentle introduction to the Mass and Eucharist
+            for young children. A useful book to read together
+            before or after Mass.
+          </p>
+
+          <div class="find-card-subcategory">
+            Catholic Kids
+          </div>
+
+          <a
+            href="https://amzn.to/3Sl2sWc"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Faith"
+        data-subcategory="Catholic Kids"
+        data-search="Sitting Like A Saint Catholic Mindfulness Kids"
+      >
+
+        <img
+          src="images/sitting-like-a-saint.png"
+          alt="Sitting Like a Saint Catholic Mindfulness for Kids"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Faith
+          </div>
+
+          <h3>
+            Sitting Like a Saint
+          </h3>
+
+          <p class="find-card-review">
+            A faith-centered resource that introduces children
+            to mindfulness and peaceful habits through a
+            Catholic lens.
+          </p>
+
+          <div class="find-card-subcategory">
+            Catholic Kids
+          </div>
+
+          <a
+            href="https://amzn.to/45IO4tW"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Faith"
+        data-subcategory="Catholic Kids"
+        data-search="Catholic Prayer Ring Cards Kids prayers"
+      >
+
+        <img
+          src="images/catholic-prayer-ring-cards.png"
+          alt="My Catholic Prayer Ring Cards"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Faith
+          </div>
+
+          <h3>
+            My Catholic Prayer Ring Cards
+          </h3>
+
+          <p class="find-card-review">
+            A portable way for children to keep familiar Catholic
+            prayers close at hand. Great for building a consistent
+            prayer routine.
+          </p>
+
+          <div class="find-card-subcategory">
+            Catholic Kids
+          </div>
+
+          <a
+            href="https://amzn.to/4zzzTF1"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Faith"
+        data-subcategory="Kids' Bible Activities"
+        data-search="Bible Sticker Activity Early Learning Kids 3 6"
+      >
+
+        <img
+          src="images/bible-sticker-activity-kids.png"
+          alt="Bible Sticker Activity for Kids"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Faith
+          </div>
+
+          <h3>
+            Sticker Activity: Bible
+          </h3>
+
+          <p class="find-card-review">
+            A simple Bible-themed activity for younger children
+            that combines stickers with early learning. Great
+            for quiet time or faith lessons.
+          </p>
+
+          <div class="find-card-subcategory">
+            Kids' Bible Activities
+          </div>
+
+          <a
+            href="https://amzn.to/4qGWPOH"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Faith"
+        data-subcategory="Catholic Kids"
+        data-search="Catholic Prayers Wooden Cube Kids"
+      >
+
+        <img
+          src="images/catholic-prayers-wooden-cube.png"
+          alt="My Favorite Catholic Prayers Wooden Cube"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Faith
+          </div>
+
+          <h3>
+            My Favorite Catholic Prayers Wooden Cube
+          </h3>
+
+          <p class="find-card-review">
+            A fun tactile way to incorporate familiar prayers
+            into family life. Children can interact with the cube
+            while learning and practicing prayers.
+          </p>
+
+          <div class="find-card-subcategory">
+            Catholic Kids
+          </div>
+
+          <a
+            href="https://amzn.to/4gt1DTi"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Faith"
+        data-subcategory="Kids' Bible Activities"
+        data-search="Bible Study Workbook Kids Scripture family Bible time"
+      >
+
+        <img
+          src="images/bible-study-workbook-kids.png"
+          alt="Bible Study Workbook for Kids"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Faith
+          </div>
+
+          <h3>
+            Bible Study Workbook for Kids
+          </h3>
+
+          <p class="find-card-review">
+            A structured way to help children spend more
+            intentional time engaging with Scripture. Useful
+            for family Bible time or independent study.
+          </p>
+
+          <div class="find-card-subcategory">
+            Kids' Bible Activities
+          </div>
+
+          <a
+            href="https://amzn.to/4zFpt75"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Faith"
+        data-subcategory="Women's Devotionals"
+        data-search="Present Grace 52 Week Devotional Moms God ordinary moments"
+      >
+
+        <img
+          src="images/present-grace-devotional.png"
+          alt="Present Grace devotional for moms"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Faith
+          </div>
+
+          <h3>
+            Present Grace: A 52-Week Devotional for Moms
+          </h3>
+
+          <p class="find-card-review">
+            A devotional centered on noticing God in ordinary
+            moments. A lovely fit for busy mothers who want
+            faith woven into everyday life.
+          </p>
+
+          <div class="find-card-subcategory">
+            Women's Devotionals
+          </div>
+
+          <a
+            href="https://amzn.to/4gx7eYN"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Faith"
+        data-subcategory="Women's Devotionals"
+        data-search="You are Made for This Devotions Busy Moms"
+      >
+
+        <img
+          src="images/you-are-made-for-this-devotional.png"
+          alt="You Are Made for This devotional"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Faith
+          </div>
+
+          <h3>
+            You Are Made for This
+          </h3>
+
+          <p class="find-card-review">
+            An encouraging devotional for mothers who need
+            reminders that their ordinary work matters. A
+            comforting choice for busy seasons of motherhood.
+          </p>
+
+          <div class="find-card-subcategory">
+            Women's Devotionals
+          </div>
+
+          <a
+            href="https://amzn.to/4xbKIM1"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Faith"
+        data-subcategory="Women's Devotionals"
+        data-search="Daily Devotions New Moms 90 Devotions Strength Peace God"
+      >
+
+        <img
+          src="images/daily-devotions-new-moms.png"
+          alt="Daily Devotions for New Moms"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Faith
+          </div>
+
+          <h3>
+            Daily Devotions for New Moms
+          </h3>
+
+          <p class="find-card-review">
+            Short daily reflections created with the realities
+            of new motherhood in mind. A good option for moms
+            who want encouragement in a very busy season.
+          </p>
+
+          <div class="find-card-subcategory">
+            Women's Devotionals
+          </div>
+
+          <a
+            href="https://amzn.to/45KlMPH"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Faith"
+        data-subcategory="Women's Devotionals"
+        data-search="Bible Promises Moms Inspirational Verses Christian Mothers"
+      >
+
+        <img
+          src="images/bible-promises-for-moms.png"
+          alt="Bible Promises for Moms"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Faith
+          </div>
+
+          <h3>
+            Bible Promises for Moms
+          </h3>
+
+          <p class="find-card-review">
+            A simple collection of encouraging Scripture for
+            mothers. Easy to pick up when you need a quick
+            reminder of God's promises.
+          </p>
+
+          <div class="find-card-subcategory">
+            Women's Devotionals
+          </div>
+
+          <a
+            href="https://amzn.to/3UbJXEg"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Faith"
+        data-subcategory="Women's Devotionals"
+        data-search="Daily Devotional Busy Moms Christian Devotions 5 Minute"
+      >
+
+        <img
+          src="images/daily-devotional-busy-moms.png"
+          alt="Daily Devotional for Busy Moms"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Faith
+          </div>
+
+          <h3>
+            Daily Devotional for Busy Moms
+          </h3>
+
+          <p class="find-card-review">
+            Short, approachable devotions designed for mothers
+            who don't have much uninterrupted time. A nice
+            option for a five-minute quiet moment with God.
+          </p>
+
+          <div class="find-card-subcategory">
+            Women's Devotionals
+          </div>
+
+          <a
+            href="https://amzn.to/4gpp6EH"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           HOMESCHOOL
+      ==================================================== -->
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Math"
+        data-search="Lacama Multiplication Chart math homeschool"
+      >
+
+        <img
+          src="images/lacama-multiplication-chart.png"
+          alt="Lacama Multiplication Chart"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            Lacama Multiplication Chart
+          </h3>
+
+          <p class="find-card-review">
+            A simple visual tool for helping children practice
+            and memorize multiplication facts. Great to keep
+            handy during math lessons.
+          </p>
+
+          <div class="find-card-subcategory">
+            Math
+          </div>
+
+          <a
+            href="https://amzn.to/4z4CIhl"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Science"
+        data-search="Microscope Kit Kids Homeschool Science"
+      >
+
+        <img
+          src="images/kids-microscope-kit.png"
+          alt="Kids Microscope Kit"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            Microscope Kit
+          </h3>
+
+          <p class="find-card-review">
+            A fun way to turn science into hands-on exploration.
+            Perfect for curious homeschoolers who love looking
+            closely at the world around them.
+          </p>
+
+          <div class="find-card-subcategory">
+            Science
+          </div>
+
+          <a
+            href="https://amzn.to/4pTGINc"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Reading"
+        data-search="Cool Kids Read Books Neon Sign reading corner"
+      >
+
+        <img
+          src="images/cool-kids-read-books-neon-sign.png"
+          alt="Cool Kids Read Books neon sign"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            Cool Kids Read Books Neon Sign
+          </h3>
+
+          <p class="find-card-review">
+            A fun little addition to a child's reading space
+            that celebrates books and makes a reading corner
+            feel special.
+          </p>
+
+          <div class="find-card-subcategory">
+            Reading
+          </div>
+
+          <a
+            href="https://amzn.to/4wXVHZz"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Living Books"
+        data-search="Charlotte's Web living book homeschool read aloud"
+      >
+
+        <img
+          src="images/charlottes-web.png"
+          alt="Charlotte's Web"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            Charlotte's Web
+          </h3>
+
+          <p class="find-card-review">
+            A timeless read-aloud that belongs on a well-loved
+            children's bookshelf. Wonderful for family reading
+            and gentle conversations about friendship and courage.
+          </p>
+
+          <div class="find-card-subcategory">
+            Living Books
+          </div>
+
+          <a
+            href="https://amzn.to/4iur7C2"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Supplies"
+        data-search="Dry Erase Lap Board 9 12 2 Pack homeschool"
+      >
+
+        <img
+          src="images/dry-erase-lap-boards-2-pack.png"
+          alt="Dry Erase Lap Boards"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            Dry Erase Lap Boards — 2 Pack
+          </h3>
+
+          <p class="find-card-review">
+            These are incredibly handy for homeschool lessons,
+            handwriting practice, math work, and quick practice
+            without using a whole sheet of paper.
+          </p>
+
+          <div class="find-card-subcategory">
+            Supplies
+          </div>
+
+          <a
+            href="https://amzn.to/4qBKvzo"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Geography"
+        data-search="Learning Resources Magnetic US Map Puzzle Geography"
+      >
+
+        <img
+          src="images/magnetic-us-map-puzzle.png"
+          alt="Magnetic U.S. Map Puzzle"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            Learning Resources Magnetic U.S. Map Puzzle
+          </h3>
+
+          <p class="find-card-review">
+            A hands-on way for children to learn U.S. geography
+            while putting the map together themselves. Great
+            for homeschool geography lessons.
+          </p>
+
+          <div class="find-card-subcategory">
+            Geography
+          </div>
+
+          <a
+            href="https://amzn.to/4cDNbqd"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Nature Study"
+        data-search="Insect Lore Raise Release Butterfly Garden Kit nature study homeschool"
+      >
+
+        <img
+          src="images/insect-lore-butterfly-garden-kit.png"
+          alt="Insect Lore Butterfly Garden Kit"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            Insect Lore Raise and Release Butterfly Garden Kit
+          </h3>
+
+          <p class="find-card-review">
+            One of those homeschool experiences children remember.
+            Watching caterpillars transform into butterflies makes
+            a wonderful hands-on nature study.
+          </p>
+
+          <div class="find-card-subcategory">
+            Nature Study
+          </div>
+
+          <a
+            href="https://amzn.to/4wNV9V8"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Living Books"
+        data-search="Trumpet of the Swan 50th Anniversary Charlotte Mason living book"
+      >
+
+        <img
+          src="images/trumpet-of-the-swan.png"
+          alt="Trumpet of the Swan"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            The Trumpet of the Swan
+          </h3>
+
+          <p class="find-card-review">
+            A charming classic that makes a wonderful family
+            read-aloud. A great choice for Charlotte Mason-inspired
+            literature lists.
+          </p>
+
+          <div class="find-card-subcategory">
+            Living Books
+          </div>
+
+          <a
+            href="https://amzn.to/4c7Lql3"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Living Books"
+        data-search="Velveteen Rabbit classic children's book living book"
+      >
+
+        <img
+          src="images/velveteen-rabbit.png"
+          alt="The Velveteen Rabbit"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            The Velveteen Rabbit
+          </h3>
+
+          <p class="find-card-review">
+            A beloved classic with beautiful themes of love,
+            friendship, and becoming real. A sweet addition
+            to a family bookshelf.
+          </p>
+
+          <div class="find-card-subcategory">
+            Living Books
+          </div>
+
+          <a
+            href="https://amzn.to/4cpaAMf"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Living Books"
+        data-search="Mouse and the Motorcycle classic chapter book homeschool"
+      >
+
+        <img
+          src="images/mouse-and-the-motorcycle.png"
+          alt="The Mouse and the Motorcycle"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            The Mouse and the Motorcycle
+          </h3>
+
+          <p class="find-card-review">
+            A fun classic chapter book that makes an engaging
+            read-aloud or independent reading choice for
+            elementary-aged children.
+          </p>
+
+          <div class="find-card-subcategory">
+            Living Books
+          </div>
+
+          <a
+            href="https://amzn.to/4qu3MT6"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Living Books"
+        data-search="Boxcar Children classic adventure living books homeschool"
+      >
+
+        <img
+          src="images/boxcar-children.png"
+          alt="The Boxcar Children"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            The Boxcar Children
+          </h3>
+
+          <p class="find-card-review">
+            A classic adventure series starter that invites
+            children into imaginative family-centered storytelling.
+            A great addition to a homeschool bookshelf.
+          </p>
+
+          <div class="find-card-subcategory">
+            Living Books
+          </div>
+
+          <a
+            href="https://amzn.to/4gdW783"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Living Books"
+        data-search="Sarah Plain and Tall living book family reading"
+      >
+
+        <img
+          src="images/sarah-plain-and-tall.png"
+          alt="Sarah Plain and Tall"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            Sarah, Plain and Tall
+          </h3>
+
+          <p class="find-card-review">
+            A gentle, beautifully written story that works
+            wonderfully for family reading and thoughtful
+            conversations about family and belonging.
+          </p>
+
+          <div class="find-card-subcategory">
+            Living Books
+          </div>
+
+          <a
+            href="https://amzn.to/3UOtaah"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Living Books"
+        data-search="Tale Peter Rabbit classic children's book"
+      >
+
+        <img
+          src="images/tale-of-peter-rabbit.png"
+          alt="The Tale of Peter Rabbit"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            The Tale of Peter Rabbit
+          </h3>
+
+          <p class="find-card-review">
+            A timeless little classic with beautiful illustrations
+            and a mischievous charm children continue to love.
+          </p>
+
+          <div class="find-card-subcategory">
+            Living Books
+          </div>
+
+          <a
+            href="https://amzn.to/4gtUTEH"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Living Books"
+        data-search="Lion Witch Wardrobe C S Lewis classic homeschool"
+      >
+
+        <img
+          src="images/lion-witch-and-wardrobe.png"
+          alt="The Lion the Witch and the Wardrobe"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            The Lion, the Witch and the Wardrobe
+          </h3>
+
+          <p class="find-card-review">
+            A beloved classic for family reading, rich with
+            adventure, courage, sacrifice, and themes that can
+            lead to wonderful discussions.
+          </p>
+
+          <div class="find-card-subcategory">
+            Living Books
+          </div>
+
+          <a
+            href="https://amzn.to/4gtQbXs"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Early Learning"
+        data-search="Verse ABC Flash Cards Scripture alphabet early learning"
+      >
+
+        <img
+          src="images/verse-abc-flash-cards.png"
+          alt="Verse ABC Flash Cards"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            Verse ABC Flash Cards
+          </h3>
+
+          <p class="find-card-review">
+            A colorful way to combine early alphabet practice
+            with Scripture. A nice option for younger children
+            learning their letters.
+          </p>
+
+          <div class="find-card-subcategory">
+            Early Learning
+          </div>
+
+          <a
+            href="https://amzn.to/4i8datJ"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Language Arts"
+        data-search="Bible Verse Handwriting Practice Kids Copywork Homeschool"
+      >
+
+        <img
+          src="images/bible-verse-handwriting-practice.png"
+          alt="Bible Verse Handwriting Practice for Kids"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            Bible Verse Handwriting Practice for Kids
+          </h3>
+
+          <p class="find-card-review">
+            Combines handwriting practice with Scripture copywork,
+            making it a natural fit for a faith-based homeschool.
+          </p>
+
+          <div class="find-card-subcategory">
+            Language Arts
+          </div>
+
+          <a
+            href="https://amzn.to/4c3D3qB"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Living Books"
+        data-search="Chrysanthemum children's book read aloud"
+      >
+
+        <img
+          src="images/chrysanthemum.png"
+          alt="Chrysanthemum children's book"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            Chrysanthemum
+          </h3>
+
+          <p class="find-card-review">
+            A sweet children's story about identity, kindness,
+            and learning to appreciate what makes us unique.
+            A lovely read-aloud for younger children.
+          </p>
+
+          <div class="find-card-subcategory">
+            Living Books
+          </div>
+
+          <a
+            href="https://amzn.to/4zzvIZY"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Living Books"
+        data-search="Tale Despereaux children's classic living book"
+      >
+
+        <img
+          src="images/tale-of-despereaux.png"
+          alt="The Tale of Despereaux"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            The Tale of Despereaux
+          </h3>
+
+          <p class="find-card-review">
+            A charming story filled with courage, kindness,
+            forgiveness, and adventure. A wonderful choice
+            for family read-aloud time.
+          </p>
+
+          <div class="find-card-subcategory">
+            Living Books
+          </div>
+
+          <a
+            href="https://amzn.to/4geNQ3R"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Preschool"
+        data-search="Magic of Childhood 52 Week Christian Homeschool Curriculum Preschool"
+      >
+
+        <img
+          src="images/magic-of-childhood-homeschool.png"
+          alt="The Magic of Childhood homeschool curriculum"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            The Magic of Childhood
+          </h3>
+
+          <p class="find-card-review">
+            A Christian homeschool resource for preschoolers
+            that gives families a structured way to incorporate
+            faith, learning, and childhood rhythms.
+          </p>
+
+          <div class="find-card-subcategory">
+            Preschool
+          </div>
+
+          <a
+            href="https://amzn.to/4cVv13g"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Living Books"
+        data-search="Wind in the Willows classic family read aloud"
+      >
+
+        <img
+          src="images/wind-in-the-willows.png"
+          alt="The Wind in the Willows"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            The Wind in the Willows
+          </h3>
+
+          <p class="find-card-review">
+            A beautifully written classic full of friendship,
+            adventure, and memorable characters. A wonderful
+            choice for a family read-aloud.
+          </p>
+
+          <div class="find-card-subcategory">
+            Living Books
+          </div>
+
+          <a
+            href="https://amzn.to/4cyb9Di"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Living Books"
+        data-search="The Dot children's book creativity art homeschool"
+      >
+
+        <img
+          src="images/the-dot.png"
+          alt="The Dot children's book"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            The Dot
+          </h3>
+
+          <p class="find-card-review">
+            A simple, encouraging story about creativity and
+            having the courage to begin. Wonderful for younger
+            children and art-loving homeschoolers.
+          </p>
+
+          <div class="find-card-subcategory">
+            Living Books
+          </div>
+
+          <a
+            href="https://amzn.to/4wH9Jxu"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homeschool"
+        data-subcategory="Living Books"
+        data-search="Stellaluna children's book family friendship"
+      >
+
+        <img
+          src="images/stellaluna.png"
+          alt="Stellaluna"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homeschool
+          </div>
+
+          <h3>
+            Stellaluna
+          </h3>
+
+          <p class="find-card-review">
+            A beautiful children's story that combines an engaging
+            animal story with themes of family, friendship,
+            and differences.
+          </p>
+
+          <div class="find-card-subcategory">
+            Living Books
+          </div>
+
+          <a
+            href="https://amzn.to/3SL1cM9"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           KIDS & FAMILY
+      ==================================================== -->
+
+
+      <article
+        class="find-card"
+        data-category="Kids & Family"
+        data-subcategory="Screen-Free Entertainment"
+        data-search="YOTO Player 3rd Generation screen free kids audio stories"
+      >
+
+        <img
+          src="images/yoto-player-3rd-generation.png"
+          alt="YOTO Player 3rd Generation"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Kids & Family
+          </div>
+
+          <h3>
+            YOTO Player (3rd Gen.)
+          </h3>
+
+          <p class="find-card-review">
+            A screen-free way for kids to enjoy stories, music,
+            podcasts, and audiobooks independently. A great
+            option for quiet time and car rides.
+          </p>
+
+          <div class="find-card-subcategory">
+            Screen-Free Entertainment
+          </div>
+
+          <a
+            href="https://amzn.to/3TCg5At"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Kids & Family"
+        data-subcategory="Kids in the Kitchen"
+        data-search="Kids Knife Set Real Cooking Safe Kitchen Tools Ages 4"
+      >
+
+        <img
+          src="images/kids-real-cooking-knife-set.png"
+          alt="Kids real cooking knife set"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Kids & Family
+          </div>
+
+          <h3>
+            Kids Real Cooking Knife Set
+          </h3>
+
+          <p class="find-card-review">
+            A practical introduction to real kitchen skills
+            for children. Great for parents who want to invite
+            little ones into everyday cooking and food preparation.
+          </p>
+
+          <div class="find-card-subcategory">
+            Kids in the Kitchen
+          </div>
+
+          <a
+            href="https://amzn.to/4fWdysl"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           HOMEMAKING
+      ==================================================== -->
+
+
+      <article
+        class="find-card"
+        data-category="Homemaking"
+        data-subcategory="Recipes & Cooking"
+        data-search="Around Catholic Table simple recipes family friends"
+      >
+
+        <img
+          src="images/around-the-catholic-table.png"
+          alt="Around the Catholic Table cookbook"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homemaking
+          </div>
+
+          <h3>
+            Around the Catholic Table
+          </h3>
+
+          <p class="find-card-review">
+            A collection of family-friendly recipes centered
+            around gathering and sharing meals. A lovely fit
+            for Catholic homemakers who want to make the family
+            table more meaningful.
+          </p>
+
+          <div class="find-card-subcategory">
+            Recipes & Cooking
+          </div>
+
+          <a
+            href="https://amzn.to/4gnT79n"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homemaking"
+        data-subcategory="Planning & Organization"
+        data-search="Weekly Menu Dry Erase Calendar Board planning organization"
+      >
+
+        <img
+          src="images/weekly-menu-dry-erase-calendar-board.png"
+          alt="Weekly menu dry erase calendar board"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homemaking
+          </div>
+
+          <h3>
+            Golden Weekly & Menu Dry Erase Calendar Board
+          </h3>
+
+          <p class="find-card-review">
+            A pretty and practical way to keep the week's
+            schedule and meals visible in one place. Great
+            for busy family life.
+          </p>
+
+          <div class="find-card-subcategory">
+            Planning & Organization
+          </div>
+
+          <a
+            href="https://amzn.to/4wH8wWY"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homemaking"
+        data-subcategory="Kitchen Organization"
+        data-search="Cereal Dispenser Countertop Bowls Kids breakfast"
+      >
+
+        <img
+          src="images/countertop-cereal-dispenser.png"
+          alt="Countertop cereal dispenser"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homemaking
+          </div>
+
+          <h3>
+            Countertop Cereal Dispenser
+          </h3>
+
+          <p class="find-card-review">
+            A convenient setup for making breakfast more
+            independent for kids. It can make busy homeschool
+            mornings a little easier.
+          </p>
+
+          <div class="find-card-subcategory">
+            Kitchen Organization
+          </div>
+
+          <a
+            href="https://amzn.to/3STtpAp"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homemaking"
+        data-subcategory="Organization"
+        data-search="Under Sink Organizer Cleaning Supplies"
+      >
+
+        <img
+          src="images/under-sink-organizer-2-pack.png"
+          alt="Under sink organizer"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homemaking
+          </div>
+
+          <h3>
+            2 Pack Under Sink Organizer
+          </h3>
+
+          <p class="find-card-review">
+            A simple organization solution for making better
+            use of the space under the sink. Helpful for keeping
+            cleaning supplies contained and accessible.
+          </p>
+
+          <div class="find-card-subcategory">
+            Organization
+          </div>
+
+          <a
+            href="https://amzn.to/4yhfNOH"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homemaking"
+        data-subcategory="Kitchen Organization"
+        data-search="Refrigerator Drink Milk Dispenser Sealed Spout"
+      >
+
+        <img
+          src="images/refrigerator-drink-milk-dispenser.png"
+          alt="Refrigerator drink and milk dispenser"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homemaking
+          </div>
+
+          <h3>
+            Refrigerator Drink & Milk Dispenser
+          </h3>
+
+          <p class="find-card-review">
+            A practical option for organizing frequently used
+            drinks and making them easier for family members
+            to grab independently.
+          </p>
+
+          <div class="find-card-subcategory">
+            Kitchen Organization
+          </div>
+
+          <a
+            href="https://amzn.to/4gNpbmZ"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homemaking"
+        data-subcategory="Kitchen Organization"
+        data-search="SpaceAid Bag Storage Organizer Kitchen Drawer Bamboo"
+      >
+
+        <img
+          src="images/spaceaid-bag-storage-organizer.png"
+          alt="SpaceAid bag storage organizer"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homemaking
+          </div>
+
+          <h3>
+            SpaceAid Bag Storage Organizer
+          </h3>
+
+          <p class="find-card-review">
+            A clever way to corral reusable bags and wraps
+            in a kitchen drawer. Helpful for keeping an easily
+            chaotic space organized.
+          </p>
+
+          <div class="find-card-subcategory">
+            Kitchen Organization
+          </div>
+
+          <a
+            href="https://amzn.to/3UaBnFH"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homemaking"
+        data-subcategory="Kitchen Organization"
+        data-search="Spring Loaded Drink Dispenser Soda Can Organizer"
+      >
+
+        <img
+          src="images/spring-loaded-drink-can-organizer.png"
+          alt="Spring loaded drink can organizer"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homemaking
+          </div>
+
+          <h3>
+            Spring Loaded Drink Dispenser
+          </h3>
+
+          <p class="find-card-review">
+            A simple refrigerator organization tool that keeps
+            cans neatly arranged and makes grabbing a drink easier.
+          </p>
+
+          <div class="find-card-subcategory">
+            Kitchen Organization
+          </div>
+
+          <a
+            href="https://amzn.to/4ijbb5G"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homemaking"
+        data-subcategory="Kitchen Organization"
+        data-search="SpaceAid Long Wrap Dispenser plastic wrap foil"
+      >
+
+        <img
+          src="images/spaceaid-wrap-dispenser.png"
+          alt="SpaceAid wrap dispenser"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homemaking
+          </div>
+
+          <h3>
+            SpaceAid 2-in-1 Long Wrap Dispenser
+          </h3>
+
+          <p class="find-card-review">
+            A practical kitchen organizer for keeping plastic
+            wrap, foil, and similar supplies neat and easy to access.
+          </p>
+
+          <div class="find-card-subcategory">
+            Kitchen Organization
+          </div>
+
+          <a
+            href="https://amzn.to/4wO4xbl"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homemaking"
+        data-subcategory="Cleaning"
+        data-search="Cleaning Caddy Handle Cleaning Supplies Organizer"
+      >
+
+        <img
+          src="images/cleaning-caddy-with-handle.png"
+          alt="Cleaning caddy with handle"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homemaking
+          </div>
+
+          <h3>
+            Cleaning Caddy with Handle
+          </h3>
+
+          <p class="find-card-review">
+            A simple household tool that makes it easier to
+            keep cleaning supplies together and carry them
+            from room to room.
+          </p>
+
+          <div class="find-card-subcategory">
+            Cleaning
+          </div>
+
+          <a
+            href="https://amzn.to/3UuykYY"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homemaking"
+        data-subcategory="Cleaning"
+        data-search="BISSELL CrossWave HydroSteam Wet Dry Vacuum Mop"
+      >
+
+        <img
+          src="images/bissell-crosswave-hydrosteam.png"
+          alt="BISSELL CrossWave HydroSteam"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homemaking
+          </div>
+
+          <h3>
+            BISSELL CrossWave HydroSteam
+          </h3>
+
+          <p class="find-card-review">
+            A hardworking multi-purpose cleaning tool for busy
+            homes. Especially appealing if you want to combine
+            several floor-cleaning jobs into one machine.
+          </p>
+
+          <div class="find-card-subcategory">
+            Cleaning
+          </div>
+
+          <a
+            href="https://amzn.to/3UxYcmJ"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homemaking"
+        data-subcategory="Cleaning"
+        data-search="Long Handle Broom Dustpan Set cleaning"
+      >
+
+        <img
+          src="images/long-handle-broom-dustpan-set.png"
+          alt="Long handle broom and dustpan set"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homemaking
+          </div>
+
+          <h3>
+            Long-Handle Broom & Dustpan Set
+          </h3>
+
+          <p class="find-card-review">
+            A long-handled broom and dustpan that makes
+            everyday sweeping easier without constantly bending
+            over. A practical homemaking staple.
+          </p>
+
+          <div class="find-card-subcategory">
+            Cleaning
+          </div>
+
+          <a
+            href="https://amzn.to/4qBM40e"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homemaking"
+        data-subcategory="Cleaning"
+        data-search="Clorox ToiletWand Toilet Cleaning System"
+      >
+
+        <img
+          src="images/clorox-toiletwand-cleaning-system.png"
+          alt="Clorox ToiletWand cleaning system"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homemaking
+          </div>
+
+          <h3>
+            Clorox ToiletWand Toilet Cleaning System
+          </h3>
+
+          <p class="find-card-review">
+            A convenient way to simplify one of those less-loved
+            household chores. Disposable cleaning heads make
+            the process quick and straightforward.
+          </p>
+
+          <div class="find-card-subcategory">
+            Cleaning
+          </div>
+
+          <a
+            href="https://amzn.to/4gt1O0U"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="find-card"
+        data-category="Homemaking"
+        data-subcategory="Organization"
+        data-search="Broom Holder Cleaning Supplies Organizer Broom Closet"
+      >
+
+        <img
+          src="images/broom-cleaning-supplies-organizer.png"
+          alt="Broom and cleaning supplies organizer"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Homemaking
+          </div>
+
+          <h3>
+            Broom & Cleaning Supplies Organizer
+          </h3>
+
+          <p class="find-card-review">
+            A useful solution for keeping brooms, cleaning
+            tools, and supplies together instead of scattered
+            around the house.
+          </p>
+
+          <div class="find-card-subcategory">
+            Organization
+          </div>
+
+          <a
+            href="https://amzn.to/4gzHV8u"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           GIFTS
+      ==================================================== -->
+
+
+      <article
+        class="find-card"
+        data-category="Gifts"
+        data-subcategory="Faith Gifts"
+        data-search="Christian Birthday Gifts Women Mom Sister Inspirational Religious Gift"
+      >
+
+        <img
+          src="images/christian-birthday-gift-women.png"
+          alt="Christian birthday gift for women"
+          class="find-card-image"
+        >
+
+        <div class="find-card-content">
+
+          <div class="find-card-category">
+            Gifts
+          </div>
+
+          <h3>
+            Christian Birthday Gift for Women
+          </h3>
+
+          <p class="find-card-review">
+            A simple faith-centered gift option for a Christian
+            mother, sister, or friend. Nice for birthdays and
+            encouraging little surprises.
+          </p>
+
+          <div class="find-card-subcategory">
+            Faith Gifts
+          </div>
+
+          <a
+            href="https://amzn.to/4ipmtoU"
+            class="find-card-button"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            See It on Amazon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+    <!-- NO RESULTS -->
+
+    <div
+      class="finds-no-results"
+      id="findsNoResults"
+    >
+
+      <h3>
+        I couldn't find that one.
+      </h3>
+
+      <p>
+        Try searching for something a little different.
+      </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         LIVING BOOKSHELF
+    ====================================================== -->
+
+    <section class="living-bookshelf-section">
+
+      <p class="amazon-finds-kicker">
+        A Little Corner of the Finds
+      </p>
+
+      <h2>
+        📚 The Honey & Hymns Living Bookshelf
+      </h2>
+
+      <p>
+        I'm especially fond of books that invite children into
+        beautiful stories rather than simply giving them
+        information. This collection will continue growing as
+        I find more books worth putting on a well-loved
+        homeschool bookshelf.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         BOTTOM CTA
+    ====================================================== -->
+
+    <section class="finds-bottom-cta">
+
+      <h2>
+        Want More Honey & Hymns?
+      </h2>
+
+      <p>
+        Come join us for faith, homeschool encouragement,
+        homemaking ideas, and the beautiful ordinary moments
+        of family life.
+      </p>
+
+      <a
+        href="https://honeyandhymns.substack.com/subscribe"
+        class="finds-bottom-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Join the Honey Hive 🐝
+      </a>
+
+    </section>
+
+
+  </section>
+
+
+</main>
+
+
+<script>
+
+  /* =========================================================
+     AMAZON FINDS SEARCH + FILTER
+     ========================================================= */
+
+  const searchInput =
+    document.getElementById("findsSearch");
+
+  const filterButtons =
+    document.querySelectorAll(".finds-filter");
+
+  const cards =
+    document.querySelectorAll(".find-card");
+
+  const noResults =
+    document.getElementById("findsNoResults");
+
+
+  let currentFilter = "all";
+
+
+  function updateFinds() {
+
+    const searchTerm =
+      searchInput.value
+        .toLowerCase()
+        .trim();
+
+    let visibleCount = 0;
+
+
+    cards.forEach(function(card) {
+
+      const category =
+        card.dataset.category;
+
+      const searchableText =
+        (
+          card.dataset.search +
+          " " +
+          card.dataset.subcategory +
+          " " +
+          card.dataset.category
+        ).toLowerCase();
+
+
+      const matchesCategory =
+        currentFilter === "all" ||
+        category === currentFilter;
+
+
+      const matchesSearch =
+        searchableText.includes(searchTerm);
+
+
+      if (
+        matchesCategory &&
+        matchesSearch
+      ) {
+
+        card.style.display = "flex";
+
+        visibleCount++;
+
+      } else {
+
+        card.style.display = "none";
+
+      }
+
+    });
+
+
+    if (visibleCount === 0) {
+
+      noResults.style.display = "block";
+
+    } else {
+
+      noResults.style.display = "none";
+
+    }
+
+  }
+
+
+  filterButtons.forEach(function(button) {
+
+    button.addEventListener(
+      "click",
+      function() {
+
+        filterButtons.forEach(function(btn) {
+
+          btn.classList.remove("active");
+
+        });
+
+
+        button.classList.add("active");
+
+
+        currentFilter =
+          button.dataset.filter;
+
+
+        updateFinds();
+
+      }
+    );
+
+  });
+
+
+  searchInput.addEventListener(
+    "input",
+    updateFinds
+  );
+
+
+</script>
+
+
+</body>
+
+</html>
