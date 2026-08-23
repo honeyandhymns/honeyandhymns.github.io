@@ -1,1 +1,4274 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Honey & Hymns Digital Magazine | Honey & Hymns</title>
+
+<meta
+name="description"
+content="Monthly Digital Magazine brought to You by Honey & Hymns"
+>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Caveat:wght@400;500;600&display=swap"
+rel="stylesheet"
+>
+<style>
+
+/* ========================================
+   GENERAL
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #FFFDF0;
+  color: #4D4029;
+  font-family: "Playfair Display", Georgia, serif;
+  line-height: 1.6;
+}
+
+button,
+a {
+  font-family: inherit;
+}
+
+
+ /* =========================
+       HEADER
+    ========================= */
+
+    .site-header {
+      background: #FFEBA1;
+      padding: 25px 20px 15px;
+      text-align: center;
+      border-bottom: 1px solid rgba(90, 70, 30, 0.12);
+    }
+
+
+    .header-brand {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+
+    .site-logo {
+      width: 365px;
+      max-width: 86%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+
+    .header-tagline {
+      margin: 4px 0 0;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 0.84rem;
+      letter-spacing: 2px;
+      color: #5D4B2D;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .site-nav {
+      background: #FFEBA1;
+      text-align: center;
+      padding: 9px 15px 13px;
+
+      border-bottom:
+        1px solid
+        rgba(90, 70, 30, 0.12);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3px;
+    }
+
+
+    .site-nav a,
+    .shop-toggle,
+    .wishlist-header-button {
+
+      color: #514229;
+
+      text-decoration: none;
+
+      margin: 0 9px;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 0.95rem;
+
+      transition:
+        color 0.2s ease;
+
+    }
+
+
+    .site-nav a:hover,
+    .shop-toggle:hover,
+    .wishlist-header-button:hover {
+
+      color: #967331;
+
+    }
+
+
+    .site-nav a.active {
+
+      color: #80652D;
+      font-weight: 600;
+
+    }
+
+
+    /* =========================
+       SHOP DROPDOWN
+    ========================= */
+
+    .shop-dropdown {
+
+      position: relative;
+      display: inline-block;
+
+    }
+
+
+    .shop-toggle {
+
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      line-height: inherit;
+
+    }
+
+
+    .shop-menu {
+
+      position: absolute;
+
+      top:
+        calc(100% + 10px);
+
+      left: 50%;
+
+      transform:
+        translateX(-50%)
+        translateY(-6px);
+
+      min-width: 250px;
+
+      background: #FFFDF0;
+
+      border:
+        1px solid
+        #D8C79F;
+
+      border-radius: 12px;
+
+      box-shadow:
+        0 8px 22px
+        rgba(77, 64, 41, 0.16);
+
+      padding: 8px 0;
+
+      text-align: left;
+
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+
+      z-index: 1000;
+
+    }
+
+
+    .shop-dropdown.open .shop-menu,
+    .shop-dropdown:hover .shop-menu {
+
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+
+      transform:
+        translateX(-50%)
+        translateY(0);
+
+    }
+
+
+    .shop-menu a {
+
+      display: block;
+
+      margin: 0;
+
+      padding:
+        10px 18px;
+
+      font-size: 0.92rem;
+
+    }
+
+
+    .shop-menu a:hover {
+
+      background: #FFF3C8;
+
+    }
+
+
+    .shop-coming-soon {
+
+      padding:
+        10px 18px;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 0.92rem;
+
+    }
+
+
+    .shop-coming-soon small {
+
+      display: block;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      color: #80652D;
+
+      font-size: 0.85rem;
+
+    }
+
+
+    /* =========================
+       WISHLIST HEADER BUTTON
+    ========================= */
+
+    .wishlist-header-button {
+
+      background: none;
+
+      border: none;
+
+      padding: 0;
+
+      cursor: pointer;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 5px;
+
+    }
+
+
+    .wishlist-heart {
+
+      font-size: 1.05rem;
+
+      line-height: 1;
+
+    }
+
+
+    .wishlist-count {
+
+      min-width: 19px;
+      height: 19px;
+
+      padding: 0 5px;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: #D8B65F;
+
+      color: #4D4029;
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size: 0.63rem;
+
+      font-weight: bold;
+
+    }
+
+/* ========================================
+   HERO
+======================================== */
+
+.gospel-hero {
+  background: #FFEBA1;
+  padding: 50px 20px 55px;
+  text-align: center;
+  border-bottom: 1px solid #E2CC78;
+}
+
+.gospel-kicker {
+  font-family: "Caveat", cursive;
+  font-size: 1.35rem;
+  color: #80652D;
+  margin: 0 0 3px;
+}
+
+.gospel-hero h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 3rem;
+  line-height: 1.05;
+  font-weight: 500;
+  color: #403521;
+  margin: 0 0 12px;
+}
+
+.gospel-hero p {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 0.88rem;
+  color: #68583D;
+}
+
+
+/* ========================================
+   CURRENT ISSUE
+======================================== */
+
+.current-section {
+  padding: 55px 20px 65px;
+  background: #FBF8ED;
+}
+
+.content-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.section-heading h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2.25rem;
+  line-height: 1.1;
+  font-weight: 500;
+  color: #403521;
+  margin: 0 0 5px;
+}
+
+.section-heading p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #68583D;
+  font-size: 0.82rem;
+}
+
+.section-rule {
+  color: #B18A4D;
+  margin: 6px 0;
+}
+
+.current-issue {
+  max-width: 720px;
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(250px,390px)
+    1fr;
+
+  gap: 38px;
+
+  align-items: center;
+}
+
+.current-cover-wrap {
+  text-align: center;
+}
+
+.current-cover {
+  width: 100%;
+  max-width: 360px;
+
+  display: block;
+  margin: 0 auto;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 10px 25px rgba(77,64,41,0.14);
+
+  border: 1px solid #E1D2A8;
+}
+
+.current-details {
+  text-align: left;
+}
+
+.current-week {
+  font-family: "Caveat", cursive;
+  font-size: 1.35rem;
+  color: #80652D;
+  margin-bottom: 2px;
+}
+
+.current-details h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2rem;
+  line-height: 1.1;
+  font-weight: 500;
+  color: #403521;
+  margin: 0 0 10px;
+}
+
+.current-details p {
+  font-size: 0.78rem;
+  color: #68583D;
+  margin: 0 0 20px;
+}
+
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.button-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 260px;
+}
+
+.gospel-button,
+.wishlist-button {
+  width: 100%;
+
+  border-radius: 30px;
+
+  padding: 10px 16px;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 0.72rem;
+  font-weight: bold;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.gospel-button {
+  display: block;
+
+  background: #E9C768;
+
+  color: #4D4029;
+
+  text-decoration: none;
+
+  border: 1px solid #D8B65F;
+}
+
+.gospel-button:hover {
+  background: #DDBB5E;
+  transform: translateY(-1px);
+}
+
+.wishlist-button {
+  background: #FFFDF0;
+  color: #80652D;
+  border: 1px solid #D8C79F;
+}
+
+.wishlist-button:hover {
+  background: #FFF3C8;
+  transform: translateY(-1px);
+}
+
+.wishlist-button.saved {
+  background: #F4E1A0;
+  color: #665020;
+}
+
+
+/* ========================================
+   TRY IT OUT
+======================================== */
+
+.try-section {
+  background: #FFEBA1;
+
+  padding: 60px 20px;
+
+  text-align: center;
+
+  border-top: 1px solid #E2CC78;
+  border-bottom: 1px solid #E2CC78;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.try-section h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: 2.5rem;
+
+  line-height: 1.1;
+
+  font-weight: 500;
+
+  color: #403521;
+
+  margin: 0 0 7px;
+
+  text-align: center;
+}
+
+.try-section .try-kicker {
+  font-family: "Caveat", cursive;
+
+  font-size: 1.3rem;
+
+  color: #80652D;
+
+  margin: 0 0 10px;
+
+  text-align: center;
+}
+
+.try-section p {
+  max-width: 650px;
+
+  margin: 0 auto 20px;
+
+  font-size: 0.82rem;
+
+  color: #68583D;
+
+  text-align: center;
+}
+
+.flipbook-button {
+  display: inline-block;
+
+  padding: 11px 25px;
+
+  border-radius: 30px;
+
+  background: #FFFDF0;
+
+  color: #5B4826;
+
+  border: 1px solid #D8C79F;
+
+  text-decoration: none;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 0.75rem;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.flipbook-button:hover {
+  background: #FFF7D8;
+  transform: translateY(-1px);
+}
+
+
+/* ========================================
+   ARCHIVE
+======================================== */
+
+.past-section {
+  padding: 65px 20px 75px;
+  background: #FBF8ED;
+}
+
+.archive-intro {
+  text-align: center;
+  max-width: 650px;
+  margin: -5px auto 35px;
+}
+
+.archive-intro p {
+  margin: 0;
+  color: #68583D;
+  font-size: 0.84rem;
+}
+
+.archive-intro .hive-invite {
+  margin-top: 7px;
+
+  font-family: "Caveat", cursive;
+
+  font-size: 1.18rem;
+
+  color: #80652D;
+}
+
+.archive-intro a {
+  color: #80652D;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 1px solid #C8A95F;
+}
+
+.archive-intro a:hover {
+  color: #5D481F;
+}
+
+.past-grid {
+  max-width: 850px;
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap: 24px;
+}
+
+.past-card {
+  text-align: center;
+}
+
+.past-cover {
+  width: 100%;
+  max-width: 250px;
+
+  margin: 0 auto 12px;
+
+  display: block;
+
+  border-radius: 8px;
+
+  border: 1px solid #DCCCA5;
+
+  box-shadow:
+    0 7px 17px rgba(77,64,41,0.11);
+
+  cursor: default;
+}
+
+.past-card h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: 1.35rem;
+
+  line-height: 1.1;
+
+  font-weight: 500;
+
+  color: #403521;
+
+  margin: 0 0 2px;
+}
+
+.past-card p {
+  font-family: "Caveat", cursive;
+
+  font-size: 1rem;
+
+  color: #80652D;
+
+  margin: 0;
+}
+
+
+/* ========================================
+   FLIPBOOK OVERLAY
+======================================== */
+
+.book-overlay {
+  position: fixed;
+  inset: 0;
+
+  background:
+    rgba(55,43,25,0.68);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 18px;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  z-index: 4000;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.book-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.book-window {
+  width: min(900px,94vw);
+
+  height: min(700px,90vh);
+
+  background: #F8F2DF;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.32);
+
+  overflow: hidden;
+
+  position: relative;
+
+  transform:
+    scale(0.86);
+
+  opacity: 0;
+
+  transition:
+    transform 0.4s cubic-bezier(0.16,1,0.3,1),
+    opacity 0.3s ease;
+}
+
+.book-overlay.open .book-window {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.book-header {
+  height: 48px;
+
+  background: #FFEBA1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 13px 0 17px;
+
+  border-bottom:
+    1px solid #D9C98F;
+}
+
+.book-header-title {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 1.25rem;
+
+  color: #403521;
+
+  margin: 0;
+}
+
+.book-close {
+  width: 31px;
+  height: 31px;
+
+  border-radius: 50%;
+
+  background: #FFF8DA;
+
+  border: 1px solid #D6C489;
+
+  color: #665020;
+
+  cursor: pointer;
+
+  font-size: 1.1rem;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.book-close:hover {
+  background: #F4D77E;
+}
+
+
+/* ========================================
+   BOOK AREA
+======================================== */
+
+.book-area {
+  height:
+    calc(100% - 48px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding:
+    28px 28px 70px;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+/* ========================================
+   BOOK
+======================================== */
+
+.book {
+  position: relative;
+
+  width:
+    min(760px,82vw);
+
+  height:
+    min(560px,72vh);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: stretch;
+
+  background: #FFFDF4;
+}
+
+
+/* ========================================
+   BOOK PAGES
+======================================== */
+
+.book-page {
+  position: absolute;
+
+  top: 0;
+
+  width: 50%;
+
+  height: 100%;
+
+  background: #FFFDF4;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-shadow:
+    0 5px 18px rgba(70,55,30,0.14);
+
+  transition:
+    width 0.35s ease,
+    left 0.35s ease,
+    right 0.35s ease;
+}
+
+.book-page.left {
+  left: 0;
+
+  border-radius:
+    7px 0 0 7px;
+
+  border-right:
+    1px solid #DDD1B4;
+}
+
+.book-page.right {
+  right: 0;
+
+  border-radius:
+    0 7px 7px 0;
+
+  border-left:
+    1px solid #DDD1B4;
+}
+
+
+/* FIRST PAGE IS CENTERED AND FULL WIDTH */
+
+.book.single-page .book-page.left {
+
+  left: 25%;
+
+  width: 50%;
+
+  border-radius: 7px;
+
+  border-right: none;
+}
+
+.book.single-page .book-page.right {
+
+  display: none;
+}
+
+
+/* ========================================
+   FULL PAGE IMAGES
+======================================== */
+
+.book-page img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  object-position: center center;
+
+  background: #FFFDF4;
+}
+
+
+/* ========================================
+   BOOK CONTROLS
+======================================== */
+
+.book-controls {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 14px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 14px;
+
+  z-index: 50;
+}
+
+.book-control {
+  border:
+    1px solid #D5C48D;
+
+  background:
+    #FFF9DE;
+
+  color:
+    #5C4927;
+
+  border-radius:
+    50%;
+
+  width:
+    38px;
+
+  height:
+    38px;
+
+  cursor:
+    pointer;
+
+  font-size:
+    1rem;
+}
+
+.book-control:hover {
+  background:
+    #F5DA85;
+}
+
+.book-control.hidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.book-page-count {
+  font-family:
+    "Caveat",
+    cursive;
+
+  font-size:
+    1.05rem;
+
+  color:
+    #80652D;
+
+  min-width:
+    90px;
+
+  text-align:
+    center;
+}
+
+
+  /* =========================
+       WISHLIST MODAL
+    ========================= */
+
+    .wishlist-overlay {
+
+      position: fixed;
+
+      inset: 0;
+
+      background:
+        rgba(57, 45, 25, 0.60);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 20px;
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      pointer-events: none;
+
+      z-index: 5000;
+
+      transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+
+    }
+
+
+    .wishlist-overlay.open {
+
+      opacity: 1;
+
+      visibility: visible;
+
+      pointer-events: auto;
+
+    }
+
+
+    .wishlist-modal {
+
+      width:
+        min(620px, 94vw);
+
+      max-height:
+        min(700px, 88vh);
+
+      background: #FFFDF4;
+
+      border:
+        1px solid
+        #D8C79F;
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 22px 55px
+        rgba(0,0,0,0.28);
+
+      overflow: hidden;
+
+      transform:
+        scale(0.88)
+        translateY(12px);
+
+      opacity: 0;
+
+      transition:
+        transform 0.35s
+          cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.25s ease;
+
+    }
+
+
+    .wishlist-overlay.open
+    .wishlist-modal {
+
+      transform:
+        scale(1)
+        translateY(0);
+
+      opacity: 1;
+
+    }
+
+
+    .wishlist-modal-header {
+
+      background: #FFEBA1;
+
+      padding:
+        16px 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      border-bottom:
+        1px solid
+        #E0CC83;
+
+    }
+
+
+    .wishlist-modal-title {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.65rem;
+
+      font-weight: 500;
+
+      color: #403521;
+
+      margin: 0;
+
+    }
+
+
+    .wishlist-close {
+
+      width: 32px;
+
+      height: 32px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid
+        #D3BE80;
+
+      background: #FFF9DF;
+
+      color: #665020;
+
+      cursor: pointer;
+
+      font-size: 1.15rem;
+
+      line-height: 1;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+    }
+
+
+    .wishlist-close:hover {
+
+      background: #F3D582;
+
+    }
+
+
+    .wishlist-body {
+
+      padding: 20px;
+
+      max-height:
+        calc(88vh - 145px);
+
+      overflow-y: auto;
+
+    }
+
+
+    .wishlist-empty {
+
+      text-align: center;
+
+      padding:
+        35px 15px;
+
+    }
+
+
+    .wishlist-empty-icon {
+
+      font-size: 2.3rem;
+
+      color: #D8B65F;
+
+      margin-bottom: 8px;
+
+    }
+
+
+    .wishlist-empty h3 {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.6rem;
+
+      font-weight: 500;
+
+      color: #403521;
+
+      margin:
+        0 0 5px;
+
+    }
+
+
+    .wishlist-empty p {
+
+      margin: 0;
+
+      font-size: 0.8rem;
+
+      color: #68583D;
+
+    }
+
+
+    .wishlist-item {
+
+      display: grid;
+
+      grid-template-columns:
+        82px 1fr auto;
+
+      align-items: center;
+
+      gap: 14px;
+
+      padding:
+        11px;
+
+      margin-bottom: 10px;
+
+      background: #FFF8D9;
+
+      border:
+        1px solid
+        #E5D6AD;
+
+      border-radius: 11px;
+
+    }
+
+
+    .wishlist-item-image {
+
+      width: 82px;
+
+      height: 82px;
+
+      object-fit: cover;
+
+      border-radius: 7px;
+
+      display: block;
+
+    }
+
+
+    .wishlist-item-title {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.15rem;
+
+      line-height: 1.15;
+
+      color: #403521;
+
+      margin:
+        0 0 3px;
+
+    }
+
+
+    .wishlist-item-price {
+
+      font-size: 0.72rem;
+
+      color: #80652D;
+
+      margin: 0;
+
+    }
+
+
+    .wishlist-item-view {
+
+      display: inline-block;
+
+      margin-top: 6px;
+
+      color: #80652D;
+
+      font-size: 0.68rem;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+    }
+
+
+    .wishlist-item-view:hover {
+
+      text-decoration: underline;
+
+    }
+
+
+    .wishlist-remove {
+
+      border: none;
+
+      background: none;
+
+      color: #967331;
+
+      cursor: pointer;
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size: 0.68rem;
+
+      padding: 5px;
+
+    }
+
+
+    .wishlist-remove:hover {
+
+      color: #6F5421;
+
+      text-decoration: underline;
+
+    }
+
+
+    .wishlist-modal-footer {
+
+      background: #FBF3D0;
+
+      border-top:
+        1px solid
+        #E0D2B0;
+
+      padding:
+        12px 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 10px;
+
+    }
+
+
+    .wishlist-footer-note {
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      color: #80652D;
+
+      font-size: 1rem;
+
+    }
+
+
+    .wishlist-clear {
+
+      border: none;
+
+      background: transparent;
+
+      color: #80652D;
+
+      font-size: 0.68rem;
+
+      cursor: pointer;
+
+      text-decoration: underline;
+
+    }
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+  background:
+    #4D4029;
+
+  color:
+    #FFFDE7;
+
+  text-align:
+    center;
+
+  padding:
+    27px 20px;
+}
+
+footer p {
+  margin:
+    5px 0;
+
+  font-size:
+    0.8rem;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width:800px) {
+
+  .current-issue {
+
+    grid-template-columns:
+      1fr;
+
+    max-width:
+      500px;
+
+    gap:
+      28px;
+  }
+
+  .current-details {
+
+    text-align:
+      center;
+  }
+
+  .button-stack {
+
+    margin:
+      0 auto;
+  }
+
+  .past-grid {
+
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+}
+
+
+@media (max-width:600px) {
+
+  .site-header {
+
+    padding:
+      20px 15px 14px;
+  }
+
+  .site-logo {
+
+    width:
+      290px;
+  }
+
+  .header-tagline {
+
+    font-size:
+      0.75rem;
+
+    letter-spacing:
+      1.5px;
+  }
+
+  .site-nav {
+
+    padding:
+      8px 8px 11px;
+  }
+
+  .site-nav a,
+  .shop-toggle,
+  .wishlist-header-button {
+
+    margin:
+      0 6px;
+
+    font-size:
+      0.84rem;
+  }
+
+  .gospel-hero {
+
+    padding:
+      42px 18px 45px;
+  }
+
+  .gospel-hero h1 {
+
+    font-size:
+      2.4rem;
+  }
+
+  .current-section {
+
+    padding:
+      45px 17px 55px;
+  }
+
+  .current-cover {
+
+    max-width:
+      290px;
+  }
+
+  .past-grid {
+
+    grid-template-columns:
+      1fr;
+
+    max-width:
+      310px;
+  }
+
+  .book-window {
+
+    width:
+      94vw;
+
+    height:
+      82vh;
+  }
+
+  .book-area {
+
+    padding:
+      18px 12px 65px;
+  }
+
+  .book {
+
+    width:
+      94vw;
+
+    height:
+      min(65vh,650px);
+  }
+
+  .wishlist-item {
+
+    grid-template-columns:
+      62px 1fr;
+  }
+
+  .wishlist-item-image {
+
+    width:
+      62px;
+
+    height:
+      62px;
+  }
+
+  .wishlist-remove {
+
+    grid-column:
+      2;
+
+    justify-self:
+      start;
+  }
+
+  .wishlist-modal-footer {
+
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+  }
+
+}
+
+
+    /* =========================================================
+   HONEY & HYMNS — WELCOME LETTER POPUP
+========================================================= */
+
+.welcome-popup-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(57, 45, 25, 0.52);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.28s ease,
+    visibility 0.28s ease;
+}
+
+.welcome-popup-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.welcome-letter {
+  position: relative;
+
+  width: min(560px, 94vw);
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  padding: 42px 48px 38px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffdf5 0%,
+      #fffaf0 55%,
+      #fff7df 100%
+    );
+
+  border:
+    1px solid
+    #d8c79f;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 24px 70px
+    rgba(57, 45, 25, 0.28);
+
+  text-align: center;
+
+  transform:
+    translateY(14px)
+    scale(0.97);
+
+  opacity: 0;
+
+  transition:
+    transform 0.32s
+      cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.28s ease;
+}
+
+.welcome-popup-overlay.open .welcome-letter {
+  transform:
+    translateY(0)
+    scale(1);
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   DECORATIVE CORNERS
+========================================================= */
+
+.welcome-letter::before,
+.welcome-letter::after {
+  content: "✦";
+
+  position: absolute;
+
+  color: #d8b65f;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 15px;
+
+  opacity: 0.7;
+}
+
+.welcome-letter::before {
+  top: 18px;
+  left: 22px;
+}
+
+.welcome-letter::after {
+  top: 18px;
+  right: 22px;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.welcome-letter-close {
+  position: absolute;
+
+  top: 13px;
+  right: 15px;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    #d8c79f;
+
+  border-radius: 50%;
+
+  background: #fff9df;
+  color: #665020;
+
+  cursor: pointer;
+
+  font-size: 18px;
+  line-height: 1;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.welcome-letter-close:hover {
+  background: #ffeaa0;
+
+  transform:
+    rotate(5deg);
+}
+
+
+/* =========================================================
+   LETTER TOP
+========================================================= */
+
+.welcome-letter-kicker {
+  margin: 0 0 7px;
+
+  color: #80652d;
+
+  font-family:
+    "Caveat",
+    cursive;
+
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.welcome-letter-title {
+  margin: 0;
+
+  color: #403521;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(2.35rem, 7vw, 3.45rem);
+
+  font-weight: 500;
+
+  line-height: 0.98;
+}
+
+
+/* =========================================================
+   DECORATIVE RULE
+========================================================= */
+
+.welcome-letter-rule {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 20px 0 19px;
+}
+
+.welcome-letter-rule::before,
+.welcome-letter-rule::after {
+  content: "";
+
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    #d8c79f;
+}
+
+.welcome-letter-rule span {
+  color: #b79b58;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   BODY COPY
+========================================================= */
+
+.welcome-letter-copy {
+  margin: 0 auto 22px;
+
+  max-width: 440px;
+
+  color: #62594e;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FREE GIFT CARD
+========================================================= */
+
+.welcome-gift {
+  margin: 0 auto 23px;
+
+  padding: 17px 20px 19px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff9df,
+      #ffeba1
+    );
+
+  border:
+    1px solid
+    #dfc878;
+
+  border-radius: 12px;
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255,255,255,0.7);
+}
+
+.welcome-gift-label {
+  margin: 0 0 4px;
+
+  color: #80652d;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.welcome-gift-title {
+  margin: 0 0 12px;
+
+  color: #403521;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 1.55rem;
+
+  font-weight: 600;
+}
+
+
+/* RETREAT IMAGE */
+
+.welcome-gift-image {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+
+  display: block;
+
+  margin: 0 auto 10px;
+
+  border:
+    1px solid
+    rgba(128, 101, 45, 0.22);
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 5px 14px
+    rgba(77, 64, 41, 0.12);
+}
+
+
+.welcome-gift-description {
+  margin: 0;
+
+  color: #68583d;
+
+  font-family:
+    "Caveat",
+    cursive;
+
+  font-size: 1.08rem;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.welcome-letter-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  margin-top: 3px;
+}
+
+.welcome-letter-input {
+  width: 100%;
+
+  height: 48px;
+
+  padding:
+    0 15px;
+
+  background: #fffdf7;
+
+  border:
+    1px solid
+    #d8c79f;
+
+  border-radius: 8px;
+
+  color: #40372d;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.welcome-letter-input::placeholder {
+  color: #9a8e7c;
+}
+
+.welcome-letter-input:focus {
+  outline: none;
+
+  border-color: #b79b58;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(183, 155, 88, 0.14);
+}
+
+
+/* =========================================================
+   SUBSCRIBE BUTTON
+========================================================= */
+
+.welcome-letter-button {
+  width: 100%;
+
+  min-height: 48px;
+
+  padding:
+    12px 22px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: #80652d;
+
+  color: #fffdf4;
+
+  cursor: pointer;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 0.82rem;
+
+  font-weight: bold;
+
+  letter-spacing: 0.3px;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.welcome-letter-button:hover {
+  background: #665020;
+
+  transform:
+    translateY(-1px);
+}
+
+
+/* =========================================================
+   REASSURANCE
+========================================================= */
+
+.welcome-letter-note {
+  margin: 9px 0 0;
+
+  color: #8a7b66;
+
+  font-size: 11px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
+
+/* =========================================================
+   NOT TODAY
+========================================================= */
+
+.welcome-letter-dismiss {
+  margin-top: 18px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #80652d;
+
+  cursor: pointer;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 12px;
+
+  text-decoration: underline;
+
+  text-underline-offset: 3px;
+}
+
+.welcome-letter-dismiss:hover {
+  color: #5e4b2f;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .welcome-popup-overlay {
+    padding: 14px;
+  }
+
+  .welcome-letter {
+    width: 100%;
+
+    max-height: 92vh;
+
+    padding:
+      38px 23px 28px;
+
+    border-radius: 15px;
+  }
+
+  .welcome-letter-title {
+    font-size: 2.45rem;
+  }
+
+  .welcome-letter-copy {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .welcome-gift {
+    padding:
+      14px 15px;
+  }
+
+  .welcome-gift-title {
+    font-size: 1.35rem;
+  }
+
+  .welcome-letter-rule {
+    margin:
+      16px 0;
+  }
+
+}
+
+</style>
+
+ </head>
+
+
+<body>
+
+     <!-- =========================================================
+     HONEY & HYMNS — WELCOME LETTER POPUP
+========================================================= -->
+
+<div
+  class="welcome-popup-overlay"
+  id="welcomePopup"
+  aria-hidden="true"
+>
+
+  <div
+    class="welcome-letter"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="welcomePopupTitle"
+  >
+
+    <button
+      class="welcome-letter-close"
+      type="button"
+      onclick="closeWelcomePopup()"
+      aria-label="Close welcome message"
+    >
+      ×
+    </button>
+
+
+    <p class="welcome-letter-kicker">
+      A little something for your home
+    </p>
+
+
+    <h2
+      class="welcome-letter-title"
+      id="welcomePopupTitle"
+    >
+      Welcome to<br>
+      Honey & Hymns 🐝
+    </h2>
+
+
+    <div class="welcome-letter-rule">
+      <span>✦</span>
+    </div>
+
+
+    <p class="welcome-letter-copy">
+      A peaceful little corner for Catholic
+      homemakers, homeschool moms, and women
+      trying to make a beautiful home in the midst
+      of ordinary family life.
+    </p>
+
+
+    <div class="welcome-gift">
+
+  <p class="welcome-gift-label">
+    A Free Gift for You
+  </p>
+
+  <h3 class="welcome-gift-title">
+    Mini At-Home Retreat
+  </h3>
+
+  <img
+    class="welcome-gift-image"
+    src="../images/honey-and-hymns-mini-home-retreat.png"
+    alt="Honey & Hymns Mini At-Home Retreat"
+  >
+
+  <p class="welcome-gift-description">
+    Pause • Pray • Reflect • Begin Again
+  </p>
+
+</div>
+
+
+    <p class="welcome-letter-copy">
+      Join the Honey Hive and I'll send this
+      peaceful little retreat straight to your inbox.
+    </p>
+
+
+    <!--
+      IMPORTANT:
+      Replace the form action with your actual
+      email signup system when we're ready.
+    -->
+
+    <form
+      class="welcome-letter-form"
+      action="https://honeyandhymns.substack.com/welcome"
+      method="get"
+      target="_blank"
+    >
+
+      <button
+        class="welcome-letter-button"
+        type="submit"
+      >
+        Join the Honey Hive →
+      </button>
+
+    </form>
+
+
+    <p class="welcome-letter-note">
+      Free to join • Unsubscribe anytime
+    </p>
+
+
+    <button
+      class="welcome-letter-dismiss"
+      type="button"
+      onclick="closeWelcomePopup(true)"
+    >
+      Not today, thank you
+    </button>
+
+  </div>
+
+</div>
+
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header class="site-header">
+
+    <div class="header-brand">
+
+      <a href="../">
+
+        <img
+          src="../images/honey-and-hymns-logo.png"
+          alt="Honey & Hymns"
+          class="site-logo"
+        >
+
+      </a>
+
+      <p class="header-tagline">
+        Faith • Homeschool • Homemaking
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <nav class="site-nav">
+
+    <a href="../">
+      Home
+    </a>
+
+
+    <a href="../Articles/">
+      Articles
+    </a>
+
+
+    <div class="shop-dropdown">
+
+      <button
+        class="shop-toggle"
+        type="button"
+        aria-expanded="false"
+      >
+        Shop
+      </button>
+
+
+      <div class="shop-menu">
+
+        <a href="../Resources/">
+          Resources
+        </a>
+
+
+        <a href="../Free-Downloads/">
+          Free Downloads
+        </a>
+
+
+       <a href="../Amazon-Finds/">
+          Amazon Finds
+        </a>
+
+
+
+      </div>
+
+    </div>
+
+
+<!-- ========================================
+     CURRENT ISSUES DROPDOWN
+======================================== -->
+
+<div class="current-issues-dropdown">
+
+  <button
+    class="current-issues-toggle"
+    type="button"
+    aria-expanded="false"
+  >
+    Current Issues
+  </button>
+
+
+  <div class="current-issues-menu">
+
+    <a href="../Sunday-Gospel/">
+      Sunday Gospel for Kids
+    </a>
+
+
+    <a href="../Digital-Magazine/">
+      Honey & Hymns Digital Magazine
+    </a>
+
+  </div>
+
+</div>
+
+
+    <a href="../About/">
+      About
+    </a>
+ <a href="../Contact/">
+          Contact
+        </a>
+
+    <a
+      href="https://honeyandhymns.substack.com/subscribe"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Join the Honey Hive
+    </a>
+
+
+    <!-- WISHLIST -->
+
+    <button
+      class="wishlist-header-button"
+      type="button"
+      onclick="openWishlist()"
+      aria-label="Open wishlist"
+    >
+
+      <span class="wishlist-heart">
+        ♡
+      </span>
+
+      Wishlist
+
+      <span
+        class="wishlist-count"
+        id="wishlistCount"
+      >
+        0
+      </span>
+
+    </button>
+
+  </nav>
+
+
+<!-- ========================================
+     HERO
+======================================== -->
+
+<section class="gospel-hero">
+
+  <p class="gospel-kicker">
+    A little something for your home
+  </p>
+
+  <h1>
+    Honey & Hymns Digital Magazine
+  </h1>
+
+  <p>
+    A cozy collection of faith, homemaking, homeschooling,
+    family life, and encouragement for Catholic women
+    making a beautiful home in the midst of ordinary days.
+  </p>
+
+</section>
+
+<!-- ========================================
+     CURRENT ISSUE
+======================================== -->
+
+<section class="current-section">
+
+  <div class="content-wrapper">
+
+    <div class="section-heading">
+
+      <h2>
+        The Current Issue
+      </h2>
+
+      <div class="section-rule">
+        ✦
+      </div>
+
+      <p>
+        A little collection of faith, family, homemaking,
+        homeschooling, and encouragement for this season
+        of ordinary family life.
+      </p>
+
+    </div>
+
+
+    <div class="current-issue">
+
+
+      <div class="current-cover-wrap">
+
+        <img
+          src="../images/honey-and-hymns-digital-magazine-1-1.png"
+          alt="Honey & Hymns Digital Magazine — Current Issue"
+          class="current-cover"
+        >
+
+      </div>
+
+
+      <div class="current-details">
+
+        <div class="current-week">
+          August 2026 Issue
+        </div>
+
+
+        <h3>
+          Honey & Hymns Digital Magazine
+        </h3>
+
+
+        <p>
+          Settle in with a cup of something warm and enjoy
+          this month's collection of faith-filled encouragement,
+          practical homemaking and homeschooling wisdom,
+          family life, and the beautiful ordinary moments
+          that make a home.
+        </p>
+
+
+        <div class="button-stack">
+
+          <a
+            href="https://honeyandhymns.gumroad.com/l/ulhwac?wanted=true"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="gospel-button"
+          >
+            Read This Current Issue
+          </a>
+
+
+ <button
+  class="wishlist-button"
+
+  type="button"
+
+  data-wishlist-id="honey-hymns-digital-magazine"
+
+  data-title="Honey & Hymns Digital Magazine"
+
+  data-price="Digital Magazine"
+
+  data-image="../images/honey-and-hymns-digital-magazine-1-1.png"
+
+  data-url="https://honeyandhymns.gumroad.com/l/ulhwac?wanted=true"
+>
+  ♡ Add to Wishlist
+</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================
+     TRY IT OUT
+======================================== -->
+
+<section class="try-section">
+
+  <p class="try-kicker">
+    Come take a little peek inside
+  </p>
+
+  <h2>
+    A Little Taste of Honey & Hymns
+  </h2>
+
+  <p>
+    Wondering what's inside the magazine?
+    Take a peek through the current issue and
+    discover a little of what Honey & Hymns has
+    gathered for you this month.
+  </p>
+
+
+  <button
+    class="flipbook-button"
+    type="button"
+    onclick="openBook()"
+  >
+    Browse the Current Issue
+  </button>
+
+</section>
+
+
+<!-- ========================================
+     FLIPBOOK
+======================================== -->
+
+<div
+  class="book-overlay"
+  id="bookOverlay"
+  aria-hidden="true"
+>
+
+  <div class="book-window">
+
+<div class="book-header">
+
+  <h2 class="book-header-title">
+    Honey & Hymns Digital Magazine
+  </h2>
+
+
+  <button
+    class="book-close"
+    type="button"
+    onclick="closeBook()"
+    aria-label="Close magazine"
+  >
+    ×
+  </button>
+
+</div>
+
+
+<div class="book-area">
+
+
+  <div
+    class="book single-page"
+    id="book"
+  >
+
+
+    <div
+      class="book-page left"
+      id="leftPage"
+    >
+
+      <img
+        id="leftPageImage"
+        src="../images/honey-and-hymns-magazine-august-2026-page-01.png"
+        alt="Honey & Hymns Digital Magazine — August 2026, page 1"
+      >
+
+    </div>
+
+
+    <div
+      class="book-page right"
+      id="rightPage"
+    >
+
+      <img
+        id="rightPageImage"
+        src="../images/honey-and-hymns-magazine-august-2026-page-02.png"
+        alt="Honey & Hymns Digital Magazine — August 2026, page 2"
+      >
+
+    </div>
+
+
+  </div>
+
+
+  <div class="book-controls">
+
+
+    <button
+      class="book-control"
+      id="previousButton"
+      type="button"
+      onclick="previousPages()"
+      aria-label="Previous pages"
+    >
+      ‹
+    </button>
+
+
+    <span
+      class="book-page-count"
+      id="pageCount"
+    >
+      1 of 23
+    </span>
+
+
+    <button
+      class="book-control"
+      id="nextButton"
+      type="button"
+      onclick="nextPages()"
+      aria-label="Next pages"
+    >
+      ›
+    </button>
+
+
+  </div>
+
+</div>
+
+
+  </div>
+
+</div>
+
+
+
+ <!-- =========================
+       WISHLIST POPUP
+  ========================= -->
+
+  <div
+    class="wishlist-overlay"
+    id="wishlistOverlay"
+    aria-hidden="true"
+  >
+
+    <div
+      class="wishlist-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="wishlistTitle"
+    >
+
+
+      <div class="wishlist-modal-header">
+
+        <h2
+          class="wishlist-modal-title"
+          id="wishlistTitle"
+        >
+          My Honey & Hymns Wishlist
+        </h2>
+
+
+        <button
+          class="wishlist-close"
+          type="button"
+          onclick="closeWishlist()"
+          aria-label="Close wishlist"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div
+        class="wishlist-body"
+        id="wishlistBody"
+      >
+
+      </div>
+
+
+      <div class="wishlist-modal-footer">
+
+        <span
+          class="wishlist-footer-note"
+          id="wishlistFooterNote"
+        >
+          Your little collection of favorites
+        </span>
+
+
+        <button
+          class="wishlist-clear"
+          type="button"
+          onclick="clearWishlist()"
+        >
+          Clear Wishlist
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+   
+
+<footer>
+
+  <p>
+    Honey & Hymns
+  </p>
+
+  <p>
+    Faith • Homeschool • Homemaking
+  </p>
+
+</footer>
+
+
+<script> 
+   /* ========================================
+       SHOP DROPDOWN
+    ======================================== */
+
+    const shopDropdown =
+      document.querySelector(
+        ".shop-dropdown"
+      );
+
+
+    const shopToggle =
+      document.querySelector(
+        ".shop-toggle"
+      );
+
+
+    shopToggle.addEventListener(
+      "click",
+      function() {
+
+        const isOpen =
+          shopDropdown.classList.toggle(
+            "open"
+          );
+
+
+        shopToggle.setAttribute(
+          "aria-expanded",
+          isOpen
+            ? "true"
+            : "false"
+        );
+
+      }
+    );
+
+
+    document.addEventListener(
+      "click",
+      function(event) {
+
+        if (
+          !shopDropdown.contains(
+            event.target
+          )
+        ) {
+
+          shopDropdown.classList.remove(
+            "open"
+          );
+
+
+          shopToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        }
+
+      }
+    );
+
+
+    /* ========================================
+       WISHLIST STORAGE
+    ======================================== */
+
+    const WISHLIST_STORAGE_KEY =
+      "honeyAndHymnsWishlist";
+
+
+    function getWishlist() {
+
+      try {
+
+        const stored =
+          localStorage.getItem(
+            WISHLIST_STORAGE_KEY
+          );
+
+
+        if (!stored) {
+
+          return [];
+
+        }
+
+
+        const parsed =
+          JSON.parse(stored);
+
+
+        return Array.isArray(parsed)
+          ? parsed
+          : [];
+
+      } catch (error) {
+
+        return [];
+
+      }
+
+    }
+
+
+    function saveWishlist(items) {
+
+      localStorage.setItem(
+        WISHLIST_STORAGE_KEY,
+        JSON.stringify(items)
+      );
+
+    }
+
+
+    /* ========================================
+       WISHLIST COUNT
+    ======================================== */
+
+    function updateWishlistCount() {
+
+      const countElement =
+        document.getElementById(
+          "wishlistCount"
+        );
+
+
+      if (!countElement) {
+
+        return;
+
+      }
+
+
+      countElement.textContent =
+        getWishlist().length;
+
+    }
+
+
+    /* ========================================
+       CHECK IF PRODUCT IS SAVED
+    ======================================== */
+
+    function isInWishlist(id) {
+
+      return getWishlist().some(
+        function(item) {
+
+          return item.id === id;
+
+        }
+      );
+
+    }
+
+
+    /* ========================================
+       UPDATE PRODUCT BUTTONS
+    ======================================== */
+
+    function updateWishlistButtons() {
+
+      const buttons =
+        document.querySelectorAll(
+          ".wishlist-button"
+        );
+
+
+      buttons.forEach(
+        function(button) {
+
+          const id =
+            button.dataset.wishlistId;
+
+
+          if (
+            isInWishlist(id)
+          ) {
+
+            button.classList.add(
+              "saved"
+            );
+
+
+            button.textContent =
+              "♥ Saved to Wishlist";
+
+          } else {
+
+            button.classList.remove(
+              "saved"
+            );
+
+
+            button.textContent =
+              "♡ Add to Wishlist";
+
+          }
+
+        }
+      );
+
+    }
+
+
+    /* ========================================
+       ADD / REMOVE PRODUCT
+    ======================================== */
+
+    function toggleWishlist(button) {
+
+      const id =
+        button.dataset.wishlistId;
+
+
+      const product = {
+
+        id:
+          id,
+
+        title:
+          button.dataset.title,
+
+        price:
+          button.dataset.price,
+
+        image:
+          button.dataset.image,
+
+        url:
+          button.dataset.url
+
+      };
+
+
+      let wishlist =
+        getWishlist();
+
+
+      const existingIndex =
+        wishlist.findIndex(
+          function(item) {
+
+            return item.id === id;
+
+          }
+        );
+
+
+      if (
+        existingIndex !== -1
+      ) {
+
+        wishlist.splice(
+          existingIndex,
+          1
+        );
+
+      } else {
+
+        wishlist.push(
+          product
+        );
+
+      }
+
+
+      saveWishlist(
+        wishlist
+      );
+
+
+      updateWishlistCount();
+
+      updateWishlistButtons();
+
+    }
+
+
+    /* ========================================
+       PRODUCT BUTTON EVENTS
+    ======================================== */
+
+    document
+      .querySelectorAll(
+        ".wishlist-button"
+      )
+      .forEach(
+        function(button) {
+
+          button.addEventListener(
+            "click",
+            function() {
+
+              toggleWishlist(
+                button
+              );
+
+            }
+          );
+
+        }
+      );
+
+
+    /* ========================================
+       RENDER WISHLIST
+    ======================================== */
+
+    function renderWishlist() {
+
+      const body =
+        document.getElementById(
+          "wishlistBody"
+        );
+
+
+      const wishlist =
+        getWishlist();
+
+
+      if (
+        wishlist.length === 0
+      ) {
+
+        body.innerHTML = `
+
+          <div class="wishlist-empty">
+
+            <div class="wishlist-empty-icon">
+              ♡
+            </div>
+
+            <h3>
+              Your wishlist is empty
+            </h3>
+
+            <p>
+              Save a few Honey & Hymns favorites
+              and they'll wait here for you.
+            </p>
+
+          </div>
+
+        `;
+
+
+        return;
+
+      }
+
+
+      body.innerHTML =
+        wishlist
+          .map(
+            function(item) {
+
+              return `
+
+                <div
+                  class="wishlist-item"
+                  data-item-id="${escapeHtml(item.id)}"
+                >
+
+                  <img
+                    class="wishlist-item-image"
+                    src="${escapeHtml(item.image)}"
+                    alt="${escapeHtml(item.title)}"
+                  >
+
+
+                  <div>
+
+                    <h3
+                      class="wishlist-item-title"
+                    >
+                      ${escapeHtml(item.title)}
+                    </h3>
+
+
+                    <p
+                      class="wishlist-item-price"
+                    >
+                      ${escapeHtml(item.price)}
+                    </p>
+
+
+                    <a
+                      class="wishlist-item-view"
+                      href="${escapeHtml(item.url)}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Product →
+                    </a>
+
+                  </div>
+
+
+                  <button
+                    class="wishlist-remove"
+                    type="button"
+                    onclick="removeFromWishlist('${escapeHtml(item.id)}')"
+                  >
+                    Remove
+                  </button>
+
+                </div>
+
+              `;
+
+            }
+          )
+          .join("");
+
+    }
+
+
+    /* ========================================
+       BASIC HTML ESCAPING
+    ======================================== */
+
+    function escapeHtml(value) {
+
+      return String(value)
+        .replace(
+          /&/g,
+          "&amp;"
+        )
+        .replace(
+          /</g,
+          "&lt;"
+        )
+        .replace(
+          />/g,
+          "&gt;"
+        )
+        .replace(
+          /"/g,
+          "&quot;"
+        )
+        .replace(
+          /'/g,
+          "&#039;"
+        );
+
+    }
+
+
+    /* ========================================
+       REMOVE FROM WISHLIST
+    ======================================== */
+
+    function removeFromWishlist(id) {
+
+      const wishlist =
+        getWishlist()
+          .filter(
+            function(item) {
+
+              return item.id !== id;
+
+            }
+          );
+
+
+      saveWishlist(
+        wishlist
+      );
+
+
+      updateWishlistCount();
+
+      updateWishlistButtons();
+
+      renderWishlist();
+
+    }
+
+
+    /* ========================================
+       OPEN WISHLIST
+    ======================================== */
+
+    function openWishlist() {
+
+      renderWishlist();
+
+
+      const overlay =
+        document.getElementById(
+          "wishlistOverlay"
+        );
+
+
+      overlay.classList.add(
+        "open"
+      );
+
+
+      overlay.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+
+      document.body.style.overflow =
+        "hidden";
+
+    }
+
+
+    /* ========================================
+       CLOSE WISHLIST
+    ======================================== */
+
+    function closeWishlist() {
+
+      const overlay =
+        document.getElementById(
+          "wishlistOverlay"
+        );
+
+
+      overlay.classList.remove(
+        "open"
+      );
+
+
+      overlay.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+    /* ========================================
+       CLEAR WISHLIST
+    ======================================== */
+
+    function clearWishlist() {
+
+      const wishlist =
+        getWishlist();
+
+
+      if (
+        wishlist.length === 0
+      ) {
+
+        return;
+
+      }
+
+
+      const confirmed =
+        window.confirm(
+          "Are you sure you want to clear your wishlist?"
+        );
+
+
+      if (!confirmed) {
+
+        return;
+
+      }
+
+
+      saveWishlist(
+        []
+      );
+
+
+      updateWishlistCount();
+
+      updateWishlistButtons();
+
+      renderWishlist();
+
+    }
+
+
+    /* ========================================
+       CLOSE WHEN CLICKING OUTSIDE
+    ======================================== */
+
+    document
+      .getElementById(
+        "wishlistOverlay"
+      )
+      .addEventListener(
+        "click",
+        function(event) {
+
+          if (
+            event.target ===
+            this
+          ) {
+
+            closeWishlist();
+
+          }
+
+        }
+      );
+
+
+    /* ========================================
+       ESCAPE KEY
+    ======================================== */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key ===
+          "Escape"
+        ) {
+
+          closeWishlist();
+
+        }
+
+      }
+    );
+
+
+    /* ========================================
+       INITIALIZE
+    ======================================== */
+
+    updateWishlistCount();
+
+    updateWishlistButtons();
+
+
+/* ========================================
+   HONEY & HYMNS DIGITAL MAGAZINE FLIPBOOK
+======================================== */
+
+const TOTAL_PAGES = 23;
+
+/*
+   Page state:
+
+   1       = first page alone
+
+   2–3     = spread
+   4–5     = spread
+   6–7     = spread
+   8–9     = spread
+   10–11   = spread
+   12–13   = spread
+   14–15   = spread
+   16–17   = spread
+   18–19   = spread
+   20–21   = spread
+   22–23   = final spread
+
+   This keeps the magazine feeling like
+   a real little publication:
+   cover → open spreads → final spread.
+*/
+
+let currentPage = 1;
+
+
+/* ========================================
+   PAGE FILE NAME
+======================================== */
+
+function pageImage(
+  pageNumber
+) {
+
+  const paddedNumber =
+    String(
+      pageNumber
+    ).padStart(
+      2,
+      "0"
+    );
+
+
+  return (
+    "../images/honey-and-hymns-magazine-page-" +
+    paddedNumber +
+    ".png"
+  );
+
+}
+
+
+/* ========================================
+   UPDATE MAGAZINE
+======================================== */
+
+function updateBook() {
+
+  const book =
+    document.getElementById(
+      "book"
+    );
+
+
+  const leftImage =
+    document.getElementById(
+      "leftPageImage"
+    );
+
+
+  const rightImage =
+    document.getElementById(
+      "rightPageImage"
+    );
+
+
+  const previousButton =
+    document.getElementById(
+      "previousButton"
+    );
+
+
+  const nextButton =
+    document.getElementById(
+      "nextButton"
+    );
+
+
+  /*
+     FIRST PAGE
+  */
+
+  if (
+    currentPage === 1
+  ) {
+
+    book.classList.add(
+      "single-page"
+    );
+
+
+    leftImage.src =
+      pageImage(1);
+
+    leftImage.alt =
+      "Honey & Hymns Digital Magazine page 1";
+
+
+    rightImage.style.visibility =
+      "hidden";
+
+
+    previousButton.classList.add(
+      "hidden"
+    );
+
+
+    nextButton.classList.remove(
+      "hidden"
+    );
+
+
+    document.getElementById(
+      "pageCount"
+    ).textContent =
+      "1 of " +
+      TOTAL_PAGES;
+
+
+    return;
+
+  }
+
+
+  /*
+     ALL MAGAZINE SPREADS
+  */
+
+  book.classList.remove(
+    "single-page"
+  );
+
+
+  const leftNumber =
+    currentPage;
+
+
+  const rightNumber =
+    currentPage + 1;
+
+
+  leftImage.src =
+    pageImage(
+      leftNumber
+    );
+
+  leftImage.alt =
+    "Honey & Hymns Digital Magazine page " +
+    leftNumber;
+
+
+  if (
+    rightNumber <=
+    TOTAL_PAGES
+  ) {
+
+    rightImage.src =
+      pageImage(
+        rightNumber
+      );
+
+    rightImage.alt =
+      "Honey & Hymns Digital Magazine page " +
+      rightNumber;
+
+    rightImage.style.visibility =
+      "visible";
+
+  }
+
+  else {
+
+    rightImage.style.visibility =
+      "hidden";
+
+  }
+
+
+  /*
+     PREVIOUS BUTTON
+  */
+
+  previousButton.classList.remove(
+    "hidden"
+  );
+
+
+  /*
+     NEXT BUTTON
+
+     Hide it after the final
+     spread, 22–23.
+  */
+
+  if (
+    currentPage + 2 >
+    TOTAL_PAGES
+  ) {
+
+    nextButton.classList.add(
+      "hidden"
+    );
+
+  }
+
+  else {
+
+    nextButton.classList.remove(
+      "hidden"
+    );
+
+  }
+
+
+  /*
+     PAGE NUMBER
+  */
+
+  document.getElementById(
+    "pageCount"
+  ).textContent =
+
+    leftNumber +
+    (
+      rightNumber <= TOTAL_PAGES
+        ? "–" + rightNumber
+        : ""
+    ) +
+    " of " +
+    TOTAL_PAGES;
+
+}
+
+
+/* ========================================
+   NEXT PAGE
+======================================== */
+
+function nextPages() {
+
+  /*
+     First click:
+     1 → 2–3
+  */
+
+  if (
+    currentPage === 1
+  ) {
+
+    currentPage = 2;
+
+    updateBook();
+
+    return;
+
+  }
+
+
+  /*
+     Normal spreads:
+     2–3 → 4–5 → 6–7 → etc.
+  */
+
+  if (
+    currentPage + 2 <=
+    TOTAL_PAGES
+  ) {
+
+    currentPage += 2;
+
+    updateBook();
+
+  }
+
+}
+
+
+/* ========================================
+   PREVIOUS PAGE
+======================================== */
+
+function previousPages() {
+
+  /*
+     2–3 → 1
+  */
+
+  if (
+    currentPage === 2
+  ) {
+
+    currentPage = 1;
+
+    updateBook();
+
+    return;
+
+  }
+
+
+  /*
+     Normal spreads:
+     6–7 → 4–5
+  */
+
+  if (
+    currentPage > 2
+  ) {
+
+    currentPage -= 2;
+
+    updateBook();
+
+  }
+
+}
+
+
+/* ========================================
+   OPEN MAGAZINE
+======================================== */
+
+function openBook() {
+
+  currentPage = 1;
+
+  updateBook();
+
+
+  const overlay =
+    document.getElementById(
+      "bookOverlay"
+    );
+
+
+  overlay.classList.add(
+    "open"
+  );
+
+
+  overlay.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+
+/* ========================================
+   CLOSE MAGAZINE
+======================================== */
+
+function closeBook() {
+
+  const overlay =
+    document.getElementById(
+      "bookOverlay"
+    );
+
+
+  overlay.classList.remove(
+    "open"
+  );
+
+
+  overlay.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+
+  document.body.style.overflow =
+    "";
+
+}
+
+
+/* ========================================
+   MAGAZINE OUTSIDE CLICK
+======================================== */
+
+document
+  .getElementById(
+    "bookOverlay"
+  )
+  .addEventListener(
+    "click",
+    function(event) {
+
+      if (
+        event.target === this
+      ) {
+
+        closeBook();
+
+      }
+
+    }
+  );
+
+
+/* ========================================
+   ESCAPE KEY
+======================================== */
+
+document.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (
+      event.key === "Escape"
+    ) {
+
+      closeBook();
+
+      closeWishlist();
+
+    }
+
+  }
+);
+
+
+/* ========================================
+   INITIALIZE
+======================================== */
+
+updateWishlistCount();
+
+updateWishlistButtons();
+
+updateBook();
+  
+/* =========================================================
+   HONEY & HYMNS — FIRST VISIT WELCOME POPUP
+========================================================= */
+
+const WELCOME_POPUP_DISMISSED_KEY =
+  "honeyAndHymnsWelcomePopupDismissed";
+
+const WELCOME_POPUP_SUBSCRIBED_KEY =
+  "honeyAndHymnsWelcomePopupSubscribed";
+
+const WELCOME_POPUP_DELAY =
+  8000;
+
+
+/* =========================================================
+   OPEN POPUP
+========================================================= */
+
+function openWelcomePopup() {
+
+  const popup =
+    document.getElementById(
+      "welcomePopup"
+    );
+
+  if (!popup) {
+    return;
+  }
+
+  popup.classList.add("open");
+
+  popup.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+
+/* =========================================================
+   CLOSE POPUP
+========================================================= */
+
+function closeWelcomePopup(
+  rememberDismissal = false
+) {
+
+  const popup =
+    document.getElementById(
+      "welcomePopup"
+    );
+
+  if (!popup) {
+    return;
+  }
+
+  popup.classList.remove("open");
+
+  popup.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow =
+    "";
+
+  if (rememberDismissal) {
+
+    localStorage.setItem(
+      WELCOME_POPUP_DISMISSED_KEY,
+      Date.now().toString()
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   CHECK WHETHER POPUP SHOULD APPEAR
+========================================================= */
+
+function shouldShowWelcomePopup() {
+
+  const dismissed =
+    localStorage.getItem(
+      WELCOME_POPUP_DISMISSED_KEY
+    );
+
+  const subscribed =
+    localStorage.getItem(
+      WELCOME_POPUP_SUBSCRIBED_KEY
+    );
+
+
+  /*
+    If we've marked the visitor as subscribed,
+    never show the popup again.
+  */
+
+  if (subscribed) {
+    return false;
+  }
+
+
+  /*
+    If the visitor dismissed the popup,
+    wait 30 days before showing it again.
+  */
+
+  if (dismissed) {
+
+    const dismissedTime =
+      Number(dismissed);
+
+    const thirtyDays =
+      30 *
+      24 *
+      60 *
+      60 *
+      1000;
+
+    const timeSinceDismissal =
+      Date.now() -
+      dismissedTime;
+
+    if (
+      timeSinceDismissal <
+      thirtyDays
+    ) {
+
+      return false;
+
+    }
+
+  }
+
+
+  return true;
+
+}
+
+
+/* =========================================================
+   MARK SUBSCRIBED
+========================================================= */
+
+function markWelcomePopupSubscribed() {
+
+  localStorage.setItem(
+    WELCOME_POPUP_SUBSCRIBED_KEY,
+    "true"
+  );
+
+}
+
+
+/* =========================================================
+   POPUP EVENTS
+========================================================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function() {
+
+    const popup =
+      document.getElementById(
+        "welcomePopup"
+      );
+
+    if (!popup) {
+      return;
+    }
+
+
+    /*
+      Wait 8 seconds before showing.
+    */
+
+    if (
+      shouldShowWelcomePopup()
+    ) {
+
+      window.setTimeout(
+        function() {
+
+          /*
+            Check one more time in case
+            something changed while waiting.
+          */
+
+          if (
+            shouldShowWelcomePopup()
+          ) {
+
+            openWelcomePopup();
+
+          }
+
+        },
+        WELCOME_POPUP_DELAY
+      );
+
+    }
+
+
+    /*
+      Clicking the dark overlay closes it.
+    */
+
+    popup.addEventListener(
+      "click",
+      function(event) {
+
+        if (
+          event.target === popup
+        ) {
+
+          closeWelcomePopup(true);
+
+        }
+
+      }
+    );
+
+
+    /*
+      Escape closes it.
+    */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Escape" &&
+          popup.classList.contains("open")
+        ) {
+
+          closeWelcomePopup(true);
+
+        }
+
+      }
+    );
+
+
+    /*
+      If the visitor submits the form,
+      remember that they subscribed.
+    */
+
+    const form =
+      popup.querySelector(
+        ".welcome-letter-form"
+      );
+
+    if (form) {
+
+      form.addEventListener(
+        "submit",
+        function() {
+
+          markWelcomePopupSubscribed();
+
+          closeWelcomePopup();
+
+        }
+      );
+
+    }
+
+  }
+);
+
+</script>
+
+
+</body>
+
+</html>
