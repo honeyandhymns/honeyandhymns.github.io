@@ -537,49 +537,112 @@
       color: var(--soft-brown);
     }
 
-    /* =====================================================
-   AMAZON FINDS SUBCATEGORY NAVIGATION
-===================================================== */
+ /* =========================================================
+   AMAZON FINDS SUBCATEGORIES
+========================================================= */
 
 .finds-subcategory-buttons {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 8px;
-  margin-top: 14px;
-  margin-bottom: 24px;
+  margin: 16px auto 28px;
+  max-width: 900px;
 }
-
 
 .finds-subcategory {
-  appearance: none;
-  border: 1px solid #d8c99a;
-  background: #fffdf6;
-  color: #5f5138;
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-family: inherit;
-  font-size: 0.9rem;
+  border: 1px solid #D8C79F;
+  background: #FFFDF0;
+  color: #68583D;
+  padding: 7px 14px;
+  border-radius: 30px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 0.82rem;
   cursor: pointer;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
+  transition: all 0.2s ease;
 }
-
 
 .finds-subcategory:hover {
-  background: #fff4c7;
-  border-color: #cbb56e;
+  background: #FFF3C8;
+  color: #80652D;
+  border-color: #D2B96D;
+}
+
+.finds-subcategory.active {
+  background: #E9C768;
+  border-color: #D8B65F;
+  color: #4D4029;
 }
 
 
-.finds-subcategory.active {
-  background: #FFEBA1;
-  border-color: #d7bd67;
-  color: #4f432d;
+/* =========================================================
+   AMAZON FINDS PAGINATION
+========================================================= */
+
+.finds-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 34px auto 10px;
+}
+
+.finds-page-button {
+  min-width: 34px;
+  height: 34px;
+  padding: 0 9px;
+  border: 1px solid #D8C79F;
+  border-radius: 50%;
+  background: #FFFDF0;
+  color: #68583D;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 0.86rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.finds-page-button:hover:not(:disabled) {
+  background: #FFF3C8;
+  color: #80652D;
+}
+
+.finds-page-button.active {
+  background: #E9C768;
+  border-color: #D8B65F;
+  color: #4D4029;
   font-weight: 600;
 }
 
+.finds-page-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .finds-subcategory-buttons {
+    gap: 6px;
+    margin: 13px auto 23px;
+    padding: 0 5px;
+  }
+
+  .finds-subcategory {
+    font-size: 0.76rem;
+    padding: 6px 11px;
+  }
+
+  .finds-pagination {
+    margin-top: 28px;
+  }
+
+}
 
     /* =========================================================
        PRODUCT GRID
@@ -1486,7 +1549,6 @@
       </button>
 
     </div>
-
 
     <!-- SUBCATEGORY FILTERS -->
 
@@ -4171,7 +4233,11 @@
       </p>
 
     </section>
-
+<div
+  id="findsPagination"
+  class="finds-pagination"
+  aria-label="Amazon Finds pages"
+></div>
 
     <!-- =====================================================
          BOTTOM CTA
@@ -4355,11 +4421,9 @@ const subcategoryContainer =
 
 
 let currentFilter = "all";
-
 let currentSubcategory = "all";
 
 let currentPage = 1;
-
 const productsPerPage = 9;
 
 
@@ -4373,26 +4437,13 @@ function buildSubcategoryButtons(category) {
     return;
   }
 
-
-  /* Clear previous buttons */
-
   subcategoryContainer.innerHTML = "";
 
-
-  /* "All" does not have subcategories */
-
   if (category === "all") {
-
     return;
-
   }
 
-
   const subcategories = [];
-
-
-  /* Find all unique subcategories
-     belonging to this category */
 
   cards.forEach(function(card) {
 
@@ -4402,9 +4453,8 @@ function buildSubcategoryButtons(category) {
     const subcategory =
       card.dataset.subcategory || "";
 
-
     if (
-      cardCategory === category &&
+      cardCategory.toLowerCase() === category.toLowerCase() &&
       subcategory &&
       !subcategories.includes(subcategory)
     ) {
@@ -4415,19 +4465,16 @@ function buildSubcategoryButtons(category) {
 
   });
 
-
-  /* Sort alphabetically */
-
   subcategories.sort();
 
-
-  /* Create buttons */
+  if (!subcategories.length) {
+    return;
+  }
 
   subcategories.forEach(function(subcategory) {
 
     const button =
       document.createElement("button");
-
 
     button.type = "button";
 
@@ -4437,16 +4484,12 @@ function buildSubcategoryButtons(category) {
     button.dataset.subcategory =
       subcategory;
 
-
     button.textContent =
       subcategory;
-
 
     button.addEventListener(
       "click",
       function() {
-
-        /* Remove active state */
 
         subcategoryContainer
           .querySelectorAll(
@@ -4454,29 +4497,21 @@ function buildSubcategoryButtons(category) {
           )
           .forEach(function(btn) {
 
-            btn.classList.remove(
-              "active"
-            );
+            btn.classList.remove("active");
 
           });
 
-
-        /* Make clicked button active */
-
-        button.classList.add(
-          "active"
-        );
-
+        button.classList.add("active");
 
         currentSubcategory =
           subcategory;
 
+        currentPage = 1;
 
         updateFinds();
 
       }
     );
-
 
     subcategoryContainer.appendChild(
       button
@@ -4488,15 +4523,10 @@ function buildSubcategoryButtons(category) {
 
 
 /* =========================================================
-   FILTER PRODUCTS
+   GET FILTERED PRODUCTS
 ========================================================= */
 
-function updateFinds() {
-
-  if (!cards.length) {
-    return;
-  }
-
+function getFilteredCards() {
 
   const searchTerm =
     searchInput
@@ -4505,110 +4535,348 @@ function updateFinds() {
           .trim()
       : "";
 
+  return Array.from(cards).filter(
+    function(card) {
 
-  let visibleCount = 0;
+      const category =
+        (
+          card.dataset.category || ""
+        ).toLowerCase();
 
+      const subcategory =
+        (
+          card.dataset.subcategory || ""
+        ).toLowerCase();
 
-  cards.forEach(function(card) {
+      const searchData =
+        (
+          card.dataset.search || ""
+        ).toLowerCase();
 
-    const category =
-      (
-        card.dataset.category || ""
-      ).toLowerCase();
+      const titleElement =
+        card.querySelector("h3");
 
+      const reviewElement =
+        card.querySelector(
+          ".find-card-review"
+        );
 
-    const subcategory =
-      (
-        card.dataset.subcategory || ""
-      ).toLowerCase();
+      const cardTitle =
+        titleElement
+          ? titleElement.textContent.toLowerCase()
+          : "";
 
+      const cardReview =
+        reviewElement
+          ? reviewElement.textContent.toLowerCase()
+          : "";
 
-    const searchData =
-      (
-        card.dataset.search || ""
-      ).toLowerCase();
+      const searchableText =
+        searchData +
+        " " +
+        subcategory +
+        " " +
+        category +
+        " " +
+        cardTitle +
+        " " +
+        cardReview;
 
+      const matchesCategory =
+        currentFilter === "all" ||
+        category ===
+          currentFilter.toLowerCase();
 
-    const cardTitle =
-      card.querySelector("h3")
-        ? card
-            .querySelector("h3")
-            .textContent
-            .toLowerCase()
-        : "";
+      const matchesSubcategory =
+        currentSubcategory === "all" ||
+        subcategory ===
+          currentSubcategory.toLowerCase();
 
+      const matchesSearch =
+        searchTerm === "" ||
+        searchableText.includes(searchTerm);
 
-    const cardReview =
-      card.querySelector(
-        ".find-card-review"
-      )
-        ? card
-            .querySelector(
-              ".find-card-review"
-            )
-            .textContent
-            .toLowerCase()
-        : "";
-
-
-    const searchableText =
-      searchData +
-      " " +
-      subcategory +
-      " " +
-      category +
-      " " +
-      cardTitle +
-      " " +
-      cardReview;
-
-
-    /* CATEGORY */
-
-    const matchesCategory =
-      currentFilter === "all" ||
-      category ===
-        currentFilter.toLowerCase();
-
-
-    /* SUBCATEGORY */
-
-    const matchesSubcategory =
-      currentSubcategory === "all" ||
-      subcategory ===
-        currentSubcategory.toLowerCase();
-
-
-    /* SEARCH */
-
-    const matchesSearch =
-      searchTerm === "" ||
-      searchableText.includes(
-        searchTerm
+      return (
+        matchesCategory &&
+        matchesSubcategory &&
+        matchesSearch
       );
 
+    }
+  );
 
-    /* FINAL RESULT */
+}
+
+
+/* =========================================================
+   BUILD PAGINATION
+========================================================= */
+
+function buildPagination(totalPages) {
+
+  const pagination =
+    document.getElementById(
+      "findsPagination"
+    );
+
+  if (!pagination) {
+    return;
+  }
+
+  pagination.innerHTML = "";
+
+  if (totalPages <= 1) {
+    pagination.style.display = "none";
+    return;
+  }
+
+  pagination.style.display = "flex";
+
+
+  /* PREVIOUS */
+
+  const previous =
+    document.createElement("button");
+
+  previous.type = "button";
+
+  previous.className =
+    "finds-page-button";
+
+  previous.textContent =
+    "←";
+
+  previous.setAttribute(
+    "aria-label",
+    "Previous page"
+  );
+
+  previous.disabled =
+    currentPage === 1;
+
+  previous.addEventListener(
+    "click",
+    function() {
+
+      if (currentPage > 1) {
+
+        currentPage--;
+
+        updateFinds();
+
+        scrollToFinds();
+
+      }
+
+    }
+  );
+
+  pagination.appendChild(
+    previous
+  );
+
+
+  /* PAGE NUMBERS */
+
+  for (
+    let page = 1;
+    page <= totalPages;
+    page++
+  ) {
+
+    const button =
+      document.createElement("button");
+
+    button.type = "button";
+
+    button.className =
+      "finds-page-button";
+
+    button.textContent =
+      page;
+
+    button.setAttribute(
+      "aria-label",
+      "Page " + page
+    );
 
     if (
-      matchesCategory &&
-      matchesSubcategory &&
-      matchesSearch
+      page === currentPage
     ) {
 
-      card.style.display =
-        "flex";
+      button.classList.add(
+        "active"
+      );
 
-      visibleCount++;
+      button.setAttribute(
+        "aria-current",
+        "page"
+      );
 
-    } else {
+    }
+
+    button.addEventListener(
+      "click",
+      function() {
+
+        currentPage =
+          page;
+
+        updateFinds();
+
+        scrollToFinds();
+
+      }
+    );
+
+    pagination.appendChild(
+      button
+    );
+
+  }
+
+
+  /* NEXT */
+
+  const next =
+    document.createElement("button");
+
+  next.type = "button";
+
+  next.className =
+    "finds-page-button";
+
+  next.textContent =
+    "→";
+
+  next.setAttribute(
+    "aria-label",
+    "Next page"
+  );
+
+  next.disabled =
+    currentPage === totalPages;
+
+  next.addEventListener(
+    "click",
+    function() {
+
+      if (
+        currentPage < totalPages
+      ) {
+
+        currentPage++;
+
+        updateFinds();
+
+        scrollToFinds();
+
+      }
+
+    }
+  );
+
+  pagination.appendChild(
+    next
+  );
+
+}
+
+
+/* =========================================================
+   SCROLL BACK TO PRODUCTS
+========================================================= */
+
+function scrollToFinds() {
+
+  const findsSection =
+    document.getElementById(
+      "amazon-finds"
+    );
+
+  if (!findsSection) {
+    return;
+  }
+
+  findsSection.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
+}
+
+
+/* =========================================================
+   FILTER + PAGINATE PRODUCTS
+========================================================= */
+
+function updateFinds() {
+
+  if (!cards.length) {
+    return;
+  }
+
+  const filteredCards =
+    getFilteredCards();
+
+  const totalPages =
+    Math.max(
+      1,
+      Math.ceil(
+        filteredCards.length /
+        productsPerPage
+      )
+    );
+
+
+  /* Make sure current page still exists */
+
+  if (
+    currentPage > totalPages
+  ) {
+
+    currentPage =
+      totalPages;
+
+  }
+
+
+  const startIndex =
+    (currentPage - 1) *
+    productsPerPage;
+
+  const endIndex =
+    startIndex +
+    productsPerPage;
+
+
+  /* Hide everything first */
+
+  cards.forEach(
+    function(card) {
 
       card.style.display =
         "none";
 
     }
+  );
 
-  });
+
+  /* Show only current page */
+
+  filteredCards
+    .slice(
+      startIndex,
+      endIndex
+    )
+    .forEach(
+      function(card) {
+
+        card.style.display =
+          "flex";
+
+      }
+    );
 
 
   /* NO RESULTS */
@@ -4616,11 +4884,18 @@ function updateFinds() {
   if (noResults) {
 
     noResults.style.display =
-      visibleCount === 0
+      filteredCards.length === 0
         ? "block"
         : "none";
 
   }
+
+
+  /* PAGINATION */
+
+  buildPagination(
+    totalPages
+  );
 
 }
 
@@ -4629,58 +4904,47 @@ function updateFinds() {
    CATEGORY BUTTON EVENTS
 ========================================================= */
 
-filterButtons.forEach(function(button) {
+filterButtons.forEach(
+  function(button) {
 
-  button.addEventListener(
-    "click",
-    function() {
+    button.addEventListener(
+      "click",
+      function() {
 
-      /* Remove active from categories */
+        filterButtons.forEach(
+          function(btn) {
 
-      filterButtons.forEach(
-        function(btn) {
+            btn.classList.remove(
+              "active"
+            );
 
-          btn.classList.remove(
-            "active"
-          );
+          }
+        );
 
-        }
-      );
+        button.classList.add(
+          "active"
+        );
 
+        currentFilter =
+          button.dataset.filter ||
+          "all";
 
-      /* Activate selected category */
+        currentSubcategory =
+          "all";
 
-      button.classList.add(
-        "active"
-      );
+        currentPage = 1;
 
+        buildSubcategoryButtons(
+          currentFilter
+        );
 
-      currentFilter =
-        button.dataset.filter ||
-        "all";
+        updateFinds();
 
+      }
+    );
 
-      /* Reset subcategory */
-
-      currentSubcategory =
-        "all";
-
-
-      /* Build new subcategory buttons */
-
-      buildSubcategoryButtons(
-        currentFilter
-      );
-
-
-      /* Update products */
-
-      updateFinds();
-
-    }
-  );
-
-});
+  }
+);
 
 
 /* =========================================================
@@ -4691,7 +4955,13 @@ if (searchInput) {
 
   searchInput.addEventListener(
     "input",
-    updateFinds
+    function() {
+
+      currentPage = 1;
+
+      updateFinds();
+
+    }
   );
 
 }
