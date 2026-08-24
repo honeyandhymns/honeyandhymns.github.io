@@ -2180,12 +2180,33 @@
     </div>
 
 
-    <!-- SUNDAY GOSPEL IS ITS OWN NAVIGATION ITEM -->
+<!-- CURRENT ISSUES -->
+
+<div class="shop-dropdown">
+
+  <button
+    class="shop-toggle"
+    type="button"
+    aria-expanded="false"
+  >
+    Current Issues
+  </button>
+
+
+  <div class="shop-menu">
 
     <a href="../../Sunday-Gospel/">
       Sunday Gospel for Kids
     </a>
 
+
+    <a href="../../Honey-and-Hymns-Digital-Magazine/">
+      Honey & Hymns Digital Magazine
+    </a>
+
+  </div>
+
+</div>
 
     <a href="../../About/">
       About
@@ -2772,3 +2793,983 @@ Your patience.
     </p>
 
   </footer>
+  <script>
+  /* ========================================
+   NAVIGATION DROPDOWNS
+======================================== */
+
+const dropdowns =
+  document.querySelectorAll(
+    ".shop-dropdown"
+  );
+
+
+dropdowns.forEach(
+  function(dropdown) {
+
+    const toggle =
+      dropdown.querySelector(
+        ".shop-toggle"
+      );
+
+
+    toggle.addEventListener(
+      "click",
+      function(event) {
+
+        event.stopPropagation();
+
+
+        /* Close other dropdowns */
+
+        dropdowns.forEach(
+          function(otherDropdown) {
+
+            if (
+              otherDropdown !== dropdown
+            ) {
+
+              otherDropdown.classList.remove(
+                "open"
+              );
+
+
+              const otherToggle =
+                otherDropdown.querySelector(
+                  ".shop-toggle"
+                );
+
+
+              otherToggle.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+            }
+
+          }
+        );
+
+
+        /* Toggle this dropdown */
+
+        const isOpen =
+          dropdown.classList.toggle(
+            "open"
+          );
+
+
+        toggle.setAttribute(
+          "aria-expanded",
+          isOpen
+            ? "true"
+            : "false"
+        );
+
+      }
+    );
+
+  }
+);
+
+
+/* ========================================
+   CLOSE DROPDOWNS OUTSIDE CLICK
+======================================== */
+
+document.addEventListener(
+  "click",
+  function(event) {
+
+    dropdowns.forEach(
+      function(dropdown) {
+
+        if (
+          !dropdown.contains(
+            event.target
+          )
+        ) {
+
+          dropdown.classList.remove(
+            "open"
+          );
+
+
+          const toggle =
+            dropdown.querySelector(
+              ".shop-toggle"
+            );
+
+
+          toggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        }
+
+      }
+    );
+
+  }
+);
+    /* ========================================
+       WISHLIST STORAGE
+    ======================================== */
+
+    const WISHLIST_STORAGE_KEY =
+      "honeyAndHymnsWishlist";
+
+
+    function getWishlist() {
+
+      try {
+
+        const stored =
+          localStorage.getItem(
+            WISHLIST_STORAGE_KEY
+          );
+
+
+        if (!stored) {
+
+          return [];
+
+        }
+
+
+        const parsed =
+          JSON.parse(stored);
+
+
+        return Array.isArray(parsed)
+          ? parsed
+          : [];
+
+      } catch (error) {
+
+        return [];
+
+      }
+
+    }
+
+
+    function saveWishlist(items) {
+
+      localStorage.setItem(
+        WISHLIST_STORAGE_KEY,
+        JSON.stringify(items)
+      );
+
+    }
+
+
+    /* ========================================
+       WISHLIST COUNT
+    ======================================== */
+
+    function updateWishlistCount() {
+
+      const countElement =
+        document.getElementById(
+          "wishlistCount"
+        );
+
+
+      if (!countElement) {
+
+        return;
+
+      }
+
+
+      countElement.textContent =
+        getWishlist().length;
+
+    }
+
+
+    /* ========================================
+       CHECK IF PRODUCT IS SAVED
+    ======================================== */
+
+    function isInWishlist(id) {
+
+      return getWishlist().some(
+        function(item) {
+
+          return item.id === id;
+
+        }
+      );
+
+    }
+
+
+    /* ========================================
+       UPDATE PRODUCT BUTTONS
+    ======================================== */
+
+    function updateWishlistButtons() {
+
+      const buttons =
+        document.querySelectorAll(
+          ".wishlist-button"
+        );
+
+
+      buttons.forEach(
+        function(button) {
+
+          const id =
+            button.dataset.wishlistId;
+
+
+          if (
+            isInWishlist(id)
+          ) {
+
+            button.classList.add(
+              "saved"
+            );
+
+
+            button.textContent =
+              "♥ Saved to Wishlist";
+
+          } else {
+
+            button.classList.remove(
+              "saved"
+            );
+
+
+            button.textContent =
+              "♡ Add to Wishlist";
+
+          }
+
+        }
+      );
+
+    }
+
+
+    /* ========================================
+       ADD / REMOVE PRODUCT
+    ======================================== */
+
+    function toggleWishlist(button) {
+
+      const id =
+        button.dataset.wishlistId;
+
+
+      const product = {
+
+        id:
+          id,
+
+        title:
+          button.dataset.title,
+
+        price:
+          button.dataset.price,
+
+        image:
+          button.dataset.image,
+
+        url:
+          button.dataset.url
+
+      };
+
+
+      let wishlist =
+        getWishlist();
+
+
+      const existingIndex =
+        wishlist.findIndex(
+          function(item) {
+
+            return item.id === id;
+
+          }
+        );
+
+
+      if (
+        existingIndex !== -1
+      ) {
+
+        wishlist.splice(
+          existingIndex,
+          1
+        );
+
+      } else {
+
+        wishlist.push(
+          product
+        );
+
+      }
+
+
+      saveWishlist(
+        wishlist
+      );
+
+
+      updateWishlistCount();
+
+      updateWishlistButtons();
+
+    }
+
+
+    /* ========================================
+       PRODUCT BUTTON EVENTS
+    ======================================== */
+
+    document
+      .querySelectorAll(
+        ".wishlist-button"
+      )
+      .forEach(
+        function(button) {
+
+          button.addEventListener(
+            "click",
+            function() {
+
+              toggleWishlist(
+                button
+              );
+
+            }
+          );
+
+        }
+      );
+
+
+    /* ========================================
+       RENDER WISHLIST
+    ======================================== */
+
+    function renderWishlist() {
+
+      const body =
+        document.getElementById(
+          "wishlistBody"
+        );
+
+
+      const wishlist =
+        getWishlist();
+
+
+      if (
+        wishlist.length === 0
+      ) {
+
+        body.innerHTML = `
+
+          <div class="wishlist-empty">
+
+            <div class="wishlist-empty-icon">
+              ♡
+            </div>
+
+            <h3>
+              Your wishlist is empty
+            </h3>
+
+            <p>
+              Save a few Honey & Hymns favorites
+              and they'll wait here for you.
+            </p>
+
+          </div>
+
+        `;
+
+
+        return;
+
+      }
+
+
+      body.innerHTML =
+        wishlist
+          .map(
+            function(item) {
+
+              return `
+
+                <div
+                  class="wishlist-item"
+                  data-item-id="${escapeHtml(item.id)}"
+                >
+
+                  <img
+                    class="wishlist-item-image"
+                    src="${escapeHtml(item.image)}"
+                    alt="${escapeHtml(item.title)}"
+                  >
+
+
+                  <div>
+
+                    <h3
+                      class="wishlist-item-title"
+                    >
+                      ${escapeHtml(item.title)}
+                    </h3>
+
+
+                    <p
+                      class="wishlist-item-price"
+                    >
+                      ${escapeHtml(item.price)}
+                    </p>
+
+
+                    <a
+                      class="wishlist-item-view"
+                      href="${escapeHtml(item.url)}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Product →
+                    </a>
+
+                  </div>
+
+
+                  <button
+                    class="wishlist-remove"
+                    type="button"
+                    onclick="removeFromWishlist('${escapeHtml(item.id)}')"
+                  >
+                    Remove
+                  </button>
+
+                </div>
+
+              `;
+
+            }
+          )
+          .join("");
+
+    }
+
+
+    /* ========================================
+       BASIC HTML ESCAPING
+    ======================================== */
+
+    function escapeHtml(value) {
+
+      return String(value)
+        .replace(
+          /&/g,
+          "&amp;"
+        )
+        .replace(
+          /</g,
+          "&lt;"
+        )
+        .replace(
+          />/g,
+          "&gt;"
+        )
+        .replace(
+          /"/g,
+          "&quot;"
+        )
+        .replace(
+          /'/g,
+          "&#039;"
+        );
+
+    }
+
+
+    /* ========================================
+       REMOVE FROM WISHLIST
+    ======================================== */
+
+    function removeFromWishlist(id) {
+
+      const wishlist =
+        getWishlist()
+          .filter(
+            function(item) {
+
+              return item.id !== id;
+
+            }
+          );
+
+
+      saveWishlist(
+        wishlist
+      );
+
+
+      updateWishlistCount();
+
+      updateWishlistButtons();
+
+      renderWishlist();
+
+    }
+
+
+    /* ========================================
+       OPEN WISHLIST
+    ======================================== */
+
+    function openWishlist() {
+
+      renderWishlist();
+
+
+      const overlay =
+        document.getElementById(
+          "wishlistOverlay"
+        );
+
+
+      overlay.classList.add(
+        "open"
+      );
+
+
+      overlay.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+
+      document.body.style.overflow =
+        "hidden";
+
+    }
+
+
+    /* ========================================
+       CLOSE WISHLIST
+    ======================================== */
+
+    function closeWishlist() {
+
+      const overlay =
+        document.getElementById(
+          "wishlistOverlay"
+        );
+
+
+      overlay.classList.remove(
+        "open"
+      );
+
+
+      overlay.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+    /* ========================================
+       CLEAR WISHLIST
+    ======================================== */
+
+    function clearWishlist() {
+
+      const wishlist =
+        getWishlist();
+
+
+      if (
+        wishlist.length === 0
+      ) {
+
+        return;
+
+      }
+
+
+      const confirmed =
+        window.confirm(
+          "Are you sure you want to clear your wishlist?"
+        );
+
+
+      if (!confirmed) {
+
+        return;
+
+      }
+
+
+      saveWishlist(
+        []
+      );
+
+
+      updateWishlistCount();
+
+      updateWishlistButtons();
+
+      renderWishlist();
+
+    }
+
+
+    /* ========================================
+       CLOSE WHEN CLICKING OUTSIDE
+    ======================================== */
+
+    document
+      .getElementById(
+        "wishlistOverlay"
+      )
+      .addEventListener(
+        "click",
+        function(event) {
+
+          if (
+            event.target ===
+            this
+          ) {
+
+            closeWishlist();
+
+          }
+
+        }
+      );
+
+
+    /* ========================================
+       ESCAPE KEY
+    ======================================== */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key ===
+          "Escape"
+        ) {
+
+          closeWishlist();
+
+        }
+
+      }
+    );
+
+
+    /* ========================================
+       INITIALIZE
+    ======================================== */
+
+    updateWishlistCount();
+
+    updateWishlistButtons();
+
+    /* =========================================================
+   HONEY & HYMNS — FIRST VISIT WELCOME POPUP
+========================================================= */
+
+const WELCOME_POPUP_DISMISSED_KEY =
+  "honeyAndHymnsWelcomePopupDismissed";
+
+const WELCOME_POPUP_SUBSCRIBED_KEY =
+  "honeyAndHymnsWelcomePopupSubscribed";
+
+const WELCOME_POPUP_DELAY =
+  8000;
+
+
+/* =========================================================
+   OPEN POPUP
+========================================================= */
+
+function openWelcomePopup() {
+
+  const popup =
+    document.getElementById(
+      "welcomePopup"
+    );
+
+  if (!popup) {
+    return;
+  }
+
+  popup.classList.add("open");
+
+  popup.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+
+/* =========================================================
+   CLOSE POPUP
+========================================================= */
+
+function closeWelcomePopup(
+  rememberDismissal = false
+) {
+
+  const popup =
+    document.getElementById(
+      "welcomePopup"
+    );
+
+  if (!popup) {
+    return;
+  }
+
+  popup.classList.remove("open");
+
+  popup.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow =
+    "";
+
+  if (rememberDismissal) {
+
+    localStorage.setItem(
+      WELCOME_POPUP_DISMISSED_KEY,
+      Date.now().toString()
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   CHECK WHETHER POPUP SHOULD APPEAR
+========================================================= */
+
+function shouldShowWelcomePopup() {
+
+  const dismissed =
+    localStorage.getItem(
+      WELCOME_POPUP_DISMISSED_KEY
+    );
+
+  const subscribed =
+    localStorage.getItem(
+      WELCOME_POPUP_SUBSCRIBED_KEY
+    );
+
+
+  /*
+    If we've marked the visitor as subscribed,
+    never show the popup again.
+  */
+
+  if (subscribed) {
+    return false;
+  }
+
+
+  /*
+    If the visitor dismissed the popup,
+    wait 30 days before showing it again.
+  */
+
+  if (dismissed) {
+
+    const dismissedTime =
+      Number(dismissed);
+
+    const thirtyDays =
+      30 *
+      24 *
+      60 *
+      60 *
+      1000;
+
+    const timeSinceDismissal =
+      Date.now() -
+      dismissedTime;
+
+    if (
+      timeSinceDismissal <
+      thirtyDays
+    ) {
+
+      return false;
+
+    }
+
+  }
+
+
+  return true;
+
+}
+
+
+/* =========================================================
+   MARK SUBSCRIBED
+========================================================= */
+
+function markWelcomePopupSubscribed() {
+
+  localStorage.setItem(
+    WELCOME_POPUP_SUBSCRIBED_KEY,
+    "true"
+  );
+
+}
+
+
+/* =========================================================
+   POPUP EVENTS
+========================================================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function() {
+
+    const popup =
+      document.getElementById(
+        "welcomePopup"
+      );
+
+    if (!popup) {
+      return;
+    }
+
+
+    /*
+      Wait 8 seconds before showing.
+    */
+
+    if (
+      shouldShowWelcomePopup()
+    ) {
+
+      window.setTimeout(
+        function() {
+
+          /*
+            Check one more time in case
+            something changed while waiting.
+          */
+
+          if (
+            shouldShowWelcomePopup()
+          ) {
+
+            openWelcomePopup();
+
+          }
+
+        },
+        WELCOME_POPUP_DELAY
+      );
+
+    }
+
+
+    /*
+      Clicking the dark overlay closes it.
+    */
+
+    popup.addEventListener(
+      "click",
+      function(event) {
+
+        if (
+          event.target === popup
+        ) {
+
+          closeWelcomePopup(true);
+
+        }
+
+      }
+    );
+
+
+    /*
+      Escape closes it.
+    */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Escape" &&
+          popup.classList.contains("open")
+        ) {
+
+          closeWelcomePopup(true);
+
+        }
+
+      }
+    );
+
+
+    /*
+      If the visitor submits the form,
+      remember that they subscribed.
+    */
+
+    const form =
+      popup.querySelector(
+        ".welcome-letter-form"
+      );
+
+    if (form) {
+
+      form.addEventListener(
+        "submit",
+        function() {
+
+          markWelcomePopupSubscribed();
+
+          closeWelcomePopup();
+
+        }
+      );
+
+    }
+
+  }
+);
+
+</script>
+</body>
+</html>
