@@ -2182,11 +2182,34 @@
     </div>
 
 
-    <!-- SUNDAY GOSPEL IS ITS OWN NAVIGATION ITEM -->
+ <!-- CURRENT ISSUES -->
 
-    <a href="../../Sunday-Gospel/">
+<div class="shop-dropdown">
+
+  <button
+    class="shop-toggle"
+    type="button"
+    aria-expanded="false"
+  >
+    Current Issues
+  </button>
+
+
+  <div class="shop-menu">
+
+    <a href="../Sunday-Gospel/">
       Sunday Gospel for Kids
     </a>
+
+
+    <a href="../Honey-and-Hymns-Digital-Magazine/">
+      Honey & Hymns Digital Magazine
+    </a>
+
+  </div>
+
+</div>
+
 
 
     <a href="../../About/">
@@ -2697,33 +2720,72 @@ I’m still working my way through reviews, hauls, and Charlotte Mason videos, s
  <script>
 
 
-    /* ========================================
-       SHOP DROPDOWN
-    ======================================== */
+   /* ========================================
+   NAVIGATION DROPDOWNS
+======================================== */
 
-    const shopDropdown =
-      document.querySelector(
-        ".shop-dropdown"
-      );
+const dropdowns =
+  document.querySelectorAll(
+    ".shop-dropdown"
+  );
 
 
-    const shopToggle =
-      document.querySelector(
+dropdowns.forEach(
+  function(dropdown) {
+
+    const toggle =
+      dropdown.querySelector(
         ".shop-toggle"
       );
 
 
-    shopToggle.addEventListener(
+    toggle.addEventListener(
       "click",
-      function() {
+      function(event) {
+
+        event.stopPropagation();
+
+
+        /* Close other dropdowns */
+
+        dropdowns.forEach(
+          function(otherDropdown) {
+
+            if (
+              otherDropdown !== dropdown
+            ) {
+
+              otherDropdown.classList.remove(
+                "open"
+              );
+
+
+              const otherToggle =
+                otherDropdown.querySelector(
+                  ".shop-toggle"
+                );
+
+
+              otherToggle.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+            }
+
+          }
+        );
+
+
+        /* Toggle this dropdown */
 
         const isOpen =
-          shopDropdown.classList.toggle(
+          dropdown.classList.toggle(
             "open"
           );
 
 
-        shopToggle.setAttribute(
+        toggle.setAttribute(
           "aria-expanded",
           isOpen
             ? "true"
@@ -2733,23 +2795,39 @@ I’m still working my way through reviews, hauls, and Charlotte Mason videos, s
       }
     );
 
+  }
+);
 
-    document.addEventListener(
-      "click",
-      function(event) {
+
+/* ========================================
+   CLOSE DROPDOWNS OUTSIDE CLICK
+======================================== */
+
+document.addEventListener(
+  "click",
+  function(event) {
+
+    dropdowns.forEach(
+      function(dropdown) {
 
         if (
-          !shopDropdown.contains(
+          !dropdown.contains(
             event.target
           )
         ) {
 
-          shopDropdown.classList.remove(
+          dropdown.classList.remove(
             "open"
           );
 
 
-          shopToggle.setAttribute(
+          const toggle =
+            dropdown.querySelector(
+              ".shop-toggle"
+            );
+
+
+          toggle.setAttribute(
             "aria-expanded",
             "false"
           );
@@ -2759,6 +2837,8 @@ I’m still working my way through reviews, hauls, and Charlotte Mason videos, s
       }
     );
 
+  }
+);
 
     /* ========================================
        WISHLIST STORAGE
