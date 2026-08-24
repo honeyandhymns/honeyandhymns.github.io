@@ -2239,9 +2239,34 @@ img {
 
   </div>
 
-  <a href="../Sunday-Gospel/">
-    Sunday Gospel for Kids
-  </a>
+<!-- CURRENT ISSUES -->
+
+<div class="shop-dropdown">
+
+  <button
+    class="shop-toggle"
+    type="button"
+    aria-expanded="false"
+  >
+    Current Issues
+  </button>
+
+
+  <div class="shop-menu">
+
+    <a href="../Sunday-Gospel/">
+      Sunday Gospel for Kids
+    </a>
+
+
+    <a href="../Honey-and-Hymns-Digital-Magazine/">
+      Honey & Hymns Digital Magazine
+    </a>
+
+  </div>
+
+</div>
+
 
   <a
     href="./"
@@ -2883,77 +2908,125 @@ img {
 
   <script>
 
+  /* ========================================
+   NAVIGATION DROPDOWNS
+======================================== */
 
-    /* =======================================================
-       SHOP DROPDOWN
-    ======================================================== */
-
-    const shopDropdown =
-      document.querySelector(
-        ".shop-dropdown"
-      );
+const dropdowns =
+  document.querySelectorAll(
+    ".shop-dropdown"
+  );
 
 
-    const shopToggle =
-      document.querySelector(
+dropdowns.forEach(
+  function(dropdown) {
+
+    const toggle =
+      dropdown.querySelector(
         ".shop-toggle"
       );
 
 
-    if (
-      shopDropdown &&
-      shopToggle
-    ) {
+    toggle.addEventListener(
+      "click",
+      function(event) {
 
-      shopToggle.addEventListener(
-        "click",
-        function() {
+        event.stopPropagation();
 
-          const isOpen =
-            shopDropdown.classList.toggle(
-              "open"
+
+        /* Close other dropdowns */
+
+        dropdowns.forEach(
+          function(otherDropdown) {
+
+            if (
+              otherDropdown !== dropdown
+            ) {
+
+              otherDropdown.classList.remove(
+                "open"
+              );
+
+
+              const otherToggle =
+                otherDropdown.querySelector(
+                  ".shop-toggle"
+                );
+
+
+              otherToggle.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+            }
+
+          }
+        );
+
+
+        /* Toggle this dropdown */
+
+        const isOpen =
+          dropdown.classList.toggle(
+            "open"
+          );
+
+
+        toggle.setAttribute(
+          "aria-expanded",
+          isOpen
+            ? "true"
+            : "false"
+        );
+
+      }
+    );
+
+  }
+);
+
+
+/* ========================================
+   CLOSE DROPDOWNS OUTSIDE CLICK
+======================================== */
+
+document.addEventListener(
+  "click",
+  function(event) {
+
+    dropdowns.forEach(
+      function(dropdown) {
+
+        if (
+          !dropdown.contains(
+            event.target
+          )
+        ) {
+
+          dropdown.classList.remove(
+            "open"
+          );
+
+
+          const toggle =
+            dropdown.querySelector(
+              ".shop-toggle"
             );
 
 
-          shopToggle.setAttribute(
+          toggle.setAttribute(
             "aria-expanded",
-            isOpen
-              ? "true"
-              : "false"
+            "false"
           );
 
         }
-      );
 
+      }
+    );
 
-      document.addEventListener(
-        "click",
-        function(event) {
-
-          if (
-            !shopDropdown.contains(
-              event.target
-            )
-          ) {
-
-            shopDropdown.classList.remove(
-              "open"
-            );
-
-
-            shopToggle.setAttribute(
-              "aria-expanded",
-              "false"
-            );
-
-          }
-
-        }
-      );
-
-    }
-
-
+  }
+);
 
     /* =======================================================
        WISHLIST STORAGE
