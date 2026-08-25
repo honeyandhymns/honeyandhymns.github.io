@@ -4256,117 +4256,113 @@ function shuffleProducts(products) {
 ========================================================= */
 
 /*
-   For now, the product array itself determines
-   the order of New & Noteworthy.
+   Products with a dateAdded value are sorted
+   newest first.
 
-   Put newer products toward the top of the
-   amazonFindsProducts array.
+   Products without a dateAdded value are placed
+   afterward.
 
-   Later, when we begin adding dateAdded values,
-   this function can be changed to sort by date.
+   This lets us gradually add dateAdded values
+   without having to update every old product.
 */
 
 function getNewestProducts() {
 
-  return amazonFindsProducts.slice(
+  const datedProducts =
+    amazonFindsProducts
+      .filter(function(product) {
+
+        return product.dateAdded;
+
+      })
+      .sort(function(a, b) {
+
+        return new Date(b.dateAdded) -
+               new Date(a.dateAdded);
+
+      });
+
+
+  const undatedProducts =
+    amazonFindsProducts
+      .filter(function(product) {
+
+        return !product.dateAdded;
+
+      });
+
+
+  return [
+    ...datedProducts,
+    ...undatedProducts
+  ].slice(
     0,
-    NEWEST_PRODUCTS_COUNT
+    9
   );
 
 }
 
 
 /* =========================================================
-   GET RANDOM PRODUCTS
+   SHOW DEFAULT PRODUCTS
 ========================================================= */
 
-function getRandomProducts(
-  excludedIds = []
-) {
+/*
+   DEFAULT PAGE:
+   Shows only the 9 newest products.
 
-  const excluded =
-    new Set(excludedIds);
+   This uses the SAME findsGrid as the
+   category and search views.
 
+   No separate recommendation grids.
+   No random products.
+   No trending products yet.
+*/
 
-  const availableProducts =
-    amazonFindsProducts.filter(
-      function(product) {
+function showRecommendations() {
 
-        return !excluded.has(
-          product.id
-        );
+  if (!findsGrid) {
 
-      }
-    );
-
-
-  return shuffleProducts(
-    availableProducts
-  ).slice(
-    0,
-    RANDOM_PRODUCTS_COUNT
-  );
-
-}
-
-
-/* =========================================================
-   CREATE RECOMMENDATION SECTION
-========================================================= */
-
-function createRecommendationSection(
-  title,
-  description,
-  products
-) {
-
-  if (
-    !products ||
-    products.length === 0
-  ) {
-
-    return "";
+    return;
 
   }
 
 
-  return `
-
-    <section class="finds-recommendation-section">
-
-      <div class="finds-recommendation-heading">
-
-        <h2>
-          ${escapeHtml(title)}
-        </h2>
-
-        <p>
-          ${escapeHtml(description)}
-        </p>
-
-      </div>
+  libraryMode = false;
 
 
-      <div class="finds-recommendation-grid">
+  const newestProducts =
+    getNewestProducts();
 
-        ${products
-          .map(createFindCard)
-          .join("")}
 
-      </div>
+  findsGrid.innerHTML =
+    newestProducts
+      .map(createFindCard)
+      .join("");
 
-    </section>
 
-  `;
+  if (pagination) {
+
+    pagination.innerHTML = "";
+
+    pagination.style.display =
+      "none";
+
+  }
+
+
+  if (noResults) {
+
+    noResults.style.display =
+      "none";
+
+  }
+
+
+  attachWishlistEvents();
 
 }
-
-
-/* =========================================================
-   SHOW DEFAULT RECOMMENDATIONS
-========================================================= */
-
-function showRecommendations() {
+  {
 
   if (!findsGrid) {
 
