@@ -4251,62 +4251,27 @@ function shuffleProducts(products) {
 
 }
 
-
 /* =========================================================
    GET NEWEST PRODUCTS
 ========================================================= */
 
 /*
-   Products with a dateAdded value are sorted
-   newest first.
+   For now, the product array itself determines
+   the order of New & Noteworthy.
 
-   Products without a dateAdded value remain
-   available and are placed afterward.
+   Put newer products toward the top of the
+   amazonFindsProducts array.
 
-   This means you do NOT need to go back and
-   date every old product right now.
+   Later, when we begin adding dateAdded values,
+   this function can be changed to sort by date.
 */
 
 function getNewestProducts() {
 
-  const datedProducts =
-    amazonFindsProducts
-      .filter(
-        function(product) {
-
-          return product.dateAdded;
-
-        }
-      )
-      .sort(
-        function(a, b) {
-
-          return new Date(b.dateAdded) -
-                 new Date(a.dateAdded);
-
-        }
-      );
-
-
-  const undatedProducts =
-    amazonFindsProducts
-      .filter(
-        function(product) {
-
-          return !product.dateAdded;
-
-        }
-      );
-
-
-  return [
-    ...datedProducts,
-    ...undatedProducts
-  ]
-    .slice(
-      0,
-      NEWEST_PRODUCTS_COUNT
-    );
+  return amazonFindsProducts.slice(
+    0,
+    NEWEST_PRODUCTS_COUNT
+  );
 
 }
 
@@ -4315,15 +4280,32 @@ function getNewestProducts() {
    GET RANDOM PRODUCTS
 ========================================================= */
 
-function getRandomProducts() {
+function getRandomProducts(
+  excludedIds = []
+) {
+
+  const excluded =
+    new Set(excludedIds);
+
+
+  const availableProducts =
+    amazonFindsProducts.filter(
+      function(product) {
+
+        return !excluded.has(
+          product.id
+        );
+
+      }
+    );
+
 
   return shuffleProducts(
-    amazonFindsProducts
-  )
-    .slice(
-      0,
-      RANDOM_PRODUCTS_COUNT
-    );
+    availableProducts
+  ).slice(
+    0,
+    RANDOM_PRODUCTS_COUNT
+  );
 
 }
 
@@ -4396,47 +4378,39 @@ function showRecommendations() {
   libraryMode = false;
 
 
+  /*
+     NEW & NOTEWORTHY
+
+     For now, the first products in the
+     product array are treated as the newest.
+  */
+
   const newestProducts =
     getNewestProducts();
 
 
   /*
-     Random products should not duplicate
-     anything already shown in New & Noteworthy.
+     RANDOM FINDS
+
+     Pick random products while making sure
+     nothing already shown in New & Noteworthy
+     appears again in this section.
   */
 
   const newestIds =
-    new Set(
-      newestProducts.map(
-        function(product) {
-
-          return product.id;
-
-        }
-      )
-    );
-
-
-  const randomPool =
-    amazonFindsProducts.filter(
+    newestProducts.map(
       function(product) {
 
-        return !newestIds.has(
-          product.id
-        );
+        return product.id;
 
       }
     );
 
 
   const randomProducts =
-    shuffleProducts(
-      randomPool
-    )
-      .slice(
-        0,
-        RANDOM_PRODUCTS_COUNT
-      );
+    getRandomProducts(
+      newestIds
+    );
 
 
   findsGrid.innerHTML = `
@@ -4450,12 +4424,16 @@ function showRecommendations() {
 
     ${createRecommendationSection(
       "A Few Honey & Hymns Finds",
-      "A handful of favorites chosen just for a little browsing inspiration.",
+      "A handful of finds chosen just for a little browsing inspiration.",
       randomProducts
     )}
 
   `;
 
+
+  /*
+     Recommendations do not need pagination.
+  */
 
   if (pagination) {
 
@@ -4478,7 +4456,6 @@ function showRecommendations() {
   attachWishlistEvents();
 
 }
-
 
 /* =========================================================
    ENTER FULL LIBRARY MODE
