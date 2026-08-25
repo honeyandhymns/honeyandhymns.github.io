@@ -3918,10 +3918,50 @@ const amazonFindsProducts = [
    SETTINGS
 ========================================================= */
 
+/*
+   HOW THE AMAZON FINDS PAGE WORKS
+
+   DEFAULT VIEW:
+   - New & Noteworthy
+   - A Few Honey & Hymns Finds
+
+   SEARCH / FILTER VIEW:
+   - Full library
+   - Pagination
+   - Search
+   - Category filters
+   - Subcategory filters
+
+   TRENDING IS INTENTIONALLY NOT INCLUDED YET.
+*/
+
+
 const PRODUCTS_PER_PAGE = 9;
 
+
+/*
+   Number of products shown in the
+   recommendation sections.
+*/
+
+const NEWEST_PRODUCTS_COUNT = 6;
+
+const RANDOM_PRODUCTS_COUNT = 6;
+
+
+/*
+   Used to remember whether the visitor
+   is browsing recommendations or the
+   full library.
+*/
+
+let libraryMode = false;
+
+
 let currentFilter = "all";
+
 let currentSubcategory = "all";
+
 let currentPage = 1;
 
 
@@ -3932,21 +3972,28 @@ let currentPage = 1;
 const findsGrid =
   document.getElementById("findsGrid");
 
+
 const searchInput =
   document.getElementById("findsSearch");
 
+
 const filterButtons =
-  document.querySelectorAll(".finds-filter");
+  document.querySelectorAll(
+    ".finds-filter"
+  );
+
 
 const subcategoryContainer =
   document.getElementById(
     "findsSubcategoryButtons"
   );
 
+
 const noResults =
   document.getElementById(
     "findsNoResults"
   );
+
 
 const pagination =
   document.getElementById(
@@ -3987,12 +4034,17 @@ function getWishlist() {
         WISHLIST_STORAGE_KEY
       );
 
+
     if (!stored) {
+
       return [];
+
     }
+
 
     const parsed =
       JSON.parse(stored);
+
 
     return Array.isArray(parsed)
       ? parsed
@@ -4033,9 +4085,13 @@ function updateWishlistCount() {
       "wishlistCount"
     );
 
+
   if (!countElement) {
+
     return;
+
   }
+
 
   countElement.textContent =
     getWishlist().length;
@@ -4068,6 +4124,7 @@ function createFindCard(product) {
 
   const saved =
     isInWishlist(product.id);
+
 
   return `
 
@@ -4151,6 +4208,296 @@ function createFindCard(product) {
 
 
 /* =========================================================
+   SHUFFLE PRODUCTS
+========================================================= */
+
+/*
+   Creates a new shuffled copy so the original
+   product array is never permanently reordered.
+*/
+
+function shuffleProducts(products) {
+
+  const shuffled =
+    [...products];
+
+
+  for (
+    let i = shuffled.length - 1;
+    i > 0;
+    i--
+  ) {
+
+    const j =
+      Math.floor(
+        Math.random() *
+        (i + 1)
+      );
+
+
+    [
+      shuffled[i],
+      shuffled[j]
+    ] =
+    [
+      shuffled[j],
+      shuffled[i]
+    ];
+
+  }
+
+
+  return shuffled;
+
+}
+
+
+/* =========================================================
+   GET NEWEST PRODUCTS
+========================================================= */
+
+/*
+   Products with a dateAdded value are sorted
+   newest first.
+
+   Products without a dateAdded value remain
+   available and are placed afterward.
+
+   This means you do NOT need to go back and
+   date every old product right now.
+*/
+
+function getNewestProducts() {
+
+  const datedProducts =
+    amazonFindsProducts
+      .filter(
+        function(product) {
+
+          return product.dateAdded;
+
+        }
+      )
+      .sort(
+        function(a, b) {
+
+          return new Date(b.dateAdded) -
+                 new Date(a.dateAdded);
+
+        }
+      );
+
+
+  const undatedProducts =
+    amazonFindsProducts
+      .filter(
+        function(product) {
+
+          return !product.dateAdded;
+
+        }
+      );
+
+
+  return [
+    ...datedProducts,
+    ...undatedProducts
+  ]
+    .slice(
+      0,
+      NEWEST_PRODUCTS_COUNT
+    );
+
+}
+
+
+/* =========================================================
+   GET RANDOM PRODUCTS
+========================================================= */
+
+function getRandomProducts() {
+
+  return shuffleProducts(
+    amazonFindsProducts
+  )
+    .slice(
+      0,
+      RANDOM_PRODUCTS_COUNT
+    );
+
+}
+
+
+/* =========================================================
+   CREATE RECOMMENDATION SECTION
+========================================================= */
+
+function createRecommendationSection(
+  title,
+  description,
+  products
+) {
+
+  if (
+    !products ||
+    products.length === 0
+  ) {
+
+    return "";
+
+  }
+
+
+  return `
+
+    <section class="finds-recommendation-section">
+
+      <div class="finds-recommendation-heading">
+
+        <h2>
+          ${escapeHtml(title)}
+        </h2>
+
+        <p>
+          ${escapeHtml(description)}
+        </p>
+
+      </div>
+
+
+      <div class="finds-recommendation-grid">
+
+        ${products
+          .map(createFindCard)
+          .join("")}
+
+      </div>
+
+    </section>
+
+  `;
+
+}
+
+
+/* =========================================================
+   SHOW DEFAULT RECOMMENDATIONS
+========================================================= */
+
+function showRecommendations() {
+
+  if (!findsGrid) {
+
+    return;
+
+  }
+
+
+  libraryMode = false;
+
+
+  const newestProducts =
+    getNewestProducts();
+
+
+  /*
+     Random products should not duplicate
+     anything already shown in New & Noteworthy.
+  */
+
+  const newestIds =
+    new Set(
+      newestProducts.map(
+        function(product) {
+
+          return product.id;
+
+        }
+      )
+    );
+
+
+  const randomPool =
+    amazonFindsProducts.filter(
+      function(product) {
+
+        return !newestIds.has(
+          product.id
+        );
+
+      }
+    );
+
+
+  const randomProducts =
+    shuffleProducts(
+      randomPool
+    )
+      .slice(
+        0,
+        RANDOM_PRODUCTS_COUNT
+      );
+
+
+  findsGrid.innerHTML = `
+
+    ${createRecommendationSection(
+      "New & Noteworthy",
+      "A few of the newest additions to the Honey & Hymns Finds library.",
+      newestProducts
+    )}
+
+
+    ${createRecommendationSection(
+      "A Few Honey & Hymns Finds",
+      "A handful of favorites chosen just for a little browsing inspiration.",
+      randomProducts
+    )}
+
+  `;
+
+
+  if (pagination) {
+
+    pagination.innerHTML = "";
+
+    pagination.style.display =
+      "none";
+
+  }
+
+
+  if (noResults) {
+
+    noResults.style.display =
+      "none";
+
+  }
+
+
+  attachWishlistEvents();
+
+}
+
+
+/* =========================================================
+   ENTER FULL LIBRARY MODE
+========================================================= */
+
+function showLibrary() {
+
+  libraryMode = true;
+
+
+  currentPage = 1;
+
+
+  updateFinds();
+
+}
+
+
+/* =========================================================
    FILTER PRODUCTS
 ========================================================= */
 
@@ -4171,16 +4518,22 @@ function getFilteredProducts() {
         String(product.category)
           .toLowerCase();
 
+
       const subcategory =
         String(product.subcategory)
           .toLowerCase();
 
 
       const searchableText = [
+
         product.title,
+
         product.category,
+
         product.subcategory,
+
         product.description
+
       ]
         .join(" ")
         .toLowerCase();
@@ -4221,18 +4574,25 @@ function getFilteredProducts() {
    BUILD SUBCATEGORY BUTTONS
 ========================================================= */
 
-function buildSubcategoryButtons(category) {
+function buildSubcategoryButtons(
+  category
+) {
 
   if (!subcategoryContainer) {
+
     return;
+
   }
 
 
-  subcategoryContainer.innerHTML = "";
+  subcategoryContainer.innerHTML =
+    "";
 
 
   if (category === "all") {
+
     return;
+
   }
 
 
@@ -4272,13 +4632,17 @@ function buildSubcategoryButtons(category) {
         );
 
 
-      button.type = "button";
+      button.type =
+        "button";
+
 
       button.className =
         "finds-subcategory";
 
+
       button.dataset.subcategory =
         subcategory;
+
 
       button.textContent =
         subcategory;
@@ -4311,9 +4675,8 @@ function buildSubcategoryButtons(category) {
           currentSubcategory =
             subcategory;
 
-          currentPage = 1;
 
-          updateFinds();
+          showLibrary();
 
         }
       );
@@ -4333,14 +4696,19 @@ function buildSubcategoryButtons(category) {
    PAGINATION
 ========================================================= */
 
-function buildPagination(totalPages) {
+function buildPagination(
+  totalPages
+) {
 
   if (!pagination) {
+
     return;
+
   }
 
 
-  pagination.innerHTML = "";
+  pagination.innerHTML =
+    "";
 
 
   if (totalPages <= 1) {
@@ -4360,22 +4728,28 @@ function buildPagination(totalPages) {
   /* PREVIOUS */
 
   const previous =
-    document.createElement("button");
+    document.createElement(
+      "button"
+    );
 
 
   previous.type =
     "button";
 
+
   previous.className =
     "finds-page-button";
 
+
   previous.textContent =
     "←";
+
 
   previous.setAttribute(
     "aria-label",
     "Previous page"
   );
+
 
   previous.disabled =
     currentPage === 1;
@@ -4385,7 +4759,9 @@ function buildPagination(totalPages) {
     "click",
     function() {
 
-      if (currentPage > 1) {
+      if (
+        currentPage > 1
+      ) {
 
         currentPage--;
 
@@ -4421,11 +4797,14 @@ function buildPagination(totalPages) {
     button.type =
       "button";
 
+
     button.className =
       "finds-page-button";
 
+
     button.textContent =
       page;
+
 
     button.setAttribute(
       "aria-label",
@@ -4441,6 +4820,7 @@ function buildPagination(totalPages) {
         "active"
       );
 
+
       button.setAttribute(
         "aria-current",
         "page"
@@ -4455,6 +4835,7 @@ function buildPagination(totalPages) {
 
         currentPage =
           page;
+
 
         updateFinds();
 
@@ -4482,11 +4863,14 @@ function buildPagination(totalPages) {
   next.type =
     "button";
 
+
   next.className =
     "finds-page-button";
 
+
   next.textContent =
     "→";
+
 
   next.setAttribute(
     "aria-label",
@@ -4539,7 +4923,9 @@ function scrollToFinds() {
 
 
   if (!section) {
+
     return;
+
   }
 
 
@@ -4552,14 +4938,62 @@ function scrollToFinds() {
 
 
 /* =========================================================
-   UPDATE PRODUCTS
+   UPDATE FULL LIBRARY
 ========================================================= */
 
 function updateFinds() {
 
   if (!findsGrid) {
+
     return;
+
   }
+
+
+  /*
+     If nothing has been searched or filtered,
+     the visitor sees the curated homepage
+     instead of the entire library.
+  */
+
+  const searchTerm =
+    searchInput
+      ? searchInput.value
+          .trim()
+      : "";
+
+
+  const hasSearch =
+    searchTerm !== "";
+
+
+  const hasFilter =
+    currentFilter !== "all";
+
+
+  const hasSubcategory =
+    currentSubcategory !== "all";
+
+
+  /*
+     If the visitor is back to the completely
+     unfiltered state, return to recommendations.
+  */
+
+  if (
+    !hasSearch &&
+    !hasFilter &&
+    !hasSubcategory
+  ) {
+
+    showRecommendations();
+
+    return;
+
+  }
+
+
+  libraryMode = true;
 
 
   const filteredProducts =
@@ -4751,6 +5185,7 @@ function updateWishlistButtons() {
             "saved"
           );
 
+
           button.textContent =
             "♥ Saved to Wishlist";
 
@@ -4759,6 +5194,7 @@ function updateWishlistButtons() {
           button.classList.remove(
             "saved"
           );
+
 
           button.textContent =
             "♡ Add to Wishlist";
@@ -4816,7 +5252,31 @@ filterButtons.forEach(
         );
 
 
-        updateFinds();
+        /*
+           Clicking "All" returns the visitor
+           to the curated recommendation view.
+        */
+
+        if (
+          currentFilter === "all"
+        ) {
+
+          if (searchInput) {
+
+            searchInput.value =
+              "";
+
+          }
+
+
+          showRecommendations();
+
+          return;
+
+        }
+
+
+        showLibrary();
 
       }
     );
@@ -4837,6 +5297,23 @@ if (searchInput) {
 
       currentPage =
         1;
+
+
+      /*
+         Searching automatically opens
+         the full library.
+      */
+
+      if (
+        searchInput.value
+          .trim() !== ""
+      ) {
+
+        libraryMode =
+          true;
+
+      }
+
 
       updateFinds();
 
@@ -4859,7 +5336,9 @@ function renderWishlist() {
 
 
   if (!body) {
+
     return;
+
   }
 
 
@@ -4891,6 +5370,7 @@ function renderWishlist() {
       </div>
 
     `;
+
 
     return;
 
@@ -5002,7 +5482,9 @@ function openWishlist() {
 
 
   if (!overlay) {
+
     return;
+
   }
 
 
@@ -5036,7 +5518,9 @@ function closeWishlist() {
 
 
   if (!overlay) {
+
     return;
+
   }
 
 
@@ -5083,7 +5567,9 @@ function clearWishlist() {
 
 
   if (!confirmed) {
+
     return;
+
   }
 
 
@@ -5143,10 +5629,12 @@ document.addEventListener(
 
       closeWishlist();
 
+
       const popup =
         document.getElementById(
           "welcomePopup"
         );
+
 
       if (
         popup &&
@@ -5258,7 +5746,9 @@ function openWelcomePopup() {
 
 
   if (!popup) {
+
     return;
+
   }
 
 
@@ -5294,7 +5784,9 @@ function closeWelcomePopup(
 
 
   if (!popup) {
+
     return;
+
   }
 
 
@@ -5344,7 +5836,9 @@ function shouldShowWelcomePopup() {
 
 
   if (subscribed) {
+
     return false;
+
   }
 
 
@@ -5413,7 +5907,9 @@ document.addEventListener(
 
 
     if (!popup) {
+
       return;
+
     }
 
 
@@ -5484,21 +5980,24 @@ document.addEventListener(
    INITIALIZE
 ========================================================= */
 
-buildSubcategoryButtons("all");
+buildSubcategoryButtons(
+  "all"
+);
 
-updateFinds();
+
+/*
+   The page now opens in the curated
+   recommendation view instead of showing
+   the entire product library.
+*/
+
+showRecommendations();
+
 
 updateWishlistCount();
 
+
 updateWishlistButtons();
-
-
-
-
-
-
-
-</script>
 
 </body>
 
