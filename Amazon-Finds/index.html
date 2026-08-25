@@ -3918,52 +3918,31 @@ const amazonFindsProducts = [
    SETTINGS
 ========================================================= */
 
-/*
-   HOW THE AMAZON FINDS PAGE WORKS
-
-   DEFAULT VIEW:
-   - New & Noteworthy
-   - A Few Honey & Hymns Finds
-
-   SEARCH / FILTER VIEW:
-   - Full library
-   - Pagination
-   - Search
-   - Category filters
-   - Subcategory filters
-
-   TRENDING IS INTENTIONALLY NOT INCLUDED YET.
-*/
-
-
 const PRODUCTS_PER_PAGE = 9;
 
 
 /*
-   Number of products shown in the
-   recommendation sections.
+   The homepage shows 9 random products.
+
+   Pagination is ONLY used once the visitor
+   enters a category, subcategory, or search.
 */
 
-const NEWEST_PRODUCTS_COUNT = 6;
-
-const RANDOM_PRODUCTS_COUNT = 6;
+const HOMEPAGE_PRODUCTS_COUNT = 9;
 
 
 /*
    Used to remember whether the visitor
-   is browsing recommendations or the
-   full library.
+   is browsing the homepage or the full library.
 */
 
 let libraryMode = false;
-
 
 let currentFilter = "all";
 
 let currentSubcategory = "all";
 
 let currentPage = 1;
-
 
 /* =========================================================
    ELEMENTS
@@ -4251,72 +4230,21 @@ function shuffleProducts(products) {
 
 }
 
-/* =========================================================
-   GET NEWEST PRODUCTS
-========================================================= */
 
-/*
-   Products with a dateAdded value are sorted
-   newest first.
-
-   Products without a dateAdded value are placed
-   afterward.
-
-   This lets us gradually add dateAdded values
-   without having to update every old product.
-*/
-
-function getNewestProducts() {
-
-  const datedProducts =
-    amazonFindsProducts
-      .filter(function(product) {
-
-        return product.dateAdded;
-
-      })
-      .sort(function(a, b) {
-
-        return new Date(b.dateAdded) -
-               new Date(a.dateAdded);
-
-      });
-
-
-  const undatedProducts =
-    amazonFindsProducts
-      .filter(function(product) {
-
-        return !product.dateAdded;
-
-      });
-
-
-  return [
-    ...datedProducts,
-    ...undatedProducts
-  ].slice(
-    0,
-    9
-  );
-
-}
 
 
 /* =========================================================
-   SHOW DEFAULT PRODUCTS
+   SHOW RANDOM HOMEPAGE PRODUCTS
 ========================================================= */
 
 /*
-   DEFAULT PAGE:
-   Shows only the 9 newest products.
+   DEFAULT HOMEPAGE:
 
-   This uses the SAME findsGrid as the
-   category and search views.
-
-   No separate recommendation grids.
-   No random products.
-   No trending products yet.
+   - Shows 9 random products
+   - Uses the same findsGrid as the library
+   - No pagination
+   - No separate recommendation sections
+   - No newest products yet
 */
 
 function showRecommendations() {
@@ -4331,104 +4259,23 @@ function showRecommendations() {
   libraryMode = false;
 
 
-  const newestProducts =
-    getNewestProducts();
+  const randomProducts =
+    shuffleProducts(
+      amazonFindsProducts
+    ).slice(
+      0,
+      HOMEPAGE_PRODUCTS_COUNT
+    );
 
 
   findsGrid.innerHTML =
-    newestProducts
+    randomProducts
       .map(createFindCard)
       .join("");
 
 
-  if (pagination) {
-
-    pagination.innerHTML = "";
-
-    pagination.style.display =
-      "none";
-
-  }
-
-
-  if (noResults) {
-
-    noResults.style.display =
-      "none";
-
-  }
-
-
-  attachWishlistEvents();
-
-}
-  {
-
-  if (!findsGrid) {
-
-    return;
-
-  }
-
-
-  libraryMode = false;
-
-
   /*
-     NEW & NOTEWORTHY
-
-     For now, the first products in the
-     product array are treated as the newest.
-  */
-
-  const newestProducts =
-    getNewestProducts();
-
-
-  /*
-     RANDOM FINDS
-
-     Pick random products while making sure
-     nothing already shown in New & Noteworthy
-     appears again in this section.
-  */
-
-  const newestIds =
-    newestProducts.map(
-      function(product) {
-
-        return product.id;
-
-      }
-    );
-
-
-  const randomProducts =
-    getRandomProducts(
-      newestIds
-    );
-
-
-  findsGrid.innerHTML = `
-
-    ${createRecommendationSection(
-      "New & Noteworthy",
-      "A few of the newest additions to the Honey & Hymns Finds library.",
-      newestProducts
-    )}
-
-
-    ${createRecommendationSection(
-      "A Few Honey & Hymns Finds",
-      "A handful of finds chosen just for a little browsing inspiration.",
-      randomProducts
-    )}
-
-  `;
-
-
-  /*
-     Recommendations do not need pagination.
+     Homepage never uses pagination.
   */
 
   if (pagination) {
@@ -4924,9 +4771,13 @@ function updateFinds() {
 
 
   /*
-     If nothing has been searched or filtered,
-     the visitor sees the curated homepage
-     instead of the entire library.
+     Check whether the visitor has actually
+     entered the library.
+
+     The library opens when:
+     - A category is selected
+     - A subcategory is selected
+     - A search is performed
   */
 
   const searchTerm =
@@ -4949,8 +4800,8 @@ function updateFinds() {
 
 
   /*
-     If the visitor is back to the completely
-     unfiltered state, return to recommendations.
+     If absolutely nothing is selected,
+     return to the random homepage.
   */
 
   if (
@@ -4966,12 +4817,20 @@ function updateFinds() {
   }
 
 
+  /*
+     We are now inside the full library.
+  */
+
   libraryMode = true;
 
 
   const filteredProducts =
     getFilteredProducts();
 
+
+  /*
+     Calculate how many pages are needed.
+  */
 
   const totalPages =
     Math.max(
@@ -4983,6 +4842,11 @@ function updateFinds() {
     );
 
 
+  /*
+     Prevent the current page from
+     exceeding the available pages.
+  */
+
   if (
     currentPage > totalPages
   ) {
@@ -4992,6 +4856,11 @@ function updateFinds() {
 
   }
 
+
+  /*
+     Determine which 9 products
+     belong on the current page.
+  */
 
   const startIndex =
     (
@@ -5008,11 +4877,20 @@ function updateFinds() {
     );
 
 
+  /*
+     Display the products.
+  */
+
   findsGrid.innerHTML =
     pageProducts
       .map(createFindCard)
       .join("");
 
+
+  /*
+     Show the no-results message
+     if necessary.
+  */
 
   if (noResults) {
 
@@ -5024,6 +4902,11 @@ function updateFinds() {
   }
 
 
+  /*
+     Pagination ONLY appears
+     in the library.
+  */
+
   buildPagination(
     totalPages
   );
@@ -5032,7 +4915,6 @@ function updateFinds() {
   attachWishlistEvents();
 
 }
-
 
 /* =========================================================
    WISHLIST BUTTON EVENTS
