@@ -5871,6 +5871,165 @@ document.addEventListener(
   }
 );
 
+  /* =========================================================
+   URL FILTER / SEARCH LINKS
+========================================================= */
+
+function initializeFromURL() {
+
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
+
+
+  const urlCategory =
+    params.get("category");
+
+
+  const urlSubcategory =
+    params.get("subcategory");
+
+
+  const urlSearch =
+    params.get("search");
+
+
+  /*
+     SEARCH QUERY
+  */
+
+  if (
+    urlSearch &&
+    searchInput
+  ) {
+
+    searchInput.value =
+      urlSearch;
+
+    currentPage =
+      1;
+
+    libraryMode =
+      true;
+
+    updateFinds();
+
+    return;
+
+  }
+
+
+  /*
+     CATEGORY
+  */
+
+  if (urlCategory) {
+
+    const matchingButton =
+      [...filterButtons].find(
+        function(button) {
+
+          return (
+            button.dataset.filter
+              ?.toLowerCase() ===
+            urlCategory.toLowerCase()
+          );
+
+        }
+      );
+
+
+    if (matchingButton) {
+
+      filterButtons.forEach(
+        function(button) {
+
+          button.classList.remove(
+            "active"
+          );
+
+        }
+      );
+
+
+      matchingButton.classList.add(
+        "active"
+      );
+
+
+      currentFilter =
+        matchingButton.dataset.filter;
+
+
+      currentSubcategory =
+        "all";
+
+
+      currentPage =
+        1;
+
+
+      buildSubcategoryButtons(
+        currentFilter
+      );
+
+
+      /*
+         SUBCATEGORY
+      */
+
+      if (urlSubcategory) {
+
+        const matchingSubcategory =
+          [...document.querySelectorAll(
+            ".finds-subcategory"
+          )].find(
+            function(button) {
+
+              return (
+                button.dataset.subcategory
+                  ?.toLowerCase() ===
+                urlSubcategory.toLowerCase()
+              );
+
+            }
+          );
+
+
+        if (matchingSubcategory) {
+
+          matchingSubcategory.classList.add(
+            "active"
+          );
+
+
+          currentSubcategory =
+            matchingSubcategory.dataset
+              .subcategory;
+
+        }
+
+      }
+
+
+      showLibrary();
+
+      return;
+
+    }
+
+  }
+
+
+  /*
+     NO URL FILTER
+     → normal homepage
+  */
+
+  showRecommendations();
+
+}
 
 /* =========================================================
    INITIALIZE
@@ -5882,19 +6041,18 @@ buildSubcategoryButtons(
 
 
 /*
-   The page now opens in the curated
-   recommendation view instead of showing
-   the entire product library.
+   Open the correct view based on
+   the URL, or show recommendations
+   if there is no URL filter.
 */
 
-showRecommendations();
+initializeFromURL();
 
 
 updateWishlistCount();
 
 
 updateWishlistButtons();
-  
 </script>
 </body>
 
