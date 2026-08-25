@@ -19,526 +19,476 @@
     content="A collection of things I've found helpful, beautiful, useful, or simply lovely for faith, homeschooling, homemaking, motherhood, and family life."
   >
 
-  <style>
-
-    /* =========================================================
-       HONEY & HYMNS AMAZON FINDS
-       ========================================================= */
-
-    :root {
-      --honey-yellow: #FFEBA1;
-      --soft-honey: #F8DFA0;
-      --cream: #FFFDF5;
-      --warm-white: #FFF9EA;
-      --paper: #F8F2DF;
-      --brown: #5B4636;
-      --dark-brown: #3F3026;
-      --soft-brown: #806B59;
-      --gold: #C89B3C;
-      --border: #E7D8B8;
-      --shadow: rgba(91, 70, 54, 0.12);
-    }
+ <style>
+
+/* =========================================================
+   HONEY & HYMNS — AMAZON FINDS
+   Clean • Soft • Rounded • Warm
+========================================================= */
+
+:root {
+  --honey-yellow: #FFEBA1;
+  --soft-honey: #F8DFA0;
+  --cream: #FFFDF5;
+  --warm-white: #FFF9EA;
+  --paper: #F8F2DF;
+
+  --brown: #5B4636;
+  --dark-brown: #3F3026;
+  --soft-brown: #806B59;
+
+  --gold: #C89B3C;
+  --border: #E7D8B8;
+
+  --card-background: #FFFDF8;
+
+  --shadow-soft: 0 4px 14px rgba(75, 55, 35, 0.08);
+  --shadow-hover: 0 10px 24px rgba(75, 55, 35, 0.13);
+
+  --radius-soft: 14px;
+  --radius-medium: 16px;
+  --radius-large: 20px;
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--brown);
+  background: var(--cream);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+  background: var(--honey-yellow);
+  padding: 25px 20px 15px;
+  text-align: center;
+  border-bottom: 1px solid rgba(90, 70, 30, 0.12);
+}
+
+.header-brand {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.site-logo {
+  width: 365px;
+  max-width: 86%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.header-tagline {
+  margin: 4px 0 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 0.84rem;
+  letter-spacing: 2px;
+  color: #5D4B2D;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.site-nav {
+  background: var(--honey-yellow);
+  text-align: center;
+  padding: 9px 15px 13px;
+  border-bottom: 1px solid rgba(90, 70, 30, 0.12);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.site-nav a,
+.shop-toggle,
+.wishlist-header-button {
+  color: #514229;
+  text-decoration: none;
+  margin: 0 9px;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 0.95rem;
 
+  transition: color 0.2s ease;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+.site-nav a:hover,
+.shop-toggle:hover,
+.wishlist-header-button:hover {
+  color: #967331;
+}
+
+.site-nav a.active {
+  color: #80652D;
+  font-weight: 600;
+}
+
 
+/* =========================================================
+   SHOP DROPDOWN
+========================================================= */
+
+.shop-dropdown {
+  position: relative;
+  display: inline-block;
+}
 
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--brown);
-      background: var(--cream);
-      line-height: 1.6;
-    }
+.shop-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  line-height: inherit;
+}
 
+.shop-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
 
-    a {
-      color: inherit;
-    }
+  transform: translateX(-50%) translateY(-6px);
 
-     /* =========================
-       HEADER
-    ========================= */
+  min-width: 250px;
 
-    .site-header {
-      background: #FFEBA1;
-      padding: 25px 20px 15px;
-      text-align: center;
-      border-bottom: 1px solid rgba(90, 70, 30, 0.12);
-    }
+  background: #FFFDF0;
+  border: 1px solid #D8C79F;
+  border-radius: var(--radius-medium);
 
+  box-shadow: 0 8px 22px rgba(77, 64, 41, 0.16);
 
-    .header-brand {
-      max-width: 700px;
-      margin: 0 auto;
-    }
+  padding: 8px 0;
+  text-align: left;
 
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 
-    .site-logo {
-      width: 365px;
-      max-width: 86%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
 
+  z-index: 1000;
+}
 
-    .header-tagline {
-      margin: 4px 0 0;
+.shop-dropdown.open .shop-menu,
+.shop-dropdown:hover .shop-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
+  transform: translateX(-50%) translateY(0);
+}
 
-      font-size: 0.84rem;
-      letter-spacing: 2px;
-      color: #5D4B2D;
-    }
+.shop-menu a {
+  display: block;
+  margin: 0;
+  padding: 10px 18px;
+  font-size: 0.92rem;
+}
 
+.shop-menu a:hover {
+  background: #FFF3C8;
+}
 
-    /* =========================
-       NAVIGATION
-    ========================= */
+.shop-coming-soon {
+  padding: 10px 18px;
 
-    .site-nav {
-      background: #FFEBA1;
-      text-align: center;
-      padding: 9px 15px 13px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 0.92rem;
+}
 
-      border-bottom:
-        1px solid
-        rgba(90, 70, 30, 0.12);
+.shop-coming-soon small {
+  display: block;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 3px;
-    }
+  font-family: "Caveat", cursive;
+  color: #80652D;
+  font-size: 0.85rem;
+}
 
 
-    .site-nav a,
-    .shop-toggle,
-    .wishlist-header-button {
+/* =========================================================
+   WISHLIST HEADER BUTTON
+========================================================= */
 
-      color: #514229;
+.wishlist-header-button {
+  background: none;
+  border: none;
+  padding: 0;
 
-      text-decoration: none;
+  cursor: pointer;
 
-      margin: 0 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
 
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
+.wishlist-heart {
+  font-size: 1.05rem;
+  line-height: 1;
+}
 
-      font-size: 0.95rem;
+.wishlist-count {
+  min-width: 19px;
+  height: 19px;
 
-      transition:
-        color 0.2s ease;
+  padding: 0 5px;
 
-    }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
+  border-radius: 50%;
 
-    .site-nav a:hover,
-    .shop-toggle:hover,
-    .wishlist-header-button:hover {
+  background: #D8B65F;
+  color: #4D4029;
 
-      color: #967331;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 0.63rem;
+  font-weight: bold;
+}
 
-    }
 
+/* =========================================================
+   AMAZON FINDS PAGE
+========================================================= */
 
-    .site-nav a.active {
+.amazon-finds-page {
+  width: 100%;
+}
 
-      color: #80652D;
-      font-weight: 600;
 
-    }
+/* =========================================================
+   HERO
+========================================================= */
 
+.amazon-finds-hero {
+  padding: 80px 20px 70px;
+  text-align: center;
 
-    /* =========================
-       SHOP DROPDOWN
-    ========================= */
+  background:
+    linear-gradient(
+      rgba(255, 235, 161, 0.55),
+      rgba(255, 253, 245, 0.9)
+    );
+}
 
-    .shop-dropdown {
+.amazon-finds-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-      position: relative;
-      display: inline-block;
+.amazon-finds-kicker {
+  margin: 0 0 12px;
 
-    }
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: bold;
 
+  color: var(--soft-brown);
+}
 
-    .shop-toggle {
+.amazon-finds-hero h1 {
+  margin: 0 auto 20px;
 
-      background: none;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      line-height: inherit;
+  max-width: 850px;
 
-    }
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.1;
 
+  color: var(--dark-brown);
+}
 
-    .shop-menu {
+.amazon-finds-rule {
+  margin: 20px 0;
 
-      position: absolute;
+  color: var(--gold);
+  font-size: 1.4rem;
+}
 
-      top:
-        calc(100% + 10px);
+.amazon-finds-intro {
+  max-width: 720px;
+  margin: 0 auto;
 
-      left: 50%;
+  font-size: 1.08rem;
+}
 
-      transform:
-        translateX(-50%)
-        translateY(-6px);
 
-      min-width: 250px;
+/* =========================================================
+   AFFILIATE DISCLOSURE
+========================================================= */
 
-      background: #FFFDF0;
+.affiliate-disclosure {
+  max-width: 900px;
+  margin: 30px auto 0;
 
-      border:
-        1px solid
-        #D8C79F;
+  padding: 16px 20px;
 
-      border-radius: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-soft);
 
-      box-shadow:
-        0 8px 22px
-        rgba(77, 64, 41, 0.16);
+  background: rgba(255, 255, 255, 0.65);
 
-      padding: 8px 0;
+  font-size: 0.88rem;
+  font-style: italic;
+}
 
-      text-align: left;
 
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
 
-      transition:
-        opacity 0.2s ease,
-        transform 0.2s ease,
-        visibility 0.2s ease;
+.amazon-finds-content {
+  max-width: 1250px;
+  margin: 0 auto;
 
-      z-index: 1000;
+  padding: 50px 20px 90px;
+}
 
-    }
 
+/* =========================================================
+   SEARCH
+========================================================= */
 
-    .shop-dropdown.open .shop-menu,
-    .shop-dropdown:hover .shop-menu {
+.finds-search-wrapper {
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
 
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
+.finds-search-label {
+  display: block;
 
-      transform:
-        translateX(-50%)
-        translateY(0);
+  margin-bottom: 8px;
 
-    }
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
 
+.finds-search {
+  width: 100%;
 
-    .shop-menu a {
+  padding: 15px 18px;
 
-      display: block;
+  border: 1px solid var(--border);
+  border-radius: 12px;
 
-      margin: 0;
+  background: white;
+  color: var(--brown);
 
-      padding:
-        10px 18px;
+  font-family: inherit;
+  font-size: 1rem;
 
-      font-size: 0.92rem;
+  outline: none;
 
-    }
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
 
+.finds-search:focus {
+  border-color: var(--gold);
 
-    .shop-menu a:hover {
+  box-shadow:
+    0 0 0 3px
+    rgba(200, 155, 60, 0.12);
+}
 
-      background: #FFF3C8;
 
-    }
+/* =========================================================
+   MAIN CATEGORY FILTERS
+========================================================= */
 
+.finds-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
-    .shop-coming-soon {
+  gap: 10px;
 
-      padding:
-        10px 18px;
+  margin-bottom: 45px;
+}
 
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
+.finds-filter {
+  border: 1px solid var(--border);
+  background: var(--warm-white);
+  color: var(--brown);
 
-      font-size: 0.92rem;
+  padding: 10px 17px;
 
-    }
+  border-radius: 30px;
 
+  font-family: inherit;
+  font-size: 0.9rem;
 
-    .shop-coming-soon small {
+  cursor: pointer;
 
-      display: block;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
 
-      font-family:
-        "Caveat",
-        cursive;
+.finds-filter:hover,
+.finds-filter.active {
+  background: var(--honey-yellow);
+  border-color: var(--soft-honey);
 
-      color: #80652D;
+  transform: translateY(-1px);
+}
 
-      font-size: 0.85rem;
 
-    }
+/* =========================================================
+   SECTION HEADING
+========================================================= */
 
+.finds-section-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
 
-    /* =========================
-       WISHLIST HEADER BUTTON
-    ========================= */
+.finds-section-heading h2 {
+  margin: 0 0 10px;
 
-    .wishlist-header-button {
+  font-size: 2rem;
+  color: var(--dark-brown);
+}
 
-      background: none;
+.finds-section-heading p {
+  max-width: 650px;
+  margin: 0 auto;
 
-      border: none;
+  color: var(--soft-brown);
+}
 
-      padding: 0;
 
-      cursor: pointer;
-
-      display: inline-flex;
-
-      align-items: center;
-
-      gap: 5px;
-
-    }
-
-
-    .wishlist-heart {
-
-      font-size: 1.05rem;
-
-      line-height: 1;
-
-    }
-
-
-    .wishlist-count {
-
-      min-width: 19px;
-      height: 19px;
-
-      padding: 0 5px;
-
-      display: inline-flex;
-
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 50%;
-
-      background: #D8B65F;
-
-      color: #4D4029;
-
-      font-family:
-        "Playfair Display",
-        Georgia,
-        serif;
-
-      font-size: 0.63rem;
-
-      font-weight: bold;
-
-    }
-
-
-
-    /* =========================================================
-       PAGE HEADER
-       ========================================================= */
-
-    .amazon-finds-page {
-      width: 100%;
-    }
-
-
-    .amazon-finds-hero {
-      padding: 80px 20px 70px;
-      text-align: center;
-      background:
-        linear-gradient(
-          rgba(255, 235, 161, 0.55),
-          rgba(255, 253, 245, 0.9)
-        );
-    }
-
-
-    .amazon-finds-hero-inner {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-
-    .amazon-finds-kicker {
-      margin: 0 0 12px;
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-weight: bold;
-      color: var(--soft-brown);
-    }
-
-
-    .amazon-finds-hero h1 {
-      margin: 0 auto 20px;
-      max-width: 850px;
-      font-size: clamp(2.4rem, 5vw, 4.2rem);
-      line-height: 1.1;
-      color: var(--dark-brown);
-    }
-
-
-    .amazon-finds-rule {
-      margin: 20px 0;
-      color: var(--gold);
-      font-size: 1.4rem;
-    }
-
-
-    .amazon-finds-intro {
-      max-width: 720px;
-      margin: 0 auto;
-      font-size: 1.08rem;
-    }
-
-
-    /* =========================================================
-       AFFILIATE DISCLOSURE
-       ========================================================= */
-
-    .affiliate-disclosure {
-      max-width: 900px;
-      margin: 30px auto 0;
-      padding: 16px 20px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.65);
-      font-size: 0.88rem;
-      font-style: italic;
-    }
-
-
-    /* =========================================================
-       MAIN CONTENT
-       ========================================================= */
-
-    .amazon-finds-content {
-      max-width: 1250px;
-      margin: 0 auto;
-      padding: 50px 20px 90px;
-    }
-
-
-    /* =========================================================
-       SEARCH
-       ========================================================= */
-
-    .finds-search-wrapper {
-      max-width: 700px;
-      margin: 0 auto 30px;
-    }
-
-
-    .finds-search-label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.85rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-
-    .finds-search {
-      width: 100%;
-      padding: 15px 18px;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      background: white;
-      color: var(--brown);
-      font-family: inherit;
-      font-size: 1rem;
-      outline: none;
-    }
-
-
-    .finds-search:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(200, 155, 60, 0.12);
-    }
-
-
-    /* =========================================================
-       CATEGORY FILTERS
-       ========================================================= */
-
-    .finds-filters {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 45px;
-    }
-
-
-    .finds-filter {
-      border: 1px solid var(--border);
-      background: var(--warm-white);
-      color: var(--brown);
-      padding: 10px 17px;
-      border-radius: 30px;
-      font-family: inherit;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
-
-
-    .finds-filter:hover,
-    .finds-filter.active {
-      background: var(--honey-yellow);
-      border-color: var(--soft-honey);
-      transform: translateY(-1px);
-    }
-
-
-    /* =========================================================
-       SECTION HEADING
-       ========================================================= */
-
-    .finds-section-heading {
-      text-align: center;
-      margin-bottom: 35px;
-    }
-
-
-    .finds-section-heading h2 {
-      margin: 0 0 10px;
-      font-size: 2rem;
-      color: var(--dark-brown);
-    }
-
-
-    .finds-section-heading p {
-      max-width: 650px;
-      margin: 0 auto;
-      color: var(--soft-brown);
-    }
-
- /* =========================================================
-   AMAZON FINDS SUBCATEGORIES
+/* =========================================================
+   SUBCATEGORY BUTTONS
 ========================================================= */
 
 .finds-subcategory-buttons {
@@ -546,8 +496,11 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+
   gap: 8px;
+
   margin: 16px auto 28px;
+
   max-width: 900px;
 }
 
@@ -555,18 +508,29 @@
   border: 1px solid #D8C79F;
   background: #FFFDF0;
   color: #68583D;
+
   padding: 7px 14px;
+
   border-radius: 30px;
+
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 0.82rem;
+
   cursor: pointer;
-  transition: all 0.2s ease;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .finds-subcategory:hover {
   background: #FFF3C8;
   color: #80652D;
   border-color: #D2B96D;
+
+  transform: translateY(-1px);
 }
 
 .finds-subcategory.active {
@@ -577,7 +541,245 @@
 
 
 /* =========================================================
-   AMAZON FINDS PAGINATION
+   PRODUCT GRID
+========================================================= */
+
+.finds-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 25px;
+}
+
+
+/* =========================================================
+   PRODUCT CARDS
+========================================================= */
+
+.find-card {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: var(--card-background);
+
+  border:
+    1px solid
+    rgba(92, 70, 45, 0.12);
+
+  border-radius: var(--radius-medium);
+
+  box-shadow: var(--shadow-soft);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.find-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
+
+.find-card-image-wrapper {
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.find-card-image {
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  object-fit: contain;
+
+  display: block;
+
+  padding: 18px;
+
+  background: var(--paper);
+
+  transition: transform 0.25s ease;
+}
+
+.find-card:hover .find-card-image {
+  transform: scale(1.025);
+}
+
+
+/* =========================================================
+   PRODUCT CONTENT
+========================================================= */
+
+.find-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  padding: 22px;
+}
+
+.find-card-category {
+  margin-bottom: 8px;
+
+  font-size: 0.72rem;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  font-weight: bold;
+
+  color: var(--gold);
+}
+
+.find-card h3 {
+  margin: 0 0 13px;
+
+  color: var(--dark-brown);
+
+  font-size: 1.18rem;
+  line-height: 1.35;
+}
+
+.find-card-review {
+  margin: 0 0 20px;
+
+  font-size: 0.94rem;
+  color: var(--soft-brown);
+
+  line-height: 1.65;
+}
+
+.find-card-subcategory {
+  margin-bottom: 18px;
+
+  font-size: 0.78rem;
+
+  color: var(--soft-brown);
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   CARD ACTIONS
+========================================================= */
+
+.find-card-actions {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.6rem;
+
+  margin-top: 1rem;
+}
+
+.find-card-button,
+.wishlist-button {
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   PRODUCT BUTTON
+========================================================= */
+
+.find-card-button {
+  display: block;
+
+  margin-top: auto;
+
+  padding: 12px 16px;
+
+  text-align: center;
+  text-decoration: none;
+
+  background: var(--honey-yellow);
+  color: var(--dark-brown);
+
+  border:
+    1px solid
+    var(--soft-honey);
+
+  border-radius: 10px;
+
+  font-weight: bold;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.find-card-button:hover {
+  background: var(--soft-honey);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   WISHLIST BUTTON
+========================================================= */
+
+.wishlist-button {
+  cursor: pointer;
+
+  padding: 0.65rem 0.85rem;
+
+  border:
+    1px solid
+    rgba(92, 70, 45, 0.18);
+
+  background: transparent;
+
+  color: var(--brown);
+
+  font: inherit;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.wishlist-button:hover,
+.wishlist-button.saved {
+  background: #FFF4C7;
+}
+
+.wishlist-button.saved {
+  border-color: #D9BD61;
+}
+
+
+/* =========================================================
+   NO RESULTS
+========================================================= */
+
+.finds-no-results {
+  display: none;
+
+  text-align: center;
+
+  padding: 50px 20px;
+
+  color: var(--soft-brown);
+}
+
+.finds-no-results h3 {
+  color: var(--dark-brown);
+}
+
+
+/* =========================================================
+   PAGINATION
 ========================================================= */
 
 .finds-pagination {
@@ -585,33 +787,51 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+
   gap: 7px;
+
   margin: 34px auto 10px;
 }
 
 .finds-page-button {
   min-width: 34px;
   height: 34px;
+
   padding: 0 9px;
-  border: 1px solid #D8C79F;
+
+  border:
+    1px solid
+    #D8C79F;
+
   border-radius: 50%;
+
   background: #FFFDF0;
   color: #68583D;
+
   font-family: "Cormorant Garamond", Georgia, serif;
+
   font-size: 0.86rem;
+
   cursor: pointer;
-  transition: all 0.2s ease;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .finds-page-button:hover:not(:disabled) {
   background: #FFF3C8;
   color: #80652D;
+
+  transform: translateY(-1px);
 }
 
 .finds-page-button.active {
   background: #E9C768;
   border-color: #D8B65F;
   color: #4D4029;
+
   font-weight: 600;
 }
 
@@ -622,369 +842,128 @@
 
 
 /* =========================================================
-   MOBILE
+   LIVING BOOKSHELF
 ========================================================= */
 
-@media (max-width: 600px) {
+.living-bookshelf-section {
+  margin-top: 85px;
 
-  .finds-subcategory-buttons {
-    gap: 6px;
-    margin: 13px auto 23px;
-    padding: 0 5px;
-  }
+  padding: 55px 30px;
 
-  .finds-subcategory {
-    font-size: 0.76rem;
-    padding: 6px 11px;
-  }
+  background: var(--paper);
 
-  .finds-pagination {
-    margin-top: 28px;
-  }
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 
+  border-radius: var(--radius-large);
+
+  text-align: center;
 }
+
+.living-bookshelf-section h2 {
+  margin: 0 0 12px;
+
+  color: var(--dark-brown);
+
+  font-size: 2rem;
+}
+
+.living-bookshelf-section p {
+  max-width: 680px;
+  margin: 0 auto;
+
+  color: var(--soft-brown);
+}
+
 
 /* =========================================================
-   HONEY & HYMNS — AMAZON FINDS CARDS
+   BOTTOM CTA
 ========================================================= */
 
-.find-card {
-  border-radius: 16px;
-  overflow: hidden;
-  background: #fffdf8;
-  border: 1px solid rgba(92, 70, 45, 0.12);
-  box-shadow: 0 4px 14px rgba(75, 55, 35, 0.08);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+.finds-bottom-cta {
+  max-width: 800px;
+
+  margin: 70px auto 0;
+
+  padding: 45px 30px;
+
+  text-align: center;
+
+  background: var(--honey-yellow);
+
+  border: 1px solid var(--soft-honey);
+
+  border-radius: var(--radius-large);
+
+  box-shadow: var(--shadow-soft);
 }
 
+.finds-bottom-cta h2 {
+  margin: 0 0 12px;
 
-.find-card:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 8px 22px rgba(75, 55, 35, 0.12);
+  color: var(--dark-brown);
 }
 
+.finds-bottom-cta p {
+  max-width: 600px;
 
-.find-card-image-wrapper {
-  overflow: hidden;
-  background: #f8f3e8;
+  margin: 0 auto 20px;
 }
 
+.finds-bottom-button {
+  display: inline-block;
 
-.find-card-image {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: contain;
-  transition:
-    transform 0.25s ease;
-}
+  padding: 12px 22px;
 
+  background: var(--dark-brown);
+  color: white;
 
-.find-card:hover
-.find-card-image {
-  transform: scale(1.025);
-}
-
-
-.find-card-content {
-  padding: 1.25rem;
-}
-
-
-.find-card-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  margin-top: 1rem;
-}
-
-
-.find-card-button,
-.wishlist-button {
   border-radius: 10px;
-}
 
+  text-decoration: none;
 
-.wishlist-button {
-  cursor: pointer;
-  padding: 0.65rem 0.85rem;
-  border: 1px solid rgba(92, 70, 45, 0.18);
-  background: transparent;
-  font: inherit;
+  font-weight: bold;
+
   transition:
     background 0.2s ease,
-    border-color 0.2s ease;
+    transform 0.2s ease;
+}
+
+.finds-bottom-button:hover {
+  background: #2F241D;
+
+  transform: translateY(-1px);
 }
 
 
-.wishlist-button:hover {
-  background: #fff4c7;
-}
-
-
-.wishlist-button.saved {
-  background: #fff4c7;
-  border-color: #d9bd61;
-}
-    
-    /* =========================================================
-       PRODUCT GRID
-       ========================================================= */
-
-    .finds-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 25px;
-    }
-
-
-    /* =========================================================
-       PRODUCT CARD
-       ========================================================= */
-
-    .find-card {
-      display: flex;
-      flex-direction: column;
-      background: white;
-      border: 1px solid var(--border);
-      box-shadow: 0 7px 20px var(--shadow);
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-      overflow: hidden;
-    }
-
-
-    .find-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(91, 70, 54, 0.16);
-    }
-
-
-    .find-card-image {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: contain;
-      display: block;
-      background: var(--paper);
-      padding: 18px;
-    }
-
-
-    .find-card-content {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      padding: 22px;
-    }
-
-
-    .find-card-category {
-      margin-bottom: 8px;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: bold;
-      color: var(--gold);
-    }
-
-
-    .find-card h3 {
-      margin: 0 0 13px;
-      color: var(--dark-brown);
-      font-size: 1.18rem;
-      line-height: 1.35;
-    }
-
-
-    .find-card-review {
-      margin: 0 0 20px;
-      font-size: 0.94rem;
-      color: var(--soft-brown);
-      line-height: 1.65;
-    }
-
-
-    .find-card-subcategory {
-      margin-bottom: 18px;
-      font-size: 0.78rem;
-      color: var(--soft-brown);
-      font-style: italic;
-    }
-
-
-    .find-card-button {
-      display: block;
-      margin-top: auto;
-      padding: 12px 16px;
-      text-align: center;
-      text-decoration: none;
-      background: var(--honey-yellow);
-      color: var(--dark-brown);
-      border: 1px solid var(--soft-honey);
-      font-weight: bold;
-      transition: 0.2s ease;
-    }
-
-
-    .find-card-button:hover {
-      background: var(--soft-honey);
-    }
-
-
-    /* =========================================================
-       NO RESULTS
-       ========================================================= */
-
-    .finds-no-results {
-      display: none;
-      text-align: center;
-      padding: 50px 20px;
-      color: var(--soft-brown);
-    }
-
-
-    .finds-no-results h3 {
-      color: var(--dark-brown);
-    }
-
-
-    /* =========================================================
-       LIVING BOOKSHELF FEATURE
-       ========================================================= */
-
-    .living-bookshelf-section {
-      margin-top: 85px;
-      padding: 55px 30px;
-      background: var(--paper);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      text-align: center;
-    }
-
-
-    .living-bookshelf-section h2 {
-      margin: 0 0 12px;
-      color: var(--dark-brown);
-      font-size: 2rem;
-    }
-
-
-    .living-bookshelf-section p {
-      max-width: 680px;
-      margin: 0 auto;
-      color: var(--soft-brown);
-    }
-
-
-    /* =========================================================
-       BOTTOM CTA
-       ========================================================= */
-
-    .finds-bottom-cta {
-      max-width: 800px;
-      margin: 70px auto 0;
-      padding: 45px 30px;
-      text-align: center;
-      background: var(--honey-yellow);
-      border: 1px solid var(--soft-honey);
-    }
-
-
-    .finds-bottom-cta h2 {
-      margin: 0 0 12px;
-      color: var(--dark-brown);
-    }
-
-
-    .finds-bottom-cta p {
-      margin: 0 auto 20px;
-      max-width: 600px;
-    }
-
-
-    .finds-bottom-button {
-      display: inline-block;
-      padding: 12px 22px;
-      background: var(--dark-brown);
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-
-    /* =========================================================
-       RESPONSIVE
-       ========================================================= */
-
-    @media (max-width: 950px) {
-
-      .finds-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-    }
-
-
-    @media (max-width: 650px) {
-
-      .amazon-finds-hero {
-        padding: 60px 18px 50px;
-      }
-
-
-      .amazon-finds-content {
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-
-
-      .finds-grid {
-        grid-template-columns: 1fr;
-      }
-
-
-      .finds-filters {
-        gap: 7px;
-      }
-
-
-      .finds-filter {
-        padding: 8px 13px;
-        font-size: 0.82rem;
-      }
-
-
-      .living-bookshelf-section {
-        padding: 40px 20px;
-      }
-
-    }
-
-    /* =========================================================
+/* =========================================================
    FOOTER
 ========================================================= */
 
 footer {
   margin-top: 60px;
+
   padding: 32px 20px;
+
   text-align: center;
+
   background: #FFFDF0;
+
   border-top: 1px solid #E6D9B8;
+
   color: #68583D;
 }
 
 footer p {
   margin: 6px 0;
+
   font-family: "Cormorant Garamond", Georgia, serif;
 }
 
 footer p:first-child {
   font-size: 1.15rem;
   font-weight: 600;
+
   color: #80652D;
 }
 
@@ -993,421 +972,325 @@ footer p:last-child {
   opacity: 0.85;
 }
 
-        /* =========================
-       WISHLIST MODAL
-    ========================= */
 
-    .wishlist-overlay {
+/* =========================================================
+   WISHLIST MODAL
+========================================================= */
 
-      position: fixed;
+.wishlist-overlay {
+  position: fixed;
+  inset: 0;
 
-      inset: 0;
+  background: rgba(57, 45, 25, 0.60);
 
-      background:
-        rgba(57, 45, 25, 0.60);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-      display: flex;
+  padding: 20px;
 
-      align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 
-      justify-content: center;
+  z-index: 5000;
 
-      padding: 20px;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
 
-      opacity: 0;
+.wishlist-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
 
-      visibility: hidden;
+.wishlist-modal {
+  width: min(620px, 94vw);
 
-      pointer-events: none;
+  max-height: min(700px, 88vh);
 
-      z-index: 5000;
+  background: #FFFDF4;
 
-      transition:
-        opacity 0.25s ease,
-        visibility 0.25s ease;
+  border: 1px solid #D8C79F;
 
-    }
+  border-radius: var(--radius-large);
 
+  box-shadow:
+    0 22px 55px
+    rgba(0, 0, 0, 0.28);
 
-    .wishlist-overlay.open {
+  overflow: hidden;
 
-      opacity: 1;
+  transform:
+    scale(0.88)
+    translateY(12px);
 
-      visibility: visible;
+  opacity: 0;
 
-      pointer-events: auto;
+  transition:
+    transform 0.35s
+      cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.25s ease;
+}
 
-    }
+.wishlist-overlay.open .wishlist-modal {
+  transform:
+    scale(1)
+    translateY(0);
 
+  opacity: 1;
+}
 
-    .wishlist-modal {
 
-      width:
-        min(620px, 94vw);
+/* =========================================================
+   WISHLIST MODAL HEADER
+========================================================= */
 
-      max-height:
-        min(700px, 88vh);
+.wishlist-modal-header {
+  background: var(--honey-yellow);
 
-      background: #FFFDF4;
+  padding: 16px 18px;
 
-      border:
-        1px solid
-        #D8C79F;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-      border-radius: 20px;
+  border-bottom: 1px solid #E0CC83;
+}
 
-      box-shadow:
-        0 22px 55px
-        rgba(0,0,0,0.28);
+.wishlist-modal-title {
+  margin: 0;
 
-      overflow: hidden;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
-      transform:
-        scale(0.88)
-        translateY(12px);
+  font-size: 1.65rem;
 
-      opacity: 0;
+  font-weight: 500;
 
-      transition:
-        transform 0.35s
-          cubic-bezier(0.16, 1, 0.3, 1),
-        opacity 0.25s ease;
+  color: #403521;
+}
 
-    }
+.wishlist-close {
+  width: 32px;
+  height: 32px;
 
+  border-radius: 50%;
 
-    .wishlist-overlay.open
-    .wishlist-modal {
+  border: 1px solid #D3BE80;
 
-      transform:
-        scale(1)
-        translateY(0);
+  background: #FFF9DF;
+  color: #665020;
 
-      opacity: 1;
+  cursor: pointer;
 
-    }
+  font-size: 1.15rem;
+  line-height: 1;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    .wishlist-modal-header {
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
 
-      background: #FFEBA1;
+.wishlist-close:hover {
+  background: #F3D582;
 
-      padding:
-        16px 18px;
+  transform: rotate(5deg);
+}
 
-      display: flex;
 
-      align-items: center;
+/* =========================================================
+   WISHLIST BODY
+========================================================= */
 
-      justify-content: space-between;
+.wishlist-body {
+  padding: 20px;
 
-      border-bottom:
-        1px solid
-        #E0CC83;
+  max-height: calc(88vh - 145px);
 
-    }
+  overflow-y: auto;
+}
 
+.wishlist-empty {
+  text-align: center;
 
-    .wishlist-modal-title {
+  padding: 35px 15px;
+}
 
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
+.wishlist-empty-icon {
+  font-size: 2.3rem;
 
-      font-size: 1.65rem;
+  color: #D8B65F;
 
-      font-weight: 500;
+  margin-bottom: 8px;
+}
 
-      color: #403521;
+.wishlist-empty h3 {
+  margin: 0 0 5px;
 
-      margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
-    }
+  font-size: 1.6rem;
 
+  font-weight: 500;
 
-    .wishlist-close {
+  color: #403521;
+}
 
-      width: 32px;
+.wishlist-empty p {
+  margin: 0;
 
-      height: 32px;
+  font-size: 0.8rem;
 
-      border-radius: 50%;
+  color: #68583D;
+}
 
-      border:
-        1px solid
-        #D3BE80;
 
-      background: #FFF9DF;
+/* =========================================================
+   WISHLIST ITEMS
+========================================================= */
 
-      color: #665020;
+.wishlist-item {
+  display: grid;
 
-      cursor: pointer;
+  grid-template-columns:
+    82px 1fr auto;
 
-      font-size: 1.15rem;
+  align-items: center;
 
-      line-height: 1;
+  gap: 14px;
 
-      display: flex;
+  padding: 11px;
 
-      align-items: center;
+  margin-bottom: 10px;
 
-      justify-content: center;
+  background: #FFF8D9;
 
-    }
+  border: 1px solid #E5D6AD;
 
+  border-radius: 12px;
+}
 
-    .wishlist-close:hover {
+.wishlist-item-image {
+  width: 82px;
+  height: 82px;
 
-      background: #F3D582;
+  object-fit: cover;
 
-    }
+  border-radius: 8px;
 
+  display: block;
+}
 
-    .wishlist-body {
+.wishlist-item-title {
+  margin: 0 0 3px;
 
-      padding: 20px;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
-      max-height:
-        calc(88vh - 145px);
+  font-size: 1.15rem;
+  line-height: 1.15;
 
-      overflow-y: auto;
+  color: #403521;
+}
 
-    }
+.wishlist-item-price {
+  margin: 0;
 
+  font-size: 0.72rem;
 
-    .wishlist-empty {
+  color: #80652D;
+}
 
-      text-align: center;
+.wishlist-item-view {
+  display: inline-block;
 
-      padding:
-        35px 15px;
+  margin-top: 6px;
 
-    }
+  color: #80652D;
 
+  font-size: 0.68rem;
 
-    .wishlist-empty-icon {
+  text-decoration: none;
 
-      font-size: 2.3rem;
+  font-weight: bold;
+}
 
-      color: #D8B65F;
+.wishlist-item-view:hover {
+  text-decoration: underline;
+}
 
-      margin-bottom: 8px;
+.wishlist-remove {
+  border: none;
 
-    }
+  background: none;
 
+  color: #967331;
 
-    .wishlist-empty h3 {
+  cursor: pointer;
 
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
+  font-family: "Playfair Display", Georgia, serif;
 
-      font-size: 1.6rem;
+  font-size: 0.68rem;
 
-      font-weight: 500;
+  padding: 5px;
+}
 
-      color: #403521;
+.wishlist-remove:hover {
+  color: #6F5421;
 
-      margin:
-        0 0 5px;
+  text-decoration: underline;
+}
 
-    }
 
+/* =========================================================
+   WISHLIST MODAL FOOTER
+========================================================= */
 
-    .wishlist-empty p {
+.wishlist-modal-footer {
+  background: #FBF3D0;
 
-      margin: 0;
+  border-top: 1px solid #E0D2B0;
 
-      font-size: 0.8rem;
+  padding: 12px 18px;
 
-      color: #68583D;
+  display: flex;
 
-    }
+  align-items: center;
+  justify-content: space-between;
 
+  gap: 10px;
+}
 
-    .wishlist-item {
+.wishlist-footer-note {
+  font-family: "Caveat", cursive;
 
-      display: grid;
+  color: #80652D;
 
-      grid-template-columns:
-        82px 1fr auto;
+  font-size: 1rem;
+}
 
-      align-items: center;
+.wishlist-clear {
+  border: none;
 
-      gap: 14px;
+  background: transparent;
 
-      padding:
-        11px;
+  color: #80652D;
 
-      margin-bottom: 10px;
+  font-size: 0.68rem;
 
-      background: #FFF8D9;
+  cursor: pointer;
 
-      border:
-        1px solid
-        #E5D6AD;
+  text-decoration: underline;
+}
 
-      border-radius: 11px;
 
-    }
-
-
-    .wishlist-item-image {
-
-      width: 82px;
-
-      height: 82px;
-
-      object-fit: cover;
-
-      border-radius: 7px;
-
-      display: block;
-
-    }
-
-
-    .wishlist-item-title {
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-      font-size: 1.15rem;
-
-      line-height: 1.15;
-
-      color: #403521;
-
-      margin:
-        0 0 3px;
-
-    }
-
-
-    .wishlist-item-price {
-
-      font-size: 0.72rem;
-
-      color: #80652D;
-
-      margin: 0;
-
-    }
-
-
-    .wishlist-item-view {
-
-      display: inline-block;
-
-      margin-top: 6px;
-
-      color: #80652D;
-
-      font-size: 0.68rem;
-
-      text-decoration: none;
-
-      font-weight: bold;
-
-    }
-
-
-    .wishlist-item-view:hover {
-
-      text-decoration: underline;
-
-    }
-
-
-    .wishlist-remove {
-
-      border: none;
-
-      background: none;
-
-      color: #967331;
-
-      cursor: pointer;
-
-      font-family:
-        "Playfair Display",
-        Georgia,
-        serif;
-
-      font-size: 0.68rem;
-
-      padding: 5px;
-
-    }
-
-
-    .wishlist-remove:hover {
-
-      color: #6F5421;
-
-      text-decoration: underline;
-
-    }
-
-
-    .wishlist-modal-footer {
-
-      background: #FBF3D0;
-
-      border-top:
-        1px solid
-        #E0D2B0;
-
-      padding:
-        12px 18px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 10px;
-
-    }
-
-
-    .wishlist-footer-note {
-
-      font-family:
-        "Caveat",
-        cursive;
-
-      color: #80652D;
-
-      font-size: 1rem;
-
-    }
-
-
-    .wishlist-clear {
-
-      border: none;
-
-      background: transparent;
-
-      color: #80652D;
-
-      font-size: 0.68rem;
-
-      cursor: pointer;
-
-      text-decoration: underline;
-
-    }
-
-    
-       /* =========================================================
-   HONEY & HYMNS — WELCOME LETTER POPUP
+/* =========================================================
+   WELCOME LETTER POPUP
 ========================================================= */
 
 .welcome-popup-overlay {
@@ -1441,13 +1324,14 @@ footer p:last-child {
 
 
 /* =========================================================
-   LETTER
+   WELCOME LETTER
 ========================================================= */
 
 .welcome-letter {
   position: relative;
 
   width: min(560px, 94vw);
+
   max-height: 90vh;
 
   overflow-y: auto;
@@ -1457,16 +1341,14 @@ footer p:last-child {
   background:
     linear-gradient(
       135deg,
-      #fffdf5 0%,
-      #fffaf0 55%,
-      #fff7df 100%
+      #FFFDF5 0%,
+      #FFFAF0 55%,
+      #FFF7DF 100%
     );
 
-  border:
-    1px solid
-    #d8c79f;
+  border: 1px solid #D8C79F;
 
-  border-radius: 18px;
+  border-radius: var(--radius-large);
 
   box-shadow:
     0 24px 70px
@@ -1505,11 +1387,11 @@ footer p:last-child {
 
   position: absolute;
 
-  color: #d8b65f;
+  top: 18px;
 
-  font-family:
-    Georgia,
-    serif;
+  color: #D8B65F;
+
+  font-family: Georgia, serif;
 
   font-size: 15px;
 
@@ -1517,18 +1399,16 @@ footer p:last-child {
 }
 
 .welcome-letter::before {
-  top: 18px;
   left: 22px;
 }
 
 .welcome-letter::after {
-  top: 18px;
   right: 22px;
 }
 
 
 /* =========================================================
-   CLOSE BUTTON
+   WELCOME CLOSE BUTTON
 ========================================================= */
 
 .welcome-letter-close {
@@ -1544,13 +1424,11 @@ footer p:last-child {
   align-items: center;
   justify-content: center;
 
-  border:
-    1px solid
-    #d8c79f;
+  border: 1px solid #D8C79F;
 
   border-radius: 50%;
 
-  background: #fff9df;
+  background: #FFF9DF;
   color: #665020;
 
   cursor: pointer;
@@ -1564,27 +1442,25 @@ footer p:last-child {
 }
 
 .welcome-letter-close:hover {
-  background: #ffeaa0;
+  background: #FFEAA0;
 
-  transform:
-    rotate(5deg);
+  transform: rotate(5deg);
 }
 
 
 /* =========================================================
-   LETTER TOP
+   WELCOME LETTER TOP
 ========================================================= */
 
 .welcome-letter-kicker {
   margin: 0 0 7px;
 
-  color: #80652d;
+  color: #80652D;
 
-  font-family:
-    "Caveat",
-    cursive;
+  font-family: "Caveat", cursive;
 
   font-size: 1.35rem;
+
   line-height: 1.2;
 }
 
@@ -1593,13 +1469,9 @@ footer p:last-child {
 
   color: #403521;
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
-  font-size:
-    clamp(2.35rem, 7vw, 3.45rem);
+  font-size: clamp(2.35rem, 7vw, 3.45rem);
 
   font-weight: 500;
 
@@ -1608,7 +1480,7 @@ footer p:last-child {
 
 
 /* =========================================================
-   DECORATIVE RULE
+   WELCOME DECORATIVE RULE
 ========================================================= */
 
 .welcome-letter-rule {
@@ -1629,32 +1501,28 @@ footer p:last-child {
 
   height: 1px;
 
-  background:
-    #d8c79f;
+  background: #D8C79F;
 }
 
 .welcome-letter-rule span {
-  color: #b79b58;
+  color: #B79B58;
 
   font-size: 15px;
 }
 
 
 /* =========================================================
-   BODY COPY
+   WELCOME BODY
 ========================================================= */
 
 .welcome-letter-copy {
-  margin: 0 auto 22px;
-
   max-width: 440px;
 
-  color: #62594e;
+  margin: 0 auto 22px;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  color: #62594E;
+
+  font-family: Georgia, "Times New Roman", serif;
 
   font-size: 16px;
 
@@ -1663,7 +1531,7 @@ footer p:last-child {
 
 
 /* =========================================================
-   FREE GIFT CARD
+   WELCOME GIFT
 ========================================================= */
 
 .welcome-gift {
@@ -1674,30 +1542,25 @@ footer p:last-child {
   background:
     linear-gradient(
       135deg,
-      #fff9df,
-      #ffeba1
+      #FFF9DF,
+      #FFEBA1
     );
 
-  border:
-    1px solid
-    #dfc878;
+  border: 1px solid #DFC878;
 
-  border-radius: 12px;
+  border-radius: 14px;
 
   box-shadow:
     inset 0 1px 0
-    rgba(255,255,255,0.7);
+    rgba(255, 255, 255, 0.7);
 }
 
 .welcome-gift-label {
   margin: 0 0 4px;
 
-  color: #80652d;
+  color: #80652D;
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   font-size: 12px;
 
@@ -1713,10 +1576,7 @@ footer p:last-child {
 
   color: #403521;
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   font-size: 1.55rem;
 
@@ -1724,43 +1584,43 @@ footer p:last-child {
 }
 
 
-/* RETREAT IMAGE */
+/* =========================================================
+   RETREAT IMAGE
+========================================================= */
 
 .welcome-gift-image {
   width: 100%;
+
   max-width: 260px;
+
   height: auto;
 
   display: block;
 
   margin: 0 auto 10px;
 
-  border:
-    1px solid
-    rgba(128, 101, 45, 0.22);
+  border: 1px solid rgba(128, 101, 45, 0.22);
 
-  border-radius: 8px;
+  border-radius: 9px;
 
   box-shadow:
     0 5px 14px
     rgba(77, 64, 41, 0.12);
 }
 
-
 .welcome-gift-description {
   margin: 0;
 
-  color: #68583d;
+  color: #68583D;
 
-  font-family:
-    "Caveat",
-    cursive;
+  font-family: "Caveat", cursive;
 
   font-size: 1.08rem;
 }
 
+
 /* =========================================================
-   FORM
+   WELCOME FORM
 ========================================================= */
 
 .welcome-letter-form {
@@ -1778,23 +1638,17 @@ footer p:last-child {
 
   height: 48px;
 
-  padding:
-    0 15px;
+  padding: 0 15px;
 
-  background: #fffdf7;
+  background: #FFFDF7;
 
-  border:
-    1px solid
-    #d8c79f;
+  border: 1px solid #D8C79F;
 
-  border-radius: 8px;
+  border-radius: 10px;
 
-  color: #40372d;
+  color: #40372D;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: Georgia, "Times New Roman", serif;
 
   font-size: 14px;
 
@@ -1804,13 +1658,13 @@ footer p:last-child {
 }
 
 .welcome-letter-input::placeholder {
-  color: #9a8e7c;
+  color: #9A8E7C;
 }
 
 .welcome-letter-input:focus {
   outline: none;
 
-  border-color: #b79b58;
+  border-color: #B79B58;
 
   box-shadow:
     0 0 0 3px
@@ -1819,7 +1673,7 @@ footer p:last-child {
 
 
 /* =========================================================
-   SUBSCRIBE BUTTON
+   WELCOME SUBSCRIBE BUTTON
 ========================================================= */
 
 .welcome-letter-button {
@@ -1827,23 +1681,19 @@ footer p:last-child {
 
   min-height: 48px;
 
-  padding:
-    12px 22px;
+  padding: 12px 22px;
 
   border: none;
 
   border-radius: 30px;
 
-  background: #80652d;
+  background: #80652D;
 
-  color: #fffdf4;
+  color: #FFFDF4;
 
   cursor: pointer;
 
-  font-family:
-    "Playfair Display",
-    Georgia,
-    serif;
+  font-family: "Playfair Display", Georgia, serif;
 
   font-size: 0.82rem;
 
@@ -1859,31 +1709,27 @@ footer p:last-child {
 .welcome-letter-button:hover {
   background: #665020;
 
-  transform:
-    translateY(-1px);
+  transform: translateY(-1px);
 }
 
 
 /* =========================================================
-   REASSURANCE
+   WELCOME REASSURANCE
 ========================================================= */
 
 .welcome-letter-note {
   margin: 9px 0 0;
 
-  color: #8a7b66;
+  color: #8A7B66;
 
   font-size: 11px;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 
 /* =========================================================
-   NOT TODAY
+   WELCOME DISMISS
 ========================================================= */
 
 .welcome-letter-dismiss {
@@ -1895,14 +1741,11 @@ footer p:last-child {
 
   background: transparent;
 
-  color: #80652d;
+  color: #80652D;
 
   cursor: pointer;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: Georgia, "Times New Roman", serif;
 
   font-size: 12px;
 
@@ -1912,12 +1755,81 @@ footer p:last-child {
 }
 
 .welcome-letter-dismiss:hover {
-  color: #5e4b2f;
+  color: #5E4B2F;
 }
 
 
 /* =========================================================
-   MOBILE
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .finds-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .amazon-finds-hero {
+    padding: 60px 18px 50px;
+  }
+
+  .amazon-finds-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .finds-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .finds-filters {
+    gap: 7px;
+  }
+
+  .finds-filter {
+    padding: 8px 13px;
+    font-size: 0.82rem;
+  }
+
+  .living-bookshelf-section {
+    padding: 40px 20px;
+
+    border-radius: var(--radius-medium);
+  }
+
+  .finds-subcategory-buttons {
+    gap: 6px;
+
+    margin: 13px auto 23px;
+
+    padding: 0 5px;
+  }
+
+  .finds-subcategory {
+    font-size: 0.76rem;
+
+    padding: 6px 11px;
+  }
+
+  .finds-pagination {
+    margin-top: 28px;
+  }
+
+}
+
+
+/* =========================================================
+   WELCOME POPUP — MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -1931,8 +1843,7 @@ footer p:last-child {
 
     max-height: 92vh;
 
-    padding:
-      38px 23px 28px;
+    padding: 38px 23px 28px;
 
     border-radius: 15px;
   }
@@ -1943,12 +1854,12 @@ footer p:last-child {
 
   .welcome-letter-copy {
     font-size: 15px;
+
     line-height: 1.6;
   }
 
   .welcome-gift {
-    padding:
-      14px 15px;
+    padding: 14px 15px;
   }
 
   .welcome-gift-title {
@@ -1956,733 +1867,659 @@ footer p:last-child {
   }
 
   .welcome-letter-rule {
-    margin:
-      16px 0;
+    margin: 16px 0;
   }
 
 }
 
 
-  </style>
+/* =========================================================
+   WISHLIST MODAL — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .wishlist-modal {
+    width: 96vw;
+  }
+
+  .wishlist-item {
+    grid-template-columns:
+      65px 1fr auto;
+
+    gap: 10px;
+  }
+
+  .wishlist-item-image {
+    width: 65px;
+    height: 65px;
+  }
+
+  .wishlist-item-title {
+    font-size: 1rem;
+  }
+
+}
+
+
+/* =========================================================
+   END
+========================================================= */
+
+</style>
 
 </head>
 
-
 <body>
 
-    <!-- =========================================================
-     HONEY & HYMNS — WELCOME LETTER POPUP
-========================================================= -->
-
-<div
-  class="welcome-popup-overlay"
-  id="welcomePopup"
-  aria-hidden="true"
->
+  <!-- =========================================================
+       HONEY & HYMNS — WELCOME LETTER POPUP
+  ========================================================= -->
 
   <div
-    class="welcome-letter"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="welcomePopupTitle"
-  >
-
-    <button
-      class="welcome-letter-close"
-      type="button"
-      onclick="closeWelcomePopup()"
-      aria-label="Close welcome message"
-    >
-      ×
-    </button>
-
-
-    <p class="welcome-letter-kicker">
-      A little something for your home
-    </p>
-
-
-    <h2
-      class="welcome-letter-title"
-      id="welcomePopupTitle"
-    >
-      Welcome to<br>
-      Honey & Hymns 🐝
-    </h2>
-
-
-    <div class="welcome-letter-rule">
-      <span>✦</span>
-    </div>
-
-
-    <p class="welcome-letter-copy">
-      A peaceful little corner for Catholic
-      homemakers, homeschool moms, and women
-      trying to make a beautiful home in the midst
-      of ordinary family life.
-    </p>
-
-
-    <div class="welcome-gift">
-
-  <p class="welcome-gift-label">
-    A Free Gift for You
-  </p>
-
-  <h3 class="welcome-gift-title">
-    Mini At-Home Retreat
-  </h3>
-
-  <img
-    class="welcome-gift-image"
-    src="../images/honey-and-hymns-mini-home-retreat.png"
-    alt="Honey & Hymns Mini At-Home Retreat"
-  >
-
-  <p class="welcome-gift-description">
-    Pause • Pray • Reflect • Begin Again
-  </p>
-
-</div>
-
-
-    <p class="welcome-letter-copy">
-      Join the Honey Hive and I'll send this
-      peaceful little retreat straight to your inbox.
-    </p>
-
-
-    <!--
-      IMPORTANT:
-      Replace the form action with your actual
-      email signup system when we're ready.
-    -->
-
-    <form
-      class="welcome-letter-form"
-      action="https://honeyandhymns.substack.com/welcome"
-      method="get"
-      target="_blank"
-    >
-
-      <button
-        class="welcome-letter-button"
-        type="submit"
-      >
-        Join the Honey Hive →
-      </button>
-
-    </form>
-
-
-    <p class="welcome-letter-note">
-      Free to join • Unsubscribe anytime
-    </p>
-
-
-    <button
-      class="welcome-letter-dismiss"
-      type="button"
-      onclick="closeWelcomePopup(true)"
-    >
-      Not today, thank you
-    </button>
-
-  </div>
-
-</div>
-
-
-<main class="amazon-finds-page">
-
-    <!-- =========================
-       HEADER
-  ========================= -->
-
-  <header class="site-header">
-
-    <div class="header-brand">
-
-      <a href="/">
-
-        <img
-          src="../images/honey-and-hymns-logo.png"
-          alt="Honey & Hymns"
-          class="site-logo"
-        >
-
-      </a>
-
-      <p class="header-tagline">
-        Faith • Homeschool • Homemaking
-      </p>
-
-    </div>
-
-  </header>
-
-
-  <!-- =========================
-       NAVIGATION
-  ========================= -->
-
-  <nav class="site-nav">
-
-    <a href="../">
-      Home
-    </a>
-
-
-    <a href="../Articles/">
-      Articles
-    </a>
-
-
-    <div class="shop-dropdown">
-
-      <button
-        class="shop-toggle"
-        type="button"
-        aria-expanded="false"
-      >
-        Shop
-      </button>
-
-
-      <div class="shop-menu">
-
-        <a href="../Resources/">
-          Resources
-        </a>
-
-
-        <a href="../Free-Downloads/">
-          Free Downloads
-        </a>
-
-
-         <a href="../Amazon-Finds/">
-          Amazon Finds
-        </a>
-
-
-      </div>
-
-    </div>
-
-
-   <!-- CURRENT ISSUES -->
-
-<div class="shop-dropdown">
-
-  <button
-    class="shop-toggle"
-    type="button"
-    aria-expanded="false"
-  >
-    Current Issues
-  </button>
-
-
-  <div class="shop-menu">
-
-    <a href="../Sunday-Gospel/">
-      Sunday Gospel for Kids
-    </a>
-
-
-    <a href="../Honey-and-Hymns-Digital-Magazine/">
-      Honey & Hymns Digital Magazine
-    </a>
-
-  </div>
-
-</div>
-
-
-    <a href="../About/">
-      About
-    </a>
-
-     <a href="../Contact/">
-          Contact
-        </a>
-
-
-    <a
-      href="https://honeyandhymns.substack.com/subscribe"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Join the Honey Hive
-    </a>
-
-
-    <!-- WISHLIST -->
-
-    <button
-      class="wishlist-header-button"
-      type="button"
-      onclick="openWishlist()"
-      aria-label="Open wishlist"
-    >
-
-      <span class="wishlist-heart">
-        ♡
-      </span>
-
-      Wishlist
-
-      <span
-        class="wishlist-count"
-        id="wishlistCount"
-      >
-        0
-      </span>
-
-    </button>
-
-  </nav>
-
-
-
-  <!-- =======================================================
-       HERO
-  ======================================================== -->
-
-  <section class="amazon-finds-hero">
-
-    <div class="amazon-finds-hero-inner">
-
-      <p class="amazon-finds-kicker">
-        The Honey & Hymns Finds
-      </p>
-
-      <h1>
-        Things I’ve Found & Loved
-      </h1>
-
-      <div class="amazon-finds-rule">
-        ✦
-      </div>
-
-      <p class="amazon-finds-intro">
-        A growing collection of things I've found helpful,
-        beautiful, useful, or simply lovely for faith,
-        homeschooling, homemaking, motherhood, and family life.
-      </p>
-
-      <div class="affiliate-disclosure">
-        Some of the links on this page are affiliate links.
-        If you purchase something through one of my links,
-        I may receive a small commission at no additional cost
-        to you. Thank you for supporting Honey & Hymns!
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =======================================================
-       CONTENT
-  ======================================================== -->
-
-  <section class="amazon-finds-content">
-
-
-    <!-- SEARCH -->
-
-    <div class="finds-search-wrapper">
-
-      <label
-        class="finds-search-label"
-        for="findsSearch"
-      >
-        Search the Honey & Hymns Finds
-      </label>
-
-      <input
-        type="search"
-        id="findsSearch"
-        class="finds-search"
-        placeholder="Search books, homeschool, faith, homemaking..."
-      >
-
-    </div>
-
-
-       <!-- FILTERS -->
-
-    <div class="finds-filters">
-
-      <button
-        class="finds-filter active"
-        data-filter="all"
-        type="button"
-      >
-        Everything
-      </button>
-
-      <button
-        class="finds-filter"
-        data-filter="Homemaking"
-        type="button"
-      >
-        🏡 Homemaking
-      </button>
-
-      <button
-        class="finds-filter"
-        data-filter="Homeschool"
-        type="button"
-      >
-        📚 Homeschool
-      </button>
-
-      <button
-        class="finds-filter"
-        data-filter="Faith"
-        type="button"
-      >
-        ✝️ Faith
-      </button>
-
-      <button
-        class="finds-filter"
-        data-filter="Kids & Family"
-        type="button"
-      >
-        👧 Kids & Family
-      </button>
-
-      <button
-        class="finds-filter"
-        data-filter="Gifts"
-        type="button"
-      >
-        🎁 Gifts
-      </button>
-
-    </div>
-
-    <!-- SUBCATEGORY FILTERS -->
-
-    <div
-  id="findsSubcategoryButtons"
-  class="finds-subcategory-buttons"
-></div>
-
-
-    <!-- SECTION INTRO -->
-
-    <div class="finds-section-heading">
-
-      <h2>
-        A Few of My Favorite Finds
-      </h2>
-
-      <p>
-        These are things I've personally come across that
-        fit naturally into the rhythms of family life,
-        homeschooling, faith, and homemaking.
-      </p>
-
-    </div>
-
-
-    <!-- =====================================================
-         PRODUCT GRID
-    ====================================================== -->
-
-    <div
-      class="finds-grid"
-      id="findsGrid"
-    >
-
-
-    </div>
-
-
-    <!-- NO RESULTS -->
-
-    <div
-      class="finds-no-results"
-      id="findsNoResults"
-    >
-
-      <h3>
-        I couldn't find that one.
-      </h3>
-
-      <p>
-        Try searching for something a little different.
-      </p>
-
-    </div>
-
-    <div
-  id="findsPagination"
-  class="finds-pagination"
-  aria-label="Amazon Finds pages"
-></div>
-
-
-    <!-- =====================================================
-         LIVING BOOKSHELF
-    ====================================================== -->
-
-    <section class="living-bookshelf-section">
-
-      <p class="amazon-finds-kicker">
-        A Little Corner of the Finds
-      </p>
-
-      <h2>
-        📚 The Honey & Hymns Living Bookshelf
-      </h2>
-
-      <p>
-        I'm especially fond of books that invite children into
-        beautiful stories rather than simply giving them
-        information. This collection will continue growing as
-        I find more books worth putting on a well-loved
-        homeschool bookshelf.
-      </p>
-
-    </section>
-
-
-    <!-- =====================================================
-         BOTTOM CTA
-    ====================================================== -->
-
-    <section class="finds-bottom-cta">
-
-      <h2>
-        Want More Honey & Hymns?
-      </h2>
-
-      <p>
-        Come join us for faith, homeschool encouragement,
-        homemaking ideas, and the beautiful ordinary moments
-        of family life.
-      </p>
-
-      <a
-        href="https://honeyandhymns.substack.com/subscribe"
-        class="finds-bottom-button"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Join the Honey Hive 🐝
-      </a>
-
-    </section>
-
-
-  </section>
-
-    <!-- =========================
-       WISHLIST POPUP
-  ========================= -->
-
-  <div
-    class="wishlist-overlay"
-    id="wishlistOverlay"
+    class="welcome-popup-overlay"
+    id="welcomePopup"
     aria-hidden="true"
   >
 
     <div
-      class="wishlist-modal"
+      class="welcome-letter"
       role="dialog"
       aria-modal="true"
-      aria-labelledby="wishlistTitle"
+      aria-labelledby="welcomePopupTitle"
     >
 
+      <button
+        class="welcome-letter-close"
+        type="button"
+        onclick="closeWelcomePopup()"
+        aria-label="Close welcome message"
+      >
+        ×
+      </button>
 
-      <div class="wishlist-modal-header">
+      <p class="welcome-letter-kicker">
+        A little something for your home
+      </p>
 
-        <h2
-          class="wishlist-modal-title"
-          id="wishlistTitle"
+      <h2
+        class="welcome-letter-title"
+        id="welcomePopupTitle"
+      >
+        Welcome to<br>
+        Honey & Hymns 🐝
+      </h2>
+
+      <div class="welcome-letter-rule">
+        <span>✦</span>
+      </div>
+
+      <p class="welcome-letter-copy">
+        A peaceful little corner for Catholic
+        homemakers, homeschool moms, and women
+        trying to make a beautiful home in the midst
+        of ordinary family life.
+      </p>
+
+      <div class="welcome-gift">
+
+        <p class="welcome-gift-label">
+          A Free Gift for You
+        </p>
+
+        <h3 class="welcome-gift-title">
+          Mini At-Home Retreat
+        </h3>
+
+        <img
+          class="welcome-gift-image"
+          src="../images/honey-and-hymns-mini-home-retreat.png"
+          alt="Honey & Hymns Mini At-Home Retreat"
         >
-          My Honey & Hymns Wishlist
-        </h2>
 
-
-        <button
-          class="wishlist-close"
-          type="button"
-          onclick="closeWishlist()"
-          aria-label="Close wishlist"
-        >
-          ×
-        </button>
+        <p class="welcome-gift-description">
+          Pause • Pray • Reflect • Begin Again
+        </p>
 
       </div>
 
+      <p class="welcome-letter-copy">
+        Join the Honey Hive and I'll send this
+        peaceful little retreat straight to your inbox.
+      </p>
 
-      <div
-        class="wishlist-body"
-        id="wishlistBody"
+      <form
+        class="welcome-letter-form"
+        action="https://honeyandhymns.substack.com/welcome"
+        method="get"
+        target="_blank"
       >
 
-      </div>
-
-
-      <div class="wishlist-modal-footer">
-
-        <span
-          class="wishlist-footer-note"
-          id="wishlistFooterNote"
-        >
-          Your little collection of favorites
-        </span>
-
-
         <button
-          class="wishlist-clear"
-          type="button"
-          onclick="clearWishlist()"
+          class="welcome-letter-button"
+          type="submit"
         >
-          Clear Wishlist
+          Join the Honey Hive →
         </button>
 
-      </div>
+      </form>
+
+      <p class="welcome-letter-note">
+        Free to join • Unsubscribe anytime
+      </p>
+
+      <button
+        class="welcome-letter-dismiss"
+        type="button"
+        onclick="closeWelcomePopup(true)"
+      >
+        Not today, thank you
+      </button>
 
     </div>
 
   </div>
 
 
-  <!-- FOOTER -->
+  <main class="amazon-finds-page">
 
-  <footer>
+    <!-- =========================
+         HEADER
+    ========================= -->
 
-    <p>
-      Honey & Hymns
-    </p>
+    <header class="site-header">
 
-    <p>
-      Faith • Homeschool • Homemaking
-    </p>
+      <div class="header-brand">
 
-  </footer>
+        <a href="/">
 
-</main>
+          <img
+            src="../images/honey-and-hymns-logo.png"
+            alt="Honey & Hymns"
+            class="site-logo"
+          >
+
+        </a>
+
+        <p class="header-tagline">
+          Faith • Homeschool • Homemaking
+        </p>
+
+      </div>
+
+    </header>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav class="site-nav">
+
+      <a href="../">
+        Home
+      </a>
+
+      <a href="../Articles/">
+        Articles
+      </a>
+
+      <div class="shop-dropdown">
+
+        <button
+          class="shop-toggle"
+          type="button"
+          aria-expanded="false"
+        >
+          Shop
+        </button>
+
+        <div class="shop-menu">
+
+          <a href="../Resources/">
+            Resources
+          </a>
+
+          <a href="../Free-Downloads/">
+            Free Downloads
+          </a>
+
+          <a href="../Amazon-Finds/">
+            Amazon Finds
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="shop-dropdown">
+
+        <button
+          class="shop-toggle"
+          type="button"
+          aria-expanded="false"
+        >
+          Current Issues
+        </button>
+
+        <div class="shop-menu">
+
+          <a href="../Sunday-Gospel/">
+            Sunday Gospel for Kids
+          </a>
+
+          <a href="../Honey-and-Hymns-Digital-Magazine/">
+            Honey & Hymns Digital Magazine
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <a href="../About/">
+        About
+      </a>
+
+      <a href="../Contact/">
+        Contact
+      </a>
+
+      <a
+        href="https://honeyandhymns.substack.com/subscribe"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Join the Honey Hive
+      </a>
+
+
+      <!-- WISHLIST -->
+
+      <button
+        class="wishlist-header-button"
+        type="button"
+        onclick="openWishlist()"
+        aria-label="Open wishlist"
+      >
+
+        <span class="wishlist-heart">
+          ♡
+        </span>
+
+        Wishlist
+
+        <span
+          class="wishlist-count"
+          id="wishlistCount"
+        >
+          0
+        </span>
+
+      </button>
+
+    </nav>
+
+
+    <!-- =======================================================
+         HERO
+    ======================================================== -->
+
+    <section class="amazon-finds-hero">
+
+      <div class="amazon-finds-hero-inner">
+
+        <p class="amazon-finds-kicker">
+          The Honey & Hymns Finds
+        </p>
+
+        <h1>
+          Things I’ve Found & Loved
+        </h1>
+
+        <div class="amazon-finds-rule">
+          ✦
+        </div>
+
+        <p class="amazon-finds-intro">
+          A growing collection of things I've found helpful,
+          beautiful, useful, or simply lovely for faith,
+          homeschooling, homemaking, motherhood, and family life.
+        </p>
+
+        <div class="affiliate-disclosure">
+          Some of the links on this page are affiliate links.
+          If you purchase something through one of my links,
+          I may receive a small commission at no additional cost
+          to you. Thank you for supporting Honey & Hymns!
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         CONTENT
+    ======================================================== -->
+
+    <section class="amazon-finds-content">
+
+      <!-- SEARCH -->
+
+      <div class="finds-search-wrapper">
+
+        <label
+          class="finds-search-label"
+          for="findsSearch"
+        >
+          Search the Honey & Hymns Finds
+        </label>
+
+        <input
+          type="search"
+          id="findsSearch"
+          class="finds-search"
+          placeholder="Search books, homeschool, faith, homemaking..."
+        >
+
+      </div>
+
+
+      <!-- FILTERS -->
+
+      <div class="finds-filters">
+
+        <button
+          class="finds-filter active"
+          data-filter="all"
+          type="button"
+        >
+          Everything
+        </button>
+
+        <button
+          class="finds-filter"
+          data-filter="Homemaking"
+          type="button"
+        >
+          🏡 Homemaking
+        </button>
+
+        <button
+          class="finds-filter"
+          data-filter="Homeschool"
+          type="button"
+        >
+          📚 Homeschool
+        </button>
+
+        <button
+          class="finds-filter"
+          data-filter="Faith"
+          type="button"
+        >
+          ✝️ Faith
+        </button>
+
+        <button
+          class="finds-filter"
+          data-filter="Kids & Family"
+          type="button"
+        >
+          👧 Kids & Family
+        </button>
+
+        <button
+          class="finds-filter"
+          data-filter="Gifts"
+          type="button"
+        >
+          🎁 Gifts
+        </button>
+
+      </div>
+
+
+      <!-- SUBCATEGORY FILTERS -->
+
+      <div
+        id="findsSubcategoryButtons"
+        class="finds-subcategory-buttons"
+      ></div>
+
+
+      <!-- SECTION INTRO -->
+
+      <div class="finds-section-heading">
+
+        <h2>
+          A Few of My Favorite Finds
+        </h2>
+
+        <p>
+          These are things I've personally come across that
+          fit naturally into the rhythms of family life,
+          homeschooling, faith, and homemaking.
+        </p>
+
+      </div>
+
+
+      <!-- PRODUCT GRID -->
+
+      <div
+        class="finds-grid"
+        id="findsGrid"
+      ></div>
+
+
+      <!-- NO RESULTS -->
+
+      <div
+        class="finds-no-results"
+        id="findsNoResults"
+      >
+
+        <h3>
+          I couldn't find that one.
+        </h3>
+
+        <p>
+          Try searching for something a little different.
+        </p>
+
+      </div>
+
+
+      <!-- PAGINATION -->
+
+      <div
+        id="findsPagination"
+        class="finds-pagination"
+        aria-label="Amazon Finds pages"
+      ></div>
+
+
+      <!-- =====================================================
+           LIVING BOOKSHELF
+      ====================================================== -->
+
+      <section class="living-bookshelf-section">
+
+        <p class="amazon-finds-kicker">
+          A Little Corner of the Finds
+        </p>
+
+        <h2>
+          📚 The Honey & Hymns Living Bookshelf
+        </h2>
+
+        <p>
+          I'm especially fond of books that invite children into
+          beautiful stories rather than simply giving them
+          information. This collection will continue growing as
+          I find more books worth putting on a well-loved
+          homeschool bookshelf.
+        </p>
+
+      </section>
+
+
+      <!-- =====================================================
+           BOTTOM CTA
+      ====================================================== -->
+
+      <section class="finds-bottom-cta">
+
+        <h2>
+          Want More Honey & Hymns?
+        </h2>
+
+        <p>
+          Come join us for faith, homeschool encouragement,
+          homemaking ideas, and the beautiful ordinary moments
+          of family life.
+        </p>
+
+        <a
+          href="https://honeyandhymns.substack.com/subscribe"
+          class="finds-bottom-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Join the Honey Hive 🐝
+        </a>
+
+      </section>
+
+    </section>
+
+
+    <!-- =======================================================
+         WISHLIST POPUP
+    ======================================================== -->
+
+    <div
+      class="wishlist-overlay"
+      id="wishlistOverlay"
+      aria-hidden="true"
+    >
+
+      <div
+        class="wishlist-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="wishlistTitle"
+      >
+
+        <div class="wishlist-modal-header">
+
+          <h2
+            class="wishlist-modal-title"
+            id="wishlistTitle"
+          >
+            My Honey & Hymns Wishlist
+          </h2>
+
+          <button
+            class="wishlist-close"
+            type="button"
+            onclick="closeWishlist()"
+            aria-label="Close wishlist"
+          >
+            ×
+          </button>
+
+        </div>
+
+
+        <div
+          class="wishlist-body"
+          id="wishlistBody"
+        ></div>
+
+
+        <div class="wishlist-modal-footer">
+
+          <span
+            class="wishlist-footer-note"
+            id="wishlistFooterNote"
+          >
+            Your little collection of favorites
+          </span>
+
+          <button
+            class="wishlist-clear"
+            type="button"
+            onclick="clearWishlist()"
+          >
+            Clear Wishlist
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+      <p>
+        Honey & Hymns
+      </p>
+
+      <p>
+        Faith • Homeschool • Homemaking
+      </p>
+
+    </footer>
+
+  </main>
+
+</body>
 
 
 <script>
-  /* ========================================
+
+
+/* =========================================================
    NAVIGATION DROPDOWNS
-======================================== */
+========================================================= */
 
 const dropdowns =
-  document.querySelectorAll(
-    ".shop-dropdown"
-  );
+  document.querySelectorAll(".shop-dropdown");
 
 
-dropdowns.forEach(
-  function(dropdown) {
+dropdowns.forEach(function(dropdown) {
 
-    const toggle =
-      dropdown.querySelector(
-        ".shop-toggle"
-      );
+  const toggle =
+    dropdown.querySelector(".shop-toggle");
 
-
-    toggle.addEventListener(
-      "click",
-      function(event) {
-
-        event.stopPropagation();
-
-
-        /* Close other dropdowns */
-
-        dropdowns.forEach(
-          function(otherDropdown) {
-
-            if (
-              otherDropdown !== dropdown
-            ) {
-
-              otherDropdown.classList.remove(
-                "open"
-              );
-
-
-              const otherToggle =
-                otherDropdown.querySelector(
-                  ".shop-toggle"
-                );
-
-
-              otherToggle.setAttribute(
-                "aria-expanded",
-                "false"
-              );
-
-            }
-
-          }
-        );
-
-
-        /* Toggle this dropdown */
-
-        const isOpen =
-          dropdown.classList.toggle(
-            "open"
-          );
-
-
-        toggle.setAttribute(
-          "aria-expanded",
-          isOpen
-            ? "true"
-            : "false"
-        );
-
-      }
-    );
-
+  if (!toggle) {
+    return;
   }
-);
 
+  toggle.addEventListener("click", function(event) {
 
-/* ========================================
-   CLOSE DROPDOWNS OUTSIDE CLICK
-======================================== */
+    event.stopPropagation();
 
-document.addEventListener(
-  "click",
-  function(event) {
+    dropdowns.forEach(function(otherDropdown) {
 
-    dropdowns.forEach(
-      function(dropdown) {
+      if (otherDropdown !== dropdown) {
 
-        if (
-          !dropdown.contains(
-            event.target
-          )
-        ) {
+        otherDropdown.classList.remove("open");
 
-          dropdown.classList.remove(
-            "open"
-          );
+        const otherToggle =
+          otherDropdown.querySelector(".shop-toggle");
 
+        if (otherToggle) {
 
-          const toggle =
-            dropdown.querySelector(
-              ".shop-toggle"
-            );
-
-
-          toggle.setAttribute(
+          otherToggle.setAttribute(
             "aria-expanded",
             "false"
           );
@@ -2690,55 +2527,56 @@ document.addEventListener(
         }
 
       }
+
+    });
+
+
+    const isOpen =
+      dropdown.classList.toggle("open");
+
+
+    toggle.setAttribute(
+      "aria-expanded",
+      isOpen ? "true" : "false"
     );
 
-  }
-);
-/* =========================================================
-   HONEY & HYMNS — AMAZON FINDS ENGINE
-========================================================= */
+  });
 
-const findsGrid =
-  document.getElementById("findsGrid");
-
-const searchInput =
-  document.getElementById("findsSearch");
-
-const filterButtons =
-  document.querySelectorAll(".finds-filter");
-
-const subcategoryContainer =
-  document.getElementById(
-    "findsSubcategoryButtons"
-  );
-
-const noResults =
-  document.getElementById("findsNoResults");
-
-const pagination =
-  document.getElementById("findsPagination");
+});
 
 
-/* =========================================================
-   SETTINGS
-========================================================= */
+document.addEventListener("click", function(event) {
 
-const PRODUCTS_PER_PAGE = 9;
+  dropdowns.forEach(function(dropdown) {
 
-let currentFilter = "all";
-let currentSubcategory = "all";
-let currentPage = 1;
+    if (!dropdown.contains(event.target)) {
+
+      dropdown.classList.remove("open");
+
+      const toggle =
+        dropdown.querySelector(".shop-toggle");
+
+      if (toggle) {
+
+        toggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+
+    }
+
+  });
+
+});
 
 
-/* =========================================================
-   PRODUCT DATABASE
-
-   Add new Amazon Finds here.
-========================================================= */
 
 const amazonFindsProducts = [
 
   {
+    
     id: "sliner-mass-kit",
 
     title:
@@ -4077,17 +3915,147 @@ const amazonFindsProducts = [
 
 
 /* =========================================================
+   SETTINGS
+========================================================= */
+
+const PRODUCTS_PER_PAGE = 9;
+
+let currentFilter = "all";
+let currentSubcategory = "all";
+let currentPage = 1;
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const findsGrid =
+  document.getElementById("findsGrid");
+
+const searchInput =
+  document.getElementById("findsSearch");
+
+const filterButtons =
+  document.querySelectorAll(".finds-filter");
+
+const subcategoryContainer =
+  document.getElementById(
+    "findsSubcategoryButtons"
+  );
+
+const noResults =
+  document.getElementById(
+    "findsNoResults"
+  );
+
+const pagination =
+  document.getElementById(
+    "findsPagination"
+  );
+
+
+/* =========================================================
    ESCAPE HTML
 ========================================================= */
 
 function escapeHtml(value) {
 
-  return String(value)
+  return String(value ?? "")
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
+
+}
+
+
+/* =========================================================
+   WISHLIST STORAGE
+========================================================= */
+
+const WISHLIST_STORAGE_KEY =
+  "honeyAndHymnsWishlist";
+
+
+function getWishlist() {
+
+  try {
+
+    const stored =
+      localStorage.getItem(
+        WISHLIST_STORAGE_KEY
+      );
+
+    if (!stored) {
+      return [];
+    }
+
+    const parsed =
+      JSON.parse(stored);
+
+    return Array.isArray(parsed)
+      ? parsed
+      : [];
+
+  } catch (error) {
+
+    console.error(
+      "Could not read wishlist:",
+      error
+    );
+
+    return [];
+
+  }
+
+}
+
+
+function saveWishlist(items) {
+
+  localStorage.setItem(
+    WISHLIST_STORAGE_KEY,
+    JSON.stringify(items)
+  );
+
+}
+
+
+/* =========================================================
+   WISHLIST COUNT
+========================================================= */
+
+function updateWishlistCount() {
+
+  const countElement =
+    document.getElementById(
+      "wishlistCount"
+    );
+
+  if (!countElement) {
+    return;
+  }
+
+  countElement.textContent =
+    getWishlist().length;
+
+}
+
+
+/* =========================================================
+   CHECK WISHLIST
+========================================================= */
+
+function isInWishlist(id) {
+
+  return getWishlist().some(
+    function(item) {
+
+      return item.id === id;
+
+    }
+  );
 
 }
 
@@ -4164,9 +4132,11 @@ function createFindCard(product) {
             data-url="${escapeHtml(product.url)}"
             aria-label="${saved ? "Remove " : "Add "}${escapeHtml(product.title)} ${saved ? "from" : "to"} wishlist"
           >
-            ${saved
-              ? "♥ Saved to Wishlist"
-              : "♡ Add to Wishlist"}
+            ${
+              saved
+                ? "♥ Saved to Wishlist"
+                : "♡ Add to Wishlist"
+            }
           </button>
 
         </div>
@@ -4181,7 +4151,7 @@ function createFindCard(product) {
 
 
 /* =========================================================
-   GET FILTERED PRODUCTS
+   FILTER PRODUCTS
 ========================================================= */
 
 function getFilteredProducts() {
@@ -4193,14 +4163,18 @@ function getFilteredProducts() {
           .trim()
       : "";
 
+
   return amazonFindsProducts.filter(
     function(product) {
 
       const category =
-        product.category.toLowerCase();
+        String(product.category)
+          .toLowerCase();
 
       const subcategory =
-        product.subcategory.toLowerCase();
+        String(product.subcategory)
+          .toLowerCase();
+
 
       const searchableText = [
         product.title,
@@ -4211,21 +4185,25 @@ function getFilteredProducts() {
         .join(" ")
         .toLowerCase();
 
+
       const matchesCategory =
         currentFilter === "all" ||
         category ===
           currentFilter.toLowerCase();
+
 
       const matchesSubcategory =
         currentSubcategory === "all" ||
         subcategory ===
           currentSubcategory.toLowerCase();
 
+
       const matchesSearch =
         searchTerm === "" ||
         searchableText.includes(
           searchTerm
         );
+
 
       return (
         matchesCategory &&
@@ -4249,29 +4227,40 @@ function buildSubcategoryButtons(category) {
     return;
   }
 
+
   subcategoryContainer.innerHTML = "";
+
 
   if (category === "all") {
     return;
   }
+
 
   const subcategories =
     [
       ...new Set(
         amazonFindsProducts
           .filter(
-            product =>
-              product.category
-                .toLowerCase() ===
-              category.toLowerCase()
+            function(product) {
+
+              return (
+                product.category
+                  .toLowerCase() ===
+                category.toLowerCase()
+              );
+
+            }
           )
           .map(
-            product =>
-              product.subcategory
+            function(product) {
+
+              return product.subcategory;
+
+            }
           )
       )
     ]
-      .sort();
+    .sort();
 
 
   subcategories.forEach(
@@ -4281,6 +4270,7 @@ function buildSubcategoryButtons(category) {
         document.createElement(
           "button"
         );
+
 
       button.type = "button";
 
@@ -4343,13 +4333,12 @@ function buildSubcategoryButtons(category) {
    PAGINATION
 ========================================================= */
 
-function buildPagination(
-  totalPages
-) {
+function buildPagination(totalPages) {
 
   if (!pagination) {
     return;
   }
+
 
   pagination.innerHTML = "";
 
@@ -4368,10 +4357,11 @@ function buildPagination(
     "flex";
 
 
+  /* PREVIOUS */
+
   const previous =
-    document.createElement(
-      "button"
-    );
+    document.createElement("button");
+
 
   previous.type =
     "button";
@@ -4381,6 +4371,11 @@ function buildPagination(
 
   previous.textContent =
     "←";
+
+  previous.setAttribute(
+    "aria-label",
+    "Previous page"
+  );
 
   previous.disabled =
     currentPage === 1;
@@ -4409,6 +4404,8 @@ function buildPagination(
   );
 
 
+  /* PAGE NUMBERS */
+
   for (
     let page = 1;
     page <= totalPages;
@@ -4420,6 +4417,7 @@ function buildPagination(
         "button"
       );
 
+
     button.type =
       "button";
 
@@ -4428,6 +4426,11 @@ function buildPagination(
 
     button.textContent =
       page;
+
+    button.setAttribute(
+      "aria-label",
+      "Page " + page
+    );
 
 
     if (
@@ -4468,10 +4471,13 @@ function buildPagination(
   }
 
 
+  /* NEXT */
+
   const next =
     document.createElement(
       "button"
     );
+
 
   next.type =
     "button";
@@ -4481,6 +4487,12 @@ function buildPagination(
 
   next.textContent =
     "→";
+
+  next.setAttribute(
+    "aria-label",
+    "Next page"
+  );
+
 
   next.disabled =
     currentPage === totalPages;
@@ -4515,7 +4527,7 @@ function buildPagination(
 
 
 /* =========================================================
-   SCROLL
+   SCROLL TO PRODUCTS
 ========================================================= */
 
 function scrollToFinds() {
@@ -4525,9 +4537,11 @@ function scrollToFinds() {
       ".amazon-finds-content"
     );
 
+
   if (!section) {
     return;
   }
+
 
   section.scrollIntoView({
     behavior: "smooth",
@@ -4589,9 +4603,7 @@ function updateFinds() {
 
   findsGrid.innerHTML =
     pageProducts
-      .map(
-        createFindCard
-      )
+      .map(createFindCard)
       .join("");
 
 
@@ -4632,9 +4644,7 @@ function attachWishlistEvents() {
           "click",
           function() {
 
-            toggleWishlist(
-              button
-            );
+            toggleWishlist(button);
 
           }
         );
@@ -4646,598 +4656,8 @@ function attachWishlistEvents() {
 
 
 /* =========================================================
-   CATEGORY EVENTS
+   TOGGLE WISHLIST
 ========================================================= */
-
-filterButtons.forEach(
-  function(button) {
-
-    button.addEventListener(
-      "click",
-      function() {
-
-        filterButtons.forEach(
-          function(btn) {
-
-            btn.classList.remove(
-              "active"
-            );
-
-          }
-        );
-
-
-        button.classList.add(
-          "active"
-        );
-
-
-        currentFilter =
-          button.dataset.filter ||
-          "all";
-
-        currentSubcategory =
-          "all";
-
-        currentPage = 1;
-
-
-        buildSubcategoryButtons(
-          currentFilter
-        );
-
-
-        updateFinds();
-
-      }
-    );
-
-  }
-);
-
-
-/* =========================================================
-   SEARCH
-========================================================= */
-
-if (searchInput) {
-
-  searchInput.addEventListener(
-    "input",
-    function() {
-
-      currentPage = 1;
-
-      updateFinds();
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   INITIALIZE
-========================================================= */
-
-updateFinds();
-
-
-/* =========================================================
-   BUILD PAGINATION
-========================================================= */
-
-function buildPagination(totalPages) {
-
-  const pagination =
-    document.getElementById(
-      "findsPagination"
-    );
-
-  if (!pagination) {
-    return;
-  }
-
-  pagination.innerHTML = "";
-
-  if (totalPages <= 1) {
-    pagination.style.display = "none";
-    return;
-  }
-
-  pagination.style.display = "flex";
-
-
-  /* PREVIOUS */
-
-  const previous =
-    document.createElement("button");
-
-  previous.type = "button";
-
-  previous.className =
-    "finds-page-button";
-
-  previous.textContent =
-    "←";
-
-  previous.setAttribute(
-    "aria-label",
-    "Previous page"
-  );
-
-  previous.disabled =
-    currentPage === 1;
-
-  previous.addEventListener(
-    "click",
-    function() {
-
-      if (currentPage > 1) {
-
-        currentPage--;
-
-        updateFinds();
-
-        scrollToFinds();
-
-      }
-
-    }
-  );
-
-  pagination.appendChild(
-    previous
-  );
-
-
-  /* PAGE NUMBERS */
-
-  for (
-    let page = 1;
-    page <= totalPages;
-    page++
-  ) {
-
-    const button =
-      document.createElement("button");
-
-    button.type = "button";
-
-    button.className =
-      "finds-page-button";
-
-    button.textContent =
-      page;
-
-    button.setAttribute(
-      "aria-label",
-      "Page " + page
-    );
-
-    if (
-      page === currentPage
-    ) {
-
-      button.classList.add(
-        "active"
-      );
-
-      button.setAttribute(
-        "aria-current",
-        "page"
-      );
-
-    }
-
-    button.addEventListener(
-      "click",
-      function() {
-
-        currentPage =
-          page;
-
-        updateFinds();
-
-        scrollToFinds();
-
-      }
-    );
-
-    pagination.appendChild(
-      button
-    );
-
-  }
-
-
-  /* NEXT */
-
-  const next =
-    document.createElement("button");
-
-  next.type = "button";
-
-  next.className =
-    "finds-page-button";
-
-  next.textContent =
-    "→";
-
-  next.setAttribute(
-    "aria-label",
-    "Next page"
-  );
-
-  next.disabled =
-    currentPage === totalPages;
-
-  next.addEventListener(
-    "click",
-    function() {
-
-      if (
-        currentPage < totalPages
-      ) {
-
-        currentPage++;
-
-        updateFinds();
-
-        scrollToFinds();
-
-      }
-
-    }
-  );
-
-  pagination.appendChild(
-    next
-  );
-
-}
-
-
-/* =========================================================
-   SCROLL BACK TO PRODUCTS
-========================================================= */
-
-function scrollToFinds() {
-
-  const findsSection =
-    document.getElementById(
-      "amazon-finds"
-    );
-
-  if (!findsSection) {
-    return;
-  }
-
-  findsSection.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
-
-}
-
-
-/* =========================================================
-   FILTER + PAGINATE PRODUCTS
-========================================================= */
-
-function updateFinds() {
-
-  if (!cards.length) {
-    return;
-  }
-
-  const filteredCards =
-    getFilteredCards();
-
-  const totalPages =
-    Math.max(
-      1,
-      Math.ceil(
-        filteredCards.length /
-        productsPerPage
-      )
-    );
-
-
-  /* Make sure current page still exists */
-
-  if (
-    currentPage > totalPages
-  ) {
-
-    currentPage =
-      totalPages;
-
-  }
-
-
-  const startIndex =
-    (currentPage - 1) *
-    productsPerPage;
-
-  const endIndex =
-    startIndex +
-    productsPerPage;
-
-
-  /* Hide everything first */
-
-  cards.forEach(
-    function(card) {
-
-      card.style.display =
-        "none";
-
-    }
-  );
-
-
-  /* Show only current page */
-
-  filteredCards
-    .slice(
-      startIndex,
-      endIndex
-    )
-    .forEach(
-      function(card) {
-
-        card.style.display =
-          "flex";
-
-      }
-    );
-
-
-  /* NO RESULTS */
-
-  if (noResults) {
-
-    noResults.style.display =
-      filteredCards.length === 0
-        ? "block"
-        : "none";
-
-  }
-
-
-  /* PAGINATION */
-
-  buildPagination(
-    totalPages
-  );
-
-}
-
-
-/* =========================================================
-   CATEGORY BUTTON EVENTS
-========================================================= */
-
-filterButtons.forEach(
-  function(button) {
-
-    button.addEventListener(
-      "click",
-      function() {
-
-        filterButtons.forEach(
-          function(btn) {
-
-            btn.classList.remove(
-              "active"
-            );
-
-          }
-        );
-
-        button.classList.add(
-          "active"
-        );
-
-        currentFilter =
-          button.dataset.filter ||
-          "all";
-
-        currentSubcategory =
-          "all";
-
-        currentPage = 1;
-
-        buildSubcategoryButtons(
-          currentFilter
-        );
-
-        updateFinds();
-
-      }
-    );
-
-  }
-);
-
-
-/* =========================================================
-   SEARCH EVENT
-========================================================= */
-
-if (searchInput) {
-
-  searchInput.addEventListener(
-    "input",
-    function() {
-
-      currentPage = 1;
-
-      updateFinds();
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   INITIALIZE AMAZON FINDS
-========================================================= */
-
-buildSubcategoryButtons(
-  "all"
-);
-
-updateFinds();
-
-/* ========================================
-   WISHLIST STORAGE
-======================================== */
-
-const WISHLIST_STORAGE_KEY =
-  "honeyAndHymnsWishlist";
-
-
-function getWishlist() {
-
-  try {
-
-    const stored =
-      localStorage.getItem(
-        WISHLIST_STORAGE_KEY
-      );
-
-
-    if (!stored) {
-
-      return [];
-
-    }
-
-
-    const parsed =
-      JSON.parse(stored);
-
-
-    return Array.isArray(parsed)
-      ? parsed
-      : [];
-
-  } catch (error) {
-
-    return [];
-
-  }
-
-}
-
-
-function saveWishlist(items) {
-
-  localStorage.setItem(
-    WISHLIST_STORAGE_KEY,
-    JSON.stringify(items)
-  );
-
-}
-
-
-/* ========================================
-   WISHLIST COUNT
-======================================== */
-
-function updateWishlistCount() {
-
-  const countElement =
-    document.getElementById(
-      "wishlistCount"
-    );
-
-
-  if (!countElement) {
-
-    return;
-
-  }
-
-
-  countElement.textContent =
-    getWishlist().length;
-
-}
-
-
-/* ========================================
-   CHECK IF PRODUCT IS SAVED
-======================================== */
-
-function isInWishlist(id) {
-
-  return getWishlist().some(
-    function(item) {
-
-      return item.id === id;
-
-    }
-  );
-
-}
-
-
-/* ========================================
-   UPDATE PRODUCT BUTTONS
-======================================== */
-
-function updateWishlistButtons() {
-
-  const buttons =
-    document.querySelectorAll(
-      ".wishlist-button"
-    );
-
-
-  buttons.forEach(
-    function(button) {
-
-      const id =
-        button.dataset.wishlistId;
-
-
-      if (
-        isInWishlist(id)
-      ) {
-
-        button.classList.add(
-          "saved"
-        );
-
-
-        button.textContent =
-          "♥ Saved to Wishlist";
-
-      } else {
-
-        button.classList.remove(
-          "saved"
-        );
-
-
-        button.textContent =
-          "♡ Add to Wishlist";
-
-      }
-
-    }
-  );
-
-}
-
-
-/* ========================================
-   ADD / REMOVE PRODUCT
-======================================== */
 
 function toggleWishlist(button) {
 
@@ -5252,9 +4672,6 @@ function toggleWishlist(button) {
 
     title:
       button.dataset.title || "",
-
-    price:
-      button.dataset.price || "",
 
     image:
       button.dataset.image || "",
@@ -5309,35 +4726,129 @@ function toggleWishlist(button) {
 }
 
 
-/* ========================================
-   PRODUCT BUTTON EVENTS
-======================================== */
+/* =========================================================
+   UPDATE WISHLIST BUTTONS
+========================================================= */
 
-document
-  .querySelectorAll(
-    ".wishlist-button"
-  )
-  .forEach(
-    function(button) {
+function updateWishlistButtons() {
 
-      button.addEventListener(
-        "click",
-        function() {
+  document
+    .querySelectorAll(
+      ".wishlist-button"
+    )
+    .forEach(
+      function(button) {
 
-          toggleWishlist(
-            button
+        const id =
+          button.dataset.wishlistId;
+
+
+        if (
+          isInWishlist(id)
+        ) {
+
+          button.classList.add(
+            "saved"
           );
 
+          button.textContent =
+            "♥ Saved to Wishlist";
+
+        } else {
+
+          button.classList.remove(
+            "saved"
+          );
+
+          button.textContent =
+            "♡ Add to Wishlist";
+
         }
-      );
+
+      }
+    );
+
+}
+
+
+/* =========================================================
+   CATEGORY FILTER EVENTS
+========================================================= */
+
+filterButtons.forEach(
+  function(button) {
+
+    button.addEventListener(
+      "click",
+      function() {
+
+        filterButtons.forEach(
+          function(btn) {
+
+            btn.classList.remove(
+              "active"
+            );
+
+          }
+        );
+
+
+        button.classList.add(
+          "active"
+        );
+
+
+        currentFilter =
+          button.dataset.filter ||
+          "all";
+
+
+        currentSubcategory =
+          "all";
+
+
+        currentPage =
+          1;
+
+
+        buildSubcategoryButtons(
+          currentFilter
+        );
+
+
+        updateFinds();
+
+      }
+    );
+
+  }
+);
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+if (searchInput) {
+
+  searchInput.addEventListener(
+    "input",
+    function() {
+
+      currentPage =
+        1;
+
+      updateFinds();
 
     }
   );
 
+}
 
-/* ========================================
-   RENDER WISHLIST
-======================================== */
+
+/* =========================================================
+   WISHLIST MODAL
+========================================================= */
 
 function renderWishlist() {
 
@@ -5381,7 +4892,6 @@ function renderWishlist() {
 
     `;
 
-
     return;
 
   }
@@ -5415,18 +4925,11 @@ function renderWishlist() {
                 </h3>
 
 
-                <p
-                  class="wishlist-item-price"
-                >
-                  ${escapeHtml(item.price)}
-                </p>
-
-
                 <a
                   class="wishlist-item-view"
                   href="${escapeHtml(item.url)}"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer sponsored"
                 >
                   View Product →
                 </a>
@@ -5453,52 +4956,20 @@ function renderWishlist() {
 }
 
 
-/* ========================================
-   BASIC HTML ESCAPING
-======================================== */
-
-function escapeHtml(value) {
-
-  return String(value)
-    .replace(
-      /&/g,
-      "&amp;"
-    )
-    .replace(
-      /</g,
-      "&lt;"
-    )
-    .replace(
-      />/g,
-      "&gt;"
-    )
-    .replace(
-      /"/g,
-      "&quot;"
-    )
-    .replace(
-      /'/g,
-      "&#039;"
-    );
-
-}
-
-
-/* ========================================
+/* =========================================================
    REMOVE FROM WISHLIST
-======================================== */
+========================================================= */
 
 function removeFromWishlist(id) {
 
   const wishlist =
-    getWishlist()
-      .filter(
-        function(item) {
+    getWishlist().filter(
+      function(item) {
 
-          return item.id !== id;
+        return item.id !== id;
 
-        }
-      );
+      }
+    );
 
 
   saveWishlist(
@@ -5515,9 +4986,9 @@ function removeFromWishlist(id) {
 }
 
 
-/* ========================================
+/* =========================================================
    OPEN WISHLIST
-======================================== */
+========================================================= */
 
 function openWishlist() {
 
@@ -5552,9 +5023,9 @@ function openWishlist() {
 }
 
 
-/* ========================================
+/* =========================================================
    CLOSE WISHLIST
-======================================== */
+========================================================= */
 
 function closeWishlist() {
 
@@ -5586,9 +5057,9 @@ function closeWishlist() {
 }
 
 
-/* ========================================
+/* =========================================================
    CLEAR WISHLIST
-======================================== */
+========================================================= */
 
 function clearWishlist() {
 
@@ -5612,15 +5083,11 @@ function clearWishlist() {
 
 
   if (!confirmed) {
-
     return;
-
   }
 
 
-  saveWishlist(
-    []
-  );
+  saveWishlist([]);
 
 
   updateWishlistCount();
@@ -5632,9 +5099,9 @@ function clearWishlist() {
 }
 
 
-/* ========================================
-   CLOSE WHEN CLICKING OUTSIDE
-======================================== */
+/* =========================================================
+   WISHLIST OVERLAY
+========================================================= */
 
 const wishlistOverlay =
   document.getElementById(
@@ -5649,8 +5116,7 @@ if (wishlistOverlay) {
     function(event) {
 
       if (
-        event.target ===
-        this
+        event.target === this
       ) {
 
         closeWishlist();
@@ -5663,20 +5129,33 @@ if (wishlistOverlay) {
 }
 
 
-/* ========================================
+/* =========================================================
    ESCAPE KEY
-======================================== */
+========================================================= */
 
 document.addEventListener(
   "keydown",
   function(event) {
 
     if (
-      event.key ===
-      "Escape"
+      event.key === "Escape"
     ) {
 
       closeWishlist();
+
+      const popup =
+        document.getElementById(
+          "welcomePopup"
+        );
+
+      if (
+        popup &&
+        popup.classList.contains("open")
+      ) {
+
+        closeWelcomePopup(true);
+
+      }
 
     }
 
@@ -5684,9 +5163,9 @@ document.addEventListener(
 );
 
 
-/* ========================================
+/* =========================================================
    POLL BAR ANIMATION
-======================================== */
+========================================================= */
 
 const pollBars =
   document.querySelectorAll(
@@ -5694,7 +5173,10 @@ const pollBars =
   );
 
 
-if (pollBars.length > 0) {
+if (
+  pollBars.length > 0 &&
+  "IntersectionObserver" in window
+) {
 
   const pollObserver =
     new IntersectionObserver(
@@ -5739,9 +5221,7 @@ if (pollBars.length > 0) {
   pollBars.forEach(
     function(bar) {
 
-      pollObserver.observe(
-        bar
-      );
+      pollObserver.observe(bar);
 
     }
   );
@@ -5749,32 +5229,24 @@ if (pollBars.length > 0) {
 }
 
 
-/* ========================================
-   INITIALIZE
-======================================== */
-
-updateFinds();
-
-updateWishlistCount();
-
-updateWishlistButtons();
-
-   /* =========================================================
-   HONEY & HYMNS — FIRST VISIT WELCOME POPUP
+/* =========================================================
+   WELCOME POPUP
 ========================================================= */
 
 const WELCOME_POPUP_DISMISSED_KEY =
   "honeyAndHymnsWelcomePopupDismissed";
 
+
 const WELCOME_POPUP_SUBSCRIBED_KEY =
   "honeyAndHymnsWelcomePopupSubscribed";
+
 
 const WELCOME_POPUP_DELAY =
   8000;
 
 
 /* =========================================================
-   OPEN POPUP
+   OPEN WELCOME POPUP
 ========================================================= */
 
 function openWelcomePopup() {
@@ -5784,16 +5256,22 @@ function openWelcomePopup() {
       "welcomePopup"
     );
 
+
   if (!popup) {
     return;
   }
 
-  popup.classList.add("open");
+
+  popup.classList.add(
+    "open"
+  );
+
 
   popup.setAttribute(
     "aria-hidden",
     "false"
   );
+
 
   document.body.style.overflow =
     "hidden";
@@ -5802,7 +5280,7 @@ function openWelcomePopup() {
 
 
 /* =========================================================
-   CLOSE POPUP
+   CLOSE WELCOME POPUP
 ========================================================= */
 
 function closeWelcomePopup(
@@ -5814,19 +5292,26 @@ function closeWelcomePopup(
       "welcomePopup"
     );
 
+
   if (!popup) {
     return;
   }
 
-  popup.classList.remove("open");
+
+  popup.classList.remove(
+    "open"
+  );
+
 
   popup.setAttribute(
     "aria-hidden",
     "true"
   );
 
+
   document.body.style.overflow =
     "";
+
 
   if (rememberDismissal) {
 
@@ -5841,7 +5326,7 @@ function closeWelcomePopup(
 
 
 /* =========================================================
-   CHECK WHETHER POPUP SHOULD APPEAR
+   SHOULD SHOW POPUP
 ========================================================= */
 
 function shouldShowWelcomePopup() {
@@ -5851,31 +5336,23 @@ function shouldShowWelcomePopup() {
       WELCOME_POPUP_DISMISSED_KEY
     );
 
+
   const subscribed =
     localStorage.getItem(
       WELCOME_POPUP_SUBSCRIBED_KEY
     );
 
 
-  /*
-    If we've marked the visitor as subscribed,
-    never show the popup again.
-  */
-
   if (subscribed) {
     return false;
   }
 
 
-  /*
-    If the visitor dismissed the popup,
-    wait 30 days before showing it again.
-  */
-
   if (dismissed) {
 
     const dismissedTime =
       Number(dismissed);
+
 
     const thirtyDays =
       30 *
@@ -5884,9 +5361,11 @@ function shouldShowWelcomePopup() {
       60 *
       1000;
 
+
     const timeSinceDismissal =
       Date.now() -
       dismissedTime;
+
 
     if (
       timeSinceDismissal <
@@ -5920,7 +5399,7 @@ function markWelcomePopupSubscribed() {
 
 
 /* =========================================================
-   POPUP EVENTS
+   WELCOME POPUP EVENTS
 ========================================================= */
 
 document.addEventListener(
@@ -5932,14 +5411,11 @@ document.addEventListener(
         "welcomePopup"
       );
 
+
     if (!popup) {
       return;
     }
 
-
-    /*
-      Wait 8 seconds before showing.
-    */
 
     if (
       shouldShowWelcomePopup()
@@ -5947,11 +5423,6 @@ document.addEventListener(
 
       window.setTimeout(
         function() {
-
-          /*
-            Check one more time in case
-            something changed while waiting.
-          */
 
           if (
             shouldShowWelcomePopup()
@@ -5967,10 +5438,6 @@ document.addEventListener(
 
     }
 
-
-    /*
-      Clicking the dark overlay closes it.
-    */
 
     popup.addEventListener(
       "click",
@@ -5988,36 +5455,11 @@ document.addEventListener(
     );
 
 
-    /*
-      Escape closes it.
-    */
-
-    document.addEventListener(
-      "keydown",
-      function(event) {
-
-        if (
-          event.key === "Escape" &&
-          popup.classList.contains("open")
-        ) {
-
-          closeWelcomePopup(true);
-
-        }
-
-      }
-    );
-
-
-    /*
-      If the visitor submits the form,
-      remember that they subscribed.
-    */
-
     const form =
       popup.querySelector(
         ".welcome-letter-form"
       );
+
 
     if (form) {
 
@@ -6036,6 +5478,25 @@ document.addEventListener(
 
   }
 );
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+buildSubcategoryButtons("all");
+
+updateFinds();
+
+updateWishlistCount();
+
+updateWishlistButtons();
+
+
+
+
+
+
 
 </script>
 
