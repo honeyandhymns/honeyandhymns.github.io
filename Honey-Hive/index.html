@@ -605,80 +605,47 @@
     }
 
 
-    /* =====================================================
-       INTRODUCTION
-    ====================================================== */
+    //* =========================================================
+   HONEY HIVE INTRO
+========================================================= */
 
-    .hive-introduction {
+.hive-intro {
+  padding: 55px 20px 50px;
+  text-align: center;
+}
 
-      background:
-        var(--hive-cream);
+.hive-intro-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
 
-      text-align:
-        center;
+.hive-eyebrow {
+  margin: 0 0 14px;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  color: #8a6a3d;
+}
 
-    }
+.hive-intro h2 {
+  margin: 0 auto 22px;
+  max-width: 650px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  color: #5f4630;
+}
 
+.hive-intro-text {
+  max-width: 650px;
+  margin: 0 auto 14px;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6f6255;
+}
 
-    .hive-introduction .hive-section-inner {
-
-      max-width:
-        780px;
-
-    }
-
-
-    .hive-introduction h2,
-    .hive-whats-inside h2,
-    .hive-how-it-works h2,
-    .hive-member-access h2,
-    .hive-join h2 {
-
-      margin:
-        0 0 22px;
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-weight:
-        500;
-
-      line-height:
-        1.2;
-
-      color:
-        var(--hive-dark-brown);
-
-    }
-
-
-    .hive-introduction h2,
-    .hive-whats-inside h2,
-    .hive-how-it-works h2,
-    .hive-member-access h2,
-    .hive-join h2 {
-
-      font-size:
-        clamp(2rem, 5vw, 3.25rem);
-
-    }
-
-
-    .hive-introduction p:not(.hive-eyebrow) {
-
-      margin:
-        0 auto 18px;
-
-      font-size:
-        1.05rem;
-
-      line-height:
-        1.85;
-
-    }
-
+.hive-intro-text:last-child {
+  margin-bottom: 0;
+}
 
     /* =====================================================
        WHAT'S INSIDE
@@ -792,101 +759,89 @@
     }
 
 
-    /* =====================================================
-       HOW IT WORKS
-    ====================================================== */
+    /* =========================================================
+   HONEY HIVE — HOW IT WORKS
+========================================================= */
 
-    .hive-how-it-works {
+.hive-how-it-works {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 45px 20px 55px;
+}
 
-      background:
-        var(--hive-cream);
+.hive-section-heading {
+  max-width: 650px;
+  margin: 0 auto 35px;
+  text-align: center;
+}
 
-      text-align:
-        center;
+.hive-section-heading h2 {
+  margin: 0 0 14px;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  color: #5f4630;
+}
 
-    }
-
-
-    .hive-steps {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-      gap:
-        35px;
-
-      margin-top:
-        45px;
-
-    }
-
-
-    .hive-step {
-
-      text-align:
-        left;
-
-    }
+.hive-section-heading p:last-child {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #75695d;
+}
 
 
-    .hive-step-number {
+/* STEPS */
 
-      display:
-        block;
+.hive-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
 
-      margin:
-        0 0 15px;
+.hive-step {
+  padding: 28px 25px;
+  background: rgba(255, 235, 161, 0.28);
+  border: 1px solid rgba(138, 106, 61, 0.18);
+  border-radius: 18px;
+  text-align: center;
+}
 
-      font-size:
-        0.8rem;
+.hive-step-number {
+  margin-bottom: 12px;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  color: #9a7645;
+}
 
-      font-weight:
-        700;
+.hive-step h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  color: #5f4630;
+}
 
-      letter-spacing:
-        0.15em;
-
-      color:
-        var(--hive-soft-brown);
-
-    }
-
-
-    .hive-step h3 {
-
-      margin:
-        0 0 10px;
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-size:
-        1.4rem;
-
-      font-weight:
-        500;
-
-      color:
-        var(--hive-dark-brown);
-
-    }
+.hive-step p {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.65;
+  color: #75695d;
+}
 
 
-    .hive-step p {
+/* MOBILE */
 
-      margin:
-        0;
+@media (max-width: 700px) {
 
-      line-height:
-        1.7;
+  .hive-steps {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
 
-    }
+  .hive-step {
+    padding: 24px 22px;
+  }
 
+}
 
     /* =====================================================
        MEMBER ACCESS
@@ -1364,6 +1319,156 @@
   font-style: italic;
 }
 
+    /* =========================================================
+   HONEY HIVE — ACCESS
+========================================================= */
+
+.hive-access {
+  padding: 45px 20px 70px;
+  text-align: center;
+}
+
+.hive-access-card {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 42px 35px;
+  background: #fffaf0;
+  border: 1px solid rgba(138, 106, 61, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 12px 35px rgba(95, 70, 48, 0.08);
+}
+
+.hive-access-icon {
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.hive-access-card h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  color: #5f4630;
+}
+
+.hive-access-card > p:not(.hive-eyebrow) {
+  max-width: 500px;
+  margin: 0 auto 25px;
+  line-height: 1.7;
+  color: #75695d;
+}
+
+
+/* PASSWORD FORM */
+
+.hive-password-form {
+  max-width: 590px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.hive-password-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #5f4630;
+}
+
+.hive-password-row {
+  display: flex;
+  gap: 10px;
+}
+
+.hive-password-row input {
+  flex: 1;
+  min-width: 0;
+  height: 52px;
+  padding: 0 16px;
+  border: 1px solid rgba(138, 106, 61, 0.3);
+  border-radius: 10px;
+  background: white;
+  color: #4f4034;
+  font: inherit;
+  outline: none;
+}
+
+.hive-password-row input:focus {
+  border-color: #9a7645;
+  box-shadow: 0 0 0 3px rgba(255, 235, 161, 0.55);
+}
+
+.hive-password-row button {
+  height: 52px;
+  padding: 0 22px;
+  border: none;
+  border-radius: 10px;
+  background: #5f4630;
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hive-password-row button:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.hive-password-note {
+  margin: 12px 0 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #8a7b6b;
+}
+
+.hive-password-error {
+  margin: 10px 0 0;
+  font-size: 0.85rem;
+  color: #8b4b3f;
+}
+
+
+/* EXPLORE BUTTON */
+
+.hive-explore-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 25px;
+  border-radius: 10px;
+  background: #5f4630;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hive-explore-button:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+  .hive-access-card {
+    padding: 34px 20px;
+  }
+
+  .hive-password-row {
+    flex-direction: column;
+  }
+
+  .hive-password-row input,
+  .hive-password-row button {
+    width: 100%;
+  }
+
+}
 
      /* =========================
        WISHLIST MODAL
@@ -2735,12 +2840,9 @@
 
         <div class="hive-hero-actions">
 
-          <a
-            href="#hive-membership"
-            class="hive-primary-button"
-          >
-            Explore the Hive
-          </a>
+        <a href="#hive-access" class="hive-explore-button">
+  Explore the Hive
+</a>
 
           <a
             href="YOUR-SUBSTACK-SUBSCRIBE-LINK-HERE"
@@ -2757,42 +2859,29 @@
 
     </section>
 
+<section class="hive-intro">
+  <div class="hive-intro-inner">
 
-    <!-- ===================================================
-         INTRODUCTION
-    ==================================================== -->
+    <p class="hive-eyebrow">A LITTLE MORE THAN THE PUBLIC LIBRARY</p>
 
-    <section class="hive-introduction">
+    <h2>Get a little deeper into Honey & Hymns.</h2>
 
-      <div class="hive-section-inner">
+    <p class="hive-intro-text">
+      Honey & Hymns is built around the ordinary things that make up family life —
+      faith, motherhood, homeschooling, homemaking, and all the little moments in between.
+    </p>
 
-        <p class="hive-eyebrow">
-          A LITTLE MORE THAN THE PUBLIC LIBRARY
-        </p>
+    <p class="hive-intro-text">
+      The Honey Hive is where we get to go a little deeper.
+    </p>
 
-        <h2>
-          Come a little deeper into Honey & Hymns.
-        </h2>
+    <p class="hive-intro-text">
+      Members receive encouragement and practical resources designed to make family life
+      a little more peaceful, intentional, and supported.
+    </p>
 
-        <p>
-          Honey & Hymns is built around the ordinary things that
-          make up family life — faith, motherhood, homeschooling,
-          homemaking, and all the little moments in between.
-        </p>
-
-        <p>
-          The Honey Hive is where we get to go a little deeper.
-        </p>
-
-        <p>
-          Members receive encouragement and practical resources
-          designed to make family life a little more peaceful,
-          intentional, and supported.
-        </p>
-
-      </div>
-
-    </section>
+  </div>
+</section>
 
 
     <!-- ===================================================
@@ -2912,84 +3001,80 @@
     </section>
 
 
-    <!-- ===================================================
-         HOW IT WORKS
-    ==================================================== -->
+   <section class="hive-how-it-works">
 
-    <section class="hive-how-it-works">
+  <div class="hive-section-heading">
 
-      <div class="hive-section-inner">
+    <p class="hive-eyebrow">HOW IT WORKS</p>
 
-        <p class="hive-eyebrow">
-          HOW IT WORKS
+    <h2>Simple by design.</h2>
+
+    <p>
+      The Honey Hive is meant to be easy to use, easy to return to,
+      and worth having tucked away for the moments when you need it.
+    </p>
+
+  </div>
+
+
+  <div class="hive-steps">
+
+    <div class="hive-step">
+
+      <div class="hive-step-number">01</div>
+
+      <div class="hive-step-content">
+
+        <h3>Become a Member</h3>
+
+        <p>
+          Join Honey & Hymns through Substack and choose the membership
+          option that's right for you.
         </p>
-
-        <h2>
-          Simple by design.
-        </h2>
-
-        <div class="hive-steps">
-
-
-          <div class="hive-step">
-
-            <span class="hive-step-number">
-              01
-            </span>
-
-            <h3>
-              Become a Member
-            </h3>
-
-            <p>
-              Join Honey & Hymns through Substack and choose
-              the membership option that's right for you.
-            </p>
-
-          </div>
-
-
-          <div class="hive-step">
-
-            <span class="hive-step-number">
-              02
-            </span>
-
-            <h3>
-              Receive Your Access
-            </h3>
-
-            <p>
-              Members receive the information they need to
-              enter the Honey Hive and access the private library.
-            </p>
-
-          </div>
-
-
-          <div class="hive-step">
-
-            <span class="hive-step-number">
-              03
-            </span>
-
-            <h3>
-              Come Back Anytime
-            </h3>
-
-            <p>
-              Return to the Hive whenever you need a resource,
-              want to read a member article, or want to see
-              what's new.
-            </p>
-
-          </div>
-
-
-        </div>
 
       </div>
 
+    </div>
+
+
+    <div class="hive-step">
+
+      <div class="hive-step-number">02</div>
+
+      <div class="hive-step-content">
+
+        <h3>Receive Your Access</h3>
+
+        <p>
+          Members receive the information they need to enter the Honey Hive
+          and access the private library.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="hive-step">
+
+      <div class="hive-step-number">03</div>
+
+      <div class="hive-step-content">
+
+        <h3>Come Back Anytime</h3>
+
+        <p>
+          Return to the Hive whenever you need a resource, want to read
+          a member article, or want to see what's new.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
   <!-- =======================================================
      HONEY HIVE MEMBERSHIP
 ======================================================= -->
@@ -3230,78 +3315,60 @@
          PASSWORD FUNCTIONALITY IS NOT BUILT YET.
     ==================================================== -->
 
-    <section class="hive-member-access">
+  <section class="hive-access" id="hive-access">
 
-      <div class="hive-access-box">
+  <div class="hive-access-card">
 
-        <div
-          class="hive-access-icon"
-          aria-hidden="true"
+    <div class="hive-access-icon">🐝</div>
+
+    <p class="hive-eyebrow">PRIVATE MEMBER LIBRARY</p>
+
+    <h2>Enter the Hive</h2>
+
+    <p>
+      Members can enter their current Honey Hive password
+      to access the private library.
+    </p>
+
+    <form id="hivePasswordForm" class="hive-password-form">
+
+      <label for="hivePassword">
+        Honey Hive Password
+      </label>
+
+      <div class="hive-password-row">
+
+        <input
+          type="password"
+          id="hivePassword"
+          name="hivePassword"
+          placeholder="Enter your password"
+          autocomplete="current-password"
+          required
         >
-          🐝
-        </div>
 
-        <p class="hive-eyebrow">
-          ALREADY A MEMBER?
-        </p>
-
-        <h2>
-          Enter the Hive
-        </h2>
-
-        <p>
-          Members can enter their current Honey Hive password
-          to access the private library.
-        </p>
-
-
-        <form
-          class="hive-password-form"
-          id="hivePasswordForm"
-        >
-
-          <label
-            for="hivePassword"
-            class="visually-hidden"
-          >
-            Honey Hive password
-          </label>
-
-          <input
-            type="password"
-            id="hivePassword"
-            name="hivePassword"
-            placeholder="Enter your password"
-            autocomplete="current-password"
-          >
-
-
-          <button
-            type="submit"
-            class="hive-primary-button"
-          >
-            Enter the Hive →
-          </button>
-
-        </form>
-
-
-        <p
-          class="hive-password-message"
-          id="hivePasswordMessage"
-          aria-live="polite"
-        ></p>
-
-
-        <p class="hive-access-note">
-          Your current Honey Hive password is provided through
-          Honey & Hymns member-only communication.
-        </p>
+        <button type="submit">
+          Enter the Hive →
+        </button>
 
       </div>
 
-    </section>
+      <p class="hive-password-note">
+        Your current Honey Hive password is provided through
+        Honey & Hymns member-only communication.
+      </p>
 
+      <p
+        id="hivePasswordError"
+        class="hive-password-error"
+        aria-live="polite"
+      ></p>
+
+    </form>
+
+  </div>
+
+</section>
 
     <!-- ===================================================
          FINAL JOIN CTA
