@@ -1360,22 +1360,18 @@
 /* PASSWORD FORM */
 
 .hive-password-form {
+  width: 100%;
   max-width: 590px;
   margin: 0 auto;
-  text-align: left;
-}
-
-.hive-password-form label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #5f4630;
+  text-align: center;
 }
 
 .hive-password-row {
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
+  width: 100%;
 }
 
 .hive-password-row input {
@@ -1414,44 +1410,24 @@
   transform: translateY(-1px);
   opacity: 0.92;
 }
+
 .hive-password-note {
-  display: block;
+  display: block !important;
   width: 100%;
-  margin: 12px auto 0;
+  max-width: 590px;
+  margin: 12px auto 0 !important;
+  padding: 0;
+  text-align: center !important;
   font-size: 0.8rem;
   line-height: 1.5;
   color: #8a7b6b;
-  text-align: center;
 }
+
 .hive-password-error {
   margin: 10px 0 0;
   font-size: 0.85rem;
   color: #8b4b3f;
 }
-
-
-/* EXPLORE BUTTON */
-
-.hive-explore-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 50px;
-  padding: 0 25px;
-  border-radius: 10px;
-  background: #5f4630;
-  color: white;
-  text-decoration: none;
-  font-weight: 700;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.hive-explore-button:hover {
-  transform: translateY(-1px);
-  opacity: 0.92;
-}
-
-
 /* MOBILE */
 
 @media (max-width: 650px) {
