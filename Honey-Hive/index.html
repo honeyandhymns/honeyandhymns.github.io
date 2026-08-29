@@ -1312,42 +1312,163 @@
 
   font-style: italic;
 }
-
-    /* =========================================================
-   HONEY HIVE — ACCESS
+/* =========================================================
+   HONEY HIVE — PASSWORD POPUP
 ========================================================= */
 
-.hive-access {
-  padding: 45px 20px 70px;
-  text-align: center;
+.hive-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
 }
 
-.hive-access-card {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 42px 35px;
+.hive-modal.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+/* BACKDROP */
+
+.hive-modal-backdrop {
+  position: absolute;
+  inset: 0;
+
+  background:
+    rgba(63, 48, 37, 0.55);
+
+  backdrop-filter:
+    blur(4px);
+}
+
+
+/* POPUP CARD */
+
+.hive-modal-card {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 620px;
+
+  padding: 45px 45px 40px;
+
   background: #fffaf0;
-  border: 1px solid rgba(138, 106, 61, 0.2);
+
+  border:
+    1px solid
+    rgba(138, 106, 61, 0.2);
+
   border-radius: 24px;
-  box-shadow: 0 12px 35px rgba(95, 70, 48, 0.08);
+
+  box-shadow:
+    0 25px 70px
+    rgba(63, 48, 37, 0.2);
+
+  text-align: center;
+
+  transform: translateY(12px) scale(0.98);
+
+  transition:
+    transform 0.25s ease;
 }
 
-.hive-access-icon {
-  margin-bottom: 10px;
-  font-size: 2rem;
+.hive-modal.open .hive-modal-card {
+  transform:
+    translateY(0)
+    scale(1);
 }
 
-.hive-access-card h2 {
-  margin: 0 0 12px;
-  font-size: clamp(1.9rem, 4vw, 2.6rem);
+
+/* CLOSE BUTTON */
+
+.hive-modal-close {
+  position: absolute;
+
+  top: 15px;
+  right: 18px;
+
+  width: 38px;
+  height: 38px;
+
+  border: none;
+
+  background: transparent;
+
   color: #5f4630;
+
+  font-size: 1.8rem;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  border-radius: 50%;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
-.hive-access-card > p:not(.hive-eyebrow) {
-  max-width: 500px;
-  margin: 0 auto 25px;
-  line-height: 1.7;
-  color: #75695d;
+.hive-modal-close:hover {
+  background:
+    rgba(255, 235, 161, 0.6);
+
+  transform:
+    rotate(5deg);
+}
+
+
+/* ICON */
+
+.hive-modal-card .hive-access-icon {
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+}
+
+
+/* HEADING */
+
+.hive-modal-card h2 {
+  margin:
+    0 0 12px;
+
+  font-size:
+    clamp(1.9rem, 4vw, 2.5rem);
+
+  color:
+    #5f4630;
+}
+
+
+/* DESCRIPTION */
+
+.hive-modal-text {
+  max-width: 480px;
+
+  margin:
+    0 auto 28px;
+
+  color:
+    #75695d;
+
+  line-height:
+    1.7;
 }
 
 
@@ -1355,72 +1476,184 @@
 
 .hive-password-form {
   width: 100%;
-  max-width: 590px;
+  max-width: 540px;
+
   margin: 0 auto;
+
   text-align: center;
 }
+
 
 .hive-password-row {
   display: flex;
+
   align-items: center;
-  justify-content: center;
+
   gap: 10px;
+
   width: 100%;
 }
+
 
 .hive-password-row input {
   flex: 1;
+
   min-width: 0;
+
   height: 52px;
-  padding: 0 16px;
-  border: 1px solid rgba(138, 106, 61, 0.3);
-  border-radius: 10px;
-  background: white;
-  color: #4f4034;
-  font: inherit;
-  outline: none;
+
+  padding:
+    0 18px;
+
+  border:
+    1px solid
+    rgba(138, 106, 61, 0.3);
+
+  border-radius:
+    999px;
+
+  background:
+    white;
+
+  color:
+    #4f4034;
+
+  font:
+    inherit;
+
+  outline:
+    none;
 }
+
 
 .hive-password-row input:focus {
-  border-color: #9a7645;
-  box-shadow: 0 0 0 3px rgba(255, 235, 161, 0.55);
+  border-color:
+    #9a7645;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(255, 235, 161, 0.55);
 }
 
-.hive-password-row button {
+
+/* PASSWORD BUTTON */
+
+.hive-password-button {
   height: 52px;
-  padding: 0 22px;
-  border: none;
-  border-radius: 10px;
-  background: #5f4630;
-  color: white;
-  font: inherit;
-  font-weight: 700;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+
+  padding:
+    0 22px;
+
+  border:
+    none;
+
+  border-radius:
+    999px;
+
+  background:
+    #5f4630;
+
+  color:
+    white;
+
+  font:
+    inherit;
+
+  font-weight:
+    700;
+
+  cursor:
+    pointer;
+
+  white-space:
+    nowrap;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
-.hive-password-row button:hover {
-  transform: translateY(-1px);
-  opacity: 0.92;
+
+.hive-password-button:hover {
+  transform:
+    translateY(-1px);
+
+  opacity:
+    0.92;
 }
+
+
+/* PASSWORD NOTE */
 
 .hive-password-note {
-  display: block;
   width: 100%;
-  max-width: 590px;
-  margin: 14px auto 0;
-  padding: 0;
-  text-align: center;
-  font-size: 0.8rem;
-  line-height: 1.5;
-  color: #8a7b6b;
+  max-width: 540px;
+
+  margin:
+    14px auto 0;
+
+  font-size:
+    0.8rem;
+
+  line-height:
+    1.5;
+
+  color:
+    #8a7b6b;
+
+  text-align:
+    center;
 }
 
+
+/* ERROR */
+
 .hive-password-error {
-  margin: 10px 0 0;
-  font-size: 0.85rem;
-  color: #8b4b3f;
+  min-height:
+    20px;
+
+  margin:
+    10px 0 0;
+
+  font-size:
+    0.85rem;
+
+  color:
+    #8b4b3f;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+  .hive-modal {
+    padding:
+      15px;
+  }
+
+
+  .hive-modal-card {
+    padding:
+      40px 20px 30px;
+
+    border-radius:
+      20px;
+  }
+
+
+  .hive-password-row {
+    flex-direction:
+      column;
+  }
+
+
+  .hive-password-row input,
+  .hive-password-button {
+    width:
+      100%;
+  }
+
 }
 /* MOBILE */
 
@@ -2811,9 +3044,13 @@
 
         <div class="hive-hero-actions">
 
-    <a href="#hive-access" class="hive-primary-button">
+<button
+  type="button"
+  class="hive-primary-button"
+  id="openHiveAccess"
+>
   Enter the Hive
-</a>
+</button>
 
           <a
             href="YOUR-SUBSTACK-SUBSCRIBE-LINK-HERE"
@@ -3280,62 +3517,8 @@
 
 </section>
 
-    <!-- ===================================================
-         MEMBER ACCESS
-         
-         PASSWORD FUNCTIONALITY IS NOT BUILT YET.
-    ==================================================== -->
+    <section class="hive-access" id="hive-access">
 
-  <section class="hive-access" id="hive-access">
-
-  <div class="hive-access-card">
-
-    <div class="hive-access-icon">🐝</div>
-
-    <p class="hive-eyebrow">PRIVATE MEMBER LIBRARY</p>
-
-    <h2>Enter the Hive</h2>
-
-    <p>
-      Members can enter their current Honey Hive password
-      to access the private library.
-    </p>
-
-    <form id="hivePasswordForm" class="hive-password-form">
-
-  <div class="hive-password-row">
-
-    <input
-      type="password"
-      id="hivePassword"
-      name="hivePassword"
-      placeholder="Enter your password"
-      autocomplete="current-password"
-      required
-    >
-
-    <button type="submit">
-      Enter the Hive →
-    </button>
-
-  </div>
-
-  <p
-    id="hivePasswordError"
-    class="hive-password-error"
-    aria-live="polite"
-  ></p>
-
-</form>
-
-<p class="hive-password-note">
-  Your current Honey Hive password is provided through
-  Honey & Hymns member-only communication.
-</p>
-
-  </div>
-
-</section>
 
     <!-- ===================================================
          FINAL JOIN CTA
@@ -3348,7 +3531,7 @@
         <div class="hive-join-card">
 
           <p class="hive-eyebrow">
-            READY TO COME INSIDE?
+            READY TO JOIN THE HONEY HIVE?
           </p>
 
           <h2>
@@ -3362,7 +3545,7 @@
           </p>
 
           <a
-            href="YOUR-SUBSTACK-SUBSCRIBE-LINK-HERE"
+            href="https://honeyandhymns.substack.com/subscribe"
             class="hive-primary-button"
             target="_blank"
             rel="noopener noreferrer"
@@ -3471,6 +3654,100 @@
   </footer>
 
  <script>
+
+<div
+  class="hive-modal"
+  id="hiveAccessModal"
+  aria-hidden="true"
+>
+
+  <div
+    class="hive-modal-backdrop"
+    data-hive-close
+  ></div>
+
+
+  <div
+    class="hive-modal-card"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="hiveModalTitle"
+  >
+
+    <button
+      type="button"
+      class="hive-modal-close"
+      id="closeHiveAccess"
+      aria-label="Close"
+    >
+      ×
+    </button>
+
+
+    <div class="hive-access-icon">
+      🐝
+    </div>
+
+
+    <p class="hive-eyebrow">
+      PRIVATE MEMBER LIBRARY
+    </p>
+
+
+    <h2 id="hiveModalTitle">
+      Enter the Hive
+    </h2>
+
+
+    <p class="hive-modal-text">
+      Members can enter their current Honey Hive password
+      to access the private library.
+    </p>
+
+
+    <form
+      id="hivePasswordForm"
+      class="hive-password-form"
+    >
+
+      <div class="hive-password-row">
+
+        <input
+          type="password"
+          id="hivePassword"
+          name="hivePassword"
+          placeholder="Enter your password"
+          autocomplete="current-password"
+          required
+        >
+
+        <button
+          type="submit"
+          class="hive-password-button"
+        >
+          Enter the Hive →
+        </button>
+
+      </div>
+
+
+      <p
+        id="hivePasswordError"
+        class="hive-password-error"
+        aria-live="polite"
+      ></p>
+
+    </form>
+
+
+    <p class="hive-password-note">
+      Your current Honey Hive password is provided through
+      Honey & Hymns member-only communication.
+    </p>
+
+  </div>
+
+</div>
 
   /* ========================================
    NAVIGATION DROPDOWNS
@@ -4584,6 +4861,153 @@ document.addEventListener(
 
       }
     );
+
+   /* =========================================================
+   HONEY HIVE PASSWORD POPUP
+========================================================= */
+
+const hiveAccessModal =
+  document.getElementById(
+    "hiveAccessModal"
+  );
+
+const openHiveAccess =
+  document.getElementById(
+    "openHiveAccess"
+  );
+
+const closeHiveAccess =
+  document.getElementById(
+    "closeHiveAccess"
+  );
+
+
+/* OPEN */
+
+if (
+  hiveAccessModal &&
+  openHiveAccess
+) {
+
+  openHiveAccess.addEventListener(
+    "click",
+    function() {
+
+      hiveAccessModal.classList.add(
+        "open"
+      );
+
+      hiveAccessModal.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.style.overflow =
+        "hidden";
+
+      const passwordInput =
+        document.getElementById(
+          "hivePassword"
+        );
+
+      if (passwordInput) {
+
+        setTimeout(
+          function() {
+
+            passwordInput.focus();
+
+          },
+          250
+        );
+
+      }
+
+    }
+  );
+
+}
+
+
+/* CLOSE FUNCTION */
+
+function closeHiveModal() {
+
+  if (!hiveAccessModal) {
+
+    return;
+
+  }
+
+  hiveAccessModal.classList.remove(
+    "open"
+  );
+
+  hiveAccessModal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow =
+    "";
+
+}
+
+
+/* CLOSE BUTTON */
+
+if (closeHiveAccess) {
+
+  closeHiveAccess.addEventListener(
+    "click",
+    closeHiveModal
+  );
+
+}
+
+
+/* CLICK OUTSIDE */
+
+if (hiveAccessModal) {
+
+  hiveAccessModal
+    .querySelectorAll(
+      "[data-hive-close]"
+    )
+    .forEach(
+      function(element) {
+
+        element.addEventListener(
+          "click",
+          closeHiveModal
+        );
+
+      }
+    );
+
+}
+
+
+/* ESCAPE KEY */
+
+document.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (
+      event.key === "Escape" &&
+      hiveAccessModal &&
+      hiveAccessModal.classList.contains(
+        "open"
+      )
+    ) {
+
+      closeHiveModal();
+
+    }
+
+  }
+);
 
   </script>
 
