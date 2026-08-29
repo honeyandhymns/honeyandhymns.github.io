@@ -31,7 +31,9 @@
   <url>
     <loc>https://honeyandhymns.com/Contact</loc>
   </url>
-
+ <url>
+    <loc>https://honeyandhymns.com/Honey-and-Hymns-Digital-Magazine</loc>
+  </url>
   <!-- Articles -->
   <url>
     <loc>https://honeyandhymns.com/Articles/are-girl-toddlers-more-strong-willed-than-boys/</loc>
@@ -71,5 +73,10 @@
   <url>
     <loc>https://honeyandhymns.com/Articles/your-no-guilt-guide-to-resting-when-youre-a-mom</loc>
   </url>
-
+  <url>
+    <loc>https://honeyandhymns.com/Articles/dolly-parton-imagination-library-favorite-books</loc>
+  </url>
+    <url>
+    <loc>https://honeyandhymns.com/Articles/screen-time-reward-system-children-responsibility</loc>
+  </url>
 </urlset>
