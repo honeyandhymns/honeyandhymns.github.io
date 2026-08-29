@@ -3309,35 +3309,35 @@
 
     <form id="hivePasswordForm" class="hive-password-form">
 
-      <div class="hive-password-row">
+  <div class="hive-password-row">
 
-        <input
-          type="password"
-          id="hivePassword"
-          name="hivePassword"
-          placeholder="Enter your password"
-          autocomplete="current-password"
-          required
-        >
+    <input
+      type="password"
+      id="hivePassword"
+      name="hivePassword"
+      placeholder="Enter your password"
+      autocomplete="current-password"
+      required
+    >
 
-          <button type="submit">
+    <button type="submit">
       Enter the Hive →
     </button>
 
-  </div>  <!-- THIS closes hive-password-row -->
+  </div>
 
-  <p class="hive-password-note">
-    Your current Honey Hive password is provided through
-    Honey & Hymns member-only communication.
-  </p>
+  <p
+    id="hivePasswordError"
+    class="hive-password-error"
+    aria-live="polite"
+  ></p>
 
-      <p
-        id="hivePasswordError"
-        class="hive-password-error"
-        aria-live="polite"
-      ></p>
+</form>
 
-    </form>
+<p class="hive-password-note">
+  Your current Honey Hive password is provided through
+  Honey & Hymns member-only communication.
+</p>
 
   </div>
 
