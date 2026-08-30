@@ -1,1 +1,3521 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Inside the Honey Hive | Honey & Hymns</title>
+
+  <meta
+    name="description"
+    content="The Honey Hive member library at Honey & Hymns."
+  >
+
+
+  <!-- GOOGLE FONTS -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    /* =====================================================
+       HONEY HIVE — BASE
+    ===================================================== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    body {
+      margin: 0;
+
+      background: #FFFDF0;
+
+      color: #403521;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+    }
+
+
+    a {
+      color: inherit;
+    }
+
+  /* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+  background: #FFEBA1;
+  padding: 25px 20px 15px;
+  text-align: center;
+  border-bottom: 1px solid rgba(90, 70, 30, 0.12);
+}
+
+.header-brand {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.site-logo {
+  width: 365px;
+  max-width: 86%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.header-tagline {
+  margin: 4px 0 0;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 0.84rem;
+  letter-spacing: 2px;
+  color: #5D4B2D;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.site-nav {
+  background: #FFEBA1;
+  text-align: center;
+  padding: 9px 15px 13px;
+
+  border-bottom:
+    1px solid
+    rgba(90, 70, 30, 0.12);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.site-nav a,
+.shop-toggle,
+.wishlist-header-button {
+  color: #514229;
+
+  text-decoration: none;
+
+  margin: 0 9px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 0.95rem;
+
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover,
+.shop-toggle:hover,
+.wishlist-header-button:hover {
+  color: #967331;
+}
+
+.site-nav a.active {
+  color: #80652D;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   SHOP DROPDOWN
+========================================================= */
+
+.shop-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.shop-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  line-height: inherit;
+}
+
+.shop-menu {
+  position: absolute;
+
+  top: calc(100% + 10px);
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    translateY(-6px);
+
+  min-width: 250px;
+
+  background: #FFFDF0;
+
+  border:
+    1px solid
+    #D8C79F;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 8px 22px
+    rgba(77, 64, 41, 0.16);
+
+  padding: 8px 0;
+
+  text-align: left;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+
+  z-index: 1000;
+}
+
+.shop-dropdown.open .shop-menu,
+.shop-dropdown:hover .shop-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform:
+    translateX(-50%)
+    translateY(0);
+}
+
+.shop-menu a {
+  display: block;
+  margin: 0;
+  padding: 10px 18px;
+  font-size: 0.92rem;
+}
+
+.shop-menu a:hover {
+  background: #FFF3C8;
+}
+
+.shop-coming-soon {
+  padding: 10px 18px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 0.92rem;
+}
+
+.shop-coming-soon small {
+  display: block;
+
+  font-family:
+    "Caveat",
+    cursive;
+
+  color: #80652D;
+  font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   WISHLIST HEADER BUTTON
+========================================================= */
+
+.wishlist-header-button {
+  background: none;
+  border: none;
+  padding: 0;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.wishlist-heart {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.wishlist-count {
+  min-width: 19px;
+  height: 19px;
+
+  padding: 0 5px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #D8B65F;
+  color: #4D4029;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 0.63rem;
+  font-weight: bold;
+}
+
+
+
+    /* =====================================================
+       DASHBOARD
+    ===================================================== */
+
+    .hive-dashboard {
+
+      max-width: 1100px;
+
+      margin: 0 auto;
+
+      padding:
+        55px
+        20px
+        70px;
+    }
+
+
+    /* =====================================================
+       WELCOME
+    ===================================================== */
+
+    .hive-dashboard-welcome {
+
+      max-width: 720px;
+
+      margin:
+        0
+        auto
+        55px;
+
+      text-align: center;
+    }
+
+
+    .hive-dashboard-eyebrow {
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      color: #80652D;
+
+      font-size: 1.15rem;
+
+      margin:
+        0
+        0
+        6px;
+    }
+
+
+    .hive-dashboard-welcome h1 {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          2.3rem,
+          5vw,
+          3.4rem
+        );
+
+      font-weight: 500;
+
+      line-height: 1.1;
+
+      margin:
+        0
+        0
+        15px;
+
+      color: #403521;
+    }
+
+
+    .hive-dashboard-welcome p {
+
+      max-width: 620px;
+
+      margin: 0 auto;
+
+      font-size: 0.95rem;
+
+      line-height: 1.7;
+
+      color: #66563C;
+    }
+
+
+    /* =====================================================
+       SECTION HEADINGS
+    ===================================================== */
+
+    .hive-dashboard-section {
+
+      margin-bottom: 60px;
+    }
+
+
+    .hive-dashboard-section-heading {
+
+      max-width: 680px;
+
+      margin:
+        0
+        auto
+        28px;
+
+      text-align: center;
+    }
+
+
+    .hive-dashboard-kicker {
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      color: #80652D;
+
+      font-size: 1.05rem;
+
+      margin:
+        0
+        0
+        4px;
+    }
+
+
+    .hive-dashboard-section-heading h2 {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          1.9rem,
+          4vw,
+          2.5rem
+        );
+
+      font-weight: 500;
+
+      line-height: 1.15;
+
+      color: #403521;
+
+      margin:
+        0
+        0
+        8px;
+    }
+
+
+    .hive-dashboard-section-heading p:last-child {
+
+      margin: 0;
+
+      color: #75695D;
+
+      font-size: 0.9rem;
+
+      line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       HIVE NEWS
+    ===================================================== */
+
+    .hive-news-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          1fr
+        );
+
+      gap: 18px;
+    }
+
+
+    .hive-news-card {
+
+      background: #FFF8D5;
+
+      border:
+        1px solid
+        #E5D6A6;
+
+      border-radius: 18px;
+
+      padding:
+        24px
+        23px;
+
+      box-shadow:
+        0
+        5px
+        16px
+        rgba(
+          77,
+          64,
+          41,
+          0.07
+        );
+    }
+
+
+    .hive-news-label {
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      color: #80652D;
+
+      font-size: 0.95rem;
+
+      margin:
+        0
+        0
+        6px;
+    }
+
+
+    .hive-news-card h3 {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.45rem;
+
+      font-weight: 500;
+
+      line-height: 1.2;
+
+      margin:
+        0
+        0
+        10px;
+
+      color: #403521;
+    }
+
+
+    .hive-news-card p {
+
+      margin: 0;
+
+      color: #66563C;
+
+      font-size: 0.8rem;
+
+      line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       WEEKLY MEMBER GIFT
+    ===================================================== */
+
+    .hive-member-gift {
+
+      background: #FFEBA1;
+
+      border:
+        1px solid
+        #E5D6A6;
+
+      border-radius: 22px;
+
+      padding:
+        38px
+        40px;
+
+      margin-bottom: 65px;
+
+      text-align: center;
+
+      box-shadow:
+        0
+        7px
+        20px
+        rgba(
+          77,
+          64,
+          41,
+          0.09
+        );
+    }
+
+
+    .hive-member-gift-content {
+
+      max-width: 620px;
+
+      margin: 0 auto;
+    }
+
+
+    .hive-member-gift h2 {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          2.6rem
+        );
+
+      font-weight: 500;
+
+      line-height: 1.15;
+
+      margin:
+        0
+        0
+        10px;
+
+      color: #403521;
+    }
+
+
+    .hive-member-gift p {
+
+      color: #66563C;
+
+      font-size: 0.9rem;
+
+      line-height: 1.6;
+
+      margin:
+        0
+        0
+        18px;
+    }
+
+
+    .hive-member-code {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 13px;
+
+      background:
+        rgba(
+          255,
+          253,
+          240,
+          0.75
+        );
+
+      border:
+        1px solid
+        #D8C79F;
+
+      border-radius: 10px;
+
+      padding:
+        9px
+        15px;
+
+      margin-bottom: 18px;
+    }
+
+
+    .hive-member-code span {
+
+      font-size: 0.68rem;
+
+      letter-spacing: 0.08em;
+
+      color: #80652D;
+    }
+
+
+    .hive-member-code strong {
+
+      font-size: 0.9rem;
+
+      letter-spacing: 0.08em;
+
+      color: #403521;
+    }
+
+
+    .hive-dashboard-button {
+
+      display: inline-block;
+
+      background: #80652D;
+
+      color: #FFFDF0;
+
+      text-decoration: none;
+
+      padding:
+        10px
+        18px;
+
+      border-radius: 7px;
+
+      font-size: 0.78rem;
+
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+
+    .hive-dashboard-button:hover {
+
+      background: #6D5524;
+
+      transform:
+        translateY(-1px);
+    }
+
+
+    /* =====================================================
+       RESOURCE LIBRARY
+    ===================================================== */
+
+    .hive-resource-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          2,
+          1fr
+        );
+
+      gap: 22px;
+    }
+
+
+    .hive-resource-card {
+
+      display: grid;
+
+      grid-template-columns:
+        35%
+        65%;
+
+      min-height: 220px;
+
+      background: #FFF8D5;
+
+      border:
+        1px solid
+        #E5D6A6;
+
+      border-radius: 20px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0
+        6px
+        18px
+        rgba(
+          77,
+          64,
+          41,
+          0.08
+        );
+    }
+
+
+    .hive-resource-image {
+
+      min-height: 220px;
+
+      overflow: hidden;
+
+      background: #EEE6CF;
+    }
+
+
+    .hive-resource-image img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+      display: block;
+    }
+
+
+    .hive-resource-content {
+
+      padding:
+        24px
+        25px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+    }
+
+
+    .hive-resource-label {
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      color: #80652D;
+
+      font-size: 0.95rem;
+
+      margin:
+        0
+        0
+        4px;
+    }
+
+
+    .hive-resource-content h3 {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.5rem;
+
+      font-weight: 500;
+
+      line-height: 1.2;
+
+      margin:
+        0
+        0
+        8px;
+
+      color: #403521;
+    }
+
+
+    .hive-resource-content p {
+
+      color: #66563C;
+
+      font-size: 0.78rem;
+
+      line-height: 1.55;
+
+      margin:
+        0
+        0
+        14px;
+    }
+
+
+    .hive-resource-button {
+
+      align-self: flex-start;
+
+      color: #80652D;
+
+      font-size: 0.75rem;
+
+      font-weight: 600;
+
+      text-decoration: none;
+    }
+
+
+    .hive-resource-button:hover {
+
+      text-decoration: underline;
+    }
+
+
+    /* =====================================================
+       CLOSING
+    ===================================================== */
+
+    .hive-dashboard-closing {
+
+      text-align: center;
+
+      padding-top: 15px;
+
+      color: #917333;
+    }
+
+
+    .hive-dashboard-closing p {
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      font-size: 1.05rem;
+
+      margin:
+        0
+        0
+        5px;
+    }
+
+
+    .hive-dashboard-closing span {
+
+      font-size: 1.2rem;
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 750px) {
+
+      .hive-dashboard {
+
+        padding:
+          40px
+          15px
+          55px;
+      }
+
+
+      .hive-news-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .hive-resource-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .hive-dashboard-welcome {
+
+        margin-bottom: 40px;
+      }
+
+
+      .hive-member-gift {
+
+        padding:
+          30px
+          20px;
+      }
+
+
+      .hive-resource-card {
+
+        grid-template-columns:
+          30%
+          70%;
+
+        min-height: 190px;
+      }
+
+
+      .hive-resource-image {
+
+        min-height: 190px;
+      }
+
+
+      .hive-resource-content {
+
+        padding:
+          19px
+          17px;
+      }
+
+
+      .hive-resource-content h3 {
+
+        font-size: 1.3rem;
+      }
+
+
+      .hive-resource-content p {
+
+        font-size: 0.73rem;
+      }
+
+    }
+
+    /* =========================================================
+   WISHLIST MODAL
+========================================================= */
+
+.wishlist-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    rgba(57, 45, 25, 0.60);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  z-index: 5000;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.wishlist-overlay.open {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+}
+
+.wishlist-modal {
+  width: min(620px, 94vw);
+
+  max-height:
+    min(700px, 88vh);
+
+  background: #FFFDF4;
+
+  border:
+    1px solid
+    #D8C79F;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 22px 55px
+    rgba(0,0,0,0.28);
+
+  overflow: hidden;
+
+  transform:
+    scale(0.88)
+    translateY(12px);
+
+  opacity: 0;
+
+  transition:
+    transform 0.35s
+      cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.25s ease;
+}
+
+.wishlist-overlay.open .wishlist-modal {
+  transform:
+    scale(1)
+    translateY(0);
+
+  opacity: 1;
+}
+
+.wishlist-modal-header {
+  background: #FFEBA1;
+
+  padding: 16px 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-bottom:
+    1px solid
+    #E0CC83;
+}
+
+.wishlist-modal-title {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 1.65rem;
+
+  font-weight: 500;
+
+  color: #403521;
+
+  margin: 0;
+}
+
+.wishlist-close {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    #D3BE80;
+
+  background: #FFF9DF;
+
+  color: #665020;
+
+  cursor: pointer;
+
+  font-size: 1.15rem;
+
+  line-height: 1;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.wishlist-close:hover {
+  background: #F3D582;
+}
+
+.wishlist-body {
+  padding: 20px;
+
+  max-height:
+    calc(88vh - 145px);
+
+  overflow-y: auto;
+}
+
+.wishlist-empty {
+  text-align: center;
+
+  padding: 35px 15px;
+}
+
+.wishlist-empty-icon {
+  font-size: 2.3rem;
+
+  color: #D8B65F;
+
+  margin-bottom: 8px;
+}
+
+.wishlist-empty h3 {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 1.6rem;
+
+  font-weight: 500;
+
+  color: #403521;
+
+  margin: 0 0 5px;
+}
+
+.wishlist-empty p {
+  margin: 0;
+
+  font-size: 0.8rem;
+
+  color: #68583D;
+}
+
+.wishlist-item {
+  display: grid;
+
+  grid-template-columns:
+    82px 1fr auto;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 11px;
+
+  margin-bottom: 10px;
+
+  background: #FFF8D9;
+
+  border:
+    1px solid
+    #E5D6AD;
+
+  border-radius: 11px;
+}
+
+.wishlist-item-image {
+  width: 82px;
+  height: 82px;
+
+  object-fit: cover;
+
+  border-radius: 7px;
+
+  display: block;
+}
+
+.wishlist-item-title {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 1.15rem;
+
+  line-height: 1.15;
+
+  color: #403521;
+
+  margin: 0 0 3px;
+}
+
+.wishlist-item-price {
+  font-size: 0.72rem;
+
+  color: #80652D;
+
+  margin: 0;
+}
+
+.wishlist-item-view {
+  display: inline-block;
+
+  margin-top: 6px;
+
+  color: #80652D;
+
+  font-size: 0.68rem;
+
+  text-decoration: none;
+
+  font-weight: bold;
+}
+
+.wishlist-item-view:hover {
+  text-decoration: underline;
+}
+
+.wishlist-remove {
+  border: none;
+
+  background: none;
+
+  color: #967331;
+
+  cursor: pointer;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 0.68rem;
+
+  padding: 5px;
+}
+
+.wishlist-remove:hover {
+  color: #6F5421;
+
+  text-decoration: underline;
+}
+
+.wishlist-modal-footer {
+  background: #FBF3D0;
+
+  border-top:
+    1px solid
+    #E0D2B0;
+
+  padding: 12px 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.wishlist-footer-note {
+  font-family:
+    "Caveat",
+    cursive;
+
+  color: #80652D;
+
+  font-size: 1rem;
+}
+
+.wishlist-clear {
+  border: none;
+
+  background: transparent;
+
+  color: #80652D;
+
+  font-size: 0.68rem;
+
+  cursor: pointer;
+
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   WELCOME LETTER POPUP
+========================================================= */
+
+.welcome-popup-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9000;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background:
+    rgba(57, 45, 25, 0.52);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.28s ease,
+    visibility 0.28s ease;
+}
+
+.welcome-popup-overlay.open {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+}
+
+.welcome-letter {
+  position: relative;
+
+  width: min(560px, 94vw);
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  padding: 42px 48px 38px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #FFFDF5 0%,
+      #FFFAF0 55%,
+      #FFF7DF 100%
+    );
+
+  border:
+    1px solid
+    #D8C79F;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 24px 70px
+    rgba(57, 45, 25, 0.28);
+
+  text-align: center;
+
+  transform:
+    translateY(14px)
+    scale(0.97);
+
+  opacity: 0;
+
+  transition:
+    transform 0.32s
+      cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.28s ease;
+}
+
+.welcome-popup-overlay.open .welcome-letter {
+  transform:
+    translateY(0)
+    scale(1);
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   WELCOME LETTER DECORATION
+========================================================= */
+
+.welcome-letter::before,
+.welcome-letter::after {
+  content: "✦";
+
+  position: absolute;
+
+  color: #D8B65F;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 15px;
+
+  opacity: 0.7;
+}
+
+.welcome-letter::before {
+  top: 18px;
+  left: 22px;
+}
+
+.welcome-letter::after {
+  top: 18px;
+  right: 22px;
+}
+
+
+/* =========================================================
+   WELCOME LETTER CLOSE
+========================================================= */
+
+.welcome-letter-close {
+  position: absolute;
+
+  top: 13px;
+  right: 15px;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    #D8C79F;
+
+  border-radius: 50%;
+
+  background: #FFF9DF;
+
+  color: #665020;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  line-height: 1;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.welcome-letter-close:hover {
+  background: #FFEAA0;
+
+  transform:
+    rotate(5deg);
+}
+
+
+/* =========================================================
+   WELCOME LETTER HEADER
+========================================================= */
+
+.welcome-letter-kicker {
+  margin: 0 0 7px;
+
+  color: #80652D;
+
+  font-family:
+    "Caveat",
+    cursive;
+
+  font-size: 1.35rem;
+
+  line-height: 1.2;
+}
+
+.welcome-letter-title {
+  margin: 0;
+
+  color: #403521;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(2.35rem, 7vw, 3.45rem);
+
+  font-weight: 500;
+
+  line-height: 0.98;
+}
+
+
+/* =========================================================
+   WELCOME LETTER RULE
+========================================================= */
+
+.welcome-letter-rule {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 20px 0 19px;
+}
+
+.welcome-letter-rule::before,
+.welcome-letter-rule::after {
+  content: "";
+
+  flex: 1;
+
+  height: 1px;
+
+  background: #D8C79F;
+}
+
+.welcome-letter-rule span {
+  color: #B79B58;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   WELCOME LETTER COPY
+========================================================= */
+
+.welcome-letter-copy {
+  margin: 0 auto 22px;
+
+  max-width: 440px;
+
+  color: #62594E;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   WELCOME GIFT
+========================================================= */
+
+.welcome-gift {
+  margin: 0 auto 23px;
+
+  padding: 17px 20px 19px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #FFF9DF,
+      #FFEBA1
+    );
+
+  border:
+    1px solid
+    #DFC878;
+
+  border-radius: 12px;
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255,255,255,0.7);
+}
+
+.welcome-gift-label {
+  margin: 0 0 4px;
+
+  color: #80652D;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.welcome-gift-title {
+  margin: 0 0 12px;
+
+  color: #403521;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 1.55rem;
+
+  font-weight: 600;
+}
+
+.welcome-gift-image {
+  width: 100%;
+
+  max-width: 260px;
+
+  height: auto;
+
+  display: block;
+
+  margin: 0 auto 10px;
+
+  border:
+    1px solid
+    rgba(128, 101, 45, 0.22);
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 5px 14px
+    rgba(77, 64, 41, 0.12);
+}
+
+.welcome-gift-description {
+  margin: 0;
+
+  color: #68583D;
+
+  font-family:
+    "Caveat",
+    cursive;
+
+  font-size: 1.08rem;
+}
+
+
+/* =========================================================
+   WELCOME LETTER FORM
+========================================================= */
+
+.welcome-letter-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  margin-top: 3px;
+}
+
+.welcome-letter-input {
+  width: 100%;
+
+  height: 48px;
+
+  padding: 0 15px;
+
+  background: #FFFDF7;
+
+  border:
+    1px solid
+    #D8C79F;
+
+  border-radius: 8px;
+
+  color: #40372D;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  box-sizing: border-box;
+}
+
+.welcome-letter-input::placeholder {
+  color: #9A8E7C;
+}
+
+.welcome-letter-input:focus {
+  outline: none;
+
+  border-color: #B79B58;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(183, 155, 88, 0.14);
+}
+
+.welcome-letter-button {
+  width: 100%;
+
+  min-height: 48px;
+
+  padding: 12px 22px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: #80652D;
+
+  color: #FFFDF4;
+
+  cursor: pointer;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 0.82rem;
+
+  font-weight: bold;
+
+  letter-spacing: 0.3px;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.welcome-letter-button:hover {
+  background: #665020;
+
+  transform:
+    translateY(-1px);
+}
+
+.welcome-letter-note {
+  margin: 9px 0 0;
+
+  color: #8A7B66;
+
+  font-size: 11px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
+.welcome-letter-dismiss {
+  margin-top: 18px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #80652D;
+
+  cursor: pointer;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 12px;
+
+  text-decoration: underline;
+
+  text-underline-offset: 3px;
+}
+
+.welcome-letter-dismiss:hover {
+  color: #5E4B2F;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  background: #4D4029;
+
+  color: #FFFDE7;
+
+  text-align: center;
+
+  padding: 27px 20px;
+}
+
+footer p {
+  margin: 5px 0;
+
+  font-size: 0.8rem;
+}
+
+  </style>
+
+</head>
+
+
+<body>
+
+ <!-- =========================================================
+       HONEY & HYMNS — WELCOME LETTER POPUP
+  ========================================================== -->
+
+  <div
+    class="welcome-popup-overlay"
+    id="welcomePopup"
+    aria-hidden="true"
+  >
+
+
+<div
+  class="welcome-letter"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="welcomePopupTitle"
+>
+
+  <button
+    class="welcome-letter-close"
+    type="button"
+    onclick="closeWelcomePopup()"
+    aria-label="Close welcome message"
+  >
+    ×
+  </button>
+
+  <p class="welcome-letter-kicker">
+    A little something for your home
+  </p>
+
+  <h2
+    class="welcome-letter-title"
+    id="welcomePopupTitle"
+  >
+    Welcome to<br>
+    Honey & Hymns 🐝
+  </h2>
+
+  <div class="welcome-letter-rule">
+    <span>✦</span>
+  </div>
+
+  <p class="welcome-letter-copy">
+    A peaceful little corner for Catholic
+    homemakers, homeschool moms, and women
+    trying to make a beautiful home in the midst
+    of ordinary family life.
+  </p>
+
+  <div class="welcome-gift">
+
+    <p class="welcome-gift-label">
+      A Free Gift for You
+    </p>
+
+    <h3 class="welcome-gift-title">
+      Mini At-Home Retreat
+    </h3>
+
+    <img
+      class="welcome-gift-image"
+      src="../images/honey-and-hymns-mini-home-retreat.png"
+      alt="Honey & Hymns Mini At-Home Retreat"
+    >
+
+    <p class="welcome-gift-description">
+      Pause • Pray • Reflect • Begin Again
+    </p>
+
+  </div>
+
+  <p class="welcome-letter-copy">
+    Join the Honey Hive and I'll send this
+    peaceful little retreat straight to your inbox.
+  </p>
+
+  <form
+    class="welcome-letter-form"
+    action="https://honeyandhymns.substack.com/welcome"
+    method="get"
+    target="_blank"
+  >
+
+    <button
+      class="welcome-letter-button"
+      type="submit"
+    >
+      Join the Honey Hive →
+    </button>
+
+  </form>
+
+  <p class="welcome-letter-note">
+    Free to join • Unsubscribe anytime
+  </p>
+
+  <button
+    class="welcome-letter-dismiss"
+    type="button"
+    onclick="closeWelcomePopup(true)"
+  >
+    Not today, thank you
+  </button>
+
+</div>
+
+
+  </div>
+
+  <!-- =========================================================
+       HEADER
+  ========================================================== -->
+
+  <header class="site-header">
+
+
+<div class="header-brand">
+
+  <a href="../">
+
+    <img
+      src="../images/honey-and-hymns-logo.png"
+      alt="Honey & Hymns"
+      class="site-logo"
+    >
+
+  </a>
+
+  <p class="header-tagline">
+    Faith • Homeschool • Homemaking
+  </p>
+
+</div>
+
+
+  </header>
+
+  <!-- =========================================================
+       NAVIGATION
+  ========================================================== -->
+
+  <nav class="site-nav">
+
+
+<a href="../">
+  Home
+</a>
+
+<a href="../Articles/">
+  Articles
+</a>
+
+<div class="shop-dropdown">
+
+  <button
+    class="shop-toggle"
+    type="button"
+    aria-expanded="false"
+  >
+    Shop
+  </button>
+
+  <div class="shop-menu">
+
+    <a href="../Resources/">
+      Resources
+    </a>
+
+    <a href="../Free-Downloads/">
+      Free Downloads
+    </a>
+
+    <a href="../Amazon-Finds/">
+      Amazon Finds
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- CURRENT ISSUES -->
+
+<div class="shop-dropdown">
+
+  <button
+    class="shop-toggle"
+    type="button"
+    aria-expanded="false"
+  >
+    Current Issues
+  </button>
+
+  <div class="shop-menu">
+
+    <a href="../Sunday-Gospel/">
+      Sunday Gospel for Kids
+    </a>
+
+    <a href="../Honey-and-Hymns-Digital-Magazine/">
+      Honey & Hymns Digital Magazine
+    </a>
+
+  </div>
+
+</div>
+
+
+<a href="../About/">
+  About
+</a>
+
+<a href="../Contact/">
+  Contact
+</a>
+
+<a
+  href="https://honeyandhymns.substack.com/subscribe"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Join the Honey Hive
+</a>
+
+
+<!-- WISHLIST -->
+
+<button
+  class="wishlist-header-button"
+  type="button"
+  onclick="openWishlist()"
+  aria-label="Open wishlist"
+>
+
+  <span class="wishlist-heart">
+    ♡
+  </span>
+
+  Wishlist
+
+  <span
+    class="wishlist-count"
+    id="wishlistCount"
+  >
+    0
+  </span>
+
+</button>
+
+
+  </nav>
+  <!-- =====================================================
+       HONEY HIVE MEMBER DASHBOARD
+  ====================================================== -->
+
+  <main class="hive-dashboard">
+
+
+    <!-- ===================================================
+         WELCOME
+    ==================================================== -->
+
+    <section class="hive-dashboard-welcome">
+
+      <p class="hive-dashboard-eyebrow">
+        WELCOME INSIDE THE HONEY HIVE
+      </p>
+
+      <h1>
+        Come in and stay awhile.
+      </h1>
+
+      <p>
+        Your cozy little corner of Honey & Hymns for resources,
+        encouragement, member gifts, and a first look at what's
+        coming next.
+      </p>
+
+    </section>
+
+
+    <!-- ===================================================
+         HIVE NEWS
+    ==================================================== -->
+
+    <section class="hive-dashboard-section">
+
+      <div class="hive-dashboard-section-heading">
+
+        <p class="hive-dashboard-kicker">
+          A LITTLE NEWS FROM THE HIVE
+        </p>
+
+        <h2>
+          Around the Hive
+        </h2>
+
+        <p>
+          You're hearing it here first.
+        </p>
+
+      </div>
+
+
+      <div class="hive-news-grid">
+
+
+        <article class="hive-news-card">
+
+          <p class="hive-news-label">
+            COMING SOON
+          </p>
+
+          <h3>
+            Something new is being added to the Hive.
+          </h3>
+
+          <p>
+            This is where members will get a little peek
+            at what's coming to Honey & Hymns before everyone else.
+          </p>
+
+        </article>
+
+
+        <article class="hive-news-card">
+
+          <p class="hive-news-label">
+            NEW IN THE HIVE
+          </p>
+
+          <h3>
+            New resources are on the way.
+          </h3>
+
+          <p>
+            Check back here for new printables, articles,
+            collections, and other little things we're working on.
+          </p>
+
+        </article>
+
+
+        <article class="hive-news-card">
+
+          <p class="hive-news-label">
+            A LITTLE SNEAK PEEK
+          </p>
+
+          <h3>
+            Members always get the first look.
+          </h3>
+
+          <p>
+            This space will become our little bulletin board
+            for what's happening behind the scenes.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         WEEKLY MEMBER GIFT
+    ==================================================== -->
+
+    <section class="hive-member-gift">
+
+      <div class="hive-member-gift-content">
+
+        <p class="hive-dashboard-kicker">
+          YOUR WEEKLY MEMBER GIFT
+        </p>
+
+        <h2>
+          This Week's Honey & Hymns Issue
+        </h2>
+
+        <p>
+          Enjoy the current issue completely free as a
+          Honey Hive member.
+        </p>
+
+
+        <div class="hive-member-code">
+
+          <span>
+            MEMBER CODE
+          </span>
+
+          <strong>
+            HIVEFREE
+          </strong>
+
+        </div>
+
+
+        <!--
+          REPLACE # WITH THE ACTUAL
+          GOOGLE DRIVE DOWNLOAD LINK
+        -->
+
+        <a
+          href="#"
+          class="hive-dashboard-button"
+          id="currentIssueDownload"
+        >
+          Download Now →
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         MEMBER LIBRARY
+    ==================================================== -->
+
+    <section class="hive-dashboard-section">
+
+
+      <div class="hive-dashboard-section-heading">
+
+        <p class="hive-dashboard-kicker">
+          YOUR MEMBER LIBRARY
+        </p>
+
+        <h2>
+          Gather what you need.
+        </h2>
+
+        <p>
+          Resources to help with faith, family, homeschool,
+          homemaking, and the ordinary days in between.
+        </p>
+
+      </div>
+
+
+      <div class="hive-resource-grid">
+
+
+        <!-- =================================================
+             PRINTABLES
+        ================================================== -->
+
+        <article class="hive-resource-card">
+
+          <div class="hive-resource-image">
+
+            <img
+              src="../images/honey-hive-printables.png"
+              alt="Honey & Hymns printable resources"
+            >
+
+          </div>
+
+
+          <div class="hive-resource-content">
+
+            <p class="hive-resource-label">
+              PRINTABLES
+            </p>
+
+            <h3>
+              Little things to make life a little easier.
+            </h3>
+
+            <p>
+              Browse member printables for homeschool,
+              homemaking, faith, family life, and more.
+            </p>
+
+            <a
+              href="#printables"
+              class="hive-resource-button"
+            >
+              Explore Printables →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- =================================================
+             CURRENT ISSUES
+        ================================================== -->
+
+        <article class="hive-resource-card">
+
+          <div class="hive-resource-image">
+
+            <img
+              src="../images/honey-hive-current-issues.png"
+              alt="Honey & Hymns digital magazine issues"
+            >
+
+          </div>
+
+
+          <div class="hive-resource-content">
+
+            <p class="hive-resource-label">
+              CURRENT ISSUES
+            </p>
+
+            <h3>
+              Your little collection of Honey & Hymns.
+            </h3>
+
+            <p>
+              Browse current and past issues of the
+              Honey & Hymns Digital Magazine.
+            </p>
+
+            <a
+              href="#issues"
+              class="hive-resource-button"
+            >
+              Browse Issues →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- =================================================
+             BI-WEEKLY ARTICLES
+        ================================================== -->
+
+        <article class="hive-resource-card">
+
+          <div class="hive-resource-image">
+
+            <img
+              src="../images/honey-hive-articles.png"
+              alt="Honey & Hymns member articles"
+            >
+
+          </div>
+
+
+          <div class="hive-resource-content">
+
+            <p class="hive-resource-label">
+              MEMBER ARTICLES
+            </p>
+
+            <h3>
+              A quiet place to read and reflect.
+            </h3>
+
+            <p>
+              Read Honey & Hymns' bi-weekly member-only
+              articles and reflections.
+            </p>
+
+            <a
+              href="#articles"
+              class="hive-resource-button"
+            >
+              Read the Articles →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- =================================================
+             MEMBER RESOURCES
+        ================================================== -->
+
+        <article class="hive-resource-card">
+
+          <div class="hive-resource-image">
+
+            <img
+              src="../images/honey-hive-resources.png"
+              alt="Honey & Hymns member resources"
+            >
+
+          </div>
+
+
+          <div class="hive-resource-content">
+
+            <p class="hive-resource-label">
+              MEMBER RESOURCES
+            </p>
+
+            <h3>
+              A growing little library.
+            </h3>
+
+            <p>
+              Discover special resources created just for
+              Honey Hive members.
+            </p>
+
+            <a
+              href="#resources"
+              class="hive-resource-button"
+            >
+              Explore the Library →
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         CLOSING
+    ==================================================== -->
+
+    <section class="hive-dashboard-closing">
+
+      <p>
+        Made with a little honey, a little faith,
+        and a lot of love for the ordinary.
+      </p>
+
+      <span>
+        🐝
+      </span>
+
+    </section>
+
+     <!-- =========================================================
+       WISHLIST POPUP
+  ========================================================== -->
+
+  <div
+    class="wishlist-overlay"
+    id="wishlistOverlay"
+    aria-hidden="true"
+  >
+
+
+<div
+  class="wishlist-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="wishlistTitle"
+>
+
+  <div class="wishlist-modal-header">
+
+    <h2
+      class="wishlist-modal-title"
+      id="wishlistTitle"
+    >
+      My Honey & Hymns Wishlist
+    </h2>
+
+    <button
+      class="wishlist-close"
+      type="button"
+      onclick="closeWishlist()"
+      aria-label="Close wishlist"
+    >
+      ×
+    </button>
+
+  </div>
+
+
+  <div
+    class="wishlist-body"
+    id="wishlistBody"
+  >
+  </div>
+
+
+  <div class="wishlist-modal-footer">
+
+    <span
+      class="wishlist-footer-note"
+      id="wishlistFooterNote"
+    >
+      Your little collection of favorites
+    </span>
+
+    <button
+      class="wishlist-clear"
+      type="button"
+      onclick="clearWishlist()"
+    >
+      Clear Wishlist
+    </button>
+
+  </div>
+
+</div>
+
+
+  </div>
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+
+  <footer>
+
+<p>
+  Honey & Hymns
+</p>
+
+<p>
+  Faith • Homeschool • Homemaking
+</p>
+
+  </footer>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+  /* =========================================================
+     NAVIGATION DROPDOWNS
+  ========================================================= */
+
+  const dropdowns = document.querySelectorAll(".shop-dropdown");
+
+  dropdowns.forEach(function (dropdown) {
+
+    const toggle = dropdown.querySelector(".shop-toggle");
+
+    if (!toggle) return;
+
+    toggle.addEventListener("click", function (event) {
+
+      event.stopPropagation();
+
+      dropdowns.forEach(function (otherDropdown) {
+
+        if (otherDropdown !== dropdown) {
+
+          otherDropdown.classList.remove("open");
+
+          const otherToggle =
+            otherDropdown.querySelector(".shop-toggle");
+
+          if (otherToggle) {
+            otherToggle.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+          }
+
+        }
+
+      });
+
+      const isOpen =
+        dropdown.classList.toggle("open");
+
+      toggle.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
+
+    });
+
+  });
+
+
+  /* =========================================================
+     CLOSE NAVIGATION DROPDOWNS
+  ========================================================= */
+
+  document.addEventListener("click", function (event) {
+
+    dropdowns.forEach(function (dropdown) {
+
+      if (!dropdown.contains(event.target)) {
+
+        dropdown.classList.remove("open");
+
+        const toggle =
+          dropdown.querySelector(".shop-toggle");
+
+        if (toggle) {
+          toggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+        }
+
+      }
+
+    });
+
+  });
+
+
+  /* =========================================================
+     HONEY & HYMNS — WELCOME POPUP
+  ========================================================= */
+
+  const WELCOME_POPUP_DISMISSED_KEY =
+    "honeyAndHymnsWelcomePopupDismissed";
+
+  const WELCOME_POPUP_SUBSCRIBED_KEY =
+    "honeyAndHymnsWelcomePopupSubscribed";
+
+  const WELCOME_POPUP_DELAY = 8000;
+
+
+  function openWelcomePopup() {
+
+    const popup =
+      document.getElementById("welcomePopup");
+
+    if (!popup) return;
+
+    popup.classList.add("open");
+
+    popup.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+    document.body.style.overflow = "hidden";
+
+  }
+
+
+  function closeWelcomePopup(
+    rememberDismissal = false
+  ) {
+
+    const popup =
+      document.getElementById("welcomePopup");
+
+    if (!popup) return;
+
+    popup.classList.remove("open");
+
+    popup.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    document.body.style.overflow = "";
+
+    if (rememberDismissal) {
+
+      localStorage.setItem(
+        WELCOME_POPUP_DISMISSED_KEY,
+        Date.now().toString()
+      );
+
+    }
+
+  }
+
+
+  function shouldShowWelcomePopup() {
+
+    const dismissed =
+      localStorage.getItem(
+        WELCOME_POPUP_DISMISSED_KEY
+      );
+
+    const subscribed =
+      localStorage.getItem(
+        WELCOME_POPUP_SUBSCRIBED_KEY
+      );
+
+
+    /* Never show again after subscribing. */
+
+    if (subscribed) {
+      return false;
+    }
+
+
+    /* Wait 30 days after dismissal. */
+
+    if (dismissed) {
+
+      const dismissedTime =
+        Number(dismissed);
+
+      const thirtyDays =
+        30 *
+        24 *
+        60 *
+        60 *
+        1000;
+
+      const timeSinceDismissal =
+        Date.now() - dismissedTime;
+
+      if (timeSinceDismissal < thirtyDays) {
+        return false;
+      }
+
+    }
+
+
+    return true;
+
+  }
+
+
+  function markWelcomePopupSubscribed() {
+
+    localStorage.setItem(
+      WELCOME_POPUP_SUBSCRIBED_KEY,
+      "true"
+    );
+
+  }
+
+
+  const welcomePopup =
+    document.getElementById("welcomePopup");
+
+
+  if (welcomePopup) {
+
+    if (shouldShowWelcomePopup()) {
+
+      window.setTimeout(function () {
+
+        if (shouldShowWelcomePopup()) {
+          openWelcomePopup();
+        }
+
+      }, WELCOME_POPUP_DELAY);
+
+    }
+
+
+    /* Close when clicking the dark backdrop. */
+
+    welcomePopup.addEventListener(
+      "click",
+      function (event) {
+
+        if (event.target === welcomePopup) {
+
+          closeWelcomePopup(true);
+
+        }
+
+      }
+    );
+
+
+    /* Close when pressing Escape. */
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (
+          event.key === "Escape" &&
+          welcomePopup.classList.contains("open")
+        ) {
+
+          closeWelcomePopup(true);
+
+        }
+
+      }
+    );
+
+
+    /* Mark visitor as subscribed when form is submitted. */
+
+    const welcomeForm =
+      welcomePopup.querySelector(
+        ".welcome-letter-form"
+      );
+
+
+    if (welcomeForm) {
+
+      welcomeForm.addEventListener(
+        "submit",
+        function () {
+
+          markWelcomePopupSubscribed();
+
+          closeWelcomePopup();
+
+        }
+      );
+
+    }
+
+  }
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+
+
+        /*
+         * Temporary download placeholder.
+         *
+         * We will replace the # link with the
+         * actual Google Drive download link.
+         */
+
+        const currentIssueDownload =
+          document.getElementById(
+            "currentIssueDownload"
+          );
+
+
+        if (currentIssueDownload) {
+
+          currentIssueDownload.addEventListener(
+            "click",
+            function (event) {
+
+              if (
+                currentIssueDownload.getAttribute(
+                  "href"
+                ) === "#"
+              ) {
+
+                event.preventDefault();
+
+              }
+
+            }
+          );
+
+        }
+
+      }
+    );
+
+       /* =========================================================
+     WISHLIST STORAGE
+  ========================================================= */
+
+  const WISHLIST_STORAGE_KEY =
+    "honeyAndHymnsWishlist";
+
+
+  function getWishlist() {
+
+    try {
+
+      const stored =
+        localStorage.getItem(
+          WISHLIST_STORAGE_KEY
+        );
+
+
+      if (!stored) {
+        return [];
+      }
+
+
+      const parsed =
+        JSON.parse(stored);
+
+
+      return Array.isArray(parsed)
+        ? parsed
+        : [];
+
+    } catch (error) {
+
+      return [];
+
+    }
+
+  }
+
+
+  function saveWishlist(items) {
+
+    localStorage.setItem(
+      WISHLIST_STORAGE_KEY,
+      JSON.stringify(items)
+    );
+
+  }
+
+
+  /* =========================================================
+     WISHLIST COUNT
+  ========================================================= */
+
+  function updateWishlistCount() {
+
+    const countElement =
+      document.getElementById(
+        "wishlistCount"
+      );
+
+
+    if (!countElement) {
+      return;
+    }
+
+
+    countElement.textContent =
+      getWishlist().length;
+
+  }
+
+
+  /* =========================================================
+     CHECK WISHLIST
+  ========================================================= */
+
+  function isInWishlist(id) {
+
+    return getWishlist().some(
+      function (item) {
+
+        return item.id === id;
+
+      }
+    );
+
+  }
+
+
+  /* =========================================================
+     UPDATE WISHLIST BUTTONS
+  ========================================================= */
+
+  function updateWishlistButtons() {
+
+    const buttons =
+      document.querySelectorAll(
+        ".wishlist-button"
+      );
+
+
+    buttons.forEach(
+      function (button) {
+
+        const id =
+          button.dataset.wishlistId;
+
+
+        if (isInWishlist(id)) {
+
+          button.classList.add(
+            "saved"
+          );
+
+
+          button.textContent =
+            "♥ Saved to Wishlist";
+
+        } else {
+
+          button.classList.remove(
+            "saved"
+          );
+
+
+          button.textContent =
+            "♡ Add to Wishlist";
+
+        }
+
+      }
+    );
+
+  }
+
+
+  /* =========================================================
+     TOGGLE WISHLIST
+  ========================================================= */
+
+  function toggleWishlist(button) {
+
+    const id =
+      button.dataset.wishlistId;
+
+
+    if (!id) {
+      return;
+    }
+
+
+    const product = {
+
+      id: id,
+
+      title:
+        button.dataset.title || "",
+
+      price:
+        button.dataset.price || "",
+
+      image:
+        button.dataset.image || "",
+
+      url:
+        button.dataset.url || ""
+
+    };
+
+
+    let wishlist =
+      getWishlist();
+
+
+    const existingIndex =
+      wishlist.findIndex(
+        function (item) {
+
+          return item.id === id;
+
+        }
+      );
+
+
+    if (existingIndex !== -1) {
+
+      wishlist.splice(
+        existingIndex,
+        1
+      );
+
+    } else {
+
+      wishlist.push(
+        product
+      );
+
+    }
+
+
+    saveWishlist(
+      wishlist
+    );
+
+
+    updateWishlistCount();
+
+    updateWishlistButtons();
+
+  }
+
+
+  /* =========================================================
+     PRODUCT WISHLIST EVENTS
+  ========================================================= */
+
+  document
+    .querySelectorAll(
+      ".wishlist-button"
+    )
+    .forEach(
+      function (button) {
+
+        button.addEventListener(
+          "click",
+          function () {
+
+            toggleWishlist(
+              button
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+  /* =========================================================
+     ESCAPE HTML
+  ========================================================= */
+
+  function escapeHtml(value) {
+
+    return String(value)
+
+      .replace(
+        /&/g,
+        "&amp;"
+      )
+
+      .replace(
+        /</g,
+        "&lt;"
+      )
+
+      .replace(
+        />/g,
+        "&gt;"
+      )
+
+      .replace(
+        /"/g,
+        "&quot;"
+      )
+
+      .replace(
+        /'/g,
+        "&#039;"
+      );
+
+  }
+
+
+  /* =========================================================
+     RENDER WISHLIST
+  ========================================================= */
+
+  function renderWishlist() {
+
+    const body =
+      document.getElementById(
+        "wishlistBody"
+      );
+
+
+    if (!body) {
+      return;
+    }
+
+
+    const wishlist =
+      getWishlist();
+
+
+    if (wishlist.length === 0) {
+
+      body.innerHTML = `
+
+        <div class="wishlist-empty">
+
+          <div class="wishlist-empty-icon">
+            ♡
+          </div>
+
+          <h3>
+            Your wishlist is empty
+          </h3>
+
+          <p>
+            Save a few Honey & Hymns favorites
+            and they'll wait here for you.
+          </p>
+
+        </div>
+
+      `;
+
+
+      return;
+
+    }
+
+
+    body.innerHTML =
+      wishlist
+        .map(
+          function (item) {
+
+            return `
+
+              <div
+                class="wishlist-item"
+                data-item-id="${escapeHtml(item.id)}"
+              >
+
+                <img
+                  class="wishlist-item-image"
+                  src="${escapeHtml(item.image)}"
+                  alt="${escapeHtml(item.title)}"
+                >
+
+                <div>
+
+                  <h3 class="wishlist-item-title">
+                    ${escapeHtml(item.title)}
+                  </h3>
+
+                  <p class="wishlist-item-price">
+                    ${escapeHtml(item.price)}
+                  </p>
+
+                  <a
+                    class="wishlist-item-view"
+                    href="${escapeHtml(item.url)}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Product →
+                  </a>
+
+                </div>
+
+                <button
+                  class="wishlist-remove"
+                  type="button"
+                  data-remove-id="${escapeHtml(item.id)}"
+                >
+                  Remove
+                </button>
+
+              </div>
+
+            `;
+
+          }
+        )
+        .join("");
+
+
+    /* Add remove button events. */
+
+    body
+      .querySelectorAll(
+        ".wishlist-remove"
+      )
+      .forEach(
+        function (button) {
+
+          button.addEventListener(
+            "click",
+            function () {
+
+              removeFromWishlist(
+                button.dataset.removeId
+              );
+
+            }
+          );
+
+        }
+      );
+
+  }
+
+
+  /* =========================================================
+     REMOVE FROM WISHLIST
+  ========================================================= */
+
+  function removeFromWishlist(id) {
+
+    const wishlist =
+      getWishlist()
+        .filter(
+          function (item) {
+
+            return item.id !== id;
+
+          }
+        );
+
+
+    saveWishlist(
+      wishlist
+    );
+
+
+    updateWishlistCount();
+
+    updateWishlistButtons();
+
+    renderWishlist();
+
+  }
+
+
+  /* =========================================================
+     OPEN WISHLIST
+  ========================================================= */
+
+  window.openWishlist = function () {
+
+    renderWishlist();
+
+
+    const overlay =
+      document.getElementById(
+        "wishlistOverlay"
+      );
+
+
+    if (!overlay) {
+      return;
+    }
+
+
+    overlay.classList.add(
+      "open"
+    );
+
+
+    overlay.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+    document.body.style.overflow =
+      "hidden";
+
+  };
+
+
+  /* =========================================================
+     CLOSE WISHLIST
+  ========================================================= */
+
+  window.closeWishlist = function () {
+
+    const overlay =
+      document.getElementById(
+        "wishlistOverlay"
+      );
+
+
+    if (!overlay) {
+      return;
+    }
+
+
+    overlay.classList.remove(
+      "open"
+    );
+
+
+    overlay.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+
+    document.body.style.overflow =
+      "";
+
+  };
+
+
+  /* =========================================================
+     CLEAR WISHLIST
+  ========================================================= */
+
+  window.clearWishlist = function () {
+
+    const wishlist =
+      getWishlist();
+
+
+    if (wishlist.length === 0) {
+      return;
+    }
+
+
+    const confirmed =
+      window.confirm(
+        "Are you sure you want to clear your wishlist?"
+      );
+
+
+    if (!confirmed) {
+      return;
+    }
+
+
+    saveWishlist([]);
+
+
+    updateWishlistCount();
+
+    updateWishlistButtons();
+
+    renderWishlist();
+
+  };
+
+
+  /* =========================================================
+     WISHLIST — CLICK OUTSIDE
+  ========================================================= */
+
+  const wishlistOverlay =
+    document.getElementById(
+      "wishlistOverlay"
+    );
+
+
+  if (wishlistOverlay) {
+
+    wishlistOverlay.addEventListener(
+      "click",
+      function (event) {
+
+        if (
+          event.target === wishlistOverlay
+        ) {
+
+          window.closeWishlist();
+
+        }
+
+      }
+    );
+
+  }
+  </script>
+
+
+</body>
+
+</html>
+
