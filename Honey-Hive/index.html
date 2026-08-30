@@ -490,154 +490,184 @@
 .hive-intro-text:last-child {
   margin-bottom: 0;
 }
+
 /* =========================================================
-   HONEY HIVE — WIDE HORIZONTAL CAROUSEL
+   HONEY HIVE — HORIZONTAL FEATURE CAROUSEL
+========================================================= */
+
+.hive-info-carousel {
+  background: #FFFDF0;
+  padding: 30px 18px 40px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.hive-carousel-header {
+  max-width: 700px;
+  margin: 0 auto 22px;
+  text-align: center;
+}
+
+.hive-eyebrow {
+  font-family: "Caveat", cursive;
+  color: #80652D;
+  font-size: 1.15rem;
+  margin: 0 0 4px;
+}
+
+.hive-carousel-header h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.2;
+  color: #403521;
+  margin: 0;
+}
+
+
+/* =========================================================
+   CAROUSEL
 ========================================================= */
 
 .hive-carousel {
   position: relative;
-  width: min(850px, 92%);
-  margin: 35px auto 0;
+  max-width: 1040px;
+  margin: 0 auto;
   overflow: hidden;
+  border-radius: 22px;
 }
 
 
 /* =========================================================
-   SLIDES
+   TRACK
+========================================================= */
+
+.hive-carousel-track {
+  display: flex;
+
+  transition:
+    transform 0.65s ease;
+}
+
+
+/* =========================================================
+   SLIDE
 ========================================================= */
 
 .hive-carousel-slide {
-  display: none;
-  width: 100%;
-}
-
-.hive-carousel-slide.active {
-  display: block;
+  min-width: 100%;
+  padding: 0 46px;
+  box-sizing: border-box;
 }
 
 
 /* =========================================================
-   HORIZONTAL HONEY HIVE CARD
+   CARD
 ========================================================= */
 
-.hive-benefit-card {
-  width: 100%;
-  min-height: 150px;
+.hive-carousel-card {
+  height: 250px;
 
-  margin: 0 auto;
+  display: grid;
 
-  padding: 22px 35px;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  gap: 25px;
+  grid-template-columns:
+    35% 65%;
 
   background: #FFEBA1;
 
   border:
     1px solid
-    rgba(91, 70, 54, 0.12);
+    #E5D6A6;
 
-  border-radius: 18px;
+  border-radius: 20px;
+
+  overflow: hidden;
 
   box-shadow:
     0 7px 20px
-    rgba(91, 70, 54, 0.07);
-
-  text-align: left;
-
-  overflow: hidden;
+    rgba(77, 64, 41, 0.10);
 }
 
-    .hive-benefit-card > div {
-  flex: 1;
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.hive-carousel-image {
+  height: 250px;
+  overflow: hidden;
+  background: #EEE6CF;
+}
+
+.hive-carousel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.hive-carousel-content {
+  padding: 25px 35px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
   text-align: center;
 }
 
-
-/* =========================================================
-   TINY CARD IMAGE
-========================================================= */
-
-.hive-benefit-card img {
-  flex: 0 0 75px;
-
-  width: 75px;
-  height: 75px;
-
-  object-fit: cover;
-
-  margin: 0;
-
-  border-radius: 10px;
-
-  opacity: 0.92;
+.hive-slide-label {
+  font-family: "Caveat", cursive;
+  color: #80652D;
+  font-size: 1.05rem;
+  margin: 0 0 4px;
 }
 
-
-/* =========================================================
-   ICON
-========================================================= */
-
-.hive-benefit-icon {
-  flex: 0 0 auto;
-
-  font-size: 1.6rem;
-
-  margin: 0;
-}
-
-
-/* =========================================================
-   TEXT AREA
-========================================================= */
-
-.hive-benefit-card h3 {
-  margin: 0 0 6px;
-
+.hive-carousel-content h3 {
   font-family:
+    "Cormorant Garamond",
     Georgia,
-    "Times New Roman",
     serif;
-
-  font-size: 1.45rem;
 
   font-weight: 500;
 
+  font-size: 1.8rem;
+
   line-height: 1.15;
 
-  color: #4E3829;
+  color: #403521;
+
+  max-width: 500px;
+
+  margin: 0 0 9px;
 }
 
+.hive-carousel-content p {
+  max-width: 470px;
 
-.hive-benefit-card p {
-  max-width: 560px;
+  font-size: 0.84rem;
 
-  margin: 0;
+  line-height: 1.55;
 
-  color: #5D4B2D;
+  color: #66563C;
 
-  font-size: 0.92rem;
-
-  line-height: 1.5;
+  margin: 0 0 10px;
 }
 
-
-/* =========================================================
-   CAROUSEL CONTROLS
-========================================================= */
-
-.hive-carousel-controls {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 12px;
-
-  margin-top: 14px;
+.hive-carousel-content strong {
+  color: #5F4630;
 }
 
 
@@ -645,39 +675,43 @@
    ARROWS
 ========================================================= */
 
-.hive-carousel-prev,
-.hive-carousel-next {
-  width: 31px;
-  height: 31px;
+.hive-carousel-arrow {
+  position: absolute;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 50%;
 
-  border:
-    1px solid
-    #D8C79F;
+  transform:
+    translateY(-50%);
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
 
   border-radius: 50%;
 
-  background: #FFFDF4;
+  background:
+    rgba(255, 253, 240, 0.94);
 
   color: #80652D;
 
-  font-size: 0.85rem;
+  font-size: 1.25rem;
 
   cursor: pointer;
 
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+  box-shadow:
+    0 3px 10px
+    rgba(77, 64, 41, 0.15);
+
+  z-index: 5;
 }
 
-.hive-carousel-prev:hover,
-.hive-carousel-next:hover {
-  background: #FFF3C8;
+.hive-carousel-prev {
+  left: 7px;
+}
 
-  transform: translateY(-1px);
+.hive-carousel-next {
+  right: 7px;
 }
 
 
@@ -688,10 +722,11 @@
 .hive-carousel-dots {
   display: flex;
 
-  align-items: center;
   justify-content: center;
 
-  gap: 6px;
+  gap: 7px;
+
+  margin-top: 14px;
 }
 
 .hive-carousel-dot {
@@ -707,16 +742,10 @@
   background: #D8C79F;
 
   cursor: pointer;
-
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease;
 }
 
 .hive-carousel-dot.active {
   background: #80652D;
-
-  transform: scale(1.35);
 }
 
 
@@ -726,107 +755,97 @@
 
 @media (max-width: 700px) {
 
-  .hive-carousel {
-    width: 94%;
+  .hive-info-carousel {
+    padding:
+      25px
+      12px
+      35px;
   }
 
-  .hive-benefit-card {
-    min-height: 135px;
-
-    padding: 20px 22px;
-
-    gap: 18px;
-
-    border-radius: 16px;
+  .hive-carousel-slide {
+    padding: 0 25px;
   }
 
-  .hive-benefit-card img {
-    flex-basis: 58px;
+  .hive-carousel-card {
+    height: 220px;
 
-    width: 58px;
-    height: 58px;
+    grid-template-columns:
+      32% 68%;
   }
 
-  .hive-benefit-card h3 {
-    font-size: 1.25rem;
+  .hive-carousel-image {
+    height: 220px;
   }
 
-  .hive-benefit-card p {
-    font-size: 0.86rem;
+  .hive-carousel-content {
+    padding:
+      20px
+      20px;
+  }
 
+  .hive-slide-label {
+    font-size: 0.95rem;
+  }
+
+  .hive-carousel-content h3 {
+    font-size: 1.45rem;
+  }
+
+  .hive-carousel-content p {
+    font-size: 0.78rem;
     line-height: 1.45;
   }
 
 }
 
 
-@media (max-width: 500px) {
-
-  .hive-benefit-card {
-    min-height: 125px;
-
-    padding: 18px 18px;
-
-    gap: 14px;
-  }
-
-  .hive-benefit-card img {
-    flex-basis: 48px;
-
-    width: 48px;
-    height: 48px;
-
-    border-radius: 7px;
-  }
-
-  .hive-benefit-card h3 {
-    font-size: 1.15rem;
-  }
-
-  .hive-benefit-card p {
-    font-size: 0.82rem;
-  }
-
-}
-
 /* =========================================================
-   HOW IT WORKS
+   SMALL MOBILE
 ========================================================= */
 
-.hive-how-it-works {
-  max-width: 1000px;
+@media (max-width: 500px) {
 
-  margin: 0 auto;
+  .hive-info-carousel {
+    padding:
+      22px
+      8px
+      30px;
+  }
 
-  padding: 45px 20px 55px;
-}
+  .hive-carousel-slide {
+    padding: 0 15px;
+  }
 
-.hive-section-heading {
-  max-width: 650px;
+  .hive-carousel-card {
+    height: 200px;
 
-  margin: 0 auto 35px;
+    grid-template-columns:
+      30% 70%;
+  }
 
-  text-align: center;
-}
+  .hive-carousel-image {
+    height: 200px;
+  }
 
-.hive-section-heading h2 {
-  margin: 0 0 14px;
+  .hive-carousel-content {
+    padding:
+      17px
+      15px;
+  }
 
-  font-size:
-    clamp(1.8rem, 3vw, 2.5rem);
+  .hive-slide-label {
+    font-size: 0.88rem;
+  }
 
-  line-height: 1.2;
+  .hive-carousel-content h3 {
+    font-size: 1.25rem;
+  }
 
-  color: #5F4630;
-}
+  .hive-carousel-content p {
+    font-size: 0.74rem;
+    line-height: 1.45;
+  }
 
-.hive-section-heading p:last-child {
-  margin: 0;
-
-  font-size: 1rem;
-  line-height: 1.7;
-
-  color: #75695D;
 }
 
 
@@ -2877,6 +2896,7 @@ footer p {
 </section>
 
 
+
 <!-- =====================================================
      HONEY HIVE — INFORMATION CAROUSEL
 ====================================================== -->
@@ -2885,6 +2905,8 @@ footer p {
   class="hive-info-carousel"
   aria-label="Learn about the Honey Hive"
 >
+
+  <!-- HEADER -->
 
   <div class="hive-carousel-header">
 
@@ -2899,366 +2921,416 @@ footer p {
   </div>
 
 
+  <!-- CAROUSEL -->
+
   <div class="hive-carousel">
 
-
-    <!-- SLIDE 1 — WHAT'S INSIDE -->
-
-    <article class="hive-carousel-slide active">
-
-      <div class="hive-carousel-image">
-
-        <img
-          src="../images/honey-hive-whats-inside.png"
-          alt="A cozy cottage illustration representing the Honey Hive"
-        >
-
-      </div>
-
-      <div class="hive-carousel-content">
-
-        <p class="hive-slide-label">
-          WHAT'S INSIDE THE HIVE
-        </p>
-
-        <h3>
-          Come a little deeper into Honey & Hymns.
-        </h3>
-
-        <p>
-          The Honey Hive is a cozy little corner for encouragement,
-          practical resources, and thoughtful support for the beautiful
-          ordinary work of family life.
-        </p>
-
-        <p>
-          Inside you'll find faith, homeschool, homemaking, and family
-          resources created to help you gather what you need and return
-          whenever you need it.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- SLIDE 2 — FAITH -->
-
-    <article class="hive-carousel-slide">
-
-      <div class="hive-carousel-image">
-
-        <img
-          src="../images/honey-hive-faith.png"
-          alt="Watercolor illustration of a peaceful cottage prayer corner"
-        >
-
-      </div>
-
-      <div class="hive-carousel-content">
-
-        <p class="hive-slide-label">
-          FAITH
-        </p>
-
-        <h3>
-          Growing in faith in the middle of ordinary life.
-        </h3>
-
-        <p>
-          Find encouragement, reflections, and practical resources
-          for keeping faith woven into the rhythms of family life.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- SLIDE 3 — HOMESCHOOL -->
-
-    <article class="hive-carousel-slide">
-
-      <div class="hive-carousel-image">
-
-        <img
-          src="../images/honey-hive-homeschool.png"
-          alt="Watercolor illustration of a cozy cottage homeschool table"
-        >
-
-      </div>
-
-      <div class="hive-carousel-content">
-
-        <p class="hive-slide-label">
-          HOMESCHOOL
-        </p>
-
-        <h3>
-          Resources for the homeschool days that don't go perfectly.
-        </h3>
-
-        <p>
-          Practical ideas, encouragement, and helpful resources for
-          making the homeschool day a little more peaceful and manageable.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- SLIDE 4 — HOMEMAKING -->
-
-    <article class="hive-carousel-slide">
-
-      <div class="hive-carousel-image">
-
-        <img
-          src="../images/honey-hive-homemaking.png"
-          alt="Watercolor illustration of a warm cottage kitchen"
-        >
-
-      </div>
-
-      <div class="hive-carousel-content">
-
-        <p class="hive-slide-label">
-          HOMEMAKING
-        </p>
-
-        <h3>
-          Finding a little more peace in the work of home.
-        </h3>
-
-        <p>
-          Simple resources, ideas, and encouragement for the everyday
-          work of caring for a home and the people who live in it.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- SLIDE 5 — FAMILY LIFE -->
-
-    <article class="hive-carousel-slide">
-
-      <div class="hive-carousel-image">
-
-        <img
-          src="../images/honey-hive-family-life.png"
-          alt="Watercolor illustration of a mother and children together"
-        >
-
-      </div>
-
-      <div class="hive-carousel-content">
-
-        <p class="hive-slide-label">
-          FAMILY LIFE
-        </p>
-
-        <h3>
-          The beautiful ordinary moments in between.
-        </h3>
-
-        <p>
-          Resources for motherhood, family rhythms, routines, and all
-          the little things that make up life together.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- SLIDE 6 — BECOME A MEMBER -->
-
-    <article class="hive-carousel-slide">
-
-      <div class="hive-carousel-image">
-
-        <img
-          src="../images/honey-hive-become-a-member.png"
-          alt="Watercolor illustration of a welcoming cottage doorway"
-        >
-
-      </div>
-
-      <div class="hive-carousel-content">
-
-        <p class="hive-slide-label">
-          HOW IT WORKS
-        </p>
-
-        <h3>
-          Simple by design.
-        </h3>
-
-        <p>
-          <strong>01 — Become a Member</strong><br>
-          Join Honey & Hymns through Substack and choose the membership
-          option that's right for you.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- SLIDE 7 — RECEIVE ACCESS -->
-
-    <article class="hive-carousel-slide">
-
-      <div class="hive-carousel-image">
-
-        <img
-          src="../images/honey-hive-receive-access.png"
-          alt="Watercolor illustration of a letter and key on a cottage desk"
-        >
-
-      </div>
-
-      <div class="hive-carousel-content">
-
-        <p class="hive-slide-label">
-          HOW IT WORKS
-        </p>
-
-        <h3>
-          Your little key to the Hive.
-        </h3>
-
-        <p>
-          <strong>02 — Receive Your Access</strong><br>
-          Members receive the information they need to enter the Honey
-          Hive and access the private library.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- SLIDE 8 — COME BACK ANYTIME -->
-
-    <article class="hive-carousel-slide">
-
-      <div class="hive-carousel-image">
-
-        <img
-          src="../images/honey-hive-come-back-anytime.png"
-          alt="Watercolor illustration of a cozy cottage reading corner"
-        >
-
-      </div>
-
-      <div class="hive-carousel-content">
-
-        <p class="hive-slide-label">
-          HOW IT WORKS
-        </p>
-
-        <h3>
-          Come back whenever you need it.
-        </h3>
-
-        <p>
-          <strong>03 — Come Back Anytime</strong><br>
-          Return to the Hive whenever you need a resource, want to read
-          something new, or want to see what's been added.
-        </p>
-
-      </div>
-
-    </article>
-
-  </div>
-
-
-  <!-- CAROUSEL CONTROLS -->
-
-  <div class="hive-carousel-controls">
-
-    <button
-      type="button"
-      class="hive-carousel-arrow hive-carousel-prev"
-      aria-label="Previous slide"
-    >
-      ←
-    </button>
-
-
     <div
-      class="hive-carousel-dots"
-      aria-label="Carousel navigation"
+      class="hive-carousel-track"
+      id="hiveCarouselTrack"
     >
 
-      <button
-        type="button"
-        class="hive-carousel-dot active"
-        aria-label="Go to slide 1"
-        aria-current="true"
-      ></button>
 
-      <button
-        type="button"
-        class="hive-carousel-dot"
-        aria-label="Go to slide 2"
-      ></button>
+      <!-- SLIDE 1 -->
 
-      <button
-        type="button"
-        class="hive-carousel-dot"
-        aria-label="Go to slide 3"
-      ></button>
+      <div class="hive-carousel-slide">
 
-      <button
-        type="button"
-        class="hive-carousel-dot"
-        aria-label="Go to slide 4"
-      ></button>
+        <div class="hive-carousel-card">
 
-      <button
-        type="button"
-        class="hive-carousel-dot"
-        aria-label="Go to slide 5"
-      ></button>
+          <div class="hive-carousel-image">
 
-      <button
-        type="button"
-        class="hive-carousel-dot"
-        aria-label="Go to slide 6"
-      ></button>
+            <img
+              src="../images/honey-hive-whats-inside.png"
+              alt="A cozy cottage illustration representing the Honey Hive"
+            >
 
-      <button
-        type="button"
-        class="hive-carousel-dot"
-        aria-label="Go to slide 7"
-      ></button>
+          </div>
 
-      <button
-        type="button"
-        class="hive-carousel-dot"
-        aria-label="Go to slide 8"
-      ></button>
+          <div class="hive-carousel-content">
+
+            <p class="hive-slide-label">
+              WHAT'S INSIDE THE HIVE
+            </p>
+
+            <h3>
+              Come a little deeper into Honey & Hymns.
+            </h3>
+
+            <p>
+              The Honey Hive is a cozy little corner for encouragement,
+              practical resources, and thoughtful support for the beautiful
+              ordinary work of family life.
+            </p>
+
+            <p>
+              Inside you'll find faith, homeschool, homemaking, and family
+              resources created to help you gather what you need and return
+              whenever you need it.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SLIDE 2 -->
+
+      <div class="hive-carousel-slide">
+
+        <div class="hive-carousel-card">
+
+          <div class="hive-carousel-image">
+
+            <img
+              src="../images/honey-hive-faith.png"
+              alt="Watercolor illustration of a peaceful cottage prayer corner"
+            >
+
+          </div>
+
+          <div class="hive-carousel-content">
+
+            <p class="hive-slide-label">
+              FAITH
+            </p>
+
+            <h3>
+              Growing in faith in the middle of ordinary life.
+            </h3>
+
+            <p>
+              Find encouragement, reflections, and practical resources
+              for keeping faith woven into the rhythms of family life.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SLIDE 3 -->
+
+      <div class="hive-carousel-slide">
+
+        <div class="hive-carousel-card">
+
+          <div class="hive-carousel-image">
+
+            <img
+              src="../images/honey-hive-homeschool.png"
+              alt="Watercolor illustration of a cozy cottage homeschool table"
+            >
+
+          </div>
+
+          <div class="hive-carousel-content">
+
+            <p class="hive-slide-label">
+              HOMESCHOOL
+            </p>
+
+            <h3>
+              Resources for the homeschool days that don't go perfectly.
+            </h3>
+
+            <p>
+              Practical ideas, encouragement, and helpful resources for
+              making the homeschool day a little more peaceful and manageable.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SLIDE 4 -->
+
+      <div class="hive-carousel-slide">
+
+        <div class="hive-carousel-card">
+
+          <div class="hive-carousel-image">
+
+            <img
+              src="../images/honey-hive-homemaking.png"
+              alt="Watercolor illustration of a warm cottage kitchen"
+            >
+
+          </div>
+
+          <div class="hive-carousel-content">
+
+            <p class="hive-slide-label">
+              HOMEMAKING
+            </p>
+
+            <h3>
+              Finding a little more peace in the work of home.
+            </h3>
+
+            <p>
+              Simple resources, ideas, and encouragement for the everyday
+              work of caring for a home and the people who live in it.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SLIDE 5 -->
+
+      <div class="hive-carousel-slide">
+
+        <div class="hive-carousel-card">
+
+          <div class="hive-carousel-image">
+
+            <img
+              src="../images/honey-hive-family-life.png"
+              alt="Watercolor illustration of a mother and children together"
+            >
+
+          </div>
+
+          <div class="hive-carousel-content">
+
+            <p class="hive-slide-label">
+              FAMILY LIFE
+            </p>
+
+            <h3>
+              The beautiful ordinary moments in between.
+            </h3>
+
+            <p>
+              Resources for motherhood, family rhythms, routines, and all
+              the little things that make up life together.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SLIDE 6 -->
+
+      <div class="hive-carousel-slide">
+
+        <div class="hive-carousel-card">
+
+          <div class="hive-carousel-image">
+
+            <img
+              src="../images/honey-hive-become-a-member.png"
+              alt="Watercolor illustration of a welcoming cottage doorway"
+            >
+
+          </div>
+
+          <div class="hive-carousel-content">
+
+            <p class="hive-slide-label">
+              HOW IT WORKS
+            </p>
+
+            <h3>
+              Simple by design.
+            </h3>
+
+            <p>
+              <strong>01 — Become a Member</strong><br>
+              Join Honey & Hymns through Substack and choose the membership
+              option that's right for you.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SLIDE 7 -->
+
+      <div class="hive-carousel-slide">
+
+        <div class="hive-carousel-card">
+
+          <div class="hive-carousel-image">
+
+            <img
+              src="../images/honey-hive-receive-access.png"
+              alt="Watercolor illustration of a letter and key on a cottage desk"
+            >
+
+          </div>
+
+          <div class="hive-carousel-content">
+
+            <p class="hive-slide-label">
+              HOW IT WORKS
+            </p>
+
+            <h3>
+              Your little key to the Hive.
+            </h3>
+
+            <p>
+              <strong>02 — Receive Your Access</strong><br>
+              Members receive the information they need to enter the Honey
+              Hive and access the private library.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SLIDE 8 -->
+
+      <div class="hive-carousel-slide">
+
+        <div class="hive-carousel-card">
+
+          <div class="hive-carousel-image">
+
+            <img
+              src="../images/honey-hive-come-back-anytime.png"
+              alt="Watercolor illustration of a cozy cottage reading corner"
+            >
+
+          </div>
+
+          <div class="hive-carousel-content">
+
+            <p class="hive-slide-label">
+              HOW IT WORKS
+            </p>
+
+            <h3>
+              Come back whenever you need it.
+            </h3>
+
+            <p>
+              <strong>03 — Come Back Anytime</strong><br>
+              Return to the Hive whenever you need a resource, want to read
+              something new, or want to see what's been added.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
 
     </div>
 
 
+    <!-- ARROWS -->
+
+    <button
+      type="button"
+      class="hive-carousel-arrow hive-carousel-prev"
+      id="hiveCarouselPrev"
+      aria-label="Previous slide"
+    >
+      ‹
+    </button>
+
     <button
       type="button"
       class="hive-carousel-arrow hive-carousel-next"
+      id="hiveCarouselNext"
       aria-label="Next slide"
     >
-      →
+      ›
     </button>
 
   </div>
 
+
+  <!-- DOTS -->
+
+  <div
+    class="hive-carousel-dots"
+    aria-label="Carousel navigation"
+  >
+
+    <button
+      type="button"
+      class="hive-carousel-dot active"
+      data-slide="0"
+      aria-label="Go to slide 1"
+      aria-current="true"
+    ></button>
+
+    <button
+      type="button"
+      class="hive-carousel-dot"
+      data-slide="1"
+      aria-label="Go to slide 2"
+    ></button>
+
+    <button
+      type="button"
+      class="hive-carousel-dot"
+      data-slide="2"
+      aria-label="Go to slide 3"
+    ></button>
+
+    <button
+      type="button"
+      class="hive-carousel-dot"
+      data-slide="3"
+      aria-label="Go to slide 4"
+    ></button>
+
+    <button
+      type="button"
+      class="hive-carousel-dot"
+      data-slide="4"
+      aria-label="Go to slide 5"
+    ></button>
+
+    <button
+      type="button"
+      class="hive-carousel-dot"
+      data-slide="5"
+      aria-label="Go to slide 6"
+    ></button>
+
+    <button
+      type="button"
+      class="hive-carousel-dot"
+      data-slide="6"
+      aria-label="Go to slide 7"
+    ></button>
+
+    <button
+      type="button"
+      class="hive-carousel-dot"
+      data-slide="7"
+      aria-label="Go to slide 8"
+    ></button>
+
+  </div>
+
 </section>
+
 
 
 <!-- =======================================================
@@ -4000,352 +4072,324 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  /* =========================================================
-     HONEY HIVE — INFORMATION CAROUSEL
-  ========================================================= */
+/* =========================================================
+   HONEY HIVE — HORIZONTAL CAROUSEL
+========================================================= */
 
-  const carousel =
-    document.querySelector(".hive-carousel");
+const hiveCarouselTrack =
+  document.getElementById(
+    "hiveCarouselTrack"
+  );
 
-  const slides =
-    document.querySelectorAll(
-      ".hive-carousel-slide"
-    );
+const hiveCarouselSlides =
+  document.querySelectorAll(
+    ".hive-carousel-slide"
+  );
 
-  const dots =
-    document.querySelectorAll(
-      ".hive-carousel-dot"
-    );
+const hiveCarouselPrev =
+  document.getElementById(
+    "hiveCarouselPrev"
+  );
 
-  const previousButton =
-    document.querySelector(
-      ".hive-carousel-prev"
-    );
+const hiveCarouselNext =
+  document.getElementById(
+    "hiveCarouselNext"
+  );
 
-  const nextButton =
-    document.querySelector(
-      ".hive-carousel-next"
-    );
-
-
-  let currentSlide = 0;
-
-  let carouselTimer = null;
-
-  const CAROUSEL_INTERVAL = 5000;
+const hiveCarouselDots =
+  document.querySelectorAll(
+    ".hive-carousel-dot"
+  );
 
 
-  /* =========================================================
-     SHOW CAROUSEL SLIDE
-  ========================================================= */
+let hiveCurrentSlide = 0;
 
-  function showSlide(index) {
+let hiveAutoPlay;
 
-    if (!slides.length) {
-      return;
-    }
+const HIVE_AUTO_PLAY_TIME = 6000;
 
 
-    /* Keep the index within the carousel range. */
+/* =========================================================
+   SHOW SLIDE
+========================================================= */
 
-    if (index < 0) {
+function showHiveSlide(index) {
 
-      index =
-        slides.length - 1;
-
-    }
-
-
-    if (index >= slides.length) {
-
-      index = 0;
-
-    }
+  if (
+    !hiveCarouselTrack ||
+    !hiveCarouselSlides.length
+  ) {
+    return;
+  }
 
 
-    currentSlide = index;
+  if (index < 0) {
+
+    index =
+      hiveCarouselSlides.length - 1;
+
+  }
 
 
-    /* Update slides. */
+  if (
+    index >=
+    hiveCarouselSlides.length
+  ) {
 
-    slides.forEach(
-      function (slide, slideIndex) {
+    index = 0;
 
-        slide.classList.toggle(
-          "active",
-          slideIndex === currentSlide
+  }
+
+
+  hiveCurrentSlide = index;
+
+
+  hiveCarouselTrack.style.transform =
+    "translateX(-" +
+    (hiveCurrentSlide * 100) +
+    "%)";
+
+
+  hiveCarouselDots.forEach(
+    function(dot, dotIndex) {
+
+      dot.classList.toggle(
+        "active",
+        dotIndex === hiveCurrentSlide
+      );
+
+
+      if (
+        dotIndex ===
+        hiveCurrentSlide
+      ) {
+
+        dot.setAttribute(
+          "aria-current",
+          "true"
         );
+
+      } else {
+
+        dot.removeAttribute(
+          "aria-current"
+        );
+
+      }
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   NEXT
+========================================================= */
+
+function nextHiveSlide() {
+
+  showHiveSlide(
+    hiveCurrentSlide + 1
+  );
+
+}
+
+
+/* =========================================================
+   PREVIOUS
+========================================================= */
+
+function previousHiveSlide() {
+
+  showHiveSlide(
+    hiveCurrentSlide - 1
+  );
+
+}
+
+
+/* =========================================================
+   START AUTO PLAY
+========================================================= */
+
+function startHiveAutoPlay() {
+
+  clearInterval(
+    hiveAutoPlay
+  );
+
+
+  hiveAutoPlay =
+    setInterval(
+      function() {
+
+        nextHiveSlide();
+
+      },
+      HIVE_AUTO_PLAY_TIME
+    );
+
+}
+
+
+/* =========================================================
+   NEXT BUTTON
+========================================================= */
+
+if (hiveCarouselNext) {
+
+  hiveCarouselNext.addEventListener(
+    "click",
+    function() {
+
+      nextHiveSlide();
+
+      startHiveAutoPlay();
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   PREVIOUS BUTTON
+========================================================= */
+
+if (hiveCarouselPrev) {
+
+  hiveCarouselPrev.addEventListener(
+    "click",
+    function() {
+
+      previousHiveSlide();
+
+      startHiveAutoPlay();
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   DOT BUTTONS
+========================================================= */
+
+hiveCarouselDots.forEach(
+  function(dot) {
+
+    dot.addEventListener(
+      "click",
+      function() {
+
+        showHiveSlide(
+          Number(
+            dot.dataset.slide
+          )
+        );
+
+        startHiveAutoPlay();
 
       }
     );
 
-
-    /* Update dots. */
-
-    dots.forEach(
-      function (dot, dotIndex) {
-
-        const isActive =
-          dotIndex === currentSlide;
+  }
+);
 
 
-        dot.classList.toggle(
-          "active",
-          isActive
-        );
+/* =========================================================
+   KEYBOARD NAVIGATION
+========================================================= */
+
+if (hiveCarouselTrack) {
+
+  hiveCarouselTrack.parentElement.setAttribute(
+    "tabindex",
+    "0"
+  );
 
 
-        if (isActive) {
+  hiveCarouselTrack.parentElement.addEventListener(
+    "keydown",
+    function(event) {
 
-          dot.setAttribute(
-            "aria-current",
-            "true"
-          );
+      if (
+        event.key === "ArrowLeft"
+      ) {
 
-        } else {
+        event.preventDefault();
 
-          dot.removeAttribute(
-            "aria-current"
-          );
+        previousHiveSlide();
 
-        }
+        startHiveAutoPlay();
 
       }
-    );
-
-  }
 
 
-  /* =========================================================
-     NEXT SLIDE
-  ========================================================= */
+      if (
+        event.key === "ArrowRight"
+      ) {
 
-  function nextSlide() {
+        event.preventDefault();
 
-    showSlide(
-      currentSlide + 1
-    );
+        nextHiveSlide();
 
-  }
-
-
-  /* =========================================================
-     PREVIOUS SLIDE
-  ========================================================= */
-
-  function previousSlide() {
-
-    showSlide(
-      currentSlide - 1
-    );
-
-  }
-
-
-  /* =========================================================
-     START AUTO-ROTATION
-  ========================================================= */
-
-  function startCarousel() {
-
-    if (
-      !slides.length ||
-      slides.length <= 1
-    ) {
-
-      return;
-
-    }
-
-
-    stopCarousel();
-
-
-    carouselTimer =
-      window.setInterval(
-        function () {
-
-          nextSlide();
-
-        },
-        CAROUSEL_INTERVAL
-      );
-
-  }
-
-
-  /* =========================================================
-     STOP AUTO-ROTATION
-  ========================================================= */
-
-  function stopCarousel() {
-
-    if (carouselTimer) {
-
-      window.clearInterval(
-        carouselTimer
-      );
-
-      carouselTimer = null;
-
-    }
-
-  }
-
-
-  /* =========================================================
-     INITIALIZE CAROUSEL
-  ========================================================= */
-
-  if (slides.length) {
-
-    showSlide(0);
-
-
-    /* -------------------------------------------------------
-       PREVIOUS BUTTON
-    ------------------------------------------------------- */
-
-    if (previousButton) {
-
-      previousButton.addEventListener(
-        "click",
-        function () {
-
-          previousSlide();
-
-          startCarousel();
-
-        }
-      );
-
-    }
-
-
-    /* -------------------------------------------------------
-       NEXT BUTTON
-    ------------------------------------------------------- */
-
-    if (nextButton) {
-
-      nextButton.addEventListener(
-        "click",
-        function () {
-
-          nextSlide();
-
-          startCarousel();
-
-        }
-      );
-
-    }
-
-
-    /* -------------------------------------------------------
-       DOT NAVIGATION
-    ------------------------------------------------------- */
-
-    dots.forEach(
-      function (dot, index) {
-
-        dot.addEventListener(
-          "click",
-          function () {
-
-            showSlide(index);
-
-            startCarousel();
-
-          }
-        );
+        startHiveAutoPlay();
 
       }
-    );
+
+    }
+  );
+
+}
 
 
-    /* -------------------------------------------------------
-       KEYBOARD NAVIGATION
-    ------------------------------------------------------- */
+/* =========================================================
+   PAUSE WHILE HOVERING
+========================================================= */
 
-    if (carousel) {
-
-      carousel.setAttribute(
-        "tabindex",
-        "0"
-      );
+const hiveCarousel =
+  document.querySelector(
+    ".hive-carousel"
+  );
 
 
-      carousel.addEventListener(
-        "keydown",
-        function (event) {
+if (hiveCarousel) {
 
-          if (
-            event.key === "ArrowLeft"
-          ) {
+  hiveCarousel.addEventListener(
+    "mouseenter",
+    function() {
 
-            event.preventDefault();
-
-            previousSlide();
-
-            startCarousel();
-
-          }
-
-
-          if (
-            event.key === "ArrowRight"
-          ) {
-
-            event.preventDefault();
-
-            nextSlide();
-
-            startCarousel();
-
-          }
-
-        }
-      );
-
-
-      /* -----------------------------------------------------
-         PAUSE WHEN MOUSE IS OVER CAROUSEL
-      ----------------------------------------------------- */
-
-      carousel.addEventListener(
-        "mouseenter",
-        function () {
-
-          stopCarousel();
-
-        }
-      );
-
-
-      /* -----------------------------------------------------
-         RESUME WHEN MOUSE LEAVES CAROUSEL
-      ----------------------------------------------------- */
-
-      carousel.addEventListener(
-        "mouseleave",
-        function () {
-
-          startCarousel();
-
-        }
+      clearInterval(
+        hiveAutoPlay
       );
 
     }
+  );
 
 
-    /* -------------------------------------------------------
-       START AUTOMATIC ROTATION
-    ------------------------------------------------------- */
+  hiveCarousel.addEventListener(
+    "mouseleave",
+    function() {
 
-    startCarousel();
+      startHiveAutoPlay();
 
-  }
+    }
+  );
+
+}
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+showHiveSlide(0);
+
+startHiveAutoPlay();
+
 
 
   /* =========================================================
