@@ -305,41 +305,45 @@
 
 
 
-    /* =====================================================
-       DASHBOARD
-    ===================================================== */
+   /* =========================================================
+       HONEY HIVE — BASE
+    ========================================================= */
 
-    .hive-dashboard {
+    * {
+      box-sizing: border-box;
+    }
 
-      max-width: 1100px;
+    body {
+      margin: 0;
+      background: #FFFDF0;
+      color: #403521;
 
-      margin: 0 auto;
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+    }
+
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    .hive-header {
+      background: #FFF8D5;
 
       padding:
-        55px
-        20px
-        70px;
-    }
-
-
-    /* =====================================================
-       WELCOME
-    ===================================================== */
-
-    .hive-dashboard-welcome {
-
-      max-width: 720px;
-
-      margin:
-        0
-        auto
-        55px;
+        45px 20px 35px;
 
       text-align: center;
+
+      border-bottom:
+        1px solid
+        #E5D6A6;
     }
 
-
-    .hive-dashboard-eyebrow {
+    .hive-eyebrow {
+      margin: 0 0 7px;
 
       font-family:
         "Caveat",
@@ -347,155 +351,201 @@
 
       color: #80652D;
 
-      font-size: 1.15rem;
-
-      margin:
-        0
-        0
-        6px;
+      font-size: 1.2rem;
     }
 
-
-    .hive-dashboard-welcome h1 {
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
+    .hive-header h1 {
+      margin: 0 0 10px;
 
       font-size:
-        clamp(
-          2.3rem,
-          5vw,
-          3.4rem
-        );
+        clamp(2rem, 5vw, 3rem);
 
       font-weight: 500;
-
-      line-height: 1.1;
-
-      margin:
-        0
-        0
-        15px;
 
       color: #403521;
     }
 
-
-    .hive-dashboard-welcome p {
-
+    .hive-header p {
       max-width: 620px;
 
       margin: 0 auto;
 
-      font-size: 0.95rem;
+      color: #66563C;
 
       line-height: 1.7;
 
-      color: #66563C;
+      font-size: 0.95rem;
     }
 
 
-    /* =====================================================
-       SECTION HEADINGS
-    ===================================================== */
+    /* =========================================================
+       WEEKLY MEMBER CODE
+    ========================================================= */
 
-    .hive-dashboard-section {
-
-      margin-bottom: 60px;
+    .weekly-code-section {
+      padding:
+        25px 18px 10px;
     }
 
+    .weekly-code-card {
+      max-width: 1040px;
 
-    .hive-dashboard-section-heading {
+      margin: 0 auto;
 
-      max-width: 680px;
+      background: #FFEBA1;
 
-      margin:
-        0
-        auto
-        28px;
+      border:
+        1px solid
+        #E5D6A6;
+
+      border-radius: 20px;
+
+      padding:
+        22px 28px;
 
       text-align: center;
+
+      box-shadow:
+        0 6px 18px
+        rgba(77, 64, 41, 0.08);
     }
 
-
-    .hive-dashboard-kicker {
+    .weekly-code-label {
+      margin: 0 0 4px;
 
       font-family:
         "Caveat",
         cursive;
 
-      color: #80652D;
-
       font-size: 1.05rem;
 
-      margin:
-        0
-        0
-        4px;
+      color: #80652D;
     }
 
+    .weekly-code-card h2 {
+      margin: 0 0 7px;
 
-    .hive-dashboard-section-heading h2 {
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-      font-size:
-        clamp(
-          1.9rem,
-          4vw,
-          2.5rem
-        );
+      font-size: 1.7rem;
 
       font-weight: 500;
 
-      line-height: 1.15;
+      color: #403521;
+    }
+
+    .weekly-code-card p {
+      margin: 0 0 12px;
+
+      color: #66563C;
+
+      font-size: 0.88rem;
+    }
+
+    .weekly-code {
+      display: inline-block;
+
+      background: #FFFDF0;
+
+      border:
+        1px dashed
+        #80652D;
+
+      border-radius: 8px;
+
+      padding:
+        8px 18px;
+
+      font-family:
+        monospace;
+
+      font-size: 1.05rem;
+
+      letter-spacing: 1px;
 
       color: #403521;
+    }
 
-      margin:
-        0
-        0
-        8px;
+    .weekly-timer {
+      margin-top: 12px;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      font-size: 1rem;
+
+      color: #80652D;
     }
 
 
-    .hive-dashboard-section-heading p:last-child {
+    /* =========================================================
+       DASHBOARD
+    ========================================================= */
 
+    .hive-dashboard {
+      max-width: 1040px;
+
+      margin: 0 auto;
+
+      padding:
+        35px 18px 60px;
+    }
+
+
+    /* =========================================================
+       SECTION HEADING
+    ========================================================= */
+
+    .hive-section-heading {
+      text-align: center;
+
+      max-width: 650px;
+
+      margin:
+        0 auto 25px;
+    }
+
+    .hive-section-heading h2 {
+      margin: 0 0 8px;
+
+      font-size: 2rem;
+
+      font-weight: 500;
+
+      color: #5F4630;
+    }
+
+    .hive-section-heading p {
       margin: 0;
 
       color: #75695D;
 
-      font-size: 0.9rem;
+      line-height: 1.65;
 
-      line-height: 1.6;
+      font-size: 0.9rem;
     }
 
 
-    /* =====================================================
-       HIVE NEWS
-    ===================================================== */
+    /* =========================================================
+       CARD GRID
+    ========================================================= */
 
-    .hive-news-grid {
-
+    .hive-card-grid {
       display: grid;
 
       grid-template-columns:
-        repeat(
-          3,
-          1fr
-        );
+        repeat(2, 1fr);
 
-      gap: 18px;
+      gap: 20px;
+
+      margin-bottom: 45px;
     }
 
 
-    .hive-news-card {
+    /* =========================================================
+       MEMBER CARD
+    ========================================================= */
 
+    .hive-member-card {
       background: #FFF8D5;
 
       border:
@@ -504,305 +554,24 @@
 
       border-radius: 18px;
 
-      padding:
-        24px
-        23px;
-
-      box-shadow:
-        0
-        5px
-        16px
-        rgba(
-          77,
-          64,
-          41,
-          0.07
-        );
-    }
-
-
-    .hive-news-label {
-
-      font-family:
-        "Caveat",
-        cursive;
-
-      color: #80652D;
-
-      font-size: 0.95rem;
-
-      margin:
-        0
-        0
-        6px;
-    }
-
-
-    .hive-news-card h3 {
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-      font-size: 1.45rem;
-
-      font-weight: 500;
-
-      line-height: 1.2;
-
-      margin:
-        0
-        0
-        10px;
-
-      color: #403521;
-    }
-
-
-    .hive-news-card p {
-
-      margin: 0;
-
-      color: #66563C;
-
-      font-size: 0.8rem;
-
-      line-height: 1.6;
-    }
-
-
-    /* =====================================================
-       WEEKLY MEMBER GIFT
-    ===================================================== */
-
-    .hive-member-gift {
-
-      background: #FFEBA1;
-
-      border:
-        1px solid
-        #E5D6A6;
-
-      border-radius: 22px;
-
-      padding:
-        38px
-        40px;
-
-      margin-bottom: 65px;
-
-      text-align: center;
-
-      box-shadow:
-        0
-        7px
-        20px
-        rgba(
-          77,
-          64,
-          41,
-          0.09
-        );
-    }
-
-
-    .hive-member-gift-content {
-
-      max-width: 620px;
-
-      margin: 0 auto;
-    }
-
-
-    .hive-member-gift h2 {
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-      font-size:
-        clamp(
-          2rem,
-          4vw,
-          2.6rem
-        );
-
-      font-weight: 500;
-
-      line-height: 1.15;
-
-      margin:
-        0
-        0
-        10px;
-
-      color: #403521;
-    }
-
-
-    .hive-member-gift p {
-
-      color: #66563C;
-
-      font-size: 0.9rem;
-
-      line-height: 1.6;
-
-      margin:
-        0
-        0
-        18px;
-    }
-
-
-    .hive-member-code {
-
-      display: inline-flex;
-
-      align-items: center;
-
-      gap: 13px;
-
-      background:
-        rgba(
-          255,
-          253,
-          240,
-          0.75
-        );
-
-      border:
-        1px solid
-        #D8C79F;
-
-      border-radius: 10px;
-
-      padding:
-        9px
-        15px;
-
-      margin-bottom: 18px;
-    }
-
-
-    .hive-member-code span {
-
-      font-size: 0.68rem;
-
-      letter-spacing: 0.08em;
-
-      color: #80652D;
-    }
-
-
-    .hive-member-code strong {
-
-      font-size: 0.9rem;
-
-      letter-spacing: 0.08em;
-
-      color: #403521;
-    }
-
-
-    .hive-dashboard-button {
-
-      display: inline-block;
-
-      background: #80652D;
-
-      color: #FFFDF0;
-
-      text-decoration: none;
-
-      padding:
-        10px
-        18px;
-
-      border-radius: 7px;
-
-      font-size: 0.78rem;
-
-      transition:
-        background 0.2s ease,
-        transform 0.2s ease;
-    }
-
-
-    .hive-dashboard-button:hover {
-
-      background: #6D5524;
-
-      transform:
-        translateY(-1px);
-    }
-
-
-    /* =====================================================
-       RESOURCE LIBRARY
-    ===================================================== */
-
-    .hive-resource-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(
-          2,
-          1fr
-        );
-
-      gap: 22px;
-    }
-
-
-    .hive-resource-card {
-
-      display: grid;
-
-      grid-template-columns:
-        35%
-        65%;
-
-      min-height: 220px;
-
-      background: #FFF8D5;
-
-      border:
-        1px solid
-        #E5D6A6;
-
-      border-radius: 20px;
-
       overflow: hidden;
 
       box-shadow:
-        0
-        6px
-        18px
-        rgba(
-          77,
-          64,
-          41,
-          0.08
-        );
+        0 6px 18px
+        rgba(77, 64, 41, 0.07);
     }
 
+    .hive-card-image {
+      width: 100%;
 
-    .hive-resource-image {
-
-      min-height: 220px;
+      height: 150px;
 
       overflow: hidden;
 
       background: #EEE6CF;
     }
 
-
-    .hive-resource-image img {
-
+    .hive-card-image img {
       width: 100%;
 
       height: 100%;
@@ -812,22 +581,119 @@
       display: block;
     }
 
+    .hive-card-content {
+      padding: 22px;
+    }
 
-    .hive-resource-content {
+    .hive-card-label {
+      margin: 0 0 4px;
 
-      padding:
-        24px
-        25px;
+      font-family:
+        "Caveat",
+        cursive;
 
-      display: flex;
+      color: #80652D;
 
-      flex-direction: column;
+      font-size: 1rem;
+    }
 
-      justify-content: center;
+    .hive-card-content h3 {
+      margin: 0 0 9px;
+
+      font-size: 1.45rem;
+
+      font-weight: 500;
+
+      color: #403521;
+    }
+
+    .hive-card-content p {
+      margin: 0 0 16px;
+
+      font-size: 0.85rem;
+
+      line-height: 1.6;
+
+      color: #66563C;
     }
 
 
-    .hive-resource-label {
+    /* =========================================================
+       DOWNLOAD BUTTON
+    ========================================================= */
+
+    .hive-download-button {
+      display: inline-block;
+
+      background: #80652D;
+
+      color: #FFFDF0;
+
+      text-decoration: none;
+
+      padding:
+        9px 16px;
+
+      border-radius: 7px;
+
+      font-size: 0.8rem;
+
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .hive-download-button:hover {
+      background: #6D5524;
+
+      transform:
+        translateY(-1px);
+    }
+
+
+    /* =========================================================
+       NEWS BOARD
+    ========================================================= */
+
+    .hive-news-board {
+      background: #FFF8D5;
+
+      border:
+        1px solid
+        #E5D6A6;
+
+      border-radius: 18px;
+
+      padding: 25px;
+
+      margin-bottom: 45px;
+
+      box-shadow:
+        0 6px 18px
+        rgba(77, 64, 41, 0.07);
+    }
+
+    .hive-news-item {
+      padding:
+        14px 0;
+
+      border-bottom:
+        1px solid
+        #E5D6A6;
+    }
+
+    .hive-news-item:first-child {
+      padding-top: 0;
+    }
+
+    .hive-news-item:last-child {
+      border-bottom: none;
+
+      padding-bottom: 0;
+    }
+
+    .hive-news-date {
+      margin: 0 0 3px;
 
       font-family:
         "Caveat",
@@ -836,189 +702,92 @@
       color: #80652D;
 
       font-size: 0.95rem;
-
-      margin:
-        0
-        0
-        4px;
     }
 
+    .hive-news-item h3 {
+      margin: 0 0 5px;
 
-    .hive-resource-content h3 {
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-      font-size: 1.5rem;
+      font-size: 1.15rem;
 
       font-weight: 500;
-
-      line-height: 1.2;
-
-      margin:
-        0
-        0
-        8px;
-
-      color: #403521;
     }
 
+    .hive-news-item p {
+      margin: 0;
 
-    .hive-resource-content p {
-
-      color: #66563C;
-
-      font-size: 0.78rem;
+      font-size: 0.83rem;
 
       line-height: 1.55;
 
-      margin:
-        0
-        0
-        14px;
+      color: #66563C;
     }
 
 
-    .hive-resource-button {
+    /* =========================================================
+       FOOTER
+    ========================================================= */
 
-      align-self: flex-start;
+    .hive-footer {
+      width: 100%;
 
-      color: #80652D;
+      background: #FFEBA1;
 
-      font-size: 0.75rem;
+      border-top:
+        1px solid
+        #E5D6A6;
 
-      font-weight: 600;
-
-      text-decoration: none;
-    }
-
-
-    .hive-resource-button:hover {
-
-      text-decoration: underline;
-    }
-
-
-    /* =====================================================
-       CLOSING
-    ===================================================== */
-
-    .hive-dashboard-closing {
+      padding:
+        30px 20px;
 
       text-align: center;
+    }
 
-      padding-top: 15px;
+    .hive-footer-inner {
+      max-width: 1040px;
 
-      color: #917333;
+      margin: 0 auto;
+    }
+
+    .hive-footer p {
+      margin: 0 0 5px;
+
+      color: #66563C;
+
+      font-size: 0.85rem;
+    }
+
+    .hive-footer small {
+      color: #80652D;
     }
 
 
-    .hive-dashboard-closing p {
-
-      font-family:
-        "Caveat",
-        cursive;
-
-      font-size: 1.05rem;
-
-      margin:
-        0
-        0
-        5px;
-    }
-
-
-    .hive-dashboard-closing span {
-
-      font-size: 1.2rem;
-    }
-
-
-    /* =====================================================
+    /* =========================================================
        MOBILE
-    ===================================================== */
+    ========================================================= */
 
-    @media (max-width: 750px) {
+    @media (max-width: 700px) {
+
+      .hive-card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hive-header {
+        padding:
+          35px 18px 28px;
+      }
+
+      .weekly-code-card {
+        padding:
+          20px 18px;
+      }
 
       .hive-dashboard {
-
         padding:
-          40px
-          15px
-          55px;
-      }
-
-
-      .hive-news-grid {
-
-        grid-template-columns:
-          1fr;
-      }
-
-
-      .hive-resource-grid {
-
-        grid-template-columns:
-          1fr;
+          30px 15px 45px;
       }
 
     }
 
-
-    @media (max-width: 500px) {
-
-      .hive-dashboard-welcome {
-
-        margin-bottom: 40px;
-      }
-
-
-      .hive-member-gift {
-
-        padding:
-          30px
-          20px;
-      }
-
-
-      .hive-resource-card {
-
-        grid-template-columns:
-          30%
-          70%;
-
-        min-height: 190px;
-      }
-
-
-      .hive-resource-image {
-
-        min-height: 190px;
-      }
-
-
-      .hive-resource-content {
-
-        padding:
-          19px
-          17px;
-      }
-
-
-      .hive-resource-content h3 {
-
-        font-size: 1.3rem;
-      }
-
-
-      .hive-resource-content p {
-
-        font-size: 0.73rem;
-      }
-
-    }
 
     /* =========================================================
    WISHLIST MODAL
@@ -2136,105 +1905,185 @@ footer p {
   <main class="hive-dashboard">
 
 
-    <!-- ===================================================
-         WELCOME
-    ==================================================== -->
+   <!-- =======================================================
+       HEADER
+  ======================================================== -->
 
-    <section class="hive-dashboard-welcome">
+  <header class="hive-header">
 
-      <p class="hive-dashboard-eyebrow">
-        WELCOME INSIDE THE HONEY HIVE
+    <p class="hive-eyebrow">
+      Welcome, Beekeeper
+    </p>
+
+    <h1>
+      Welcome Inside the Honey Hive
+    </h1>
+
+    <p>
+      A cozy little place for members to gather,
+      discover new resources, and find a little
+      encouragement for the beautiful ordinary work
+      of family life.
+    </p>
+
+  </header>
+
+
+
+  <!-- =======================================================
+       WEEKLY MEMBER DISCOUNT
+  ======================================================== -->
+
+  <section class="weekly-code-section">
+
+    <div class="weekly-code-card">
+
+      <p class="weekly-code-label">
+        This Week's Member Gift
       </p>
 
-      <h1>
-        Come in and stay awhile.
-      </h1>
+      <h2>
+        Your 100% Off Code
+      </h2>
 
       <p>
-        Your cozy little corner of Honey & Hymns for resources,
-        encouragement, member gifts, and a first look at what's
-        coming next.
+        Use this week's member code to receive
+        the current featured resource completely free.
       </p>
 
-    </section>
+      <div class="weekly-code">
+        HONEY100
+      </div>
+
+      <div
+        class="weekly-timer"
+        id="weeklyTimer"
+      >
+        Loading countdown...
+      </div>
+
+    </div>
+
+  </section>
 
 
-    <!-- ===================================================
-         HIVE NEWS
-    ==================================================== -->
 
-    <section class="hive-dashboard-section">
+  <!-- =======================================================
+       MAIN DASHBOARD
+  ======================================================== -->
 
-      <div class="hive-dashboard-section-heading">
+  <main class="hive-dashboard">
 
-        <p class="hive-dashboard-kicker">
-          A LITTLE NEWS FROM THE HIVE
-        </p>
+
+    <!-- =====================================================
+         CURRENT MEMBER RESOURCES
+    ====================================================== -->
+
+    <section>
+
+      <div class="hive-section-heading">
 
         <h2>
-          Around the Hive
+          Your Member Library
         </h2>
 
         <p>
-          You're hearing it here first.
+          Your current Honey & Hymns resources,
+          ready whenever you need them.
         </p>
 
       </div>
 
 
-      <div class="hive-news-grid">
+      <div class="hive-card-grid">
 
 
-        <article class="hive-news-card">
+        <!-- SUNDAY GOSPEL -->
 
-          <p class="hive-news-label">
-            COMING SOON
-          </p>
+        <article class="hive-member-card">
 
-          <h3>
-            Something new is being added to the Hive.
-          </h3>
+          <div class="hive-card-image">
 
-          <p>
-            This is where members will get a little peek
-            at what's coming to Honey & Hymns before everyone else.
-          </p>
+            <img
+              src="../images/sunday-gospel-kids-jesus-tells-the-way.png"
+              alt="Sunday Gospel for Kids"
+            >
+
+          </div>
+
+          <div class="hive-card-content">
+
+            <p class="hive-card-label">
+              For Little Hearts
+            </p>
+
+            <h3>
+              Sunday Gospel for Kids
+            </h3>
+
+            <p>
+              A simple, faith-filled resource to help
+              families explore Sunday's Gospel together.
+            </p>
+
+            <!-- REPLACE THIS WITH YOUR GOOGLE DRIVE LINK -->
+
+            <a
+              class="hive-download-button"
+              href="YOUR-GOOGLE-DRIVE-SUNDAY-GOSPEL-LINK"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download Now →
+            </a>
+
+          </div>
 
         </article>
 
 
-        <article class="hive-news-card">
 
-          <p class="hive-news-label">
-            NEW IN THE HIVE
-          </p>
+        <!-- DIGITAL MAGAZINE -->
 
-          <h3>
-            New resources are on the way.
-          </h3>
+        <article class="hive-member-card">
 
-          <p>
-            Check back here for new printables, articles,
-            collections, and other little things we're working on.
-          </p>
+          <div class="hive-card-image">
 
-        </article>
+            <img
+              src="../images/honey-and-hymns-digital-magazine.png"
+              alt="Honey & Hymns Digital Magazine"
+            >
 
+          </div>
 
-        <article class="hive-news-card">
+          <div class="hive-card-content">
 
-          <p class="hive-news-label">
-            A LITTLE SNEAK PEEK
-          </p>
+            <p class="hive-card-label">
+              Inside the Hive
+            </p>
 
-          <h3>
-            Members always get the first look.
-          </h3>
+            <h3>
+              Honey & Hymns Digital Magazine
+            </h3>
 
-          <p>
-            This space will become our little bulletin board
-            for what's happening behind the scenes.
-          </p>
+            <p>
+              A cozy collection of faith, family,
+              homemaking, homeschool, and encouragement
+              for the month ahead.
+            </p>
+
+            <!-- REPLACE THIS WITH YOUR GOOGLE DRIVE LINK -->
+
+            <a
+              class="hive-download-button"
+              href="YOUR-GOOGLE-DRIVE-MAGAZINE-LINK"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download Now →
+            </a>
+
+          </div>
 
         </article>
 
@@ -2244,123 +2093,200 @@ footer p {
     </section>
 
 
-    <!-- ===================================================
-         WEEKLY MEMBER GIFT
-    ==================================================== -->
 
-    <section class="hive-member-gift">
+    <!-- =====================================================
+         PRINTABLES
+    ====================================================== -->
 
-      <div class="hive-member-gift-content">
+    <section>
 
-        <p class="hive-dashboard-kicker">
-          YOUR WEEKLY MEMBER GIFT
-        </p>
+      <div class="hive-section-heading">
 
         <h2>
-          This Week's Honey & Hymns Issue
+          Printables & Resources
         </h2>
 
         <p>
-          Enjoy the current issue completely free as a
-          Honey Hive member.
+          Helpful little things to print, use,
+          and come back to whenever you need them.
         </p>
 
-
-        <div class="hive-member-code">
-
-          <span>
-            MEMBER CODE
-          </span>
-
-          <strong>
-            HIVEFREE
-          </strong>
-
-        </div>
+      </div>
 
 
-        <!--
-          REPLACE # WITH THE ACTUAL
-          GOOGLE DRIVE DOWNLOAD LINK
-        -->
+      <div class="hive-card-grid">
 
-        <a
-          href="#"
-          class="hive-dashboard-button"
-          id="currentIssueDownload"
-        >
-          Download Now →
-        </a>
+
+        <article class="hive-member-card">
+
+          <div class="hive-card-content">
+
+            <p class="hive-card-label">
+              Member Printable
+            </p>
+
+            <h3>
+              Printable Resource Library
+            </h3>
+
+            <p>
+              A growing collection of practical
+              Honey & Hymns printables for home,
+              homeschool, faith, and family life.
+            </p>
+
+            <a
+              class="hive-download-button"
+              href="#"
+            >
+              Browse Printables →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <article class="hive-member-card">
+
+          <div class="hive-card-content">
+
+            <p class="hive-card-label">
+              Coming Soon
+            </p>
+
+            <h3>
+              More Member Resources
+            </h3>
+
+            <p>
+              New resources will be added here as
+              the Honey Hive continues to grow.
+            </p>
+
+          </div>
+
+        </article>
+
 
       </div>
 
     </section>
 
 
-    <!-- ===================================================
-         MEMBER LIBRARY
-    ==================================================== -->
 
-    <section class="hive-dashboard-section">
+    <!-- =====================================================
+         HONEY HIVE NEWS BOARD
+    ====================================================== -->
 
+    <section>
 
-      <div class="hive-dashboard-section-heading">
-
-        <p class="hive-dashboard-kicker">
-          YOUR MEMBER LIBRARY
-        </p>
+      <div class="hive-section-heading">
 
         <h2>
-          Gather what you need.
+          What's Coming to Honey & Hymns
         </h2>
 
         <p>
-          Resources to help with faith, family, homeschool,
-          homemaking, and the ordinary days in between.
+          A little peek behind the scenes —
+          members get to see what's coming next.
         </p>
 
       </div>
 
 
-      <div class="hive-resource-grid">
+      <div class="hive-news-board">
 
 
-        <!-- =================================================
-             PRINTABLES
-        ================================================== -->
+        <article class="hive-news-item">
 
-        <article class="hive-resource-card">
+          <p class="hive-news-date">
+            Coming Soon
+          </p>
 
-          <div class="hive-resource-image">
+          <h3>
+            New Honey & Hymns Resources
+          </h3>
 
-            <img
-              src="../images/honey-hive-printables.png"
-              alt="Honey & Hymns printable resources"
-            >
+          <p>
+            New resources are being prepared for
+            the Hive. Members will hear about them
+            here before they are announced publicly.
+          </p>
 
-          </div>
+        </article>
 
 
-          <div class="hive-resource-content">
+        <article class="hive-news-item">
 
-            <p class="hive-resource-label">
-              PRINTABLES
+          <p class="hive-news-date">
+            Behind the Scenes
+          </p>
+
+          <h3>
+            Something New Is Being Made
+          </h3>
+
+          <p>
+            Check back here for little previews,
+            upcoming projects, and new things
+            happening behind the scenes at Honey & Hymns.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BI-WEEKLY ARTICLES
+    ====================================================== -->
+
+    <section>
+
+      <div class="hive-section-heading">
+
+        <h2>
+          From Inside the Hive
+        </h2>
+
+        <p>
+          Member-only articles, reflections,
+          encouragement, and practical ideas.
+        </p>
+
+      </div>
+
+
+      <div class="hive-card-grid">
+
+
+        <article class="hive-member-card">
+
+          <div class="hive-card-content">
+
+            <p class="hive-card-label">
+              Member Article
             </p>
 
             <h3>
-              Little things to make life a little easier.
+              Your Next Bi-Weekly Article
             </h3>
 
             <p>
-              Browse member printables for homeschool,
-              homemaking, faith, family life, and more.
+              New member-only writing will appear
+              here every other week.
             </p>
 
             <a
-              href="#printables"
-              class="hive-resource-button"
+              class="hive-download-button"
+              href="#"
             >
-              Explore Printables →
+              Read Article →
             </a>
 
           </div>
@@ -2368,128 +2294,29 @@ footer p {
         </article>
 
 
-        <!-- =================================================
-             CURRENT ISSUES
-        ================================================== -->
+        <article class="hive-member-card">
 
-        <article class="hive-resource-card">
+          <div class="hive-card-content">
 
-          <div class="hive-resource-image">
-
-            <img
-              src="../images/honey-hive-current-issues.png"
-              alt="Honey & Hymns digital magazine issues"
-            >
-
-          </div>
-
-
-          <div class="hive-resource-content">
-
-            <p class="hive-resource-label">
-              CURRENT ISSUES
+            <p class="hive-card-label">
+              Member Archive
             </p>
 
             <h3>
-              Your little collection of Honey & Hymns.
+              Previous Articles
             </h3>
 
             <p>
-              Browse current and past issues of the
-              Honey & Hymns Digital Magazine.
+              A growing collection of member-only
+              articles to come back to whenever
+              you need them.
             </p>
 
             <a
-              href="#issues"
-              class="hive-resource-button"
+              class="hive-download-button"
+              href="#"
             >
-              Browse Issues →
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- =================================================
-             BI-WEEKLY ARTICLES
-        ================================================== -->
-
-        <article class="hive-resource-card">
-
-          <div class="hive-resource-image">
-
-            <img
-              src="../images/honey-hive-articles.png"
-              alt="Honey & Hymns member articles"
-            >
-
-          </div>
-
-
-          <div class="hive-resource-content">
-
-            <p class="hive-resource-label">
-              MEMBER ARTICLES
-            </p>
-
-            <h3>
-              A quiet place to read and reflect.
-            </h3>
-
-            <p>
-              Read Honey & Hymns' bi-weekly member-only
-              articles and reflections.
-            </p>
-
-            <a
-              href="#articles"
-              class="hive-resource-button"
-            >
-              Read the Articles →
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- =================================================
-             MEMBER RESOURCES
-        ================================================== -->
-
-        <article class="hive-resource-card">
-
-          <div class="hive-resource-image">
-
-            <img
-              src="../images/honey-hive-resources.png"
-              alt="Honey & Hymns member resources"
-            >
-
-          </div>
-
-
-          <div class="hive-resource-content">
-
-            <p class="hive-resource-label">
-              MEMBER RESOURCES
-            </p>
-
-            <h3>
-              A growing little library.
-            </h3>
-
-            <p>
-              Discover special resources created just for
-              Honey Hive members.
-            </p>
-
-            <a
-              href="#resources"
-              class="hive-resource-button"
-            >
-              Explore the Library →
+              Browse Articles →
             </a>
 
           </div>
@@ -2502,22 +2329,30 @@ footer p {
     </section>
 
 
-    <!-- ===================================================
-         CLOSING
-    ==================================================== -->
+  </main>
 
-    <section class="hive-dashboard-closing">
+
+
+  <!-- =======================================================
+       FULL WIDTH FOOTER
+  ======================================================== -->
+
+  <footer class="hive-footer">
+
+    <div class="hive-footer-inner">
 
       <p>
-        Made with a little honey, a little faith,
-        and a lot of love for the ordinary.
+        Made with love for the beautiful ordinary
+        life of faith, family, and home.
       </p>
 
-      <span>
-        🐝
-      </span>
+      <small>
+        Honey & Hymns · Inside the Honey Hive
+      </small>
 
-    </section>
+    </div>
+
+  </footer>
 
      <!-- =========================================================
        WISHLIST POPUP
@@ -2589,22 +2424,6 @@ footer p {
 
   </div>
 
-  <!-- =========================================================
-       FOOTER
-  ========================================================== -->
-
-  <footer>
-
-<p>
-  Honey & Hymns
-</p>
-
-<p>
-  Faith • Homeschool • Homemaking
-</p>
-
-  </footer>
-
 
   </main>
 
@@ -2614,6 +2433,138 @@ footer p {
   ====================================================== -->
 
   <script>
+
+     function getNextSundayMidnight() {
+
+      const now =
+        new Date();
+
+      const nextSunday =
+        new Date(now);
+
+      const currentDay =
+        now.getDay();
+
+      let daysUntilSunday =
+        (7 - currentDay) % 7;
+
+
+      /*
+        If it is already Sunday,
+        count down to the following Sunday.
+      */
+
+      if (daysUntilSunday === 0) {
+
+        daysUntilSunday = 7;
+
+      }
+
+
+      nextSunday.setDate(
+        now.getDate() + daysUntilSunday
+      );
+
+      nextSunday.setHours(
+        0,
+        0,
+        0,
+        0
+      );
+
+
+      return nextSunday;
+
+    }
+
+
+    function updateWeeklyTimer() {
+
+      const timer =
+        document.getElementById(
+          "weeklyTimer"
+        );
+
+
+      if (!timer) {
+        return;
+      }
+
+
+      const now =
+        new Date();
+
+      const expiration =
+        getNextSundayMidnight();
+
+
+      const difference =
+        expiration.getTime() -
+        now.getTime();
+
+
+      if (difference <= 0) {
+
+        timer.textContent =
+          "This week's code has expired.";
+
+        return;
+
+      }
+
+
+      const days =
+        Math.floor(
+          difference /
+          (1000 * 60 * 60 * 24)
+        );
+
+
+      const hours =
+        Math.floor(
+          (difference /
+          (1000 * 60 * 60)) %
+          24
+        );
+
+
+      const minutes =
+        Math.floor(
+          (difference /
+          (1000 * 60)) %
+          60
+        );
+
+
+      const seconds =
+        Math.floor(
+          (difference /
+          1000) %
+          60
+        );
+
+
+      timer.textContent =
+        "This week's code expires in " +
+        days +
+        "d " +
+        hours +
+        "h " +
+        minutes +
+        "m " +
+        seconds +
+        "s";
+
+    }
+
+
+    updateWeeklyTimer();
+
+
+    window.setInterval(
+      updateWeeklyTimer,
+      1000
+    );
 
     document.addEventListener("DOMContentLoaded", function () {
 
