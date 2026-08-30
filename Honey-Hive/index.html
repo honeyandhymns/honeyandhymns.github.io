@@ -490,18 +490,212 @@
 .hive-intro-text:last-child {
   margin-bottom: 0;
 }
+/* =========================================================
+   HONEY HIVE — CAROUSEL
+========================================================= */
+
 .hive-carousel {
   position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 45px auto 0;
+  overflow: hidden;
+}
+
+.hive-carousel-track {
+  position: relative;
+  width: 100%;
 }
 
 .hive-carousel-slide {
   display: none;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+
+  width: 100%;
+
+  animation:
+    hiveCarouselFade 0.45s ease;
 }
 
 .hive-carousel-slide.active {
   display: grid;
 }
 
+@keyframes hiveCarouselFade {
+
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+
+/* =========================================================
+   CAROUSEL CARDS
+========================================================= */
+
+.hive-carousel .hive-benefit-card {
+  min-height: 250px;
+
+  padding: 34px 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #FFFDF5 0%,
+      #FFF9EE 100%
+    );
+
+  border:
+    1px solid
+    rgba(138, 106, 74, 0.18);
+
+  border-radius: 18px;
+
+  text-align: left;
+
+  box-shadow:
+    0 8px 24px
+    rgba(91, 70, 54, 0.07);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hive-carousel .hive-benefit-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 30px
+    rgba(91, 70, 54, 0.11);
+}
+
+
+/* =========================================================
+   CAROUSEL NAVIGATION
+========================================================= */
+
+.hive-carousel-controls {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 28px;
+}
+
+.hive-carousel-button {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    #D8C79F;
+
+  border-radius: 50%;
+
+  background: #FFFDF4;
+
+  color: #665020;
+
+  font-size: 1.15rem;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hive-carousel-button:hover {
+  background: #FFEBA1;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 15px
+    rgba(91, 70, 54, 0.10);
+}
+
+.hive-carousel-dots {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+}
+
+.hive-carousel-dot {
+  width: 8px;
+  height: 8px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #D8C79F;
+
+  cursor: pointer;
+
+  transition:
+    width 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hive-carousel-dot.active {
+  width: 22px;
+
+  border-radius: 999px;
+
+  background: #80652D;
+}
+
+
+/* =========================================================
+   CAROUSEL MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .hive-carousel-slide {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .hive-carousel .hive-benefit-card {
+    min-height: auto;
+
+    padding: 28px 24px;
+  }
+
+  .hive-carousel-controls {
+    margin-top: 22px;
+  }
+
+}
 /* =========================================================
    WHAT'S INSIDE
 ========================================================= */
@@ -3814,6 +4008,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentSlide = 0;
 
+  let carouselTimer = null;
+
+  const CAROUSEL_INTERVAL = 5000;
+
+
+  /* =========================================================
+     SHOW CAROUSEL SLIDE
+  ========================================================= */
 
   function showSlide(index) {
 
@@ -3825,11 +4027,17 @@ document.addEventListener("DOMContentLoaded", function () {
     /* Keep the index within the carousel range. */
 
     if (index < 0) {
-      index = slides.length - 1;
+
+      index =
+        slides.length - 1;
+
     }
 
+
     if (index >= slides.length) {
+
       index = 0;
+
     }
 
 
@@ -3838,54 +4046,143 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* Update slides. */
 
-    slides.forEach(function (slide, slideIndex) {
+    slides.forEach(
+      function (slide, slideIndex) {
 
-      slide.classList.toggle(
-        "active",
-        slideIndex === currentSlide
-      );
+        slide.classList.toggle(
+          "active",
+          slideIndex === currentSlide
+        );
 
-    });
+      }
+    );
 
 
     /* Update dots. */
 
-    dots.forEach(function (dot, dotIndex) {
+    dots.forEach(
+      function (dot, dotIndex) {
 
-      const isActive =
-        dotIndex === currentSlide;
+        const isActive =
+          dotIndex === currentSlide;
 
-      dot.classList.toggle(
-        "active",
-        isActive
-      );
 
-      if (isActive) {
-
-        dot.setAttribute(
-          "aria-current",
-          "true"
+        dot.classList.toggle(
+          "active",
+          isActive
         );
 
-      } else {
 
-        dot.removeAttribute(
-          "aria-current"
-        );
+        if (isActive) {
+
+          dot.setAttribute(
+            "aria-current",
+            "true"
+          );
+
+        } else {
+
+          dot.removeAttribute(
+            "aria-current"
+          );
+
+        }
 
       }
-
-    });
+    );
 
   }
 
+
+  /* =========================================================
+     NEXT SLIDE
+  ========================================================= */
+
+  function nextSlide() {
+
+    showSlide(
+      currentSlide + 1
+    );
+
+  }
+
+
+  /* =========================================================
+     PREVIOUS SLIDE
+  ========================================================= */
+
+  function previousSlide() {
+
+    showSlide(
+      currentSlide - 1
+    );
+
+  }
+
+
+  /* =========================================================
+     START AUTO-ROTATION
+  ========================================================= */
+
+  function startCarousel() {
+
+    if (
+      !slides.length ||
+      slides.length <= 1
+    ) {
+
+      return;
+
+    }
+
+
+    stopCarousel();
+
+
+    carouselTimer =
+      window.setInterval(
+        function () {
+
+          nextSlide();
+
+        },
+        CAROUSEL_INTERVAL
+      );
+
+  }
+
+
+  /* =========================================================
+     STOP AUTO-ROTATION
+  ========================================================= */
+
+  function stopCarousel() {
+
+    if (carouselTimer) {
+
+      window.clearInterval(
+        carouselTimer
+      );
+
+      carouselTimer = null;
+
+    }
+
+  }
+
+
+  /* =========================================================
+     INITIALIZE CAROUSEL
+  ========================================================= */
 
   if (slides.length) {
 
     showSlide(0);
 
 
-    /* Previous button. */
+    /* -------------------------------------------------------
+       PREVIOUS BUTTON
+    ------------------------------------------------------- */
 
     if (previousButton) {
 
@@ -3893,7 +4190,9 @@ document.addEventListener("DOMContentLoaded", function () {
         "click",
         function () {
 
-          showSlide(currentSlide - 1);
+          previousSlide();
+
+          startCarousel();
 
         }
       );
@@ -3901,7 +4200,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* Next button. */
+    /* -------------------------------------------------------
+       NEXT BUTTON
+    ------------------------------------------------------- */
 
     if (nextButton) {
 
@@ -3909,7 +4210,9 @@ document.addEventListener("DOMContentLoaded", function () {
         "click",
         function () {
 
-          showSlide(currentSlide + 1);
+          nextSlide();
+
+          startCarousel();
 
         }
       );
@@ -3917,23 +4220,31 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* Dot navigation. */
+    /* -------------------------------------------------------
+       DOT NAVIGATION
+    ------------------------------------------------------- */
 
-    dots.forEach(function (dot, index) {
+    dots.forEach(
+      function (dot, index) {
 
-      dot.addEventListener(
-        "click",
-        function () {
+        dot.addEventListener(
+          "click",
+          function () {
 
-          showSlide(index);
+            showSlide(index);
 
-        }
-      );
+            startCarousel();
 
-    });
+          }
+        );
+
+      }
+    );
 
 
-    /* Keyboard navigation. */
+    /* -------------------------------------------------------
+       KEYBOARD NAVIGATION
+    ------------------------------------------------------- */
 
     if (carousel) {
 
@@ -3942,30 +4253,75 @@ document.addEventListener("DOMContentLoaded", function () {
         "0"
       );
 
+
       carousel.addEventListener(
         "keydown",
         function (event) {
 
-          if (event.key === "ArrowLeft") {
+          if (
+            event.key === "ArrowLeft"
+          ) {
 
             event.preventDefault();
 
-            showSlide(currentSlide - 1);
+            previousSlide();
+
+            startCarousel();
 
           }
 
-          if (event.key === "ArrowRight") {
+
+          if (
+            event.key === "ArrowRight"
+          ) {
 
             event.preventDefault();
 
-            showSlide(currentSlide + 1);
+            nextSlide();
+
+            startCarousel();
 
           }
 
         }
       );
 
+
+      /* -----------------------------------------------------
+         PAUSE WHEN MOUSE IS OVER CAROUSEL
+      ----------------------------------------------------- */
+
+      carousel.addEventListener(
+        "mouseenter",
+        function () {
+
+          stopCarousel();
+
+        }
+      );
+
+
+      /* -----------------------------------------------------
+         RESUME WHEN MOUSE LEAVES CAROUSEL
+      ----------------------------------------------------- */
+
+      carousel.addEventListener(
+        "mouseleave",
+        function () {
+
+          startCarousel();
+
+        }
+      );
+
     }
+
+
+    /* -------------------------------------------------------
+       START AUTOMATIC ROTATION
+    ------------------------------------------------------- */
+
+    startCarousel();
 
   }
 
@@ -3987,12 +4343,15 @@ document.addEventListener("DOMContentLoaded", function () {
           WISHLIST_STORAGE_KEY
         );
 
+
       if (!stored) {
         return [];
       }
 
+
       const parsed =
         JSON.parse(stored);
+
 
       return Array.isArray(parsed)
         ? parsed
@@ -4028,9 +4387,11 @@ document.addEventListener("DOMContentLoaded", function () {
         "wishlistCount"
       );
 
+
     if (!countElement) {
       return;
     }
+
 
     countElement.textContent =
       getWishlist().length;
@@ -4067,29 +4428,37 @@ document.addEventListener("DOMContentLoaded", function () {
       );
 
 
-    buttons.forEach(function (button) {
+    buttons.forEach(
+      function (button) {
 
-      const id =
-        button.dataset.wishlistId;
+        const id =
+          button.dataset.wishlistId;
 
 
-      if (isInWishlist(id)) {
+        if (isInWishlist(id)) {
 
-        button.classList.add("saved");
+          button.classList.add(
+            "saved"
+          );
 
-        button.textContent =
-          "♥ Saved to Wishlist";
 
-      } else {
+          button.textContent =
+            "♥ Saved to Wishlist";
 
-        button.classList.remove("saved");
+        } else {
 
-        button.textContent =
-          "♡ Add to Wishlist";
+          button.classList.remove(
+            "saved"
+          );
+
+
+          button.textContent =
+            "♡ Add to Wishlist";
+
+        }
 
       }
-
-    });
+    );
 
   }
 
@@ -4151,12 +4520,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     } else {
 
-      wishlist.push(product);
+      wishlist.push(
+        product
+      );
 
     }
 
 
-    saveWishlist(wishlist);
+    saveWishlist(
+      wishlist
+    );
+
 
     updateWishlistCount();
 
@@ -4170,19 +4544,25 @@ document.addEventListener("DOMContentLoaded", function () {
   ========================================================= */
 
   document
-    .querySelectorAll(".wishlist-button")
-    .forEach(function (button) {
+    .querySelectorAll(
+      ".wishlist-button"
+    )
+    .forEach(
+      function (button) {
 
-      button.addEventListener(
-        "click",
-        function () {
+        button.addEventListener(
+          "click",
+          function () {
 
-          toggleWishlist(button);
+            toggleWishlist(
+              button
+            );
 
-        }
-      );
+          }
+        );
 
-    });
+      }
+    );
 
 
   /* =========================================================
@@ -4193,15 +4573,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     return String(value)
 
-      .replace(/&/g, "&amp;")
+      .replace(
+        /&/g,
+        "&amp;"
+      )
 
-      .replace(/</g, "&lt;")
+      .replace(
+        /</g,
+        "&lt;"
+      )
 
-      .replace(/>/g, "&gt;")
+      .replace(
+        />/g,
+        "&gt;"
+      )
 
-      .replace(/"/g, "&quot;")
+      .replace(
+        /"/g,
+        "&quot;"
+      )
 
-      .replace(/'/g, "&#039;");
+      .replace(
+        /'/g,
+        "&#039;"
+      );
 
   }
 
@@ -4216,6 +4611,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById(
         "wishlistBody"
       );
+
 
     if (!body) {
       return;
@@ -4249,61 +4645,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
       `;
 
+
       return;
 
     }
 
 
     body.innerHTML =
-      wishlist.map(function (item) {
+      wishlist
+        .map(
+          function (item) {
 
-        return `
+            return `
 
-          <div
-            class="wishlist-item"
-            data-item-id="${escapeHtml(item.id)}"
-          >
-
-            <img
-              class="wishlist-item-image"
-              src="${escapeHtml(item.image)}"
-              alt="${escapeHtml(item.title)}"
-            >
-
-            <div>
-
-              <h3 class="wishlist-item-title">
-                ${escapeHtml(item.title)}
-              </h3>
-
-              <p class="wishlist-item-price">
-                ${escapeHtml(item.price)}
-              </p>
-
-              <a
-                class="wishlist-item-view"
-                href="${escapeHtml(item.url)}"
-                target="_blank"
-                rel="noopener noreferrer"
+              <div
+                class="wishlist-item"
+                data-item-id="${escapeHtml(item.id)}"
               >
-                View Product →
-              </a>
 
-            </div>
+                <img
+                  class="wishlist-item-image"
+                  src="${escapeHtml(item.image)}"
+                  alt="${escapeHtml(item.title)}"
+                >
 
-            <button
-              class="wishlist-remove"
-              type="button"
-              data-remove-id="${escapeHtml(item.id)}"
-            >
-              Remove
-            </button>
+                <div>
 
-          </div>
+                  <h3 class="wishlist-item-title">
+                    ${escapeHtml(item.title)}
+                  </h3>
 
-        `;
+                  <p class="wishlist-item-price">
+                    ${escapeHtml(item.price)}
+                  </p>
 
-      }).join("");
+                  <a
+                    class="wishlist-item-view"
+                    href="${escapeHtml(item.url)}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Product →
+                  </a>
+
+                </div>
+
+                <button
+                  class="wishlist-remove"
+                  type="button"
+                  data-remove-id="${escapeHtml(item.id)}"
+                >
+                  Remove
+                </button>
+
+              </div>
+
+            `;
+
+          }
+        )
+        .join("");
 
 
     /* Add remove button events. */
@@ -4312,20 +4713,22 @@ document.addEventListener("DOMContentLoaded", function () {
       .querySelectorAll(
         ".wishlist-remove"
       )
-      .forEach(function (button) {
+      .forEach(
+        function (button) {
 
-        button.addEventListener(
-          "click",
-          function () {
+          button.addEventListener(
+            "click",
+            function () {
 
-            removeFromWishlist(
-              button.dataset.removeId
-            );
+              removeFromWishlist(
+                button.dataset.removeId
+              );
 
-          }
-        );
+            }
+          );
 
-      });
+        }
+      );
 
   }
 
@@ -4337,16 +4740,20 @@ document.addEventListener("DOMContentLoaded", function () {
   function removeFromWishlist(id) {
 
     const wishlist =
-      getWishlist().filter(
-        function (item) {
+      getWishlist()
+        .filter(
+          function (item) {
 
-          return item.id !== id;
+            return item.id !== id;
 
-        }
-      );
+          }
+        );
 
 
-    saveWishlist(wishlist);
+    saveWishlist(
+      wishlist
+    );
+
 
     updateWishlistCount();
 
@@ -4365,22 +4772,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     renderWishlist();
 
+
     const overlay =
       document.getElementById(
         "wishlistOverlay"
       );
+
 
     if (!overlay) {
       return;
     }
 
 
-    overlay.classList.add("open");
+    overlay.classList.add(
+      "open"
+    );
+
 
     overlay.setAttribute(
       "aria-hidden",
       "false"
     );
+
 
     document.body.style.overflow =
       "hidden";
@@ -4399,17 +4812,22 @@ document.addEventListener("DOMContentLoaded", function () {
         "wishlistOverlay"
       );
 
+
     if (!overlay) {
       return;
     }
 
 
-    overlay.classList.remove("open");
+    overlay.classList.remove(
+      "open"
+    );
+
 
     overlay.setAttribute(
       "aria-hidden",
       "true"
     );
+
 
     document.body.style.overflow =
       "";
@@ -4445,6 +4863,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     saveWishlist([]);
 
+
     updateWishlistCount();
 
     updateWishlistButtons();
@@ -4470,7 +4889,9 @@ document.addEventListener("DOMContentLoaded", function () {
       "click",
       function (event) {
 
-        if (event.target === wishlistOverlay) {
+        if (
+          event.target === wishlistOverlay
+        ) {
 
           window.closeWishlist();
 
@@ -4491,10 +4912,12 @@ document.addEventListener("DOMContentLoaded", function () {
       "hiveAccessModal"
     );
 
+
   const openHiveAccess =
     document.getElementById(
       "openHiveAccess"
     );
+
 
   const closeHiveAccess =
     document.getElementById(
@@ -4519,10 +4942,12 @@ document.addEventListener("DOMContentLoaded", function () {
           "open"
         );
 
+
         hiveAccessModal.setAttribute(
           "aria-hidden",
           "false"
         );
+
 
         document.body.style.overflow =
           "hidden";
@@ -4568,10 +4993,12 @@ document.addEventListener("DOMContentLoaded", function () {
       "open"
     );
 
+
     hiveAccessModal.setAttribute(
       "aria-hidden",
       "true"
     );
+
 
     document.body.style.overflow =
       "";
@@ -4599,14 +5026,16 @@ document.addEventListener("DOMContentLoaded", function () {
       .querySelectorAll(
         "[data-hive-close]"
       )
-      .forEach(function (element) {
+      .forEach(
+        function (element) {
 
-        element.addEventListener(
-          "click",
-          closeHiveModal
-        );
+          element.addEventListener(
+            "click",
+            closeHiveModal
+          );
 
-      });
+        }
+      );
 
   }
 
@@ -4644,6 +5073,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "hivePasswordForm"
     );
 
+
   const passwordError =
     document.getElementById(
       "hivePasswordError"
@@ -4660,6 +5090,7 @@ document.addEventListener("DOMContentLoaded", function () {
       function (event) {
 
         event.preventDefault();
+
 
         passwordError.textContent =
           "The Honey Hive entrance is coming soon. Check back when member access is ready.";
@@ -4680,7 +5111,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
-
 
 
 
