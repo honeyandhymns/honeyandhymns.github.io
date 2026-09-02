@@ -1331,7 +1331,7 @@ footer p:last-child {
 
 
 /* =========================================================
-   WELCOME LETTER POPUP
+   HONEY & HYMNS — WELCOME LETTER POPUP
 ========================================================= */
 
 .welcome-popup-overlay {
@@ -1365,14 +1365,13 @@ footer p:last-child {
 
 
 /* =========================================================
-   WELCOME LETTER
+   LETTER
 ========================================================= */
 
 .welcome-letter {
   position: relative;
 
   width: min(560px, 94vw);
-
   max-height: 90vh;
 
   overflow-y: auto;
@@ -1382,14 +1381,16 @@ footer p:last-child {
   background:
     linear-gradient(
       135deg,
-      #FFFDF5 0%,
-      #FFFAF0 55%,
-      #FFF7DF 100%
+      #fffdf5 0%,
+      #fffaf0 55%,
+      #fff7df 100%
     );
 
-  border: 1px solid #D8C79F;
+  border:
+    1px solid
+    #d8c79f;
 
-  border-radius: var(--radius-large);
+  border-radius: 18px;
 
   box-shadow:
     0 24px 70px
@@ -1428,11 +1429,11 @@ footer p:last-child {
 
   position: absolute;
 
-  top: 18px;
+  color: #d8b65f;
 
-  color: #D8B65F;
-
-  font-family: Georgia, serif;
+  font-family:
+    Georgia,
+    serif;
 
   font-size: 15px;
 
@@ -1440,16 +1441,18 @@ footer p:last-child {
 }
 
 .welcome-letter::before {
+  top: 18px;
   left: 22px;
 }
 
 .welcome-letter::after {
+  top: 18px;
   right: 22px;
 }
 
 
 /* =========================================================
-   WELCOME CLOSE BUTTON
+   CLOSE BUTTON
 ========================================================= */
 
 .welcome-letter-close {
@@ -1465,11 +1468,13 @@ footer p:last-child {
   align-items: center;
   justify-content: center;
 
-  border: 1px solid #D8C79F;
+  border:
+    1px solid
+    #d8c79f;
 
   border-radius: 50%;
 
-  background: #FFF9DF;
+  background: #fff9df;
   color: #665020;
 
   cursor: pointer;
@@ -1483,25 +1488,27 @@ footer p:last-child {
 }
 
 .welcome-letter-close:hover {
-  background: #FFEAA0;
+  background: #ffeaa0;
 
-  transform: rotate(5deg);
+  transform:
+    rotate(5deg);
 }
 
 
 /* =========================================================
-   WELCOME LETTER TOP
+   LETTER TOP
 ========================================================= */
 
 .welcome-letter-kicker {
   margin: 0 0 7px;
 
-  color: #80652D;
+  color: #80652d;
 
-  font-family: "Caveat", cursive;
+  font-family:
+    "Caveat",
+    cursive;
 
   font-size: 1.35rem;
-
   line-height: 1.2;
 }
 
@@ -1510,9 +1517,13 @@ footer p:last-child {
 
   color: #403521;
 
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-  font-size: clamp(2.35rem, 7vw, 3.45rem);
+  font-size:
+    clamp(2.35rem, 7vw, 3.45rem);
 
   font-weight: 500;
 
@@ -1521,7 +1532,7 @@ footer p:last-child {
 
 
 /* =========================================================
-   WELCOME DECORATIVE RULE
+   DECORATIVE RULE
 ========================================================= */
 
 .welcome-letter-rule {
@@ -1542,28 +1553,32 @@ footer p:last-child {
 
   height: 1px;
 
-  background: #D8C79F;
+  background:
+    #d8c79f;
 }
 
 .welcome-letter-rule span {
-  color: #B79B58;
+  color: #b79b58;
 
   font-size: 15px;
 }
 
 
 /* =========================================================
-   WELCOME BODY
+   BODY COPY
 ========================================================= */
 
 .welcome-letter-copy {
-  max-width: 440px;
-
   margin: 0 auto 22px;
 
-  color: #62594E;
+  max-width: 440px;
 
-  font-family: Georgia, "Times New Roman", serif;
+  color: #62594e;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
   font-size: 16px;
 
@@ -1572,7 +1587,7 @@ footer p:last-child {
 
 
 /* =========================================================
-   WELCOME GIFT
+   FREE GIFT CARD
 ========================================================= */
 
 .welcome-gift {
@@ -1583,25 +1598,30 @@ footer p:last-child {
   background:
     linear-gradient(
       135deg,
-      #FFF9DF,
-      #FFEBA1
+      #fff9df,
+      #ffeba1
     );
 
-  border: 1px solid #DFC878;
+  border:
+    1px solid
+    #dfc878;
 
-  border-radius: 14px;
+  border-radius: 12px;
 
   box-shadow:
     inset 0 1px 0
-    rgba(255, 255, 255, 0.7);
+    rgba(255,255,255,0.7);
 }
 
 .welcome-gift-label {
   margin: 0 0 4px;
 
-  color: #80652D;
+  color: #80652d;
 
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: 12px;
 
@@ -1617,7 +1637,10 @@ footer p:last-child {
 
   color: #403521;
 
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: 1.55rem;
 
@@ -1625,43 +1648,44 @@ footer p:last-child {
 }
 
 
-/* =========================================================
-   RETREAT IMAGE
-========================================================= */
+/* RETREAT IMAGE */
 
 .welcome-gift-image {
   width: 100%;
-
   max-width: 260px;
-
   height: auto;
 
   display: block;
 
   margin: 0 auto 10px;
 
-  border: 1px solid rgba(128, 101, 45, 0.22);
+  border:
+    1px solid
+    rgba(128, 101, 45, 0.22);
 
-  border-radius: 9px;
+  border-radius: 8px;
 
   box-shadow:
     0 5px 14px
     rgba(77, 64, 41, 0.12);
 }
 
+
 .welcome-gift-description {
   margin: 0;
 
-  color: #68583D;
+  color: #68583d;
 
-  font-family: "Caveat", cursive;
+  font-family:
+    "Caveat",
+    cursive;
 
   font-size: 1.08rem;
 }
 
 
 /* =========================================================
-   WELCOME FORM
+   FORM
 ========================================================= */
 
 .welcome-letter-form {
@@ -1679,17 +1703,23 @@ footer p:last-child {
 
   height: 48px;
 
-  padding: 0 15px;
+  padding:
+    0 15px;
 
-  background: #FFFDF7;
+  background: #fffdf7;
 
-  border: 1px solid #D8C79F;
+  border:
+    1px solid
+    #d8c79f;
 
-  border-radius: 10px;
+  border-radius: 8px;
 
-  color: #40372D;
+  color: #40372d;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
   font-size: 14px;
 
@@ -1699,13 +1729,13 @@ footer p:last-child {
 }
 
 .welcome-letter-input::placeholder {
-  color: #9A8E7C;
+  color: #9a8e7c;
 }
 
 .welcome-letter-input:focus {
   outline: none;
 
-  border-color: #B79B58;
+  border-color: #b79b58;
 
   box-shadow:
     0 0 0 3px
@@ -1714,7 +1744,54 @@ footer p:last-child {
 
 
 /* =========================================================
-   WELCOME SUBSCRIBE BUTTON
+   CONSENT CHECKBOX
+========================================================= */
+
+.welcome-letter-consent {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  margin-top: 2px;
+
+  text-align: left;
+
+  color: #746957;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+.welcome-letter-consent input {
+  flex:
+    0 0 auto;
+
+  width: 15px;
+  height: 15px;
+
+  margin:
+    1px 0 0;
+
+  accent-color: #80652d;
+
+  cursor: pointer;
+}
+
+.welcome-letter-consent label {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   SUBSCRIBE BUTTON
 ========================================================= */
 
 .welcome-letter-button {
@@ -1722,19 +1799,23 @@ footer p:last-child {
 
   min-height: 48px;
 
-  padding: 12px 22px;
+  padding:
+    12px 22px;
 
   border: none;
 
   border-radius: 30px;
 
-  background: #80652D;
+  background: #80652d;
 
-  color: #FFFDF4;
+  color: #fffdf4;
 
   cursor: pointer;
 
-  font-family: "Playfair Display", Georgia, serif;
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
 
   font-size: 0.82rem;
 
@@ -1744,33 +1825,91 @@ footer p:last-child {
 
   transition:
     background 0.2s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .welcome-letter-button:hover {
   background: #665020;
 
-  transform: translateY(-1px);
+  transform:
+    translateY(-1px);
+}
+
+.welcome-letter-button:disabled {
+  opacity: 0.65;
+
+  cursor: wait;
+
+  transform: none;
 }
 
 
 /* =========================================================
-   WELCOME REASSURANCE
+   SUCCESS MESSAGE
+========================================================= */
+
+.welcome-letter-success {
+  display: none;
+
+  margin:
+    12px auto 0;
+
+  max-width: 400px;
+
+  color: #62594e;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+.welcome-letter-success.open {
+  display: block;
+}
+
+.welcome-letter-success strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #80652d;
+
+  font-family:
+    "Caveat",
+    cursive;
+
+  font-size: 1.45rem;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   REASSURANCE
 ========================================================= */
 
 .welcome-letter-note {
   margin: 9px 0 0;
 
-  color: #8A7B66;
+  color: #8a7b66;
 
   font-size: 11px;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 }
 
 
 /* =========================================================
-   WELCOME DISMISS
+   NOT TODAY
 ========================================================= */
 
 .welcome-letter-dismiss {
@@ -1782,11 +1921,14 @@ footer p:last-child {
 
   background: transparent;
 
-  color: #80652D;
+  color: #80652d;
 
   cursor: pointer;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
   font-size: 12px;
 
@@ -1796,81 +1938,12 @@ footer p:last-child {
 }
 
 .welcome-letter-dismiss:hover {
-  color: #5E4B2F;
+  color: #5e4b2f;
 }
 
 
 /* =========================================================
-   RESPONSIVE — TABLET
-========================================================= */
-
-@media (max-width: 950px) {
-
-  .finds-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
-}
-
-
-/* =========================================================
-   RESPONSIVE — MOBILE
-========================================================= */
-
-@media (max-width: 650px) {
-
-  .amazon-finds-hero {
-    padding: 60px 18px 50px;
-  }
-
-  .amazon-finds-content {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  .finds-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .finds-filters {
-    gap: 7px;
-  }
-
-  .finds-filter {
-    padding: 8px 13px;
-    font-size: 0.82rem;
-  }
-
-  .living-bookshelf-section {
-    padding: 40px 20px;
-
-    border-radius: var(--radius-medium);
-  }
-
-  .finds-subcategory-buttons {
-    gap: 6px;
-
-    margin: 13px auto 23px;
-
-    padding: 0 5px;
-  }
-
-  .finds-subcategory {
-    font-size: 0.76rem;
-
-    padding: 6px 11px;
-  }
-
-  .finds-pagination {
-    margin-top: 28px;
-  }
-
-}
-
-
-/* =========================================================
-   WELCOME POPUP — MOBILE
+   MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -1884,7 +1957,8 @@ footer p:last-child {
 
     max-height: 92vh;
 
-    padding: 38px 23px 28px;
+    padding:
+      38px 23px 28px;
 
     border-radius: 15px;
   }
@@ -1895,12 +1969,12 @@ footer p:last-child {
 
   .welcome-letter-copy {
     font-size: 15px;
-
     line-height: 1.6;
   }
 
   .welcome-gift {
-    padding: 14px 15px;
+    padding:
+      14px 15px;
   }
 
   .welcome-gift-title {
@@ -1908,7 +1982,8 @@ footer p:last-child {
   }
 
   .welcome-letter-rule {
-    margin: 16px 0;
+    margin:
+      16px 0;
   }
 
 }
@@ -1953,114 +2028,183 @@ footer p:last-child {
 
 <body>
 
-  <!-- =========================================================
-       HONEY & HYMNS — WELCOME LETTER POPUP
-  ========================================================= -->
+ <!-- =========================================================
+     HONEY & HYMNS — WELCOME LETTER POPUP
+========================================================= -->
+
+<div
+  class="welcome-popup-overlay"
+  id="welcomePopup"
+  aria-hidden="true"
+>
 
   <div
-    class="welcome-popup-overlay"
-    id="welcomePopup"
-    aria-hidden="true"
+    class="welcome-letter"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="welcomePopupTitle"
   >
 
-    <div
-      class="welcome-letter"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="welcomePopupTitle"
+    <button
+      class="welcome-letter-close"
+      type="button"
+      onclick="closeWelcomePopup()"
+      aria-label="Close welcome message"
     >
+      ×
+    </button>
 
-      <button
-        class="welcome-letter-close"
-        type="button"
-        onclick="closeWelcomePopup()"
-        aria-label="Close welcome message"
-      >
-        ×
-      </button>
 
-      <p class="welcome-letter-kicker">
-        A little something for your home
+    <p class="welcome-letter-kicker">
+      A little something for your home
+    </p>
+
+
+    <h2
+      class="welcome-letter-title"
+      id="welcomePopupTitle"
+    >
+      Welcome to<br>
+      Honey & Hymns 🐝
+    </h2>
+
+
+    <div class="welcome-letter-rule">
+      <span>✦</span>
+    </div>
+
+
+    <p class="welcome-letter-copy">
+      A peaceful little corner for Catholic
+      homemakers, homeschool moms, and women
+      trying to make a beautiful home in the midst
+      of ordinary family life.
+    </p>
+
+
+    <div class="welcome-gift">
+
+      <p class="welcome-gift-label">
+        A Free Gift for You
       </p>
 
-      <h2
-        class="welcome-letter-title"
-        id="welcomePopupTitle"
-      >
-        Welcome to<br>
-        Honey & Hymns 🐝
-      </h2>
+      <h3 class="welcome-gift-title">
+        Mini At-Home Retreat
+      </h3>
 
-      <div class="welcome-letter-rule">
-        <span>✦</span>
-      </div>
-
-      <p class="welcome-letter-copy">
-        A peaceful little corner for Catholic
-        homemakers, homeschool moms, and women
-        trying to make a beautiful home in the midst
-        of ordinary family life.
-      </p>
-
-      <div class="welcome-gift">
-
-        <p class="welcome-gift-label">
-          A Free Gift for You
-        </p>
-
-        <h3 class="welcome-gift-title">
-          Mini At-Home Retreat
-        </h3>
-
-        <img
-          class="welcome-gift-image"
-          src="../images/honey-and-hymns-mini-home-retreat.png"
-          alt="Honey & Hymns Mini At-Home Retreat"
-        >
-
-        <p class="welcome-gift-description">
-          Pause • Pray • Reflect • Begin Again
-        </p>
-
-      </div>
-
-      <p class="welcome-letter-copy">
-        Join the Honey Hive and I'll send this
-        peaceful little retreat straight to your inbox.
-      </p>
-
-      <form
-        class="welcome-letter-form"
-        action="https://honeyandhymns.substack.com/welcome"
-        method="get"
-        target="_blank"
+      <img
+        class="welcome-gift-image"
+        src="../images/honey-and-hymns-mini-home-retreat.png"
+        alt="Honey & Hymns Mini At-Home Retreat"
       >
 
-        <button
-          class="welcome-letter-button"
-          type="submit"
-        >
-          Join the Honey Hive →
-        </button>
-
-      </form>
-
-      <p class="welcome-letter-note">
-        Free to join • Unsubscribe anytime
+      <p class="welcome-gift-description">
+        Pause • Pray • Reflect • Begin Again
       </p>
-
-      <button
-        class="welcome-letter-dismiss"
-        type="button"
-        onclick="closeWelcomePopup(true)"
-      >
-        Not today, thank you
-      </button>
 
     </div>
 
+
+    <p class="welcome-letter-copy">
+      Join the Honey Hive and I'll send this
+      peaceful little retreat straight to your inbox.
+    </p>
+
+
+    <!-- =====================================================
+         SIGNUP FORM
+    ====================================================== -->
+
+    <form
+      class="welcome-letter-form"
+      id="welcomeSignupForm"
+    >
+
+      <input
+        class="welcome-letter-input"
+        type="text"
+        id="welcomeFirstName"
+        name="firstName"
+        placeholder="First name"
+        autocomplete="given-name"
+        required
+      >
+
+
+      <input
+        class="welcome-letter-input"
+        type="email"
+        id="welcomeEmail"
+        name="email"
+        placeholder="Email address"
+        autocomplete="email"
+        required
+      >
+
+
+      <div class="welcome-letter-consent">
+
+        <input
+          type="checkbox"
+          id="welcomeConsent"
+          name="consent"
+          value="Yes"
+          required
+        >
+
+        <label for="welcomeConsent">
+          Yes, I'd like to receive emails from Honey & Hymns,
+          including new articles, resources, and occasional
+          offers. I can unsubscribe anytime.
+        </label>
+
+      </div>
+
+
+      <button
+        class="welcome-letter-button"
+        id="welcomeSubmitButton"
+        type="submit"
+      >
+        Join the Honey Hive →
+      </button>
+
+    </form>
+
+
+    <!-- =====================================================
+         SUCCESS MESSAGE
+    ====================================================== -->
+
+    <div
+      class="welcome-letter-success"
+      id="welcomeSignupSuccess"
+      aria-live="polite"
+    >
+      <strong>You're on the list! 🐝</strong>
+
+      Thank you for joining Honey & Hymns.
+      Your Mini At-Home Retreat will be sent
+      to your inbox.
+    </div>
+
+
+    <p class="welcome-letter-note">
+      Free to join • Unsubscribe anytime
+    </p>
+
+
+    <button
+      class="welcome-letter-dismiss"
+      type="button"
+      onclick="closeWelcomePopup(true)"
+    >
+      Not today, thank you
+    </button>
+
   </div>
 
+</div>
 
   <main class="amazon-finds-page">
 
@@ -5969,23 +6113,29 @@ if (
 
 
 /* =========================================================
-   WELCOME POPUP
+   HONEY & HYMNS — FIRST VISIT WELCOME POPUP
 ========================================================= */
 
 const WELCOME_POPUP_DISMISSED_KEY =
   "honeyAndHymnsWelcomePopupDismissed";
 
-
 const WELCOME_POPUP_SUBSCRIBED_KEY =
   "honeyAndHymnsWelcomePopupSubscribed";
-
 
 const WELCOME_POPUP_DELAY =
   8000;
 
 
 /* =========================================================
-   OPEN WELCOME POPUP
+   GOOGLE APPS SCRIPT
+========================================================= */
+
+const WELCOME_SIGNUP_URL =
+  "https://script.google.com/macros/s/AKfycbzk4jxgxkK-4O3Q4RwwWzo2trY8axyOZWZ_-kS8iEXradfX3g1v9heB2mNsvYWxLoBK/exec";
+
+
+/* =========================================================
+   OPEN POPUP
 ========================================================= */
 
 function openWelcomePopup() {
@@ -5995,33 +6145,24 @@ function openWelcomePopup() {
       "welcomePopup"
     );
 
-
   if (!popup) {
-
     return;
-
   }
 
-
-  popup.classList.add(
-    "open"
-  );
-
+  popup.classList.add("open");
 
   popup.setAttribute(
     "aria-hidden",
     "false"
   );
 
-
   document.body.style.overflow =
     "hidden";
-
 }
 
 
 /* =========================================================
-   CLOSE WELCOME POPUP
+   CLOSE POPUP
 ========================================================= */
 
 function closeWelcomePopup(
@@ -6033,28 +6174,19 @@ function closeWelcomePopup(
       "welcomePopup"
     );
 
-
   if (!popup) {
-
     return;
-
   }
 
-
-  popup.classList.remove(
-    "open"
-  );
-
+  popup.classList.remove("open");
 
   popup.setAttribute(
     "aria-hidden",
     "true"
   );
 
-
   document.body.style.overflow =
     "";
-
 
   if (rememberDismissal) {
 
@@ -6064,12 +6196,11 @@ function closeWelcomePopup(
     );
 
   }
-
 }
 
 
 /* =========================================================
-   SHOULD SHOW POPUP
+   CHECK WHETHER POPUP SHOULD APPEAR
 ========================================================= */
 
 function shouldShowWelcomePopup() {
@@ -6079,25 +6210,31 @@ function shouldShowWelcomePopup() {
       WELCOME_POPUP_DISMISSED_KEY
     );
 
-
   const subscribed =
     localStorage.getItem(
       WELCOME_POPUP_SUBSCRIBED_KEY
     );
 
 
+  /*
+    If we've marked the visitor as subscribed,
+    never show the popup again.
+  */
+
   if (subscribed) {
-
     return false;
-
   }
 
+
+  /*
+    If the visitor dismissed the popup,
+    wait 30 days before showing it again.
+  */
 
   if (dismissed) {
 
     const dismissedTime =
       Number(dismissed);
-
 
     const thirtyDays =
       30 *
@@ -6106,11 +6243,9 @@ function shouldShowWelcomePopup() {
       60 *
       1000;
 
-
     const timeSinceDismissal =
       Date.now() -
       dismissedTime;
-
 
     if (
       timeSinceDismissal <
@@ -6125,7 +6260,6 @@ function shouldShowWelcomePopup() {
 
 
   return true;
-
 }
 
 
@@ -6139,12 +6273,56 @@ function markWelcomePopupSubscribed() {
     WELCOME_POPUP_SUBSCRIBED_KEY,
     "true"
   );
-
 }
 
 
 /* =========================================================
-   WELCOME POPUP EVENTS
+   SHOW SUCCESS MESSAGE
+========================================================= */
+
+function showWelcomeSignupSuccess() {
+
+  const form =
+    document.getElementById(
+      "welcomeSignupForm"
+    );
+
+  const success =
+    document.getElementById(
+      "welcomeSignupSuccess"
+    );
+
+  const button =
+    document.getElementById(
+      "welcomeSubmitButton"
+    );
+
+  if (form) {
+
+    form.style.display =
+      "none";
+
+  }
+
+  if (success) {
+
+    success.classList.add(
+      "open"
+    );
+
+  }
+
+  if (button) {
+
+    button.disabled =
+      false;
+
+  }
+}
+
+
+/* =========================================================
+   POPUP EVENTS
 ========================================================= */
 
 document.addEventListener(
@@ -6156,13 +6334,14 @@ document.addEventListener(
         "welcomePopup"
       );
 
-
     if (!popup) {
-
       return;
-
     }
 
+
+    /*
+      Wait 8 seconds before showing.
+    */
 
     if (
       shouldShowWelcomePopup()
@@ -6170,6 +6349,11 @@ document.addEventListener(
 
       window.setTimeout(
         function() {
+
+          /*
+            Check one more time in case
+            something changed while waiting.
+          */
 
           if (
             shouldShowWelcomePopup()
@@ -6185,6 +6369,10 @@ document.addEventListener(
 
     }
 
+
+    /*
+      Clicking the dark overlay closes it.
+    */
 
     popup.addEventListener(
       "click",
@@ -6202,26 +6390,201 @@ document.addEventListener(
     );
 
 
-    const form =
-      popup.querySelector(
-        ".welcome-letter-form"
-      );
+    /*
+      Escape closes it.
+    */
 
+    document.addEventListener(
+      "keydown",
+      function(event) {
 
-    if (form) {
+        if (
+          event.key === "Escape" &&
+          popup.classList.contains("open")
+        ) {
 
-      form.addEventListener(
-        "submit",
-        function() {
-
-          markWelcomePopupSubscribed();
-
-          closeWelcomePopup();
+          closeWelcomePopup(true);
 
         }
+
+      }
+    );
+
+
+    /* =====================================================
+       SIGNUP FORM
+    ====================================================== */
+
+    const form =
+      document.getElementById(
+        "welcomeSignupForm"
       );
 
+    if (!form) {
+      return;
     }
+
+
+    form.addEventListener(
+      "submit",
+      function(event) {
+
+        event.preventDefault();
+
+
+        const firstName =
+          document.getElementById(
+            "welcomeFirstName"
+          ).value.trim();
+
+
+        const email =
+          document.getElementById(
+            "welcomeEmail"
+          ).value.trim();
+
+
+        const consent =
+          document.getElementById(
+            "welcomeConsent"
+          ).checked;
+
+
+        const button =
+          document.getElementById(
+            "welcomeSubmitButton"
+          );
+
+
+        /*
+          Browser validation should already
+          catch these, but we check again.
+        */
+
+        if (
+          !firstName ||
+          !email ||
+          !consent
+        ) {
+
+          return;
+
+        }
+
+
+        /*
+          Prevent double submissions.
+        */
+
+        if (button) {
+
+          button.disabled =
+            true;
+
+          button.textContent =
+            "Joining the Honey Hive…";
+
+        }
+
+
+        /*
+          Build the information that will
+          be sent to Google Apps Script.
+        */
+
+        const formData =
+          new URLSearchParams();
+
+        formData.append(
+          "firstName",
+          firstName
+        );
+
+        formData.append(
+          "email",
+          email
+        );
+
+        formData.append(
+          "source",
+          "Website Popup"
+        );
+
+        formData.append(
+          "consent",
+          "Yes"
+        );
+
+
+        /*
+          Send the signup to Google Sheets.
+
+          no-cors is intentional because
+          Google Apps Script and GitHub Pages
+          are different domains.
+        */
+
+        fetch(
+          WELCOME_SIGNUP_URL,
+          {
+            method: "POST",
+
+            mode: "no-cors",
+
+            headers: {
+              "Content-Type":
+                "application/x-www-form-urlencoded"
+            },
+
+            body:
+              formData.toString()
+          }
+        )
+        .then(
+          function() {
+
+            /*
+              We cannot read the response from
+              a no-cors request, but the request
+              has been sent to Apps Script.
+
+              Show the visitor the success state.
+            */
+
+            markWelcomePopupSubscribed();
+
+            showWelcomeSignupSuccess();
+
+          }
+        )
+        .catch(
+          function(error) {
+
+            console.error(
+              "Honey & Hymns signup error:",
+              error
+            );
+
+
+            if (button) {
+
+              button.disabled =
+                false;
+
+              button.textContent =
+                "Join the Honey Hive →";
+
+            }
+
+            alert(
+              "Something went wrong. Please try again."
+            );
+
+          }
+        );
+
+      }
+    );
 
   }
 );
