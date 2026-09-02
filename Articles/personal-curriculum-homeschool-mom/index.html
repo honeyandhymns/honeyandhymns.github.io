@@ -3484,7 +3484,7 @@ document.addEventListener(
 
     updateWishlistButtons();
 
-      /* =========================================================
+/* =========================================================
    HONEY & HYMNS — FIRST VISIT WELCOME POPUP
 ========================================================= */
 
@@ -3496,6 +3496,14 @@ const WELCOME_POPUP_SUBSCRIBED_KEY =
 
 const WELCOME_POPUP_DELAY =
   8000;
+
+
+/* =========================================================
+   GOOGLE APPS SCRIPT
+========================================================= */
+
+const WELCOME_SIGNUP_URL =
+  "https://script.google.com/macros/s/AKfycbzk4jxgxkK-4O3Q4RwwWzo2trY8axyOZWZ_-kS8iEXradfX3g1v9heB2mNsvYWxLoBK/exec";
 
 
 /* =========================================================
@@ -3522,7 +3530,6 @@ function openWelcomePopup() {
 
   document.body.style.overflow =
     "hidden";
-
 }
 
 
@@ -3561,7 +3568,6 @@ function closeWelcomePopup(
     );
 
   }
-
 }
 
 
@@ -3626,7 +3632,6 @@ function shouldShowWelcomePopup() {
 
 
   return true;
-
 }
 
 
@@ -3640,7 +3645,51 @@ function markWelcomePopupSubscribed() {
     WELCOME_POPUP_SUBSCRIBED_KEY,
     "true"
   );
+}
 
+
+/* =========================================================
+   SHOW SUCCESS MESSAGE
+========================================================= */
+
+function showWelcomeSignupSuccess() {
+
+  const form =
+    document.getElementById(
+      "welcomeSignupForm"
+    );
+
+  const success =
+    document.getElementById(
+      "welcomeSignupSuccess"
+    );
+
+  const button =
+    document.getElementById(
+      "welcomeSubmitButton"
+    );
+
+  if (form) {
+
+    form.style.display =
+      "none";
+
+  }
+
+  if (success) {
+
+    success.classList.add(
+      "open"
+    );
+
+  }
+
+  if (button) {
+
+    button.disabled =
+      false;
+
+  }
 }
 
 
@@ -3734,30 +3783,180 @@ document.addEventListener(
     );
 
 
-    /*
-      If the visitor submits the form,
-      remember that they subscribed.
-    */
+    /* =====================================================
+       SIGNUP FORM
+    ====================================================== */
 
     const form =
-      popup.querySelector(
-        ".welcome-letter-form"
+      document.getElementById(
+        "welcomeSignupForm"
       );
 
-    if (form) {
+    if (!form) {
+      return;
+    }
 
-      form.addEventListener(
-        "submit",
-        function() {
 
-          markWelcomePopupSubscribed();
+    form.addEventListener(
+      "submit",
+      function(event) {
 
-          closeWelcomePopup();
+        event.preventDefault();
+
+
+        const firstName =
+          document.getElementById(
+            "welcomeFirstName"
+          ).value.trim();
+
+
+        const email =
+          document.getElementById(
+            "welcomeEmail"
+          ).value.trim();
+
+
+        const consent =
+          document.getElementById(
+            "welcomeConsent"
+          ).checked;
+
+
+        const button =
+          document.getElementById(
+            "welcomeSubmitButton"
+          );
+
+
+        /*
+          Browser validation should already
+          catch these, but we check again.
+        */
+
+        if (
+          !firstName ||
+          !email ||
+          !consent
+        ) {
+
+          return;
 
         }
-      );
 
-    }
+
+        /*
+          Prevent double submissions.
+        */
+
+        if (button) {
+
+          button.disabled =
+            true;
+
+          button.textContent =
+            "Joining the Honey Hive…";
+
+        }
+
+
+        /*
+          Build the information that will
+          be sent to Google Apps Script.
+        */
+
+        const formData =
+          new URLSearchParams();
+
+        formData.append(
+          "firstName",
+          firstName
+        );
+
+        formData.append(
+          "email",
+          email
+        );
+
+        formData.append(
+          "source",
+          "Article-Personal curriculum Popup"
+        );
+
+        formData.append(
+          "consent",
+          "Yes"
+        );
+
+
+        /*
+          Send the signup to Google Sheets.
+
+          no-cors is intentional because
+          Google Apps Script and GitHub Pages
+          are different domains.
+        */
+
+        fetch(
+          WELCOME_SIGNUP_URL,
+          {
+            method: "POST",
+
+            mode: "no-cors",
+
+            headers: {
+              "Content-Type":
+                "application/x-www-form-urlencoded"
+            },
+
+            body:
+              formData.toString()
+          }
+        )
+        .then(
+          function() {
+
+            /*
+              We cannot read the response from
+              a no-cors request, but the request
+              has been sent to Apps Script.
+
+              Show the visitor the success state.
+            */
+
+            markWelcomePopupSubscribed();
+
+            showWelcomeSignupSuccess();
+
+          }
+        )
+        .catch(
+          function(error) {
+
+            console.error(
+              "Honey & Hymns signup error:",
+              error
+            );
+
+
+            if (button) {
+
+              button.disabled =
+                false;
+
+              button.textContent =
+                "Join the Honey Hive →";
+
+            }
+
+            alert(
+              "Something went wrong. Please try again."
+            );
+
+          }
+        );
+
+      }
+    );
 
   }
 );
