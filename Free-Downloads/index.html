@@ -3504,174 +3504,482 @@ document.addEventListener(
     updateWishlistButtons();
 
 
-<div
-  class="welcome-popup-overlay"
-  id="welcomePopup"
-  aria-hidden="true"
->
+/* =========================================================
+   HONEY & HYMNS — FIRST VISIT WELCOME POPUP
+========================================================= */
 
-  <div
-    class="welcome-letter"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="welcomePopupTitle"
-  >
+const WELCOME_POPUP_DISMISSED_KEY =
+  "honeyAndHymnsWelcomePopupDismissed";
 
-    <button
-      class="welcome-letter-close"
-      type="button"
-      onclick="closeWelcomePopup()"
-      aria-label="Close welcome message"
-    >
-      ×
-    </button>
+const WELCOME_POPUP_SUBSCRIBED_KEY =
+  "honeyAndHymnsWelcomePopupSubscribed";
+
+const WELCOME_POPUP_DELAY =
+  8000;
 
 
-    <p class="welcome-letter-kicker">
-      A little something for your home
-    </p>
+/* =========================================================
+   GOOGLE APPS SCRIPT
+========================================================= */
+
+const WELCOME_SIGNUP_URL =
+  "https://script.google.com/macros/s/AKfycbzk4jxgxkK-4O3Q4RwwWzo2trY8axyOZWZ_-kS8iEXradfX3g1v9heB2mNsvYWxLoBK/exec";
 
 
-    <h2
-      class="welcome-letter-title"
-      id="welcomePopupTitle"
-    >
-      Welcome to<br>
-      Honey & Hymns 🐝
-    </h2>
+/* =========================================================
+   OPEN POPUP
+========================================================= */
+
+function openWelcomePopup() {
+
+  const popup =
+    document.getElementById(
+      "welcomePopup"
+    );
+
+  if (!popup) {
+    return;
+  }
+
+  popup.classList.add("open");
+
+  popup.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow =
+    "hidden";
+}
 
 
-    <div class="welcome-letter-rule">
-      <span>✦</span>
-    </div>
+/* =========================================================
+   CLOSE POPUP
+========================================================= */
+
+function closeWelcomePopup(
+  rememberDismissal = false
+) {
+
+  const popup =
+    document.getElementById(
+      "welcomePopup"
+    );
+
+  if (!popup) {
+    return;
+  }
+
+  popup.classList.remove("open");
+
+  popup.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow =
+    "";
+
+  if (rememberDismissal) {
+
+    localStorage.setItem(
+      WELCOME_POPUP_DISMISSED_KEY,
+      Date.now().toString()
+    );
+
+  }
+}
 
 
-    <p class="welcome-letter-copy">
-      A peaceful little corner for Catholic
-      homemakers, homeschool moms, and women
-      trying to make a beautiful home in the midst
-      of ordinary family life.
-    </p>
+/* =========================================================
+   CHECK WHETHER POPUP SHOULD APPEAR
+========================================================= */
+
+function shouldShowWelcomePopup() {
+
+  const dismissed =
+    localStorage.getItem(
+      WELCOME_POPUP_DISMISSED_KEY
+    );
+
+  const subscribed =
+    localStorage.getItem(
+      WELCOME_POPUP_SUBSCRIBED_KEY
+    );
 
 
-    <div class="welcome-gift">
+  /*
+    If we've marked the visitor as subscribed,
+    never show the popup again.
+  */
 
-      <p class="welcome-gift-label">
-        A Free Gift for You
-      </p>
-
-      <h3 class="welcome-gift-title">
-        Mini At-Home Retreat
-      </h3>
-
-      <img
-        class="welcome-gift-image"
-        src="images/honey-and-hymns-mini-home-retreat.png"
-        alt="Honey & Hymns Mini At-Home Retreat"
-      >
-
-      <p class="welcome-gift-description">
-        Pause • Pray • Reflect • Begin Again
-      </p>
-
-    </div>
+  if (subscribed) {
+    return false;
+  }
 
 
-    <p class="welcome-letter-copy">
-      Join the Honey Hive and I'll send this
-      peaceful little retreat straight to your inbox.
-    </p>
+  /*
+    If the visitor dismissed the popup,
+    wait 30 days before showing it again.
+  */
+
+  if (dismissed) {
+
+    const dismissedTime =
+      Number(dismissed);
+
+    const thirtyDays =
+      30 *
+      24 *
+      60 *
+      60 *
+      1000;
+
+    const timeSinceDismissal =
+      Date.now() -
+      dismissedTime;
+
+    if (
+      timeSinceDismissal <
+      thirtyDays
+    ) {
+
+      return false;
+
+    }
+
+  }
 
 
-   
-
-    <form
-      class="welcome-letter-form"
-      id="welcomeSignupForm"
-    >
-
-      <input
-        class="welcome-letter-input"
-        type="text"
-        id="welcomeFirstName"
-        name="firstName"
-        placeholder="First name"
-        autocomplete="given-name"
-        required
-      >
+  return true;
+}
 
 
-      <input
-        class="welcome-letter-input"
-        type="email"
-        id="welcomeEmail"
-        name="email"
-        placeholder="Email address"
-        autocomplete="email"
-        required
-      >
+/* =========================================================
+   MARK SUBSCRIBED
+========================================================= */
+
+function markWelcomePopupSubscribed() {
+
+  localStorage.setItem(
+    WELCOME_POPUP_SUBSCRIBED_KEY,
+    "true"
+  );
+}
 
 
-      <div class="welcome-letter-consent">
+/* =========================================================
+   SHOW SUCCESS MESSAGE
+========================================================= */
 
-        <input
-          type="checkbox"
-          id="welcomeConsent"
-          name="consent"
-          value="Yes"
-          required
-        >
+function showWelcomeSignupSuccess() {
 
-        <label for="welcomeConsent">
-          Yes, I'd like to receive emails from Honey & Hymns,
-          including new articles, resources, and occasional
-          offers. I can unsubscribe anytime.
-        </label>
+  const form =
+    document.getElementById(
+      "welcomeSignupForm"
+    );
 
-      </div>
+  const success =
+    document.getElementById(
+      "welcomeSignupSuccess"
+    );
 
+  const button =
+    document.getElementById(
+      "welcomeSubmitButton"
+    );
 
-      <button
-        class="welcome-letter-button"
-        id="welcomeSubmitButton"
-        type="submit"
-      >
-        Join the Honey Hive →
-      </button>
+  if (form) {
 
-    </form>
+    form.style.display =
+      "none";
 
+  }
 
+  if (success) {
 
-    <div
-      class="welcome-letter-success"
-      id="welcomeSignupSuccess"
-      aria-live="polite"
-    >
-      <strong>You're on the list! 🐝</strong>
+    success.classList.add(
+      "open"
+    );
 
-      Thank you for joining Honey & Hymns.
-      Your Mini At-Home Retreat will be sent
-      to your inbox.
-    </div>
+  }
 
+  if (button) {
 
-    <p class="welcome-letter-note">
-      Free to join • Unsubscribe anytime
-    </p>
+    button.disabled =
+      false;
+
+  }
+}
 
 
-    <button
-      class="welcome-letter-dismiss"
-      type="button"
-      onclick="closeWelcomePopup(true)"
-    >
-      Not today, thank you
-    </button>
+/* =========================================================
+   POPUP EVENTS
+========================================================= */
 
-  </div>
+document.addEventListener(
+  "DOMContentLoaded",
+  function() {
 
-</div>
+    const popup =
+      document.getElementById(
+        "welcomePopup"
+      );
+
+    if (!popup) {
+      return;
+    }
+
+
+    /*
+      Wait 8 seconds before showing.
+    */
+
+    if (
+      shouldShowWelcomePopup()
+    ) {
+
+      window.setTimeout(
+        function() {
+
+          /*
+            Check one more time in case
+            something changed while waiting.
+          */
+
+          if (
+            shouldShowWelcomePopup()
+          ) {
+
+            openWelcomePopup();
+
+          }
+
+        },
+        WELCOME_POPUP_DELAY
+      );
+
+    }
+
+
+    /*
+      Clicking the dark overlay closes it.
+    */
+
+    popup.addEventListener(
+      "click",
+      function(event) {
+
+        if (
+          event.target === popup
+        ) {
+
+          closeWelcomePopup(true);
+
+        }
+
+      }
+    );
+
+
+    /*
+      Escape closes it.
+    */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Escape" &&
+          popup.classList.contains("open")
+        ) {
+
+          closeWelcomePopup(true);
+
+        }
+
+      }
+    );
+
+
+    /* =====================================================
+       SIGNUP FORM
+    ====================================================== */
+
+    const form =
+      document.getElementById(
+        "welcomeSignupForm"
+      );
+
+    if (!form) {
+      return;
+    }
+
+
+    form.addEventListener(
+      "submit",
+      function(event) {
+
+        event.preventDefault();
+
+
+        const firstName =
+          document.getElementById(
+            "welcomeFirstName"
+          ).value.trim();
+
+
+        const email =
+          document.getElementById(
+            "welcomeEmail"
+          ).value.trim();
+
+
+        const consent =
+          document.getElementById(
+            "welcomeConsent"
+          ).checked;
+
+
+        const button =
+          document.getElementById(
+            "welcomeSubmitButton"
+          );
+
+
+        /*
+          Browser validation should already
+          catch these, but we check again.
+        */
+
+        if (
+          !firstName ||
+          !email ||
+          !consent
+        ) {
+
+          return;
+
+        }
+
+
+        /*
+          Prevent double submissions.
+        */
+
+        if (button) {
+
+          button.disabled =
+            true;
+
+          button.textContent =
+            "Joining the Honey Hive…";
+
+        }
+
+
+        /*
+          Build the information that will
+          be sent to Google Apps Script.
+        */
+
+        const formData =
+          new URLSearchParams();
+
+        formData.append(
+          "firstName",
+          firstName
+        );
+
+        formData.append(
+          "email",
+          email
+        );
+
+        formData.append(
+          "source",
+          "Website Popup"
+        );
+
+        formData.append(
+          "consent",
+          "Yes"
+        );
+
+
+        /*
+          Send the signup to Google Sheets.
+
+          no-cors is intentional because
+          Google Apps Script and GitHub Pages
+          are different domains.
+        */
+
+        fetch(
+          WELCOME_SIGNUP_URL,
+          {
+            method: "POST",
+
+            mode: "no-cors",
+
+            headers: {
+              "Content-Type":
+                "application/x-www-form-urlencoded"
+            },
+
+            body:
+              formData.toString()
+          }
+        )
+        .then(
+          function() {
+
+            /*
+              We cannot read the response from
+              a no-cors request, but the request
+              has been sent to Apps Script.
+
+              Show the visitor the success state.
+            */
+
+            markWelcomePopupSubscribed();
+
+            showWelcomeSignupSuccess();
+
+          }
+        )
+        .catch(
+          function(error) {
+
+            console.error(
+              "Honey & Hymns signup error:",
+              error
+            );
+
+
+            if (button) {
+
+              button.disabled =
+                false;
+
+              button.textContent =
+                "Join the Honey Hive →";
+
+            }
+
+            alert(
+              "Something went wrong. Please try again."
+            );
+
+          }
+        );
+
+      }
+    );
+
+  }
+);
 
   </script>
 
