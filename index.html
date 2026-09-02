@@ -1629,7 +1629,7 @@
 
     }
 
-    /* =========================================================
+/* =========================================================
    HONEY & HYMNS — WELCOME LETTER POPUP
 ========================================================= */
 
@@ -1982,6 +1982,7 @@
   font-size: 1.08rem;
 }
 
+
 /* =========================================================
    FORM
 ========================================================= */
@@ -2042,6 +2043,53 @@
 
 
 /* =========================================================
+   CONSENT CHECKBOX
+========================================================= */
+
+.welcome-letter-consent {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  margin-top: 2px;
+
+  text-align: left;
+
+  color: #746957;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+.welcome-letter-consent input {
+  flex:
+    0 0 auto;
+
+  width: 15px;
+  height: 15px;
+
+  margin:
+    1px 0 0;
+
+  accent-color: #80652d;
+
+  cursor: pointer;
+}
+
+.welcome-letter-consent label {
+  cursor: pointer;
+}
+
+
+/* =========================================================
    SUBSCRIBE BUTTON
 ========================================================= */
 
@@ -2076,7 +2124,8 @@
 
   transition:
     background 0.2s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .welcome-letter-button:hover {
@@ -2084,6 +2133,59 @@
 
   transform:
     translateY(-1px);
+}
+
+.welcome-letter-button:disabled {
+  opacity: 0.65;
+
+  cursor: wait;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.welcome-letter-success {
+  display: none;
+
+  margin:
+    12px auto 0;
+
+  max-width: 400px;
+
+  color: #62594e;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+.welcome-letter-success.open {
+  display: block;
+}
+
+.welcome-letter-success strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #80652d;
+
+  font-family:
+    "Caveat",
+    cursive;
+
+  font-size: 1.45rem;
+
+  font-weight: 600;
 }
 
 
@@ -2184,14 +2286,13 @@
   }
 
 }
-
   </style>
 
 </head>
 
 <body>
 
-  <!-- =========================================================
+<!-- =========================================================
      HONEY & HYMNS — WELCOME LETTER POPUP
 ========================================================= -->
 
@@ -2247,25 +2348,25 @@
 
     <div class="welcome-gift">
 
-  <p class="welcome-gift-label">
-    A Free Gift for You
-  </p>
+      <p class="welcome-gift-label">
+        A Free Gift for You
+      </p>
 
-  <h3 class="welcome-gift-title">
-    Mini At-Home Retreat
-  </h3>
+      <h3 class="welcome-gift-title">
+        Mini At-Home Retreat
+      </h3>
 
-  <img
-    class="welcome-gift-image"
-    src="images/honey-and-hymns-mini-home-retreat.png"
-    alt="Honey & Hymns Mini At-Home Retreat"
-  >
+      <img
+        class="welcome-gift-image"
+        src="images/honey-and-hymns-mini-home-retreat.png"
+        alt="Honey & Hymns Mini At-Home Retreat"
+      >
 
-  <p class="welcome-gift-description">
-    Pause • Pray • Reflect • Begin Again
-  </p>
+      <p class="welcome-gift-description">
+        Pause • Pray • Reflect • Begin Again
+      </p>
 
-</div>
+    </div>
 
 
     <p class="welcome-letter-copy">
@@ -2274,27 +2375,82 @@
     </p>
 
 
-    <!--
-      IMPORTANT:
-      Replace the form action with your actual
-      email signup system when we're ready.
-    -->
+    <!-- =====================================================
+         SIGNUP FORM
+    ====================================================== -->
 
     <form
       class="welcome-letter-form"
-      action="https://honeyandhymns.substack.com/welcome"
-      method="get"
-      target="_blank"
+      id="welcomeSignupForm"
     >
+
+      <input
+        class="welcome-letter-input"
+        type="text"
+        id="welcomeFirstName"
+        name="firstName"
+        placeholder="First name"
+        autocomplete="given-name"
+        required
+      >
+
+
+      <input
+        class="welcome-letter-input"
+        type="email"
+        id="welcomeEmail"
+        name="email"
+        placeholder="Email address"
+        autocomplete="email"
+        required
+      >
+
+
+      <div class="welcome-letter-consent">
+
+        <input
+          type="checkbox"
+          id="welcomeConsent"
+          name="consent"
+          value="Yes"
+          required
+        >
+
+        <label for="welcomeConsent">
+          Yes, I'd like to receive emails from Honey & Hymns,
+          including new articles, resources, and occasional
+          offers. I can unsubscribe anytime.
+        </label>
+
+      </div>
+
 
       <button
         class="welcome-letter-button"
+        id="welcomeSubmitButton"
         type="submit"
       >
         Join the Honey Hive →
       </button>
 
     </form>
+
+
+    <!-- =====================================================
+         SUCCESS MESSAGE
+    ====================================================== -->
+
+    <div
+      class="welcome-letter-success"
+      id="welcomeSignupSuccess"
+      aria-live="polite"
+    >
+      <strong>You're on the list! 🐝</strong>
+
+      Thank you for joining Honey & Hymns.
+      Your Mini At-Home Retreat will be sent
+      to your inbox.
+    </div>
 
 
     <p class="welcome-letter-note">
@@ -4476,6 +4632,14 @@ const WELCOME_POPUP_DELAY =
 
 
 /* =========================================================
+   GOOGLE APPS SCRIPT
+========================================================= */
+
+const WELCOME_SIGNUP_URL =
+  "https://script.google.com/macros/s/AKfycbzk4jxgxkK-4O3Q4RwwWzo2trY8axyOZWZ_-kS8iEXradfX3g1v9heB2mNsvYWxLoBK/exec";
+
+
+/* =========================================================
    OPEN POPUP
 ========================================================= */
 
@@ -4499,7 +4663,6 @@ function openWelcomePopup() {
 
   document.body.style.overflow =
     "hidden";
-
 }
 
 
@@ -4538,7 +4701,6 @@ function closeWelcomePopup(
     );
 
   }
-
 }
 
 
@@ -4603,7 +4765,6 @@ function shouldShowWelcomePopup() {
 
 
   return true;
-
 }
 
 
@@ -4617,7 +4778,51 @@ function markWelcomePopupSubscribed() {
     WELCOME_POPUP_SUBSCRIBED_KEY,
     "true"
   );
+}
 
+
+/* =========================================================
+   SHOW SUCCESS MESSAGE
+========================================================= */
+
+function showWelcomeSignupSuccess() {
+
+  const form =
+    document.getElementById(
+      "welcomeSignupForm"
+    );
+
+  const success =
+    document.getElementById(
+      "welcomeSignupSuccess"
+    );
+
+  const button =
+    document.getElementById(
+      "welcomeSubmitButton"
+    );
+
+  if (form) {
+
+    form.style.display =
+      "none";
+
+  }
+
+  if (success) {
+
+    success.classList.add(
+      "open"
+    );
+
+  }
+
+  if (button) {
+
+    button.disabled =
+      false;
+
+  }
 }
 
 
@@ -4711,34 +4916,183 @@ document.addEventListener(
     );
 
 
-    /*
-      If the visitor submits the form,
-      remember that they subscribed.
-    */
+    /* =====================================================
+       SIGNUP FORM
+    ====================================================== */
 
     const form =
-      popup.querySelector(
-        ".welcome-letter-form"
+      document.getElementById(
+        "welcomeSignupForm"
       );
 
-    if (form) {
+    if (!form) {
+      return;
+    }
 
-      form.addEventListener(
-        "submit",
-        function() {
 
-          markWelcomePopupSubscribed();
+    form.addEventListener(
+      "submit",
+      function(event) {
 
-          closeWelcomePopup();
+        event.preventDefault();
+
+
+        const firstName =
+          document.getElementById(
+            "welcomeFirstName"
+          ).value.trim();
+
+
+        const email =
+          document.getElementById(
+            "welcomeEmail"
+          ).value.trim();
+
+
+        const consent =
+          document.getElementById(
+            "welcomeConsent"
+          ).checked;
+
+
+        const button =
+          document.getElementById(
+            "welcomeSubmitButton"
+          );
+
+
+        /*
+          Browser validation should already
+          catch these, but we check again.
+        */
+
+        if (
+          !firstName ||
+          !email ||
+          !consent
+        ) {
+
+          return;
 
         }
-      );
 
-    }
+
+        /*
+          Prevent double submissions.
+        */
+
+        if (button) {
+
+          button.disabled =
+            true;
+
+          button.textContent =
+            "Joining the Honey Hive…";
+
+        }
+
+
+        /*
+          Build the information that will
+          be sent to Google Apps Script.
+        */
+
+        const formData =
+          new URLSearchParams();
+
+        formData.append(
+          "firstName",
+          firstName
+        );
+
+        formData.append(
+          "email",
+          email
+        );
+
+        formData.append(
+          "source",
+          "Website Popup"
+        );
+
+        formData.append(
+          "consent",
+          "Yes"
+        );
+
+
+        /*
+          Send the signup to Google Sheets.
+
+          no-cors is intentional because
+          Google Apps Script and GitHub Pages
+          are different domains.
+        */
+
+        fetch(
+          WELCOME_SIGNUP_URL,
+          {
+            method: "POST",
+
+            mode: "no-cors",
+
+            headers: {
+              "Content-Type":
+                "application/x-www-form-urlencoded"
+            },
+
+            body:
+              formData.toString()
+          }
+        )
+        .then(
+          function() {
+
+            /*
+              We cannot read the response from
+              a no-cors request, but the request
+              has been sent to Apps Script.
+
+              Show the visitor the success state.
+            */
+
+            markWelcomePopupSubscribed();
+
+            showWelcomeSignupSuccess();
+
+          }
+        )
+        .catch(
+          function(error) {
+
+            console.error(
+              "Honey & Hymns signup error:",
+              error
+            );
+
+
+            if (button) {
+
+              button.disabled =
+                false;
+
+              button.textContent =
+                "Join the Honey Hive →";
+
+            }
+
+            alert(
+              "Something went wrong. Please try again."
+            );
+
+          }
+        );
+
+      }
+    );
 
   }
 );
-
 </script>
    
 </body>
