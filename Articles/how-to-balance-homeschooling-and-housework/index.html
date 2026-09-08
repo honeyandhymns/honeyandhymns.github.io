@@ -1,1 +1,4012 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    How to Balance Homeschooling and Housework Without Losing Your Mind | Honey & Hymns
+  </title>
+
+  <meta
+    name="description"
+    content="Simple rhythms, age-appropriate chores, and a flexible homeschool routine that help keep our home running without expecting everything to get done every day."
+  >
+   <style>
+
+    /* =========================================================
+       HONEY & HYMNS
+       ARTICLE PAGE
+       ========================================================= */
+
+
+    /* ========================================
+       BASE
+    ======================================== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      margin: 0;
+
+      background:
+        #fbf7ec;
+
+      color:
+        #40372d;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      line-height: 1.7;
+    }
+
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+
+    a {
+      color: inherit;
+    }
+
+
+    button {
+      font: inherit;
+    }
+
+
+  /* =========================
+       HEADER
+    ========================= */
+
+    .site-header {
+      background: #FFEBA1;
+      padding: 25px 20px 15px;
+      text-align: center;
+      border-bottom: 1px solid rgba(90, 70, 30, 0.12);
+    }
+
+
+    .header-brand {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+
+    .site-logo {
+      width: 365px;
+      max-width: 86%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+
+    .header-tagline {
+      margin: 4px 0 0;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 0.84rem;
+      letter-spacing: 2px;
+      color: #5D4B2D;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .site-nav {
+      background: #FFEBA1;
+      text-align: center;
+      padding: 9px 15px 13px;
+
+      border-bottom:
+        1px solid
+        rgba(90, 70, 30, 0.12);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3px;
+    }
+
+
+    .site-nav a,
+    .shop-toggle,
+    .wishlist-header-button {
+
+      color: #514229;
+
+      text-decoration: none;
+
+      margin: 0 9px;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 0.95rem;
+
+      transition:
+        color 0.2s ease;
+
+    }
+
+
+    .site-nav a:hover,
+    .shop-toggle:hover,
+    .wishlist-header-button:hover {
+
+      color: #967331;
+
+    }
+
+
+    .site-nav a.active {
+
+      color: #80652D;
+      font-weight: 600;
+
+    }
+
+
+    /* =========================
+       SHOP DROPDOWN
+    ========================= */
+
+    .shop-dropdown {
+
+      position: relative;
+      display: inline-block;
+
+    }
+
+
+    .shop-toggle {
+
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      line-height: inherit;
+
+    }
+
+
+    .shop-menu {
+
+      position: absolute;
+
+      top:
+        calc(100% + 10px);
+
+      left: 50%;
+
+      transform:
+        translateX(-50%)
+        translateY(-6px);
+
+      min-width: 250px;
+
+      background: #FFFDF0;
+
+      border:
+        1px solid
+        #D8C79F;
+
+      border-radius: 12px;
+
+      box-shadow:
+        0 8px 22px
+        rgba(77, 64, 41, 0.16);
+
+      padding: 8px 0;
+
+      text-align: left;
+
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+
+      z-index: 1000;
+
+    }
+
+
+    .shop-dropdown.open .shop-menu,
+    .shop-dropdown:hover .shop-menu {
+
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+
+      transform:
+        translateX(-50%)
+        translateY(0);
+
+    }
+
+
+    .shop-menu a {
+
+      display: block;
+
+      margin: 0;
+
+      padding:
+        10px 18px;
+
+      font-size: 0.92rem;
+
+    }
+
+
+    .shop-menu a:hover {
+
+      background: #FFF3C8;
+
+    }
+
+
+    .shop-coming-soon {
+
+      padding:
+        10px 18px;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 0.92rem;
+
+    }
+
+
+    .shop-coming-soon small {
+
+      display: block;
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      color: #80652D;
+
+      font-size: 0.85rem;
+
+    }
+
+
+    /* =========================
+       WISHLIST HEADER BUTTON
+    ========================= */
+
+    .wishlist-header-button {
+
+      background: none;
+
+      border: none;
+
+      padding: 0;
+
+      cursor: pointer;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 5px;
+
+    }
+
+
+    .wishlist-heart {
+
+      font-size: 1.05rem;
+
+      line-height: 1;
+
+    }
+
+
+    .wishlist-count {
+
+      min-width: 19px;
+      height: 19px;
+
+      padding: 0 5px;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: #D8B65F;
+
+      color: #4D4029;
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size: 0.63rem;
+
+      font-weight: bold;
+
+    }
+
+
+    /* ========================================
+       ARTICLE HEADER
+    ======================================== */
+
+    .article-page {
+      max-width:
+        1180px;
+
+      margin:
+        0 auto;
+
+      padding:
+        75px 30px 100px;
+    }
+
+
+    .article-header {
+      max-width:
+        850px;
+
+      margin:
+        0 auto 45px;
+
+      text-align:
+        center;
+    }
+
+
+    .article-category {
+      margin:
+        0 0 10px;
+
+      color:
+        #8a6f32;
+
+      font-size:
+        12px;
+
+      font-weight:
+        700;
+
+      letter-spacing:
+        2px;
+
+      text-transform:
+        uppercase;
+    }
+
+
+    .article-date {
+      margin:
+        0 0 25px;
+
+      color:
+        #837868;
+
+      font-size:
+        13px;
+    }
+
+
+    .article-header h1 {
+      margin:
+        0 auto 20px;
+
+      max-width:
+        850px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(38px, 5vw, 64px);
+
+      line-height:
+        1.08;
+
+      font-weight:
+        500;
+
+      color:
+        #40372d;
+    }
+
+
+    .article-subtitle {
+      max-width:
+        700px;
+
+      margin:
+        0 auto;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        19px;
+
+      line-height:
+        1.65;
+
+      color:
+        #6b6053;
+    }
+
+
+    /* ========================================
+       DECORATIVE RULE
+    ======================================== */
+
+    .article-rule {
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      gap:
+        14px;
+
+      margin:
+        28px 0 0;
+
+      color:
+        #a48a50;
+    }
+
+
+    .article-rule::before,
+    .article-rule::after {
+      content:
+        "";
+
+      width:
+        75px;
+
+      height:
+        1px;
+
+      background:
+        rgba(90, 70, 40, 0.25);
+    }
+
+
+    /* ========================================
+       HERO IMAGE
+    ======================================== */
+
+    .article-hero {
+      max-width:
+        1000px;
+
+      margin:
+        0 auto 55px;
+    }
+
+
+    .article-hero img {
+      width:
+        100%;
+
+      height:
+        auto;
+
+      border:
+        1px solid rgba(90, 70, 40, 0.16);
+
+      box-shadow:
+        0 10px 30px rgba(80, 60, 35, 0.08);
+    }
+
+
+    .article-image-caption {
+      margin:
+        10px 0 0;
+
+      text-align:
+        center;
+
+      font-size:
+        12px;
+
+      color:
+        #918473;
+
+      font-style:
+        italic;
+    }
+
+
+    /* ========================================
+       ARTICLE CONTENT
+    ======================================== */
+
+    .article-layout {
+      display:
+        grid;
+
+      grid-template-columns:
+        minmax(0, 760px);
+
+      justify-content:
+        center;
+    }
+
+
+    .article-content {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        18px;
+
+      line-height:
+        1.9;
+
+      color:
+        #4d453c;
+    }
+
+
+    .article-content p {
+      margin:
+        0 0 25px;
+    }
+
+
+    .article-content h2 {
+      margin:
+        45px 0 18px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        29px;
+
+      line-height:
+        1.3;
+
+      font-weight:
+        500;
+
+      color:
+        #40372d;
+    }
+
+
+    .article-content blockquote {
+      margin:
+        35px 0;
+
+      padding:
+        22px 28px;
+
+      background:
+        #fff8df;
+
+      border-left:
+        4px solid #ffeBA1;
+
+      font-style:
+        italic;
+
+      color:
+        #5d5245;
+    }
+
+
+    .article-content a {
+      color:
+        #82662d;
+
+      text-decoration:
+        underline;
+
+      text-decoration-color:
+        #c8ac68;
+
+      text-underline-offset:
+        3px;
+    }
+
+
+    .article-content a:hover {
+      color:
+        #a07b32;
+    }
+
+
+    /* ========================================
+       ARTICLE END
+    ======================================== */
+
+    .article-end {
+      margin:
+        55px 0 0;
+
+      padding-top:
+        35px;
+
+      border-top:
+        1px solid rgba(90, 70, 40, 0.2);
+
+      text-align:
+        center;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color:
+        #756958;
+    }
+
+
+    .article-end-symbol {
+      margin-bottom:
+        12px;
+
+      color:
+        #a48a50;
+
+      font-size:
+        20px;
+    }
+
+
+    /* ========================================
+       RECOMMENDED ARTICLES
+    ======================================== */
+
+    .recommended {
+      margin:
+        90px auto 0;
+
+      padding-top:
+        55px;
+
+      border-top:
+        1px solid rgba(90, 70, 40, 0.22);
+    }
+
+
+    .recommended-heading {
+      text-align:
+        center;
+
+      margin-bottom:
+        35px;
+    }
+
+
+    .recommended-heading h2 {
+      margin:
+        0 0 10px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        34px;
+
+      font-weight:
+        500;
+
+      color:
+        #40372d;
+    }
+
+
+    .recommended-heading p {
+      margin:
+        0;
+
+      color:
+        #766c5e;
+
+      font-size:
+        14px;
+    }
+
+
+    .recommended-grid {
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap:
+        25px;
+    }
+
+
+    .recommended-card {
+      background:
+        #fffaf0;
+
+      border:
+        1px solid rgba(90, 70, 40, 0.15);
+
+      padding:
+        22px;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+
+    .recommended-card:hover {
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 10px 25px rgba(80, 60, 35, 0.08);
+    }
+
+
+    .recommended-card .article-category {
+      margin-bottom:
+        8px;
+
+      font-size:
+        11px;
+    }
+
+
+    .recommended-card .article-date {
+      margin-bottom:
+        12px;
+
+      font-size:
+        12px;
+    }
+
+
+    .recommended-card h3 {
+      margin:
+        0 0 15px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        22px;
+
+      line-height:
+        1.3;
+
+      font-weight:
+        500;
+
+      color:
+        #40372d;
+    }
+
+
+    .recommended-card p {
+      margin:
+        0 0 18px;
+
+      font-size:
+        14px;
+
+      line-height:
+        1.65;
+
+      color:
+        #6b6257;
+    }
+
+
+    .recommended-card a {
+      color:
+        #765d2c;
+
+      text-decoration:
+        none;
+
+      font-size:
+        13px;
+
+      font-weight:
+        700;
+
+      border-bottom:
+        1px solid #b79b58;
+
+      padding-bottom:
+        3px;
+    }
+
+     /* =========================
+       WISHLIST MODAL
+    ========================= */
+
+    .wishlist-overlay {
+
+      position: fixed;
+
+      inset: 0;
+
+      background:
+        rgba(57, 45, 25, 0.60);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 20px;
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      pointer-events: none;
+
+      z-index: 5000;
+
+      transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+
+    }
+
+
+    .wishlist-overlay.open {
+
+      opacity: 1;
+
+      visibility: visible;
+
+      pointer-events: auto;
+
+    }
+
+
+    .wishlist-modal {
+
+      width:
+        min(620px, 94vw);
+
+      max-height:
+        min(700px, 88vh);
+
+      background: #FFFDF4;
+
+      border:
+        1px solid
+        #D8C79F;
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 22px 55px
+        rgba(0,0,0,0.28);
+
+      overflow: hidden;
+
+      transform:
+        scale(0.88)
+        translateY(12px);
+
+      opacity: 0;
+
+      transition:
+        transform 0.35s
+          cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.25s ease;
+
+    }
+
+
+    .wishlist-overlay.open
+    .wishlist-modal {
+
+      transform:
+        scale(1)
+        translateY(0);
+
+      opacity: 1;
+
+    }
+
+
+    .wishlist-modal-header {
+
+      background: #FFEBA1;
+
+      padding:
+        16px 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      border-bottom:
+        1px solid
+        #E0CC83;
+
+    }
+
+
+    .wishlist-modal-title {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.65rem;
+
+      font-weight: 500;
+
+      color: #403521;
+
+      margin: 0;
+
+    }
+
+
+    .wishlist-close {
+
+      width: 32px;
+
+      height: 32px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid
+        #D3BE80;
+
+      background: #FFF9DF;
+
+      color: #665020;
+
+      cursor: pointer;
+
+      font-size: 1.15rem;
+
+      line-height: 1;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+    }
+
+
+    .wishlist-close:hover {
+
+      background: #F3D582;
+
+    }
+
+
+    .wishlist-body {
+
+      padding: 20px;
+
+      max-height:
+        calc(88vh - 145px);
+
+      overflow-y: auto;
+
+    }
+
+
+    .wishlist-empty {
+
+      text-align: center;
+
+      padding:
+        35px 15px;
+
+    }
+
+
+    .wishlist-empty-icon {
+
+      font-size: 2.3rem;
+
+      color: #D8B65F;
+
+      margin-bottom: 8px;
+
+    }
+
+
+    .wishlist-empty h3 {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.6rem;
+
+      font-weight: 500;
+
+      color: #403521;
+
+      margin:
+        0 0 5px;
+
+    }
+
+
+    .wishlist-empty p {
+
+      margin: 0;
+
+      font-size: 0.8rem;
+
+      color: #68583D;
+
+    }
+
+
+    .wishlist-item {
+
+      display: grid;
+
+      grid-template-columns:
+        82px 1fr auto;
+
+      align-items: center;
+
+      gap: 14px;
+
+      padding:
+        11px;
+
+      margin-bottom: 10px;
+
+      background: #FFF8D9;
+
+      border:
+        1px solid
+        #E5D6AD;
+
+      border-radius: 11px;
+
+    }
+
+
+    .wishlist-item-image {
+
+      width: 82px;
+
+      height: 82px;
+
+      object-fit: cover;
+
+      border-radius: 7px;
+
+      display: block;
+
+    }
+
+
+    .wishlist-item-title {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.15rem;
+
+      line-height: 1.15;
+
+      color: #403521;
+
+      margin:
+        0 0 3px;
+
+    }
+
+
+    .wishlist-item-price {
+
+      font-size: 0.72rem;
+
+      color: #80652D;
+
+      margin: 0;
+
+    }
+
+
+    .wishlist-item-view {
+
+      display: inline-block;
+
+      margin-top: 6px;
+
+      color: #80652D;
+
+      font-size: 0.68rem;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+    }
+
+
+    .wishlist-item-view:hover {
+
+      text-decoration: underline;
+
+    }
+
+
+    .wishlist-remove {
+
+      border: none;
+
+      background: none;
+
+      color: #967331;
+
+      cursor: pointer;
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size: 0.68rem;
+
+      padding: 5px;
+
+    }
+
+
+    .wishlist-remove:hover {
+
+      color: #6F5421;
+
+      text-decoration: underline;
+
+    }
+
+
+    .wishlist-modal-footer {
+
+      background: #FBF3D0;
+
+      border-top:
+        1px solid
+        #E0D2B0;
+
+      padding:
+        12px 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 10px;
+
+    }
+
+
+    .wishlist-footer-note {
+
+      font-family:
+        "Caveat",
+        cursive;
+
+      color: #80652D;
+
+      font-size: 1rem;
+
+    }
+
+
+    .wishlist-clear {
+
+      border: none;
+
+      background: transparent;
+
+      color: #80652D;
+
+      font-size: 0.68rem;
+
+      cursor: pointer;
+
+      text-decoration: underline;
+
+    }
+
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    .site-footer {
+      padding:
+        30px;
+
+      text-align:
+        center;
+
+      border-top:
+        1px solid rgba(90, 70, 40, 0.15);
+
+      background:
+        #fffaf0;
+
+      color:
+        #7b7061;
+
+      font-size:
+        13px;
+    }
+
+
+    /* ========================================
+       MOBILE
+    ======================================== */
+
+    @media (max-width: 900px) {
+
+      .header-inner {
+        flex-direction:
+          column;
+
+        align-items:
+          center;
+      }
+
+
+      .header-brand {
+        align-items:
+          center;
+
+        text-align:
+          center;
+      }
+
+
+      .site-nav {
+        justify-content:
+          center;
+      }
+
+
+      .recommended-grid {
+        grid-template-columns:
+          1fr;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .site-header {
+        padding:
+          18px 18px;
+      }
+
+
+      .site-logo {
+        width:
+          165px;
+      }
+
+
+      .site-nav {
+        gap:
+          12px 16px;
+
+        font-size:
+          13px;
+      }
+
+
+      .article-page {
+        padding:
+          50px 18px 70px;
+      }
+
+
+      .article-header h1 {
+        font-size:
+          36px;
+      }
+
+
+      .article-subtitle {
+        font-size:
+          17px;
+      }
+
+
+      .article-content {
+        font-size:
+          17px;
+
+        line-height:
+          1.8;
+      }
+
+
+      .article-content h2 {
+        font-size:
+          26px;
+      }
+
+
+      .article-hero {
+        margin-bottom:
+          40px;
+      }
+
+    }
+
+/* =========================================================
+   HONEY & HYMNS — WELCOME LETTER POPUP
+========================================================= */
+
+.welcome-popup-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(57, 45, 25, 0.52);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.28s ease,
+    visibility 0.28s ease;
+}
+
+.welcome-popup-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.welcome-letter {
+  position: relative;
+
+  width: min(560px, 94vw);
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  padding: 42px 48px 38px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffdf5 0%,
+      #fffaf0 55%,
+      #fff7df 100%
+    );
+
+  border:
+    1px solid
+    #d8c79f;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 24px 70px
+    rgba(57, 45, 25, 0.28);
+
+  text-align: center;
+
+  transform:
+    translateY(14px)
+    scale(0.97);
+
+  opacity: 0;
+
+  transition:
+    transform 0.32s
+      cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.28s ease;
+}
+
+.welcome-popup-overlay.open .welcome-letter {
+  transform:
+    translateY(0)
+    scale(1);
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   DECORATIVE CORNERS
+========================================================= */
+
+.welcome-letter::before,
+.welcome-letter::after {
+  content: "✦";
+
+  position: absolute;
+
+  color: #d8b65f;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 15px;
+
+  opacity: 0.7;
+}
+
+.welcome-letter::before {
+  top: 18px;
+  left: 22px;
+}
+
+.welcome-letter::after {
+  top: 18px;
+  right: 22px;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.welcome-letter-close {
+  position: absolute;
+
+  top: 13px;
+  right: 15px;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    #d8c79f;
+
+  border-radius: 50%;
+
+  background: #fff9df;
+  color: #665020;
+
+  cursor: pointer;
+
+  font-size: 18px;
+  line-height: 1;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.welcome-letter-close:hover {
+  background: #ffeaa0;
+
+  transform:
+    rotate(5deg);
+}
+
+
+/* =========================================================
+   LETTER TOP
+========================================================= */
+
+.welcome-letter-kicker {
+  margin: 0 0 7px;
+
+  color: #80652d;
+
+  font-family:
+    "Caveat",
+    cursive;
+
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.welcome-letter-title {
+  margin: 0;
+
+  color: #403521;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(2.35rem, 7vw, 3.45rem);
+
+  font-weight: 500;
+
+  line-height: 0.98;
+}
+
+
+/* =========================================================
+   DECORATIVE RULE
+========================================================= */
+
+.welcome-letter-rule {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 20px 0 19px;
+}
+
+.welcome-letter-rule::before,
+.welcome-letter-rule::after {
+  content: "";
+
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    #d8c79f;
+}
+
+.welcome-letter-rule span {
+  color: #b79b58;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   BODY COPY
+========================================================= */
+
+.welcome-letter-copy {
+  margin: 0 auto 22px;
+
+  max-width: 440px;
+
+  color: #62594e;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FREE GIFT CARD
+========================================================= */
+
+.welcome-gift {
+  margin: 0 auto 23px;
+
+  padding: 17px 20px 19px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff9df,
+      #ffeba1
+    );
+
+  border:
+    1px solid
+    #dfc878;
+
+  border-radius: 12px;
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255,255,255,0.7);
+}
+
+.welcome-gift-label {
+  margin: 0 0 4px;
+
+  color: #80652d;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.welcome-gift-title {
+  margin: 0 0 12px;
+
+  color: #403521;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 1.55rem;
+
+  font-weight: 600;
+}
+
+
+/* RETREAT IMAGE */
+
+.welcome-gift-image {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+
+  display: block;
+
+  margin: 0 auto 10px;
+
+  border:
+    1px solid
+    rgba(128, 101, 45, 0.22);
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 5px 14px
+    rgba(77, 64, 41, 0.12);
+}
+
+
+.welcome-gift-description {
+  margin: 0;
+
+  color: #68583d;
+
+  font-family:
+    "Caveat",
+    cursive;
+
+  font-size: 1.08rem;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.welcome-letter-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  margin-top: 3px;
+}
+
+.welcome-letter-input {
+  width: 100%;
+
+  height: 48px;
+
+  padding:
+    0 15px;
+
+  background: #fffdf7;
+
+  border:
+    1px solid
+    #d8c79f;
+
+  border-radius: 8px;
+
+  color: #40372d;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.welcome-letter-input::placeholder {
+  color: #9a8e7c;
+}
+
+.welcome-letter-input:focus {
+  outline: none;
+
+  border-color: #b79b58;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(183, 155, 88, 0.14);
+}
+
+
+/* =========================================================
+   CONSENT CHECKBOX
+========================================================= */
+
+.welcome-letter-consent {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  margin-top: 2px;
+
+  text-align: left;
+
+  color: #746957;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+.welcome-letter-consent input {
+  flex:
+    0 0 auto;
+
+  width: 15px;
+  height: 15px;
+
+  margin:
+    1px 0 0;
+
+  accent-color: #80652d;
+
+  cursor: pointer;
+}
+
+.welcome-letter-consent label {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   SUBSCRIBE BUTTON
+========================================================= */
+
+.welcome-letter-button {
+  width: 100%;
+
+  min-height: 48px;
+
+  padding:
+    12px 22px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: #80652d;
+
+  color: #fffdf4;
+
+  cursor: pointer;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 0.82rem;
+
+  font-weight: bold;
+
+  letter-spacing: 0.3px;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.welcome-letter-button:hover {
+  background: #665020;
+
+  transform:
+    translateY(-1px);
+}
+
+.welcome-letter-button:disabled {
+  opacity: 0.65;
+
+  cursor: wait;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.welcome-letter-success {
+  display: none;
+
+  margin:
+    12px auto 0;
+
+  max-width: 400px;
+
+  color: #62594e;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+.welcome-letter-success.open {
+  display: block;
+}
+
+.welcome-letter-success strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #80652d;
+
+  font-family:
+    "Caveat",
+    cursive;
+
+  font-size: 1.45rem;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   REASSURANCE
+========================================================= */
+
+.welcome-letter-note {
+  margin: 9px 0 0;
+
+  color: #8a7b66;
+
+  font-size: 11px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
+
+/* =========================================================
+   NOT TODAY
+========================================================= */
+
+.welcome-letter-dismiss {
+  margin-top: 18px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #80652d;
+
+  cursor: pointer;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 12px;
+
+  text-decoration: underline;
+
+  text-underline-offset: 3px;
+}
+
+.welcome-letter-dismiss:hover {
+  color: #5e4b2f;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .welcome-popup-overlay {
+    padding: 14px;
+  }
+
+  .welcome-letter {
+    width: 100%;
+
+    max-height: 92vh;
+
+    padding:
+      38px 23px 28px;
+
+    border-radius: 15px;
+  }
+
+  .welcome-letter-title {
+    font-size: 2.45rem;
+  }
+
+  .welcome-letter-copy {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .welcome-gift {
+    padding:
+      14px 15px;
+  }
+
+  .welcome-gift-title {
+    font-size: 1.35rem;
+  }
+
+  .welcome-letter-rule {
+    margin:
+      16px 0;
+  }
+
+}
+
+  </style>
+</head>
+
+
+<body>
+<!-- =========================================================
+     HONEY & HYMNS — WELCOME LETTER POPUP
+========================================================= -->
+
+<div
+  class="welcome-popup-overlay"
+  id="welcomePopup"
+  aria-hidden="true"
+>
+
+  <div
+    class="welcome-letter"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="welcomePopupTitle"
+  >
+
+    <button
+      class="welcome-letter-close"
+      type="button"
+      onclick="closeWelcomePopup()"
+      aria-label="Close welcome message"
+    >
+      ×
+    </button>
+
+
+    <p class="welcome-letter-kicker">
+      A little something for your home
+    </p>
+
+
+    <h2
+      class="welcome-letter-title"
+      id="welcomePopupTitle"
+    >
+      Welcome to<br>
+      Honey & Hymns 🐝
+    </h2>
+
+
+    <div class="welcome-letter-rule">
+      <span>✦</span>
+    </div>
+
+
+    <p class="welcome-letter-copy">
+      A peaceful little corner for Catholic
+      homemakers, homeschool moms, and women
+      trying to make a beautiful home in the midst
+      of ordinary family life.
+    </p>
+
+
+    <div class="welcome-gift">
+
+      <p class="welcome-gift-label">
+        A Free Gift for You
+      </p>
+
+      <h3 class="welcome-gift-title">
+        Mini At-Home Retreat
+      </h3>
+
+      <img
+        class="welcome-gift-image"
+        src="../../images/honey-and-hymns-mini-home-retreat.png"
+        alt="Honey & Hymns Mini At-Home Retreat"
+      >
+
+      <p class="welcome-gift-description">
+        Pause • Pray • Reflect • Begin Again
+      </p>
+
+    </div>
+
+
+    <p class="welcome-letter-copy">
+      Join the Honey Hive and I'll send this
+      peaceful little retreat straight to your inbox.
+    </p>
+
+
+    <!-- =====================================================
+         SIGNUP FORM
+    ====================================================== -->
+
+    <form
+      class="welcome-letter-form"
+      id="welcomeSignupForm"
+    >
+
+      <input
+        class="welcome-letter-input"
+        type="text"
+        id="welcomeFirstName"
+        name="firstName"
+        placeholder="First name"
+        autocomplete="given-name"
+        required
+      >
+
+
+      <input
+        class="welcome-letter-input"
+        type="email"
+        id="welcomeEmail"
+        name="email"
+        placeholder="Email address"
+        autocomplete="email"
+        required
+      >
+
+
+      <div class="welcome-letter-consent">
+
+        <input
+          type="checkbox"
+          id="welcomeConsent"
+          name="consent"
+          value="Yes"
+          required
+        >
+
+        <label for="welcomeConsent">
+          Yes, I'd like to receive emails from Honey & Hymns,
+          including new articles, resources, and occasional
+          offers. I can unsubscribe anytime.
+        </label>
+
+      </div>
+
+
+      <button
+        class="welcome-letter-button"
+        id="welcomeSubmitButton"
+        type="submit"
+      >
+        Join the Honey Hive →
+      </button>
+
+    </form>
+
+
+    <!-- =====================================================
+         SUCCESS MESSAGE
+    ====================================================== -->
+
+    <div
+      class="welcome-letter-success"
+      id="welcomeSignupSuccess"
+      aria-live="polite"
+    >
+      <strong>You're on the list! 🐝</strong>
+
+      Thank you for joining Honey & Hymns.
+      Your Mini At-Home Retreat will be sent
+      to your inbox.
+    </div>
+
+
+    <p class="welcome-letter-note">
+      Free to join • Unsubscribe anytime
+    </p>
+
+
+    <button
+      class="welcome-letter-dismiss"
+      type="button"
+      onclick="closeWelcomePopup(true)"
+    >
+      Not today, thank you
+    </button>
+
+  </div>
+
+</div>
+
+
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header class="site-header">
+
+    <div class="header-brand">
+
+      <a href="../../">
+
+           <img
+  src="../../images/honey-and-hymns-logo.png"
+          alt="Honey & Hymns"
+          class="site-logo"
+        >
+
+      </a>
+
+      <p class="header-tagline">
+        Faith • Homeschool • Homemaking
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <nav class="site-nav">
+
+    <a href="../../">
+      Home
+    </a>
+
+
+    <a href="../../Articles/">
+      Articles
+    </a>
+
+
+    <div class="shop-dropdown">
+
+      <button
+        class="shop-toggle"
+        type="button"
+        aria-expanded="false"
+      >
+        Shop
+      </button>
+
+
+      <div class="shop-menu">
+
+        <a href="../../Resources/">
+          Resources
+        </a>
+
+
+        <a href="../../Free-Downloads/">
+          Free Downloads
+        </a>
+
+
+          <a href="../../Amazon-Finds/">
+          Amazon Finds
+        </a>
+
+
+      </div>
+
+    </div>
+
+
+ <!-- CURRENT ISSUES -->
+
+<div class="shop-dropdown">
+
+  <button
+    class="shop-toggle"
+    type="button"
+    aria-expanded="false"
+  >
+    Current Issues
+  </button>
+
+
+  <div class="shop-menu">
+
+    <a href="../../Sunday-Gospel/">
+      Sunday Gospel for Kids
+    </a>
+
+
+    <a href="../../Honey-and-Hymns-Digital-Magazine/">
+      Honey & Hymns Digital Magazine
+    </a>
+
+  </div>
+
+</div>
+
+
+
+    <a href="../../About/">
+      About
+    </a>
+ <a href="../../Contact/">
+          Contact
+        </a>
+
+    <a
+      href="../../Honey-Hive/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      The Honey Hive
+    </a>
+
+
+    <!-- WISHLIST -->
+
+    <button
+      class="wishlist-header-button"
+      type="button"
+      onclick="openWishlist()"
+      aria-label="Open wishlist"
+    >
+
+      <span class="wishlist-heart">
+        ♡
+      </span>
+
+      Wishlist
+
+      <span
+        class="wishlist-count"
+        id="wishlistCount"
+      >
+        0
+      </span>
+
+    </button>
+
+  </nav>
+
+  </header>
+
+<!-- ========================================
+     ARTICLE HEADER
+======================================== -->
+
+<header class="article-header">
+
+  <p class="article-category">
+    HOMESCHOOL
+  </p>
+
+
+  <p class="article-date">
+    Sep 05, 2026
+  </p>
+
+
+  <h1>
+    How to Balance Homeschooling and Housework Without Losing Your Mind
+  </h1>
+
+
+  <p class="article-subtitle">
+  Simple rhythms, age-appropriate chores, and a flexible homeschool routine that help keep our home running without expecting everything to get done every day.
+  </p>
+
+
+  <div class="article-rule">
+    ✦
+  </div>
+
+</header>
+
+
+
+<!-- ========================================
+     ARTICLE HERO IMAGE
+======================================== -->
+
+<div class="article-hero">
+
+     <img
+  src="../../images/how-to-balance-homeschooling-and-housework.png"
+    alt="How to Balance Homeschooling and Housework"
+  >
+
+</div>
+
+
+
+<!-- ========================================
+     ARTICLE CONTENT
+======================================== -->
+
+<div class="article-layout">
+
+  <article class="article-content">
+
+
+    <p>
+    One of the things nobody told me before homeschooling was how much these two jobs would compete with each other.
+    </p>
+
+
+    <p>
+     Some mornings I’d homeschool, then look around the house and wonder when I was supposed to clean it. Other mornings I’d catch up on housework and feel guilty for not giving my kids enough attention. And with three kids to homeschool, some days it just feels like there aren’t enough hours to do it all.
+    </p>
+
+
+    <p>
+    Here’s what I’ve learned: the answer isn’t trying to do everything, every day. It’s building rhythms that let homeschooling, housework, family life, and my own work all exist together — without any one of them swallowing the rest.
+    </p>
+
+    <h2>I had to stop expecting everything to get done every day</h2>
+    <p>
+
+I used to think I needed to pick up the clutter every single day to feel like the house was under control. Sounds reasonable, until you’re home with three kids you’re also homeschooling.
+    </p>
+
+
+    <p>
+There will always be another load of laundry. Another counter that needs wiping. Something else that needs picking up. If “the house is completely picked up” is my bar for a successful day, I’m just setting myself up to feel like I failed.
+    </p>
+
+    <p>
+      So I’ve learned the difference between what actually needs to happen and what can wait. Dishes are non-negotiable for me — I can’t stand when they pile up. Bathrooms too (two boys and a man in the house will teach you that real fast). But dusting? That gets pushed all the time. And whatever junk collects on the kitchen counter can sit there a while. It doesn’t mean I don’t care about a clean home — it just means I’ve gotten realistic about what actually matters most.
+    </p>
+    
+
+    <h2>
+    Our homeschool rhythm helps more than I expected
+    </h2>
+
+
+    <p>
+  We use the Charlotte Mason method, partly because I could actually picture myself sticking with it long-term. The lessons are short, so we’re not stuck on one subject for hours. And because it leans on independent learning, my kids aren’t glued to me for every minute of the school day — which matters a lot when you’ve got three kids at three different ages and stages.
+    </p>
+    <p>
+      It also gives us permission to stop. I’ve learned there’s a point where everyone’s just done — when nobody’s listening anymore and I’m repeating myself for the fifth time, we’re not really learning anything. Finishing the lesson just because it’s on the schedule doesn’t make us better homeschoolers. Sometimes the lesson’s done. Sometimes the whole day is done. And that’s fine — it leaves me room to take care of the rest of our home without homeschooling eating the whole day.
+    </p>
+
+      <h2>
+   The kids are part of the house too
+    </h2>
+
+
+    <p>
+   I don’t have to run this whole house by myself — my kids live here too. They’re not guests who homeschool all day while I clean up behind them. Their jobs are age-appropriate, but they’re real.
+    </p>
+    <p>
+      My boys have daily chores after school. My older son wipes dishes and handles laundry for himself and his brother — he’s even started rinsing his own dishes and occasionally getting them clean enough for the dishwasher. My six-year-old wipes down the table and counters (I just load up a rag with a spray or two and hand it over). My three-year-old is shockingly good at putting toys away.
+    </p>
+    <p>
+      None of this means the house stays magically clean — they’re kids. But they’re learning that taking care of our home is something we all do together, and that matters.
+    </p>
+
+     <h2>
+    I clean in rhythms, not all at once
+    </h2>
+
+
+    <p>
+    My day has a couple of natural reset points. After school, I do a quick clean-up before sitting down to work on Honey & Hymns. Then after I wrap up work — usually somewhere between 5 and 7 — I reset again before settling in for the evening.
+    </p>
+    <p>
+      But I’m not relying on just those two moments. I’ve got daily and weekly rhythms running underneath everything, so if one day goes sideways, the whole house doesn’t fall apart with it. If I don’t have the energy to do the kitchen cleaning on Wednesday, I just push it to Thursday — since Thursday is normally just a light clutter pick-up day anyway, both fit in easily without me having to panic or deep-clean everything at once.
+    </p>
+    <p>
+      That’s the real difference between a rhythm and a schedule: a schedule makes you feel behind. A rhythm just gives you somewhere to pick back up.
+    </p>
+
+    <h2>
+    Plan for the days that don’t go according to plan
+    </h2>
+
+
+    <p>
+ If you’re homeschooling, you already know — you can’t predict every day. Someone gets sick. A kid needs extra attention. School runs long. Dinner falls apart. Mom just doesn’t have it in her that day.
+    </p>
+    <p>
+      I’ve learned to plan for those days instead of pretending they won’t come. Meal prepping helps a ton, but even when I don’t get to it, I have a backup — my husband can step in and cook if life gets in the way. I don’t want our whole household to depend on me performing perfectly every single day. Same goes for cleaning. If I miss something, I don’t panic — I already know what comes next.
+    </p>
+    <p>
+      The goal was never to prevent every disruption. It’s to keep one hard day from turning into one hard week.
+    </p>
+
+
+   <h2>
+     Some days I have nothing left
+    </h2>
+
+    <p>
+    Some days my energy is just at zero. Thankfully that’s not the norm, but it happens — and that’s usually when I lean on delegating. The kids pick up more of their chores. My husband steps in more. Sometimes, honestly, something just doesn’t get done.
+    </p>
+    <p>
+      I’ve had to give myself permission to be okay with that. There’s no prize for scrubbing the bathroom while running on empty just because it was “supposed” to happen today. Some days you do what truly needs doing, and you let the rest wait.
+    </p>
+
+
+    <h2>
+    Balance doesn’t mean everything gets done
+    </h2>
+
+
+    <p>
+   This might be the biggest thing I’ve learned. I used to think balance meant figuring out how to homeschool, clean, cook, do laundry, and keep the house tidy — every single day, all at once.
+    </p>
+
+    <p>
+   Now balance looks more like knowing what actually matters and letting everything else move around it. My kids need to learn. They need to know how to care for themselves and contribute at home. We need clean dishes and reasonably clean bathrooms. We need food, and we need time together. And I need enough room in my own day to breathe.
+    </p>
+
+    <p>
+    Not every corner of the house will be spotless every day. Not every homeschool day will look the same. Some days the dusting gets skipped, school ends early, or I hand something off to someone else. And that’s okay.
+    </p>
+
+    <p>
+    Our home is lived in. Our homeschool is lived in too. I’m not trying to run a perfectly managed household — I’m trying to build one that’s sustainable. Because I don’t want homeschooling to swallow our family life, and I don’t want housework to swallow our homeschool.
+    </p>
+
+
+    <p>
+I want my kids to learn, our home to be cared for, and our family to actually have room to live.
+    </p>
+  <p>
+    That’s what balance looks like for me.
+  </p>
+
+
+    <div class="article-end">
+
+      <div class="article-end-symbol">
+        ✦
+      </div>
+
+      <div>
+        Thank you for reading Honey & Hymns.
+      </div>
+
+    </div>
+
+  </article>
+
+</div>
+
+
+
+<!-- ========================================
+     RECOMMENDED ARTICLES
+======================================== -->
+
+<section class="recommended">
+
+  <div class="recommended-heading">
+
+    <h2>
+      You May Also Enjoy
+    </h2>
+
+    <p>
+      A few more stories from Honey & Hymns
+    </p>
+
+  </div>
+
+
+  <div class="recommended-grid">
+
+
+    <!-- RECOMMENDED ARTICLE 1 -->
+
+    <article class="recommended-card">
+
+      <p class="article-category">
+        HOMESCHOOL • FAMILY
+      </p>
+
+      <p class="article-date">
+        August 8, 2026
+      </p>
+
+      <h3>
+        Why I Chose to Homeschool My Kids:
+        The Story Behind Our Homeschool Journey
+      </h3>
+
+      <p>
+        A mom’s honest reflection on school safety,
+        family values, and the moment she knew
+        homeschooling was the right choice.
+      </p>
+
+      <a href="../why-i-chose-to-homeschool-my-kids/">
+        Read Article →
+      </a>
+
+    </article>
+
+
+
+    <!-- RECOMMENDED ARTICLE 2 -->
+
+    <article class="recommended-card">
+
+      <p class="article-category">
+        MOTHERHOOD
+      </p>
+
+      <p class="article-date">
+        August 1, 2026
+      </p>
+
+      <h3>
+        Are Girl Toddlers More Strong-Willed Than Boys?
+        A Mom’s Honest Investigation
+      </h3>
+
+      <p>
+        A mom's honest look at the differences she noticed
+        between raising her boys and her strong-willed
+        toddler daughter.
+      </p>
+
+      <a href="../are-girl-toddlers-more-strong-willed-than-boys/">
+        Read Article →
+      </a>
+
+    </article>
+
+
+
+    <!-- RECOMMENDED ARTICLE 3 -->
+
+    <article class="recommended-card">
+
+      <p class="article-category">
+        HOMESCHOOL
+      </p>
+
+      <p class="article-date">
+        July 11, 2026
+      </p>
+
+      <h3>
+        How I Prepare for a New Homeschool Year:
+        My End-of-Summer Planning Routine
+      </h3>
+
+      <p>
+        How I organize, choose curriculum,
+        plan lessons, and prepare for a new year.
+      </p>
+
+      <a href="../homeschool-year-planning-routine/">
+        Read Article →
+      </a>
+
+    </article>
+
+  </div>
+
+</section>
+ </main>
+
+ <!-- =========================
+       WISHLIST POPUP
+  ========================= -->
+
+  <div
+    class="wishlist-overlay"
+    id="wishlistOverlay"
+    aria-hidden="true"
+  >
+
+    <div
+      class="wishlist-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="wishlistTitle"
+    >
+
+
+      <div class="wishlist-modal-header">
+
+        <h2
+          class="wishlist-modal-title"
+          id="wishlistTitle"
+        >
+          My Honey & Hymns Wishlist
+        </h2>
+
+
+        <button
+          class="wishlist-close"
+          type="button"
+          onclick="closeWishlist()"
+          aria-label="Close wishlist"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div
+        class="wishlist-body"
+        id="wishlistBody"
+      >
+
+      </div>
+
+
+      <div class="wishlist-modal-footer">
+
+        <span
+          class="wishlist-footer-note"
+          id="wishlistFooterNote"
+        >
+          Your little collection of favorites
+        </span>
+
+
+        <button
+          class="wishlist-clear"
+          type="button"
+          onclick="clearWishlist()"
+        >
+          Clear Wishlist
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+
+  <footer class="site-footer">
+
+    <p>
+      © Honey & Hymns
+    </p>
+
+  </footer>
+
+
+
+  <!-- ========================================
+       JAVASCRIPT
+  ======================================== -->
+
+ <script>
+
+
+   /* ========================================
+   NAVIGATION DROPDOWNS
+======================================== */
+
+const dropdowns =
+  document.querySelectorAll(
+    ".shop-dropdown"
+  );
+
+
+dropdowns.forEach(
+  function(dropdown) {
+
+    const toggle =
+      dropdown.querySelector(
+        ".shop-toggle"
+      );
+
+
+    toggle.addEventListener(
+      "click",
+      function(event) {
+
+        event.stopPropagation();
+
+
+        /* Close other dropdowns */
+
+        dropdowns.forEach(
+          function(otherDropdown) {
+
+            if (
+              otherDropdown !== dropdown
+            ) {
+
+              otherDropdown.classList.remove(
+                "open"
+              );
+
+
+              const otherToggle =
+                otherDropdown.querySelector(
+                  ".shop-toggle"
+                );
+
+
+              otherToggle.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+            }
+
+          }
+        );
+
+
+        /* Toggle this dropdown */
+
+        const isOpen =
+          dropdown.classList.toggle(
+            "open"
+          );
+
+
+        toggle.setAttribute(
+          "aria-expanded",
+          isOpen
+            ? "true"
+            : "false"
+        );
+
+      }
+    );
+
+  }
+);
+
+
+/* ========================================
+   CLOSE DROPDOWNS OUTSIDE CLICK
+======================================== */
+
+document.addEventListener(
+  "click",
+  function(event) {
+
+    dropdowns.forEach(
+      function(dropdown) {
+
+        if (
+          !dropdown.contains(
+            event.target
+          )
+        ) {
+
+          dropdown.classList.remove(
+            "open"
+          );
+
+
+          const toggle =
+            dropdown.querySelector(
+              ".shop-toggle"
+            );
+
+
+          toggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        }
+
+      }
+    );
+
+  }
+);
+
+    /* ========================================
+       WISHLIST STORAGE
+    ======================================== */
+
+    const WISHLIST_STORAGE_KEY =
+      "honeyAndHymnsWishlist";
+
+
+    function getWishlist() {
+
+      try {
+
+        const stored =
+          localStorage.getItem(
+            WISHLIST_STORAGE_KEY
+          );
+
+
+        if (!stored) {
+
+          return [];
+
+        }
+
+
+        const parsed =
+          JSON.parse(stored);
+
+
+        return Array.isArray(parsed)
+          ? parsed
+          : [];
+
+      } catch (error) {
+
+        return [];
+
+      }
+
+    }
+
+
+    function saveWishlist(items) {
+
+      localStorage.setItem(
+        WISHLIST_STORAGE_KEY,
+        JSON.stringify(items)
+      );
+
+    }
+
+
+    /* ========================================
+       WISHLIST COUNT
+    ======================================== */
+
+    function updateWishlistCount() {
+
+      const countElement =
+        document.getElementById(
+          "wishlistCount"
+        );
+
+
+      if (!countElement) {
+
+        return;
+
+      }
+
+
+      countElement.textContent =
+        getWishlist().length;
+
+    }
+
+
+    /* ========================================
+       CHECK IF PRODUCT IS SAVED
+    ======================================== */
+
+    function isInWishlist(id) {
+
+      return getWishlist().some(
+        function(item) {
+
+          return item.id === id;
+
+        }
+      );
+
+    }
+
+
+    /* ========================================
+       UPDATE PRODUCT BUTTONS
+    ======================================== */
+
+    function updateWishlistButtons() {
+
+      const buttons =
+        document.querySelectorAll(
+          ".wishlist-button"
+        );
+
+
+      buttons.forEach(
+        function(button) {
+
+          const id =
+            button.dataset.wishlistId;
+
+
+          if (
+            isInWishlist(id)
+          ) {
+
+            button.classList.add(
+              "saved"
+            );
+
+
+            button.textContent =
+              "♥ Saved to Wishlist";
+
+          } else {
+
+            button.classList.remove(
+              "saved"
+            );
+
+
+            button.textContent =
+              "♡ Add to Wishlist";
+
+          }
+
+        }
+      );
+
+    }
+
+
+    /* ========================================
+       ADD / REMOVE PRODUCT
+    ======================================== */
+
+    function toggleWishlist(button) {
+
+      const id =
+        button.dataset.wishlistId;
+
+
+      const product = {
+
+        id:
+          id,
+
+        title:
+          button.dataset.title,
+
+        price:
+          button.dataset.price,
+
+        image:
+          button.dataset.image,
+
+        url:
+          button.dataset.url
+
+      };
+
+
+      let wishlist =
+        getWishlist();
+
+
+      const existingIndex =
+        wishlist.findIndex(
+          function(item) {
+
+            return item.id === id;
+
+          }
+        );
+
+
+      if (
+        existingIndex !== -1
+      ) {
+
+        wishlist.splice(
+          existingIndex,
+          1
+        );
+
+      } else {
+
+        wishlist.push(
+          product
+        );
+
+      }
+
+
+      saveWishlist(
+        wishlist
+      );
+
+
+      updateWishlistCount();
+
+      updateWishlistButtons();
+
+    }
+
+
+    /* ========================================
+       PRODUCT BUTTON EVENTS
+    ======================================== */
+
+    document
+      .querySelectorAll(
+        ".wishlist-button"
+      )
+      .forEach(
+        function(button) {
+
+          button.addEventListener(
+            "click",
+            function() {
+
+              toggleWishlist(
+                button
+              );
+
+            }
+          );
+
+        }
+      );
+
+
+    /* ========================================
+       RENDER WISHLIST
+    ======================================== */
+
+    function renderWishlist() {
+
+      const body =
+        document.getElementById(
+          "wishlistBody"
+        );
+
+
+      const wishlist =
+        getWishlist();
+
+
+      if (
+        wishlist.length === 0
+      ) {
+
+        body.innerHTML = `
+
+          <div class="wishlist-empty">
+
+            <div class="wishlist-empty-icon">
+              ♡
+            </div>
+
+            <h3>
+              Your wishlist is empty
+            </h3>
+
+            <p>
+              Save a few Honey & Hymns favorites
+              and they'll wait here for you.
+            </p>
+
+          </div>
+
+        `;
+
+
+        return;
+
+      }
+
+
+      body.innerHTML =
+        wishlist
+          .map(
+            function(item) {
+
+              return `
+
+                <div
+                  class="wishlist-item"
+                  data-item-id="${escapeHtml(item.id)}"
+                >
+
+                  <img
+                    class="wishlist-item-image"
+                    src="${escapeHtml(item.image)}"
+                    alt="${escapeHtml(item.title)}"
+                  >
+
+
+                  <div>
+
+                    <h3
+                      class="wishlist-item-title"
+                    >
+                      ${escapeHtml(item.title)}
+                    </h3>
+
+
+                    <p
+                      class="wishlist-item-price"
+                    >
+                      ${escapeHtml(item.price)}
+                    </p>
+
+
+                    <a
+                      class="wishlist-item-view"
+                      href="${escapeHtml(item.url)}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Product →
+                    </a>
+
+                  </div>
+
+
+                  <button
+                    class="wishlist-remove"
+                    type="button"
+                    onclick="removeFromWishlist('${escapeHtml(item.id)}')"
+                  >
+                    Remove
+                  </button>
+
+                </div>
+
+              `;
+
+            }
+          )
+          .join("");
+
+    }
+
+
+    /* ========================================
+       BASIC HTML ESCAPING
+    ======================================== */
+
+    function escapeHtml(value) {
+
+      return String(value)
+        .replace(
+          /&/g,
+          "&amp;"
+        )
+        .replace(
+          /</g,
+          "&lt;"
+        )
+        .replace(
+          />/g,
+          "&gt;"
+        )
+        .replace(
+          /"/g,
+          "&quot;"
+        )
+        .replace(
+          /'/g,
+          "&#039;"
+        );
+
+    }
+
+
+    /* ========================================
+       REMOVE FROM WISHLIST
+    ======================================== */
+
+    function removeFromWishlist(id) {
+
+      const wishlist =
+        getWishlist()
+          .filter(
+            function(item) {
+
+              return item.id !== id;
+
+            }
+          );
+
+
+      saveWishlist(
+        wishlist
+      );
+
+
+      updateWishlistCount();
+
+      updateWishlistButtons();
+
+      renderWishlist();
+
+    }
+
+
+    /* ========================================
+       OPEN WISHLIST
+    ======================================== */
+
+    function openWishlist() {
+
+      renderWishlist();
+
+
+      const overlay =
+        document.getElementById(
+          "wishlistOverlay"
+        );
+
+
+      overlay.classList.add(
+        "open"
+      );
+
+
+      overlay.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+
+      document.body.style.overflow =
+        "hidden";
+
+    }
+
+
+    /* ========================================
+       CLOSE WISHLIST
+    ======================================== */
+
+    function closeWishlist() {
+
+      const overlay =
+        document.getElementById(
+          "wishlistOverlay"
+        );
+
+
+      overlay.classList.remove(
+        "open"
+      );
+
+
+      overlay.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+    /* ========================================
+       CLEAR WISHLIST
+    ======================================== */
+
+    function clearWishlist() {
+
+      const wishlist =
+        getWishlist();
+
+
+      if (
+        wishlist.length === 0
+      ) {
+
+        return;
+
+      }
+
+
+      const confirmed =
+        window.confirm(
+          "Are you sure you want to clear your wishlist?"
+        );
+
+
+      if (!confirmed) {
+
+        return;
+
+      }
+
+
+      saveWishlist(
+        []
+      );
+
+
+      updateWishlistCount();
+
+      updateWishlistButtons();
+
+      renderWishlist();
+
+    }
+
+
+    /* ========================================
+       CLOSE WHEN CLICKING OUTSIDE
+    ======================================== */
+
+    document
+      .getElementById(
+        "wishlistOverlay"
+      )
+      .addEventListener(
+        "click",
+        function(event) {
+
+          if (
+            event.target ===
+            this
+          ) {
+
+            closeWishlist();
+
+          }
+
+        }
+      );
+
+
+    /* ========================================
+       ESCAPE KEY
+    ======================================== */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key ===
+          "Escape"
+        ) {
+
+          closeWishlist();
+
+        }
+
+      }
+    );
+
+
+    /* ========================================
+       INITIALIZE
+    ======================================== */
+
+    updateWishlistCount();
+
+    updateWishlistButtons();
+
+/* =========================================================
+   HONEY & HYMNS — FIRST VISIT WELCOME POPUP
+========================================================= */
+
+const WELCOME_POPUP_DISMISSED_KEY =
+  "honeyAndHymnsWelcomePopupDismissed";
+
+const WELCOME_POPUP_SUBSCRIBED_KEY =
+  "honeyAndHymnsWelcomePopupSubscribed";
+
+const WELCOME_POPUP_DELAY =
+  8000;
+
+
+/* =========================================================
+   GOOGLE APPS SCRIPT
+========================================================= */
+
+const WELCOME_SIGNUP_URL =
+  "https://script.google.com/macros/s/AKfycbzk4jxgxkK-4O3Q4RwwWzo2trY8axyOZWZ_-kS8iEXradfX3g1v9heB2mNsvYWxLoBK/exec";
+
+
+/* =========================================================
+   OPEN POPUP
+========================================================= */
+
+function openWelcomePopup() {
+
+  const popup =
+    document.getElementById(
+      "welcomePopup"
+    );
+
+  if (!popup) {
+    return;
+  }
+
+  popup.classList.add("open");
+
+  popup.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow =
+    "hidden";
+}
+
+
+/* =========================================================
+   CLOSE POPUP
+========================================================= */
+
+function closeWelcomePopup(
+  rememberDismissal = false
+) {
+
+  const popup =
+    document.getElementById(
+      "welcomePopup"
+    );
+
+  if (!popup) {
+    return;
+  }
+
+  popup.classList.remove("open");
+
+  popup.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow =
+    "";
+
+  if (rememberDismissal) {
+
+    localStorage.setItem(
+      WELCOME_POPUP_DISMISSED_KEY,
+      Date.now().toString()
+    );
+
+  }
+}
+
+
+/* =========================================================
+   CHECK WHETHER POPUP SHOULD APPEAR
+========================================================= */
+
+function shouldShowWelcomePopup() {
+
+  const dismissed =
+    localStorage.getItem(
+      WELCOME_POPUP_DISMISSED_KEY
+    );
+
+  const subscribed =
+    localStorage.getItem(
+      WELCOME_POPUP_SUBSCRIBED_KEY
+    );
+
+
+  /*
+    If we've marked the visitor as subscribed,
+    never show the popup again.
+  */
+
+  if (subscribed) {
+    return false;
+  }
+
+
+  /*
+    If the visitor dismissed the popup,
+    wait 30 days before showing it again.
+  */
+
+  if (dismissed) {
+
+    const dismissedTime =
+      Number(dismissed);
+
+    const thirtyDays =
+      30 *
+      24 *
+      60 *
+      60 *
+      1000;
+
+    const timeSinceDismissal =
+      Date.now() -
+      dismissedTime;
+
+    if (
+      timeSinceDismissal <
+      thirtyDays
+    ) {
+
+      return false;
+
+    }
+
+  }
+
+
+  return true;
+}
+
+
+/* =========================================================
+   MARK SUBSCRIBED
+========================================================= */
+
+function markWelcomePopupSubscribed() {
+
+  localStorage.setItem(
+    WELCOME_POPUP_SUBSCRIBED_KEY,
+    "true"
+  );
+}
+
+
+/* =========================================================
+   SHOW SUCCESS MESSAGE
+========================================================= */
+
+function showWelcomeSignupSuccess() {
+
+  const form =
+    document.getElementById(
+      "welcomeSignupForm"
+    );
+
+  const success =
+    document.getElementById(
+      "welcomeSignupSuccess"
+    );
+
+  const button =
+    document.getElementById(
+      "welcomeSubmitButton"
+    );
+
+  if (form) {
+
+    form.style.display =
+      "none";
+
+  }
+
+  if (success) {
+
+    success.classList.add(
+      "open"
+    );
+
+  }
+
+  if (button) {
+
+    button.disabled =
+      false;
+
+  }
+}
+
+
+/* =========================================================
+   POPUP EVENTS
+========================================================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function() {
+
+    const popup =
+      document.getElementById(
+        "welcomePopup"
+      );
+
+    if (!popup) {
+      return;
+    }
+
+
+    /*
+      Wait 8 seconds before showing.
+    */
+
+    if (
+      shouldShowWelcomePopup()
+    ) {
+
+      window.setTimeout(
+        function() {
+
+          /*
+            Check one more time in case
+            something changed while waiting.
+          */
+
+          if (
+            shouldShowWelcomePopup()
+          ) {
+
+            openWelcomePopup();
+
+          }
+
+        },
+        WELCOME_POPUP_DELAY
+      );
+
+    }
+
+
+    /*
+      Clicking the dark overlay closes it.
+    */
+
+    popup.addEventListener(
+      "click",
+      function(event) {
+
+        if (
+          event.target === popup
+        ) {
+
+          closeWelcomePopup(true);
+
+        }
+
+      }
+    );
+
+
+    /*
+      Escape closes it.
+    */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Escape" &&
+          popup.classList.contains("open")
+        ) {
+
+          closeWelcomePopup(true);
+
+        }
+
+      }
+    );
+
+
+    /* =====================================================
+       SIGNUP FORM
+    ====================================================== */
+
+    const form =
+      document.getElementById(
+        "welcomeSignupForm"
+      );
+
+    if (!form) {
+      return;
+    }
+
+
+    form.addEventListener(
+      "submit",
+      function(event) {
+
+        event.preventDefault();
+
+
+        const firstName =
+          document.getElementById(
+            "welcomeFirstName"
+          ).value.trim();
+
+
+        const email =
+          document.getElementById(
+            "welcomeEmail"
+          ).value.trim();
+
+
+        const consent =
+          document.getElementById(
+            "welcomeConsent"
+          ).checked;
+
+
+        const button =
+          document.getElementById(
+            "welcomeSubmitButton"
+          );
+
+
+        /*
+          Browser validation should already
+          catch these, but we check again.
+        */
+
+        if (
+          !firstName ||
+          !email ||
+          !consent
+        ) {
+
+          return;
+
+        }
+
+
+        /*
+          Prevent double submissions.
+        */
+
+        if (button) {
+
+          button.disabled =
+            true;
+
+          button.textContent =
+            "Joining the Honey Hive…";
+
+        }
+
+
+        /*
+          Build the information that will
+          be sent to Google Apps Script.
+        */
+
+        const formData =
+          new URLSearchParams();
+
+        formData.append(
+          "firstName",
+          firstName
+        );
+
+        formData.append(
+          "email",
+          email
+        );
+
+        formData.append(
+          "source",
+          "Article-10 living books Popup"
+        );
+
+        formData.append(
+          "consent",
+          "Yes"
+        );
+
+
+        /*
+          Send the signup to Google Sheets.
+
+          no-cors is intentional because
+          Google Apps Script and GitHub Pages
+          are different domains.
+        */
+
+        fetch(
+          WELCOME_SIGNUP_URL,
+          {
+            method: "POST",
+
+            mode: "no-cors",
+
+            headers: {
+              "Content-Type":
+                "application/x-www-form-urlencoded"
+            },
+
+            body:
+              formData.toString()
+          }
+        )
+        .then(
+          function() {
+
+            /*
+              We cannot read the response from
+              a no-cors request, but the request
+              has been sent to Apps Script.
+
+              Show the visitor the success state.
+            */
+
+            markWelcomePopupSubscribed();
+
+            showWelcomeSignupSuccess();
+
+          }
+        )
+        .catch(
+          function(error) {
+
+            console.error(
+              "Honey & Hymns signup error:",
+              error
+            );
+
+
+            if (button) {
+
+              button.disabled =
+                false;
+
+              button.textContent =
+                "Join the Honey Hive →";
+
+            }
+
+            alert(
+              "Something went wrong. Please try again."
+            );
+
+          }
+        );
+
+      }
+    );
+
+  }
+);
+  </script>
+
+
+</body>
+
+</html>
