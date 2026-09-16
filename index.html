@@ -916,6 +916,105 @@
       text-decoration: underline;
     }
 
+    /* HOMEPAGE SUBSCRIBE BOX */
+
+.homepage-subscribe {
+  padding: 50px 20px;
+  margin: 10px auto 60px;
+}
+
+.homepage-subscribe-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  background: #fffde7;
+  border: 1px solid #f3cf80;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(92, 67, 35, 0.08);
+}
+
+.homepage-subscribe-inner h2 {
+  margin: 0 0 12px;
+  color: #5c4323;
+}
+
+.homepage-subscribe-text {
+  max-width: 560px;
+  margin: 0 auto 28px;
+  color: #6f5a3e;
+  line-height: 1.6;
+}
+
+.homepage-subscribe-field {
+  max-width: 520px;
+  margin: 0 auto 16px;
+  text-align: left;
+}
+
+.homepage-subscribe-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #5c4323;
+}
+
+.homepage-subscribe-field input[type="text"],
+.homepage-subscribe-field input[type="email"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #d9c79e;
+  border-radius: 10px;
+  background: #ffffff;
+  font: inherit;
+}
+
+.homepage-subscribe-field input:focus {
+  outline: 2px solid #f3cf80;
+  outline-offset: 1px;
+}
+
+.homepage-subscribe-consent {
+  max-width: 520px;
+  margin: 8px auto 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  text-align: left;
+  color: #6f5a3e;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.homepage-subscribe-consent input {
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.homepage-subscribe button {
+  display: inline-block;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 10px;
+  background: #f3cf80;
+  color: #5c4323;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.homepage-subscribe button:hover {
+  opacity: 0.85;
+}
+
+.homepage-subscribe-success {
+  margin: 18px 0 0;
+  color: #5c4323;
+  font-weight: 600;
+}
+
 
     /* =========================
        ABOUT
@@ -3418,6 +3517,64 @@ Simple rhythms, age-appropriate chores, and a flexible homeschool routine that h
 
   </section>
 
+  <section class="homepage-subscribe" id="homepageSubscribeBox">
+  <div class="homepage-subscribe-inner">
+    <h2>Subscribe to Honey &amp; Hymns</h2>
+
+    <p class="homepage-subscribe-text">
+      Get encouragement, faith, homemaking, and homeschool inspiration
+      delivered straight to your inbox.
+    </p>
+
+    <form id="homepageSubscribeForm">
+      <div class="homepage-subscribe-field">
+        <label for="homepageSubscribeName">Name</label>
+        <input
+          type="text"
+          id="homepageSubscribeName"
+          name="firstName"
+          autocomplete="given-name"
+          required
+        >
+      </div>
+
+      <div class="homepage-subscribe-field">
+        <label for="homepageSubscribeEmail">Email</label>
+        <input
+          type="email"
+          id="homepageSubscribeEmail"
+          name="email"
+          autocomplete="email"
+          required
+        >
+      </div>
+
+      <label class="homepage-subscribe-consent">
+        <input
+          type="checkbox"
+          id="homepageSubscribeConsent"
+          required
+        >
+        <span>
+          I agree to receive emails from Honey &amp; Hymns.
+        </span>
+      </label>
+
+      <button type="submit" id="homepageSubscribeButton">
+        Subscribe
+      </button>
+
+      <p
+        id="homepageSubscribeSuccess"
+        class="homepage-subscribe-success"
+        style="display: none;"
+      >
+        You're subscribed! Welcome to Honey &amp; Hymns. ♡
+      </p>
+    </form>
+  </div>
+</section>
+
 
   <!-- ABOUT -->
 
@@ -4978,6 +5135,96 @@ document.addEventListener(
 
   }
 );
+// HOMEPAGE SUBSCRIBE BOX
+
+const homepageSubscribeForm =
+  document.getElementById("homepageSubscribeForm");
+
+const homepageSubscribeButton =
+  document.getElementById("homepageSubscribeButton");
+
+const homepageSubscribeSuccess =
+  document.getElementById("homepageSubscribeSuccess");
+
+const homepageSubscribeConsent =
+  document.getElementById("homepageSubscribeConsent");
+
+const homepageSubscribeURL =
+  "https://script.google.com/macros/s/AKfycbzk4jxgxkK-4O3Q4RwwWzo2trY8axyOZWZ_-kS8iEXradfX3g1v9heB2mNsvYWxLoBK/exec";
+
+if (homepageSubscribeForm) {
+  homepageSubscribeForm.addEventListener(
+    "submit",
+    function (event) {
+      event.preventDefault();
+
+      if (!homepageSubscribeConsent.checked) {
+        return;
+      }
+
+      homepageSubscribeButton.disabled = true;
+      homepageSubscribeButton.textContent = "Subscribing...";
+
+      const formData = new URLSearchParams();
+
+      formData.append(
+        "firstName",
+        document.getElementById(
+          "homepageSubscribeName"
+        ).value
+      );
+
+      formData.append(
+        "email",
+        document.getElementById(
+          "homepageSubscribeEmail"
+        ).value
+      );
+
+      formData.append(
+        "source",
+        "Home page Recent Articles"
+      );
+
+      formData.append(
+        "consent",
+        "Yes"
+      );
+
+      fetch(
+        homepageSubscribeURL,
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type":
+              "application/x-www-form-urlencoded"
+          },
+          body:
+            formData.toString()
+        }
+      )
+        .then(function () {
+          homepageSubscribeForm.reset();
+
+          homepageSubscribeButton.style.display =
+            "none";
+
+          homepageSubscribeSuccess.style.display =
+            "block";
+        })
+        .catch(function () {
+          homepageSubscribeButton.disabled = false;
+          homepageSubscribeButton.textContent =
+            "Subscribe";
+
+          alert(
+            "Something went wrong. Please try again."
+          );
+        });
+    }
+  );
+}
 </script>
    
 </body>
